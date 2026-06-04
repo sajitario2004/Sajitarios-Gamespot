@@ -1,0 +1,16 @@
+# Configuración de iconos de app — Sajitarios Gamespot (v0.25)
+#
+# Genera los iconos de launcher para Android e iOS a partir del PNG fuente
+# en assets/icon/app_icon.png. El icono adaptativo de Android usa el morado
+# de marca (#7C3AED) como fondo y el foreground transparente con el símbolo.
+#
+# Regenerar:  dart run flutter_launcher_icons
+flutter_launcher_icons:
+  android: true
+  ios: true
+  remove_alpha_ios: true
+  image_path: "assets/icon/app_icon.png"
+
+  # Icono adaptativo Android (API 26+): fondo de marca + capa frontal.
+  adaptive_icon_background: "#7C3AED"
+  adaptive_icon_foreground: "assets/icon/app_icon_foreground.png"

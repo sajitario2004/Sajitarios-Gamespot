@@ -1,0 +1,614 @@
+{
+  "@@locale": "es",
+  "appTitle": "Sajitarios Gamespot",
+  "@appTitle": {
+    "description": "Título de la aplicación, mostrado en la barra superior del menú."
+  },
+  "idioma": "Idioma",
+  "@idioma": {
+    "description": "Etiqueta del control de selección de idioma."
+  },
+  "idiomaDelSistema": "Idioma del sistema",
+  "@idiomaDelSistema": {
+    "description": "Opción que sigue el idioma configurado en el dispositivo (locale nulo)."
+  },
+  "espanol": "Español",
+  "@espanol": {
+    "description": "Nombre del idioma español en el selector de idioma."
+  },
+  "ingles": "Inglés",
+  "@ingles": {
+    "description": "Nombre del idioma inglés en el selector de idioma."
+  },
+  "cambiarIdioma": "Cambiar idioma",
+  "@cambiarIdioma": {
+    "description": "Tooltip/etiqueta accesible del botón que abre el selector de idioma."
+  },
+  "aceptar": "Aceptar",
+  "@aceptar": {
+    "description": "Texto del botón de confirmación genérico."
+  },
+  "cancelar": "Cancelar",
+  "@cancelar": {
+    "description": "Texto del botón para cerrar/descartar un diálogo."
+  },
+  "menuVacioTitulo": "Todavía no hay juegos",
+  "@menuVacioTitulo": {
+    "description": "Título del estado vacío del menú cuando no hay juegos registrados."
+  },
+  "menuVacioMensaje": "Pronto podrás elegir entre varios juegos para jugar en grupo.",
+  "@menuVacioMensaje": {
+    "description": "Mensaje del estado vacío del menú cuando no hay juegos registrados."
+  },
+  "jugarA": "Jugar a {titulo}. {descripcion}",
+  "@jugarA": {
+    "description": "Etiqueta semántica accesible de cada tarjeta de juego del menú.",
+    "placeholders": {
+      "titulo": { "type": "String" },
+      "descripcion": { "type": "String" }
+    }
+  },
+  "rutaNoEncontradaTitulo": "Pantalla no encontrada",
+  "@rutaNoEncontradaTitulo": {
+    "description": "Título de la barra superior de la pantalla de ruta no encontrada."
+  },
+  "rutaNoEncontradaMensaje": "No encontramos la pantalla que buscabas.",
+  "@rutaNoEncontradaMensaje": {
+    "description": "Mensaje principal de la pantalla de ruta no encontrada."
+  },
+  "rutaNoEncontradaAyuda": "Vuelve al menú para seguir jugando.",
+  "@rutaNoEncontradaAyuda": {
+    "description": "Mensaje secundario de la pantalla de ruta no encontrada."
+  },
+  "volverAlMenu": "Volver al menú",
+  "@volverAlMenu": {
+    "description": "Texto del botón que regresa al menú principal."
+  },
+  "esUn10PeroTitulo": "Es un 10 pero",
+  "@esUn10PeroTitulo": {
+    "description": "Título de la pantalla del juego 'Es un 10 pero'."
+  },
+  "sacarCarta": "Sacar carta",
+  "@sacarCarta": {
+    "description": "Botón para sacar la primera carta en 'Es un 10 pero'."
+  },
+  "sacarOtraCarta": "Sacar otra carta",
+  "@sacarOtraCarta": {
+    "description": "Botón para sacar una nueva carta tras haber sacado una en 'Es un 10 pero'."
+  },
+  "pistaCartaVacia": "Pulsa \"Sacar carta\"\npara revelar una carta",
+  "@pistaCartaVacia": {
+    "description": "Texto superpuesto sobre la carta mientras no se ha sacado ninguna."
+  },
+  "cartaSinSacarSemantica": "Sin carta, pulsa Sacar carta",
+  "@cartaSinSacarSemantica": {
+    "description": "Etiqueta semántica de la carta cuando todavía no se ha sacado ninguna."
+  },
+  "cartaSemantica": "Carta: {valor} de {palo}",
+  "@cartaSemantica": {
+    "description": "Etiqueta semántica dinámica de la carta actual en 'Es un 10 pero'.",
+    "placeholders": {
+      "valor": { "type": "String" },
+      "palo": { "type": "String" }
+    }
+  },
+  "impostorTitulo": "El Impostor",
+  "@impostorTitulo": {
+    "description": "Título de la barra superior en las pantallas del flujo del Impostor."
+  },
+  "impostorMenuTitulo": "El Impostor",
+  "@impostorMenuTitulo": {
+    "description": "Título del juego 'El Impostor' en la tarjeta del menú."
+  },
+  "impostorMenuDescripcion": "Todos conocen la palabra... menos los impostores. ¿Los descubrirás?",
+  "@impostorMenuDescripcion": {
+    "description": "Descripción del juego 'El Impostor' en la tarjeta del menú."
+  },
+  "esUn10PeroMenuTitulo": "Es un 10 pero",
+  "@esUn10PeroMenuTitulo": {
+    "description": "Título del juego 'Es un 10 pero' en la tarjeta del menú."
+  },
+  "esUn10PeroMenuDescripcion": "Saca una carta al azar de la A al 10.",
+  "@esUn10PeroMenuDescripcion": {
+    "description": "Descripción del juego 'Es un 10 pero' en la tarjeta del menú."
+  },
+  "historial": "Historial",
+  "@historial": {
+    "description": "Etiqueta/tooltip del acceso al historial de partidas."
+  },
+  "gestionarPalabras": "Gestionar palabras",
+  "@gestionarPalabras": {
+    "description": "Etiqueta/tooltip del acceso a la gestión del banco de palabras."
+  },
+  "setupJugadores": "Jugadores",
+  "@setupJugadores": {
+    "description": "Encabezado de la sección de jugadores en la configuración de la partida."
+  },
+  "setupRangoJugadores": "Introduce de {min} a {max} jugadores. El orden es el orden de revelación.",
+  "@setupRangoJugadores": {
+    "description": "Texto de ayuda con el rango de jugadores permitido en la configuración.",
+    "placeholders": {
+      "min": { "type": "int" },
+      "max": { "type": "int" }
+    }
+  },
+  "anadirJugador": "Añadir jugador",
+  "@anadirJugador": {
+    "description": "Botón para añadir un nuevo jugador en la configuración."
+  },
+  "maximoJugadoresAlcanzado": "Máximo de jugadores alcanzado",
+  "@maximoJugadoresAlcanzado": {
+    "description": "Texto del botón de añadir jugador cuando se llegó al máximo."
+  },
+  "setupImpostores": "Impostores",
+  "@setupImpostores": {
+    "description": "Encabezado de la sección de impostores en la configuración."
+  },
+  "setupPista": "Pista",
+  "@setupPista": {
+    "description": "Encabezado de la sección de la pista en la configuración."
+  },
+  "iniciandoPartida": "Iniciando...",
+  "@iniciandoPartida": {
+    "description": "Texto del botón de empezar mientras se inicia la partida."
+  },
+  "empezarPartida": "Empezar partida",
+  "@empezarPartida": {
+    "description": "Botón para empezar la partida del Impostor."
+  },
+  "jugadorNumero": "Jugador {n}",
+  "@jugadorNumero": {
+    "description": "Etiqueta del campo de nombre del jugador n.",
+    "placeholders": {
+      "n": { "type": "int" }
+    }
+  },
+  "nombreDelJugadorNumero": "Nombre del jugador {n}",
+  "@nombreDelJugadorNumero": {
+    "description": "Texto de pista (hint) del campo de nombre del jugador n.",
+    "placeholders": {
+      "n": { "type": "int" }
+    }
+  },
+  "quitarJugador": "Quitar jugador",
+  "@quitarJugador": {
+    "description": "Tooltip del botón para quitar un jugador."
+  },
+  "impostoresContador": "{n, plural, one{{n} impostor} other{{n} impostores}}",
+  "@impostoresContador": {
+    "description": "Número de impostores seleccionado (singular/plural).",
+    "placeholders": {
+      "n": { "type": "int" }
+    }
+  },
+  "maximoImpostoresPara": "Máximo {max} para {jugadores} jugadores.",
+  "@maximoImpostoresPara": {
+    "description": "Texto de ayuda con el máximo de impostores para la cantidad de jugadores.",
+    "placeholders": {
+      "max": { "type": "int" },
+      "jugadores": { "type": "int" }
+    }
+  },
+  "menosImpostores": "Menos impostores",
+  "@menosImpostores": {
+    "description": "Tooltip del botón para reducir el número de impostores."
+  },
+  "masImpostores": "Más impostores",
+  "@masImpostores": {
+    "description": "Tooltip del botón para aumentar el número de impostores."
+  },
+  "darPistaAlImpostor": "Dar pista al impostor",
+  "@darPistaAlImpostor": {
+    "description": "Título del interruptor que activa la pista para el impostor."
+  },
+  "darPistaAlImpostorSubtitulo": "Si está activa, el impostor verá una pista sobre la palabra.",
+  "@darPistaAlImpostorSubtitulo": {
+    "description": "Subtítulo del interruptor de pista."
+  },
+  "errorPocosJugadores": "Se necesitan al menos {min} jugadores.",
+  "@errorPocosJugadores": {
+    "description": "Error cuando hay menos jugadores del mínimo permitido.",
+    "placeholders": {
+      "min": { "type": "int" }
+    }
+  },
+  "errorDemasiadosJugadores": "El máximo es de {max} jugadores.",
+  "@errorDemasiadosJugadores": {
+    "description": "Error cuando hay más jugadores del máximo permitido.",
+    "placeholders": {
+      "max": { "type": "int" }
+    }
+  },
+  "errorNombresDuplicados": "Hay nombres de jugador repetidos.",
+  "@errorNombresDuplicados": {
+    "description": "Error cuando hay nombres de jugador repetidos."
+  },
+  "errorNombreVacio": "Todos los jugadores deben tener un nombre.",
+  "@errorNombreVacio": {
+    "description": "Error cuando algún jugador no tiene nombre."
+  },
+  "errorNoSePudoIniciar": "No se pudo iniciar la partida.",
+  "@errorNoSePudoIniciar": {
+    "description": "Error genérico al no poder iniciar la partida."
+  },
+  "errorSinPalabras": "No hay palabras disponibles para iniciar la partida del Impostor.",
+  "@errorSinPalabras": {
+    "description": "Error cuando la base de datos no tiene palabras para iniciar la partida del Impostor."
+  },
+  "noHayPalabrasTitulo": "No hay palabras",
+  "@noHayPalabrasTitulo": {
+    "description": "Título del diálogo cuando la BD no tiene palabras."
+  },
+  "noHayPalabrasMensaje": "Necesitas al menos una palabra para jugar. Añade tu primera palabra desde la gestión de palabras.",
+  "@noHayPalabrasMensaje": {
+    "description": "Mensaje del diálogo cuando la BD no tiene palabras."
+  },
+  "ahoraNo": "Ahora no",
+  "@ahoraNo": {
+    "description": "Botón para descartar el diálogo de sin palabras."
+  },
+  "pasaleElMovilA": "Pásale el móvil a",
+  "@pasaleElMovilA": {
+    "description": "Instrucción de la pantalla de paso de móvil."
+  },
+  "jugadorXDeY": "Jugador {posicion} de {total}",
+  "@jugadorXDeY": {
+    "description": "Indicador de posición del jugador actual.",
+    "placeholders": {
+      "posicion": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  },
+  "pasaleElMovilAyuda": "Cuando lo tenga en sus manos, pulsa continuar y revela tu rol en privado.",
+  "@pasaleElMovilAyuda": {
+    "description": "Texto de ayuda en la pantalla de paso de móvil."
+  },
+  "continuar": "Continuar",
+  "@continuar": {
+    "description": "Botón para continuar a la revelación del rol."
+  },
+  "esElTurnoDe": "Es el turno de",
+  "@esElTurnoDe": {
+    "description": "Texto previo al nombre del jugador en la pantalla de revelación."
+  },
+  "pulsaRevelar": "Pulsa \"Revelar\" cuando seas tú quien mira la pantalla.",
+  "@pulsaRevelar": {
+    "description": "Texto de la carta oculta antes de revelar el rol."
+  },
+  "revelar": "Revelar",
+  "@revelar": {
+    "description": "Botón para revelar el rol del jugador actual."
+  },
+  "ocultarYPasar": "Ocultar y pasar",
+  "@ocultarYPasar": {
+    "description": "Botón para ocultar el rol y pasar al siguiente jugador."
+  },
+  "ocultarYVerResultados": "Ocultar y ver resultados",
+  "@ocultarYVerResultados": {
+    "description": "Botón para ocultar el rol del último jugador y ver los resultados."
+  },
+  "impostorMayus": "IMPOSTOR",
+  "@impostorMayus": {
+    "description": "Etiqueta del rol impostor mostrada en mayúsculas."
+  },
+  "tuPalabraEs": "Tu palabra es",
+  "@tuPalabraEs": {
+    "description": "Texto previo a la palabra para los jugadores no impostores."
+  },
+  "noHayPartidaEnCurso": "No hay ninguna partida en curso.",
+  "@noHayPartidaEnCurso": {
+    "description": "Mensaje cuando la pantalla de revelación no tiene partida."
+  },
+  "configurarPartida": "Configurar partida",
+  "@configurarPartida": {
+    "description": "Botón para ir a la configuración cuando no hay partida en curso."
+  },
+  "tuRolEsImpostor": "Tu rol es IMPOSTOR",
+  "@tuRolEsImpostor": {
+    "description": "Anuncio accesible base cuando el jugador es impostor."
+  },
+  "tuRolEsImpostorConPista": "Tu rol es IMPOSTOR. Pista: {pista}",
+  "@tuRolEsImpostorConPista": {
+    "description": "Anuncio accesible cuando el impostor tiene pista activada.",
+    "placeholders": {
+      "pista": { "type": "String" }
+    }
+  },
+  "tuPalabraEsAnuncio": "Tu palabra es {palabra}",
+  "@tuPalabraEsAnuncio": {
+    "description": "Anuncio accesible de la palabra para jugadores no impostores.",
+    "placeholders": {
+      "palabra": { "type": "String" }
+    }
+  },
+  "salirDeLaPartidaTitulo": "¿Salir de la partida?",
+  "@salirDeLaPartidaTitulo": {
+    "description": "Título del diálogo de confirmación para abandonar la partida."
+  },
+  "salirDeLaPartidaMensaje": "Si sales ahora se perderá la partida actual y tendrás que configurarla de nuevo.",
+  "@salirDeLaPartidaMensaje": {
+    "description": "Mensaje del diálogo de confirmación para abandonar la partida."
+  },
+  "seguirJugando": "Seguir jugando",
+  "@seguirJugando": {
+    "description": "Botón para cancelar la salida y seguir en la partida."
+  },
+  "salir": "Salir",
+  "@salir": {
+    "description": "Botón para confirmar la salida de la partida."
+  },
+  "resultadoDeLaPartida": "Resultado de la partida",
+  "@resultadoDeLaPartida": {
+    "description": "Título de la pantalla de resultados."
+  },
+  "noHayPartidaQueMostrar": "No hay ninguna partida que mostrar.",
+  "@noHayPartidaQueMostrar": {
+    "description": "Mensaje en resultados cuando no hay una sesión válida."
+  },
+  "laPalabraEra": "La palabra era",
+  "@laPalabraEra": {
+    "description": "Texto previo a la palabra en la tarjeta de resultados."
+  },
+  "pistaConValor": "Pista: {pista}",
+  "@pistaConValor": {
+    "description": "Pista con su valor, mostrada en resultados y en la lista de palabras.",
+    "placeholders": {
+      "pista": { "type": "String" }
+    }
+  },
+  "resumenImpostores": "{count, plural, =0{No había ningún impostor: todos sabían la palabra.} one{Había 1 impostor.} other{Había {count} impostores.}}",
+  "@resumenImpostores": {
+    "description": "Resumen del número de impostores de la partida en resultados.",
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "sabiaLaPalabra": "Sabía la palabra",
+  "@sabiaLaPalabra": {
+    "description": "Etiqueta del rol de quien sabía la palabra."
+  },
+  "jugadorEraImpostor": "{nombre}: era impostor",
+  "@jugadorEraImpostor": {
+    "description": "Etiqueta semántica del jugador que fue impostor.",
+    "placeholders": {
+      "nombre": { "type": "String" }
+    }
+  },
+  "jugadorSabiaLaPalabra": "{nombre}: sabía la palabra",
+  "@jugadorSabiaLaPalabra": {
+    "description": "Etiqueta semántica del jugador que sabía la palabra.",
+    "placeholders": {
+      "nombre": { "type": "String" }
+    }
+  },
+  "jugarOtra": "Jugar otra",
+  "@jugarOtra": {
+    "description": "Botón para jugar otra partida desde resultados."
+  },
+  "gestionarPalabrasTitulo": "Gestionar palabras",
+  "@gestionarPalabrasTitulo": {
+    "description": "Título de la pantalla de gestión de palabras."
+  },
+  "agregar": "Agregar",
+  "@agregar": {
+    "description": "Botón para agregar una palabra y confirmación del alta."
+  },
+  "buscarPalabra": "Buscar palabra",
+  "@buscarPalabra": {
+    "description": "Texto de pista del campo de búsqueda de palabras."
+  },
+  "limpiarBusqueda": "Limpiar búsqueda",
+  "@limpiarBusqueda": {
+    "description": "Tooltip del botón para limpiar la búsqueda."
+  },
+  "noSePudieronCargarPalabras": "No se pudieron cargar las palabras.",
+  "@noSePudieronCargarPalabras": {
+    "description": "Mensaje de error al cargar el banco de palabras."
+  },
+  "sinPalabrasAun": "Aún no hay palabras. Añade la primera con el botón \"Agregar\".",
+  "@sinPalabrasAun": {
+    "description": "Estado vacío del banco de palabras sin búsqueda."
+  },
+  "sinCoincidencias": "No hay palabras que coincidan con tu búsqueda.",
+  "@sinCoincidencias": {
+    "description": "Estado vacío del banco de palabras con búsqueda sin coincidencias."
+  },
+  "palabraAnadida": "Palabra añadida.",
+  "@palabraAnadida": {
+    "description": "Confirmación tras añadir una palabra."
+  },
+  "yaExisteEsaPalabra": "Ya existe esa palabra.",
+  "@yaExisteEsaPalabra": {
+    "description": "Error al intentar crear/editar una palabra duplicada."
+  },
+  "palabraYPistaObligatorias": "La palabra y la pista son obligatorias.",
+  "@palabraYPistaObligatorias": {
+    "description": "Error cuando faltan la palabra o la pista al guardar."
+  },
+  "palabraActualizada": "Palabra actualizada.",
+  "@palabraActualizada": {
+    "description": "Confirmación tras actualizar una palabra."
+  },
+  "palabrasPredefinidasSoloLectura": "Las palabras predefinidas son de solo lectura.",
+  "@palabrasPredefinidasSoloLectura": {
+    "description": "Error al intentar editar/borrar una palabra predefinida."
+  },
+  "esaPalabraYaNoExiste": "Esa palabra ya no existe.",
+  "@esaPalabraYaNoExiste": {
+    "description": "Error cuando la palabra que se intenta editar/borrar ya no existe."
+  },
+  "palabraBorrada": "Palabra borrada.",
+  "@palabraBorrada": {
+    "description": "Confirmación tras borrar una palabra."
+  },
+  "borrarPalabraTitulo": "Borrar palabra",
+  "@borrarPalabraTitulo": {
+    "description": "Título del diálogo de confirmación para borrar una palabra."
+  },
+  "borrarPalabraMensaje": "¿Seguro que quieres borrar \"{palabra}\"?",
+  "@borrarPalabraMensaje": {
+    "description": "Mensaje del diálogo de confirmación para borrar una palabra.",
+    "placeholders": {
+      "palabra": { "type": "String" }
+    }
+  },
+  "borrar": "Borrar",
+  "@borrar": {
+    "description": "Botón para confirmar el borrado de una palabra."
+  },
+  "predefinida": "Predefinida",
+  "@predefinida": {
+    "description": "Chip que marca una palabra como predefinida (solo lectura)."
+  },
+  "palabrasPredefinidasNoEditar": "Las palabras predefinidas no se pueden editar",
+  "@palabrasPredefinidasNoEditar": {
+    "description": "Tooltip del botón editar deshabilitado para palabras predefinidas."
+  },
+  "editar": "Editar",
+  "@editar": {
+    "description": "Tooltip del botón editar de una palabra de usuario."
+  },
+  "palabrasPredefinidasNoBorrar": "Las palabras predefinidas no se pueden borrar",
+  "@palabrasPredefinidasNoBorrar": {
+    "description": "Tooltip del botón borrar deshabilitado para palabras predefinidas."
+  },
+  "editarPalabra": "Editar palabra",
+  "@editarPalabra": {
+    "description": "Título del diálogo de edición de palabra."
+  },
+  "nuevaPalabra": "Nueva palabra",
+  "@nuevaPalabra": {
+    "description": "Título del diálogo de alta de palabra."
+  },
+  "campoPalabra": "Palabra",
+  "@campoPalabra": {
+    "description": "Etiqueta del campo de la palabra en el formulario."
+  },
+  "campoPalabraHint": "Ej.: pirata",
+  "@campoPalabraHint": {
+    "description": "Texto de ejemplo del campo de la palabra."
+  },
+  "campoPista": "Pista",
+  "@campoPista": {
+    "description": "Etiqueta del campo de la pista en el formulario."
+  },
+  "campoPistaHint": "Ej.: barco",
+  "@campoPistaHint": {
+    "description": "Texto de ejemplo del campo de la pista."
+  },
+  "campoObligatorio": "Este campo es obligatorio.",
+  "@campoObligatorio": {
+    "description": "Error de validación de un campo obligatorio del formulario."
+  },
+  "guardar": "Guardar",
+  "@guardar": {
+    "description": "Botón para guardar la edición de una palabra."
+  },
+  "borrarHistorialTitulo": "Borrar historial",
+  "@borrarHistorialTitulo": {
+    "description": "Título del diálogo de confirmación y tooltip para borrar el historial."
+  },
+  "borrarHistorialMensaje": "Se borrarán todas las partidas guardadas. Esta acción no se puede deshacer.",
+  "@borrarHistorialMensaje": {
+    "description": "Mensaje del diálogo de confirmación para borrar el historial."
+  },
+  "borrarTodo": "Borrar todo",
+  "@borrarTodo": {
+    "description": "Botón para confirmar el borrado de todo el historial."
+  },
+  "historialBorrado": "Historial borrado.",
+  "@historialBorrado": {
+    "description": "Confirmación tras borrar el historial."
+  },
+  "noSePudoBorrarHistorial": "No se pudo borrar el historial.",
+  "@noSePudoBorrarHistorial": {
+    "description": "Error al intentar borrar el historial."
+  },
+  "noSePudoCargarHistorial": "No se pudo cargar el historial.",
+  "@noSePudoCargarHistorial": {
+    "description": "Mensaje de error al cargar el historial."
+  },
+  "reintentar": "Reintentar",
+  "@reintentar": {
+    "description": "Botón para reintentar la carga del historial."
+  },
+  "historialVacioTitulo": "Todavía no hay partidas guardadas.",
+  "@historialVacioTitulo": {
+    "description": "Título del estado vacío del historial."
+  },
+  "historialVacioMensaje": "Cuando termines una partida del Impostor aparecerá aquí.",
+  "@historialVacioMensaje": {
+    "description": "Mensaje del estado vacío del historial."
+  },
+  "partidas": "Partidas",
+  "@partidas": {
+    "description": "Encabezado de la lista de partidas del historial."
+  },
+  "estadisticas": "Estadísticas",
+  "@estadisticas": {
+    "description": "Encabezado del resumen de estadísticas del historial."
+  },
+  "partidasJugadas": "Partidas jugadas",
+  "@partidasJugadas": {
+    "description": "Etiqueta de la estadística de total de partidas jugadas."
+  },
+  "palabraMasRepetida": "Palabra más repetida",
+  "@palabraMasRepetida": {
+    "description": "Etiqueta de la estadística de la palabra más repetida."
+  },
+  "palabraMasRepetidaValor": "{palabra} ({veces})",
+  "@palabraMasRepetidaValor": {
+    "description": "Valor de la palabra más repetida con su número de repeticiones.",
+    "placeholders": {
+      "palabra": { "type": "String" },
+      "veces": { "type": "int" }
+    }
+  },
+  "vecesQueFueImpostor": "Veces que cada jugador fue impostor",
+  "@vecesQueFueImpostor": {
+    "description": "Encabezado del ranking de cuántas veces cada jugador fue impostor."
+  },
+  "nadieFueImpostor": "Nadie ha sido impostor todavía.",
+  "@nadieFueImpostor": {
+    "description": "Mensaje cuando ningún jugador ha sido impostor en el historial."
+  },
+  "partidaSubtitulo": "{fecha} · {jugadores} jugadores · {impostores}",
+  "@partidaSubtitulo": {
+    "description": "Subtítulo de una partida en el historial (fecha, jugadores, impostores).",
+    "placeholders": {
+      "fecha": { "type": "String" },
+      "jugadores": { "type": "int" },
+      "impostores": { "type": "String" }
+    }
+  },
+  "impostoresTexto": "{n, plural, one{1 impostor} other{{n} impostores}}",
+  "@impostoresTexto": {
+    "description": "Texto del número de impostores de una partida (singular/plural).",
+    "placeholders": {
+      "n": { "type": "int" }
+    }
+  },
+  "pistaActivadaConValor": "Pista activada: {pista}",
+  "@pistaActivadaConValor": {
+    "description": "Detalle de partida con la pista activada y su valor.",
+    "placeholders": {
+      "pista": { "type": "String" }
+    }
+  },
+  "pistaActivada": "Pista activada",
+  "@pistaActivada": {
+    "description": "Detalle de partida con la pista activada sin valor."
+  },
+  "pistaDesactivada": "Pista desactivada",
+  "@pistaDesactivada": {
+    "description": "Detalle de partida con la pista desactivada."
+  },
+  "silenciarSonido": "Silenciar sonido",
+  "@silenciarSonido": {
+    "description": "Tooltip del botón de sonido cuando el audio está activo."
+  },
+  "activarSonido": "Activar sonido",
+  "@activarSonido": {
+    "description": "Tooltip del botón de sonido cuando el audio está silenciado."
+  }
+}

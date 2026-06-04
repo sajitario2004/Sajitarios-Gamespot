@@ -1,0 +1,14 @@
+# Configuración de internacionalización (v0.44).
+#
+# `flutter gen-l10n` lee este fichero y genera `AppLocalizations` a partir de los
+# ARB en lib/l10n. El template (idioma de referencia, con metadatos/descripciones)
+# es español (app_es.arb); cada otro idioma (app_en.arb) traduce las mismas claves.
+arb-dir: lib/l10n
+template-arb-file: app_es.arb
+output-localization-file: app_localizations.dart
+output-class: AppLocalizations
+# Español (es) PRIMERO: es el idioma por defecto. Esto reordena
+# `AppLocalizations.supportedLocales` para que `es` quede en primera posición.
+preferred-supported-locales:
+  - es
+  - en

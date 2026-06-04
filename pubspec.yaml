@@ -1,0 +1,132 @@
+name: sajitarios_gamespot
+description: "Sajitarios Gamespot: hub offline de minijuegos locales tipo party games."
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# In Windows, build-name is used as the major, minor, and patch parts
+# of the product and file versions while build-number is used as the build suffix.
+version: 0.48.0+48
+
+environment:
+  sdk: ^3.11.1
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Internacionalización (v0.44): localizaciones de Flutter (Material/Widgets/
+  # Cupertino) e `intl` para el formateo y los mensajes generados a partir de los
+  # ARB. `flutter gen-l10n` (activado con `flutter: generate: true`) genera
+  # `AppLocalizations` a partir de lib/l10n/*.arb.
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.20.2
+  # Persistencia del idioma elegido por el usuario (LocaleController).
+  shared_preferences: ^2.3.5
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.8
+  flutter_riverpod: ^3.3.1
+  go_router: ^17.3.0
+  flame: ^1.37.0
+  # Audio del motor de juego (efectos de sonido) compatible con flame 1.37.0.
+  # Lo usa lib/core/audio/audio_service.dart (FlameAudio.audioCache.load +
+  # FlameAudio.play); las rutas de los .wav viven bajo assets/audio/.
+  flame_audio: ^2.11.13
+  sqflite: ^2.4.2+1
+  # Tipos de base de datos puros (sin acoplar a Flutter): los descriptores de
+  # juego (GameDescriptor.onCreateTables/onUpgradeTables) y el esquema del
+  # Impostor usan DatabaseExecutor/Database de aquí para que `core` no dependa
+  # de un juego concreto ni del plugin Flutter de sqflite.
+  sqflite_common: ^2.5.8
+  path: ^1.9.1
+  path_provider: ^2.1.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  # Backend de SQLite para tests: permite abrir bases en memoria (FFI) sin
+  # depender de un dispositivo/emulador (sqfliteFfiInit + databaseFactoryFfi).
+  sqflite_common_ffi: ^2.3.6
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^6.0.0
+
+  # Branding / plataforma (v0.25): generación de iconos de app y splash screen.
+  # flutter_launcher_icons genera los iconos por plataforma (Android/iOS) a
+  # partir de assets/icon/app_icon.png; flutter_native_splash genera el splash
+  # nativo con el morado de marca. La librería `image` se usa por el script
+  # tool/generate_icon.dart para crear el PNG fuente programáticamente.
+  flutter_launcher_icons: ^0.14.4
+  flutter_native_splash: ^2.4.6
+  image: ^4.3.0
+  integration_test:
+    sdk: flutter
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # i18n (v0.44): genera `AppLocalizations` desde lib/l10n/*.arb según l10n.yaml.
+  generate: true
+
+  assets:
+    - assets/seed/
+    - assets/icon/
+    - assets/images/
+    - assets/audio/
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/to/resolution-aware-images
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/to/asset-from-package
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/to/font-from-package

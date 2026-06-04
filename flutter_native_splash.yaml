@@ -1,0 +1,21 @@
+# Configuración del splash nativo — Sajitarios Gamespot (v0.25)
+#
+# Splash con el morado de marca (#7C3AED) como fondo, en modo claro y oscuro,
+# mostrando el logo de la app centrado.
+#
+# Regenerar:  dart run flutter_native_splash:create
+flutter_native_splash:
+  color: "#7C3AED"
+  color_dark: "#7C3AED"
+  image: "assets/icon/splash_logo.png"
+  image_dark: "assets/icon/splash_logo.png"
+
+  android: true
+  ios: true
+
+  # Android 12+ usa su propia API de splash; mantenemos el color de marca.
+  android_12:
+    color: "#7C3AED"
+    color_dark: "#7C3AED"
+    image: "assets/icon/splash_logo.png"
+    image_dark: "assets/icon/splash_logo.png"
