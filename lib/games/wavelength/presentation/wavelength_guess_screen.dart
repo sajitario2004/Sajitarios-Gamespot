@@ -92,6 +92,7 @@ class _WavelengthGuessScreenState extends ConsumerState<WavelengthGuessScreen> {
       },
       child: Scaffold(
         appBar: AppBar(
+          leading: VolverAlMenuButton(onPressed: confirmarSalidaAlMenu),
           title: NeonText(
             l10n.wavelengthTitulo,
             style:
