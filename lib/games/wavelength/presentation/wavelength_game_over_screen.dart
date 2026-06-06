@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import 'package:sajitarios_gamespot/core/theme/app_theme.dart';
 import 'package:sajitarios_gamespot/core/widgets/neon.dart';
+import 'package:sajitarios_gamespot/games/_shared/presentation/volver_al_menu_button.dart';
 import 'package:sajitarios_gamespot/games/wavelength/presentation/wavelength_flow_controller.dart';
 import 'package:sajitarios_gamespot/games/wavelength/presentation/wavelength_routes.dart';
 import 'package:sajitarios_gamespot/l10n/app_localizations.dart';
@@ -38,6 +39,12 @@ class WavelengthGameOverScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
+        leading: VolverAlMenuButton(
+          onPressed: () {
+            ref.read(wavelengthFlowControllerProvider.notifier).reiniciar();
+            context.goNamed('menu');
+          },
+        ),
         title: NeonText(
           l10n.wavelengthFinDePartida,
           style: theme.appBarTheme.titleTextStyle ?? theme.textTheme.titleLarge,

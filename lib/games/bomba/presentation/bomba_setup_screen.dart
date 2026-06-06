@@ -7,6 +7,7 @@ import 'package:sajitarios_gamespot/core/widgets/neon.dart';
 import 'package:sajitarios_gamespot/games/bomba/presentation/bomba_flow_controller.dart';
 import 'package:sajitarios_gamespot/games/bomba/presentation/bomba_routes.dart';
 import 'package:sajitarios_gamespot/games/_shared/presentation/rules_screen.dart';
+import 'package:sajitarios_gamespot/games/_shared/presentation/volver_al_menu_button.dart';
 import 'package:sajitarios_gamespot/l10n/app_localizations.dart';
 
 /// Pantalla de configuración previa a la partida de La Bomba.
@@ -149,6 +150,7 @@ class _BombaSetupScreenState extends ConsumerState<BombaSetupScreen> {
       },
       child: Scaffold(
         appBar: AppBar(
+          leading: VolverAlMenuButton(onPressed: () => context.go('/')),
           title: NeonText(
             l10n.bombaTitulo,
             style:

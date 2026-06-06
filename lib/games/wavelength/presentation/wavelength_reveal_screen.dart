@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 
 import 'package:sajitarios_gamespot/core/theme/app_theme.dart';
 import 'package:sajitarios_gamespot/core/widgets/neon.dart';
+import 'package:sajitarios_gamespot/games/_shared/presentation/volver_al_menu_button.dart';
 import 'package:sajitarios_gamespot/games/impostor/presentation/abandon_game_dialog.dart';
 import 'package:sajitarios_gamespot/games/wavelength/presentation/wavelength_concept_labels.dart';
 import 'package:sajitarios_gamespot/games/wavelength/presentation/wavelength_dial_game.dart';
@@ -75,6 +76,14 @@ class _WavelengthRevealScreenState
       context.goNamed(kWavelengthSetupRouteName);
     }
 
+    Future<void> confirmarSalidaAlMenu() async {
+      final salir = await abandonarPartidaDialog(context);
+      if (salir != true || !context.mounted) return;
+      ref.read(wavelengthFlowControllerProvider.notifier).reiniciar();
+      if (!context.mounted) return;
+      context.go('/');
+    }
+
     // Configure game in reveal mode.
     _game ??= _buildGame(context);
     if (round != null) {
@@ -103,6 +112,7 @@ class _WavelengthRevealScreenState
       },
       child: Scaffold(
         appBar: AppBar(
+          leading: VolverAlMenuButton(onPressed: confirmarSalidaAlMenu),
           title: NeonText(
             l10n.wavelengthTitulo,
             style:

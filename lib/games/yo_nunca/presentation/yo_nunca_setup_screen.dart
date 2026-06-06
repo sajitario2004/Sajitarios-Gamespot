@@ -7,6 +7,7 @@ import 'package:sajitarios_gamespot/core/widgets/neon.dart';
 import 'package:sajitarios_gamespot/games/yo_nunca/presentation/yo_nunca_flow_controller.dart';
 import 'package:sajitarios_gamespot/games/yo_nunca/presentation/yo_nunca_routes.dart';
 import 'package:sajitarios_gamespot/games/_shared/presentation/rules_screen.dart';
+import 'package:sajitarios_gamespot/games/_shared/presentation/volver_al_menu_button.dart';
 import 'package:sajitarios_gamespot/l10n/app_localizations.dart';
 
 /// Pantalla de configuración previa a la sesión de Yo Nunca.
@@ -109,11 +110,7 @@ class _YoNuncaSetupScreenState extends ConsumerState<YoNuncaSetupScreen> {
           style: theme.appBarTheme.titleTextStyle ?? theme.textTheme.titleLarge,
           glowColor: AppTheme.neonCyan,
         ),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () => context.go('/'),
-          tooltip: l10n.volverAlMenu,
-        ),
+        leading: VolverAlMenuButton(onPressed: () => context.go('/')),
         actions: [
           IconButton(
             tooltip: l10n.comoSeJuega,

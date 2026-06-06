@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import 'package:sajitarios_gamespot/core/theme/app_theme.dart';
 import 'package:sajitarios_gamespot/core/widgets/neon.dart';
+import 'package:sajitarios_gamespot/games/_shared/presentation/volver_al_menu_button.dart';
 import 'package:sajitarios_gamespot/games/bomba/presentation/bomba_flow_controller.dart';
 import 'package:sajitarios_gamespot/l10n/app_localizations.dart';
 
@@ -29,6 +30,12 @@ class BombaGameOverScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
+        leading: VolverAlMenuButton(
+          onPressed: () {
+            ref.read(bombaFlowControllerProvider.notifier).reiniciar();
+            context.go('/');
+          },
+        ),
         automaticallyImplyLeading: false,
         title: NeonText(
           l10n.bombaTitulo,

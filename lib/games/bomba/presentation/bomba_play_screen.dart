@@ -6,8 +6,10 @@ import 'package:go_router/go_router.dart';
 
 import 'package:sajitarios_gamespot/core/theme/app_theme.dart';
 import 'package:sajitarios_gamespot/core/widgets/neon.dart';
+import 'package:sajitarios_gamespot/games/_shared/presentation/volver_al_menu_button.dart';
 import 'package:sajitarios_gamespot/games/bomba/presentation/bomba_flow_controller.dart';
 import 'package:sajitarios_gamespot/games/bomba/presentation/bomba_routes.dart';
+import 'package:sajitarios_gamespot/games/impostor/presentation/abandon_game_dialog.dart';
 import 'package:sajitarios_gamespot/l10n/app_localizations.dart';
 
 /// Pantalla de juego activo de La Bomba.
@@ -147,6 +149,16 @@ class _BombaPlayScreenState extends ConsumerState<BombaPlayScreen> {
       },
       child: Scaffold(
         appBar: AppBar(
+          leading: VolverAlMenuButton(
+            onPressed: () async {
+              final salir = await abandonarPartidaDialog(context);
+              if (salir != true || !context.mounted) return;
+              _fuseTimer?.cancel();
+              ref.read(bombaFlowControllerProvider.notifier).reiniciar();
+              if (!context.mounted) return;
+              context.go('/');
+            },
+          ),
           automaticallyImplyLeading: false,
           title: NeonText(
             l10n.bombaTitulo,

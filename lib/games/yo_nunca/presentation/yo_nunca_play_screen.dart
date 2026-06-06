@@ -4,6 +4,8 @@ import 'package:go_router/go_router.dart';
 
 import 'package:sajitarios_gamespot/core/theme/app_theme.dart';
 import 'package:sajitarios_gamespot/core/widgets/neon.dart';
+import 'package:sajitarios_gamespot/games/_shared/presentation/volver_al_menu_button.dart';
+import 'package:sajitarios_gamespot/games/impostor/presentation/abandon_game_dialog.dart';
 import 'package:sajitarios_gamespot/games/yo_nunca/presentation/yo_nunca_flow_controller.dart';
 import 'package:sajitarios_gamespot/l10n/app_localizations.dart';
 
@@ -36,11 +38,12 @@ class YoNuncaPlayScreen extends ConsumerWidget {
                 theme.appBarTheme.titleTextStyle ?? theme.textTheme.titleLarge,
             glowColor: AppTheme.neonCyan,
           ),
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back),
-            tooltip: l10n.volverAlMenu,
-            onPressed: () {
+          leading: VolverAlMenuButton(
+            onPressed: () async {
+              final salir = await abandonarPartidaDialog(context);
+              if (salir != true || !context.mounted) return;
               ref.read(yoNuncaFlowControllerProvider.notifier).reiniciar();
+              if (!context.mounted) return;
               context.go('/');
             },
           ),
