@@ -56,6 +56,14 @@ class _WavelengthGuessScreenState extends ConsumerState<WavelengthGuessScreen> {
       context.goNamed(kWavelengthSetupRouteName);
     }
 
+    Future<void> confirmarSalidaAlMenu() async {
+      final salir = await abandonarPartidaDialog(context);
+      if (salir != true || !context.mounted) return;
+      ref.read(wavelengthFlowControllerProvider.notifier).reiniciar();
+      if (!context.mounted) return;
+      context.go('/');
+    }
+
     void confirmar() {
       final pos = _game?.needlePosition ?? 0.5;
       ref.read(wavelengthFlowControllerProvider.notifier).submitGuess(pos);
