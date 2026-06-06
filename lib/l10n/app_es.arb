@@ -610,5 +610,726 @@
   "activarSonido": "Activar sonido",
   "@activarSonido": {
     "description": "Tooltip del botón de sonido cuando el audio está silenciado."
-  }
+  },
+  "setupRondas": "Rondas",
+  "@setupRondas": {
+    "description": "Encabezado de la sección de rondas (oportunidades de voto) en la configuración."
+  },
+  "setupRondasAyuda": "Oportunidades de voto para expulsar a los impostores. De {min} a {max} con estos jugadores.",
+  "@setupRondasAyuda": {
+    "description": "Texto de ayuda con el rango de rondas permitido según el número de jugadores.",
+    "placeholders": {
+      "min": { "type": "int" },
+      "max": { "type": "int" }
+    }
+  },
+  "rondasContador": "{n, plural, one{{n} ronda} other{{n} rondas}}",
+  "@rondasContador": {
+    "description": "Número de rondas seleccionado (singular/plural).",
+    "placeholders": {
+      "n": { "type": "int" }
+    }
+  },
+  "menosRondas": "Menos rondas",
+  "@menosRondas": {
+    "description": "Tooltip del botón para reducir el número de rondas."
+  },
+  "masRondas": "Más rondas",
+  "@masRondas": {
+    "description": "Tooltip del botón para aumentar el número de rondas."
+  },
+  "votacionTitulo": "Votación",
+  "@votacionTitulo": {
+    "description": "Título de la barra superior de la pantalla de votación."
+  },
+  "votacionInstruccion": "Votad a quien creáis impostor",
+  "@votacionInstruccion": {
+    "description": "Instrucción principal de la pantalla de votación."
+  },
+  "votacionRondaXDeY": "Ronda {actual} de {total}",
+  "@votacionRondaXDeY": {
+    "description": "Indicador de la ronda de votación en curso.",
+    "placeholders": {
+      "actual": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  },
+  "votacionExpulsar": "Expulsar",
+  "@votacionExpulsar": {
+    "description": "Botón para expulsar al jugador seleccionado en la votación."
+  },
+  "votacionConfirmarExpulsion": "¿Expulsar a {nombre}?",
+  "@votacionConfirmarExpulsion": {
+    "description": "Mensaje de confirmación antes de expulsar a un jugador.",
+    "placeholders": {
+      "nombre": { "type": "String" }
+    }
+  },
+  "votacionImpostorSigue": "El impostor sigue entre vosotros",
+  "@votacionImpostorSigue": {
+    "description": "Mensaje cuando el jugador expulsado no era impostor o cuando gana el impostor al agotar las rondas."
+  },
+  "votacionJugadoresGanan": "¡Habéis ganado!",
+  "@votacionJugadoresGanan": {
+    "description": "Mensaje cuando los jugadores pillan a todos los impostores."
+  },
+  "votacionEraImpostor": "{nombre} era impostor",
+  "@votacionEraImpostor": {
+    "description": "Feedback cuando el jugador expulsado sí era impostor.",
+    "placeholders": {
+      "nombre": { "type": "String" }
+    }
+  },
+  "finDePartidaTitulo": "Fin de la partida",
+  "@finDePartidaTitulo": {
+    "description": "Título de la pantalla de desenlace (fin de partida sin revelar roles)."
+  },
+  "sacandoCartaEn": "Sacando carta en...",
+  "@sacandoCartaEn": {
+    "description": "Texto de la cuenta atrás del caso especial 'Es un 10 pero' antes de sacar la carta."
+  },
+  "triviaTitulo": "Preguntas por puntos",
+  "@triviaTitulo": {
+    "description": "Título de la barra superior en las pantallas del flujo de Trivia."
+  },
+  "triviaMenuTitulo": "Preguntas por puntos",
+  "@triviaMenuTitulo": {
+    "description": "Título del juego 'Preguntas por puntos' en la tarjeta del menú."
+  },
+  "triviaMenuDescripcion": "Responde preguntas de cultura general y otras temáticas. ¡El que más acierte gana!",
+  "@triviaMenuDescripcion": {
+    "description": "Descripción del juego 'Preguntas por puntos' en la tarjeta del menú."
+  },
+  "triviaSetupTematicas": "Temáticas",
+  "@triviaSetupTematicas": {
+    "description": "Encabezado de la sección de selección de temáticas en la configuración de Trivia."
+  },
+  "triviaSetupTematicasAyuda": "Elige al menos una temática para la partida.",
+  "@triviaSetupTematicasAyuda": {
+    "description": "Texto de ayuda de la sección de temáticas."
+  },
+  "triviaSetupRangoJugadores": "Introduce de {min} a {max} jugadores.",
+  "@triviaSetupRangoJugadores": {
+    "description": "Texto de ayuda con el rango de jugadores de Trivia.",
+    "placeholders": {
+      "min": { "type": "int" },
+      "max": { "type": "int" }
+    }
+  },
+  "triviaEmpezarPartida": "Empezar partida",
+  "@triviaEmpezarPartida": {
+    "description": "Botón para empezar la partida de Trivia."
+  },
+  "triviaIniciando": "Iniciando...",
+  "@triviaIniciando": {
+    "description": "Texto del botón de empezar mientras se inicia la partida de Trivia."
+  },
+  "triviaNoHayPreguntasTitulo": "Sin preguntas",
+  "@triviaNoHayPreguntasTitulo": {
+    "description": "Título del diálogo cuando no hay preguntas suficientes para la partida."
+  },
+  "triviaNoHayPreguntasMensaje": "No hay suficientes preguntas para las temáticas y jugadores elegidos. Prueba con más temáticas.",
+  "@triviaNoHayPreguntasMensaje": {
+    "description": "Mensaje del diálogo cuando no hay preguntas suficientes."
+  },
+  "triviaRankingVictorias": "Ranking de victorias",
+  "@triviaRankingVictorias": {
+    "description": "Encabezado del ranking de victorias en la pantalla de setup de Trivia."
+  },
+  "triviaSinVictorias": "Aún no hay victorias registradas.",
+  "@triviaSinVictorias": {
+    "description": "Mensaje cuando el ranking de victorias está vacío."
+  },
+  "triviaVictorias": "{n, plural, one{{n} victoria} other{{n} victorias}}",
+  "@triviaVictorias": {
+    "description": "Número de victorias de un jugador (singular/plural).",
+    "placeholders": {
+      "n": { "type": "int" }
+    }
+  },
+  "triviaAtribucion": "Preguntas basadas en Open Trivia DB (CC BY-SA 4.0)",
+  "@triviaAtribucion": {
+    "description": "Atribución de OpenTDB en la pantalla de setup de Trivia."
+  },
+  "triviaPasaleElMovilA": "Pásale el móvil a",
+  "@triviaPasaleElMovilA": {
+    "description": "Instrucción de la pantalla de paso de móvil en Trivia."
+  },
+  "triviaPasaleElMovilAyuda": "Cuando lo tenga, pulsa continuar para ver tu pregunta en privado.",
+  "@triviaPasaleElMovilAyuda": {
+    "description": "Texto de ayuda en la pantalla de paso de móvil de Trivia."
+  },
+  "triviaPregunta": "Pregunta",
+  "@triviaPregunta": {
+    "description": "Etiqueta semántica de accesibilidad para el enunciado de la pregunta."
+  },
+  "triviaOpcionLetra": "Opción {letra}: {texto}",
+  "@triviaOpcionLetra": {
+    "description": "Etiqueta semántica de una opción de respuesta.",
+    "placeholders": {
+      "letra": { "type": "String" },
+      "texto": { "type": "String" }
+    }
+  },
+  "triviaRondaXDeY": "Ronda {actual} de {total}",
+  "@triviaRondaXDeY": {
+    "description": "Indicador de ronda en la pantalla de pregunta de Trivia.",
+    "placeholders": {
+      "actual": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  },
+  "triviaFinDePartida": "Fin de la partida",
+  "@triviaFinDePartida": {
+    "description": "Título de la pantalla de fin de partida de Trivia."
+  },
+  "triviaGanadores": "¡Habéis ganado!",
+  "@triviaGanadores": {
+    "description": "Mensaje cuando hay supervivientes que ganan en Trivia."
+  },
+  "triviaNadieGano": "Nadie ganó esta partida",
+  "@triviaNadieGano": {
+    "description": "Mensaje cuando todos los jugadores fueron eliminados en Trivia."
+  },
+  "triviaGanadoresList": "Ganadores: {nombres}",
+  "@triviaGanadoresList": {
+    "description": "Lista de ganadores separados por coma.",
+    "placeholders": {
+      "nombres": { "type": "String" }
+    }
+  },
+  "triviaJugarOtra": "Jugar otra",
+  "@triviaJugarOtra": {
+    "description": "Botón para jugar otra partida desde el fin de la partida de Trivia."
+  },
+  "triviaNoHayPartida": "No hay ninguna partida en curso.",
+  "@triviaNoHayPartida": {
+    "description": "Mensaje cuando la pantalla de Trivia no tiene partida."
+  },
+  "wavelengthTitulo": "Wavelength",
+  "@wavelengthTitulo": {
+    "description": "Título de la barra superior en las pantallas del flujo de Wavelength."
+  },
+  "wavelengthSetupRangoJugadores": "Introduce de {min} a {max} jugadores.",
+  "@wavelengthSetupRangoJugadores": {
+    "description": "Texto de ayuda con el rango de jugadores de Wavelength.",
+    "placeholders": {
+      "min": { "type": "int" },
+      "max": { "type": "int" }
+    }
+  },
+  "wavelengthSetupRondas": "Rondas",
+  "@wavelengthSetupRondas": {
+    "description": "Encabezado de la sección de rondas en la configuración de Wavelength."
+  },
+  "wavelengthSetupRondasAyuda": "Número de rondas a jugar. De {min} a {max}.",
+  "@wavelengthSetupRondasAyuda": {
+    "description": "Texto de ayuda del rango de rondas en Wavelength.",
+    "placeholders": {
+      "min": { "type": "int" },
+      "max": { "type": "int" }
+    }
+  },
+  "wavelengthEmpezarPartida": "Empezar partida",
+  "@wavelengthEmpezarPartida": {
+    "description": "Botón para empezar la partida de Wavelength."
+  },
+  "wavelengthIniciando": "Iniciando...",
+  "@wavelengthIniciando": {
+    "description": "Texto del botón de empezar mientras se inicia la partida de Wavelength."
+  },
+  "wavelengthSinEspectrosTitulo": "Sin espectros",
+  "@wavelengthSinEspectrosTitulo": {
+    "description": "Título del diálogo cuando no hay espectros disponibles."
+  },
+  "wavelengthSinEspectrosMensaje": "No hay espectros disponibles para jugar. Instala de nuevo la app para cargar los espectros de ejemplo.",
+  "@wavelengthSinEspectrosMensaje": {
+    "description": "Mensaje del diálogo cuando no hay espectros disponibles."
+  },
+  "wavelengthClueScreenInstruccion": "Eres el PSIQUICO: solo TU ves el objetivo. Observa el dial, escribe una pista y pasa el movil al grupo.",
+  "@wavelengthClueScreenInstruccion": {
+    "description": "Instrucción en la pantalla de pista para el psíquico."
+  },
+  "wavelengthCluePsicoEtiqueta": "Psiquico",
+  "@wavelengthCluePsicoEtiqueta": {
+    "description": "Etiqueta que indica quién es el psíquico en la ronda."
+  },
+  "wavelengthDialSemanticsClue": "Dial de Wavelength, modo psiquico",
+  "@wavelengthDialSemanticsClue": {
+    "description": "Etiqueta de accesibilidad del dial en la pantalla del psíquico."
+  },
+  "wavelengthDialSemanticsGuess": "Dial de Wavelength, mueve la aguja",
+  "@wavelengthDialSemanticsGuess": {
+    "description": "Etiqueta de accesibilidad del dial en la pantalla del grupo."
+  },
+  "wavelengthClueFieldLabel": "Tu pista",
+  "@wavelengthClueFieldLabel": {
+    "description": "Etiqueta del campo de texto de la pista del psíquico."
+  },
+  "wavelengthClueFieldHint": "Escribe una pista...",
+  "@wavelengthClueFieldHint": {
+    "description": "Texto de ejemplo del campo de pista."
+  },
+  "wavelengthConfirmarPista": "Confirmar pista y pasar el movil",
+  "@wavelengthConfirmarPista": {
+    "description": "Botón para confirmar la pista y pasar el móvil al grupo."
+  },
+  "wavelengthPassDeviceInstruccion": "Pasale el movil al GRUPO",
+  "@wavelengthPassDeviceInstruccion": {
+    "description": "Instrucción principal de la pantalla de paso de móvil en Wavelength."
+  },
+  "wavelengthPassDeviceAyuda": "No mires el objetivo. Cuando el grupo tenga el movil, pulsa continuar para que adivinen con el dial.",
+  "@wavelengthPassDeviceAyuda": {
+    "description": "Texto de ayuda en la pantalla de paso de móvil de Wavelength."
+  },
+  "wavelengthGuessInstruccion": "GRUPO: movéis el dial hacia donde creéis que está el objetivo segun la pista.",
+  "@wavelengthGuessInstruccion": {
+    "description": "Instrucción en la pantalla de adivinanza para el grupo."
+  },
+  "wavelengthPistaEtiqueta": "Pista del psiquico:",
+  "@wavelengthPistaEtiqueta": {
+    "description": "Etiqueta previa a la pista del psíquico en la pantalla de adivinanza."
+  },
+  "wavelengthConfirmarAdivinanza": "Confirmar posicion del dial",
+  "@wavelengthConfirmarAdivinanza": {
+    "description": "Botón para confirmar la posición del dial y revelar el resultado."
+  },
+  "wavelengthRevealPuntos": "{pts, plural, one{{pts} punto} other{{pts} puntos}} esta ronda",
+  "@wavelengthRevealPuntos": {
+    "description": "Puntos obtenidos en esta ronda en la pantalla de revelación.",
+    "placeholders": {
+      "pts": { "type": "int" }
+    }
+  },
+  "wavelengthRevealTotalPuntos": "Total: {pts} puntos",
+  "@wavelengthRevealTotalPuntos": {
+    "description": "Puntuación acumulada mostrada en la pantalla de revelación.",
+    "placeholders": {
+      "pts": { "type": "int" }
+    }
+  },
+  "wavelengthRevealRondaXDeY": "Ronda {actual} de {total}",
+  "@wavelengthRevealRondaXDeY": {
+    "description": "Indicador de ronda en la pantalla de revelación.",
+    "placeholders": {
+      "actual": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  },
+  "wavelengthSiguienteRonda": "Siguiente ronda",
+  "@wavelengthSiguienteRonda": {
+    "description": "Botón para avanzar a la siguiente ronda tras la revelación."
+  },
+  "wavelengthVerResultado": "Ver resultado",
+  "@wavelengthVerResultado": {
+    "description": "Botón para ir a la pantalla de fin de partida desde la revelación."
+  },
+  "wavelengthFinDePartida": "Fin de la partida",
+  "@wavelengthFinDePartida": {
+    "description": "Título de la pantalla de fin de partida de Wavelength."
+  },
+  "wavelengthPuntuacionFinal": "Puntuación final",
+  "@wavelengthPuntuacionFinal": {
+    "description": "Etiqueta de la puntuación final en el fin de partida de Wavelength."
+  },
+  "wavelengthPuntosTotales": "{pts} puntos",
+  "@wavelengthPuntosTotales": {
+    "description": "Puntuación total al final de la partida.",
+    "placeholders": {
+      "pts": { "type": "int" }
+    }
+  },
+  "wavelengthJugarOtra": "Jugar otra",
+  "@wavelengthJugarOtra": {
+    "description": "Botón para jugar otra partida desde el fin de partida de Wavelength."
+  },
+  "wavelengthNoHayPartida": "No hay ninguna partida en curso.",
+  "@wavelengthNoHayPartida": {
+    "description": "Mensaje cuando la pantalla de Wavelength no tiene partida."
+  },
+  "wavelengthRondaXDeY": "Ronda {actual} de {total}",
+  "@wavelengthRondaXDeY": {
+    "description": "Indicador de ronda en las pantallas del flujo de Wavelength.",
+    "placeholders": {
+      "actual": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  },
+  "wavelengthBandBlanco": "En el blanco",
+  "@wavelengthBandBlanco": {
+    "description": "Etiqueta de banda de puntuación de Wavelength: máxima cercanía."
+  },
+  "wavelengthBandCerca": "Cerca",
+  "@wavelengthBandCerca": {
+    "description": "Etiqueta de banda de puntuación de Wavelength: cerca."
+  },
+  "wavelengthBandLejos": "Lejos",
+  "@wavelengthBandLejos": {
+    "description": "Etiqueta de banda de puntuación de Wavelength: lejos."
+  },
+  "wavelengthBandFallo": "Fallo",
+  "@wavelengthBandFallo": {
+    "description": "Etiqueta de banda de puntuación de Wavelength: fallo."
+  },
+  "wavelengthRevealScoreSemantica": "Puntuación: {banda}, {puntos} puntos",
+  "@wavelengthRevealScoreSemantica": {
+    "description": "Etiqueta semántica del panel de puntuación en la revelación de Wavelength.",
+    "placeholders": {
+      "banda": { "type": "String" },
+      "puntos": { "type": "int" }
+    }
+  },
+  "tabuAciertoHint": "Suma un punto al turno",
+  "@tabuAciertoHint": {
+    "description": "Pista de accesibilidad para el botón Acierto de Tabú."
+  },
+  "tabuSaltarHint": "Pasa a la siguiente palabra sin puntuar",
+  "@tabuSaltarHint": {
+    "description": "Pista de accesibilidad para el botón Saltar de Tabú."
+  },
+  "tabuFaltaHint": "Marca una falta por decir una palabra prohibida",
+  "@tabuFaltaHint": {
+    "description": "Pista de accesibilidad para el botón Falta de Tabú."
+  },
+  "tabuTitulo": "Tabú",
+  "@tabuTitulo": {
+    "description": "Título de la barra superior en las pantallas del flujo de Tabú."
+  },
+  "tabuSetupEquipos": "Equipos",
+  "@tabuSetupEquipos": {
+    "description": "Encabezado de la sección de equipos en la configuración de Tabú."
+  },
+  "tabuEquipoA": "Equipo A",
+  "@tabuEquipoA": {
+    "description": "Etiqueta del campo del nombre del equipo A."
+  },
+  "tabuEquipoAHint": "Ej.: Los Rápidos",
+  "@tabuEquipoAHint": {
+    "description": "Texto de ejemplo del campo del equipo A."
+  },
+  "tabuEquipoB": "Equipo B",
+  "@tabuEquipoB": {
+    "description": "Etiqueta del campo del nombre del equipo B."
+  },
+  "tabuEquipoBHint": "Ej.: Los Creativos",
+  "@tabuEquipoBHint": {
+    "description": "Texto de ejemplo del campo del equipo B."
+  },
+  "tabuSetupTurno": "Duración del turno",
+  "@tabuSetupTurno": {
+    "description": "Encabezado de la sección de duración del turno en la configuración de Tabú."
+  },
+  "tabuSetupTurnoAyuda": "Segundos que tiene cada equipo para describir palabras.",
+  "@tabuSetupTurnoAyuda": {
+    "description": "Texto de ayuda de la sección de duración del turno."
+  },
+  "tabuSegundos": "{n} seg",
+  "@tabuSegundos": {
+    "description": "Duración del turno en segundos.",
+    "placeholders": {
+      "n": { "type": "int" }
+    }
+  },
+  "tabuEmpezarPartida": "Empezar partida",
+  "@tabuEmpezarPartida": {
+    "description": "Botón para empezar la partida de Tabú."
+  },
+  "tabuIniciando": "Iniciando...",
+  "@tabuIniciando": {
+    "description": "Texto del botón de empezar mientras se inicia la partida de Tabú."
+  },
+  "tabuSinPalabrasTitulo": "Sin palabras",
+  "@tabuSinPalabrasTitulo": {
+    "description": "Título del diálogo cuando no hay palabras de Tabú disponibles."
+  },
+  "tabuSinPalabrasMensaje": "No hay palabras disponibles para jugar. Instala de nuevo la app para cargar las palabras de ejemplo.",
+  "@tabuSinPalabrasMensaje": {
+    "description": "Mensaje del diálogo cuando no hay palabras de Tabú disponibles."
+  },
+  "tabuErrorEquipoAVacio": "El nombre del equipo A no puede estar vacío.",
+  "@tabuErrorEquipoAVacio": {
+    "description": "Error cuando el nombre del equipo A está vacío."
+  },
+  "tabuErrorEquipoBVacio": "El nombre del equipo B no puede estar vacío.",
+  "@tabuErrorEquipoBVacio": {
+    "description": "Error cuando el nombre del equipo B está vacío."
+  },
+  "tabuErrorEquiposDuplicados": "Los equipos deben tener nombres distintos.",
+  "@tabuErrorEquiposDuplicados": {
+    "description": "Error cuando los dos equipos tienen el mismo nombre."
+  },
+  "tabuErrorTurnoInvalido": "La duración del turno no es válida.",
+  "@tabuErrorTurnoInvalido": {
+    "description": "Error cuando la duración del turno está fuera de rango."
+  },
+  "tabuProhibidas": "Palabras prohibidas",
+  "@tabuProhibidas": {
+    "description": "Etiqueta de la lista de palabras prohibidas en la pantalla de turno."
+  },
+  "tabuAcierto": "Acierto",
+  "@tabuAcierto": {
+    "description": "Botón de acierto en la pantalla de turno de Tabú."
+  },
+  "tabuSaltar": "Saltar",
+  "@tabuSaltar": {
+    "description": "Botón de saltar en la pantalla de turno de Tabú."
+  },
+  "tabuFalta": "Falta",
+  "@tabuFalta": {
+    "description": "Botón de falta en la pantalla de turno de Tabú."
+  },
+  "tabuAciertosContador": "{n, plural, one{{n} acierto} other{{n} aciertos}}",
+  "@tabuAciertosContador": {
+    "description": "Contador de aciertos del turno actual (singular/plural).",
+    "placeholders": {
+      "n": { "type": "int" }
+    }
+  },
+  "tabuTiempoRestante": "{n} segundos restantes",
+  "@tabuTiempoRestante": {
+    "description": "Etiqueta semántica del tiempo restante del turno.",
+    "placeholders": {
+      "n": { "type": "int" }
+    }
+  },
+  "tabuMarcador": "Marcador",
+  "@tabuMarcador": {
+    "description": "Título de la pantalla de marcador entre turnos."
+  },
+  "tabuObjetivoVictorias": "Objetivo: {n} victorias de ronda",
+  "@tabuObjetivoVictorias": {
+    "description": "Texto informativo del objetivo de victorias en la pantalla de marcador.",
+    "placeholders": {
+      "n": { "type": "int" }
+    }
+  },
+  "tabuSiguienteTurno": "Siguiente turno",
+  "@tabuSiguienteTurno": {
+    "description": "Botón para comenzar el siguiente turno desde el marcador."
+  },
+  "tabuFinDePartida": "Fin de la partida",
+  "@tabuFinDePartida": {
+    "description": "Título de la pantalla de fin de partida de Tabú."
+  },
+  "tabuGanadorLabel": "Equipo ganador",
+  "@tabuGanadorLabel": {
+    "description": "Etiqueta previa al nombre del equipo ganador."
+  },
+  "tabuNoHayPartida": "No hay ninguna partida en curso.",
+  "@tabuNoHayPartida": {
+    "description": "Mensaje cuando la pantalla de Tabú no tiene partida activa."
+  },
+  "yoNuncaTitulo": "Yo Nunca",
+  "@yoNuncaTitulo": {
+    "description": "Título de la barra superior en las pantallas del flujo de Yo Nunca."
+  },
+  "yoNuncaSetupIntensidades": "Intensidades",
+  "@yoNuncaSetupIntensidades": {
+    "description": "Encabezado de la sección de selección de intensidades en la configuración de Yo Nunca."
+  },
+  "yoNuncaSetupIntensidadesAyuda": "Elige al menos una intensidad para las frases.",
+  "@yoNuncaSetupIntensidadesAyuda": {
+    "description": "Texto de ayuda de la sección de intensidades."
+  },
+  "yoNuncaIntensidadSuave": "Suave",
+  "@yoNuncaIntensidadSuave": {
+    "description": "Etiqueta de la intensidad suave (apta para todos los públicos)."
+  },
+  "yoNuncaIntensidadPicante": "Picante",
+  "@yoNuncaIntensidadPicante": {
+    "description": "Etiqueta de la intensidad picante (contenido adulto)."
+  },
+  "yoNuncaAdvertenciaPicante": "Contenido explícito (+18). Esta opción incluye frases de contenido sexual explícito para adultos. Solo actívala si todos los jugadores son mayores de 18 años y dan su consentimiento.",
+  "@yoNuncaAdvertenciaPicante": {
+    "description": "Advertencia de contenido adulto mostrada al activar la intensidad picante."
+  },
+  "yoNuncaEmpezar": "Empezar",
+  "@yoNuncaEmpezar": {
+    "description": "Botón para empezar la sesión de Yo Nunca."
+  },
+  "yoNuncaErrorSinIntensidades": "Elige al menos una intensidad para jugar.",
+  "@yoNuncaErrorSinIntensidades": {
+    "description": "Error cuando no se ha seleccionado ninguna intensidad."
+  },
+  "yoNuncaSinFrasesTitulo": "Sin frases",
+  "@yoNuncaSinFrasesTitulo": {
+    "description": "Título del diálogo cuando no hay frases disponibles para las intensidades elegidas."
+  },
+  "yoNuncaSinFrasesMensaje": "No hay frases disponibles para las intensidades elegidas. Prueba con otra intensidad.",
+  "@yoNuncaSinFrasesMensaje": {
+    "description": "Mensaje del diálogo cuando no hay frases disponibles."
+  },
+  "yoNuncaSiguiente": "Siguiente",
+  "@yoNuncaSiguiente": {
+    "description": "Botón para sacar la siguiente frase en la pantalla de juego."
+  },
+  "yoNuncaFraseSemantica": "Frase: {frase}",
+  "@yoNuncaFraseSemantica": {
+    "description": "Etiqueta semántica accesible de la frase actual.",
+    "placeholders": {
+      "frase": { "type": "String" }
+    }
+  },
+  "yoNuncaNoHaySesion": "No hay ninguna sesión en curso.",
+  "@yoNuncaNoHaySesion": {
+    "description": "Mensaje cuando la pantalla de juego no tiene sesión activa."
+  },
+  "bombaTitulo": "La Bomba",
+  "@bombaTitulo": {
+    "description": "Título de la barra superior en las pantallas del flujo de La Bomba."
+  },
+  "bombaSetupModo": "Modo de juego",
+  "@bombaSetupModo": {
+    "description": "Encabezado de la sección de selección de modo en la configuración de La Bomba."
+  },
+  "bombaModoSilaba": "Sílaba",
+  "@bombaModoSilaba": {
+    "description": "Opción de modo sílaba en la configuración de La Bomba."
+  },
+  "bombaModoCategoria": "Categoría",
+  "@bombaModoCategoria": {
+    "description": "Opción de modo categoría en la configuración de La Bomba."
+  },
+  "bombaSetupRangoJugadores": "Introduce de {min} a {max} jugadores.",
+  "@bombaSetupRangoJugadores": {
+    "description": "Texto de ayuda con el rango de jugadores de La Bomba.",
+    "placeholders": {
+      "min": { "type": "int" },
+      "max": { "type": "int" }
+    }
+  },
+  "bombaEmpezarPartida": "Empezar partida",
+  "@bombaEmpezarPartida": {
+    "description": "Botón para empezar la partida de La Bomba."
+  },
+  "bombaIniciando": "Iniciando...",
+  "@bombaIniciando": {
+    "description": "Texto del botón de empezar mientras se inicia la partida de La Bomba."
+  },
+  "bombaSinPromptsTitulo": "Sin prompts",
+  "@bombaSinPromptsTitulo": {
+    "description": "Título del diálogo cuando no hay prompts disponibles para el modo elegido."
+  },
+  "bombaSinPromptsMensaje": "No hay prompts disponibles para el modo elegido. Reinstala la app para cargar los datos de ejemplo.",
+  "@bombaSinPromptsMensaje": {
+    "description": "Mensaje del diálogo cuando no hay prompts disponibles."
+  },
+  "bombaPasar": "PASAR",
+  "@bombaPasar": {
+    "description": "Botón para pasar el móvil al siguiente jugador en La Bomba."
+  },
+  "bombaTipoSilaba": "Sílaba — di una palabra que la contenga",
+  "@bombaTipoSilaba": {
+    "description": "Subtítulo explicativo cuando el modo es sílaba."
+  },
+  "bombaTipoCategoria": "Categoría — di una palabra de esta categoría",
+  "@bombaTipoCategoria": {
+    "description": "Subtítulo explicativo cuando el modo es categoría."
+  },
+  "bombaPortadorSemantica": "Portador: {nombre}",
+  "@bombaPortadorSemantica": {
+    "description": "Etiqueta semántica accesible del portador actual de la bomba.",
+    "placeholders": {
+      "nombre": { "type": "String" }
+    }
+  },
+  "bombaPromptSemantica": "Prompt: {texto}",
+  "@bombaPromptSemantica": {
+    "description": "Etiqueta semántica accesible del prompt activo.",
+    "placeholders": {
+      "texto": { "type": "String" }
+    }
+  },
+  "bombaExplosionTitulo": "¡BOOM!",
+  "@bombaExplosionTitulo": {
+    "description": "Título de la pantalla de explosión cuando la mecha expira."
+  },
+  "bombaEliminado": "ha sido eliminado",
+  "@bombaEliminado": {
+    "description": "Texto que acompaña al nombre del jugador eliminado por la bomba."
+  },
+  "bombaNoHayPartida": "No hay ninguna partida en curso.",
+  "@bombaNoHayPartida": {
+    "description": "Mensaje cuando la pantalla de La Bomba no tiene partida activa."
+  },
+  "bombaFinDePartida": "Fin de la partida",
+  "@bombaFinDePartida": {
+    "description": "Título de la pantalla de fin de partida de La Bomba."
+  },
+  "bombaGanadorLabel": "Ganador",
+  "@bombaGanadorLabel": {
+    "description": "Etiqueta previa al nombre del ganador en la pantalla de fin de partida."
+  },
+  "comoSeJuega": "¿Cómo se juega?",
+  "@comoSeJuega": {
+    "description": "Tooltip del botón de reglas y título de la pantalla de reglas."
+  },
+  "reglasEsUn10Pero1": "Un jugador pulsa «Sacar carta».",
+  "@reglasEsUn10Pero1": { "description": "Regla 1 de Es un 10 pero." },
+  "reglasEsUn10Pero2": "Una cuenta atrás de 5 segundos genera suspenso.",
+  "@reglasEsUn10Pero2": { "description": "Regla 2 de Es un 10 pero." },
+  "reglasEsUn10Pero3": "Se revela una carta al azar entre As y 10.",
+  "@reglasEsUn10Pero3": { "description": "Regla 3 de Es un 10 pero." },
+  "reglasEsUn10Pero4": "El grupo interpreta la carta como quiera. ¡Sin más reglas!",
+  "@reglasEsUn10Pero4": { "description": "Regla 4 de Es un 10 pero." },
+  "reglasImpostor1": "Decide cuántos jugadores, impostores y rondas habrá.",
+  "@reglasImpostor1": { "description": "Regla 1 de El Impostor." },
+  "reglasImpostor2": "Pásate el móvil en orden: cada jugador ve su rol (ciudadano o IMPOSTOR) y lo cierra.",
+  "@reglasImpostor2": { "description": "Regla 2 de El Impostor." },
+  "reglasImpostor3": "Los ciudadanos ven la palabra secreta; los impostores ven «IMPOSTOR» (y una pista si está activada).",
+  "@reglasImpostor3": { "description": "Regla 3 de El Impostor." },
+  "reglasImpostor4": "Hay una ronda de debate: todos dan pistas sin revelar la palabra.",
+  "@reglasImpostor4": { "description": "Regla 4 de El Impostor." },
+  "reglasImpostor5": "Cada ronda de votación, el grupo vota a quien crea impostor.",
+  "@reglasImpostor5": { "description": "Regla 5 de El Impostor." },
+  "reglasImpostor6": "Los ciudadanos ganan si eliminan a todos los impostores; los impostores ganan si sobreviven todas las rondas.",
+  "@reglasImpostor6": { "description": "Regla 6 de El Impostor." },
+  "reglasTrivia1": "Hasta 6 jugadores compiten respondiendo preguntas por turnos.",
+  "@reglasTrivia1": { "description": "Regla 1 de Trivia." },
+  "reglasTrivia2": "Las preguntas van de fácil a muy difícil a lo largo de las rondas.",
+  "@reglasTrivia2": { "description": "Regla 2 de Trivia." },
+  "reglasTrivia3": "Quien falla una pregunta queda eliminado de la partida.",
+  "@reglasTrivia3": { "description": "Regla 3 de Trivia." },
+  "reglasTrivia4": "Los jugadores que sobrevivan todas las rondas empatan como ganadores.",
+  "@reglasTrivia4": { "description": "Regla 4 de Trivia." },
+  "reglasTrivia5": "Las victorias se guardan por nombre: ¡acumula puntos en el ranking!",
+  "@reglasTrivia5": { "description": "Regla 5 de Trivia." },
+  "reglasWavelength1": "Un jugador ve en secreto un objetivo marcado en un espectro entre dos conceptos opuestos.",
+  "@reglasWavelength1": { "description": "Regla 1 de Wavelength." },
+  "reglasWavelength2": "Ese jugador da una sola pista verbal que sitúe el objetivo en el espectro.",
+  "@reglasWavelength2": { "description": "Regla 2 de Wavelength." },
+  "reglasWavelength3": "El resto del grupo mueve el dial para indicar dónde creen que está el objetivo.",
+  "@reglasWavelength3": { "description": "Regla 3 de Wavelength." },
+  "reglasWavelength4": "Se puntúa según la cercanía al objetivo real: ¡cuanto más cerca, mejor!",
+  "@reglasWavelength4": { "description": "Regla 4 de Wavelength." },
+  "reglasWavelength5": "Es cooperativo: el grupo gana o pierde junto acumulando puntos en todas las rondas.",
+  "@reglasWavelength5": { "description": "Regla 5 de Wavelength." },
+  "reglasTabu1": "Se forman dos equipos. Un jugador de turno ve una palabra y sus palabras prohibidas.",
+  "@reglasTabu1": { "description": "Regla 1 de Tabú." },
+  "reglasTabu2": "Debe describir la palabra SIN decir ninguna de las palabras prohibidas.",
+  "@reglasTabu2": { "description": "Regla 2 de Tabú." },
+  "reglasTabu3": "Su equipo tiene que adivinarla antes de que acabe el tiempo.",
+  "@reglasTabu3": { "description": "Regla 3 de Tabú." },
+  "reglasTabu4": "Si describe correctamente, el equipo anota un punto; si dice una prohibida, el turno pasa al equipo contrario.",
+  "@reglasTabu4": { "description": "Regla 4 de Tabú." },
+  "reglasTabu5": "El primer equipo en llegar a 3 victorias gana la partida.",
+  "@reglasTabu5": { "description": "Regla 5 de Tabú." },
+  "reglasYoNunca1": "El móvil muestra una frase «Yo nunca…» al azar.",
+  "@reglasYoNunca1": { "description": "Regla 1 de Yo Nunca." },
+  "reglasYoNunca2": "Quien haya hecho eso debe reconocerlo (o beber, ¡como prefiera el grupo!).",
+  "@reglasYoNunca2": { "description": "Regla 2 de Yo Nunca." },
+  "reglasYoNunca3": "Se pasa el móvil al siguiente jugador para sacar la siguiente frase.",
+  "@reglasYoNunca3": { "description": "Regla 3 de Yo Nunca." },
+  "reglasYoNunca4": "Elige el nivel: suave para todas las edades, picante para mayores.",
+  "@reglasYoNunca4": { "description": "Regla 4 de Yo Nunca." },
+  "reglasBomba1": "Se muestra una sílaba o categoría en pantalla.",
+  "@reglasBomba1": { "description": "Regla 1 de La Bomba." },
+  "reglasBomba2": "El jugador actual dice una palabra válida (que contenga la sílaba o pertenezca a la categoría) y pasa el móvil rápido.",
+  "@reglasBomba2": { "description": "Regla 2 de La Bomba." },
+  "reglasBomba3": "Una bomba con temporizador oculto explota al azar en cualquier momento.",
+  "@reglasBomba3": { "description": "Regla 3 de La Bomba." },
+  "reglasBomba4": "El jugador que tenga el móvil cuando explote queda eliminado.",
+  "@reglasBomba4": { "description": "Regla 4 de La Bomba." },
+  "reglasBomba5": "El último jugador en pie gana la partida.",
+  "@reglasBomba5": { "description": "Regla 5 de La Bomba." }
 }

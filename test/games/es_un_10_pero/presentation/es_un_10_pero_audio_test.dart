@@ -39,6 +39,13 @@ void main() {
       await tester.tap(find.widgetWithText(FilledButton, 'Sacar carta'));
       await tester.pump();
 
+      // El SFX suena al REVELAR la carta, que ocurre tras la cuenta atrás de 5s.
+      // Antes de agotarla todavía no ha sonado nada.
+      expect(audio.plays[AppSound.cardFlip], 0);
+      for (var i = 0; i < 5; i++) {
+        await tester.pump(const Duration(seconds: 1));
+      }
+
       expect(audio.plays[AppSound.cardFlip], 1);
     });
 
@@ -49,6 +56,10 @@ void main() {
 
       await tester.tap(find.widgetWithText(FilledButton, 'Sacar carta'));
       await tester.pump();
+      // Aun tras agotar la cuenta atrás y revelar la carta, silenciado no suena.
+      for (var i = 0; i < 5; i++) {
+        await tester.pump(const Duration(seconds: 1));
+      }
 
       expect(audio.totalPlays, 0);
     });

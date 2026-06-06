@@ -3,21 +3,38 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import 'package:sajitarios_gamespot/games/impostor/data/game_history_repository.dart';
 import 'package:sajitarios_gamespot/games/impostor/domain/game_config.dart';
 import 'package:sajitarios_gamespot/games/impostor/domain/game_session.dart';
 import 'package:sajitarios_gamespot/games/impostor/presentation/assign_roles_provider.dart';
+import 'package:sajitarios_gamespot/games/impostor/presentation/game_over_screen.dart';
 import 'package:sajitarios_gamespot/games/impostor/presentation/impostor_flow_controller.dart';
-import 'package:sajitarios_gamespot/games/impostor/presentation/results_screen.dart';
 
 import '../../../support/localized_app.dart';
 import 'support/fake_assign_roles_coordinator.dart';
+import 'support/fake_game_history_repository.dart';
 
-/// Lleva el flujo hasta la fase de resultados con la [session] dada.
-Future<ProviderContainer> _containerEnResultados(GameSession session) async {
+/// Lleva el flujo hasta el DESENLACE (gameOver) a partir de la [session] dada.
+///
+/// Recorre todas las revelaciones (reveal -> voting) y luego vota a los
+/// jugadores en [votar] uno a uno hasta que la partida termina. El historial se
+/// sustituye por un [FakeGameHistoryRepository] para no tocar SQLite.
+///
+/// El desenlace concreto lo determinan los votos: votar a los impostores hasta
+/// pillarlos a todos da [VotingOutcome.jugadoresGanan]; votar a inocentes hasta
+/// agotar las rondas da [VotingOutcome.impostorGana].
+Future<ProviderContainer> _containerEnDesenlace(
+  GameSession session, {
+  required List<String> votar,
+  int? rounds,
+}) async {
   final container = ProviderContainer(
     overrides: [
       assignRolesCoordinatorProvider.overrideWithValue(
         FakeAssignRolesCoordinator(session: session),
+      ),
+      gameHistoryRepositoryProvider.overrideWithValue(
+        FakeGameHistoryRepository(),
       ),
     ],
   );
@@ -25,14 +42,24 @@ Future<ProviderContainer> _containerEnResultados(GameSession session) async {
     players: session.players,
     nImpostores: session.impostorCount.clamp(1, session.players.length - 1),
     hintEnabled: false,
+    rounds: rounds,
   ).config!;
   final notifier = container.read(impostorFlowControllerProvider.notifier);
   await notifier.iniciar(config);
-  // Recorre a todos los jugadores hasta llegar a resultados.
-  var terminado = false;
-  while (!terminado) {
+  // Recorre a todos los jugadores hasta abrir la votación.
+  var enVotacion = false;
+  while (!enVotacion) {
     notifier.revelar();
-    terminado = notifier.avanzar();
+    enVotacion = notifier.avanzar();
+  }
+  // Emite los votos indicados hasta que la partida termina.
+  final porNombre = {for (final p in session.players) p.name: p};
+  for (final nombre in votar) {
+    if (container.read(impostorFlowControllerProvider).phase !=
+        ImpostorPhase.voting) {
+      break;
+    }
+    notifier.votar(porNombre[nombre]!);
   }
   return container;
 }
@@ -40,15 +67,15 @@ Future<ProviderContainer> _containerEnResultados(GameSession session) async {
 Widget _harness(ProviderContainer container) {
   return UncontrolledProviderScope(
     container: container,
-    child: localizedApp(const ResultsScreen()),
+    child: localizedApp(const GameOverScreen()),
   );
 }
 
-/// Harness con router real (rutas `menu` y `impostor-results`) para poder
-/// ejercitar las acciones de navegación (volver al menú / jugar otra).
+/// Harness con router real (rutas `menu` y `impostor-setup`) para ejercitar las
+/// acciones de fin de partida (volver al menú / jugar otra).
 Widget _routerHarness(ProviderContainer container) {
   final router = GoRouter(
-    initialLocation: '/results',
+    initialLocation: '/game-over',
     routes: [
       GoRoute(
         path: '/',
@@ -56,9 +83,9 @@ Widget _routerHarness(ProviderContainer container) {
         builder: (_, _) => const Scaffold(body: Text('MENU')),
       ),
       GoRoute(
-        path: '/results',
-        name: 'impostor-results',
-        builder: (_, _) => const ResultsScreen(),
+        path: '/game-over',
+        name: 'impostor-game-over',
+        builder: (_, _) => const GameOverScreen(),
       ),
       GoRoute(
         path: '/setup',
@@ -74,69 +101,74 @@ Widget _routerHarness(ProviderContainer container) {
 }
 
 void main() {
-  group('ResultsScreen', () {
-    testWidgets('lista a TODOS los jugadores con su rol y muestra la palabra', (
-      tester,
-    ) async {
-      final session = buildSession(
-        nombres: ['Nacho', 'Iker', 'Lucía'],
-        impostores: {'Nacho'},
-        palabra: 'playa',
-        pista: 'verano',
-      );
-      final container = await _containerEnResultados(session);
-      addTearDown(container.dispose);
+  group('GameOverScreen (desenlace sin revelar roles)', () {
+    testWidgets(
+      'cuando los jugadores pillan al impostor muestra "¡Habéis ganado!" y NO '
+      'revela roles ni palabra',
+      (tester) async {
+        final session = buildSession(
+          nombres: ['Nacho', 'Iker', 'Lucía'],
+          impostores: {'Nacho'},
+          palabra: 'playa',
+          pista: 'verano',
+        );
+        // Votar a Nacho (el único impostor) -> los jugadores ganan.
+        final container = await _containerEnDesenlace(
+          session,
+          votar: ['Nacho'],
+        );
+        addTearDown(container.dispose);
 
-      await tester.pumpWidget(_harness(container));
-      await tester.pump();
+        await tester.pumpWidget(_harness(container));
+        await tester.pump();
 
-      // Todos los jugadores aparecen.
-      expect(find.text('Nacho'), findsOneWidget);
-      expect(find.text('Iker'), findsOneWidget);
-      expect(find.text('Lucía'), findsOneWidget);
+        expect(find.text('¡Habéis ganado!'), findsOneWidget);
 
-      // El impostor está etiquetado como tal y los demás como que sabían.
-      expect(find.text('IMPOSTOR'), findsOneWidget);
-      expect(find.text('Sabía la palabra'), findsNWidgets(2));
+        // No se revelan roles ni la palabra: la UI de desenlace nunca los muestra.
+        expect(find.text('IMPOSTOR'), findsNothing);
+        expect(find.text('Sabía la palabra'), findsNothing);
+        expect(find.text('playa'), findsNothing);
 
-      // Se muestra la palabra de la ronda.
-      expect(find.text('playa'), findsOneWidget);
-
-      // Acciones de fin de partida.
-      expect(find.widgetWithText(FilledButton, 'Jugar otra'), findsOneWidget);
-      expect(
-        find.widgetWithText(OutlinedButton, 'Volver al menú'),
-        findsOneWidget,
-      );
-    });
-
-    testWidgets('con varios impostores los etiqueta a todos correctamente', (
-      tester,
-    ) async {
-      final session = buildSession(
-        nombres: ['A', 'B', 'C', 'D'],
-        impostores: {'A', 'C'},
-        palabra: 'pirata',
-      );
-      final container = await _containerEnResultados(session);
-      addTearDown(container.dispose);
-
-      // Superficie alta para que la lista de 4 jugadores quepa sin scroll.
-      tester.view.physicalSize = const Size(1200, 3000);
-      tester.view.devicePixelRatio = 1.0;
-      addTearDown(tester.view.resetPhysicalSize);
-      addTearDown(tester.view.resetDevicePixelRatio);
-
-      await tester.pumpWidget(_harness(container));
-      await tester.pump();
-
-      expect(find.text('IMPOSTOR'), findsNWidgets(2));
-      expect(find.text('Sabía la palabra'), findsNWidgets(2));
-      expect(find.text('Había 2 impostores.'), findsOneWidget);
-    });
+        // Acciones de fin de partida.
+        expect(find.widgetWithText(FilledButton, 'Jugar otra'), findsOneWidget);
+        expect(
+          find.widgetWithText(OutlinedButton, 'Volver al menú'),
+          findsOneWidget,
+        );
+      },
+    );
 
     testWidgets(
-      '"Volver al menú" reinicia el flujo antes de salir (no deja la sesión '
+      'cuando se agotan las rondas con impostor vivo muestra "El impostor sigue '
+      'entre vosotros" sin revelar roles',
+      (tester) async {
+        final session = buildSession(
+          nombres: ['A', 'B', 'C', 'D', 'E', 'F'],
+          impostores: {'A'},
+          palabra: 'pirata',
+        );
+        // 6 jugadores -> max rondas = 3. Votar a inocentes 3 veces agota las
+        // rondas con el impostor (A) aún vivo -> gana el impostor.
+        final container = await _containerEnDesenlace(
+          session,
+          votar: ['B', 'C', 'D'],
+          rounds: 3,
+        );
+        addTearDown(container.dispose);
+
+        await tester.pumpWidget(_harness(container));
+        await tester.pump();
+
+        expect(find.text('El impostor sigue entre vosotros'), findsOneWidget);
+        expect(find.text('¡Habéis ganado!'), findsNothing);
+        // No revela quién era el impostor.
+        expect(find.text('IMPOSTOR'), findsNothing);
+        expect(find.text('pirata'), findsNothing);
+      },
+    );
+
+    testWidgets(
+      '"Volver al menú" reinicia el flujo antes de salir (no deja la partida '
       'terminada viva)',
       (tester) async {
         final session = buildSession(
@@ -144,16 +176,19 @@ void main() {
           impostores: {'Nacho'},
           palabra: 'playa',
         );
-        final container = await _containerEnResultados(session);
+        final container = await _containerEnDesenlace(
+          session,
+          votar: ['Nacho'],
+        );
         addTearDown(container.dispose);
 
-        // Antes de salir, el flujo está en fase results con la sesión cargada.
+        // Antes de salir, el flujo está en fase gameOver con la sesión cargada.
         final estadoFinal = container.read(impostorFlowControllerProvider);
-        expect(estadoFinal.phase, ImpostorPhase.results);
+        expect(estadoFinal.phase, ImpostorPhase.gameOver);
         expect(estadoFinal.session, isNotNull);
 
         await tester.pumpWidget(_routerHarness(container));
-        await tester.pumpAndSettle();
+        await tester.pump();
 
         await tester.tap(find.widgetWithText(OutlinedButton, 'Volver al menú'));
         await tester.pumpAndSettle();

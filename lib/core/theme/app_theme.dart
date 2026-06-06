@@ -58,6 +58,31 @@ class AppTheme {
   /// Color de error neón (rosa/rojo brillante).
   static const Color neonError = Color(0xFFFF3D71);
 
+  // --- Colores de marco para las opciones de respuesta de trivia -------------
+
+  /// Azul neón — marco de la opción A.
+  static const Color neonBlue = Color(0xFF00A8FF);
+
+  /// Verde neón — marco de la opción B.
+  static const Color neonGreen = Color(0xFF00FF7F);
+
+  /// Rojo neón — marco de la opción C.
+  static const Color neonRed = Color(0xFFFF2C55);
+
+  /// Amarillo neón — marco de la opción D.
+  static const Color neonYellow = Color(0xFFFFE600);
+
+  /// Lista ordenada de colores de marco para los cuatro cuadros de respuesta.
+  ///
+  /// Índice 0 → A ([neonBlue]), 1 → B ([neonGreen]),
+  /// 2 → C ([neonRed]), 3 → D ([neonYellow]).
+  static const List<Color> answerFrameColors = [
+    neonBlue,
+    neonGreen,
+    neonRed,
+    neonYellow,
+  ];
+
   // --- Compatibilidad con la API anterior ----------------------------------
 
   /// Color semilla (ahora el cian neón). Conservado por compatibilidad.

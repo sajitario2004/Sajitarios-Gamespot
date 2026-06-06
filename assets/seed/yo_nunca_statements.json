@@ -1,0 +1,770 @@
+[
+  {
+    "frase": "Yo nunca me he quedado dormido en el cine",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he llegado tarde a una boda",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he olvidado el cumpleaños de un familiar cercano",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he comido pizza fría al desayunar",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he perdido mi equipaje en un aeropuerto",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he mentido sobre haber leído un libro",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he reprobado un examen",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he llorado con una película animada",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he saltado a un lago o río desde una altura",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca me he perdido en una ciudad extranjera",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he cantado en la ducha",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he cocinado algo que quedó completamente incomible",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he confundido el nombre de alguien en una conversación",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he hablado solo en voz alta en público sin darme cuenta",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he enviado un mensaje al contacto equivocado",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he fingido no ver a alguien conocido para evitar saludarlo",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he comido un alimento caducado y me he dado cuenta después",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he viajado fuera de mi país",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he montado en un avión",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he participado en una obra de teatro o función escolar",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he ganado un premio en alguna competencia",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca me he caído de una bicicleta en público",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he coleccionado algo de forma obsesiva",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he manejado un auto",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he comido comida de otro país que no me gustara nada",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he tenido una mascota exótica",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he madrugado para ver un amanecer a propósito",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he acampado bajo las estrellas",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he aprendido a tocar un instrumento musical",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he subido a un escenario frente a un público numeroso",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he tenido un trabajo de medio tiempo siendo estudiante",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he sido expulsado de una clase",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he derramado una bebida sobre alguien en un restaurante",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he armado muebles de IKEA sin seguir las instrucciones",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he dado dinero a un músico callejero",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he leído más de dos libros en un mes",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he hecho senderismo en una montaña",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he aprendido palabras de otro idioma solo para viajar",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he dormido más de doce horas seguidas",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he participado en una maratón o carrera popular",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he comprado algo caro por impulso y me he arrepentido",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he intentado aprender a bailar salsa o bachata",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he roto algo valioso de otra persona y no lo he dicho",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he tenido pesadillas recurrentes",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he copiado en un examen",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he visto el mismo episodio de una serie más de tres veces",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he probado cocinar una receta complicada de YouTube",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he tenido un apodo que me avergonzara",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he escrito un diario personal",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he saltado desde un trampolín alto en una alberca",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he hecho un viaje en tren de larga distancia",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca me he inscrito a un gimnasio y dejado de ir al mes",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he adoptado un animal de la calle",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he visto salir el sol después de trasnochar",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he participado en un concurso de talentos",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he visitado una feria o exposición de arte",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he comido insectos como parte de una comida",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he hecho voluntariado en alguna organización",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he pintado o dibujado algo que colgué en una pared",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he estado en un país donde no entendía nada del idioma",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he pedido comida a domicilio más de cinco veces en una semana",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he asistido a un concierto en vivo",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he terminado una serie de televisión en un solo fin de semana",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he dado una propina más grande que la cuenta",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca me he enamorado de un personaje ficticio",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he tenido un choque de carro aunque sea leve",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he dormido en el trabajo o en clases sin que nadie se diera cuenta",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he apostado dinero en algún juego o apuesta",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he practicado un deporte de contacto",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he tenido un blog o canal en redes sociales",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he cantado el karaoke en público",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he montado a caballo",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he hecho surf o algún deporte acuático extremo",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he visto más de tres películas seguidas en el cine el mismo día",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he recibido una multa de tráfico",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he trabajado en servicio al cliente",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he tenido que hablar en público de improviso",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he perdido un teléfono celular",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he pintado las paredes de mi cuarto o casa",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he participado en una feria de ciencias",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he aprendido a preparar un cóctel",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he hecho una dieta estricta por más de un mes",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he vivido solo por más de seis meses",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he visto un juego de fútbol en el estadio",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he llegado a una fiesta sin ser invitado",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca me he teñido el cabello de un color no natural",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he hecho yoga o meditación de forma constante",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he tomado clases de cocina",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he ido a una sala de escape (escape room)",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he comprado un boleto de lotería",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he subido a una montaña rusa que me diera miedo",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he participado en un debate formal",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he lanzado o atrapado un pez mientras pescaba",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he pintado cerámica o hecho alfarería",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he dormido en un albergue (hostal) con desconocidos",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he terminado de leer todos los libros de una saga",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he jugado un videojuego más de ocho horas seguidas",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he aprendido un truco de magia",
+    "intensidad": "suave"
+  },
+  {
+    "frase": "Yo nunca he tenido sexo en un lugar público.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he enviado una foto explícita de mí mismo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido sexo con más de una persona al mismo tiempo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he fingido un orgasmo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido sexo en el baño de un bar o discoteca.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he usado un juguete sexual.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido sexo con alguien cuyo nombre no recordaba al día siguiente.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he visto pornografía en el trabajo o en clase.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido sexo oral en un coche.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he hecho un striptease para alguien.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido sexo con un amigo o una amiga.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he grabado un video sexual.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido sexo sin quitarme completamente la ropa.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he usado comida durante el sexo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido relaciones con alguien significativamente mayor que yo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he practicado el sexting con un desconocido.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido sexo anal.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he espiado a alguien cambiándose sin que lo supiera.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido una relación sexual por dinero u otro beneficio material.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he participado en un juego sexual de rol.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido sexo en casa de mis padres mientras ellos estaban en casa.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he besado a alguien del mismo sexo de forma romántica.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido un encuentro sexual en una primera cita.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he visto a otra pareja teniendo sexo en vivo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he usado esposas u otras restricciones durante el sexo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido sexo en la playa.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he mandado un mensaje sexual a la persona equivocada.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he masturbado pensando en alguien de este grupo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido relaciones con un ex de un amigo o una amiga.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he pagado por ver contenido para adultos en internet.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido un encuentro sexual con alguien que acababa de conocer esa noche.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he usado aceite o lubricante durante el sexo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido sexo mientras alguien más dormía en la misma habitación.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido fantasías sexuales con un profesor o jefe.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he hecho una videollamada sexual.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido sexo en un ascensor.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he dejado marcas visibles en el cuerpo de mi pareja.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido un amigo con beneficios durante más de seis meses.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido relaciones sexuales con alguien en un viaje y no he vuelto a verlo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he respondido una llamada durante el sexo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he excitado en un lugar completamente inapropiado.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he probado el sexo tántrico o alguna práctica sexual espiritual.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido sexo en el trabajo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he hecho una apuesta cuyo premio era sexual.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido una relación sexual con alguien de este grupo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he flirteado para conseguir algo gratis.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he quedado desnudo en público de forma voluntaria.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido sexo sin protección con alguien que no era mi pareja estable.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he ido a un club de intercambio de parejas.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he practicado exhibicionismo de forma intencionada.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido un orgasmo completamente vestido.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido sexo en una piscina o jacuzzi.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he leído o escrito fanfiction de contenido sexual.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido relaciones con alguien en pareja sin que su pareja lo supiera.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he usado lencería o ropa interior especial para seducir a alguien.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he practicado bondage.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he masturbado en un lugar que no fuera mi casa.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido sexo sin haber dormido nada la noche anterior.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido relaciones con alguien mucho más joven que yo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he escuchado a mis padres tener relaciones sexuales.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he besado a más de tres personas diferentes en la misma noche.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he desnudado a alguien con los dientes.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido una fantasía sexual que me diera vergüenza confesar.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido relaciones con alguien que estaba en una relación abierta.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he hecho un baile erótico para una pareja.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he experimentado con dominación o sumisión.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido sexo mientras estaba completamente ebrio.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he recibido un masaje que terminó siendo algo más.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido relaciones sexuales durante un viaje de negocios.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he enviado o recibido ropa interior por correo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido relaciones sexuales en un festival de música.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he hecho un juego de verdad o atrevimiento que terminó en algo sexual.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido una noche de sexo que duró más de cuatro horas.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he despertado al lado de alguien y no he querido que me viera.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he probado algún tipo de juego de dolor placentero.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido relaciones con alguien que conocí en una aplicación de citas.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido sexo en un probador de ropa.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he fingido tener pareja para deshacerme de alguien que me perseguía.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido un encuentro sexual del que me arrepentí al instante.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he compartido detalles íntimos de mi pareja con alguien más.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido fantasías sexuales mientras estaba en una reunión familiar.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he practicado sexo en un espacio natural al aire libre.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido una relación puramente sexual sin ningún componente emocional.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido relaciones con alguien cuyo nombre tenía el mismo que un familiar mío.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he usado una aplicación solo para buscar sexo sin citas.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido una segunda ronda de sexo antes de levantarme de la cama.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he leído los mensajes privados de mi pareja buscando algo sexual.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido relaciones en un hotel de paso.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he practicado sexo con música de fondo elegida específicamente para eso.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido una relación sexual con alguien que conocí en internet sin haberlo visto en persona antes.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he confundido atracción física con amor.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido relaciones sexuales mientras hablaba por teléfono con alguien ajeno.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he mandado una foto subida de tono sin que me la pidieran.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido una experiencia sexual que no le he contado a nadie hasta hoy.",
+    "intensidad": "picante"
+  }
+]

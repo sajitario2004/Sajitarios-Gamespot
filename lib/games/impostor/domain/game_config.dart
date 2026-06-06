@@ -14,6 +14,8 @@
 /// para que la capa de presentación pueda mostrar el motivo del fallo.
 library;
 
+import 'dart:math' as math;
+
 import 'package:sajitarios_gamespot/games/impostor/domain/player.dart';
 
 /// Número mínimo de jugadores de una partida.
@@ -27,6 +29,9 @@ const int kMinImpostores = 1;
 
 /// Número máximo de impostores seleccionable.
 const int kMaxImpostores = 5;
+
+/// Número mínimo de rondas (oportunidades de voto) de la votación.
+const int kMinRounds = 1;
 
 /// Motivo por el que una [GameConfig] no se pudo construir.
 enum GameConfigError {
@@ -76,6 +81,7 @@ class GameConfig {
     required this.players,
     required this.nImpostores,
     required this.hintEnabled,
+    required this.rounds,
   });
 
   /// Jugadores en orden de introducción (= orden de revelación).
@@ -86,6 +92,16 @@ class GameConfig {
 
   /// Si está activada la opción de pista para los impostores.
   final bool hintEnabled;
+
+  /// Número de rondas (oportunidades de voto) de la votación, ya normalizado al
+  /// rango `[kMinRounds, maxRoundsFor(players.length)]`.
+  final int rounds;
+
+  /// Tope efectivo de rondas (oportunidades de voto) para [playerCount]:
+  /// `max(1, playerCount - 3)`. Garantiza que nunca se pueda expulsar a todos
+  /// los jugadores (siempre quedan al menos 3 sin votar), de modo que con
+  /// "todos impostores" la votación no pueda ganarse.
+  static int maxRoundsFor(int playerCount) => math.max(1, playerCount - 3);
 
   /// Tope efectivo de impostores para [players]: `min(kMaxImpostores,
   /// players.length - 1)`. Garantiza que en modo normal siempre quede al menos
@@ -107,10 +123,14 @@ class GameConfig {
   /// `[kMinImpostores, maxImpostoresFor(players.length)]`. Es decir, valores
   /// fuera de 1..5 o por encima de `players - 1` se ajustan en silencio en vez
   /// de fallar (la regla solo capa, no rechaza la partida).
+  /// Normalización de [rounds]: se recorta (clamp) al rango `[kMinRounds,
+  /// maxRoundsFor(players.length)]`. Si es `null`, por defecto se usa
+  /// `maxRoundsFor(players.length)` (todas las oportunidades posibles).
   static GameConfigResult create({
     required List<Player> players,
     required int nImpostores,
     bool hintEnabled = false,
+    int? rounds,
   }) {
     if (players.length < kMinPlayers) {
       return const GameConfigResult.failure(GameConfigError.pocosJugadores);
@@ -135,12 +155,16 @@ class GameConfig {
     final cap = maxImpostoresFor(players.length);
     final normalized = nImpostores.clamp(kMinImpostores, cap);
 
+    final roundsCap = maxRoundsFor(players.length);
+    final normalizedRounds = (rounds ?? roundsCap).clamp(kMinRounds, roundsCap);
+
     return GameConfigResult.success(
       GameConfig._(
         // Copia inmodificable: la lista no puede mutarse desde fuera.
         players: List<Player>.unmodifiable(players),
         nImpostores: normalized,
         hintEnabled: hintEnabled,
+        rounds: normalizedRounds,
       ),
     );
   }
@@ -151,6 +175,7 @@ class GameConfig {
     if (other is! GameConfig) return false;
     if (other.nImpostores != nImpostores) return false;
     if (other.hintEnabled != hintEnabled) return false;
+    if (other.rounds != rounds) return false;
     if (other.players.length != players.length) return false;
     for (var i = 0; i < players.length; i++) {
       if (other.players[i] != players[i]) return false;
@@ -160,10 +185,10 @@ class GameConfig {
 
   @override
   int get hashCode =>
-      Object.hash(Object.hashAll(players), nImpostores, hintEnabled);
+      Object.hash(Object.hashAll(players), nImpostores, hintEnabled, rounds);
 
   @override
   String toString() =>
       'GameConfig(players: $players, nImpostores: $nImpostores, '
-      'hintEnabled: $hintEnabled)';
+      'hintEnabled: $hintEnabled, rounds: $rounds)';
 }

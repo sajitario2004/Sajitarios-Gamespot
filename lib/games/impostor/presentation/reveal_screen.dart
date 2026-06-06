@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:sajitarios_gamespot/core/audio/audio_service.dart';
 import 'package:sajitarios_gamespot/core/theme/app_theme.dart';
 import 'package:sajitarios_gamespot/core/widgets/neon.dart';
+import 'package:sajitarios_gamespot/games/_shared/presentation/volver_al_menu_button.dart';
 import 'package:sajitarios_gamespot/games/impostor/domain/role.dart';
 import 'package:sajitarios_gamespot/games/impostor/presentation/abandon_game_dialog.dart';
 import 'package:sajitarios_gamespot/games/impostor/presentation/impostor_flow_controller.dart';
@@ -21,7 +22,7 @@ import 'package:sajitarios_gamespot/l10n/app_localizations.dart';
 ///
 /// El botón "Ocultar y pasar" llama a
 /// `impostorFlowControllerProvider.notifier.avanzar()`: si era el último jugador
-/// navega a `impostor-results`; si quedan jugadores vuelve a `impostor-pass`.
+/// navega a `impostor-voting`; si quedan jugadores vuelve a `impostor-pass`.
 class RevealScreen extends ConsumerStatefulWidget {
   const RevealScreen({super.key});
 
@@ -50,7 +51,7 @@ class _RevealScreenState extends ConsumerState<RevealScreen> {
     final terminado = controller.avanzar();
     if (!mounted) return;
     if (terminado) {
-      context.goNamed(kImpostorResultsRouteName);
+      context.goNamed(kImpostorVotingRouteName);
     } else {
       context.goNamed(kImpostorPassRouteName);
     }
@@ -87,6 +88,15 @@ class _RevealScreenState extends ConsumerState<RevealScreen> {
     if (session == null || jugador == null) {
       return Scaffold(
         appBar: AppBar(
+          leading: VolverAlMenuButton(
+            onPressed: () async {
+              final salir = await abandonarPartidaDialog(context);
+              if (salir != true || !context.mounted) return;
+              ref.read(impostorFlowControllerProvider.notifier).reiniciar();
+              if (!context.mounted) return;
+              context.go('/');
+            },
+          ),
           title: NeonText(
             l10n.impostorTitulo,
             style:
@@ -134,6 +144,15 @@ class _RevealScreenState extends ConsumerState<RevealScreen> {
       },
       child: Scaffold(
         appBar: AppBar(
+          leading: VolverAlMenuButton(
+            onPressed: () async {
+              final salir = await abandonarPartidaDialog(context);
+              if (salir != true || !context.mounted) return;
+              ref.read(impostorFlowControllerProvider.notifier).reiniciar();
+              if (!context.mounted) return;
+              context.go('/');
+            },
+          ),
           title: NeonText(
             l10n.impostorTitulo,
             style:
@@ -174,6 +193,8 @@ class _RevealScreenState extends ConsumerState<RevealScreen> {
                                   jugador.name,
                                   textAlign: TextAlign.center,
                                   glowColor: AppTheme.neonCyan,
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
                                   style: theme.textTheme.headlineMedium
                                       ?.copyWith(
                                         color: AppTheme.textPrimary,
@@ -376,7 +397,9 @@ class _RevelacionRol extends StatelessWidget {
                   textAlign: TextAlign.center,
                   glowColor: AppTheme.neonMagenta,
                   intensity: intensity * 1.5,
-                  style: theme.textTheme.displayLarge?.copyWith(
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: theme.textTheme.headlineMedium?.copyWith(
                     color: AppTheme.textPrimary,
                     fontWeight: FontWeight.w900,
                     letterSpacing: 3.0,
@@ -395,6 +418,8 @@ class _RevelacionRol extends StatelessWidget {
                     pista,
                     textAlign: TextAlign.center,
                     glowColor: AppTheme.neonViolet,
+                    maxLines: 3,
+                    overflow: TextOverflow.ellipsis,
                     style: theme.textTheme.headlineSmall?.copyWith(
                       color: AppTheme.textPrimary,
                     ),

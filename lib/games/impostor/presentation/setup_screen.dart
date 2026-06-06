@@ -8,6 +8,8 @@ import 'package:sajitarios_gamespot/games/impostor/domain/game_config.dart';
 import 'package:sajitarios_gamespot/games/impostor/domain/player.dart';
 import 'package:sajitarios_gamespot/games/impostor/presentation/impostor_flow_controller.dart';
 import 'package:sajitarios_gamespot/games/impostor/presentation/impostor_routes.dart';
+import 'package:sajitarios_gamespot/games/_shared/presentation/rules_screen.dart';
+import 'package:sajitarios_gamespot/games/_shared/presentation/volver_al_menu_button.dart';
 import 'package:sajitarios_gamespot/l10n/app_localizations.dart';
 
 /// Configuración previa a la partida del Impostor.
@@ -36,6 +38,10 @@ class _SetupScreenState extends ConsumerState<SetupScreen> {
   /// Nº de impostores seleccionado por el usuario (antes de capar).
   int _nImpostores = kMinImpostores;
 
+  /// Nº de rondas (oportunidades de voto) seleccionado por el usuario (antes de
+  /// capar). Arranca en el máximo posible para el mínimo de jugadores.
+  int _rounds = kMinRounds;
+
   /// Estado del switch de pista.
   bool _hintEnabled = false;
 
@@ -49,6 +55,8 @@ class _SetupScreenState extends ConsumerState<SetupScreen> {
     for (var i = 0; i < kMinPlayers; i++) {
       _controllers.add(TextEditingController());
     }
+    // Por defecto, todas las oportunidades de voto posibles.
+    _rounds = _maxRounds;
   }
 
   @override
@@ -62,10 +70,15 @@ class _SetupScreenState extends ConsumerState<SetupScreen> {
   /// Tope efectivo de impostores para la cantidad actual de jugadores.
   int get _maxImpostores => GameConfig.maxImpostoresFor(_controllers.length);
 
+  /// Tope efectivo de rondas (oportunidades de voto) para la cantidad actual de
+  /// jugadores.
+  int get _maxRounds => GameConfig.maxRoundsFor(_controllers.length);
+
   void _addPlayer() {
     if (_controllers.length >= kMaxPlayers) return;
     setState(() {
       _controllers.add(TextEditingController());
+      _clampRounds();
     });
   }
 
@@ -74,6 +87,7 @@ class _SetupScreenState extends ConsumerState<SetupScreen> {
     setState(() {
       _controllers.removeAt(index).dispose();
       _clampImpostores();
+      _clampRounds();
     });
   }
 
@@ -81,6 +95,12 @@ class _SetupScreenState extends ConsumerState<SetupScreen> {
   /// jugadores.
   void _clampImpostores() {
     _nImpostores = _nImpostores.clamp(kMinImpostores, _maxImpostores);
+  }
+
+  /// Reajusta el nº de rondas al rango válido cuando cambia la cantidad de
+  /// jugadores.
+  void _clampRounds() {
+    _rounds = _rounds.clamp(kMinRounds, _maxRounds);
   }
 
   /// Traduce un [GameConfigError] a un mensaje localizado para el usuario.
@@ -121,6 +141,7 @@ class _SetupScreenState extends ConsumerState<SetupScreen> {
       players: players,
       nImpostores: _nImpostores,
       hintEnabled: _hintEnabled,
+      rounds: _rounds,
     );
 
     if (!result.isSuccess) {
@@ -192,12 +213,32 @@ class _SetupScreenState extends ConsumerState<SetupScreen> {
 
     return Scaffold(
       appBar: AppBar(
+        leading: VolverAlMenuButton(onPressed: () => context.go('/')),
         title: NeonText(
           l10n.impostorTitulo,
           style: theme.appBarTheme.titleTextStyle ?? theme.textTheme.titleLarge,
           glowColor: AppTheme.neonCyan,
         ),
         actions: [
+          IconButton(
+            tooltip: l10n.comoSeJuega,
+            icon: const Icon(Icons.help_outline),
+            onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute<void>(
+                builder: (_) => RulesScreen(
+                  gameTitle: l10n.impostorTitulo,
+                  steps: [
+                    l10n.reglasImpostor1,
+                    l10n.reglasImpostor2,
+                    l10n.reglasImpostor3,
+                    l10n.reglasImpostor4,
+                    l10n.reglasImpostor5,
+                    l10n.reglasImpostor6,
+                  ],
+                ),
+              ),
+            ),
+          ),
           IconButton(
             tooltip: l10n.historial,
             icon: const Icon(Icons.history),
@@ -254,6 +295,14 @@ class _SetupScreenState extends ConsumerState<SetupScreen> {
                   ),
                   const SizedBox(height: 8),
                   _buildImpostoresStepper(theme, l10n),
+                  const SizedBox(height: 24),
+                  NeonText(
+                    l10n.setupRondas,
+                    style: theme.textTheme.titleLarge,
+                    glowColor: AppTheme.neonCyan,
+                  ),
+                  const SizedBox(height: 8),
+                  _buildRoundsStepper(theme, l10n),
                   const SizedBox(height: 24),
                   NeonText(
                     l10n.setupPista,
@@ -386,6 +435,51 @@ class _SetupScreenState extends ConsumerState<SetupScreen> {
           IconButton.filledTonal(
             tooltip: l10n.masImpostores,
             onPressed: puedeSubir ? () => setState(() => _nImpostores++) : null,
+            icon: const Icon(Icons.add),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildRoundsStepper(ThemeData theme, AppLocalizations l10n) {
+    final max = _maxRounds;
+    final puedeBajar = _rounds > kMinRounds;
+    final puedeSubir = _rounds < max;
+
+    return NeonPanel(
+      borderColor: AppTheme.neonCyan,
+      intensity: 0.6,
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+      child: Row(
+        children: [
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                NeonText(
+                  l10n.rondasContador(_rounds),
+                  style: theme.textTheme.titleMedium,
+                  glowColor: AppTheme.neonCyan,
+                ),
+                Text(
+                  l10n.setupRondasAyuda(kMinRounds, max),
+                  style: theme.textTheme.bodySmall?.copyWith(
+                    color: theme.colorScheme.onSurfaceVariant,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          IconButton.filledTonal(
+            tooltip: l10n.menosRondas,
+            onPressed: puedeBajar ? () => setState(() => _rounds--) : null,
+            icon: const Icon(Icons.remove),
+          ),
+          const SizedBox(width: 8),
+          IconButton.filledTonal(
+            tooltip: l10n.masRondas,
+            onPressed: puedeSubir ? () => setState(() => _rounds++) : null,
             icon: const Icon(Icons.add),
           ),
         ],

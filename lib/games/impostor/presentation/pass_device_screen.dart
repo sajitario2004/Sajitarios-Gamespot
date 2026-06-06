@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import 'package:sajitarios_gamespot/core/theme/app_theme.dart';
 import 'package:sajitarios_gamespot/core/widgets/neon.dart';
+import 'package:sajitarios_gamespot/games/_shared/presentation/volver_al_menu_button.dart';
 import 'package:sajitarios_gamespot/games/impostor/presentation/abandon_game_dialog.dart';
 import 'package:sajitarios_gamespot/games/impostor/presentation/impostor_flow_controller.dart';
 import 'package:sajitarios_gamespot/games/impostor/presentation/impostor_routes.dart';
@@ -63,6 +64,15 @@ class PassDeviceScreen extends ConsumerWidget {
       },
       child: Scaffold(
         appBar: AppBar(
+          leading: VolverAlMenuButton(
+            onPressed: () async {
+              final salir = await abandonarPartidaDialog(context);
+              if (salir != true || !context.mounted) return;
+              ref.read(impostorFlowControllerProvider.notifier).reiniciar();
+              if (!context.mounted) return;
+              context.go('/');
+            },
+          ),
           title: NeonText(
             l10n.impostorTitulo,
             style:

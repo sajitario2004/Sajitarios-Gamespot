@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -10,6 +12,8 @@ import 'package:sajitarios_gamespot/games/es_un_10_pero/domain/card.dart'
     as domain;
 import 'package:sajitarios_gamespot/games/es_un_10_pero/presentation/card_flip_game.dart';
 import 'package:sajitarios_gamespot/games/es_un_10_pero/presentation/es_un_10_pero_providers.dart';
+import 'package:sajitarios_gamespot/games/_shared/presentation/rules_screen.dart';
+import 'package:sajitarios_gamespot/games/_shared/presentation/volver_al_menu_button.dart';
 import 'package:sajitarios_gamespot/l10n/app_localizations.dart';
 
 /// Pantalla del juego "Es un 10 pero".
@@ -31,6 +35,19 @@ class _EsUn10PeroScreenState extends ConsumerState<EsUn10PeroScreen> {
   CardFlipGame? _game;
   domain.Card? _card;
 
+  /// Duración total de la cuenta atrás (en segundos) antes de revelar la carta.
+  static const int _countdownStart = 5;
+
+  /// Timer de la cuenta atrás. `null` cuando no hay cuenta en curso.
+  Timer? _countdownTimer;
+
+  /// Segundos restantes de la cuenta atrás (5..1). `null` = sin cuenta activa.
+  int? _countdown;
+
+  /// `true` mientras la cuenta atrás está en curso: el botón queda
+  /// deshabilitado hasta que termina y se revela la carta.
+  bool get _countingDown => _countdown != null;
+
   @override
   void initState() {
     super.initState();
@@ -42,7 +59,37 @@ class _EsUn10PeroScreenState extends ConsumerState<EsUn10PeroScreen> {
     });
   }
 
-  void _drawCard() {
+  @override
+  void dispose() {
+    _countdownTimer?.cancel();
+    super.dispose();
+  }
+
+  /// Inicia la cuenta atrás de [_countdownStart] segundos. El botón queda
+  /// deshabilitado durante la cuenta; al llegar a 0 se revela la carta.
+  void _startCountdown() {
+    if (_countingDown) return;
+    setState(() => _countdown = _countdownStart);
+    _countdownTimer?.cancel();
+    _countdownTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      if (!mounted) {
+        timer.cancel();
+        return;
+      }
+      final next = (_countdown ?? 0) - 1;
+      if (next <= 0) {
+        timer.cancel();
+        setState(() => _countdown = null);
+        _revealCard();
+      } else {
+        setState(() => _countdown = next);
+      }
+    });
+  }
+
+  /// Ejecuta el caso de uso de robo, anima el volteo y reproduce el SFX. Se
+  /// invoca al terminar la cuenta atrás (segundo 0).
+  void _revealCard() {
     final drawCard = ref.read(drawCardUseCaseProvider);
     final card = drawCard();
     setState(() => _card = card);
@@ -91,8 +138,30 @@ class _EsUn10PeroScreenState extends ConsumerState<EsUn10PeroScreen> {
 
     return Scaffold(
       appBar: AppBar(
+        leading: VolverAlMenuButton(
+          onPressed: () => Navigator.of(context).pop(),
+        ),
         title: Text(l10n.esUn10PeroTitulo),
-        actions: const [MuteButton()],
+        actions: [
+          IconButton(
+            tooltip: l10n.comoSeJuega,
+            icon: const Icon(Icons.help_outline),
+            onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute<void>(
+                builder: (_) => RulesScreen(
+                  gameTitle: l10n.esUn10PeroTitulo,
+                  steps: [
+                    l10n.reglasEsUn10Pero1,
+                    l10n.reglasEsUn10Pero2,
+                    l10n.reglasEsUn10Pero3,
+                    l10n.reglasEsUn10Pero4,
+                  ],
+                ),
+              ),
+            ),
+          ),
+          const MuteButton(),
+        ],
       ),
       body: NeonBackground(
         child: SafeArea(
@@ -111,7 +180,9 @@ class _EsUn10PeroScreenState extends ConsumerState<EsUn10PeroScreen> {
                           child: Semantics(
                             container: true,
                             liveRegion: true,
-                            label: _semanticLabel(context, _card),
+                            label: _countingDown
+                                ? l10n.sacandoCartaEn
+                                : _semanticLabel(context, _card),
                             child: Stack(
                               children: [
                                 Positioned.fill(
@@ -121,9 +192,15 @@ class _EsUn10PeroScreenState extends ConsumerState<EsUn10PeroScreen> {
                                     ),
                                   ),
                                 ),
-                                if (_card == null)
+                                if (_card == null && !_countingDown)
                                   const Positioned.fill(
                                     child: _EmptyCardHint(),
+                                  ),
+                                if (_countingDown)
+                                  Positioned.fill(
+                                    child: _CountdownOverlay(
+                                      seconds: _countdown!,
+                                    ),
                                   ),
                               ],
                             ),
@@ -139,7 +216,7 @@ class _EsUn10PeroScreenState extends ConsumerState<EsUn10PeroScreen> {
                           Radius.circular(12),
                         ),
                         child: FilledButton.icon(
-                          onPressed: _drawCard,
+                          onPressed: _countingDown ? null : _startCountdown,
                           icon: const Icon(Icons.casino),
                           label: Text(
                             _card == null
@@ -178,12 +255,68 @@ class _EmptyCardHint extends StatelessWidget {
               AppLocalizations.of(context)!.pistaCartaVacia,
               textAlign: TextAlign.center,
               glowColor: theme.colorScheme.primary,
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
               style: theme.textTheme.titleMedium?.copyWith(
                 color: AppTheme.textPrimary,
                 fontWeight: FontWeight.w700,
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+/// Superposición de cuenta atrás sobre el área de la carta. Atenúa la carta y
+/// muestra, en grande y con estilo neón, los segundos restantes (5..1) junto a
+/// la etiqueta "Sacando carta en...".
+class _CountdownOverlay extends StatelessWidget {
+  const _CountdownOverlay({required this.seconds});
+
+  /// Segundos restantes que se muestran en grande (5..1).
+  final int seconds;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final glow = theme.colorScheme.primary;
+    return IgnorePointer(
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color: AppTheme.background.withValues(alpha: 0.72),
+          borderRadius: const BorderRadius.all(Radius.circular(24)),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              NeonText(
+                AppLocalizations.of(context)!.sacandoCartaEn,
+                textAlign: TextAlign.center,
+                glowColor: glow,
+                style: theme.textTheme.titleMedium?.copyWith(
+                  color: AppTheme.textPrimary,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              const SizedBox(height: 16),
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                child: NeonText(
+                  '$seconds',
+                  textAlign: TextAlign.center,
+                  glowColor: glow,
+                  style: theme.textTheme.displayLarge?.copyWith(
+                    color: AppTheme.textPrimary,
+                    fontWeight: FontWeight.w900,
+                    fontSize: 96,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

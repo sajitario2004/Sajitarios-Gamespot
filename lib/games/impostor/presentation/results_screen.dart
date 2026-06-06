@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:sajitarios_gamespot/core/audio/audio_service.dart';
 import 'package:sajitarios_gamespot/core/theme/app_theme.dart';
 import 'package:sajitarios_gamespot/core/widgets/neon.dart';
+import 'package:sajitarios_gamespot/games/_shared/presentation/volver_al_menu_button.dart';
 import 'package:sajitarios_gamespot/games/impostor/data/game_history_repository.dart';
 import 'package:sajitarios_gamespot/games/impostor/domain/game_session.dart';
 import 'package:sajitarios_gamespot/games/impostor/domain/player.dart';
@@ -78,6 +79,12 @@ class _ResultsScreenState extends ConsumerState<ResultsScreen> {
     final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
+        leading: VolverAlMenuButton(
+          onPressed: () {
+            ref.read(impostorFlowControllerProvider.notifier).reiniciar();
+            context.goNamed('menu');
+          },
+        ),
         title: NeonText(
           AppLocalizations.of(context)!.resultadoDeLaPartida,
           style: theme.appBarTheme.titleTextStyle ?? theme.textTheme.titleLarge,
@@ -340,6 +347,8 @@ class _JugadorTile extends StatelessWidget {
               ),
               title: Text(
                 jugador.name,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
                 style: theme.textTheme.titleMedium?.copyWith(
                   color: AppTheme.textPrimary,
                   fontWeight: esImpostor ? FontWeight.w800 : FontWeight.w600,
@@ -347,6 +356,8 @@ class _JugadorTile extends StatelessWidget {
               ),
               trailing: Text(
                 etiqueta,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
                 style: theme.textTheme.labelLarge?.copyWith(
                   color: accent,
                   fontWeight: esImpostor ? FontWeight.w900 : FontWeight.w600,

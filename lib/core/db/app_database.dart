@@ -12,7 +12,7 @@ import 'package:sajitarios_gamespot/games/_shared/game_registry.dart';
 /// Subir este número cuando algún juego cambie su esquema. Las migraciones
 /// concretas viven en cada juego (`GameDescriptor.onUpgradeTables`), no aquí:
 /// `AppDatabase` solo orquesta el rango de versiones y delega.
-const int kAppDatabaseVersion = 3;
+const int kAppDatabaseVersion = 8;
 
 /// Nombre del fichero físico de la base de datos en el dispositivo.
 const String kAppDatabaseFileName = 'sajitarios_gamespot.db';

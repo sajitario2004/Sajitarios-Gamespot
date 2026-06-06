@@ -41,7 +41,8 @@ Widget _harness(ProviderContainer container) {
 }
 
 /// Harness con router real para ejercitar el botón "atrás" del sistema
-/// (interceptado con `PopScope`) durante la revelación.
+/// (interceptado con `PopScope`) durante la revelación y la navegación hacia la
+/// votación al ocultar el rol del último jugador.
 Widget _routerHarness(ProviderContainer container) {
   final router = GoRouter(
     initialLocation: '/reveal',
@@ -56,12 +57,50 @@ Widget _routerHarness(ProviderContainer container) {
         name: 'impostor-reveal',
         builder: (_, _) => const RevealScreen(),
       ),
+      GoRoute(
+        path: '/pass',
+        name: 'impostor-pass',
+        builder: (_, _) => const Scaffold(body: Text('PASS')),
+      ),
+      GoRoute(
+        path: '/voting',
+        name: 'impostor-voting',
+        builder: (_, _) => const Scaffold(body: Text('VOTING')),
+      ),
     ],
   );
   return UncontrolledProviderScope(
     container: container,
     child: localizedRouterApp(router),
   );
+}
+
+/// Lleva el flujo a la fase reveal del ÚLTIMO jugador (para el caso de fin de
+/// revelación), partiendo de [session].
+Future<ProviderContainer> _containerEnRevealUltimoJugador(
+  GameSession session,
+) async {
+  final container = ProviderContainer(
+    overrides: [
+      assignRolesCoordinatorProvider.overrideWithValue(
+        FakeAssignRolesCoordinator(session: session),
+      ),
+    ],
+  );
+  final config = GameConfig.create(
+    players: session.players,
+    nImpostores: 1,
+  ).config!;
+  final notifier = container.read(impostorFlowControllerProvider.notifier);
+  await notifier.iniciar(config);
+  // Avanza por todos los jugadores menos el último, dejando el flujo en reveal
+  // del último jugador.
+  for (var i = 0; i < session.players.length - 1; i++) {
+    notifier.revelar();
+    notifier.avanzar();
+  }
+  notifier.revelar();
+  return container;
 }
 
 void main() {
@@ -240,6 +279,45 @@ void main() {
         final estado = container.read(impostorFlowControllerProvider);
         expect(estado.phase, ImpostorPhase.setup);
         expect(estado.session, isNull);
+      },
+    );
+
+    testWidgets(
+      'tras revelar el ÚLTIMO jugador, "Ocultar y ver resultados" pasa a la '
+      'VOTACIÓN (no a results)',
+      (tester) async {
+        final session = buildSession(
+          nombres: ['Iker', 'Nacho', 'Lucía'],
+          impostores: {'Nacho'},
+          palabra: 'pirata',
+        );
+        final container = await _containerEnRevealUltimoJugador(session);
+        addTearDown(container.dispose);
+
+        await tester.pumpWidget(_routerHarness(container));
+        await tester.pump();
+
+        // El estado local de la pantalla arranca oculto: hay que pulsar
+        // "Revelar" para mostrar el rol antes de poder ocultar y avanzar. La
+        // revelación usa PulseGlow (animación infinita): no se puede usar
+        // pumpAndSettle, se bombea con duración fija.
+        await tester.tap(find.widgetWithText(FilledButton, 'Revelar'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 350));
+
+        // En el último jugador el botón de ocultar lleva el texto de fin de
+        // revelación; lo localizamos por su icono de ocultar.
+        final ocultar = find.widgetWithIcon(FilledButton, Icons.visibility_off);
+        expect(ocultar, findsOneWidget);
+        await tester.tap(ocultar);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 350));
+
+        // El flujo abrió la VOTACIÓN (ronda 1) y la navegación llevó a VOTING.
+        final estado = container.read(impostorFlowControllerProvider);
+        expect(estado.phase, ImpostorPhase.voting);
+        expect(estado.rondaActual, 1);
+        expect(find.text('VOTING'), findsOneWidget);
       },
     );
   });

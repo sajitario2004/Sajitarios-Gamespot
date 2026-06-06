@@ -93,7 +93,9 @@ class _GameGrid extends StatelessWidget {
         final textScale = MediaQuery.textScalerOf(
           context,
         ).scale(1).clamp(1.0, 2.0);
-        final childAspectRatio = (0.9 / textScale).clamp(0.55, 0.9);
+        // Con texto grande damos celdas más altas (suelo más bajo) para que el
+        // contenido de la tarjeta nunca desborde a textScaler 2.0.
+        final childAspectRatio = (0.9 / textScale).clamp(0.46, 0.9);
         return Center(
           child: ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 900),
@@ -137,6 +139,12 @@ class _GameCard extends StatelessWidget {
     // sigue sin conocer juegos concretos).
     final title = game.localizedTitle(context);
     final description = game.localizedDescription(context);
+
+    // El icono se encoge con el tamaño de texto del sistema para que la tarjeta
+    // (en celda de aspecto fijo) no desborde a textScaler alto.
+    final textScale = MediaQuery.textScalerOf(context).scale(1).clamp(1.0, 2.0);
+    final iconSize = (56.0 / textScale).clamp(34.0, 56.0);
+    final gap = (16.0 / textScale).clamp(8.0, 16.0);
 
     return Semantics(
       button: true,
@@ -188,12 +196,12 @@ class _GameCard extends StatelessWidget {
                       ),
                       child: Icon(
                         game.icon,
-                        size: 56,
+                        size: iconSize,
                         color: accent,
                         shadows: neonTextShadows(color: accent, intensity: 0.8),
                       ),
                     ),
-                    const SizedBox(height: 16),
+                    SizedBox(height: gap),
                     Flexible(
                       // Título del juego con glow del color de acento. Sigue
                       // siendo un Text por dentro (find.text funciona).

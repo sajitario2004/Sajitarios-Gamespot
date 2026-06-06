@@ -55,6 +55,13 @@ void main() {
         await tester.tap(find.widgetWithText(FilledButton, 'Sacar carta'));
         await tester.pump();
 
+        // Al pulsar arranca la cuenta atrás de 5s: la carta todavía no se ha
+        // revelado, así que hay que dejar pasar la cuenta antes de comprobar el
+        // cambio de estado. Se avanza el tiempo en segundos (Timer.periodic).
+        for (var i = 0; i < 5; i++) {
+          await tester.pump(const Duration(seconds: 1));
+        }
+
         // El estado cambió: el botón ahora invita a sacar OTRA carta y la pista de
         // carta vacía ha desaparecido.
         expect(
@@ -65,6 +72,63 @@ void main() {
         expect(
           find.text('Pulsa "Sacar carta"\npara revelar una carta'),
           findsNothing,
+        );
+      },
+    );
+
+    testWidgets(
+      'la cuenta atrás de 5s deshabilita el botón y oculta la carta; al '
+      'terminar la revela y rehabilita el botón',
+      (tester) async {
+        await tester.pumpWidget(_harness());
+        await tester.pump();
+
+        // Estado inicial: botón habilitado, sin overlay de cuenta atrás.
+        final botonInicial = tester.widget<FilledButton>(
+          find.byType(FilledButton),
+        );
+        expect(botonInicial.onPressed, isNotNull);
+        expect(find.text('Sacando carta en...'), findsNothing);
+
+        // Pulsar arranca la cuenta atrás: el botón queda DESHABILITADO y la
+        // carta aún NO está revelada (sigue mostrando "Sacar carta", no "otra").
+        await tester.tap(find.widgetWithText(FilledButton, 'Sacar carta'));
+        await tester.pump();
+
+        final botonDurante = tester.widget<FilledButton>(
+          find.byType(FilledButton),
+        );
+        expect(
+          botonDurante.onPressed,
+          isNull,
+          reason: 'el botón debe estar deshabilitado durante la cuenta atrás',
+        );
+        expect(find.text('Sacando carta en...'), findsOneWidget);
+        // La carta no se ha revelado todavía: el botón sigue siendo "Sacar
+        // carta" (no "Sacar otra carta").
+        expect(
+          find.widgetWithText(FilledButton, 'Sacar otra carta'),
+          findsNothing,
+        );
+
+        // Tras agotar los 5 segundos: la carta se revela (botón "Sacar otra
+        // carta"), el overlay desaparece y el botón vuelve a estar habilitado.
+        for (var i = 0; i < 5; i++) {
+          await tester.pump(const Duration(seconds: 1));
+        }
+
+        expect(find.text('Sacando carta en...'), findsNothing);
+        expect(
+          find.widgetWithText(FilledButton, 'Sacar otra carta'),
+          findsOneWidget,
+        );
+        final botonFinal = tester.widget<FilledButton>(
+          find.byType(FilledButton),
+        );
+        expect(
+          botonFinal.onPressed,
+          isNotNull,
+          reason: 'el botón debe rehabilitarse al terminar la cuenta atrás',
         );
       },
     );

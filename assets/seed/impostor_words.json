@@ -1,62 +1,8242 @@
 [
-  { "word": "pirata", "hint": "barco" },
-  { "word": "playa", "hint": "arena" },
-  { "word": "futbol", "hint": "balon" },
-  { "word": "medico", "hint": "hospital" },
-  { "word": "guitarra", "hint": "musica" },
-  { "word": "volcan", "hint": "lava" },
-  { "word": "astronauta", "hint": "espacio" },
-  { "word": "panadero", "hint": "pan" },
-  { "word": "biblioteca", "hint": "libros" },
-  { "word": "dentista", "hint": "dientes" },
-  { "word": "montaña", "hint": "cumbre" },
-  { "word": "cocinero", "hint": "fogon" },
-  { "word": "bombero", "hint": "fuego" },
-  { "word": "telescopio", "hint": "estrellas" },
-  { "word": "mariposa", "hint": "alas" },
-  { "word": "desierto", "hint": "calor" },
-  { "word": "policia", "hint": "ley" },
-  { "word": "payaso", "hint": "circo" },
-  { "word": "vampiro", "hint": "noche" },
-  { "word": "tiburon", "hint": "mar" },
-  { "word": "castillo", "hint": "rey" },
-  { "word": "cohete", "hint": "despegue" },
-  { "word": "jardinero", "hint": "plantas" },
-  { "word": "pintor", "hint": "lienzo" },
-  { "word": "fantasma", "hint": "sabana" },
-  { "word": "elefante", "hint": "trompa" },
-  { "word": "pinguino", "hint": "hielo" },
-  { "word": "cascada", "hint": "agua" },
-  { "word": "robot", "hint": "metal" },
-  { "word": "carpintero", "hint": "madera" },
-  { "word": "abeja", "hint": "miel" },
-  { "word": "dragon", "hint": "leyenda" },
-  { "word": "submarino", "hint": "profundidad" },
-  { "word": "tornado", "hint": "viento" },
-  { "word": "panda", "hint": "bambu" },
-  { "word": "cartero", "hint": "cartas" },
-  { "word": "estadio", "hint": "publico" },
-  { "word": "queso", "hint": "raton" },
-  { "word": "linterna", "hint": "luz" },
-  { "word": "araña", "hint": "telaraña" },
-  { "word": "semaforo", "hint": "trafico" },
-  { "word": "paraguas", "hint": "lluvia" },
-  { "word": "girasol", "hint": "amarillo" },
-  { "word": "tambor", "hint": "ritmo" },
-  { "word": "cebolla", "hint": "lagrimas" },
-  { "word": "brujula", "hint": "norte" },
-  { "word": "cometa", "hint": "cielo" },
-  { "word": "ancla", "hint": "puerto" },
-  { "word": "camaleon", "hint": "color" },
-  { "word": "iglu", "hint": "esquimal" },
-  { "word": "molino", "hint": "aspas" },
-  { "word": "esqueleto", "hint": "huesos" },
-  { "word": "faro", "hint": "costa" },
-  { "word": "abogado", "hint": "juicio" },
-  { "word": "helado", "hint": "frio" },
-  { "word": "pulpo", "hint": "tentaculos" },
-  { "word": "ajedrez", "hint": "tablero" },
-  { "word": "cangrejo", "hint": "pinza" },
-  { "word": "trineo", "hint": "nieve" },
-  { "word": "colmena", "hint": "enjambre" }
+  {
+    "word": "pirata",
+    "hint": "barco"
+  },
+  {
+    "word": "playa",
+    "hint": "arena"
+  },
+  {
+    "word": "futbol",
+    "hint": "balon"
+  },
+  {
+    "word": "medico",
+    "hint": "hospital"
+  },
+  {
+    "word": "guitarra",
+    "hint": "musica"
+  },
+  {
+    "word": "volcan",
+    "hint": "lava"
+  },
+  {
+    "word": "astronauta",
+    "hint": "espacio"
+  },
+  {
+    "word": "panadero",
+    "hint": "pan"
+  },
+  {
+    "word": "biblioteca",
+    "hint": "libros"
+  },
+  {
+    "word": "dentista",
+    "hint": "dientes"
+  },
+  {
+    "word": "montaña",
+    "hint": "cumbre"
+  },
+  {
+    "word": "cocinero",
+    "hint": "fogon"
+  },
+  {
+    "word": "bombero",
+    "hint": "fuego"
+  },
+  {
+    "word": "telescopio",
+    "hint": "estrellas"
+  },
+  {
+    "word": "mariposa",
+    "hint": "alas"
+  },
+  {
+    "word": "desierto",
+    "hint": "calor"
+  },
+  {
+    "word": "policia",
+    "hint": "ley"
+  },
+  {
+    "word": "payaso",
+    "hint": "circo"
+  },
+  {
+    "word": "vampiro",
+    "hint": "noche"
+  },
+  {
+    "word": "tiburon",
+    "hint": "mar"
+  },
+  {
+    "word": "castillo",
+    "hint": "rey"
+  },
+  {
+    "word": "cohete",
+    "hint": "despegue"
+  },
+  {
+    "word": "jardinero",
+    "hint": "plantas"
+  },
+  {
+    "word": "pintor",
+    "hint": "lienzo"
+  },
+  {
+    "word": "fantasma",
+    "hint": "sabana"
+  },
+  {
+    "word": "elefante",
+    "hint": "trompa"
+  },
+  {
+    "word": "pinguino",
+    "hint": "hielo"
+  },
+  {
+    "word": "cascada",
+    "hint": "agua"
+  },
+  {
+    "word": "robot",
+    "hint": "metal"
+  },
+  {
+    "word": "carpintero",
+    "hint": "madera"
+  },
+  {
+    "word": "abeja",
+    "hint": "miel"
+  },
+  {
+    "word": "dragon",
+    "hint": "leyenda"
+  },
+  {
+    "word": "submarino",
+    "hint": "profundidad"
+  },
+  {
+    "word": "tornado",
+    "hint": "viento"
+  },
+  {
+    "word": "panda",
+    "hint": "bambu"
+  },
+  {
+    "word": "cartero",
+    "hint": "cartas"
+  },
+  {
+    "word": "estadio",
+    "hint": "publico"
+  },
+  {
+    "word": "queso",
+    "hint": "raton"
+  },
+  {
+    "word": "linterna",
+    "hint": "luz"
+  },
+  {
+    "word": "araña",
+    "hint": "telaraña"
+  },
+  {
+    "word": "semaforo",
+    "hint": "trafico"
+  },
+  {
+    "word": "paraguas",
+    "hint": "lluvia"
+  },
+  {
+    "word": "girasol",
+    "hint": "amarillo"
+  },
+  {
+    "word": "tambor",
+    "hint": "ritmo"
+  },
+  {
+    "word": "cebolla",
+    "hint": "lagrimas"
+  },
+  {
+    "word": "brujula",
+    "hint": "norte"
+  },
+  {
+    "word": "cometa",
+    "hint": "cielo"
+  },
+  {
+    "word": "ancla",
+    "hint": "puerto"
+  },
+  {
+    "word": "camaleon",
+    "hint": "color"
+  },
+  {
+    "word": "iglu",
+    "hint": "esquimal"
+  },
+  {
+    "word": "molino",
+    "hint": "aspas"
+  },
+  {
+    "word": "esqueleto",
+    "hint": "huesos"
+  },
+  {
+    "word": "faro",
+    "hint": "costa"
+  },
+  {
+    "word": "abogado",
+    "hint": "juicio"
+  },
+  {
+    "word": "helado",
+    "hint": "frio"
+  },
+  {
+    "word": "pulpo",
+    "hint": "tentaculos"
+  },
+  {
+    "word": "ajedrez",
+    "hint": "tablero"
+  },
+  {
+    "word": "cangrejo",
+    "hint": "pinza"
+  },
+  {
+    "word": "trineo",
+    "hint": "nieve"
+  },
+  {
+    "word": "colmena",
+    "hint": "enjambre"
+  },
+  {
+    "word": "abanico",
+    "hint": "genera aire al agitar"
+  },
+  {
+    "word": "abedul",
+    "hint": "blanca corteza"
+  },
+  {
+    "word": "abeto",
+    "hint": "navidad nieve"
+  },
+  {
+    "word": "abrelatas",
+    "hint": "lata"
+  },
+  {
+    "word": "abrigo",
+    "hint": "frío"
+  },
+  {
+    "word": "acacia",
+    "hint": "africa espinas"
+  },
+  {
+    "word": "acantilado",
+    "hint": "mar borde"
+  },
+  {
+    "word": "acción",
+    "hint": "género explosiones"
+  },
+  {
+    "word": "aceite",
+    "hint": "oliva liquida"
+  },
+  {
+    "word": "aceitera",
+    "hint": "aceite"
+  },
+  {
+    "word": "aceituna",
+    "hint": "aceite sal"
+  },
+  {
+    "word": "aceitunas",
+    "hint": "oliva aperitivo"
+  },
+  {
+    "word": "acelga",
+    "hint": "hoja tallo"
+  },
+  {
+    "word": "acera",
+    "hint": "peatones caminan"
+  },
+  {
+    "word": "acertijo",
+    "hint": "pregunta con respuesta oculta"
+  },
+  {
+    "word": "acorde",
+    "hint": "notas simultáneas"
+  },
+  {
+    "word": "acordeón",
+    "hint": "fuelle melodía"
+  },
+  {
+    "word": "acróbata",
+    "hint": "equilibrio"
+  },
+  {
+    "word": "actor",
+    "hint": "escenario"
+  },
+  {
+    "word": "actuario",
+    "hint": "riesgo"
+  },
+  {
+    "word": "acuaplano",
+    "hint": "desliza superficie"
+  },
+  {
+    "word": "acuario",
+    "hint": "peces exhibidos"
+  },
+  {
+    "word": "adaptador",
+    "hint": "conecta enchufes distintos"
+  },
+  {
+    "word": "adelfa",
+    "hint": "rosa veneno"
+  },
+  {
+    "word": "administrador",
+    "hint": "gestión"
+  },
+  {
+    "word": "administrador de redes",
+    "hint": "servidores"
+  },
+  {
+    "word": "aduana",
+    "hint": "control frontera"
+  },
+  {
+    "word": "aduanero",
+    "hint": "frontera"
+  },
+  {
+    "word": "aeropuerto",
+    "hint": "aviones"
+  },
+  {
+    "word": "agente de inteligencia",
+    "hint": "espionaje"
+  },
+  {
+    "word": "agente de viajes",
+    "hint": "destinos"
+  },
+  {
+    "word": "agente fronterizo",
+    "hint": "paso"
+  },
+  {
+    "word": "agente inmobiliario",
+    "hint": "vivienda"
+  },
+  {
+    "word": "agricultor",
+    "hint": "campo"
+  },
+  {
+    "word": "agua",
+    "hint": "liquido puro"
+  },
+  {
+    "word": "aguacate",
+    "hint": "verde graso"
+  },
+  {
+    "word": "aguila",
+    "hint": "vuelo alto"
+  },
+  {
+    "word": "aguila harpia",
+    "hint": "selva garras"
+  },
+  {
+    "word": "aguja",
+    "hint": "coser"
+  },
+  {
+    "word": "aire acondicionado",
+    "hint": "fresco"
+  },
+  {
+    "word": "ajo",
+    "hint": "diente picante"
+  },
+  {
+    "word": "alamo",
+    "hint": "temblor viento"
+  },
+  {
+    "word": "albahaca",
+    "hint": "pesto verde"
+  },
+  {
+    "word": "albañil",
+    "hint": "cemento"
+  },
+  {
+    "word": "albaricoque",
+    "hint": "naranja pequeño"
+  },
+  {
+    "word": "albergue",
+    "hint": "dormir mochileros"
+  },
+  {
+    "word": "albondiga",
+    "hint": "carne redonda"
+  },
+  {
+    "word": "álbum",
+    "hint": "disco canciones"
+  },
+  {
+    "word": "alcachofa",
+    "hint": "ducha"
+  },
+  {
+    "word": "alcalde",
+    "hint": "ciudad"
+  },
+  {
+    "word": "alcaparra",
+    "hint": "flor encurtida"
+  },
+  {
+    "word": "alcatraz",
+    "hint": "blanca caliz"
+  },
+  {
+    "word": "alce",
+    "hint": "cuernos norte"
+  },
+  {
+    "word": "aldea",
+    "hint": "asentamiento rural"
+  },
+  {
+    "word": "alegoría",
+    "hint": "representación simbólica de una idea"
+  },
+  {
+    "word": "alergólogo",
+    "hint": "alergias"
+  },
+  {
+    "word": "alfombra",
+    "hint": "suelo"
+  },
+  {
+    "word": "alfombrilla de baño",
+    "hint": "mojado"
+  },
+  {
+    "word": "alfombrilla de ratón",
+    "hint": "ratón"
+  },
+  {
+    "word": "alga",
+    "hint": "mar verde"
+  },
+  {
+    "word": "algodón",
+    "hint": "limpiar"
+  },
+  {
+    "word": "algoritmo",
+    "hint": "secuencia de instrucciones"
+  },
+  {
+    "word": "alianza",
+    "hint": "pacto entre dos o más partes"
+  },
+  {
+    "word": "alicate",
+    "hint": "doblar"
+  },
+  {
+    "word": "alioli",
+    "hint": "ajo aceite"
+  },
+  {
+    "word": "almacen",
+    "hint": "guardar mercancias"
+  },
+  {
+    "word": "almeja",
+    "hint": "concha perla"
+  },
+  {
+    "word": "almendra",
+    "hint": "fruto seco"
+  },
+  {
+    "word": "almohada",
+    "hint": "cabeza"
+  },
+  {
+    "word": "alpaca",
+    "hint": "fibra suave"
+  },
+  {
+    "word": "alpinismo",
+    "hint": "cumbre montaña"
+  },
+  {
+    "word": "alquimista",
+    "hint": "transforma metales, busca piedra filosofal"
+  },
+  {
+    "word": "altar",
+    "hint": "mesa de ofrendas rituales"
+  },
+  {
+    "word": "altavoz",
+    "hint": "música"
+  },
+  {
+    "word": "alubia",
+    "hint": "legumbre blanca"
+  },
+  {
+    "word": "alux",
+    "hint": "duende maya guardián del campo"
+  },
+  {
+    "word": "amapola",
+    "hint": "roja campo"
+  },
+  {
+    "word": "amasadora",
+    "hint": "pan masa"
+  },
+  {
+    "word": "ambientación",
+    "hint": "decorado época"
+  },
+  {
+    "word": "ambientador",
+    "hint": "olor"
+  },
+  {
+    "word": "ambulancia",
+    "hint": "emergencia medica"
+  },
+  {
+    "word": "amnistía",
+    "hint": "perdón colectivo oficial"
+  },
+  {
+    "word": "amuleto",
+    "hint": "joya protectora"
+  },
+  {
+    "word": "anacardo",
+    "hint": "curva tostado"
+  },
+  {
+    "word": "anaconda",
+    "hint": "amazon asfixia"
+  },
+  {
+    "word": "analista de sistemas",
+    "hint": "software"
+  },
+  {
+    "word": "ancho de banda",
+    "hint": "capacidad de transferencia"
+  },
+  {
+    "word": "anchoa",
+    "hint": "pez salado"
+  },
+  {
+    "word": "andén",
+    "hint": "espera tren"
+  },
+  {
+    "word": "anden fluvial",
+    "hint": "botes atracan"
+  },
+  {
+    "word": "anestesiólogo",
+    "hint": "sedación"
+  },
+  {
+    "word": "anfiteatro",
+    "hint": "espectaculos romano"
+  },
+  {
+    "word": "ángel",
+    "hint": "ser celestial con alas blancas"
+  },
+  {
+    "word": "anguila",
+    "hint": "electrica serpiente"
+  },
+  {
+    "word": "animación",
+    "hint": "dibujos movimiento"
+  },
+  {
+    "word": "animador cultural",
+    "hint": "eventos"
+  },
+  {
+    "word": "animador digital",
+    "hint": "gráficos"
+  },
+  {
+    "word": "animé",
+    "hint": "dibujo japonés"
+  },
+  {
+    "word": "antagonista",
+    "hint": "villano historia"
+  },
+  {
+    "word": "antena",
+    "hint": "capta señal inalámbrica"
+  },
+  {
+    "word": "antropólogo",
+    "hint": "cultura"
+  },
+  {
+    "word": "aparador",
+    "hint": "vajilla"
+  },
+  {
+    "word": "apeadero",
+    "hint": "tren menor"
+  },
+  {
+    "word": "apelación",
+    "hint": "recurso ante tribunal superior"
+  },
+  {
+    "word": "apéndice",
+    "hint": "órgano intestinal pequeño"
+  },
+  {
+    "word": "apicultor",
+    "hint": "miel"
+  },
+  {
+    "word": "apio",
+    "hint": "tallo crujiente"
+  },
+  {
+    "word": "arandano",
+    "hint": "mora azul"
+  },
+  {
+    "word": "arandano seco",
+    "hint": "rojo desecado"
+  },
+  {
+    "word": "arandela",
+    "hint": "tuerca"
+  },
+  {
+    "word": "araucaria",
+    "hint": "piña prehistorica"
+  },
+  {
+    "word": "árbitro",
+    "hint": "partido"
+  },
+  {
+    "word": "arcángel",
+    "hint": "ángel de rango superior"
+  },
+  {
+    "word": "arce",
+    "hint": "jarabe hoja"
+  },
+  {
+    "word": "arcen",
+    "hint": "borde carretera"
+  },
+  {
+    "word": "archipielago",
+    "hint": "grupo islas"
+  },
+  {
+    "word": "archivador",
+    "hint": "documentos"
+  },
+  {
+    "word": "archivista",
+    "hint": "documentos"
+  },
+  {
+    "word": "arcilla",
+    "hint": "moldeable barro"
+  },
+  {
+    "word": "arco",
+    "hint": "dispara flechas"
+  },
+  {
+    "word": "arcoiris",
+    "hint": "colores lluvia"
+  },
+  {
+    "word": "ardilla",
+    "hint": "bellota arbol"
+  },
+  {
+    "word": "arena",
+    "hint": "playa fina"
+  },
+  {
+    "word": "argumento",
+    "hint": "trama historia"
+  },
+  {
+    "word": "ariete",
+    "hint": "tronco para derribar puertas"
+  },
+  {
+    "word": "armadillo",
+    "hint": "armadura bola"
+  },
+  {
+    "word": "armario",
+    "hint": "ropa"
+  },
+  {
+    "word": "armisticio",
+    "hint": "acuerdo de cese al fuego"
+  },
+  {
+    "word": "armonía",
+    "hint": "notas juntas"
+  },
+  {
+    "word": "arpa",
+    "hint": "cuerdas pulsadas"
+  },
+  {
+    "word": "arqueólogo",
+    "hint": "ruinas"
+  },
+  {
+    "word": "arquitecto",
+    "hint": "planos"
+  },
+  {
+    "word": "arquitecto de software",
+    "hint": "sistema"
+  },
+  {
+    "word": "arrecife",
+    "hint": "coral mar"
+  },
+  {
+    "word": "arroyo",
+    "hint": "corriente pequena"
+  },
+  {
+    "word": "arroz",
+    "hint": "agua campo"
+  },
+  {
+    "word": "arroz con leche",
+    "hint": "postre canela"
+  },
+  {
+    "word": "asador",
+    "hint": "carne"
+  },
+  {
+    "word": "asesor de inversiones",
+    "hint": "cartera"
+  },
+  {
+    "word": "asesor fiscal",
+    "hint": "impuestos"
+  },
+  {
+    "word": "aspiradora",
+    "hint": "polvo"
+  },
+  {
+    "word": "astillero",
+    "hint": "construyen barcos"
+  },
+  {
+    "word": "atasco",
+    "hint": "trafico detenido"
+  },
+  {
+    "word": "atleta",
+    "hint": "competición"
+  },
+  {
+    "word": "atletismo",
+    "hint": "pista saltos"
+  },
+  {
+    "word": "atol",
+    "hint": "isla coral"
+  },
+  {
+    "word": "atun",
+    "hint": "pez lata"
+  },
+  {
+    "word": "audioprotesista",
+    "hint": "audición"
+  },
+  {
+    "word": "auditor",
+    "hint": "cuentas"
+  },
+  {
+    "word": "aura",
+    "hint": "campo energético invisible"
+  },
+  {
+    "word": "auriculares",
+    "hint": "sonido"
+  },
+  {
+    "word": "aurora",
+    "hint": "polar luces"
+  },
+  {
+    "word": "autobus",
+    "hint": "transporte colectivo"
+  },
+  {
+    "word": "autopista",
+    "hint": "carros rapidos"
+  },
+  {
+    "word": "autopista orbital",
+    "hint": "rodea ciudad"
+  },
+  {
+    "word": "auxiliar de enfermería",
+    "hint": "cuidados"
+  },
+  {
+    "word": "auxiliar de vuelo",
+    "hint": "avión"
+  },
+  {
+    "word": "avalancha",
+    "hint": "nieve cae"
+  },
+  {
+    "word": "avellana",
+    "hint": "nocilla fruto"
+  },
+  {
+    "word": "avenida",
+    "hint": "calle ancha"
+  },
+  {
+    "word": "aventura",
+    "hint": "género exploración"
+  },
+  {
+    "word": "avion",
+    "hint": "vuela cielo"
+  },
+  {
+    "word": "avispa",
+    "hint": "aguijon rayas"
+  },
+  {
+    "word": "axila",
+    "hint": "hueco bajo el brazo"
+  },
+  {
+    "word": "axolote",
+    "hint": "regenera branquias"
+  },
+  {
+    "word": "ayuntamiento",
+    "hint": "gobierno local"
+  },
+  {
+    "word": "azafran",
+    "hint": "especia dorada"
+  },
+  {
+    "word": "azucar",
+    "hint": "dulce cristal"
+  },
+  {
+    "word": "azucarero",
+    "hint": "azúcar"
+  },
+  {
+    "word": "azucena",
+    "hint": "blanca fragante"
+  },
+  {
+    "word": "azufre",
+    "hint": "amarillo olor"
+  },
+  {
+    "word": "azulejo",
+    "hint": "baño"
+  },
+  {
+    "word": "bacalao",
+    "hint": "pez salazón"
+  },
+  {
+    "word": "bachata",
+    "hint": "baile caribeño"
+  },
+  {
+    "word": "bádminton",
+    "hint": "volante raqueta"
+  },
+  {
+    "word": "baguette",
+    "hint": "francesa larga"
+  },
+  {
+    "word": "bahia",
+    "hint": "entrada mar"
+  },
+  {
+    "word": "bailarín",
+    "hint": "danza"
+  },
+  {
+    "word": "bajada",
+    "hint": "descenso terreno"
+  },
+  {
+    "word": "bajo",
+    "hint": "guitarra grave"
+  },
+  {
+    "word": "baldosa",
+    "hint": "suelo"
+  },
+  {
+    "word": "ballena",
+    "hint": "canto oceano"
+  },
+  {
+    "word": "ballesta",
+    "hint": "arco mecánico disparador"
+  },
+  {
+    "word": "balón",
+    "hint": "objeto redondo"
+  },
+  {
+    "word": "baloncesto",
+    "hint": "canasta equipo"
+  },
+  {
+    "word": "balonmano",
+    "hint": "portería manos"
+  },
+  {
+    "word": "bambú",
+    "hint": "panda rapido"
+  },
+  {
+    "word": "banco",
+    "hint": "dinero custodia"
+  },
+  {
+    "word": "banda sonora",
+    "hint": "música filme"
+  },
+  {
+    "word": "bandeja",
+    "hint": "llevar"
+  },
+  {
+    "word": "bandeja de escritorio",
+    "hint": "papeles"
+  },
+  {
+    "word": "bandoneón",
+    "hint": "tango fuelle"
+  },
+  {
+    "word": "bañera",
+    "hint": "baño"
+  },
+  {
+    "word": "banquero",
+    "hint": "dinero"
+  },
+  {
+    "word": "banshee",
+    "hint": "espíritu que anuncia muerte"
+  },
+  {
+    "word": "baobab",
+    "hint": "africa gordo"
+  },
+  {
+    "word": "bar",
+    "hint": "bebidas mostrador"
+  },
+  {
+    "word": "barbero",
+    "hint": "barba"
+  },
+  {
+    "word": "barco",
+    "hint": "navega mar"
+  },
+  {
+    "word": "bardo",
+    "hint": "narrador y músico errante"
+  },
+  {
+    "word": "barrio",
+    "hint": "zona ciudad"
+  },
+  {
+    "word": "bartender",
+    "hint": "cócteles"
+  },
+  {
+    "word": "basalto",
+    "hint": "oscuro volcanico"
+  },
+  {
+    "word": "báscula",
+    "hint": "pesar"
+  },
+  {
+    "word": "base",
+    "hint": "maquillaje"
+  },
+  {
+    "word": "basilica",
+    "hint": "iglesia importante"
+  },
+  {
+    "word": "basilisco",
+    "hint": "agua corre"
+  },
+  {
+    "word": "basilisco sudamericano",
+    "hint": "lagarto mítico de cresta"
+  },
+  {
+    "word": "bata",
+    "hint": "baño"
+  },
+  {
+    "word": "batería",
+    "hint": "instrumento percusión"
+  },
+  {
+    "word": "batido",
+    "hint": "leche fruta"
+  },
+  {
+    "word": "batidor",
+    "hint": "huevos"
+  },
+  {
+    "word": "batidora",
+    "hint": "electrica triturar"
+  },
+  {
+    "word": "batuta",
+    "hint": "director orquesta"
+  },
+  {
+    "word": "baúl",
+    "hint": "guardar"
+  },
+  {
+    "word": "bayeta",
+    "hint": "limpiar"
+  },
+  {
+    "word": "bazo",
+    "hint": "órgano purificador sangre"
+  },
+  {
+    "word": "becario",
+    "hint": "prácticas"
+  },
+  {
+    "word": "begonia",
+    "hint": "sombra colorida"
+  },
+  {
+    "word": "beicon",
+    "hint": "panceta ahumada"
+  },
+  {
+    "word": "béisbol",
+    "hint": "bate pelota"
+  },
+  {
+    "word": "berenjena",
+    "hint": "morada larga"
+  },
+  {
+    "word": "bermuda",
+    "hint": "pantalón hasta la rodilla"
+  },
+  {
+    "word": "berro",
+    "hint": "hoja agua"
+  },
+  {
+    "word": "berserk",
+    "hint": "guerrero en trance de combate"
+  },
+  {
+    "word": "bibliotecario",
+    "hint": "libros"
+  },
+  {
+    "word": "bicicleta",
+    "hint": "pedales ruedas"
+  },
+  {
+    "word": "bidet",
+    "hint": "higiene"
+  },
+  {
+    "word": "billar",
+    "hint": "taco bola"
+  },
+  {
+    "word": "biólogo",
+    "hint": "seres vivos"
+  },
+  {
+    "word": "biopic",
+    "hint": "vida real"
+  },
+  {
+    "word": "bisagra",
+    "hint": "puerta"
+  },
+  {
+    "word": "bisonte",
+    "hint": "pradera manada"
+  },
+  {
+    "word": "bisturí",
+    "hint": "cuchillo quirúrgico"
+  },
+  {
+    "word": "bizcocho",
+    "hint": "esponja horno"
+  },
+  {
+    "word": "blasón",
+    "hint": "emblema heráldico de familia noble"
+  },
+  {
+    "word": "bloque",
+    "hint": "apartamentos juntos"
+  },
+  {
+    "word": "blues",
+    "hint": "género melancólico"
+  },
+  {
+    "word": "boa",
+    "hint": "constriccion tropical"
+  },
+  {
+    "word": "bocadillo",
+    "hint": "barra rellena"
+  },
+  {
+    "word": "bodega",
+    "hint": "guardar vino"
+  },
+  {
+    "word": "bol",
+    "hint": "sopa"
+  },
+  {
+    "word": "bolero",
+    "hint": "romántico cubano"
+  },
+  {
+    "word": "bolígrafo",
+    "hint": "escribir"
+  },
+  {
+    "word": "bolos",
+    "hint": "derribar pinos"
+  },
+  {
+    "word": "bolsa de basura",
+    "hint": "tirar"
+  },
+  {
+    "word": "bolso",
+    "hint": "cartera"
+  },
+  {
+    "word": "bombero forestal",
+    "hint": "incendios"
+  },
+  {
+    "word": "bombilla",
+    "hint": "iluminar"
+  },
+  {
+    "word": "boquerón",
+    "hint": "pez adobo"
+  },
+  {
+    "word": "bosque",
+    "hint": "arboles densos"
+  },
+  {
+    "word": "botánico",
+    "hint": "flora"
+  },
+  {
+    "word": "bote",
+    "hint": "guardar"
+  },
+  {
+    "word": "bote salvavidas",
+    "hint": "rescata naufrago"
+  },
+  {
+    "word": "botella",
+    "hint": "agua"
+  },
+  {
+    "word": "botiquín",
+    "hint": "medicinas"
+  },
+  {
+    "word": "botoadura",
+    "hint": "hilera de botones"
+  },
+  {
+    "word": "botón",
+    "hint": "camisa"
+  },
+  {
+    "word": "boulevard",
+    "hint": "paseo arbolado"
+  },
+  {
+    "word": "boxeo",
+    "hint": "golpes guantes"
+  },
+  {
+    "word": "brandy",
+    "hint": "uva envejecido"
+  },
+  {
+    "word": "brava",
+    "hint": "salsa picante"
+  },
+  {
+    "word": "brioche",
+    "hint": "pan dulce"
+  },
+  {
+    "word": "brocha",
+    "hint": "pintar"
+  },
+  {
+    "word": "broche",
+    "hint": "cierre decorativo de ropa"
+  },
+  {
+    "word": "brocoli",
+    "hint": "arbol verde"
+  },
+  {
+    "word": "brownie",
+    "hint": "chocolate denso"
+  },
+  {
+    "word": "bufanda",
+    "hint": "cuello"
+  },
+  {
+    "word": "buganvilia",
+    "hint": "fucsia tropical"
+  },
+  {
+    "word": "buho",
+    "hint": "noche sabio"
+  },
+  {
+    "word": "bungalow",
+    "hint": "casa planta baja"
+  },
+  {
+    "word": "buñuelo",
+    "hint": "masa frita"
+  },
+  {
+    "word": "buque cisterna",
+    "hint": "liquidos granel"
+  },
+  {
+    "word": "burro",
+    "hint": "rebuzno carga"
+  },
+  {
+    "word": "butaca",
+    "hint": "sentarse"
+  },
+  {
+    "word": "buzo",
+    "hint": "profundidad"
+  },
+  {
+    "word": "caballo",
+    "hint": "crin galope"
+  },
+  {
+    "word": "cabaña",
+    "hint": "descanso bosque"
+  },
+  {
+    "word": "cabecero",
+    "hint": "cama"
+  },
+  {
+    "word": "cable",
+    "hint": "corriente"
+  },
+  {
+    "word": "cabo",
+    "hint": "punta tierra"
+  },
+  {
+    "word": "cacahuete",
+    "hint": "tierra legumbre"
+  },
+  {
+    "word": "cacao",
+    "hint": "polvo oscuro"
+  },
+  {
+    "word": "cacerola",
+    "hint": "cocer"
+  },
+  {
+    "word": "cactus",
+    "hint": "espinas desierto"
+  },
+  {
+    "word": "cactus saguaro",
+    "hint": "desierto alto"
+  },
+  {
+    "word": "cadejo",
+    "hint": "perro fantasmal centroamericano"
+  },
+  {
+    "word": "cadencia",
+    "hint": "final pasaje"
+  },
+  {
+    "word": "cadera",
+    "hint": "unión tronco y pierna"
+  },
+  {
+    "word": "cafe",
+    "hint": "grano tostado"
+  },
+  {
+    "word": "cafetera",
+    "hint": "café"
+  },
+  {
+    "word": "cafeteria",
+    "hint": "cafe bebida"
+  },
+  {
+    "word": "caftán",
+    "hint": "túnica larga oriental"
+  },
+  {
+    "word": "caja de herramientas",
+    "hint": "guardar"
+  },
+  {
+    "word": "cajero",
+    "hint": "cobros"
+  },
+  {
+    "word": "cajón",
+    "hint": "mesa"
+  },
+  {
+    "word": "calabacin",
+    "hint": "verde calabaza"
+  },
+  {
+    "word": "calabaza",
+    "hint": "naranja grande"
+  },
+  {
+    "word": "calamar",
+    "hint": "tinta veloz"
+  },
+  {
+    "word": "caldera",
+    "hint": "volcan crater"
+  },
+  {
+    "word": "caldero",
+    "hint": "recipiente de pociones"
+  },
+  {
+    "word": "caldo",
+    "hint": "liquido hervido"
+  },
+  {
+    "word": "caldo de pollo",
+    "hint": "base sopa"
+  },
+  {
+    "word": "calefactor",
+    "hint": "frío"
+  },
+  {
+    "word": "calendario",
+    "hint": "fecha"
+  },
+  {
+    "word": "callejon",
+    "hint": "pasaje estrecho"
+  },
+  {
+    "word": "cama",
+    "hint": "dormir"
+  },
+  {
+    "word": "cámara",
+    "hint": "captura imágenes"
+  },
+  {
+    "word": "camarero",
+    "hint": "servicio"
+  },
+  {
+    "word": "camarógrafo",
+    "hint": "opera cámara"
+  },
+  {
+    "word": "camaron",
+    "hint": "pequeño marino"
+  },
+  {
+    "word": "camello",
+    "hint": "desierto"
+  },
+  {
+    "word": "camillero",
+    "hint": "traslado"
+  },
+  {
+    "word": "camion",
+    "hint": "carga pesada"
+  },
+  {
+    "word": "camion cisterna",
+    "hint": "liquidos tanque"
+  },
+  {
+    "word": "camionero",
+    "hint": "carga"
+  },
+  {
+    "word": "camioneta",
+    "hint": "carga ligera"
+  },
+  {
+    "word": "camiseta",
+    "hint": "prenda interior ligera"
+  },
+  {
+    "word": "campamento",
+    "hint": "tiendas naturaleza"
+  },
+  {
+    "word": "camping",
+    "hint": "tienda naturaleza"
+  },
+  {
+    "word": "campo",
+    "hint": "tierra cultivada"
+  },
+  {
+    "word": "caña",
+    "hint": "azucar alta"
+  },
+  {
+    "word": "canal",
+    "hint": "via acuatica"
+  },
+  {
+    "word": "canasta",
+    "hint": "aro baloncesto"
+  },
+  {
+    "word": "cancha",
+    "hint": "juego deportivo"
+  },
+  {
+    "word": "canción",
+    "hint": "letra melodía"
+  },
+  {
+    "word": "canela",
+    "hint": "corteza aroma"
+  },
+  {
+    "word": "canguro",
+    "hint": "bolsa ventral"
+  },
+  {
+    "word": "canoa",
+    "hint": "remos rio"
+  },
+  {
+    "word": "cañon",
+    "hint": "profundo rio"
+  },
+  {
+    "word": "canónigo",
+    "hint": "hoja pequeña"
+  },
+  {
+    "word": "cantante",
+    "hint": "voz"
+  },
+  {
+    "word": "caoba",
+    "hint": "madera roja"
+  },
+  {
+    "word": "capital",
+    "hint": "ciudad gobierno"
+  },
+  {
+    "word": "capucha",
+    "hint": "cubierta de cabeza unida a ropa"
+  },
+  {
+    "word": "caramelo",
+    "hint": "azucar fundido"
+  },
+  {
+    "word": "caravana",
+    "hint": "casa rodante"
+  },
+  {
+    "word": "carcaj",
+    "hint": "funda de flechas"
+  },
+  {
+    "word": "carcel",
+    "hint": "condenados guardan"
+  },
+  {
+    "word": "carcelero",
+    "hint": "prisión"
+  },
+  {
+    "word": "cardamomo",
+    "hint": "especia vaina"
+  },
+  {
+    "word": "cardiólogo",
+    "hint": "corazón"
+  },
+  {
+    "word": "cargador",
+    "hint": "repone energía al aparato"
+  },
+  {
+    "word": "carnicero",
+    "hint": "carne"
+  },
+  {
+    "word": "carpa",
+    "hint": "lago fondo"
+  },
+  {
+    "word": "carpeta",
+    "hint": "papeles"
+  },
+  {
+    "word": "carretera",
+    "hint": "ruta entre pueblos"
+  },
+  {
+    "word": "carril",
+    "hint": "banda trafico"
+  },
+  {
+    "word": "carro",
+    "hint": "cuatro ruedas"
+  },
+  {
+    "word": "cartabón",
+    "hint": "ángulo"
+  },
+  {
+    "word": "cartas",
+    "hint": "juego baraja"
+  },
+  {
+    "word": "cartera",
+    "hint": "dinero"
+  },
+  {
+    "word": "cartílago",
+    "hint": "tejido flexible articular"
+  },
+  {
+    "word": "cartógrafo",
+    "hint": "mapas"
+  },
+  {
+    "word": "casa",
+    "hint": "hogar familia"
+  },
+  {
+    "word": "casino",
+    "hint": "juegos azar"
+  },
+  {
+    "word": "castaño",
+    "hint": "castaña otoño"
+  },
+  {
+    "word": "casting",
+    "hint": "selección actores"
+  },
+  {
+    "word": "castor",
+    "hint": "presa rio"
+  },
+  {
+    "word": "catacumba",
+    "hint": "galería funeraria subterránea"
+  },
+  {
+    "word": "catafalo",
+    "hint": "tumba famoso"
+  },
+  {
+    "word": "catapulta",
+    "hint": "máquina de asedio"
+  },
+  {
+    "word": "catarata",
+    "hint": "gran salto agua"
+  },
+  {
+    "word": "catedral",
+    "hint": "templo grande"
+  },
+  {
+    "word": "catedrático",
+    "hint": "universidad"
+  },
+  {
+    "word": "cava",
+    "hint": "burbuja española"
+  },
+  {
+    "word": "cazatalentos",
+    "hint": "selección"
+  },
+  {
+    "word": "cazo",
+    "hint": "pequeño mango"
+  },
+  {
+    "word": "cazuela",
+    "hint": "guiso"
+  },
+  {
+    "word": "cebra",
+    "hint": "blanco negro"
+  },
+  {
+    "word": "cedro",
+    "hint": "aroma madera"
+  },
+  {
+    "word": "celador",
+    "hint": "hospital"
+  },
+  {
+    "word": "cello",
+    "hint": "cuerdas orquesta"
+  },
+  {
+    "word": "cementerio",
+    "hint": "enterrar fallecidos"
+  },
+  {
+    "word": "cenefa",
+    "hint": "pared"
+  },
+  {
+    "word": "ceniza",
+    "hint": "gris volcan"
+  },
+  {
+    "word": "cenote",
+    "hint": "pozo agua caliza"
+  },
+  {
+    "word": "centauro",
+    "hint": "mitad hombre mitad caballo"
+  },
+  {
+    "word": "central electrica",
+    "hint": "genera energia"
+  },
+  {
+    "word": "centrifugadora",
+    "hint": "lavar"
+  },
+  {
+    "word": "centro comercial",
+    "hint": "tiendas juntas"
+  },
+  {
+    "word": "cepillo",
+    "hint": "dientes"
+  },
+  {
+    "word": "cepillo de baño",
+    "hint": "inodoro"
+  },
+  {
+    "word": "cepillo de barrer",
+    "hint": "suelo"
+  },
+  {
+    "word": "cerdo",
+    "hint": "cochino carne"
+  },
+  {
+    "word": "cereza",
+    "hint": "roja árbol"
+  },
+  {
+    "word": "cerezo",
+    "hint": "rosa primavera"
+  },
+  {
+    "word": "cerradura",
+    "hint": "llave"
+  },
+  {
+    "word": "cerrajero",
+    "hint": "llaves"
+  },
+  {
+    "word": "certamen",
+    "hint": "concurso formal"
+  },
+  {
+    "word": "cerveza",
+    "hint": "cebada lupulo"
+  },
+  {
+    "word": "cesto de ropa",
+    "hint": "sucia"
+  },
+  {
+    "word": "cetro",
+    "hint": "vara de mando real"
+  },
+  {
+    "word": "chakra",
+    "hint": "centro de energía corporal"
+  },
+  {
+    "word": "chaleco",
+    "hint": "sin mangas sobre camisa"
+  },
+  {
+    "word": "chalet",
+    "hint": "casa montana"
+  },
+  {
+    "word": "chamán",
+    "hint": "intermediario entre mundos espirituales"
+  },
+  {
+    "word": "champan",
+    "hint": "burbuja francesa"
+  },
+  {
+    "word": "champiñon",
+    "hint": "hongo blanco"
+  },
+  {
+    "word": "champú",
+    "hint": "pelo"
+  },
+  {
+    "word": "chapista",
+    "hint": "carrocería"
+  },
+  {
+    "word": "charada",
+    "hint": "juego de palabras"
+  },
+  {
+    "word": "chef",
+    "hint": "gastronomía"
+  },
+  {
+    "word": "chia",
+    "hint": "semilla tendencia"
+  },
+  {
+    "word": "chimpance",
+    "hint": "inteligente herramienta"
+  },
+  {
+    "word": "chocolate",
+    "hint": "cacao dulce"
+  },
+  {
+    "word": "chorizo",
+    "hint": "embutido rojo"
+  },
+  {
+    "word": "chubasquero",
+    "hint": "impermeable lluvia"
+  },
+  {
+    "word": "chuleta",
+    "hint": "hueso lomo"
+  },
+  {
+    "word": "chupacabras",
+    "hint": "criatura que drena sangre de animales"
+  },
+  {
+    "word": "churro",
+    "hint": "masa aceite"
+  },
+  {
+    "word": "ciclamino",
+    "hint": "rosada invierno"
+  },
+  {
+    "word": "ciclismo",
+    "hint": "bicicleta carrera"
+  },
+  {
+    "word": "ciclista",
+    "hint": "bicicleta"
+  },
+  {
+    "word": "cíclope",
+    "hint": "gigante de un solo ojo"
+  },
+  {
+    "word": "ciencia ficción",
+    "hint": "futuro espacio"
+  },
+  {
+    "word": "cienpies",
+    "hint": "patas oscuro"
+  },
+  {
+    "word": "científico de datos",
+    "hint": "algoritmos"
+  },
+  {
+    "word": "ciervo",
+    "hint": "cornamenta bosque"
+  },
+  {
+    "word": "cifra",
+    "hint": "mensaje en código"
+  },
+  {
+    "word": "cifrado",
+    "hint": "protege datos con código"
+  },
+  {
+    "word": "cigüeña",
+    "hint": "bebe nido"
+  },
+  {
+    "word": "cilantro",
+    "hint": "aroma divisivo"
+  },
+  {
+    "word": "cincel",
+    "hint": "piedra"
+  },
+  {
+    "word": "cine",
+    "hint": "peliculas pantalla"
+  },
+  {
+    "word": "cinta adhesiva",
+    "hint": "pegar"
+  },
+  {
+    "word": "cinta métrica",
+    "hint": "longitud"
+  },
+  {
+    "word": "cinturón",
+    "hint": "ajusta el pantalón"
+  },
+  {
+    "word": "cipres",
+    "hint": "cementerio alto"
+  },
+  {
+    "word": "circunvalacion",
+    "hint": "rodea perimetro"
+  },
+  {
+    "word": "ciruela",
+    "hint": "morada hueso"
+  },
+  {
+    "word": "ciruelas pasas",
+    "hint": "seca morada"
+  },
+  {
+    "word": "cirujano",
+    "hint": "bisturí"
+  },
+  {
+    "word": "ciudad",
+    "hint": "urbe habitada"
+  },
+  {
+    "word": "claqueta",
+    "hint": "inicia toma"
+  },
+  {
+    "word": "clara",
+    "hint": "cerveza limon"
+  },
+  {
+    "word": "clarinete",
+    "hint": "viento madera"
+  },
+  {
+    "word": "clave",
+    "hint": "inicio partitura"
+  },
+  {
+    "word": "clavicémbalo",
+    "hint": "teclas antiguas"
+  },
+  {
+    "word": "clavícula",
+    "hint": "hueso del hombro"
+  },
+  {
+    "word": "clavo",
+    "hint": "martillo"
+  },
+  {
+    "word": "cliffhanger",
+    "hint": "final suspenso"
+  },
+  {
+    "word": "clímax",
+    "hint": "punto máximo"
+  },
+  {
+    "word": "clinica",
+    "hint": "atencion medica"
+  },
+  {
+    "word": "coach empresarial",
+    "hint": "liderazgo"
+  },
+  {
+    "word": "cobertor",
+    "hint": "cama"
+  },
+  {
+    "word": "cobra",
+    "hint": "capucha veneno"
+  },
+  {
+    "word": "cochera",
+    "hint": "guarda autobuses"
+  },
+  {
+    "word": "cocido",
+    "hint": "olla legumbre"
+  },
+  {
+    "word": "coco",
+    "hint": "palma agua"
+  },
+  {
+    "word": "cocodrilo",
+    "hint": "mandibulas"
+  },
+  {
+    "word": "codo",
+    "hint": "articulación brazo"
+  },
+  {
+    "word": "codorniz",
+    "hint": "pequeña moteada"
+  },
+  {
+    "word": "cofre",
+    "hint": "caja resistente para tesoros"
+  },
+  {
+    "word": "cojín",
+    "hint": "sofá"
+  },
+  {
+    "word": "col",
+    "hint": "repollo verde"
+  },
+  {
+    "word": "colador",
+    "hint": "escurrir"
+  },
+  {
+    "word": "colcha",
+    "hint": "decorar"
+  },
+  {
+    "word": "colchón",
+    "hint": "dormir"
+  },
+  {
+    "word": "colchoneta",
+    "hint": "suelo"
+  },
+  {
+    "word": "colegio",
+    "hint": "alumnos maestros"
+  },
+  {
+    "word": "coles de bruselas",
+    "hint": "mini repollo"
+  },
+  {
+    "word": "colgador",
+    "hint": "ropa"
+  },
+  {
+    "word": "colibrí",
+    "hint": "néctar veloz"
+  },
+  {
+    "word": "coliflor",
+    "hint": "flor blanca"
+  },
+  {
+    "word": "colina",
+    "hint": "elevacion suave"
+  },
+  {
+    "word": "coliseo",
+    "hint": "arena gladiadores"
+  },
+  {
+    "word": "colonia",
+    "hint": "olor"
+  },
+  {
+    "word": "colorista",
+    "hint": "postproducción"
+  },
+  {
+    "word": "comedia",
+    "hint": "género risa"
+  },
+  {
+    "word": "comediante",
+    "hint": "humor"
+  },
+  {
+    "word": "comino",
+    "hint": "especia arabe"
+  },
+  {
+    "word": "community manager",
+    "hint": "redes"
+  },
+  {
+    "word": "compás",
+    "hint": "círculo"
+  },
+  {
+    "word": "compositor",
+    "hint": "melodía"
+  },
+  {
+    "word": "compresión",
+    "hint": "reducción del tamaño de archivo"
+  },
+  {
+    "word": "concesionario",
+    "hint": "vende autos"
+  },
+  {
+    "word": "concierto",
+    "hint": "actuación musical"
+  },
+  {
+    "word": "condominio",
+    "hint": "unidades privadas"
+  },
+  {
+    "word": "condor",
+    "hint": "andes envergadura"
+  },
+  {
+    "word": "conductor de autobús",
+    "hint": "pasajeros"
+  },
+  {
+    "word": "conejo",
+    "hint": "animal oreja larga"
+  },
+  {
+    "word": "conferencista",
+    "hint": "auditorio"
+  },
+  {
+    "word": "confitura",
+    "hint": "fruta tarro"
+  },
+  {
+    "word": "congelador",
+    "hint": "helado guardar"
+  },
+  {
+    "word": "congreso",
+    "hint": "diputados votan"
+  },
+  {
+    "word": "conjuro",
+    "hint": "invocación de poderes sobrenaturales"
+  },
+  {
+    "word": "consola",
+    "hint": "entrada"
+  },
+  {
+    "word": "cónsul",
+    "hint": "pasaporte"
+  },
+  {
+    "word": "consulado",
+    "hint": "tramites extranjeros"
+  },
+  {
+    "word": "consultor",
+    "hint": "asesoría"
+  },
+  {
+    "word": "contador",
+    "hint": "finanzas"
+  },
+  {
+    "word": "contenedor",
+    "hint": "reciclar"
+  },
+  {
+    "word": "continente",
+    "hint": "masa tierra grande"
+  },
+  {
+    "word": "contrabajo",
+    "hint": "cuerda grave"
+  },
+  {
+    "word": "contraseña",
+    "hint": "clave de acceso"
+  },
+  {
+    "word": "contraseña secreta",
+    "hint": "código de reconocimiento"
+  },
+  {
+    "word": "control aereo",
+    "hint": "dirige aviones"
+  },
+  {
+    "word": "control policial",
+    "hint": "revision carretera"
+  },
+  {
+    "word": "controlador aéreo",
+    "hint": "torre"
+  },
+  {
+    "word": "controlador sanitario",
+    "hint": "higiene"
+  },
+  {
+    "word": "convento",
+    "hint": "monjas rezan"
+  },
+  {
+    "word": "cookie",
+    "hint": "americana chispas"
+  },
+  {
+    "word": "copa",
+    "hint": "vino cristal"
+  },
+  {
+    "word": "coral",
+    "hint": "arrecife colonia"
+  },
+  {
+    "word": "cordero",
+    "hint": "oveja carne"
+  },
+  {
+    "word": "cordillera",
+    "hint": "cadena montes"
+  },
+  {
+    "word": "coreógrafo",
+    "hint": "movimiento"
+  },
+  {
+    "word": "córnea",
+    "hint": "cubierta transparente ocular"
+  },
+  {
+    "word": "cornisa",
+    "hint": "techo"
+  },
+  {
+    "word": "coro",
+    "hint": "grupo canta"
+  },
+  {
+    "word": "corona",
+    "hint": "símbolo de realeza en la cabeza"
+  },
+  {
+    "word": "corrector de estilo",
+    "hint": "ortografía"
+  },
+  {
+    "word": "corredor de bolsa",
+    "hint": "acciones"
+  },
+  {
+    "word": "corredor de seguros",
+    "hint": "póliza"
+  },
+  {
+    "word": "correos",
+    "hint": "cartas envio"
+  },
+  {
+    "word": "corriente",
+    "hint": "rio fluye"
+  },
+  {
+    "word": "cortacésped",
+    "hint": "hierba"
+  },
+  {
+    "word": "cortina",
+    "hint": "ventana"
+  },
+  {
+    "word": "cortina de ducha",
+    "hint": "salpicadura"
+  },
+  {
+    "word": "corto",
+    "hint": "película breve"
+  },
+  {
+    "word": "costa",
+    "hint": "borde maritimo"
+  },
+  {
+    "word": "costilla",
+    "hint": "hueso cerdo"
+  },
+  {
+    "word": "country",
+    "hint": "vaquero guitarra"
+  },
+  {
+    "word": "cover",
+    "hint": "versión ajena"
+  },
+  {
+    "word": "crema",
+    "hint": "piel"
+  },
+  {
+    "word": "crema catalana",
+    "hint": "quemada superficie"
+  },
+  {
+    "word": "cremallera",
+    "hint": "cerrar"
+  },
+  {
+    "word": "crepe",
+    "hint": "masa fina"
+  },
+  {
+    "word": "criminalista",
+    "hint": "evidencia"
+  },
+  {
+    "word": "cripta",
+    "hint": "cámara mortuoria bajo iglesia"
+  },
+  {
+    "word": "crisantemo",
+    "hint": "otoño japon"
+  },
+  {
+    "word": "cristal",
+    "hint": "transparente geometria"
+  },
+  {
+    "word": "croissant",
+    "hint": "media luna"
+  },
+  {
+    "word": "croqueta",
+    "hint": "bechamel frita"
+  },
+  {
+    "word": "cruce",
+    "hint": "interseccion vial"
+  },
+  {
+    "word": "crucero",
+    "hint": "barco vacaciones"
+  },
+  {
+    "word": "cuaderno",
+    "hint": "escribir"
+  },
+  {
+    "word": "cuadro",
+    "hint": "pared"
+  },
+  {
+    "word": "cuartel",
+    "hint": "soldados viven"
+  },
+  {
+    "word": "cuarzo",
+    "hint": "brillante mineral"
+  },
+  {
+    "word": "cubo",
+    "hint": "agua sucia"
+  },
+  {
+    "word": "cubo de pintura",
+    "hint": "color"
+  },
+  {
+    "word": "cuchara",
+    "hint": "sopa"
+  },
+  {
+    "word": "cucharón",
+    "hint": "sopa"
+  },
+  {
+    "word": "cuchillo",
+    "hint": "cortar"
+  },
+  {
+    "word": "cuenco",
+    "hint": "hondo sopa"
+  },
+  {
+    "word": "cuesta",
+    "hint": "pendiente ascenso"
+  },
+  {
+    "word": "cueva",
+    "hint": "oscura roca"
+  },
+  {
+    "word": "cumbia",
+    "hint": "ritmo latinoamerica"
+  },
+  {
+    "word": "curador",
+    "hint": "obras"
+  },
+  {
+    "word": "curcuma",
+    "hint": "especia amarilla"
+  },
+  {
+    "word": "curling",
+    "hint": "hielo piedra"
+  },
+  {
+    "word": "curupira",
+    "hint": "protector de bosques con pies al revés"
+  },
+  {
+    "word": "curva",
+    "hint": "giro carretera"
+  },
+  {
+    "word": "cutícula",
+    "hint": "borde de la uña"
+  },
+  {
+    "word": "dado",
+    "hint": "cara número"
+  },
+  {
+    "word": "dalia",
+    "hint": "mexico colores"
+  },
+  {
+    "word": "damasco",
+    "hint": "suave dorado"
+  },
+  {
+    "word": "dardo",
+    "hint": "lanzar diana"
+  },
+  {
+    "word": "darsena",
+    "hint": "zona portuaria"
+  },
+  {
+    "word": "datil",
+    "hint": "palmera dulce"
+  },
+  {
+    "word": "decano",
+    "hint": "facultad"
+  },
+  {
+    "word": "decorador",
+    "hint": "interiores"
+  },
+  {
+    "word": "defensor público",
+    "hint": "justicia"
+  },
+  {
+    "word": "delantal",
+    "hint": "cocinar"
+  },
+  {
+    "word": "delfin",
+    "hint": "oceano"
+  },
+  {
+    "word": "delta",
+    "hint": "rio desemboca"
+  },
+  {
+    "word": "demonio",
+    "hint": "ser maligno del inframundo"
+  },
+  {
+    "word": "departamento",
+    "hint": "piso alquiler"
+  },
+  {
+    "word": "deposito",
+    "hint": "almacenamiento grande"
+  },
+  {
+    "word": "deposito tren",
+    "hint": "trenes duermen"
+  },
+  {
+    "word": "depuradora",
+    "hint": "limpia agua"
+  },
+  {
+    "word": "dermatólogo",
+    "hint": "piel"
+  },
+  {
+    "word": "dermis",
+    "hint": "capa media piel"
+  },
+  {
+    "word": "desagüe",
+    "hint": "fregadero"
+  },
+  {
+    "word": "desarrollador de apps",
+    "hint": "móvil"
+  },
+  {
+    "word": "desarrollador web",
+    "hint": "sitio"
+  },
+  {
+    "word": "deshumidificador",
+    "hint": "humedad"
+  },
+  {
+    "word": "desinfectante",
+    "hint": "bacterias"
+  },
+  {
+    "word": "desodorante",
+    "hint": "sudor"
+  },
+  {
+    "word": "despensa",
+    "hint": "armario comida"
+  },
+  {
+    "word": "despertador",
+    "hint": "mañana"
+  },
+  {
+    "word": "destino",
+    "hint": "camino inevitable de la vida"
+  },
+  {
+    "word": "destornillador",
+    "hint": "tornillos"
+  },
+  {
+    "word": "desvio",
+    "hint": "ruta alternativa"
+  },
+  {
+    "word": "detective",
+    "hint": "investigación"
+  },
+  {
+    "word": "detergente",
+    "hint": "lavar"
+  },
+  {
+    "word": "diadema",
+    "hint": "cinta para el cabello"
+  },
+  {
+    "word": "diafragma",
+    "hint": "músculo respiración"
+  },
+  {
+    "word": "diente de leon",
+    "hint": "sopla semillas"
+  },
+  {
+    "word": "dimensión",
+    "hint": "plano de existencia paralela"
+  },
+  {
+    "word": "diplomático",
+    "hint": "embajada"
+  },
+  {
+    "word": "director",
+    "hint": "organización"
+  },
+  {
+    "word": "director de cine",
+    "hint": "rodaje"
+  },
+  {
+    "word": "director de orquesta",
+    "hint": "batuta"
+  },
+  {
+    "word": "disc jockey",
+    "hint": "música"
+  },
+  {
+    "word": "disco",
+    "hint": "almacena datos"
+  },
+  {
+    "word": "disco desmaquillante",
+    "hint": "quitar"
+  },
+  {
+    "word": "discoteca",
+    "hint": "musica baile"
+  },
+  {
+    "word": "diseñador de moda",
+    "hint": "ropa"
+  },
+  {
+    "word": "diseñador de videojuegos",
+    "hint": "nivel"
+  },
+  {
+    "word": "diseñador gráfico",
+    "hint": "imágenes"
+  },
+  {
+    "word": "diseñador industrial",
+    "hint": "productos"
+  },
+  {
+    "word": "diván",
+    "hint": "tumbarse"
+  },
+  {
+    "word": "djinn",
+    "hint": "genio árabe que concede deseos"
+  },
+  {
+    "word": "doblador",
+    "hint": "película"
+  },
+  {
+    "word": "doblaje",
+    "hint": "voz otro idioma"
+  },
+  {
+    "word": "documental",
+    "hint": "película real"
+  },
+  {
+    "word": "domador",
+    "hint": "fieras"
+  },
+  {
+    "word": "dominó",
+    "hint": "fichas puntos"
+  },
+  {
+    "word": "donut",
+    "hint": "rosca frita"
+  },
+  {
+    "word": "dorada",
+    "hint": "pez dorado"
+  },
+  {
+    "word": "dosel",
+    "hint": "cama"
+  },
+  {
+    "word": "draga",
+    "hint": "limpia fondo"
+  },
+  {
+    "word": "dragón marino",
+    "hint": "serpiente acuática gigante"
+  },
+  {
+    "word": "drama",
+    "hint": "género emocional"
+  },
+  {
+    "word": "dron",
+    "hint": "vehículo aéreo no tripulado"
+  },
+  {
+    "word": "drone",
+    "hint": "aereo sin piloto"
+  },
+  {
+    "word": "druida",
+    "hint": "sacerdote de la naturaleza celta"
+  },
+  {
+    "word": "ducha",
+    "hint": "agua"
+  },
+  {
+    "word": "dueto",
+    "hint": "dos cantantes"
+  },
+  {
+    "word": "duna",
+    "hint": "arena viento"
+  },
+  {
+    "word": "durian",
+    "hint": "olor fuerte"
+  },
+  {
+    "word": "ebano",
+    "hint": "oscura densa"
+  },
+  {
+    "word": "eclipse",
+    "hint": "sol sombra"
+  },
+  {
+    "word": "ecólogo",
+    "hint": "ecosistema"
+  },
+  {
+    "word": "economista",
+    "hint": "mercado"
+  },
+  {
+    "word": "edificio",
+    "hint": "estructura pisos"
+  },
+  {
+    "word": "editor de vídeo",
+    "hint": "montaje"
+  },
+  {
+    "word": "editor literario",
+    "hint": "manuscrito"
+  },
+  {
+    "word": "edredón",
+    "hint": "abrigo"
+  },
+  {
+    "word": "educador social",
+    "hint": "inclusión"
+  },
+  {
+    "word": "efectos",
+    "hint": "trucos visuales"
+  },
+  {
+    "word": "electricista",
+    "hint": "cables"
+  },
+  {
+    "word": "electrocardiograma",
+    "hint": "traza actividad cardiaca"
+  },
+  {
+    "word": "electrónica",
+    "hint": "música digital"
+  },
+  {
+    "word": "elfo",
+    "hint": "ser etéreo de orejas puntiagudas"
+  },
+  {
+    "word": "elixir",
+    "hint": "líquido que otorga poderes"
+  },
+  {
+    "word": "embajada",
+    "hint": "representacion pais"
+  },
+  {
+    "word": "embajador",
+    "hint": "país"
+  },
+  {
+    "word": "embarcadero",
+    "hint": "subir barco"
+  },
+  {
+    "word": "emboscada",
+    "hint": "ataque por sorpresa oculto"
+  },
+  {
+    "word": "embudo",
+    "hint": "verter"
+  },
+  {
+    "word": "empanada",
+    "hint": "masa rellena"
+  },
+  {
+    "word": "enano",
+    "hint": "ser pequeño experto en forja"
+  },
+  {
+    "word": "encaje",
+    "hint": "tela calada decorativa"
+  },
+  {
+    "word": "encantado",
+    "hint": "ser transformado por hechizo"
+  },
+  {
+    "word": "enchufe",
+    "hint": "electricidad"
+  },
+  {
+    "word": "enchufe múltiple",
+    "hint": "regleta"
+  },
+  {
+    "word": "encía",
+    "hint": "sostiene dientes"
+  },
+  {
+    "word": "encina",
+    "hint": "bellota mediterraneo"
+  },
+  {
+    "word": "encurtido",
+    "hint": "vinagre vegetal"
+  },
+  {
+    "word": "endibia",
+    "hint": "hoja amarga"
+  },
+  {
+    "word": "endocrinólogo",
+    "hint": "hormonas"
+  },
+  {
+    "word": "eneldo",
+    "hint": "aroma cocina"
+  },
+  {
+    "word": "enfermero",
+    "hint": "paciente"
+  },
+  {
+    "word": "enigma",
+    "hint": "acertijo de difícil solución"
+  },
+  {
+    "word": "enlace",
+    "hint": "une carreteras"
+  },
+  {
+    "word": "enredadera",
+    "hint": "trepa envuelve"
+  },
+  {
+    "word": "ensalada",
+    "hint": "hojas aliñadas"
+  },
+  {
+    "word": "ensaladilla",
+    "hint": "patata mayonesa"
+  },
+  {
+    "word": "ensayo",
+    "hint": "practicar música"
+  },
+  {
+    "word": "entomólogo",
+    "hint": "insectos"
+  },
+  {
+    "word": "entrada",
+    "hint": "acceso lugar"
+  },
+  {
+    "word": "entrenador deportivo",
+    "hint": "equipo"
+  },
+  {
+    "word": "entrenador personal",
+    "hint": "gimnasio"
+  },
+  {
+    "word": "épico",
+    "hint": "grande histórico"
+  },
+  {
+    "word": "epidermis",
+    "hint": "capa exterior piel"
+  },
+  {
+    "word": "episodio",
+    "hint": "capítulo serie"
+  },
+  {
+    "word": "epopeya",
+    "hint": "poema largo de hazañas heroicas"
+  },
+  {
+    "word": "equitación",
+    "hint": "montar caballo"
+  },
+  {
+    "word": "erizo",
+    "hint": "puas defensa"
+  },
+  {
+    "word": "erizo de mar",
+    "hint": "espinas fondo"
+  },
+  {
+    "word": "erupcion",
+    "hint": "magma explosion"
+  },
+  {
+    "word": "escalada",
+    "hint": "subir pared"
+  },
+  {
+    "word": "escalador",
+    "hint": "montaña"
+  },
+  {
+    "word": "escalera",
+    "hint": "altura"
+  },
+  {
+    "word": "escáner",
+    "hint": "digitalizar"
+  },
+  {
+    "word": "escarabajo",
+    "hint": "duro tierra"
+  },
+  {
+    "word": "escarcha",
+    "hint": "helada mañana"
+  },
+  {
+    "word": "escena",
+    "hint": "fragmento película"
+  },
+  {
+    "word": "escena postcréditos",
+    "hint": "sorpresa al final"
+  },
+  {
+    "word": "escenografía",
+    "hint": "fondo visual"
+  },
+  {
+    "word": "escenógrafo",
+    "hint": "decorado"
+  },
+  {
+    "word": "esclava",
+    "hint": "pulsera rígida sin cierre"
+  },
+  {
+    "word": "esclusa",
+    "hint": "nivel agua canal"
+  },
+  {
+    "word": "escoba",
+    "hint": "barrer"
+  },
+  {
+    "word": "escobilla",
+    "hint": "wc"
+  },
+  {
+    "word": "escorpion",
+    "hint": "cola veneno"
+  },
+  {
+    "word": "escritor",
+    "hint": "libro"
+  },
+  {
+    "word": "escudo",
+    "hint": "protección defensiva en batalla"
+  },
+  {
+    "word": "escuela",
+    "hint": "ninos estudian"
+  },
+  {
+    "word": "escultor",
+    "hint": "arcilla"
+  },
+  {
+    "word": "escurridor",
+    "hint": "pasta agua"
+  },
+  {
+    "word": "esfinge",
+    "hint": "propone acertijos mortales"
+  },
+  {
+    "word": "esgrima",
+    "hint": "espada deporte"
+  },
+  {
+    "word": "esófago",
+    "hint": "lleva comida al estómago"
+  },
+  {
+    "word": "espagueti",
+    "hint": "pasta larga"
+  },
+  {
+    "word": "esparragos",
+    "hint": "tallo primavera"
+  },
+  {
+    "word": "espátula",
+    "hint": "voltear"
+  },
+  {
+    "word": "espejo",
+    "hint": "reflejo"
+  },
+  {
+    "word": "espejo de baño",
+    "hint": "reflejo"
+  },
+  {
+    "word": "espejo de tocador",
+    "hint": "maquillaje"
+  },
+  {
+    "word": "espía",
+    "hint": "agente secreto de inteligencia"
+  },
+  {
+    "word": "espiga",
+    "hint": "maiz entero"
+  },
+  {
+    "word": "espinaca",
+    "hint": "hoja verde"
+  },
+  {
+    "word": "espinilla",
+    "hint": "hueso frontal pierna"
+  },
+  {
+    "word": "espino",
+    "hint": "blanco pinca"
+  },
+  {
+    "word": "esponja",
+    "hint": "limpiar"
+  },
+  {
+    "word": "espumadera",
+    "hint": "agujeros retirar"
+  },
+  {
+    "word": "espumador",
+    "hint": "leche vapor"
+  },
+  {
+    "word": "esquís",
+    "hint": "nieve deslizar"
+  },
+  {
+    "word": "estacion",
+    "hint": "trenes"
+  },
+  {
+    "word": "estacionamiento",
+    "hint": "aparcar vehiculos"
+  },
+  {
+    "word": "estadístico",
+    "hint": "datos"
+  },
+  {
+    "word": "estalagmita",
+    "hint": "cueva sube"
+  },
+  {
+    "word": "estandarte",
+    "hint": "bandera de un reino o ejército"
+  },
+  {
+    "word": "estantería",
+    "hint": "libros"
+  },
+  {
+    "word": "estepa",
+    "hint": "seca plana"
+  },
+  {
+    "word": "esteticista",
+    "hint": "belleza"
+  },
+  {
+    "word": "estetoscopio",
+    "hint": "escucha el corazón"
+  },
+  {
+    "word": "estofado",
+    "hint": "carne guisada"
+  },
+  {
+    "word": "estor",
+    "hint": "enrollar"
+  },
+  {
+    "word": "estragon",
+    "hint": "hierba francesa"
+  },
+  {
+    "word": "estrecho",
+    "hint": "paso angosto"
+  },
+  {
+    "word": "estrella",
+    "hint": "actor famoso"
+  },
+  {
+    "word": "estrella de mar",
+    "hint": "cinco armas"
+  },
+  {
+    "word": "estreno",
+    "hint": "primera proyección"
+  },
+  {
+    "word": "estribillo",
+    "hint": "parte repetida"
+  },
+  {
+    "word": "estrofa",
+    "hint": "conjunto de versos en un poema"
+  },
+  {
+    "word": "estropajo",
+    "hint": "fregar"
+  },
+  {
+    "word": "estuario",
+    "hint": "mar entra rio"
+  },
+  {
+    "word": "estudio",
+    "hint": "grabar música"
+  },
+  {
+    "word": "excavadora",
+    "hint": "obra tierra"
+  },
+  {
+    "word": "exilio",
+    "hint": "expulsión fuera del territorio"
+  },
+  {
+    "word": "experto en ciberseguridad",
+    "hint": "hackeo"
+  },
+  {
+    "word": "exportador",
+    "hint": "mercancía"
+  },
+  {
+    "word": "exprimidor",
+    "hint": "naranja"
+  },
+  {
+    "word": "extras",
+    "hint": "fondo escena"
+  },
+  {
+    "word": "fabada",
+    "hint": "faba asturiana"
+  },
+  {
+    "word": "fabrica",
+    "hint": "produccion industrial"
+  },
+  {
+    "word": "fábula",
+    "hint": "historia con moraleja y animales"
+  },
+  {
+    "word": "falange",
+    "hint": "hueso del dedo"
+  },
+  {
+    "word": "fantasía",
+    "hint": "género magia"
+  },
+  {
+    "word": "faringe",
+    "hint": "fondo de la garganta"
+  },
+  {
+    "word": "farmacéutico",
+    "hint": "medicamentos"
+  },
+  {
+    "word": "farmacia",
+    "hint": "medicamentos receta"
+  },
+  {
+    "word": "fasan",
+    "hint": "caza plumas"
+  },
+  {
+    "word": "fauno",
+    "hint": "deidad forestal con cuernos"
+  },
+  {
+    "word": "fax",
+    "hint": "documento"
+  },
+  {
+    "word": "felpudo",
+    "hint": "entrada"
+  },
+  {
+    "word": "fénix",
+    "hint": "ave que renace de las cenizas"
+  },
+  {
+    "word": "ferry",
+    "hint": "cruza bahia"
+  },
+  {
+    "word": "festival",
+    "hint": "evento musical"
+  },
+  {
+    "word": "feudo",
+    "hint": "tierra a cambio de servicio"
+  },
+  {
+    "word": "ficción",
+    "hint": "historia inventada"
+  },
+  {
+    "word": "fideos",
+    "hint": "pasta fina"
+  },
+  {
+    "word": "filete",
+    "hint": "carne plana"
+  },
+  {
+    "word": "film transparente",
+    "hint": "cubrir"
+  },
+  {
+    "word": "filósofo",
+    "hint": "pensamiento"
+  },
+  {
+    "word": "final",
+    "hint": "último episodio"
+  },
+  {
+    "word": "fiordo",
+    "hint": "noruega agua"
+  },
+  {
+    "word": "firewall",
+    "hint": "barrera de seguridad digital"
+  },
+  {
+    "word": "firmware",
+    "hint": "software interno del dispositivo"
+  },
+  {
+    "word": "fiscal",
+    "hint": "acusación"
+  },
+  {
+    "word": "físico",
+    "hint": "energía"
+  },
+  {
+    "word": "fisioterapeuta",
+    "hint": "rehabilitación"
+  },
+  {
+    "word": "fisioterapeuta deportivo",
+    "hint": "lesión"
+  },
+  {
+    "word": "fitness",
+    "hint": "ejercicio cuerpo"
+  },
+  {
+    "word": "flamenco",
+    "hint": "rosa pata"
+  },
+  {
+    "word": "flan",
+    "hint": "caramelo cuajado"
+  },
+  {
+    "word": "flashback",
+    "hint": "escena pasado"
+  },
+  {
+    "word": "flauta",
+    "hint": "soplar melodía"
+  },
+  {
+    "word": "flexo",
+    "hint": "escritorio"
+  },
+  {
+    "word": "florista",
+    "hint": "flores"
+  },
+  {
+    "word": "foca",
+    "hint": "hielo pelota"
+  },
+  {
+    "word": "foie",
+    "hint": "higado pato"
+  },
+  {
+    "word": "fontanero",
+    "hint": "tuberías"
+  },
+  {
+    "word": "forense",
+    "hint": "autopsia"
+  },
+  {
+    "word": "formador",
+    "hint": "capacitación"
+  },
+  {
+    "word": "formón",
+    "hint": "madera"
+  },
+  {
+    "word": "forro",
+    "hint": "interior de una prenda"
+  },
+  {
+    "word": "fortaleza",
+    "hint": "construcción defensiva antigua"
+  },
+  {
+    "word": "fortísimo",
+    "hint": "muy fuerte música"
+  },
+  {
+    "word": "fosa",
+    "hint": "entierro colectivo"
+  },
+  {
+    "word": "foso",
+    "hint": "zanja de agua alrededor del castillo"
+  },
+  {
+    "word": "fotógrafo",
+    "hint": "cámara"
+  },
+  {
+    "word": "fotógrafo de bodas",
+    "hint": "ceremonia"
+  },
+  {
+    "word": "fotograma",
+    "hint": "foto"
+  },
+  {
+    "word": "frac",
+    "hint": "levita de cola"
+  },
+  {
+    "word": "frambuesa",
+    "hint": "mora roja"
+  },
+  {
+    "word": "frambueso",
+    "hint": "roja acidez"
+  },
+  {
+    "word": "frasco",
+    "hint": "perfume"
+  },
+  {
+    "word": "fregadero",
+    "hint": "lavar"
+  },
+  {
+    "word": "fregasuelos",
+    "hint": "suelo"
+  },
+  {
+    "word": "fregona",
+    "hint": "fregar"
+  },
+  {
+    "word": "fregona de microfibra",
+    "hint": "suelo"
+  },
+  {
+    "word": "freidora",
+    "hint": "aceite"
+  },
+  {
+    "word": "fresa",
+    "hint": "roja pequeña"
+  },
+  {
+    "word": "fresno",
+    "hint": "madera flexible"
+  },
+  {
+    "word": "frisbee",
+    "hint": "disco vuelo"
+  },
+  {
+    "word": "frittata",
+    "hint": "tortilla italiana"
+  },
+  {
+    "word": "frontera",
+    "hint": "limite paises"
+  },
+  {
+    "word": "frutero",
+    "hint": "fruta"
+  },
+  {
+    "word": "fuente",
+    "hint": "servir"
+  },
+  {
+    "word": "fuga",
+    "hint": "forma contrapunto"
+  },
+  {
+    "word": "fular",
+    "hint": "pañuelo largo de seda"
+  },
+  {
+    "word": "funcionario",
+    "hint": "burocracia"
+  },
+  {
+    "word": "funda de almohada",
+    "hint": "almohada"
+  },
+  {
+    "word": "funda nórdica",
+    "hint": "edredón"
+  },
+  {
+    "word": "funicular",
+    "hint": "cuesta rieles"
+  },
+  {
+    "word": "funk",
+    "hint": "groove bajo"
+  },
+  {
+    "word": "furgoneta",
+    "hint": "carga mediana"
+  },
+  {
+    "word": "galardón",
+    "hint": "premio al valor o mérito"
+  },
+  {
+    "word": "galeria",
+    "hint": "arte exposicion"
+  },
+  {
+    "word": "galleta",
+    "hint": "crujiente dulce"
+  },
+  {
+    "word": "gamba",
+    "hint": "crustaceo rosado"
+  },
+  {
+    "word": "ganadero",
+    "hint": "reses"
+  },
+  {
+    "word": "garaje",
+    "hint": "guardar carro"
+  },
+  {
+    "word": "garbanzo",
+    "hint": "legumbre redonda"
+  },
+  {
+    "word": "gasolinera",
+    "hint": "llenar tanque"
+  },
+  {
+    "word": "gastroenterólogo",
+    "hint": "digestión"
+  },
+  {
+    "word": "gaviotas",
+    "hint": "playa mar"
+  },
+  {
+    "word": "gazpacho",
+    "hint": "sopa fria"
+  },
+  {
+    "word": "gecko",
+    "hint": "pared trepa"
+  },
+  {
+    "word": "géiser",
+    "hint": "agua caliente"
+  },
+  {
+    "word": "gemelos",
+    "hint": "cierre de puño de camisa"
+  },
+  {
+    "word": "género",
+    "hint": "tipo película"
+  },
+  {
+    "word": "geoda",
+    "hint": "cristales dentro"
+  },
+  {
+    "word": "geógrafo",
+    "hint": "mapas"
+  },
+  {
+    "word": "geólogo",
+    "hint": "rocas"
+  },
+  {
+    "word": "geranio",
+    "hint": "rojo ventana"
+  },
+  {
+    "word": "gerente",
+    "hint": "empresa"
+  },
+  {
+    "word": "gerontólogo",
+    "hint": "ancianos"
+  },
+  {
+    "word": "gestor cultural",
+    "hint": "patrimonio"
+  },
+  {
+    "word": "gestor de proyectos",
+    "hint": "planificación"
+  },
+  {
+    "word": "gibbon",
+    "hint": "canto brazos"
+  },
+  {
+    "word": "gimnasio",
+    "hint": "ejercicio maquinas"
+  },
+  {
+    "word": "gin",
+    "hint": "enebro destilado"
+  },
+  {
+    "word": "ginecólogo",
+    "hint": "maternidad"
+  },
+  {
+    "word": "gira",
+    "hint": "tour conciertos"
+  },
+  {
+    "word": "glaciar",
+    "hint": "hielo montaña"
+  },
+  {
+    "word": "gladiolo",
+    "hint": "alta espada"
+  },
+  {
+    "word": "glissando",
+    "hint": "deslizar notas"
+  },
+  {
+    "word": "globo",
+    "hint": "aire caliente vuelo"
+  },
+  {
+    "word": "gnomo",
+    "hint": "guardián del tesoro subterráneo"
+  },
+  {
+    "word": "gobernador",
+    "hint": "estado"
+  },
+  {
+    "word": "gofrera",
+    "hint": "gofres"
+  },
+  {
+    "word": "gólem",
+    "hint": "figura de arcilla animada"
+  },
+  {
+    "word": "golf",
+    "hint": "hoyo palo"
+  },
+  {
+    "word": "golfo",
+    "hint": "entrante marino"
+  },
+  {
+    "word": "golondrina",
+    "hint": "verano vuelo"
+  },
+  {
+    "word": "goma de borrar",
+    "hint": "lápiz"
+  },
+  {
+    "word": "gondola",
+    "hint": "venecia canal"
+  },
+  {
+    "word": "gorila",
+    "hint": "selva fuerte"
+  },
+  {
+    "word": "gorra",
+    "hint": "cubre cabeza con visera"
+  },
+  {
+    "word": "gorro",
+    "hint": "cabeza"
+  },
+  {
+    "word": "grampa",
+    "hint": "sujetar"
+  },
+  {
+    "word": "granada",
+    "hint": "semillas rojas"
+  },
+  {
+    "word": "granero",
+    "hint": "cosecha guardada"
+  },
+  {
+    "word": "granito",
+    "hint": "duro gris"
+  },
+  {
+    "word": "granizo",
+    "hint": "hielo llueve"
+  },
+  {
+    "word": "grapadora",
+    "hint": "papeles"
+  },
+  {
+    "word": "gremio",
+    "hint": "asociación de artesanos medievales"
+  },
+  {
+    "word": "grifería",
+    "hint": "agua"
+  },
+  {
+    "word": "grifo",
+    "hint": "agua"
+  },
+  {
+    "word": "grillo",
+    "hint": "canto noche"
+  },
+  {
+    "word": "grimorium",
+    "hint": "libro de magia oscura"
+  },
+  {
+    "word": "grua",
+    "hint": "eleva carga"
+  },
+  {
+    "word": "grulla",
+    "hint": "danza elegante"
+  },
+  {
+    "word": "gruta",
+    "hint": "humeda piedra"
+  },
+  {
+    "word": "guacamayo",
+    "hint": "selva colores"
+  },
+  {
+    "word": "guante",
+    "hint": "mano"
+  },
+  {
+    "word": "guante de cocina",
+    "hint": "horno"
+  },
+  {
+    "word": "guardabosques",
+    "hint": "selva"
+  },
+  {
+    "word": "guardaespaldas",
+    "hint": "protección"
+  },
+  {
+    "word": "guardia de seguridad",
+    "hint": "vigilancia"
+  },
+  {
+    "word": "guayaba",
+    "hint": "tropical rosada"
+  },
+  {
+    "word": "guepardo",
+    "hint": "veloz manchas"
+  },
+  {
+    "word": "guía turístico",
+    "hint": "turismo"
+  },
+  {
+    "word": "guión",
+    "hint": "texto cine"
+  },
+  {
+    "word": "guionista",
+    "hint": "historia"
+  },
+  {
+    "word": "guisante",
+    "hint": "vaina verde"
+  },
+  {
+    "word": "guiso",
+    "hint": "olla lento"
+  },
+  {
+    "word": "habichuela",
+    "hint": "frijol vaina"
+  },
+  {
+    "word": "hacha",
+    "hint": "leña"
+  },
+  {
+    "word": "hacienda",
+    "hint": "finca grande"
+  },
+  {
+    "word": "hada",
+    "hint": "ser mágico con alas"
+  },
+  {
+    "word": "halcon",
+    "hint": "caza vuelo"
+  },
+  {
+    "word": "halterofilia",
+    "hint": "levantar pesas"
+  },
+  {
+    "word": "hamaca",
+    "hint": "descanso"
+  },
+  {
+    "word": "hamburgesa",
+    "hint": "carne picada"
+  },
+  {
+    "word": "hangar",
+    "hint": "guardar aviones"
+  },
+  {
+    "word": "harina",
+    "hint": "trigo molido"
+  },
+  {
+    "word": "haya",
+    "hint": "bosque suave"
+  },
+  {
+    "word": "hechicero",
+    "hint": "practica magia oscura"
+  },
+  {
+    "word": "hechizo",
+    "hint": "fórmula mágica"
+  },
+  {
+    "word": "helecho",
+    "hint": "sombra antigua"
+  },
+  {
+    "word": "helicoptero",
+    "hint": "rotor gira"
+  },
+  {
+    "word": "helipuerto",
+    "hint": "aterrizan helicopteros"
+  },
+  {
+    "word": "hematólogo",
+    "hint": "sangre"
+  },
+  {
+    "word": "herencia",
+    "hint": "bienes recibidos tras fallecimiento"
+  },
+  {
+    "word": "hervidor",
+    "hint": "agua caliente"
+  },
+  {
+    "word": "hidra",
+    "hint": "serpiente de múltiples cabezas"
+  },
+  {
+    "word": "hidroavion",
+    "hint": "aterriza agua"
+  },
+  {
+    "word": "hiedra",
+    "hint": "trepa muro"
+  },
+  {
+    "word": "hiena",
+    "hint": "risa carroña"
+  },
+  {
+    "word": "hierbabuena",
+    "hint": "menta española"
+  },
+  {
+    "word": "higo",
+    "hint": "dulce morado"
+  },
+  {
+    "word": "hilo",
+    "hint": "costura"
+  },
+  {
+    "word": "hip-hop",
+    "hint": "urbano mc"
+  },
+  {
+    "word": "hípica",
+    "hint": "jinete pista"
+  },
+  {
+    "word": "hipismo",
+    "hint": "deporte caballo"
+  },
+  {
+    "word": "hipopotamo",
+    "hint": "rio africano"
+  },
+  {
+    "word": "historiador",
+    "hint": "pasado"
+  },
+  {
+    "word": "holograma",
+    "hint": "imagen tridimensional de luz"
+  },
+  {
+    "word": "hombre lobo",
+    "hint": "se transforma en lobo con la luna"
+  },
+  {
+    "word": "hombreras",
+    "hint": "relleno de hombros en ropa"
+  },
+  {
+    "word": "hongo",
+    "hint": "sombrero esporas"
+  },
+  {
+    "word": "horchata",
+    "hint": "chufa bebida"
+  },
+  {
+    "word": "hormiga",
+    "hint": "colonia fuerza"
+  },
+  {
+    "word": "horno",
+    "hint": "hornear"
+  },
+  {
+    "word": "hortensia",
+    "hint": "azul maceta"
+  },
+  {
+    "word": "hospital",
+    "hint": "curacion enfermos"
+  },
+  {
+    "word": "hostal",
+    "hint": "alojamiento barato"
+  },
+  {
+    "word": "hotel",
+    "hint": "dormir viajeros"
+  },
+  {
+    "word": "huevo",
+    "hint": "gallina oval"
+  },
+  {
+    "word": "humidificador",
+    "hint": "seco"
+  },
+  {
+    "word": "humus",
+    "hint": "fértil tierra"
+  },
+  {
+    "word": "huracan",
+    "hint": "tormenta ojo"
+  },
+  {
+    "word": "ifrit",
+    "hint": "genio de fuego de la mitología árabe"
+  },
+  {
+    "word": "iglesia",
+    "hint": "culto religioso"
+  },
+  {
+    "word": "iguana",
+    "hint": "reptil verde"
+  },
+  {
+    "word": "iluminación",
+    "hint": "luces escena"
+  },
+  {
+    "word": "iluminador",
+    "hint": "escenografía"
+  },
+  {
+    "word": "imperdible",
+    "hint": "alfiler con seguro"
+  },
+  {
+    "word": "impermeable",
+    "hint": "mojarse"
+  },
+  {
+    "word": "importador",
+    "hint": "aduanas"
+  },
+  {
+    "word": "impresora",
+    "hint": "papel"
+  },
+  {
+    "word": "incienso",
+    "hint": "humo"
+  },
+  {
+    "word": "indie",
+    "hint": "producción independiente"
+  },
+  {
+    "word": "indulto",
+    "hint": "perdón de la pena"
+  },
+  {
+    "word": "infectólogo",
+    "hint": "gérmenes"
+  },
+  {
+    "word": "infusion",
+    "hint": "hierba agua"
+  },
+  {
+    "word": "ingeniero",
+    "hint": "construcción"
+  },
+  {
+    "word": "ingeniero de sonido",
+    "hint": "grabación"
+  },
+  {
+    "word": "ingle",
+    "hint": "pliegue entre abdomen y muslo"
+  },
+  {
+    "word": "inodoro",
+    "hint": "wc"
+  },
+  {
+    "word": "inspector de hacienda",
+    "hint": "impuestos"
+  },
+  {
+    "word": "inspector de obras",
+    "hint": "licencia"
+  },
+  {
+    "word": "instructor de buceo",
+    "hint": "submarino"
+  },
+  {
+    "word": "instructor de manejo",
+    "hint": "volante"
+  },
+  {
+    "word": "inteligencia artificial",
+    "hint": "robots"
+  },
+  {
+    "word": "intercambiador",
+    "hint": "cruces autopista"
+  },
+  {
+    "word": "interfaz",
+    "hint": "punto de interacción usuario-máquina"
+  },
+  {
+    "word": "intérprete",
+    "hint": "lenguas"
+  },
+  {
+    "word": "interruptor",
+    "hint": "luz"
+  },
+  {
+    "word": "intro",
+    "hint": "inicio canción"
+  },
+  {
+    "word": "investigador",
+    "hint": "ciencia"
+  },
+  {
+    "word": "investigador privado",
+    "hint": "seguimiento"
+  },
+  {
+    "word": "iris",
+    "hint": "color del ojo"
+  },
+  {
+    "word": "isla",
+    "hint": "tierra rodeada agua"
+  },
+  {
+    "word": "jabali",
+    "hint": "colmillos monte"
+  },
+  {
+    "word": "jabón",
+    "hint": "lavar"
+  },
+  {
+    "word": "jacinto",
+    "hint": "morada primavera"
+  },
+  {
+    "word": "jaguar",
+    "hint": "america selva"
+  },
+  {
+    "word": "jamon",
+    "hint": "pata curada"
+  },
+  {
+    "word": "jamon cocido",
+    "hint": "pechuga rosada"
+  },
+  {
+    "word": "jardin",
+    "hint": "plantas flores"
+  },
+  {
+    "word": "jardinera",
+    "hint": "plantas"
+  },
+  {
+    "word": "jarra",
+    "hint": "zumo"
+  },
+  {
+    "word": "jazz",
+    "hint": "improvisación ritmo"
+  },
+  {
+    "word": "jenga",
+    "hint": "bloques madera"
+  },
+  {
+    "word": "jengibre",
+    "hint": "raiz picante"
+  },
+  {
+    "word": "jeringa",
+    "hint": "extrae o inyecta líquido"
+  },
+  {
+    "word": "jinete",
+    "hint": "caballo"
+  },
+  {
+    "word": "jirafa",
+    "hint": "cuello largo"
+  },
+  {
+    "word": "joyero",
+    "hint": "joyas"
+  },
+  {
+    "word": "joystick",
+    "hint": "palanca de control"
+  },
+  {
+    "word": "judo",
+    "hint": "marcial agarre"
+  },
+  {
+    "word": "juez",
+    "hint": "sentencia"
+  },
+  {
+    "word": "junco",
+    "hint": "agua ribera"
+  },
+  {
+    "word": "jurado",
+    "hint": "veredicto"
+  },
+  {
+    "word": "justa",
+    "hint": "combate a caballo con lanza"
+  },
+  {
+    "word": "juzgado",
+    "hint": "derecho aplicado"
+  },
+  {
+    "word": "karate",
+    "hint": "artes marciales"
+  },
+  {
+    "word": "karma",
+    "hint": "ley de causa y efecto"
+  },
+  {
+    "word": "kayak",
+    "hint": "paleta agua"
+  },
+  {
+    "word": "ketchup",
+    "hint": "salsa tomate"
+  },
+  {
+    "word": "kimono",
+    "hint": "bata japonesa"
+  },
+  {
+    "word": "kitsune",
+    "hint": "zorro espíritu japonés"
+  },
+  {
+    "word": "kiwi",
+    "hint": "verde peloso"
+  },
+  {
+    "word": "koala",
+    "hint": "eucalipto"
+  },
+  {
+    "word": "kraken",
+    "hint": "monstruo marino colosal"
+  },
+  {
+    "word": "laberinto",
+    "hint": "red de pasillos sin salida obvia"
+  },
+  {
+    "word": "laboratorio",
+    "hint": "experimentos ciencia"
+  },
+  {
+    "word": "lago",
+    "hint": "agua dulce"
+  },
+  {
+    "word": "laguna",
+    "hint": "agua pequeña"
+  },
+  {
+    "word": "lámpara",
+    "hint": "luz"
+  },
+  {
+    "word": "lancha",
+    "hint": "bote motor"
+  },
+  {
+    "word": "lancha zodiac",
+    "hint": "inflable motor"
+  },
+  {
+    "word": "langosta",
+    "hint": "mar pinzas"
+  },
+  {
+    "word": "langostino",
+    "hint": "gamba grande"
+  },
+  {
+    "word": "lanza",
+    "hint": "arma larga con punta"
+  },
+  {
+    "word": "lápiz",
+    "hint": "borrar"
+  },
+  {
+    "word": "largometraje",
+    "hint": "filme completo"
+  },
+  {
+    "word": "laringe",
+    "hint": "caja de voz"
+  },
+  {
+    "word": "lasaña",
+    "hint": "pasta capas"
+  },
+  {
+    "word": "láser",
+    "hint": "rayo de luz concentrada"
+  },
+  {
+    "word": "latencia",
+    "hint": "retardo en la red"
+  },
+  {
+    "word": "laurel",
+    "hint": "hoja victoria"
+  },
+  {
+    "word": "lava",
+    "hint": "roja fluye"
+  },
+  {
+    "word": "lavabo",
+    "hint": "lavarse"
+  },
+  {
+    "word": "lavadero",
+    "hint": "limpiar vehiculo"
+  },
+  {
+    "word": "lavadora",
+    "hint": "ropa sucia"
+  },
+  {
+    "word": "lavanda",
+    "hint": "morada aroma"
+  },
+  {
+    "word": "lavavajillas",
+    "hint": "platos"
+  },
+  {
+    "word": "leche",
+    "hint": "vaca liquida"
+  },
+  {
+    "word": "lechuga",
+    "hint": "hoja ensalada"
+  },
+  {
+    "word": "lechuza",
+    "hint": "nocturna silencio"
+  },
+  {
+    "word": "legado",
+    "hint": "lo que se deja para la posteridad"
+  },
+  {
+    "word": "legato",
+    "hint": "notas ligadas"
+  },
+  {
+    "word": "leggins",
+    "hint": "pantalón elástico ceñido"
+  },
+  {
+    "word": "lejía",
+    "hint": "blanquear"
+  },
+  {
+    "word": "lemur",
+    "hint": "madagascar cola"
+  },
+  {
+    "word": "lenteja",
+    "hint": "legumbre plana"
+  },
+  {
+    "word": "lentejuela",
+    "hint": "disco brillante en ropa"
+  },
+  {
+    "word": "leon",
+    "hint": "melena rey"
+  },
+  {
+    "word": "leopardo",
+    "hint": "manchas veloces"
+  },
+  {
+    "word": "leprechaun",
+    "hint": "duende irlandés guardián de oro"
+  },
+  {
+    "word": "leyenda",
+    "hint": "relato mítico de origen popular"
+  },
+  {
+    "word": "libelula",
+    "hint": "agua transparente"
+  },
+  {
+    "word": "librero",
+    "hint": "libros"
+  },
+  {
+    "word": "lichi",
+    "hint": "rojo asia"
+  },
+  {
+    "word": "licor",
+    "hint": "dulce alcohol"
+  },
+  {
+    "word": "licuadora",
+    "hint": "batidos"
+  },
+  {
+    "word": "ligamento",
+    "hint": "une huesos entre sí"
+  },
+  {
+    "word": "lija",
+    "hint": "lijar"
+  },
+  {
+    "word": "lima",
+    "hint": "afilar"
+  },
+  {
+    "word": "lima de uñas",
+    "hint": "uñas"
+  },
+  {
+    "word": "limon",
+    "hint": "acido amarillo"
+  },
+  {
+    "word": "limonada",
+    "hint": "limon azucar"
+  },
+  {
+    "word": "limpiacristales",
+    "hint": "ventana"
+  },
+  {
+    "word": "linaje",
+    "hint": "descendencia de sangre noble"
+  },
+  {
+    "word": "lince",
+    "hint": "borla oreja"
+  },
+  {
+    "word": "lingüista",
+    "hint": "gramática"
+  },
+  {
+    "word": "lino",
+    "hint": "semilla aceite"
+  },
+  {
+    "word": "liquen",
+    "hint": "roca gris"
+  },
+  {
+    "word": "lira",
+    "hint": "antigua cuerda"
+  },
+  {
+    "word": "lirio",
+    "hint": "flor fragante"
+  },
+  {
+    "word": "llama",
+    "hint": "andes lana"
+  },
+  {
+    "word": "llanura",
+    "hint": "terreno plano"
+  },
+  {
+    "word": "llave",
+    "hint": "puerta"
+  },
+  {
+    "word": "llave de tubo",
+    "hint": "tubería"
+  },
+  {
+    "word": "llave inglesa",
+    "hint": "fontanero"
+  },
+  {
+    "word": "llorona",
+    "hint": "espíritu que busca a sus hijos"
+  },
+  {
+    "word": "lobo",
+    "hint": "aullido luna"
+  },
+  {
+    "word": "lóbulo",
+    "hint": "parte baja oreja"
+  },
+  {
+    "word": "locación",
+    "hint": "lugar exterior"
+  },
+  {
+    "word": "loción",
+    "hint": "hidratar"
+  },
+  {
+    "word": "locutor",
+    "hint": "radio"
+  },
+  {
+    "word": "logopeda",
+    "hint": "habla"
+  },
+  {
+    "word": "lomo",
+    "hint": "cerdo curado"
+  },
+  {
+    "word": "loro",
+    "hint": "habla colores"
+  },
+  {
+    "word": "lubina",
+    "hint": "pez mar"
+  },
+  {
+    "word": "lucha",
+    "hint": "cuerpo cuerpo"
+  },
+  {
+    "word": "macarron",
+    "hint": "tubo pasta"
+  },
+  {
+    "word": "maceta",
+    "hint": "planta"
+  },
+  {
+    "word": "maestro",
+    "hint": "aula"
+  },
+  {
+    "word": "magdalena",
+    "hint": "bollo pequeño"
+  },
+  {
+    "word": "magnolia",
+    "hint": "blanca arbol"
+  },
+  {
+    "word": "mago",
+    "hint": "ilusión"
+  },
+  {
+    "word": "maguey",
+    "hint": "mezcal espinas"
+  },
+  {
+    "word": "maitre",
+    "hint": "restaurante"
+  },
+  {
+    "word": "maiz",
+    "hint": "mazorca amarillo"
+  },
+  {
+    "word": "malabarista",
+    "hint": "pelotas"
+  },
+  {
+    "word": "maletín",
+    "hint": "oficina"
+  },
+  {
+    "word": "mallas",
+    "hint": "prenda ajustada piernas"
+  },
+  {
+    "word": "mamba",
+    "hint": "negra veloz"
+  },
+  {
+    "word": "manantial",
+    "hint": "agua tierra"
+  },
+  {
+    "word": "mandarina",
+    "hint": "naranja pequeña"
+  },
+  {
+    "word": "mandioca",
+    "hint": "america raiz"
+  },
+  {
+    "word": "mando",
+    "hint": "televisor"
+  },
+  {
+    "word": "mandolina",
+    "hint": "laminadora vegetal"
+  },
+  {
+    "word": "mandril",
+    "hint": "cara colores"
+  },
+  {
+    "word": "manglar",
+    "hint": "raices agua"
+  },
+  {
+    "word": "mango",
+    "hint": "tropical dulce"
+  },
+  {
+    "word": "manguera",
+    "hint": "jardín"
+  },
+  {
+    "word": "manicurista",
+    "hint": "uñas"
+  },
+  {
+    "word": "manómetro",
+    "hint": "presión"
+  },
+  {
+    "word": "mansion",
+    "hint": "residencia gran"
+  },
+  {
+    "word": "manta",
+    "hint": "abrigo"
+  },
+  {
+    "word": "manteca",
+    "hint": "grasa cerdo"
+  },
+  {
+    "word": "mantecado",
+    "hint": "navidad manteca"
+  },
+  {
+    "word": "mantequilla",
+    "hint": "nata solida"
+  },
+  {
+    "word": "mantequillera",
+    "hint": "mantequilla"
+  },
+  {
+    "word": "manticora",
+    "hint": "criatura de cabeza humana y cuerpo felino"
+  },
+  {
+    "word": "mantis",
+    "hint": "reza caza"
+  },
+  {
+    "word": "mantra",
+    "hint": "frase repetida en meditación"
+  },
+  {
+    "word": "manzana",
+    "hint": "fruta roja verde"
+  },
+  {
+    "word": "manzanilla",
+    "hint": "té infusion"
+  },
+  {
+    "word": "mapa",
+    "hint": "orientacion ruta"
+  },
+  {
+    "word": "maquillador",
+    "hint": "rostro"
+  },
+  {
+    "word": "maquillaje",
+    "hint": "rostro"
+  },
+  {
+    "word": "maquinilla",
+    "hint": "afeitar"
+  },
+  {
+    "word": "maquinista",
+    "hint": "tren"
+  },
+  {
+    "word": "mar",
+    "hint": "agua salada"
+  },
+  {
+    "word": "maracuya",
+    "hint": "pasion tropical"
+  },
+  {
+    "word": "maratón",
+    "hint": "carrera larga"
+  },
+  {
+    "word": "marcador",
+    "hint": "puntos partido"
+  },
+  {
+    "word": "marea",
+    "hint": "luna oceano"
+  },
+  {
+    "word": "margarita",
+    "hint": "blanca pétalo"
+  },
+  {
+    "word": "marinero",
+    "hint": "barco"
+  },
+  {
+    "word": "marisma",
+    "hint": "zona inundable"
+  },
+  {
+    "word": "marmol",
+    "hint": "venas blanco"
+  },
+  {
+    "word": "marmota",
+    "hint": "hibernacion hoyo"
+  },
+  {
+    "word": "martillo",
+    "hint": "clavos"
+  },
+  {
+    "word": "masterización",
+    "hint": "audio final"
+  },
+  {
+    "word": "matemático",
+    "hint": "números"
+  },
+  {
+    "word": "mausoleo",
+    "hint": "tumba monumental"
+  },
+  {
+    "word": "mayonesa",
+    "hint": "salsa huevo"
+  },
+  {
+    "word": "mazapan",
+    "hint": "toledo almendra"
+  },
+  {
+    "word": "mazmorra",
+    "hint": "prisión subterránea del castillo"
+  },
+  {
+    "word": "mecánico",
+    "hint": "motor"
+  },
+  {
+    "word": "mecánico aeronáutico",
+    "hint": "aeropuerto"
+  },
+  {
+    "word": "mecedora",
+    "hint": "balancear"
+  },
+  {
+    "word": "medalla",
+    "hint": "premio deporte"
+  },
+  {
+    "word": "mediana",
+    "hint": "divide carriles"
+  },
+  {
+    "word": "medidor",
+    "hint": "mide magnitudes físicas"
+  },
+  {
+    "word": "médula",
+    "hint": "interior del hueso"
+  },
+  {
+    "word": "medusa",
+    "hint": "tentaculos mar"
+  },
+  {
+    "word": "mejillon",
+    "hint": "roca mar"
+  },
+  {
+    "word": "melocoton",
+    "hint": "suave peloso"
+  },
+  {
+    "word": "melodía",
+    "hint": "notas seguidas"
+  },
+  {
+    "word": "melon",
+    "hint": "fruta amarilla"
+  },
+  {
+    "word": "membrillo",
+    "hint": "amarillo duro"
+  },
+  {
+    "word": "memoria",
+    "hint": "almacena datos temporalmente"
+  },
+  {
+    "word": "menta",
+    "hint": "fria aroma"
+  },
+  {
+    "word": "mentón",
+    "hint": "debajo boca"
+  },
+  {
+    "word": "mentor",
+    "hint": "guía"
+  },
+  {
+    "word": "mercado",
+    "hint": "venta productos"
+  },
+  {
+    "word": "merengue",
+    "hint": "caribe baile"
+  },
+  {
+    "word": "merluza",
+    "hint": "pez blanco"
+  },
+  {
+    "word": "mermelada",
+    "hint": "fruta azucar"
+  },
+  {
+    "word": "mesa",
+    "hint": "comer"
+  },
+  {
+    "word": "meseta",
+    "hint": "plana alta"
+  },
+  {
+    "word": "metáfora",
+    "hint": "comparación sin nexo explícito"
+  },
+  {
+    "word": "metal",
+    "hint": "guitarra distorsión"
+  },
+  {
+    "word": "meteorólogo",
+    "hint": "clima"
+  },
+  {
+    "word": "metraje",
+    "hint": "duración filme"
+  },
+  {
+    "word": "metro",
+    "hint": "medir"
+  },
+  {
+    "word": "metropoli",
+    "hint": "gran ciudad"
+  },
+  {
+    "word": "mezcla",
+    "hint": "ajustar sonidos"
+  },
+  {
+    "word": "mezquita",
+    "hint": "rezo islamico"
+  },
+  {
+    "word": "micrófono",
+    "hint": "amplificar voz"
+  },
+  {
+    "word": "microondas",
+    "hint": "calentar"
+  },
+  {
+    "word": "microscopio",
+    "hint": "amplía lo muy pequeño"
+  },
+  {
+    "word": "miel",
+    "hint": "abeja dulce"
+  },
+  {
+    "word": "mimosa",
+    "hint": "amarilla sensible"
+  },
+  {
+    "word": "mina",
+    "hint": "extrae minerales"
+  },
+  {
+    "word": "mineral",
+    "hint": "tierra brilla"
+  },
+  {
+    "word": "minero",
+    "hint": "mina"
+  },
+  {
+    "word": "ministerio",
+    "hint": "area gobierno"
+  },
+  {
+    "word": "ministro",
+    "hint": "gabinete"
+  },
+  {
+    "word": "minotauro",
+    "hint": "cabeza de toro cuerpo humano"
+  },
+  {
+    "word": "miso",
+    "hint": "soja fermentada"
+  },
+  {
+    "word": "misterio",
+    "hint": "género enigma"
+  },
+  {
+    "word": "mito",
+    "hint": "relato sagrado de dioses y héroes"
+  },
+  {
+    "word": "mocasín",
+    "hint": "calzado sin cordones"
+  },
+  {
+    "word": "mochila",
+    "hint": "llevar"
+  },
+  {
+    "word": "modelador 3D",
+    "hint": "objeto"
+  },
+  {
+    "word": "módem",
+    "hint": "conexión"
+  },
+  {
+    "word": "modista",
+    "hint": "costura"
+  },
+  {
+    "word": "molde",
+    "hint": "pastel"
+  },
+  {
+    "word": "momia",
+    "hint": "cadáver envuelto en vendas"
+  },
+  {
+    "word": "monasterio",
+    "hint": "monjes viven"
+  },
+  {
+    "word": "monitor",
+    "hint": "lagarto grande"
+  },
+  {
+    "word": "monitor de esquí",
+    "hint": "nieve"
+  },
+  {
+    "word": "monopatín",
+    "hint": "tabla ruedas"
+  },
+  {
+    "word": "montacargas",
+    "hint": "eleva paletas"
+  },
+  {
+    "word": "montador",
+    "hint": "edición"
+  },
+  {
+    "word": "montaje",
+    "hint": "editar planos"
+  },
+  {
+    "word": "moqueta",
+    "hint": "suelo"
+  },
+  {
+    "word": "mora",
+    "hint": "negra acidez"
+  },
+  {
+    "word": "morcilla",
+    "hint": "sangre embutido"
+  },
+  {
+    "word": "morsa",
+    "hint": "colmillos artico"
+  },
+  {
+    "word": "mortadela",
+    "hint": "italiana rodaja"
+  },
+  {
+    "word": "mortero",
+    "hint": "moler"
+  },
+  {
+    "word": "mostaza",
+    "hint": "condimento amarillo"
+  },
+  {
+    "word": "motel",
+    "hint": "carretera dormir"
+  },
+  {
+    "word": "moto acuatica",
+    "hint": "moto en mar"
+  },
+  {
+    "word": "motocicleta",
+    "hint": "dos ruedas motor"
+  },
+  {
+    "word": "mousse",
+    "hint": "espuma dulce"
+  },
+  {
+    "word": "mueble de baño",
+    "hint": "lavabo"
+  },
+  {
+    "word": "muelle",
+    "hint": "atracar botes"
+  },
+  {
+    "word": "muelle flotante",
+    "hint": "plancha embarque"
+  },
+  {
+    "word": "muñeca",
+    "hint": "unión mano-brazo"
+  },
+  {
+    "word": "muralla",
+    "hint": "muro defensivo de ciudad"
+  },
+  {
+    "word": "murcielago",
+    "hint": "cueva noche"
+  },
+  {
+    "word": "museo",
+    "hint": "arte historia"
+  },
+  {
+    "word": "museólogo",
+    "hint": "colección"
+  },
+  {
+    "word": "musgo",
+    "hint": "verde humedo"
+  },
+  {
+    "word": "músico",
+    "hint": "instrumento"
+  },
+  {
+    "word": "muslo",
+    "hint": "parte alta pierna"
+  },
+  {
+    "word": "nabo",
+    "hint": "raiz blanca"
+  },
+  {
+    "word": "nadador",
+    "hint": "piscina"
+  },
+  {
+    "word": "nahual",
+    "hint": "espíritu animal protector mesoamericano"
+  },
+  {
+    "word": "naranja",
+    "hint": "citrico redondo"
+  },
+  {
+    "word": "naranjo",
+    "hint": "citrico florida"
+  },
+  {
+    "word": "nardo",
+    "hint": "fragante noche"
+  },
+  {
+    "word": "narrador",
+    "hint": "relato"
+  },
+  {
+    "word": "nata",
+    "hint": "crema lactea"
+  },
+  {
+    "word": "natación",
+    "hint": "deporte agua"
+  },
+  {
+    "word": "natillas",
+    "hint": "crema amarilla"
+  },
+  {
+    "word": "nenufar",
+    "hint": "agua flota"
+  },
+  {
+    "word": "neumólogo",
+    "hint": "pulmones"
+  },
+  {
+    "word": "neurólogo",
+    "hint": "cerebro"
+  },
+  {
+    "word": "nevera",
+    "hint": "frío"
+  },
+  {
+    "word": "niebla",
+    "hint": "gris visibilidad"
+  },
+  {
+    "word": "nieve",
+    "hint": "blanca fria"
+  },
+  {
+    "word": "nigromante",
+    "hint": "mago que invoca muertos"
+  },
+  {
+    "word": "ninfa",
+    "hint": "espíritu femenino de la naturaleza"
+  },
+  {
+    "word": "nivel",
+    "hint": "burbuja"
+  },
+  {
+    "word": "nix",
+    "hint": "espíritu acuático nórdico"
+  },
+  {
+    "word": "nominación",
+    "hint": "candidato premio"
+  },
+  {
+    "word": "nopal",
+    "hint": "tuna mexico"
+  },
+  {
+    "word": "nórdico",
+    "hint": "invierno"
+  },
+  {
+    "word": "nori",
+    "hint": "sushi alga"
+  },
+  {
+    "word": "notario",
+    "hint": "documentos"
+  },
+  {
+    "word": "nube",
+    "hint": "almacenamiento en internet"
+  },
+  {
+    "word": "nuca",
+    "hint": "parte trasera cuello"
+  },
+  {
+    "word": "nuez",
+    "hint": "fruto cascara"
+  },
+  {
+    "word": "nuez moscada",
+    "hint": "especia redonda"
+  },
+  {
+    "word": "nutria",
+    "hint": "rio juguetona"
+  },
+  {
+    "word": "nutricionista",
+    "hint": "dieta"
+  },
+  {
+    "word": "oasis",
+    "hint": "desierto agua"
+  },
+  {
+    "word": "obertura",
+    "hint": "introducción musical de una ópera"
+  },
+  {
+    "word": "oboe",
+    "hint": "viento doble"
+  },
+  {
+    "word": "obsidiana",
+    "hint": "negra volcanica"
+  },
+  {
+    "word": "oceano",
+    "hint": "mar inmenso"
+  },
+  {
+    "word": "oceanógrafo",
+    "hint": "mar"
+  },
+  {
+    "word": "ocelote",
+    "hint": "manchas pequeño"
+  },
+  {
+    "word": "oculista",
+    "hint": "ojos"
+  },
+  {
+    "word": "oficina",
+    "hint": "trabajo administracion"
+  },
+  {
+    "word": "ofrenda",
+    "hint": "regalo a los dioses"
+  },
+  {
+    "word": "ogro",
+    "hint": "monstruo come humanos"
+  },
+  {
+    "word": "ojal",
+    "hint": "agujero para el botón"
+  },
+  {
+    "word": "olivo",
+    "hint": "aceite paz"
+  },
+  {
+    "word": "olla",
+    "hint": "hervir"
+  },
+  {
+    "word": "olla a presión",
+    "hint": "vapor"
+  },
+  {
+    "word": "omóplato",
+    "hint": "hueso espalda"
+  },
+  {
+    "word": "oncólogo",
+    "hint": "cáncer"
+  },
+  {
+    "word": "oni",
+    "hint": "demonio japonés con garrote"
+  },
+  {
+    "word": "ópera",
+    "hint": "cantar teatro"
+  },
+  {
+    "word": "operador de cámara",
+    "hint": "filmación"
+  },
+  {
+    "word": "operador de grúa",
+    "hint": "carga pesada"
+  },
+  {
+    "word": "óptico",
+    "hint": "lentes"
+  },
+  {
+    "word": "optometrista",
+    "hint": "visión"
+  },
+  {
+    "word": "oráculo",
+    "hint": "predice el futuro"
+  },
+  {
+    "word": "orangutan",
+    "hint": "rojo arbol"
+  },
+  {
+    "word": "orca",
+    "hint": "blanco negro mar"
+  },
+  {
+    "word": "ordenador",
+    "hint": "teclear"
+  },
+  {
+    "word": "oregano",
+    "hint": "hierba pizza"
+  },
+  {
+    "word": "orientador escolar",
+    "hint": "vocación"
+  },
+  {
+    "word": "orquesta",
+    "hint": "conjunto instrumentos"
+  },
+  {
+    "word": "orquídea",
+    "hint": "exotica cara"
+  },
+  {
+    "word": "ortiga",
+    "hint": "pica toca"
+  },
+  {
+    "word": "oso",
+    "hint": "miel bosque"
+  },
+  {
+    "word": "oso hormiguero",
+    "hint": "lengua hormiga"
+  },
+  {
+    "word": "oso polar",
+    "hint": "blanco artico"
+  },
+  {
+    "word": "ostra",
+    "hint": "perla concha"
+  },
+  {
+    "word": "otomana",
+    "hint": "pies"
+  },
+  {
+    "word": "overol",
+    "hint": "mono de trabajo"
+  },
+  {
+    "word": "paddel",
+    "hint": "raqueta cristal"
+  },
+  {
+    "word": "paella",
+    "hint": "arroz valenciano"
+  },
+  {
+    "word": "paellera",
+    "hint": "valenciana plana"
+  },
+  {
+    "word": "pais",
+    "hint": "nacion frontera"
+  },
+  {
+    "word": "paisajista",
+    "hint": "jardines"
+  },
+  {
+    "word": "pala",
+    "hint": "tierra"
+  },
+  {
+    "word": "palacio",
+    "hint": "residencia real"
+  },
+  {
+    "word": "paladar",
+    "hint": "techo de la boca"
+  },
+  {
+    "word": "paladín",
+    "hint": "caballero sagrado"
+  },
+  {
+    "word": "paleontólogo",
+    "hint": "fósiles"
+  },
+  {
+    "word": "palma",
+    "hint": "interior de la mano"
+  },
+  {
+    "word": "palmera",
+    "hint": "coco playa"
+  },
+  {
+    "word": "palmito",
+    "hint": "tropical lata"
+  },
+  {
+    "word": "paloma",
+    "hint": "paz ciudad"
+  },
+  {
+    "word": "palomitas",
+    "hint": "snack sala"
+  },
+  {
+    "word": "pampa",
+    "hint": "argentina pasto"
+  },
+  {
+    "word": "pan",
+    "hint": "harina horneada"
+  },
+  {
+    "word": "pan de molde",
+    "hint": "blanco cuadrado"
+  },
+  {
+    "word": "páncreas",
+    "hint": "regula azúcar"
+  },
+  {
+    "word": "pangolin",
+    "hint": "escamas raro"
+  },
+  {
+    "word": "pantalla",
+    "hint": "proyección cine"
+  },
+  {
+    "word": "pantano",
+    "hint": "barro agua"
+  },
+  {
+    "word": "pantorrilla",
+    "hint": "músculo parte trasera pierna"
+  },
+  {
+    "word": "pañuelo",
+    "hint": "nariz"
+  },
+  {
+    "word": "papa",
+    "hint": "tierra tubérculo"
+  },
+  {
+    "word": "papa silvestre",
+    "hint": "monte comestible"
+  },
+  {
+    "word": "papaya",
+    "hint": "naranja tropical"
+  },
+  {
+    "word": "papel de aluminio",
+    "hint": "envolver"
+  },
+  {
+    "word": "papel de cocina",
+    "hint": "secar"
+  },
+  {
+    "word": "papelera",
+    "hint": "basura"
+  },
+  {
+    "word": "paracaidismo",
+    "hint": "caída libre"
+  },
+  {
+    "word": "parada",
+    "hint": "bus espera"
+  },
+  {
+    "word": "paradero",
+    "hint": "bus detiene"
+  },
+  {
+    "word": "paradoja",
+    "hint": "contradicción aparentemente verdadera"
+  },
+  {
+    "word": "paragüero",
+    "hint": "lluvia"
+  },
+  {
+    "word": "paramédico",
+    "hint": "urgencias"
+  },
+  {
+    "word": "parapente",
+    "hint": "alas tela viento"
+  },
+  {
+    "word": "parche",
+    "hint": "actualización que repara fallos"
+  },
+  {
+    "word": "parchís",
+    "hint": "fichas colores"
+  },
+  {
+    "word": "parka",
+    "hint": "abrigo largo con capucha"
+  },
+  {
+    "word": "parkour",
+    "hint": "obstáculos urbanos"
+  },
+  {
+    "word": "parlamentario",
+    "hint": "leyes"
+  },
+  {
+    "word": "parlamento",
+    "hint": "leyes debate"
+  },
+  {
+    "word": "párpado",
+    "hint": "cubre el ojo"
+  },
+  {
+    "word": "parque",
+    "hint": "area verde"
+  },
+  {
+    "word": "parque nacional",
+    "hint": "naturaleza protegida"
+  },
+  {
+    "word": "parquet",
+    "hint": "madera"
+  },
+  {
+    "word": "parrilla",
+    "hint": "barbacoa"
+  },
+  {
+    "word": "partitura",
+    "hint": "hoja notas"
+  },
+  {
+    "word": "pasador",
+    "hint": "clip para el pelo"
+  },
+  {
+    "word": "pasas",
+    "hint": "uva seca"
+  },
+  {
+    "word": "paso a nivel",
+    "hint": "tren cruza calle"
+  },
+  {
+    "word": "paso fronterizo",
+    "hint": "cruce paises"
+  },
+  {
+    "word": "paso peatonal",
+    "hint": "cruce seguro"
+  },
+  {
+    "word": "pasta",
+    "hint": "trigo hervida"
+  },
+  {
+    "word": "pastel",
+    "hint": "dulce capas"
+  },
+  {
+    "word": "pastelero",
+    "hint": "dulces"
+  },
+  {
+    "word": "pastillero",
+    "hint": "pastillas"
+  },
+  {
+    "word": "patata",
+    "hint": "tuberculo marron"
+  },
+  {
+    "word": "pate",
+    "hint": "higado crema"
+  },
+  {
+    "word": "patinaje",
+    "hint": "hielo ruedas"
+  },
+  {
+    "word": "patinete",
+    "hint": "ruedas pie"
+  },
+  {
+    "word": "pato",
+    "hint": "ave agua"
+  },
+  {
+    "word": "patrulla",
+    "hint": "policia circula"
+  },
+  {
+    "word": "pavo",
+    "hint": "ave grande"
+  },
+  {
+    "word": "pavo real",
+    "hint": "cola ojos"
+  },
+  {
+    "word": "peaje",
+    "hint": "pago vial"
+  },
+  {
+    "word": "pediatra",
+    "hint": "niños"
+  },
+  {
+    "word": "pegamento",
+    "hint": "unir"
+  },
+  {
+    "word": "pegaso",
+    "hint": "caballo alado mítico"
+  },
+  {
+    "word": "peine",
+    "hint": "cabello"
+  },
+  {
+    "word": "pelador",
+    "hint": "patata"
+  },
+  {
+    "word": "pelicano",
+    "hint": "bolsa pico"
+  },
+  {
+    "word": "película",
+    "hint": "historia visual"
+  },
+  {
+    "word": "pelota",
+    "hint": "objeto redondo"
+  },
+  {
+    "word": "peluquero",
+    "hint": "cabello"
+  },
+  {
+    "word": "pendrive",
+    "hint": "memoria USB portátil"
+  },
+  {
+    "word": "peninsula",
+    "hint": "tierra en mar"
+  },
+  {
+    "word": "pentatlón",
+    "hint": "cinco pruebas"
+  },
+  {
+    "word": "peonía",
+    "hint": "grande fragante"
+  },
+  {
+    "word": "pepinillo",
+    "hint": "pepino encurtido"
+  },
+  {
+    "word": "pepino",
+    "hint": "verde alargado"
+  },
+  {
+    "word": "pepino de mar",
+    "hint": "fondo suave"
+  },
+  {
+    "word": "pera",
+    "hint": "fruta amarilla forma"
+  },
+  {
+    "word": "perchero",
+    "hint": "abrigo"
+  },
+  {
+    "word": "perdiz",
+    "hint": "campo camuflaje"
+  },
+  {
+    "word": "perejil",
+    "hint": "verde decora"
+  },
+  {
+    "word": "perforadora",
+    "hint": "agujero"
+  },
+  {
+    "word": "perfume",
+    "hint": "fragancia"
+  },
+  {
+    "word": "pergamino",
+    "hint": "papel antiguo con conjuros"
+  },
+  {
+    "word": "pergamino real",
+    "hint": "edicto oficial del monarca"
+  },
+  {
+    "word": "periodista",
+    "hint": "noticias"
+  },
+  {
+    "word": "perito",
+    "hint": "experto"
+  },
+  {
+    "word": "persiana",
+    "hint": "ventana"
+  },
+  {
+    "word": "pesca",
+    "hint": "anzuelo agua"
+  },
+  {
+    "word": "pescadero",
+    "hint": "mariscos"
+  },
+  {
+    "word": "pescador",
+    "hint": "red"
+  },
+  {
+    "word": "pesquero",
+    "hint": "pesca mar"
+  },
+  {
+    "word": "peto",
+    "hint": "pantalón con tirantes y pechera"
+  },
+  {
+    "word": "petrolero",
+    "hint": "crudo"
+  },
+  {
+    "word": "petunia",
+    "hint": "morada balcon"
+  },
+  {
+    "word": "pez espada",
+    "hint": "pico largo"
+  },
+  {
+    "word": "piano",
+    "hint": "instrumento teclas"
+  },
+  {
+    "word": "picadora",
+    "hint": "electrica picar"
+  },
+  {
+    "word": "pijama",
+    "hint": "dormir"
+  },
+  {
+    "word": "pila",
+    "hint": "energía"
+  },
+  {
+    "word": "pilates",
+    "hint": "core suelo"
+  },
+  {
+    "word": "piloto",
+    "hint": "avión"
+  },
+  {
+    "word": "piloto de pruebas",
+    "hint": "velocidad"
+  },
+  {
+    "word": "pimentero",
+    "hint": "pimienta"
+  },
+  {
+    "word": "pimenton",
+    "hint": "polvo rojo"
+  },
+  {
+    "word": "pimienta",
+    "hint": "grano picante"
+  },
+  {
+    "word": "pimiento",
+    "hint": "capsicum colores"
+  },
+  {
+    "word": "piña",
+    "hint": "espinas dulce"
+  },
+  {
+    "word": "pincel",
+    "hint": "pintura"
+  },
+  {
+    "word": "ping pong",
+    "hint": "mesa pelotita"
+  },
+  {
+    "word": "pino",
+    "hint": "piña resina"
+  },
+  {
+    "word": "piñon",
+    "hint": "pino semilla"
+  },
+  {
+    "word": "pintalabios",
+    "hint": "labios"
+  },
+  {
+    "word": "pinza",
+    "hint": "tender"
+  },
+  {
+    "word": "pinzas",
+    "hint": "agarre cocina"
+  },
+  {
+    "word": "pipa",
+    "hint": "girasol semilla"
+  },
+  {
+    "word": "piragüismo",
+    "hint": "canoa río"
+  },
+  {
+    "word": "piramide",
+    "hint": "antigua construccion"
+  },
+  {
+    "word": "piraña",
+    "hint": "dientes amazon"
+  },
+  {
+    "word": "piscina",
+    "hint": "nadar agua"
+  },
+  {
+    "word": "pista",
+    "hint": "avion aterriza"
+  },
+  {
+    "word": "pista bicicletas",
+    "hint": "ciclistas circulan"
+  },
+  {
+    "word": "pistache",
+    "hint": "verde cascara"
+  },
+  {
+    "word": "pita",
+    "hint": "pan hueco"
+  },
+  {
+    "word": "piton",
+    "hint": "grande lenta"
+  },
+  {
+    "word": "pixel",
+    "hint": "punto mínimo de imagen"
+  },
+  {
+    "word": "pizza",
+    "hint": "masa italiana"
+  },
+  {
+    "word": "pizzicato",
+    "hint": "pellizcar cuerda"
+  },
+  {
+    "word": "plancha",
+    "hint": "arrugas"
+  },
+  {
+    "word": "plancha de pelo",
+    "hint": "liso"
+  },
+  {
+    "word": "planeador",
+    "hint": "vuela sin motor"
+  },
+  {
+    "word": "plano",
+    "hint": "encuadre cámara"
+  },
+  {
+    "word": "planta",
+    "hint": "base del pie"
+  },
+  {
+    "word": "plataforma",
+    "hint": "base estructura"
+  },
+  {
+    "word": "plataforma petroleo",
+    "hint": "extrae crudo mar"
+  },
+  {
+    "word": "platano",
+    "hint": "largo amarillo"
+  },
+  {
+    "word": "plato",
+    "hint": "comer"
+  },
+  {
+    "word": "platós",
+    "hint": "interior grabación"
+  },
+  {
+    "word": "plaza",
+    "hint": "espacio publico"
+  },
+  {
+    "word": "plomero",
+    "hint": "agua"
+  },
+  {
+    "word": "plot twist",
+    "hint": "giro inesperado"
+  },
+  {
+    "word": "plumero",
+    "hint": "polvo"
+  },
+  {
+    "word": "poción",
+    "hint": "bebida con efectos mágicos"
+  },
+  {
+    "word": "podadora",
+    "hint": "ramas"
+  },
+  {
+    "word": "podólogo",
+    "hint": "pies"
+  },
+  {
+    "word": "poeta",
+    "hint": "versos"
+  },
+  {
+    "word": "póker",
+    "hint": "naipes apuesta"
+  },
+  {
+    "word": "poleo",
+    "hint": "menta campo"
+  },
+  {
+    "word": "policiaco",
+    "hint": "género detective"
+  },
+  {
+    "word": "polilla",
+    "hint": "nocturna tela"
+  },
+  {
+    "word": "politólogo",
+    "hint": "gobierno"
+  },
+  {
+    "word": "pollo",
+    "hint": "ave asada"
+  },
+  {
+    "word": "polvorón",
+    "hint": "navidad migaja"
+  },
+  {
+    "word": "pombero",
+    "hint": "duende guaraní del monte"
+  },
+  {
+    "word": "pomelo",
+    "hint": "citrico grande"
+  },
+  {
+    "word": "pómulo",
+    "hint": "hueso mejilla"
+  },
+  {
+    "word": "poncho",
+    "hint": "manta con abertura cabeza"
+  },
+  {
+    "word": "ponton",
+    "hint": "plataforma flotante"
+  },
+  {
+    "word": "pop",
+    "hint": "comercial radio"
+  },
+  {
+    "word": "poro",
+    "hint": "pequeño orificio cutáneo"
+  },
+  {
+    "word": "portaaviones",
+    "hint": "barco aviones"
+  },
+  {
+    "word": "portacontenedores",
+    "hint": "cajas transporte"
+  },
+  {
+    "word": "portal",
+    "hint": "puerta entre dimensiones"
+  },
+  {
+    "word": "portalápices",
+    "hint": "bolis"
+  },
+  {
+    "word": "portarrollos",
+    "hint": "papel"
+  },
+  {
+    "word": "portería",
+    "hint": "meta fútbol"
+  },
+  {
+    "word": "portero",
+    "hint": "defiende arco"
+  },
+  {
+    "word": "potaje",
+    "hint": "legumbre caldo"
+  },
+  {
+    "word": "pozo",
+    "hint": "extrae petroleo"
+  },
+  {
+    "word": "pradera",
+    "hint": "verde pasto"
+  },
+  {
+    "word": "prado",
+    "hint": "hierba verde"
+  },
+  {
+    "word": "preludio",
+    "hint": "apertura pieza"
+  },
+  {
+    "word": "premio",
+    "hint": "galardón cine"
+  },
+  {
+    "word": "premios",
+    "hint": "gala cine"
+  },
+  {
+    "word": "prensa",
+    "hint": "apretar"
+  },
+  {
+    "word": "preparador físico",
+    "hint": "deporte"
+  },
+  {
+    "word": "presa",
+    "hint": "retiene agua"
+  },
+  {
+    "word": "presentador",
+    "hint": "pantalla"
+  },
+  {
+    "word": "prision",
+    "hint": "reclusos encerrados"
+  },
+  {
+    "word": "procesador",
+    "hint": "cerebro del ordenador"
+  },
+  {
+    "word": "procurador",
+    "hint": "representación"
+  },
+  {
+    "word": "productor",
+    "hint": "proyecto"
+  },
+  {
+    "word": "productor musical",
+    "hint": "estudio"
+  },
+  {
+    "word": "productora",
+    "hint": "financia filme"
+  },
+  {
+    "word": "profecía",
+    "hint": "anuncio del futuro"
+  },
+  {
+    "word": "programador",
+    "hint": "código"
+  },
+  {
+    "word": "promotor musical",
+    "hint": "concierto"
+  },
+  {
+    "word": "protagonista",
+    "hint": "personaje central"
+  },
+  {
+    "word": "protocolo",
+    "hint": "reglas de comunicación de red"
+  },
+  {
+    "word": "proyector",
+    "hint": "muestra imágenes en pared"
+  },
+  {
+    "word": "psicólogo",
+    "hint": "mente"
+  },
+  {
+    "word": "psiquiatra",
+    "hint": "trastornos"
+  },
+  {
+    "word": "publicitario",
+    "hint": "campaña"
+  },
+  {
+    "word": "puchero",
+    "hint": "olla caldo"
+  },
+  {
+    "word": "pueblo",
+    "hint": "localidad pequena"
+  },
+  {
+    "word": "puente",
+    "hint": "cruza rio"
+  },
+  {
+    "word": "puente levadizo",
+    "hint": "entrada del castillo sobre foso"
+  },
+  {
+    "word": "puerro",
+    "hint": "cebolla alargada"
+  },
+  {
+    "word": "puerto",
+    "hint": "barcos"
+  },
+  {
+    "word": "puf",
+    "hint": "reposar"
+  },
+  {
+    "word": "puma",
+    "hint": "montaña salto"
+  },
+  {
+    "word": "pupila",
+    "hint": "círculo negro del ojo"
+  },
+  {
+    "word": "puré",
+    "hint": "vegetal triturado"
+  },
+  {
+    "word": "purificador",
+    "hint": "aire"
+  },
+  {
+    "word": "querubín",
+    "hint": "ángel pequeño y regordete"
+  },
+  {
+    "word": "quesero",
+    "hint": "lácteos"
+  },
+  {
+    "word": "quimera",
+    "hint": "mezcla de bestias míticas"
+  },
+  {
+    "word": "químico",
+    "hint": "laboratorio"
+  },
+  {
+    "word": "rabano",
+    "hint": "raiz roja"
+  },
+  {
+    "word": "rada",
+    "hint": "anclaje barcos"
+  },
+  {
+    "word": "radiador",
+    "hint": "calor"
+  },
+  {
+    "word": "radiografía",
+    "hint": "imagen interna por rayos x"
+  },
+  {
+    "word": "radiólogo",
+    "hint": "rayos X"
+  },
+  {
+    "word": "rafflesia",
+    "hint": "olor flor"
+  },
+  {
+    "word": "rallador",
+    "hint": "queso"
+  },
+  {
+    "word": "rana",
+    "hint": "charco salto"
+  },
+  {
+    "word": "ranchera",
+    "hint": "canción mexicana"
+  },
+  {
+    "word": "rancho",
+    "hint": "campo ganado"
+  },
+  {
+    "word": "rap",
+    "hint": "rima ritmo"
+  },
+  {
+    "word": "raqueta",
+    "hint": "golpear pelota"
+  },
+  {
+    "word": "rascacielos",
+    "hint": "edificio alto"
+  },
+  {
+    "word": "rastreador",
+    "hint": "huellas"
+  },
+  {
+    "word": "rastrillo",
+    "hint": "jardín"
+  },
+  {
+    "word": "ratón",
+    "hint": "cursor"
+  },
+  {
+    "word": "raya",
+    "hint": "fondo marino"
+  },
+  {
+    "word": "rayo",
+    "hint": "tormenta luz"
+  },
+  {
+    "word": "realidad virtual",
+    "hint": "mundo inmersivo digital"
+  },
+  {
+    "word": "recepcionista",
+    "hint": "bienvenida"
+  },
+  {
+    "word": "reclutador",
+    "hint": "entrevista"
+  },
+  {
+    "word": "recogedor",
+    "hint": "barrer"
+  },
+  {
+    "word": "rector",
+    "hint": "universidad"
+  },
+  {
+    "word": "red",
+    "hint": "divide cancha"
+  },
+  {
+    "word": "redactor",
+    "hint": "texto"
+  },
+  {
+    "word": "refresco",
+    "hint": "gaseosa fria"
+  },
+  {
+    "word": "regadera",
+    "hint": "plantas"
+  },
+  {
+    "word": "reggae",
+    "hint": "jamaica ritmo"
+  },
+  {
+    "word": "reggaetón",
+    "hint": "ritmo urbano"
+  },
+  {
+    "word": "regla",
+    "hint": "línea recta"
+  },
+  {
+    "word": "regleta",
+    "hint": "enchufes"
+  },
+  {
+    "word": "relaciones públicas",
+    "hint": "imagen"
+  },
+  {
+    "word": "reloj",
+    "hint": "hora"
+  },
+  {
+    "word": "relojero",
+    "hint": "relojes"
+  },
+  {
+    "word": "remake",
+    "hint": "nueva versión"
+  },
+  {
+    "word": "remix",
+    "hint": "versión nueva"
+  },
+  {
+    "word": "remo",
+    "hint": "agua barca"
+  },
+  {
+    "word": "remolacha",
+    "hint": "raiz roja"
+  },
+  {
+    "word": "remolcador",
+    "hint": "empuja barcos"
+  },
+  {
+    "word": "remolque",
+    "hint": "arrastra carga"
+  },
+  {
+    "word": "renderizado",
+    "hint": "proceso de generar imagen"
+  },
+  {
+    "word": "reno",
+    "hint": "nieve cuernos"
+  },
+  {
+    "word": "repartidor",
+    "hint": "paquetes"
+  },
+  {
+    "word": "reparto",
+    "hint": "actores película"
+  },
+  {
+    "word": "reportero",
+    "hint": "crónica"
+  },
+  {
+    "word": "reposapiés",
+    "hint": "pies"
+  },
+  {
+    "word": "repostero",
+    "hint": "postres"
+  },
+  {
+    "word": "representante artístico",
+    "hint": "contrato"
+  },
+  {
+    "word": "rescatador",
+    "hint": "salvamento"
+  },
+  {
+    "word": "reseña",
+    "hint": "crítica película"
+  },
+  {
+    "word": "reserva",
+    "hint": "fauna protegida"
+  },
+  {
+    "word": "resolución",
+    "hint": "calidad de la imagen"
+  },
+  {
+    "word": "resonancia",
+    "hint": "imagen médica por campos magnéticos"
+  },
+  {
+    "word": "resort",
+    "hint": "vacaciones lujo"
+  },
+  {
+    "word": "restaurador",
+    "hint": "arte"
+  },
+  {
+    "word": "restaurante",
+    "hint": "comida sirven"
+  },
+  {
+    "word": "retina",
+    "hint": "capa sensible del ojo"
+  },
+  {
+    "word": "reumatólogo",
+    "hint": "articulaciones"
+  },
+  {
+    "word": "revuelto",
+    "hint": "huevo removido"
+  },
+  {
+    "word": "rickshaw",
+    "hint": "triciclo asia"
+  },
+  {
+    "word": "rimel",
+    "hint": "pestañas"
+  },
+  {
+    "word": "rinconera",
+    "hint": "esquina"
+  },
+  {
+    "word": "rinoceronte",
+    "hint": "cuerno frontal"
+  },
+  {
+    "word": "riñón",
+    "hint": "órgano filtrador"
+  },
+  {
+    "word": "riñonera",
+    "hint": "bolsa pequeña en la cintura"
+  },
+  {
+    "word": "rio",
+    "hint": "agua fluye"
+  },
+  {
+    "word": "ritmo",
+    "hint": "tiempo música"
+  },
+  {
+    "word": "ritual",
+    "hint": "ceremonia de actos simbólicos"
+  },
+  {
+    "word": "rizador",
+    "hint": "rulos"
+  },
+  {
+    "word": "roble",
+    "hint": "bellotas madera"
+  },
+  {
+    "word": "robot de cocina",
+    "hint": "picar"
+  },
+  {
+    "word": "roca",
+    "hint": "piedra dura"
+  },
+  {
+    "word": "rock",
+    "hint": "eléctrico guitarra"
+  },
+  {
+    "word": "rodapié",
+    "hint": "suelo"
+  },
+  {
+    "word": "rodillo",
+    "hint": "pared"
+  },
+  {
+    "word": "rodillo de cocina",
+    "hint": "masa"
+  },
+  {
+    "word": "rollo de papel",
+    "hint": "wc"
+  },
+  {
+    "word": "romance",
+    "hint": "género amor"
+  },
+  {
+    "word": "romero",
+    "hint": "aromatico cocina"
+  },
+  {
+    "word": "ron",
+    "hint": "caña destilado"
+  },
+  {
+    "word": "rosa",
+    "hint": "espinas amor"
+  },
+  {
+    "word": "rosal",
+    "hint": "espinas fragante"
+  },
+  {
+    "word": "rosquilla",
+    "hint": "anillo frito"
+  },
+  {
+    "word": "rotonda",
+    "hint": "circulo vial"
+  },
+  {
+    "word": "router",
+    "hint": "internet"
+  },
+  {
+    "word": "rucula",
+    "hint": "hoja picante"
+  },
+  {
+    "word": "ruinas",
+    "hint": "antiguas edificaciones"
+  },
+  {
+    "word": "ruleta",
+    "hint": "bola gira"
+  },
+  {
+    "word": "runas",
+    "hint": "símbolos nórdicos de poder"
+  },
+  {
+    "word": "sábana",
+    "hint": "cama"
+  },
+  {
+    "word": "sábana bajera",
+    "hint": "ajustable"
+  },
+  {
+    "word": "sabila",
+    "hint": "gel suave"
+  },
+  {
+    "word": "sacacorchos",
+    "hint": "botella"
+  },
+  {
+    "word": "sacapuntas",
+    "hint": "lápiz"
+  },
+  {
+    "word": "saga",
+    "hint": "serie películas"
+  },
+  {
+    "word": "sal",
+    "hint": "mineral sazonador"
+  },
+  {
+    "word": "salamandra",
+    "hint": "humedad oscura"
+  },
+  {
+    "word": "salchicha",
+    "hint": "embutido cocido"
+  },
+  {
+    "word": "salchichon",
+    "hint": "embutido fino"
+  },
+  {
+    "word": "salero",
+    "hint": "sal"
+  },
+  {
+    "word": "salida",
+    "hint": "abandonar lugar"
+  },
+  {
+    "word": "salmon",
+    "hint": "rio corriente"
+  },
+  {
+    "word": "salsa",
+    "hint": "ritmo tropical"
+  },
+  {
+    "word": "salsa verde",
+    "hint": "perejil ajo"
+  },
+  {
+    "word": "saltamontes",
+    "hint": "campo salto"
+  },
+  {
+    "word": "samba",
+    "hint": "carnaval brasil"
+  },
+  {
+    "word": "sandia",
+    "hint": "fruta roja verde"
+  },
+  {
+    "word": "sandwichera",
+    "hint": "tostado"
+  },
+  {
+    "word": "sangria",
+    "hint": "vino fruta"
+  },
+  {
+    "word": "santuario",
+    "hint": "lugar sagrado"
+  },
+  {
+    "word": "sapo",
+    "hint": "tierra verruga"
+  },
+  {
+    "word": "sardina",
+    "hint": "pez pequeño"
+  },
+  {
+    "word": "sargentos",
+    "hint": "presionar"
+  },
+  {
+    "word": "sari",
+    "hint": "tela envuelta hindú"
+  },
+  {
+    "word": "sartén",
+    "hint": "freír"
+  },
+  {
+    "word": "sastre",
+    "hint": "tela"
+  },
+  {
+    "word": "satelite",
+    "hint": "orbita tierra"
+  },
+  {
+    "word": "sátiro",
+    "hint": "mitad hombre mitad cabra"
+  },
+  {
+    "word": "sauce",
+    "hint": "agua lloron"
+  },
+  {
+    "word": "saxofón",
+    "hint": "viento jazz"
+  },
+  {
+    "word": "secador",
+    "hint": "pelo"
+  },
+  {
+    "word": "secadora",
+    "hint": "ropa mojada"
+  },
+  {
+    "word": "secretario",
+    "hint": "oficina"
+  },
+  {
+    "word": "secuela",
+    "hint": "segunda parte"
+  },
+  {
+    "word": "secuencia",
+    "hint": "escenas seguidas"
+  },
+  {
+    "word": "seitán",
+    "hint": "gluten carne"
+  },
+  {
+    "word": "sello",
+    "hint": "empresa musical"
+  },
+  {
+    "word": "selva",
+    "hint": "vegetacion tropical"
+  },
+  {
+    "word": "senado",
+    "hint": "camara alta"
+  },
+  {
+    "word": "senador",
+    "hint": "cámara"
+  },
+  {
+    "word": "señal",
+    "hint": "indica camino"
+  },
+  {
+    "word": "senderismo",
+    "hint": "caminar montaña"
+  },
+  {
+    "word": "sensitiva",
+    "hint": "toca cierra"
+  },
+  {
+    "word": "sensor",
+    "hint": "detecta cambios del entorno"
+  },
+  {
+    "word": "sentencia",
+    "hint": "fallo judicial"
+  },
+  {
+    "word": "sepia",
+    "hint": "cefalopodo plano"
+  },
+  {
+    "word": "sequoia",
+    "hint": "gigante antiguo"
+  },
+  {
+    "word": "serafín",
+    "hint": "ángel de seis alas"
+  },
+  {
+    "word": "serie",
+    "hint": "episodios continuos"
+  },
+  {
+    "word": "serpiente",
+    "hint": "escamas veneno"
+  },
+  {
+    "word": "serval",
+    "hint": "oreja grande"
+  },
+  {
+    "word": "servidor",
+    "hint": "equipo que ofrece recursos en red"
+  },
+  {
+    "word": "servilletero",
+    "hint": "papel mesa"
+  },
+  {
+    "word": "sesamo",
+    "hint": "semilla pequeña"
+  },
+  {
+    "word": "set",
+    "hint": "lugar rodaje"
+  },
+  {
+    "word": "seta",
+    "hint": "bosque sombrero"
+  },
+  {
+    "word": "sidra",
+    "hint": "manzana fermentada"
+  },
+  {
+    "word": "sien",
+    "hint": "lateral cabeza"
+  },
+  {
+    "word": "sierra",
+    "hint": "cortar madera"
+  },
+  {
+    "word": "silla",
+    "hint": "sentarse"
+  },
+  {
+    "word": "silo",
+    "hint": "guardar grano"
+  },
+  {
+    "word": "simulador",
+    "hint": "replica condiciones reales"
+  },
+  {
+    "word": "sinagoga",
+    "hint": "templo judio"
+  },
+  {
+    "word": "sinfonía",
+    "hint": "obra orquestal"
+  },
+  {
+    "word": "single",
+    "hint": "canción sola"
+  },
+  {
+    "word": "sintetizador",
+    "hint": "teclado electrónico"
+  },
+  {
+    "word": "sirena",
+    "hint": "mitad mujer mitad pez"
+  },
+  {
+    "word": "sirope",
+    "hint": "liquido dulce"
+  },
+  {
+    "word": "skateboard",
+    "hint": "tabla ruedas"
+  },
+  {
+    "word": "smartwatch",
+    "hint": "reloj con funciones digitales"
+  },
+  {
+    "word": "smoking",
+    "hint": "traje de gala"
+  },
+  {
+    "word": "smoothie",
+    "hint": "triturado fruta"
+  },
+  {
+    "word": "snowboard",
+    "hint": "tabla nieve"
+  },
+  {
+    "word": "sociólogo",
+    "hint": "sociedad"
+  },
+  {
+    "word": "sofá",
+    "hint": "sala"
+  },
+  {
+    "word": "sofrito",
+    "hint": "base tomate"
+  },
+  {
+    "word": "sofritto",
+    "hint": "base cocina"
+  },
+  {
+    "word": "soja",
+    "hint": "legumbre asiatica"
+  },
+  {
+    "word": "soja salsa",
+    "hint": "asiatica salada"
+  },
+  {
+    "word": "solapa",
+    "hint": "doblez del cuello de una chaqueta"
+  },
+  {
+    "word": "soldado",
+    "hint": "ejército"
+  },
+  {
+    "word": "soldador",
+    "hint": "metal"
+  },
+  {
+    "word": "solista",
+    "hint": "canta solo"
+  },
+  {
+    "word": "sombrero",
+    "hint": "cubre la cabeza con ala"
+  },
+  {
+    "word": "somier",
+    "hint": "colchón"
+  },
+  {
+    "word": "sommelier",
+    "hint": "cata"
+  },
+  {
+    "word": "sonata",
+    "hint": "pieza clásica"
+  },
+  {
+    "word": "soneto",
+    "hint": "poema de catorce versos"
+  },
+  {
+    "word": "sonidista",
+    "hint": "audio"
+  },
+  {
+    "word": "sopa",
+    "hint": "caldo solido"
+  },
+  {
+    "word": "sopera",
+    "hint": "grande caldo"
+  },
+  {
+    "word": "soplete",
+    "hint": "soldar"
+  },
+  {
+    "word": "sorbete",
+    "hint": "frio fruta"
+  },
+  {
+    "word": "soul",
+    "hint": "sentimiento gospel"
+  },
+  {
+    "word": "soundtrack",
+    "hint": "música fondo"
+  },
+  {
+    "word": "spin-off",
+    "hint": "derivado serie"
+  },
+  {
+    "word": "squash",
+    "hint": "pelota pared"
+  },
+  {
+    "word": "staccato",
+    "hint": "nota corta"
+  },
+  {
+    "word": "stalactita",
+    "hint": "cueva cuelga"
+  },
+  {
+    "word": "steppe",
+    "hint": "pradera arida"
+  },
+  {
+    "word": "stunt",
+    "hint": "doble peligroso"
+  },
+  {
+    "word": "suavizante",
+    "hint": "ropa"
+  },
+  {
+    "word": "subastador",
+    "hint": "puja"
+  },
+  {
+    "word": "subtítulo",
+    "hint": "texto traducido"
+  },
+  {
+    "word": "suburbio",
+    "hint": "periferia urbana"
+  },
+  {
+    "word": "sudadera",
+    "hint": "ropa deportiva abrigada"
+  },
+  {
+    "word": "supermercado",
+    "hint": "comida compra"
+  },
+  {
+    "word": "surf",
+    "hint": "ola tabla"
+  },
+  {
+    "word": "surfboard",
+    "hint": "ola playa"
+  },
+  {
+    "word": "suspenso",
+    "hint": "tensión película"
+  },
+  {
+    "word": "sustrato",
+    "hint": "tierra"
+  },
+  {
+    "word": "tabla de cortar",
+    "hint": "cortar"
+  },
+  {
+    "word": "tabla de plancha",
+    "hint": "planchar"
+  },
+  {
+    "word": "tablet",
+    "hint": "pantalla táctil portátil"
+  },
+  {
+    "word": "taburete",
+    "hint": "cocina"
+  },
+  {
+    "word": "taburete de baño",
+    "hint": "ducha"
+  },
+  {
+    "word": "taekwondo",
+    "hint": "patadas arte"
+  },
+  {
+    "word": "tahini",
+    "hint": "sesamo pasta"
+  },
+  {
+    "word": "taiga",
+    "hint": "pinos frio"
+  },
+  {
+    "word": "taladro",
+    "hint": "agujero"
+  },
+  {
+    "word": "talismán",
+    "hint": "objeto de protección mágica"
+  },
+  {
+    "word": "taller",
+    "hint": "reparar coches"
+  },
+  {
+    "word": "talón",
+    "hint": "parte trasera pie"
+  },
+  {
+    "word": "tango",
+    "hint": "baile argentino"
+  },
+  {
+    "word": "taper",
+    "hint": "guardar nevera"
+  },
+  {
+    "word": "tapicero",
+    "hint": "tela"
+  },
+  {
+    "word": "taquilla",
+    "hint": "comprar entrada"
+  },
+  {
+    "word": "tarántula",
+    "hint": "grande peluda"
+  },
+  {
+    "word": "tarjeta",
+    "hint": "circuito interno del equipo"
+  },
+  {
+    "word": "tarro",
+    "hint": "conservas"
+  },
+  {
+    "word": "tarta",
+    "hint": "pastel redondo"
+  },
+  {
+    "word": "tasador",
+    "hint": "valor"
+  },
+  {
+    "word": "tatuador",
+    "hint": "tinta"
+  },
+  {
+    "word": "taxi",
+    "hint": "alquila conductor"
+  },
+  {
+    "word": "taxista",
+    "hint": "auto"
+  },
+  {
+    "word": "taza",
+    "hint": "café"
+  },
+  {
+    "word": "te",
+    "hint": "hoja infusion"
+  },
+  {
+    "word": "teatro",
+    "hint": "obras escena"
+  },
+  {
+    "word": "teca",
+    "hint": "tropical resistente"
+  },
+  {
+    "word": "techador",
+    "hint": "tejado"
+  },
+  {
+    "word": "teclado",
+    "hint": "ordenador"
+  },
+  {
+    "word": "técnico audiovisual",
+    "hint": "proyección"
+  },
+  {
+    "word": "técnico de emergencias",
+    "hint": "ambulancia"
+  },
+  {
+    "word": "técnico de laboratorio",
+    "hint": "muestras"
+  },
+  {
+    "word": "técnico en prótesis",
+    "hint": "implantes"
+  },
+  {
+    "word": "técnico en telecomunicaciones",
+    "hint": "señal"
+  },
+  {
+    "word": "técnico radiológico",
+    "hint": "imágenes médicas"
+  },
+  {
+    "word": "teleferico",
+    "hint": "cabina cable"
+  },
+  {
+    "word": "teléfono",
+    "hint": "llamada"
+  },
+  {
+    "word": "televisor",
+    "hint": "pantalla"
+  },
+  {
+    "word": "tempeh",
+    "hint": "soja fermentada"
+  },
+  {
+    "word": "templo",
+    "hint": "adoracion deidad"
+  },
+  {
+    "word": "tempo",
+    "hint": "velocidad pieza"
+  },
+  {
+    "word": "temporada",
+    "hint": "bloque episodios"
+  },
+  {
+    "word": "temporizador",
+    "hint": "tiempo"
+  },
+  {
+    "word": "tendedero",
+    "hint": "secar"
+  },
+  {
+    "word": "tendón",
+    "hint": "une músculo a hueso"
+  },
+  {
+    "word": "tenedor",
+    "hint": "pinchar"
+  },
+  {
+    "word": "tengu",
+    "hint": "espíritu pájaro japonés"
+  },
+  {
+    "word": "tenis",
+    "hint": "raqueta pista"
+  },
+  {
+    "word": "tensiómetro",
+    "hint": "presión"
+  },
+  {
+    "word": "terapeuta ocupacional",
+    "hint": "cotidiano"
+  },
+  {
+    "word": "terminal",
+    "hint": "llegadas salidas"
+  },
+  {
+    "word": "termita",
+    "hint": "madera colonia"
+  },
+  {
+    "word": "termómetro",
+    "hint": "fiebre"
+  },
+  {
+    "word": "termostato",
+    "hint": "temperatura"
+  },
+  {
+    "word": "ternera",
+    "hint": "vaca joven"
+  },
+  {
+    "word": "terremoto",
+    "hint": "tierra tiembla"
+  },
+  {
+    "word": "terror",
+    "hint": "género miedo"
+  },
+  {
+    "word": "testigo",
+    "hint": "quien vio el suceso"
+  },
+  {
+    "word": "tetera",
+    "hint": "té"
+  },
+  {
+    "word": "tiara",
+    "hint": "corona pequeña femenina"
+  },
+  {
+    "word": "tienda",
+    "hint": "productos venta"
+  },
+  {
+    "word": "tienda campo",
+    "hint": "dormir aire libre"
+  },
+  {
+    "word": "tiesto",
+    "hint": "flor"
+  },
+  {
+    "word": "tigre",
+    "hint": "rayas"
+  },
+  {
+    "word": "tijeras",
+    "hint": "cortar"
+  },
+  {
+    "word": "tijeras de uñas",
+    "hint": "cortar"
+  },
+  {
+    "word": "tila",
+    "hint": "calma infusion"
+  },
+  {
+    "word": "timpano",
+    "hint": "membrana auditiva"
+  },
+  {
+    "word": "tinto de verano",
+    "hint": "vino gaseosa"
+  },
+  {
+    "word": "tirantes",
+    "hint": "sostienen el pantalón desde hombros"
+  },
+  {
+    "word": "tiro",
+    "hint": "arco flecha"
+  },
+  {
+    "word": "tiro libre",
+    "hint": "baloncesto punto"
+  },
+  {
+    "word": "tiro olímpico",
+    "hint": "puntería deporte"
+  },
+  {
+    "word": "titiritero",
+    "hint": "marioneta"
+  },
+  {
+    "word": "toalla",
+    "hint": "secarse"
+  },
+  {
+    "word": "toallero",
+    "hint": "toalla"
+  },
+  {
+    "word": "tobillo",
+    "hint": "entre pie y pierna"
+  },
+  {
+    "word": "tocino",
+    "hint": "grasa panceta"
+  },
+  {
+    "word": "tofu",
+    "hint": "soja cuajada"
+  },
+  {
+    "word": "tomate",
+    "hint": "rojo redondo"
+  },
+  {
+    "word": "tomillo",
+    "hint": "montaña aroma"
+  },
+  {
+    "word": "tonalidad",
+    "hint": "escala musical"
+  },
+  {
+    "word": "topo",
+    "hint": "tierra ciego"
+  },
+  {
+    "word": "topógrafo",
+    "hint": "terreno"
+  },
+  {
+    "word": "torneo",
+    "hint": "competición de caballeros"
+  },
+  {
+    "word": "tornero",
+    "hint": "torno"
+  },
+  {
+    "word": "tornillo",
+    "hint": "destornillador"
+  },
+  {
+    "word": "toro",
+    "hint": "cuernos arena"
+  },
+  {
+    "word": "torre",
+    "hint": "construccion alta"
+  },
+  {
+    "word": "torre control",
+    "hint": "aeropuerto vigila"
+  },
+  {
+    "word": "torre de agua",
+    "hint": "deposito elevado"
+  },
+  {
+    "word": "tortilla",
+    "hint": "huevo patata"
+  },
+  {
+    "word": "tortita",
+    "hint": "masa redonda"
+  },
+  {
+    "word": "tortuga",
+    "hint": "caparazon lento"
+  },
+  {
+    "word": "tostadora",
+    "hint": "pan"
+  },
+  {
+    "word": "tote",
+    "hint": "bolsa de tela abierta"
+  },
+  {
+    "word": "tótem",
+    "hint": "símbolo sagrado protector"
+  },
+  {
+    "word": "trabajador social",
+    "hint": "comunidad"
+  },
+  {
+    "word": "tractor",
+    "hint": "campo labranza"
+  },
+  {
+    "word": "traductor",
+    "hint": "idiomas"
+  },
+  {
+    "word": "trailer",
+    "hint": "avance filme"
+  },
+  {
+    "word": "traje",
+    "hint": "conjunto formal"
+  },
+  {
+    "word": "transportador",
+    "hint": "grados"
+  },
+  {
+    "word": "tranvia",
+    "hint": "riel ciudad"
+  },
+  {
+    "word": "trapecista",
+    "hint": "vuelo"
+  },
+  {
+    "word": "trapo",
+    "hint": "secar"
+  },
+  {
+    "word": "tráquea",
+    "hint": "tubo respiratorio"
+  },
+  {
+    "word": "traumatólogo",
+    "hint": "huesos"
+  },
+  {
+    "word": "trébol",
+    "hint": "suerte verde"
+  },
+  {
+    "word": "trebuchet",
+    "hint": "catapulta de contrapeso"
+  },
+  {
+    "word": "tregua",
+    "hint": "pausa acordada en el conflicto"
+  },
+  {
+    "word": "tren",
+    "hint": "rieles vagones"
+  },
+  {
+    "word": "tren bala",
+    "hint": "alta velocidad"
+  },
+  {
+    "word": "tren de carga",
+    "hint": "mercancias largas"
+  },
+  {
+    "word": "triatlón",
+    "hint": "tres disciplinas"
+  },
+  {
+    "word": "tribunal",
+    "hint": "juicios sentencias"
+  },
+  {
+    "word": "tributo",
+    "hint": "pago o reconocimiento forzoso"
+  },
+  {
+    "word": "trigo",
+    "hint": "pan campo"
+  },
+  {
+    "word": "tritón",
+    "hint": "dios marino con cola de pez"
+  },
+  {
+    "word": "trivial",
+    "hint": "preguntas conocimiento"
+  },
+  {
+    "word": "troll",
+    "hint": "gigante torpe de montaña"
+  },
+  {
+    "word": "trompeta",
+    "hint": "instrumento viento"
+  },
+  {
+    "word": "trono",
+    "hint": "silla de poder del rey"
+  },
+  {
+    "word": "tropical",
+    "hint": "ritmo caliente"
+  },
+  {
+    "word": "trova",
+    "hint": "poema cantado"
+  },
+  {
+    "word": "trucha",
+    "hint": "arroyo fria"
+  },
+  {
+    "word": "trueno",
+    "hint": "ruido tormenta"
+  },
+  {
+    "word": "trufa",
+    "hint": "tierra cara"
+  },
+  {
+    "word": "tsunami",
+    "hint": "ola gigante"
+  },
+  {
+    "word": "tucan",
+    "hint": "pico grande"
+  },
+  {
+    "word": "tuerca",
+    "hint": "tornillo"
+  },
+  {
+    "word": "tulipan",
+    "hint": "holanda primavera"
+  },
+  {
+    "word": "tundra",
+    "hint": "fria plana"
+  },
+  {
+    "word": "tunel",
+    "hint": "bajo tierra"
+  },
+  {
+    "word": "turba",
+    "hint": "organica pantano"
+  },
+  {
+    "word": "turbante",
+    "hint": "tela enrollada en la cabeza"
+  },
+  {
+    "word": "turbera",
+    "hint": "suelo organico"
+  },
+  {
+    "word": "turrón",
+    "hint": "navidad almendra"
+  },
+  {
+    "word": "tuya",
+    "hint": "seto aroma"
+  },
+  {
+    "word": "uber",
+    "hint": "app transporte"
+  },
+  {
+    "word": "ukelele",
+    "hint": "cuatro cuerdas"
+  },
+  {
+    "word": "uña",
+    "hint": "cubierta dura del dedo"
+  },
+  {
+    "word": "unicornio",
+    "hint": "caballo con cuerno mágico"
+  },
+  {
+    "word": "universidad",
+    "hint": "educacion superior"
+  },
+  {
+    "word": "urbanista",
+    "hint": "ciudad"
+  },
+  {
+    "word": "urólogo",
+    "hint": "riñones"
+  },
+  {
+    "word": "utilería",
+    "hint": "objetos escena"
+  },
+  {
+    "word": "uva",
+    "hint": "racimo vid"
+  },
+  {
+    "word": "úvula",
+    "hint": "campanilla oral"
+  },
+  {
+    "word": "vainilla",
+    "hint": "aroma vaina"
+  },
+  {
+    "word": "valle",
+    "hint": "montañas entre"
+  },
+  {
+    "word": "valquiria",
+    "hint": "guerrera que elige a los caídos"
+  },
+  {
+    "word": "vals",
+    "hint": "baile clásico"
+  },
+  {
+    "word": "vaporeta",
+    "hint": "vapor"
+  },
+  {
+    "word": "varillas",
+    "hint": "batir huevos"
+  },
+  {
+    "word": "varita",
+    "hint": "bastón mágico de madera"
+  },
+  {
+    "word": "vasallo",
+    "hint": "súbdito fiel a un señor"
+  },
+  {
+    "word": "vaso",
+    "hint": "beber"
+  },
+  {
+    "word": "vela",
+    "hint": "apagón"
+  },
+  {
+    "word": "velero",
+    "hint": "vela viento"
+  },
+  {
+    "word": "vendedor",
+    "hint": "comercio"
+  },
+  {
+    "word": "ventilador",
+    "hint": "calor"
+  },
+  {
+    "word": "verdulero",
+    "hint": "verduras"
+  },
+  {
+    "word": "veredicto",
+    "hint": "decisión del jurado"
+  },
+  {
+    "word": "vermut",
+    "hint": "aperitivo botanico"
+  },
+  {
+    "word": "vertedero",
+    "hint": "basura deposito"
+  },
+  {
+    "word": "vesícula",
+    "hint": "almacena bilis"
+  },
+  {
+    "word": "vestuario",
+    "hint": "ropa actores"
+  },
+  {
+    "word": "vestuarista",
+    "hint": "trajes"
+  },
+  {
+    "word": "veterinario",
+    "hint": "animales"
+  },
+  {
+    "word": "via ferrea",
+    "hint": "rieles tren"
+  },
+  {
+    "word": "viaducto",
+    "hint": "puente elevado"
+  },
+  {
+    "word": "vibrato",
+    "hint": "nota temblorosa"
+  },
+  {
+    "word": "vicuña",
+    "hint": "andina rara"
+  },
+  {
+    "word": "vid",
+    "hint": "uva vino"
+  },
+  {
+    "word": "videoígrafo",
+    "hint": "grabación"
+  },
+  {
+    "word": "vidriería",
+    "hint": "cristal"
+  },
+  {
+    "word": "vigilante",
+    "hint": "ronda"
+  },
+  {
+    "word": "villa",
+    "hint": "casa vacacional"
+  },
+  {
+    "word": "vinagre",
+    "hint": "acido aceto"
+  },
+  {
+    "word": "vinagrera",
+    "hint": "vinagre"
+  },
+  {
+    "word": "vinagreta",
+    "hint": "aceite vinagre"
+  },
+  {
+    "word": "vinatero",
+    "hint": "vino"
+  },
+  {
+    "word": "vino",
+    "hint": "uva fermentada"
+  },
+  {
+    "word": "violeta",
+    "hint": "pequeña fragante"
+  },
+  {
+    "word": "violín",
+    "hint": "instrumento arco"
+  },
+  {
+    "word": "virus",
+    "hint": "programa dañino informático"
+  },
+  {
+    "word": "visillo",
+    "hint": "transparente"
+  },
+  {
+    "word": "viticultor",
+    "hint": "uvas"
+  },
+  {
+    "word": "vitrina",
+    "hint": "cristal"
+  },
+  {
+    "word": "vodka",
+    "hint": "destilado cereal"
+  },
+  {
+    "word": "volcado",
+    "hint": "tierra construction"
+  },
+  {
+    "word": "voleibol",
+    "hint": "red pelota"
+  },
+  {
+    "word": "waffle",
+    "hint": "rejilla crujiente"
+  },
+  {
+    "word": "wasabi",
+    "hint": "verde picante"
+  },
+  {
+    "word": "waterpolo",
+    "hint": "pelota piscina"
+  },
+  {
+    "word": "western",
+    "hint": "género vaquero"
+  },
+  {
+    "word": "whisky",
+    "hint": "malta destilado"
+  },
+  {
+    "word": "windsurf",
+    "hint": "vela tabla"
+  },
+  {
+    "word": "wok",
+    "hint": "saltear"
+  },
+  {
+    "word": "wyvern",
+    "hint": "dragón de dos patas"
+  },
+  {
+    "word": "xilófono",
+    "hint": "madera melodía"
+  },
+  {
+    "word": "yate",
+    "hint": "lujo marino"
+  },
+  {
+    "word": "yoga",
+    "hint": "postura calma"
+  },
+  {
+    "word": "yogur",
+    "hint": "leche fermentada"
+  },
+  {
+    "word": "yogurtera",
+    "hint": "yogur"
+  },
+  {
+    "word": "yokai",
+    "hint": "ser sobrenatural del folclore japonés"
+  },
+  {
+    "word": "yuca",
+    "hint": "tropical raiz"
+  },
+  {
+    "word": "zanahoria",
+    "hint": "raiz naranja"
+  },
+  {
+    "word": "zapatero",
+    "hint": "zapatos"
+  },
+  {
+    "word": "zapatilla",
+    "hint": "casa"
+  },
+  {
+    "word": "zarza",
+    "hint": "mora espina"
+  },
+  {
+    "word": "zarzamora",
+    "hint": "negra espina"
+  },
+  {
+    "word": "zeppelin",
+    "hint": "dirigible gas"
+  },
+  {
+    "word": "zócalo",
+    "hint": "pared"
+  },
+  {
+    "word": "zombi",
+    "hint": "muerto que camina"
+  },
+  {
+    "word": "zona azul",
+    "hint": "estacionar pagando"
+  },
+  {
+    "word": "zoologico",
+    "hint": "animales exhibidos"
+  },
+  {
+    "word": "zoólogo",
+    "hint": "fauna"
+  },
+  {
+    "word": "zorro",
+    "hint": "astucia cola"
+  },
+  {
+    "word": "zueco",
+    "hint": "calzado de madera"
+  },
+  {
+    "word": "zumba",
+    "hint": "baile aeróbico"
+  },
+  {
+    "word": "zumo",
+    "hint": "fruta exprimida"
+  },
+  {
+    "word": "laud",
+    "hint": "cuerdas pulsadas"
+  },
+  {
+    "word": "bandolin",
+    "hint": "cuerda rasgueo"
+  },
+  {
+    "word": "clavicordio",
+    "hint": "teclas antiguo"
+  },
+  {
+    "word": "sitar",
+    "hint": "india cuerdas"
+  },
+  {
+    "word": "bandurria",
+    "hint": "cuerda plectro"
+  },
+  {
+    "word": "clavecin",
+    "hint": "teclas barroco"
+  },
+  {
+    "word": "saltero",
+    "hint": "cuerda martillos"
+  },
+  {
+    "word": "cromorno",
+    "hint": "viento doble"
+  },
+  {
+    "word": "fagot",
+    "hint": "viento madera"
+  },
+  {
+    "word": "escoplo",
+    "hint": "cincel madera"
+  },
+  {
+    "word": "barrena",
+    "hint": "agujero taladrar"
+  },
+  {
+    "word": "escofina",
+    "hint": "lima grosera"
+  },
+  {
+    "word": "granete",
+    "hint": "puntear metal"
+  },
+  {
+    "word": "punzon",
+    "hint": "perforar piel"
+  },
+  {
+    "word": "axolotl",
+    "hint": "anfibio regeneración"
+  },
+  {
+    "word": "tapir",
+    "hint": "trompa selva"
+  },
+  {
+    "word": "okapi",
+    "hint": "rayado selva"
+  },
+  {
+    "word": "dugon",
+    "hint": "marino herbívoro"
+  },
+  {
+    "word": "capibara",
+    "hint": "roedor gigante"
+  },
+  {
+    "word": "manati",
+    "hint": "vaca marina"
+  },
+  {
+    "word": "narval",
+    "hint": "cuerno marino"
+  },
+  {
+    "word": "nautilo",
+    "hint": "espiral marina"
+  },
+  {
+    "word": "aye-aye",
+    "hint": "nocturno dedo"
+  },
+  {
+    "word": "takin",
+    "hint": "montaña asiático"
+  },
+  {
+    "word": "binturong",
+    "hint": "oso árbol"
+  },
+  {
+    "word": "ondina",
+    "hint": "espíritu agua"
+  },
+  {
+    "word": "terciopelo",
+    "hint": "tejido suave"
+  },
+  {
+    "word": "organza",
+    "hint": "tela traslúcida"
+  },
+  {
+    "word": "seda",
+    "hint": "fibra gusano"
+  },
+  {
+    "word": "tweed",
+    "hint": "lana escocesa"
+  },
+  {
+    "word": "cachemira",
+    "hint": "lana suave"
+  },
+  {
+    "word": "yute",
+    "hint": "fibra vegetal"
+  },
+  {
+    "word": "sisal",
+    "hint": "fibra agave"
+  },
+  {
+    "word": "batik",
+    "hint": "tela estampada"
+  },
+  {
+    "word": "muselina",
+    "hint": "tela ligera"
+  },
+  {
+    "word": "proa",
+    "hint": "frente barco"
+  },
+  {
+    "word": "popa",
+    "hint": "trasera barco"
+  },
+  {
+    "word": "quilla",
+    "hint": "base casco"
+  },
+  {
+    "word": "escoben",
+    "hint": "ancla orificio"
+  },
+  {
+    "word": "estay",
+    "hint": "cable mástil"
+  },
+  {
+    "word": "amura",
+    "hint": "costado proa"
+  },
+  {
+    "word": "escota",
+    "hint": "cabo vela"
+  },
+  {
+    "word": "obenque",
+    "hint": "mástil soporte"
+  },
+  {
+    "word": "jarcia",
+    "hint": "cordaje barco"
+  },
+  {
+    "word": "almena",
+    "hint": "muro dentado"
+  },
+  {
+    "word": "torreon",
+    "hint": "torre defensa"
+  },
+  {
+    "word": "parapeto",
+    "hint": "muro bajo"
+  },
+  {
+    "word": "chapitel",
+    "hint": "aguja cúpula"
+  },
+  {
+    "word": "absida",
+    "hint": "presbiterio semicircular"
+  },
+  {
+    "word": "crenelado",
+    "hint": "almenas muro"
+  },
+  {
+    "word": "matacan",
+    "hint": "voladizo defensivo"
+  },
+  {
+    "word": "barbacana",
+    "hint": "puerta defensa"
+  },
+  {
+    "word": "tronera",
+    "hint": "muro disparo"
+  },
+  {
+    "word": "roseaton",
+    "hint": "ventana circular"
+  },
+  {
+    "word": "pinaculo",
+    "hint": "remate aguja"
+  },
+  {
+    "word": "feldespato",
+    "hint": "mineral silicato"
+  },
+  {
+    "word": "malaquita",
+    "hint": "verde cobre"
+  },
+  {
+    "word": "jaspe",
+    "hint": "piedra veteada"
+  },
+  {
+    "word": "pirita",
+    "hint": "brillo metal"
+  },
+  {
+    "word": "turquesa",
+    "hint": "azul verde"
+  },
+  {
+    "word": "zircon",
+    "hint": "mineral brillante"
+  },
+  {
+    "word": "topacio",
+    "hint": "cristal transparente"
+  },
+  {
+    "word": "berilo",
+    "hint": "cristal verde"
+  },
+  {
+    "word": "anis",
+    "hint": "semilla dulce"
+  },
+  {
+    "word": "coriandro",
+    "hint": "semilla citrica"
+  },
+  {
+    "word": "fenogreco",
+    "hint": "legumbre amarga"
+  },
+  {
+    "word": "alcaravea",
+    "hint": "semilla aromática"
+  },
+  {
+    "word": "ajowan",
+    "hint": "especia india"
+  },
+  {
+    "word": "azalea",
+    "hint": "flor vistosa"
+  },
+  {
+    "word": "retama",
+    "hint": "arbusto amarillo"
+  },
+  {
+    "word": "glicinia",
+    "hint": "enredadera morada"
+  },
+  {
+    "word": "camelia",
+    "hint": "flor invierno"
+  },
+  {
+    "word": "lutier",
+    "hint": "fabrica instrumentos"
+  },
+  {
+    "word": "heraldo",
+    "hint": "mensajero oficial"
+  },
+  {
+    "word": "talabartero",
+    "hint": "cuero artesano"
+  },
+  {
+    "word": "calafate",
+    "hint": "impermeabilizar barcos"
+  },
+  {
+    "word": "tañedor",
+    "hint": "toca instrumento"
+  },
+  {
+    "word": "alarife",
+    "hint": "maestro obra"
+  },
+  {
+    "word": "pregonero",
+    "hint": "voz pública"
+  },
+  {
+    "word": "timbalero",
+    "hint": "percusión batería"
+  },
+  {
+    "word": "abaco",
+    "hint": "cuentas calcular"
+  },
+  {
+    "word": "armadura",
+    "hint": "metal protección"
+  },
+  {
+    "word": "candelabro",
+    "hint": "velas soporte"
+  },
+  {
+    "word": "crisol",
+    "hint": "fundir metal"
+  },
+  {
+    "word": "badil",
+    "hint": "recoger brasas"
+  },
+  {
+    "word": "trebede",
+    "hint": "trípode brasero"
+  },
+  {
+    "word": "candil",
+    "hint": "aceite luz"
+  }
 ]

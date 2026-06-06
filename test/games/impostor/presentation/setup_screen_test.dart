@@ -102,6 +102,55 @@ void main() {
       },
     );
 
+    testWidgets('el nº de rondas está capado a maxRoundsFor (jugadores - 3)', (
+      tester,
+    ) async {
+      // Superficie alta para que el formulario completo (incluido el selector
+      // de rondas) quepa sin scroll.
+      tester.view.physicalSize = const Size(1200, 3000);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+
+      await tester.pumpWidget(_harness());
+      await tester.pump();
+
+      // Añadimos jugadores hasta llegar a 6 (arranca en 3). Con 6 jugadores,
+      // el máximo de rondas es 3 = max(1, 6 - 3).
+      for (var i = kMinPlayers; i < 6; i++) {
+        await tester.tap(
+          find.widgetWithIcon(OutlinedButton, Icons.person_add_alt_1),
+        );
+        await tester.pump();
+      }
+      expect(find.byType(TextField), findsNWidgets(6));
+
+      final maxRondas = GameConfig.maxRoundsFor(6);
+      expect(maxRondas, 3);
+
+      // El selector de rondas arranca en el mínimo (kMinRounds = 1) al subir
+      // jugadores (el clamp mantiene el valor dentro del rango sin elevarlo).
+      expect(find.text('1 ronda'), findsOneWidget);
+
+      // El stepper de rondas comparte iconos +/- con el de impostores; el de
+      // rondas es el SEGUNDO en el árbol (impostores va antes). Subimos las
+      // rondas hasta intentar pasar del tope (3).
+      final masRondas = find.widgetWithIcon(IconButton, Icons.add).at(1);
+      for (var i = 0; i < 5; i++) {
+        final boton = tester.widget<IconButton>(masRondas);
+        if (boton.onPressed == null) break;
+        await tester.tap(masRondas);
+        await tester.pump();
+      }
+
+      // El contador no supera el tope (3 rondas para 6 jugadores).
+      expect(find.text('$maxRondas rondas'), findsOneWidget);
+
+      // En el tope, el botón "más rondas" queda deshabilitado.
+      final botonTope = tester.widget<IconButton>(masRondas);
+      expect(botonTope.onPressed, isNull);
+    });
+
     testWidgets(
       'con un nombre vacío muestra el error de validación en español',
       (tester) async {
@@ -129,5 +178,30 @@ void main() {
         );
       },
     );
+
+    testWidgets('el icono ¿Cómo se juega? está presente y abre la RulesScreen', (
+      tester,
+    ) async {
+      await tester.pumpWidget(_harness());
+      await tester.pump();
+
+      // El icono de ayuda existe en la AppBar.
+      final helpBtn = find.widgetWithIcon(IconButton, Icons.help_outline);
+      expect(helpBtn, findsOneWidget);
+
+      await tester.tap(helpBtn);
+      // Pump suficiente para que el MaterialPageRoute se instale sin entrar en
+      // PulseGlow ni animaciones de la pantalla de juego.
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 400));
+
+      // La RulesScreen muestra la cabecera localizada.
+      expect(find.text('¿Cómo se juega?'), findsOneWidget);
+      // Y al menos el primer paso de las reglas del Impostor.
+      expect(
+        find.text('Decide cuántos jugadores, impostores y rondas habrá.'),
+        findsOneWidget,
+      );
+    });
   });
 }

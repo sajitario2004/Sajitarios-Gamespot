@@ -252,7 +252,7 @@ void main() {
     );
 
     test('constantes de versión y nombre de fichero', () {
-      expect(kAppDatabaseVersion, 3);
+      expect(kAppDatabaseVersion, 8);
       expect(kAppDatabaseFileName, isNotEmpty);
     });
   });

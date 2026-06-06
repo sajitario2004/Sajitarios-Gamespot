@@ -450,10 +450,15 @@ class _EstadisticaLinea extends StatelessWidget {
         Icon(icon, size: 18, color: theme.colorScheme.onSurfaceVariant),
         const SizedBox(width: 8),
         Expanded(child: Text(etiqueta, style: theme.textTheme.bodyMedium)),
-        Text(
-          valor,
-          style: theme.textTheme.bodyMedium?.copyWith(
-            fontWeight: FontWeight.w700,
+        Flexible(
+          child: Text(
+            valor,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            textAlign: TextAlign.end,
+            style: theme.textTheme.bodyMedium?.copyWith(
+              fontWeight: FontWeight.w700,
+            ),
           ),
         ),
       ],
@@ -502,11 +507,18 @@ class _PartidaTile extends StatelessWidget {
           record.word,
           glowColor: AppTheme.neonMagenta,
           intensity: 0.5,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
           style: theme.textTheme.titleMedium?.copyWith(
             fontWeight: FontWeight.w700,
           ),
         ),
-        subtitle: Text(subtitulo, style: theme.textTheme.bodySmall),
+        subtitle: Text(
+          subtitulo,
+          style: theme.textTheme.bodySmall,
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
+        ),
         trailing: Icon(
           record.hintEnabled
               ? Icons.lightbulb_outline

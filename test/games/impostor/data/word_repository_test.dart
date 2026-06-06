@@ -110,26 +110,29 @@ void main() {
 
     group('CRUD de palabras de usuario', () {
       test('insert crea una palabra de usuario (is_seed = 0) con id', () async {
-        final created = await repository.insert(word: 'zorro', hint: 'astuto');
+        final created = await repository.insert(
+          word: 'frambuesax',
+          hint: 'astuto',
+        );
 
         expect(created.id, isNotNull);
-        expect(created.word, 'zorro');
+        expect(created.word, 'frambuesax');
         expect(created.hint, 'astuto');
         expect(created.isSeed, isFalse);
 
         // Queda persistida y recuperable por id.
         final fetched = await repository.getById(created.id!);
         expect(fetched, isNotNull);
-        expect(fetched!.word, 'zorro');
+        expect(fetched!.word, 'frambuesax');
         expect(fetched.isSeed, isFalse);
       });
 
       test('insert recorta espacios de word y hint', () async {
         final created = await repository.insert(
-          word: '  ardilla  ',
+          word: '  nutrix99  ',
           hint: '  nueces  ',
         );
-        expect(created.word, 'ardilla');
+        expect(created.word, 'nutrix99');
         expect(created.hint, 'nueces');
       });
 
@@ -152,27 +155,30 @@ void main() {
       });
 
       test('getAll incluye la palabra de usuario insertada', () async {
-        await repository.insert(word: 'zorro', hint: 'astuto');
+        await repository.insert(word: 'frambuesax', hint: 'astuto');
         final all = await repository.getAll();
-        expect(all.where((w) => w.word == 'zorro'), hasLength(1));
-        expect(all.firstWhere((w) => w.word == 'zorro').isSeed, isFalse);
+        expect(all.where((w) => w.word == 'frambuesax'), hasLength(1));
+        expect(all.firstWhere((w) => w.word == 'frambuesax').isSeed, isFalse);
       });
 
       test('update modifica word y hint de una palabra de usuario', () async {
-        final created = await repository.insert(word: 'zorro', hint: 'astuto');
+        final created = await repository.insert(
+          word: 'frambuesax',
+          hint: 'astuto',
+        );
         final updated = await repository.update(
           id: created.id!,
-          word: 'lobo',
+          word: 'mangostax',
           hint: 'manada',
         );
 
         expect(updated.id, created.id);
-        expect(updated.word, 'lobo');
+        expect(updated.word, 'mangostax');
         expect(updated.hint, 'manada');
         expect(updated.isSeed, isFalse);
 
         final fetched = await repository.getById(created.id!);
-        expect(fetched!.word, 'lobo');
+        expect(fetched!.word, 'mangostax');
         expect(fetched.hint, 'manada');
       });
 
@@ -184,7 +190,10 @@ void main() {
       });
 
       test('delete elimina una palabra de usuario', () async {
-        final created = await repository.insert(word: 'zorro', hint: 'astuto');
+        final created = await repository.insert(
+          word: 'frambuesax',
+          hint: 'astuto',
+        );
         await repository.delete(created.id!);
         expect(await repository.getById(created.id!), isNull);
       });
@@ -199,9 +208,9 @@ void main() {
 
     group('unicidad de word', () {
       test('insert duplicado exacto lanza DuplicateWordException', () async {
-        await repository.insert(word: 'zorro', hint: 'astuto');
+        await repository.insert(word: 'frambuesax', hint: 'astuto');
         expect(
-          () => repository.insert(word: 'zorro', hint: 'otra pista'),
+          () => repository.insert(word: 'frambuesax', hint: 'otra pista'),
           throwsA(isA<DuplicateWordException>()),
         );
       });
@@ -218,11 +227,15 @@ void main() {
       test(
         'update a un texto ya existente lanza DuplicateWordException',
         () async {
-          await repository.insert(word: 'zorro', hint: 'astuto');
-          final otra = await repository.insert(word: 'lobo', hint: 'manada');
+          await repository.insert(word: 'frambuesax', hint: 'astuto');
+          final otra = await repository.insert(
+            word: 'mangostax',
+            hint: 'manada',
+          );
 
           expect(
-            () => repository.update(id: otra.id!, word: 'zorro', hint: 'm'),
+            () =>
+                repository.update(id: otra.id!, word: 'frambuesax', hint: 'm'),
             throwsA(isA<DuplicateWordException>()),
           );
         },
@@ -270,17 +283,17 @@ void main() {
         'sí se puede editar y borrar una palabra de usuario (is_seed = 0)',
         () async {
           final created = await repository.insert(
-            word: 'zorro',
+            word: 'frambuesax',
             hint: 'astuto',
           );
 
           // Editar funciona.
           final updated = await repository.update(
             id: created.id!,
-            word: 'zorro2',
+            word: 'frambuesax2',
             hint: 'astuto2',
           );
-          expect(updated.word, 'zorro2');
+          expect(updated.word, 'frambuesax2');
 
           // Borrar funciona.
           await repository.delete(created.id!);
@@ -293,9 +306,9 @@ void main() {
       test(
         'search encuentra coincidencias sin distinguir mayúsculas',
         () async {
-          await repository.insert(word: 'Zorro', hint: 'astuto');
-          final results = await repository.search('zorro');
-          expect(results.map((w) => w.word), contains('Zorro'));
+          await repository.insert(word: 'Frambuesax', hint: 'astuto');
+          final results = await repository.search('frambuesax');
+          expect(results.map((w) => w.word), contains('Frambuesax'));
         },
       );
 
@@ -330,13 +343,13 @@ void main() {
       test(
         'insert con distinta capitalización lanza DuplicateWordException',
         () async {
-          await repository.insert(word: 'Murcielago', hint: 'cueva');
+          await repository.insert(word: 'Frambuesax', hint: 'cueva');
           expect(
-            () => repository.insert(word: 'murcielago', hint: 'otra'),
+            () => repository.insert(word: 'frambuesax', hint: 'otra'),
             throwsA(isA<DuplicateWordException>()),
           );
           expect(
-            () => repository.insert(word: 'MURCIELAGO', hint: 'otra'),
+            () => repository.insert(word: 'FRAMBUESAX', hint: 'otra'),
             throwsA(isA<DuplicateWordException>()),
           );
         },
@@ -345,11 +358,14 @@ void main() {
       test(
         'update a un texto que solo difiere en mayúsculas también colisiona',
         () async {
-          await repository.insert(word: 'Murcielago', hint: 'cueva');
-          final otra = await repository.insert(word: 'lobo', hint: 'manada');
+          await repository.insert(word: 'Frambuesax', hint: 'cueva');
+          final otra = await repository.insert(
+            word: 'mangostax',
+            hint: 'manada',
+          );
           expect(
             () =>
-                repository.update(id: otra.id!, word: 'MURCIELAGO', hint: 'm'),
+                repository.update(id: otra.id!, word: 'FRAMBUESAX', hint: 'm'),
             throwsA(isA<DuplicateWordException>()),
           );
         },
