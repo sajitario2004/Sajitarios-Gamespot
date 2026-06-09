@@ -21,10 +21,9 @@ const double _kMaxContentWidth = 560.0;
 /// sigue entre ellos (se agotaron las rondas). Lee el [VotingOutcome] de
 /// `impostorFlowControllerProvider`.
 ///
-/// Además, replica el comportamiento de fin de partida que antes hacía la
-/// [ResultsScreen]: guarda la partida en el historial UNA sola vez (post-frame,
-/// con guard, fire-and-forget) y reproduce el SFX de fin de partida una vez,
-/// sin revelar identidades en la UI.
+/// Guarda la partida en el historial UNA sola vez (post-frame, con guard,
+/// fire-and-forget) y reproduce el SFX de fin de partida una vez, sin revelar
+/// identidades en la UI.
 class GameOverScreen extends ConsumerStatefulWidget {
   const GameOverScreen({super.key});
 

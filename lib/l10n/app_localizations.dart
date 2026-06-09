@@ -398,12 +398,6 @@ abstract class AppLocalizations {
   /// **'No se pudo iniciar la partida.'**
   String get errorNoSePudoIniciar;
 
-  /// Error cuando la base de datos no tiene palabras para iniciar la partida del Impostor.
-  ///
-  /// In es, this message translates to:
-  /// **'No hay palabras disponibles para iniciar la partida del Impostor.'**
-  String get errorSinPalabras;
-
   /// Título del diálogo cuando la BD no tiene palabras.
   ///
   /// In es, this message translates to:
@@ -980,12 +974,6 @@ abstract class AppLocalizations {
   /// **'¡Habéis ganado!'**
   String get votacionJugadoresGanan;
 
-  /// Feedback cuando el jugador expulsado sí era impostor.
-  ///
-  /// In es, this message translates to:
-  /// **'{nombre} era impostor'**
-  String votacionEraImpostor(String nombre);
-
   /// Título de la pantalla de desenlace (fin de partida sin revelar roles).
   ///
   /// In es, this message translates to:
@@ -1003,18 +991,6 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Preguntas por puntos'**
   String get triviaTitulo;
-
-  /// Título del juego 'Preguntas por puntos' en la tarjeta del menú.
-  ///
-  /// In es, this message translates to:
-  /// **'Preguntas por puntos'**
-  String get triviaMenuTitulo;
-
-  /// Descripción del juego 'Preguntas por puntos' en la tarjeta del menú.
-  ///
-  /// In es, this message translates to:
-  /// **'Responde preguntas de cultura general y otras temáticas. ¡El que más acierte gana!'**
-  String get triviaMenuDescripcion;
 
   /// Encabezado de la sección de selección de temáticas en la configuración de Trivia.
   ///
@@ -1321,12 +1297,6 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Jugar otra'**
   String get wavelengthJugarOtra;
-
-  /// Mensaje cuando la pantalla de Wavelength no tiene partida.
-  ///
-  /// In es, this message translates to:
-  /// **'No hay ninguna partida en curso.'**
-  String get wavelengthNoHayPartida;
 
   /// Indicador de ronda en las pantallas del flujo de Wavelength.
   ///

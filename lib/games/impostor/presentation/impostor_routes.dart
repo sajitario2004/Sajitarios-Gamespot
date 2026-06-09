@@ -3,7 +3,6 @@ import 'package:go_router/go_router.dart';
 import 'package:sajitarios_gamespot/games/impostor/presentation/game_over_screen.dart';
 import 'package:sajitarios_gamespot/games/impostor/presentation/history_screen.dart';
 import 'package:sajitarios_gamespot/games/impostor/presentation/pass_device_screen.dart';
-import 'package:sajitarios_gamespot/games/impostor/presentation/results_screen.dart';
 import 'package:sajitarios_gamespot/games/impostor/presentation/reveal_screen.dart';
 import 'package:sajitarios_gamespot/games/impostor/presentation/setup_screen.dart';
 import 'package:sajitarios_gamespot/games/impostor/presentation/voting_screen.dart';
@@ -29,10 +28,6 @@ const String kImpostorVotingRouteName = 'impostor-voting';
 
 /// Nombre de la ruta de desenlace (fin de partida SIN revelar roles).
 const String kImpostorGameOverRouteName = 'impostor-game-over';
-
-/// Nombre de la ruta de resultados (legado; muestra los roles). No se usa en el
-/// flujo de votación actual, pero se conserva la ruta enrutable.
-const String kImpostorResultsRouteName = 'impostor-results';
 
 /// Nombre de la ruta de historial y estadísticas.
 const String kImpostorHistoryRouteName = 'impostor-history';
@@ -68,11 +63,6 @@ List<RouteBase> impostorRoutes() => <RouteBase>[
         path: 'game-over',
         name: kImpostorGameOverRouteName,
         builder: (context, state) => const GameOverScreen(),
-      ),
-      GoRoute(
-        path: 'results',
-        name: kImpostorResultsRouteName,
-        builder: (context, state) => const ResultsScreen(),
       ),
       GoRoute(
         path: 'words',

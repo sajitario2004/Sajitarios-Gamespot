@@ -188,10 +188,6 @@ class AppLocalizationsEs extends AppLocalizations {
   String get errorNoSePudoIniciar => 'No se pudo iniciar la partida.';
 
   @override
-  String get errorSinPalabras =>
-      'No hay palabras disponibles para iniciar la partida del Impostor.';
-
-  @override
   String get noHayPalabrasTitulo => 'No hay palabras';
 
   @override
@@ -544,11 +540,6 @@ class AppLocalizationsEs extends AppLocalizations {
   String get votacionJugadoresGanan => '¡Habéis ganado!';
 
   @override
-  String votacionEraImpostor(String nombre) {
-    return '$nombre era impostor';
-  }
-
-  @override
   String get finDePartidaTitulo => 'Fin de la partida';
 
   @override
@@ -556,13 +547,6 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get triviaTitulo => 'Preguntas por puntos';
-
-  @override
-  String get triviaMenuTitulo => 'Preguntas por puntos';
-
-  @override
-  String get triviaMenuDescripcion =>
-      'Responde preguntas de cultura general y otras temáticas. ¡El que más acierte gana!';
 
   @override
   String get triviaSetupTematicas => 'Temáticas';
@@ -759,9 +743,6 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get wavelengthJugarOtra => 'Jugar otra';
-
-  @override
-  String get wavelengthNoHayPartida => 'No hay ninguna partida en curso.';
 
   @override
   String wavelengthRondaXDeY(int actual, int total) {

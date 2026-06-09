@@ -231,10 +231,6 @@
   "@errorNoSePudoIniciar": {
     "description": "Error genérico al no poder iniciar la partida."
   },
-  "errorSinPalabras": "No hay palabras disponibles para iniciar la partida del Impostor.",
-  "@errorSinPalabras": {
-    "description": "Error cuando la base de datos no tiene palabras para iniciar la partida del Impostor."
-  },
   "noHayPalabrasTitulo": "No hay palabras",
   "@noHayPalabrasTitulo": {
     "description": "Título del diálogo cuando la BD no tiene palabras."
@@ -673,13 +669,6 @@
   "@votacionJugadoresGanan": {
     "description": "Mensaje cuando los jugadores pillan a todos los impostores."
   },
-  "votacionEraImpostor": "{nombre} era impostor",
-  "@votacionEraImpostor": {
-    "description": "Feedback cuando el jugador expulsado sí era impostor.",
-    "placeholders": {
-      "nombre": { "type": "String" }
-    }
-  },
   "finDePartidaTitulo": "Fin de la partida",
   "@finDePartidaTitulo": {
     "description": "Título de la pantalla de desenlace (fin de partida sin revelar roles)."
@@ -691,14 +680,6 @@
   "triviaTitulo": "Preguntas por puntos",
   "@triviaTitulo": {
     "description": "Título de la barra superior en las pantallas del flujo de Trivia."
-  },
-  "triviaMenuTitulo": "Preguntas por puntos",
-  "@triviaMenuTitulo": {
-    "description": "Título del juego 'Preguntas por puntos' en la tarjeta del menú."
-  },
-  "triviaMenuDescripcion": "Responde preguntas de cultura general y otras temáticas. ¡El que más acierte gana!",
-  "@triviaMenuDescripcion": {
-    "description": "Descripción del juego 'Preguntas por puntos' en la tarjeta del menú."
   },
   "triviaSetupTematicas": "Temáticas",
   "@triviaSetupTematicas": {
@@ -942,10 +923,6 @@
   "wavelengthJugarOtra": "Jugar otra",
   "@wavelengthJugarOtra": {
     "description": "Botón para jugar otra partida desde el fin de partida de Wavelength."
-  },
-  "wavelengthNoHayPartida": "No hay ninguna partida en curso.",
-  "@wavelengthNoHayPartida": {
-    "description": "Mensaje cuando la pantalla de Wavelength no tiene partida."
   },
   "wavelengthRondaXDeY": "Ronda {actual} de {total}",
   "@wavelengthRondaXDeY": {

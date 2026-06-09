@@ -38,12 +38,6 @@ enum ImpostorPhase {
   /// Fin de partida (desenlace de la votación): **no** se revelan los roles.
   gameOver,
 
-  /// Fin de partida: se muestran todos los roles.
-  ///
-  /// Mantenida por compatibilidad histórica; el flujo de votación termina en
-  /// [gameOver] sin revelar identidades. No se usa en el flujo actual.
-  results,
-
   /// Ocurrió un error al iniciar la partida (p. ej. sin palabras en la BD).
   error,
 }

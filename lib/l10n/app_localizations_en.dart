@@ -187,10 +187,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get errorNoSePudoIniciar => 'The game could not be started.';
 
   @override
-  String get errorSinPalabras =>
-      'There are no words available to start the Impostor game.';
-
-  @override
   String get noHayPalabrasTitulo => 'No words';
 
   @override
@@ -540,11 +536,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get votacionJugadoresGanan => 'You won!';
 
   @override
-  String votacionEraImpostor(String nombre) {
-    return '$nombre was an impostor';
-  }
-
-  @override
   String get finDePartidaTitulo => 'Game over';
 
   @override
@@ -552,13 +543,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get triviaTitulo => 'Questions for points';
-
-  @override
-  String get triviaMenuTitulo => 'Questions for points';
-
-  @override
-  String get triviaMenuDescripcion =>
-      'Answer general knowledge and other themed questions. The most right wins!';
 
   @override
   String get triviaSetupTematicas => 'Themes';
@@ -754,9 +738,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get wavelengthJugarOtra => 'Play again';
-
-  @override
-  String get wavelengthNoHayPartida => 'There is no game in progress.';
 
   @override
   String wavelengthRondaXDeY(int actual, int total) {

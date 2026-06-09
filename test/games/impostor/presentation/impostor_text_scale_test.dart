@@ -8,7 +8,6 @@ import 'package:sajitarios_gamespot/games/impostor/presentation/assign_roles_pro
 import 'package:sajitarios_gamespot/games/impostor/presentation/impostor_flow_controller.dart';
 import 'package:sajitarios_gamespot/games/impostor/presentation/pass_device_screen.dart';
 import 'package:sajitarios_gamespot/games/impostor/presentation/reveal_screen.dart';
-import 'package:sajitarios_gamespot/games/impostor/presentation/results_screen.dart';
 import 'package:sajitarios_gamespot/l10n/app_localizations.dart';
 
 import 'support/fake_assign_roles_coordinator.dart';
@@ -48,29 +47,6 @@ void main() {
     await container
         .read(impostorFlowControllerProvider.notifier)
         .iniciar(config);
-    return container;
-  }
-
-  Future<ProviderContainer> containerEnResultados(GameSession session) async {
-    final container = ProviderContainer(
-      overrides: [
-        assignRolesCoordinatorProvider.overrideWithValue(
-          FakeAssignRolesCoordinator(session: session),
-        ),
-      ],
-    );
-    final config = GameConfig.create(
-      players: session.players,
-      nImpostores: session.impostorCount.clamp(1, session.players.length - 1),
-      hintEnabled: false,
-    ).config!;
-    final notifier = container.read(impostorFlowControllerProvider.notifier);
-    await notifier.iniciar(config);
-    var terminado = false;
-    while (!terminado) {
-      notifier.revelar();
-      terminado = notifier.avanzar();
-    }
     return container;
   }
 
@@ -135,22 +111,6 @@ void main() {
 
       expect(tester.takeException(), isNull);
       expect(find.text('IMPOSTOR'), findsOneWidget);
-    });
-
-    testWidgets('ResultsScreen no desborda con texto grande', (tester) async {
-      final session = buildSession(
-        nombres: ['Nacho', 'Iker', 'Lucía'],
-        impostores: {'Nacho'},
-        palabra: 'playa',
-      );
-      final container = await containerEnResultados(session);
-      addTearDown(container.dispose);
-
-      await tester.pumpWidget(scaledApp(container, const ResultsScreen()));
-      await tester.pump();
-
-      expect(tester.takeException(), isNull);
-      expect(find.text('Nacho'), findsOneWidget);
     });
   });
 }

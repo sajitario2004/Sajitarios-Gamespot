@@ -1074,6 +1074,84 @@ Tras cada versión: `flutter analyze` 0 issues y `flutter test` verde.
 
 ---
 
+## F22 — Auditoría completa con testeo (backlog de correcciones)
+
+> Auditoría multidimensional ejecutada con las skills del proyecto
+> (`flutter-apply-architecture-best-practices`, `hexagonal-architecture`,
+> `accessibility-compliance`, `flutter-flame-games`, `flutter-build-responsive-layout`,
+> `dart-collect-coverage`, `dart-run-static-analysis`). **Estado base sano:**
+> `flutter analyze` sin issues, **823 tests verdes**, **cobertura de líneas 78,0 %**
+> (5923/7591), paridad i18n es/en perfecta (310 = 310 claves), dominio puro (sin
+> `Random()` directo, sin Flutter/sqflite en `domain/`), menú desacoplado, cero strings
+> de UI hardcodeados, sin APIs deprecadas (`withOpacity`), sin TODOs reales.
+>
+> Los hallazgos siguientes quedan registrados **para corregir a futuro**, por prioridad.
+> Cada uno propone una versión destino.
+
+### Prioridad ALTA
+
+- **0.76 — [ARQUITECTURA] Mover `abandon_game_dialog` a `_shared/`.**
+  `lib/games/impostor/presentation/abandon_game_dialog.dart` vive dentro del *bounded
+  context* del Impostor pero lo importan **5 juegos (10 ficheros)**: trivia
+  (pass_device, question), tabu (turn, scoreboard), wavelength (clue, guess, reveal,
+  pass_device), yo_nunca (play), bomba (play). Viola la regla de Screaming Architecture
+  (aislamiento de contextos: lo compartido va en `lib/core/` o `lib/games/_shared/`).
+  **Fix:** mover a `lib/games/_shared/presentation/abandon_game_dialog.dart` y actualizar
+  los 10 imports. Es el **único** acoplamiento cruzado entre juegos del proyecto.
+
+### Prioridad MEDIA
+
+- **0.77 — [TESTING] Cobertura de las dos superficies Flame puras.**
+  `bomba_play_screen.dart` (52 %) y `es_un_10_pero/card_flip_game.dart` (48 %) no tienen
+  test de widget/overflow fiable (Flame `GameWidget` + timers no se pueden bombear en
+  `testWidgets`). Riesgo: cortes de texto o regresiones de layout no detectados.
+  **Fix:** tests que aíslen el *chrome* Flutter (stub del `GameWidget`) o golden tests
+  del canvas. Son el único hueco de la auditoría de overflow de 28 pantallas.
+
+- **0.78 — [FLAME/RESPONSIVE] Verificar el gesto del dial de Wavelength dentro del scroll.**
+  Las pantallas `clue`/`guess` se hicieron *scrollables* para no cortar texto con letra
+  grande; el dial Flame (con `DragCallbacks`) quedó dentro de un `SingleChildScrollView`.
+  Por las reglas del *gesture arena* el reconocedor inmediato de Flame debería ganar al
+  arrastrar sobre el dial, y el toque fija la aguja — pero **falta confirmarlo en
+  dispositivo físico**. **Fix si se confirma conflicto:** condicionar el scroll a escalas
+  de texto grandes, o aislar el gesto del dial del scroll.
+
+- **0.79 — [ACCESIBILIDAD] El dial no anuncia la posición de la aguja.**
+  Las pantallas del dial usan `Semantics(excludeSemantics: true)` con etiqueta estática,
+  así que un lector de pantalla no recibe feedback al mover/fijar la aguja.
+  **Fix:** añadir un `Semantics(liveRegion: true, value: '<posición>%')` que refleje
+  `needlePosition` fuera del `GameWidget`.
+
+- **0.80 — [TESTING] Tests de integración/flujo por juego + routing.**
+  Solo el Impostor tiene test de integración (`integration_test/impostor_flow_test.dart`).
+  Cobertura de routing baja: `core/routing/app_router.dart` 28 %, `*_routes.dart` 55–66 %.
+  **Fix:** un test de flujo por juego (navegación de entrada, ronda completa, y el nuevo
+  botón "volver al menú" → `/`).
+
+### Prioridad BAJA / NIT
+
+- **0.81 — [TESTING] Regresión del botón "volver al menú".**
+  Se añadió el botón superior-izquierda a las 26 pantallas, pero no hay test que garantice
+  su presencia: el bug de "quedar atrapado" podría volver en silencio.
+  **Fix:** test por pantalla de entrada que verifique `VolverAlMenuButton` y su navegación
+  a `/`.
+
+- **0.82 — [TESTING] Ramas de dominio sin cubrir.**
+  Modelos puros con ramas sin test (baratos y de alto valor): `trivia/domain/tematica`
+  (14 %), `es_un_10_pero/domain/card` (31 %), `bomba/domain/bomba_prompt` (38 %),
+  `impostor/data/impostor_word` (40 %), `bomba/domain/bomba_config` (57 %).
+  **Fix:** unit tests de los casos límite (`fromMap`/`copyWith`/validaciones).
+
+- **0.83 — [CALIDAD] Abstracción mínima de logging.**
+  `core/audio/audio_service.dart` usa `debugPrint` en dos `catch` (líneas 157, 260). Es
+  aceptable (se elimina en release) pero conviene un pequeño helper de logging para
+  consistencia futura. NIT.
+
+> **Nota:** `app_localizations_en.dart` aparece con 0 % de cobertura — es **código
+> generado** y la app corre en `es` por defecto; no es un hallazgo, se excluye.
+
+---
+
 ## Mapeo con `plan.md`
 
 | Fase (`plan.md`) | Versiones |
@@ -1099,6 +1177,7 @@ Tras cada versión: `flutter analyze` 0 issues y `flutter test` verde.
 | F19 — "¿Cómo se juega?" (reglas por juego) | 0.70 |
 | F20 — Auditoría multi-skill | 0.71 |
 | F21 — Correcciones de UX y contenido | 0.72 – 0.75 |
+| F22 — Auditoría completa con testeo (backlog) | 0.76 – 0.83 |
 
 > **F14–F18** son cinco juegos nuevos vía `GameRegistry`, **F19** añade las pantallas
 > de reglas por juego y **F20** es una auditoría multi-skill — todo dentro del diseño

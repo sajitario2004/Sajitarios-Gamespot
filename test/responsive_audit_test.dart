@@ -38,7 +38,6 @@ import 'package:sajitarios_gamespot/games/impostor/presentation/game_over_screen
 import 'package:sajitarios_gamespot/games/impostor/presentation/history_screen.dart';
 import 'package:sajitarios_gamespot/games/impostor/presentation/impostor_flow_controller.dart';
 import 'package:sajitarios_gamespot/games/impostor/presentation/pass_device_screen.dart';
-import 'package:sajitarios_gamespot/games/impostor/presentation/results_screen.dart';
 import 'package:sajitarios_gamespot/games/impostor/presentation/reveal_screen.dart';
 import 'package:sajitarios_gamespot/games/impostor/presentation/setup_screen.dart';
 import 'package:sajitarios_gamespot/games/impostor/presentation/voting_screen.dart';
@@ -149,11 +148,6 @@ Widget _scaledSmallRouted(Widget child, {List<Object?> overrides = const []}) {
       GoRoute(
         path: '/impostor/game-over',
         name: 'impostor-game-over',
-        builder: (_, _) => const Scaffold(),
-      ),
-      GoRoute(
-        path: '/impostor/results',
-        name: 'impostor-results',
         builder: (_, _) => const Scaffold(),
       ),
       GoRoute(
@@ -385,19 +379,6 @@ ImpostorFlowState _impostorGameOverState(GameSession session) {
     config: config,
     session: session,
     outcome: VotingOutcome.jugadoresGanan,
-  );
-}
-
-ImpostorFlowState _impostorResultsState(GameSession session) {
-  final config = GameConfig.create(
-    players: session.players,
-    nImpostores: 1,
-    hintEnabled: true,
-  ).config!;
-  return ImpostorFlowState(
-    phase: ImpostorPhase.results,
-    config: config,
-    session: session,
   );
 }
 
@@ -961,29 +942,6 @@ void main() {
             impostorFlowControllerProvider.overrideWith(
               () =>
                   _PreloadedImpostorController(_impostorGameOverState(session)),
-            ),
-            gameHistoryRepositoryProvider.overrideWithValue(
-              FakeGameHistoryRepository(),
-            ),
-            audioServiceProvider.overrideWithValue(_NoopAudio()),
-          ],
-        ),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
-      expect(tester.takeException(), isNull);
-    });
-
-    testWidgets('ResultsScreen — long word+hint+players (320x600)', (
-      tester,
-    ) async {
-      await tester.pumpWidget(
-        _scaledSmallRouted(
-          const ResultsScreen(),
-          overrides: [
-            impostorFlowControllerProvider.overrideWith(
-              () =>
-                  _PreloadedImpostorController(_impostorResultsState(session)),
             ),
             gameHistoryRepositoryProvider.overrideWithValue(
               FakeGameHistoryRepository(),
