@@ -1,6 +1,6 @@
 # TREE
 
-Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 23:56.
+Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-26 00:05.
 
 No se listan: Library, Temp, Logs, obj, UserSettings, .git, .vs, .idea, .vscode, .utmp, Build, Builds, MemoryCaptures, Recordings, node_modules, __pycache__, .venv, .dart_tool, build, coverage, *.meta, *.csproj, *.sln, *.slnx, *.user, *.pidb, *.unityproj, .DS_Store, Thumbs.db, *.apk, *.aab.
 Plegadas: skills, TextMesh Pro, Flutter, Capturas (Flutter = la app original en Legacy/Flutter, solo lectura).
@@ -11,7 +11,7 @@ Sajitarios-Gamespot/
 ├── .claude/
 │   └── settings.json
 ├── Docs/
-│   ├── Capturas/  (71 elementos, plegado)
+│   ├── Capturas/  (75 elementos, plegado)
 │   └── PLAN_MEJORAS.md
 ├── Legacy/
 │   └── Flutter/  (20 elementos, plegado)
@@ -58,6 +58,7 @@ Sajitarios-Gamespot/
 │   │   │   │       ├── bomba_silabas.json
 │   │   │   │       ├── impostor_words.json
 │   │   │   │       ├── mas_probable_cards.json
+│   │   │   │       ├── que_prefieres_cards.json
 │   │   │   │       ├── tabu_words.json
 │   │   │   │       ├── trivia_questions.json
 │   │   │   │       ├── verdad_reto_cards.json
@@ -235,6 +236,13 @@ Sajitarios-Gamespot/
 │   │   │   │   │   │   ├── Gamespot.Games.MasProbable.asmdef
 │   │   │   │   │   │   ├── MasProbableGame.cs
 │   │   │   │   │   │   └── MasProbableScreens.cs
+│   │   │   │   │   ├── QuePrefieres/
+│   │   │   │   │   │   ├── Domain/
+│   │   │   │   │   │   │   ├── Gamespot.Games.QuePrefieres.Domain.asmdef
+│   │   │   │   │   │   │   └── QuePrefieresDomain.cs
+│   │   │   │   │   │   ├── Gamespot.Games.QuePrefieres.asmdef
+│   │   │   │   │   │   ├── QuePrefieresGame.cs
+│   │   │   │   │   │   └── QuePrefieresScreens.cs
 │   │   │   │   │   ├── Tabu/
 │   │   │   │   │   │   ├── Data/
 │   │   │   │   │   │   │   └── TabuWordRepository.cs
@@ -334,6 +342,8 @@ Sajitarios-Gamespot/
 │   │   │       │   │   │       └── ImpostorTestData.cs
 │   │   │       │   │   ├── MasProbable/
 │   │   │       │   │   │   └── MasProbableFlowTests.cs
+│   │   │       │   │   ├── QuePrefieres/
+│   │   │       │   │   │   └── QuePrefieresFlowTests.cs
 │   │   │       │   │   ├── Shared/
 │   │   │       │   │   │   ├── CustomCategoryRepositoryTests.cs
 │   │   │       │   │   │   └── PromptCardRepositoryTests.cs
@@ -379,6 +389,7 @@ Sajitarios-Gamespot/
 │   │   │           │   ├── PlayAgainTests.cs
 │   │   │           │   ├── PlayerRosterTests.cs
 │   │   │           │   ├── PromptCardsTests.cs
+│   │   │           │   ├── QuePrefieresFlowTests.cs
 │   │   │           │   ├── SoundTests.cs
 │   │   │           │   ├── TabuFlowTests.cs
 │   │   │           │   ├── TriviaFlowTests.cs

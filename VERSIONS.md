@@ -280,7 +280,12 @@ gestionar la partida; muy configurable y con todas las expansiones». Se hacen d
     10, 20, 30); «Otra frase» salta sin contar. Las frases guardan solo lo que va detrás de «¿Quién es más probable
     que…» (`MasProbableText.Normalize` lo quita si se escribe entero). Seed de 302 frases (151 por nivel). 302
     EditMode; PlayMode del juego 3/3; barrido (45 pantallas, es y en) limpio. Capturas `V072_masprobable_*`.
-- [ ] **V073 · ¿Qué prefieres?** Dos opciones, se vota con la mano y se puede apuntar el resultado; suave y +18; propias.
+- [x] **V073 · ¿Qué prefieres?** Dos opciones, se vota con la mano y se puede apuntar el resultado; suave y +18; propias.
+  - Notas: `Games/QuePrefieres/`. Modos «Solo preguntas» y «Contar votos» (un contador por opción, «Ver resultado»
+    con porcentajes y barras, y «Paga la minoría» o empate). Tiempo para pensar (sin, 5 o 10 s, con «¡Votad!»),
+    preguntas por partida, «Otra pregunta». Final: la que más os dividió, la más unánime y todas con sus porcentajes.
+    Preguntas propias con las dos opciones obligatorias. Seed de 306 preguntas (150 suaves y 156 picantes). 309
+    EditMode; PlayMode del juego 3/3; barrido (73 pantallas, es y en) limpio. Capturas `V073_queprefieres_*`.
 - [ ] **V074 · Mímica por equipos.** Como el Tabú sin hablar: equipos, tiempo, objetivo, categorías (también +18 y
   propias), tarjetas propias.
 - [ ] **V075 · ¿Quién soy?** Móvil en la frente, inclinar para acertar o pasar (acelerómetro y botones), por

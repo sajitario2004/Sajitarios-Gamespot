@@ -10,7 +10,7 @@
 > **Fase 13 en curso (juegos nuevos):** el autor eligió el 1, 2, 3, 4, 5 y 10 de `Docs/PLAN_MEJORAS.md` §4: Verdad o Reto,
 > ¿Quién es más probable que…?, ¿Qué prefieres?, Mímica por equipos, ¿Quién soy? y Hombres Lobo (con reparto pasando el
 > móvil y un game master que lleva la partida; muy configurable y con todas las expansiones). Hecho: V070 (base común de cartas)
-> y V071 (Verdad o Reto), V072 (¿Quién es más probable que…?). **Probar en el móvil:** una partida de Verdad o Reto con picante y con
+> y V071 (Verdad o Reto), V072 (¿Quién es más probable que…?), V073 (¿Qué prefieres?). **Probar en el móvil:** una partida de Verdad o Reto con picante y con
 > cartas propias que usen `{otro}`; ¿Quién es más probable…? llevando la cuenta (que la cuenta atrás y la vibración se noten).
 > **Hechas las mejoras elegidas del plan (fase 10c):** C2, C3+L1, B1+B2, C4, I1, T1, W2 (estado en `Docs/PLAN_MEJORAS.md`).
 > **Hecho (V059h–V059j):** Impostor (2525) y Tabú (1161) por categorías elegibles en el setup, con Cachondeo +18 desmarcada por defecto.
@@ -140,6 +140,7 @@ SajitariosGamespot/Assets/_Gamespot/
 | `yo_nunca_statements.json` | `[{frase, intensidad}]` | 358 (suave 98 / picante 260, V059q) | suave ≥ 90, picante ≥ 250, todas empiezan por «Yo nunca», sin repetidas ni menores |
 | `verdad_reto_cards.json` (V071) | `[{texto, tipo, nivel}]` (tabla común de cartas) | 562 (verdades 127 / 126, retos 124 / 125, prendas 30 / 30; suave / picante) | ≥ 120 verdades y retos por nivel, ≥ 25 prendas por nivel, sin repetidas, picante sin menores, los retos picantes que tocan a otro piden permiso |
 | `mas_probable_cards.json` (V072) | `[{texto, nivel}]` (lo que va detrás de «que…») | 302 (151 / 151) | ≥ 140 por nivel, ya normalizadas, en minúscula, sin repetidas ni menores |
+| `que_prefieres_cards.json` (V073) | `[{texto, texto_b, nivel}]` | 306 (150 / 156) | ≥ 140 por nivel, las dos opciones (≤ 90 caracteres) y distintas, sin repetidas ni menores |
 | `bomba_silabas.json` | `["CA", …]` | 93 | ≥ 70 |
 | `bomba_categorias.json` | `["nombres de animales", …]` | 83 | ≥ 70 |
 
@@ -270,6 +271,11 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 - **Flow:** `Setup, Frase, Apuntar, Final, Error`. Mazo sin repeticiones (una llamada al random por frase). `Senalado()` → apuntar (con cuenta) o siguiente; `Apuntar(índices)` suma un título a cada marcado (empates: todos; vacío: nadie); `Saltar()` cambia la frase sin contarla; con límite, se acaba tras la última; `Terminar()`. Ranking por títulos y orden de los nombres.
 - **Pantallas:** setup (nivel, origen, modo, jugadores solo con cuenta, cuenta atrás, frases), frase («¿Quién es más probable que…», «…frase?» en grande —magenta si es picante—, «¡A la de tres!» → 3, 2, 1 con pitidos → «¡Señalad!» con bocina y vibración → Siguiente / Apuntar; «Otra frase»), apuntar (chips con los nombres, «No hubo acuerdo» / «Apuntar») y final («el más probable de todo» o empate, clasificación con la última frase de cada uno). Gestión de frases: `/mas-probable/frases`.
 
+### 6.10 ¿Qué prefieres? (`que_prefieres`, V073, juego nuevo)
+- **Dominio:** `QuePrefieresConfig.Create(niveles, opciones)` (nula sin niveles). Opciones: modo (`SoloPreguntas` por defecto / `ContarVotos`), segundos para pensar (0; 5, 10), paga la minoría (sí), preguntas (0 = sin límite; 10, 20, 30), origen. Solo se juegan las cartas con segunda opción.
+- **Flow:** `Setup, Pregunta, Resultado, Final, Error`. Mazo sin repeticiones. `Votar(opción, ±n)` (0–99, solo contando), `Revelar()` (contando → `Resultado`; si no, siguiente), `Siguiente()`, `Saltar()` (no cuenta), `Terminar()`. `QuePrefieresRound`: porcentajes que suman 100, minoría (nula con empate o sin votos) y división (0 unanimidad, 1 mitad y mitad); el final usa la más dividida y la más unánime.
+- **Pantallas:** setup, pregunta (A cian «o» B magenta, contadores, «Pensadlo… n» → «¡Votad!» con bocina y vibración, Ver resultado / Siguiente, Otra pregunta), resultado (porcentaje, barra y votos de cada opción; «Paga la minoría: B, …» o empate) y final. Gestión de preguntas: `/que-prefieres/preguntas`.
+
 ## 7. Estado de la app Flutter (referencia)
 - v0.75.0+75, Flutter 3.41.4 / Dart 3.11.1, Riverpod 3, go_router 17, Flame 1.37, sqflite. `flutter analyze` limpio, **823 tests**, cobertura 78 %.
 - Código en `Legacy/Flutter/lib/`, tests en `Legacy/Flutter/test/`, roadmap completo (F1–F22) en `Legacy/Flutter/docs/version.md`, su contexto en `Legacy/Flutter/docs/context.md`.
@@ -354,6 +360,11 @@ el móvil (V066, V068).
 | LiberationSans (recursos esenciales de TextMeshPro) | OFL 1.1 | Respaldo de los caracteres que Roboto no tenga |
 
 ## 10. Registro de trabajo (lo más reciente arriba)
+
+### 2026-10-26 · V073 · ¿Qué prefieres?
+- Juego nuevo `Games/QuePrefieres/`: dos opciones imposibles, votación a mano y, si se quiere, recuento con porcentajes, «Paga la minoría» y resumen final (la que más os dividió y la más unánime). Suave y picante +18, preguntas propias con las dos opciones. 306 preguntas nuevas.
+- El test de contenido pilló «diez años menor» en una picante: cambiada por otra sin ambigüedad.
+- 309 EditMode, PlayMode del juego 3/3, barrido limpio. Capturas `V073_queprefieres_*`.
 
 ### 2026-10-25 · V072 · ¿Quién es más probable que…?
 - Juego nuevo `Games/MasProbable/`: frase, cuenta atrás y todos señalan; con «Llevar la cuenta» se apunta al más señalado y al final sale el más probable de todo. Suave y picante +18, frases propias (se puede escribir la pregunta entera: se limpia sola). 302 frases nuevas.

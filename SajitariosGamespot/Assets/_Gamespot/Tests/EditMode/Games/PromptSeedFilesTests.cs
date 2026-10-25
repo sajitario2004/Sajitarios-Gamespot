@@ -59,6 +59,24 @@ namespace Gamespot.Tests.EditMode.Games
         }
 
         [Test]
+        public void QuePrefieres_DosOpcionesEnTodasYBancosGrandes()
+        {
+            var cards = PromptCardRepository.ParseSeed(Seeds.Load(Gamespot.Games.QuePrefieres.QuePrefieresSchema.SeedName));
+            CheckCommon(cards);
+            foreach (var level in PromptLevels.All)
+            {
+                Assert.That(cards.Count(c => c.Level == level), Is.GreaterThanOrEqualTo(140), level.ToString());
+            }
+            foreach (var card in cards)
+            {
+                Assert.IsFalse(string.IsNullOrEmpty(card.TextB), "Sin segunda opción: " + card.Text);
+                Assert.AreNotEqual(card.Text.ToLowerInvariant(), card.TextB.ToLowerInvariant(), card.Text);
+                Assert.That(card.Text.Length, Is.LessThanOrEqualTo(90), card.Text);
+                Assert.That(card.TextB.Length, Is.LessThanOrEqualTo(90), card.TextB);
+            }
+        }
+
+        [Test]
         public void VerdadReto_BancosGrandesEnLosDosNiveles()
         {
             var cards = PromptCardRepository.ParseSeed(Seeds.Load(VerdadRetoSchema.SeedName));

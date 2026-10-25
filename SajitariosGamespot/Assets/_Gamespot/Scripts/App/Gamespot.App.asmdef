@@ -25,7 +25,9 @@
         "Gamespot.Games.VerdadReto",
         "Gamespot.Games.VerdadReto.Domain",
         "Gamespot.Games.MasProbable",
-        "Gamespot.Games.MasProbable.Domain"
+        "Gamespot.Games.MasProbable.Domain",
+        "Gamespot.Games.QuePrefieres",
+        "Gamespot.Games.QuePrefieres.Domain"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
