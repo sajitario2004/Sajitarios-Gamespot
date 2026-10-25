@@ -1,8 +1,8 @@
 # TREE
 
-Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 20:22.
+Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 20:30.
 
-No se listan: Library, Temp, Logs, obj, UserSettings, .git, .vs, .idea, .vscode, .utmp, Build, Builds, MemoryCaptures, Recordings, node_modules, __pycache__, .venv, .dart_tool, build, coverage, *.meta, *.csproj, *.sln, *.slnx, *.user, *.pidb, *.unityproj, .DS_Store, Thumbs.db.
+No se listan: Library, Temp, Logs, obj, UserSettings, .git, .vs, .idea, .vscode, .utmp, Build, Builds, MemoryCaptures, Recordings, node_modules, __pycache__, .venv, .dart_tool, build, coverage, *.meta, *.csproj, *.sln, *.slnx, *.user, *.pidb, *.unityproj, .DS_Store, Thumbs.db, *.apk, *.aab.
 Plegadas: skills, TextMesh Pro, Flutter, Capturas (Flutter = la app original en Legacy/Flutter, solo lectura).
 Se regenera cada vez que se crea, mueve o borra algo; no se edita a mano (CLAUDE.md, seccion 1).
 
@@ -127,6 +127,7 @@ Sajitarios-Gamespot/
 │   │   │   │   │   └── Gamespot.Core.Runtime.asmdef
 │   │   │   │   ├── Editor/
 │   │   │   │   │   ├── Audio/
+│   │   │   │   │   │   ├── SoundLevel.cs
 │   │   │   │   │   │   └── SoundSynth.cs
 │   │   │   │   │   ├── Import/
 │   │   │   │   │   │   └── GamespotAssetPostprocessor.cs
@@ -383,7 +384,6 @@ Sajitarios-Gamespot/
 ├── CONTEXT.md
 ├── LEARNINGS.md
 ├── README.md
-├── SajitariosGamespot-prueba.apk
 ├── TREE.md
 └── VERSIONS.md
 ```

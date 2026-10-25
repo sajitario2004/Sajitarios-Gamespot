@@ -33,6 +33,8 @@ Archivo vivo. Añade una línea cada vez que el autor exprese un gusto, una corr
 
 - (2026-10-25) Quiere la app **lo más personalizable posible**, empezando por el Impostor y el Tabú: crear sus propias categorías, elegir la categoría antes de empezar y crear sus propias palabras y tarjetas.
 
+- (2026-10-25) Los sonidos le parecían **demasiado fuertes**: prefiere efectos a un volumen moderado y parejo. Oye el Editor mientras Claude trabaja (los tests ya no suenan).
+
 ## Diseño
 - (heredado) Estética **neón cyberpunk**: fondo casi negro, cian y magenta con brillo, rejilla de fondo.
 - (heredado) **Nada de emojis**, ni en el código ni en los textos: solo iconos.

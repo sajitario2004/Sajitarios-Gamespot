@@ -15,11 +15,13 @@ if (-not $Output) { $Output = Join-Path $Root 'TREE.md' }
 $ExcludeDirs = @('Library', 'Temp', 'Logs', 'obj', 'UserSettings', '.git', '.vs', '.idea', '.vscode', '.utmp',
                  'Build', 'Builds', 'MemoryCaptures', 'Recordings', 'node_modules', '__pycache__', '.venv',
                  '.dart_tool', 'build', 'coverage')
+# Carpetas que se excluyen por patron (la depuracion de Burst que deja cada build de Android junto al APK)
+$ExcludeDirPatterns = @('*_BurstDebugInformation_DoNotShip')
 # Carpetas que se muestran plegadas: solo su nombre y cuantos elementos tienen
 # (Flutter = la app original en Legacy/Flutter, de solo lectura hasta cerrar la migracion)
 $CollapseDirs = @('skills', 'TextMesh Pro', 'Flutter', 'Capturas')
 # Archivos que no se listan
-$ExcludeFiles = @('*.meta', '*.csproj', '*.sln', '*.slnx', '*.user', '*.pidb', '*.unityproj', '.DS_Store', 'Thumbs.db')
+$ExcludeFiles = @('*.meta', '*.csproj', '*.sln', '*.slnx', '*.user', '*.pidb', '*.unityproj', '.DS_Store', 'Thumbs.db', '*.apk', '*.aab')
 
 $Tee    = [string][char]0x251C + [char]0x2500 + [char]0x2500 + ' '
 $Corner = [string][char]0x2514 + [char]0x2500 + [char]0x2500 + ' '
@@ -31,9 +33,14 @@ function Test-ExcludedFile([string]$name) {
     return $false
 }
 
+function Test-ExcludedDirPattern([string]$name) {
+    foreach ($pattern in $ExcludeDirPatterns) { if ($name -like $pattern) { return $true } }
+    return $false
+}
+
 function Get-Children([string]$path) {
     $dirs  = Get-ChildItem -LiteralPath $path -Directory -Force -ErrorAction SilentlyContinue |
-             Where-Object { $ExcludeDirs -notcontains $_.Name } | Sort-Object Name
+             Where-Object { $ExcludeDirs -notcontains $_.Name -and -not (Test-ExcludedDirPattern $_.Name) } | Sort-Object Name
     $files = Get-ChildItem -LiteralPath $path -File -Force -ErrorAction SilentlyContinue |
              Where-Object { -not (Test-ExcludedFile $_.Name) } | Sort-Object Name
     return @($dirs) + @($files)

@@ -10,12 +10,17 @@ namespace Gamespot.Editor.Audio
     /// Genera por código los efectos de sonido nuevos (V059d, sin descargas): 44,1 kHz, mono, 16 bit, en
     /// <c>Resources/Audio</c>. Son sustitutos propios, como los WAV que heredó el Flutter; se pueden cambiar por
     /// sonidos finales con el mismo nombre. El ruido usa una semilla fija: el resultado es siempre el mismo.
-    /// Menú: Gamespot → Audio → Generar sonidos sintetizados.
+    /// Desde V059n todos salen al mismo volumen (<see cref="SoundLevel"/>), también los tres heredados del Flutter,
+    /// que se vuelven a nivelar en su sitio (nivelar dos veces da lo mismo).
+    /// Menú: Gamespot → Audio → Generar y nivelar los sonidos.
     /// </summary>
     public static class SoundSynth
     {
         public const int SampleRate = 44100;
         private const string Folder = "Assets/_Gamespot/Resources/Audio";
+
+        /// <summary>Los WAV que heredó el Flutter: no se generan, solo se nivelan.</summary>
+        public static readonly IReadOnlyList<string> Inherited = new[] { "card_flip", "reveal", "game_over" };
 
         private static readonly Dictionary<string, Func<float[]>> Sounds = new Dictionary<string, Func<float[]>>
         {
@@ -30,17 +35,26 @@ namespace Gamespot.Editor.Audio
             ["swipe"] = Swipe
         };
 
-        [MenuItem("Gamespot/Audio/Generar sonidos sintetizados")]
+        [MenuItem("Gamespot/Audio/Generar y nivelar los sonidos")]
         public static void GenerateAll()
         {
             Directory.CreateDirectory(Folder);
             foreach (var pair in Sounds)
             {
-                var path = $"{Folder}/{pair.Key}.wav";
-                File.WriteAllBytes(path, ToWav(Finish(pair.Value())));
-                AssetDatabase.ImportAsset(path, ImportAssetOptions.ForceUpdate);
+                Write($"{Folder}/{pair.Key}.wav", Finish(pair.Value()));
             }
-            Debug.Log($"[Audio] Generados {Sounds.Count} sonidos en {Folder}");
+            foreach (var name in Inherited)
+            {
+                var path = $"{Folder}/{name}.wav";
+                Write(path, SoundLevel.Normalize(SoundLevel.ReadWav(path)));
+            }
+            Debug.Log($"[Audio] Generados {Sounds.Count} sonidos y nivelados {Inherited.Count} heredados en {Folder}");
+        }
+
+        private static void Write(string path, float[] samples)
+        {
+            File.WriteAllBytes(path, SoundLevel.ToWav(samples));
+            AssetDatabase.ImportAsset(path, ImportAssetOptions.ForceUpdate);
         }
 
         // ------------------------------------------------------------------ Sonidos
@@ -193,43 +207,18 @@ namespace Gamespot.Editor.Audio
             }
         }
 
-        /// <summary>Normaliza a 0,85 de pico y suaviza 2 ms al principio y al final para que no chasquee.</summary>
+        /// <summary>
+        /// Suaviza 2 ms al principio y al final para que no chasquee y lo deja al volumen común (antes se normalizaba
+        /// a 0,85 de pico, casi el máximo, y los pitidos y las ondas cuadradas sonaban demasiado fuerte).
+        /// </summary>
         private static float[] Finish(float[] buffer)
         {
-            var peak = 0f;
-            foreach (var s in buffer) peak = Mathf.Max(peak, Mathf.Abs(s));
-            var gain = peak > 0f ? 0.85f / peak : 1f;
             var fade = Mathf.Min(buffer.Length / 2, Mathf.RoundToInt(0.002f * SampleRate));
             for (var i = 0; i < buffer.Length; i++)
             {
-                var edge = Mathf.Min(1f, Mathf.Min(i, buffer.Length - 1 - i) / (float)Mathf.Max(1, fade));
-                buffer[i] *= gain * edge;
+                buffer[i] *= Mathf.Min(1f, Mathf.Min(i, buffer.Length - 1 - i) / (float)Mathf.Max(1, fade));
             }
-            return buffer;
-        }
-
-        private static byte[] ToWav(float[] samples)
-        {
-            using (var stream = new MemoryStream())
-            using (var writer = new BinaryWriter(stream))
-            {
-                var dataBytes = samples.Length * 2;
-                writer.Write(new[] { 'R', 'I', 'F', 'F' });
-                writer.Write(36 + dataBytes);
-                writer.Write(new[] { 'W', 'A', 'V', 'E', 'f', 'm', 't', ' ' });
-                writer.Write(16);
-                writer.Write((short)1);
-                writer.Write((short)1);
-                writer.Write(SampleRate);
-                writer.Write(SampleRate * 2);
-                writer.Write((short)2);
-                writer.Write((short)16);
-                writer.Write(new[] { 'd', 'a', 't', 'a' });
-                writer.Write(dataBytes);
-                foreach (var s in samples) writer.Write((short)Mathf.RoundToInt(Mathf.Clamp(s, -1f, 1f) * short.MaxValue));
-                writer.Flush();
-                return stream.ToArray();
-            }
+            return SoundLevel.Normalize(buffer);
         }
     }
 }

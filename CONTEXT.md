@@ -19,6 +19,7 @@
 > **Icono:** el de la app Flutter (V060). **APK de prueba:** `SajitariosGamespot-prueba.apk` en la raíz del repo (V065, en curso): instalarlo en el móvil y jugar.
 > **Pendiente de probar a mano por el autor:** abrir `SajitariosGamespot/` en Unity 6000.3.27f1, Play en la escena
 > `App` y jugar una partida de cada juego (sobre todo Wavelength, que estaba roto, y la mecha de La Bomba).
+> **Sonidos:** el autor los oía demasiado fuertes; desde V059n todos están nivelados más bajos (comprobar en el móvil si ahora suenan bien o hay que tocar alguno).
 > **Escuchar los sonidos nuevos** (sintetizados, nadie los ha oído aún): tic-tac y explosión de La Bomba, pitidos
 > y bocina del Tabú, acierto/fallo de la Trivia, campanas de Wavelength y pasar de Yo Nunca; la vibración solo se
 > nota en el móvil.
@@ -140,7 +141,7 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 | `Reveal` | `reveal.wav` (0.30 s) | Impostor: al pulsar "Revelar" |
 | `GameOver` | `game_over.wav` (0.50 s) | Impostor: al abrir el fin de partida (si hay sesión) |
 - En el Flutter ningún otro juego tenía sonido. Mute guardado en la preferencia `audio_enabled` (por defecto activado); errores silenciados. Botón: icono volumen on/off con tooltip `silenciarSonido` / `activarSonido`. Los WAV son placeholders sintetizados (16 bit, mono, 44.1 kHz).
-- **Sonidos nuevos en Unity (V059d, C3 + L1)**, sintetizados por código con el menú *Gamespot → Audio → Generar sonidos sintetizados* (`Editor/Audio/SoundSynth.cs`, semilla fija; se pueden sustituir por sonidos finales con el mismo nombre):
+- **Sonidos nuevos en Unity (V059d, C3 + L1)**, sintetizados por código con el menú *Gamespot → Audio → Generar y nivelar los sonidos* (`Editor/Audio/SoundSynth.cs`, semilla fija; se pueden sustituir por sonidos finales con el mismo nombre):
 
 | Sonido | Archivo | Cuándo |
 |---|---|---|
@@ -151,6 +152,7 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 | `Correct` / `Wrong` | `correct.wav`, `wrong.wav` | Trivia: al elegir respuesta |
 | `Chime` | `chime.wav` (1.1 s) | Wavelength: al confirmar la adivinanza (revelado) |
 | `Swipe` | `swipe.wav` (0.3 s) | Yo Nunca: siguiente frase |
+- **Volumen (V059n):** el autor los oía «exageradamente fuertes». Todos los WAV (los 9 sintetizados y los 3 heredados) se dejan a **−20 dB de sonoridad** con el pico como mucho a **−6 dB** (`Editor/Audio/SoundLevel`: RMS de las ventanas de 10 ms que suenan, después de un paso alto de 200 Hz para no contar los graves que el altavoz del móvil no da). Menú *Gamespot → Audio → Generar y nivelar los sonidos*; nivelar dos veces da lo mismo. Las llamadas siguen bajando algunos un poco más (pitido 0,8, campanas 0,8, pasar 0,6). Los tests de PlayMode no se oyen (`AudioListener.volume = 0` en `AppTestHarness`). `AudioClipsTests` comprueba los niveles.
 - **Vibración:** `Haptics.Vibrate()` (`Handheld.Vibrate` solo en Android/iOS; Unity añade el permiso `VIBRATE` al usarlo). Preferencia `vibration_enabled` (por defecto sí), independiente del silencio y aún sin interruptor (llegará con C5).
 
 ### 5.6 Idiomas
@@ -273,6 +275,10 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 | Paquetes de Unity (URP, uGUI/TextMeshPro, Input System, Test Framework, Pipeline) | Unity Companion License | Motor, UI, entrada, tests y puente de la CLI |
 
 ## 10. Registro de trabajo (lo más reciente arriba)
+
+### 2026-10-25 · V059n · Sonidos más bajos
+- El autor oía los sonidos «exageradamente fuertes» mientras corrían los tests. Medidos: los sintetizados se normalizaban a 0,85 de pico (−1,4 dB) y el pitido del Tabú y el fallo de la trivia llegaban a −6 y −9 dB de RMS; los tres heredados del Flutter (carta, revelar, fin), a −9. Ahora todos a −20 dB de sonoridad y como mucho −6 dB de pico (`SoundLevel`); bajan entre 2 dB (tic-tac, que ya era bajo) y 13 dB (pitido). Se mide sin los graves (paso alto de 200 Hz) para que la explosión, que es casi todo graves, no se quede corta en el altavoz del móvil.
+- `SoundSynth` usa `SoundLevel` y nivela también los 3 heredados (menú *Generar y nivelar los sonidos*). Los tests de PlayMode ya no se oyen. Test de niveles en `AudioClipsTests`. 251 EditMode + 53 PlayMode.
 
 ### 2026-10-25 · V059m · Categorías y tarjetas propias en el Impostor y el Tabú
 - **Común (`Games/_Shared`):** `CustomCategoryRepository` (tabla de cada juego, `CreateTable` desde su esquema; nombres limpios de hasta 24 caracteres, sin repetir sin distinguir mayúsculas, en C# porque NOCASE de SQLite solo iguala ASCII, ni con los nombres de serie del idioma actual); `CategoryOption` (id + nombre, «Mis palabras» si la propia ya no existe); `CategorySelectDialog` (chips en un scroll, «Todas» y «Nueva categoría» opcionales); `CategoryNameDialog`; `CustomCategoriesScreen`. `CategoryPicker` recibe opciones con nombre y un conjunto de «ya vistas»: una categoría que aparece por primera vez sale marcada (salvo las +18). `WordCategories.CustomId/IsCustom`. Iconos nuevos `Category` y `FilterList` (sustitutos «#» y «=» hasta que haya fuente de iconos). `Dialogs.Close`.

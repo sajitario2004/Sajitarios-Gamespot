@@ -15,12 +15,14 @@ namespace Gamespot.Tests.PlayMode
 {
     /// <summary>
     /// Arranca la app completa (Bootstrap) con una base de datos temporal y, opcionalmente, juegos de prueba.
-    /// Se destruye todo al terminar.
+    /// Se destruye todo al terminar. Los tests suenan en silencio (V059n): los sonidos se cuentan igual, pero no se
+    /// oyen en el Editor mientras se trabaja.
     /// </summary>
     public sealed class AppTestHarness : IDisposable
     {
         private readonly string _dbPath;
         private readonly IReadOnlyList<string> _savedLastPlayers;
+        private readonly float _savedVolume;
         private GameObject _root;
 
         public AppTestHarness(Func<IReadOnlyList<IGameDescriptor>> games = null)
@@ -28,6 +30,8 @@ namespace Gamespot.Tests.PlayMode
             // Los jugadores guardados se comparten entre juegos: cada test empieza sin ninguno y deja los de antes.
             _savedLastPlayers = AppSettings.LastPlayers;
             AppSettings.LastPlayers = null;
+            _savedVolume = AudioListener.volume;
+            AudioListener.volume = 0f;
             _dbPath = Path.Combine(Path.GetTempPath(), $"gamespot_play_{Guid.NewGuid():N}.db");
             Bootstrap.DatabasePathOverride = _dbPath;
             Bootstrap.GamesOverride = games;
@@ -54,6 +58,7 @@ namespace Gamespot.Tests.PlayMode
             Bootstrap.DatabasePathOverride = null;
             Bootstrap.GamesOverride = null;
             AppSettings.LastPlayers = _savedLastPlayers;
+            AudioListener.volume = _savedVolume;
             try
             {
                 if (File.Exists(_dbPath)) File.Delete(_dbPath);
