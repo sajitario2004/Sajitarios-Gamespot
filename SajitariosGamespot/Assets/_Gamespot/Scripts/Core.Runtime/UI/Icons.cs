@@ -61,7 +61,8 @@ namespace Gamespot.Core.Runtime.UI
             [IconId.CheckCircle] = 0xE86C,
             [IconId.Cancel] = 0xE5C9,
             [IconId.Category] = 0xE574,
-            [IconId.FilterList] = 0xE152
+            [IconId.FilterList] = 0xE152,
+            [IconId.Settings] = 0xE8B8
         };
 
         private static readonly Dictionary<IconId, string> Fallbacks = new Dictionary<IconId, string>
@@ -109,7 +110,8 @@ namespace Gamespot.Core.Runtime.UI
             [IconId.CheckCircle] = "v",
             [IconId.Cancel] = "x",
             [IconId.Category] = "#",
-            [IconId.FilterList] = "="
+            [IconId.FilterList] = "=",
+            [IconId.Settings] = "*"
         };
 
         /// <summary>Todos los puntos de código que usa la app (para crear el atlas de la fuente de iconos).</summary>

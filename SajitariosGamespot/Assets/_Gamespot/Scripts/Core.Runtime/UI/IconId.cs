@@ -50,6 +50,7 @@ namespace Gamespot.Core.Runtime.UI
         Cancel,
         Category,
         FilterList,
+        Settings,
         SuitSpade,
         SuitHeart,
         SuitDiamond,

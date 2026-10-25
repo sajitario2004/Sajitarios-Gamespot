@@ -45,7 +45,8 @@ namespace Gamespot.Core.Runtime.Settings
         /// </summary>
         public static bool ReduceMotion
         {
-            get => PlayerPrefs.GetInt(ReduceMotionKey, 0) == 1;
+            // Sin elegir en la app, sigue al sistema (V062).
+            get => PlayerPrefs.HasKey(ReduceMotionKey) ? PlayerPrefs.GetInt(ReduceMotionKey, 0) == 1 : SystemReduceMotion;
             set
             {
                 if (value == ReduceMotion) return;
@@ -80,6 +81,36 @@ namespace Gamespot.Core.Runtime.Settings
                 if (names.Count == 0) PlayerPrefs.DeleteKey(LastPlayersKey);
                 else PlayerPrefs.SetString(LastPlayersKey, JsonWriter.WriteStringArray(names));
                 PlayerPrefs.Save();
+            }
+        }
+
+        private static bool? _systemReduceMotion;
+
+        /// <summary>
+        /// Si el sistema pide menos movimiento: en Android, «Quitar animaciones» (escala de animación a 0). En iOS haría
+        /// falta un plugin nativo: por ahora, no.
+        /// </summary>
+        public static bool SystemReduceMotion
+        {
+            get
+            {
+                if (_systemReduceMotion.HasValue) return _systemReduceMotion.Value;
+                _systemReduceMotion = false;
+#if UNITY_ANDROID && !UNITY_EDITOR
+                try
+                {
+                    using (var resolver = UnityEngine.Android.AndroidApplication.currentContext.Call<AndroidJavaObject>("getContentResolver"))
+                    using (var global = new AndroidJavaClass("android.provider.Settings$Global"))
+                    {
+                        _systemReduceMotion = global.CallStatic<float>("getFloat", resolver, "animator_duration_scale", 1f) == 0f;
+                    }
+                }
+                catch (Exception e)
+                {
+                    Debug.LogWarning($"[Ajustes] No se pudo leer la escala de animación del sistema: {e.Message}");
+                }
+#endif
+                return _systemReduceMotion.Value;
             }
         }
 

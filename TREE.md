@@ -1,6 +1,6 @@
 # TREE
 
-Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 21:05.
+Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 21:11.
 
 No se listan: Library, Temp, Logs, obj, UserSettings, .git, .vs, .idea, .vscode, .utmp, Build, Builds, MemoryCaptures, Recordings, node_modules, __pycache__, .venv, .dart_tool, build, coverage, *.meta, *.csproj, *.sln, *.slnx, *.user, *.pidb, *.unityproj, .DS_Store, Thumbs.db, *.apk, *.aab.
 Plegadas: skills, TextMesh Pro, Flutter, Capturas (Flutter = la app original en Legacy/Flutter, solo lectura).
@@ -11,7 +11,7 @@ Sajitarios-Gamespot/
 ├── .claude/
 │   └── settings.json
 ├── Docs/
-│   ├── Capturas/  (52 elementos, plegado)
+│   ├── Capturas/  (53 elementos, plegado)
 │   └── PLAN_MEJORAS.md
 ├── Legacy/
 │   └── Flutter/  (20 elementos, plegado)
@@ -264,7 +264,8 @@ Sajitarios-Gamespot/
 │   │   │   │   │       └── YoNuncaGame.cs
 │   │   │   │   └── Menu/
 │   │   │   │       ├── Gamespot.Menu.asmdef
-│   │   │   │       └── MenuScreen.cs
+│   │   │   │       ├── MenuScreen.cs
+│   │   │   │       └── SettingsDialog.cs
 │   │   │   ├── Settings/
 │   │   │   │   └── GamespotVolume.asset
 │   │   │   └── Tests/
@@ -323,6 +324,8 @@ Sajitarios-Gamespot/
 │   │   │       │   ├── Localization/
 │   │   │       │   │   ├── GlyphCoverageTests.cs
 │   │   │       │   │   └── LocTests.cs
+│   │   │       │   ├── Theme/
+│   │   │       │   │   └── ContrastTests.cs
 │   │   │       │   ├── ArchitectureTests.cs
 │   │   │       │   └── Gamespot.Tests.EditMode.asmdef
 │   │   │       └── PlayMode/
@@ -339,6 +342,7 @@ Sajitarios-Gamespot/
 │   │   │           │   ├── TriviaFlowTests.cs
 │   │   │           │   ├── WavelengthFlowTests.cs
 │   │   │           │   └── YoNuncaFlowTests.cs
+│   │   │           ├── AccessibilityTests.cs
 │   │   │           ├── AppTestHarness.cs
 │   │   │           ├── BootstrapTests.cs
 │   │   │           ├── Gamespot.Tests.PlayMode.asmdef

@@ -398,5 +398,13 @@
   "esaTarjetaYaNoExiste": "That card no longer exists.",
   "tarjetaPalabraObligatoria": "Write the word to guess.",
   "tarjetaProhibidaRepetida": "Forbidden words can't repeat or be the word itself.",
-  "tarjetaProhibidasMinimo": "Fill in at least {min} forbidden words."
+  "tarjetaProhibidasMinimo": "Fill in at least {min} forbidden words.",
+  "ajustes": "Settings",
+  "cerrar": "Close",
+  "ajustesSonido": "Sound",
+  "ajustesSonidoSubtitulo": "Game sound effects.",
+  "ajustesVibracion": "Vibration",
+  "ajustesVibracionSubtitulo": "The phone vibrates when the bomb explodes.",
+  "ajustesReducirAnimaciones": "Reduce motion",
+  "ajustesReducirAnimacionesSubtitulo": "No pulsing glows or screen transitions."
 }

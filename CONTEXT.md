@@ -66,6 +66,7 @@ Historia: otra IA construyó la app completa en **Flutter** (v0.1 → v0.75, fas
 | 2026-10-25 | Borrar una categoría propia **no borra sus palabras**: pasan a «Mis palabras» | Claude, revisable |
 | 2026-10-25 | Las palabras y tarjetas propias pueden ir a cualquier categoría: «Mis palabras», una propia o una de serie (también Cachondeo) | Claude, revisable |
 | 2026-10-25 | El editor de tarjetas del Tabú es una **pantalla con scroll**, no un diálogo (seis campos y el teclado del móvil) | Claude, revisable |
+| 2026-10-25 | «Reducir animaciones» sigue al ajuste «Quitar animaciones» de Android mientras no se elija en la app; en iOS, apagado (haría falta un plugin nativo) | Claude, revisable |
 
 ## 4. Arquitectura Unity
 
@@ -96,7 +97,7 @@ SajitariosGamespot/Assets/_Gamespot/
 ### 5.1 Arranque y menú
 - En Flutter todo era perezoso (BD al primer acceso, audio precargado solo en "Es un 10 pero"). En Unity el `Bootstrap` abre la BD, aplica esquema y seeds, precarga audio y carga el idioma antes de mostrar el menú.
 - **Orden del registro:** 1 Es un 10 pero (`es_un_10_pero`, icono "style"), 2 El Impostor (`impostor`, "theater_comedy", `/impostor`), 3 Preguntas por puntos (`trivia`, "quiz", `/trivia`), 4 Wavelength (`wavelength`, "tune", `/wavelength`), 5 Tabú (`tabu`, "do_not_disturb_on", `/tabu`), 6 Yo Nunca (`yo_nunca`, "front_hand", `/yo-nunca`), 7 La Bomba (`bomba`, "local_fire_department", `/bomba`).
-- **Menú:** AppBar con el título de la app en NeonText con PulseGlow (0.8–1.3) y el selector de idioma. Cuerpo: NeonBackground › SafeArea › cabecera `menu_header.png` (alto máx. 140, cover, oculta a lectores) + rejilla. Rejilla de 3 columnas si el ancho > 600, si no 2; ancho máx. 900, padding 16, separación 16. Tarjeta: acento cian (índice par) o magenta (impar), radio 20, borde 1.5 px, icono con glow, título (máx. 2 líneas) y descripción (máx. 3 líneas, color atenuado). En Unity (V059l, petición del autor): descripciones cortas (≤ 47 caracteres), letra de 11 que encoge hasta 9, título en un hueco fijo de dos líneas que encoge hasta 12 e icono de 44. Lector de pantalla: "Jugar a {titulo}. {descripcion}". Catálogo vacío: panel con icono, `menuVacioTitulo` y `menuVacioMensaje`.
+- **Menú:** AppBar con el título de la app en NeonText con PulseGlow (0.8–1.3) y el selector de idioma. Cuerpo: NeonBackground › SafeArea › cabecera `menu_header.png` (alto máx. 140, cover, oculta a lectores) + rejilla. Rejilla de 3 columnas si el ancho > 600, si no 2; ancho máx. 900, padding 16, separación 16. Tarjeta: acento cian (índice par) o magenta (impar), radio 20, borde 1.5 px, icono con glow, título (máx. 2 líneas) y descripción (máx. 3 líneas, color atenuado). En Unity (V059l, petición del autor): descripciones cortas (≤ 47 caracteres), letra de 11 que encoge hasta 9, título en un hueco fijo de dos líneas que encoge hasta 12 e icono de 44. Lector de pantalla: "Jugar a {titulo}. {descripcion}". Catálogo vacío: panel con icono, `menuVacioTitulo` y `menuVacioMensaje`. En Unity (V062) la barra del menú tiene también **Ajustes** (sonido, vibración y reducir animaciones).
 
 ### 5.2 Base de datos
 - Archivo `sajitarios_gamespot.db` (en Unity, en `Application.persistentDataPath`). Flutter: versión 8, `PRAGMA foreign_keys = ON` (ninguna tabla tiene claves foráneas).
@@ -266,6 +267,7 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 - El objetivo de victorias del Tabú no se puede cambiar.
 - La mecha de La Bomba no se puede configurar (siempre 10–60 s).
 - Contenido de los bancos generado por máquina: conviene una revisión factual.
+- Sin lector de pantalla (TalkBack/VoiceOver): uGUI no expone la jerarquía a la accesibilidad del sistema; haría falta el módulo de accesibilidad de Unity 6 (`AccessibilityHierarchy`) pantalla a pantalla. En el Flutter había `Semantics` (V062).
 
 ## 9. Registro de licencias
 | Componente | Licencia | Uso |
@@ -278,6 +280,12 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 | LiberationSans (recursos esenciales de TextMeshPro) | OFL 1.1 | Respaldo de los caracteres que Roboto no tenga |
 
 ## 10. Registro de trabajo (lo más reciente arriba)
+
+### 2026-10-25 · V062 · Accesibilidad básica
+- **Objetivos táctiles:** barrido de todos los `Selectable` activos en las 88 pantallas: solo los chips bajaban de 48 (44 en las rejillas, 40 en las filas de tiempo, modo e intensidad). `NeonChip` y `ResponsiveChipGrid` usan `NeonButton.MinTouchSize` (48); las filas del selector de categorías, 56. `AccessibilityTests` lo comprueba en el menú, los siete setups y la lista de palabras.
+- **Contraste:** `ContrastTests` calcula el contraste WCAG de la paleta: texto (principal, atenuado y acentos) ≥ 4,5:1 sobre fondo y superficies; etiquetas de botón (18 en negrita) ≥ 3:1, rellenas y de borde. Ya cumplía: el violeta saturado solo se usa de halo y de borde.
+- **Reducir animaciones:** `AppSettings.ReduceMotion` existía (lo respetan `PulseGlow` y `FadeScaleIn`, igual que en el Flutter) pero no había dónde activarlo. Diálogo `Menu/SettingsDialog` (icono `Settings`, engranaje) con sonido, vibración (`vibration_enabled`, el interruptor que faltaba de C5) y reducir animaciones. Sin elegir, `SystemReduceMotion` lee `animator_duration_scale` de Android (0 = «Quitar animaciones»).
+- 254 EditMode + 56 PlayMode; barridos de textos y pulsables limpios. Captura `V062_ajustes.png`.
 
 ### 2026-10-25 · V061 · Notch y zona segura
 - La capa de pantallas respetaba `Screen.safeArea`; los diálogos y los avisos (capa de superposiciones), no, aunque el comentario de `UiRoot` lo decía: en un móvil con barra de gestos el aviso de abajo podía quedar debajo de ella. Ahora el velo del diálogo cubre toda la pantalla y su panel va en un hijo con `SafeArea`; cada aviso va en su contenedor `SnackbarArea` con `SafeArea` (y se destruye con él).

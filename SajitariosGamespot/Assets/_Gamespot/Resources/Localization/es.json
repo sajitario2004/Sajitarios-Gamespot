@@ -398,5 +398,13 @@
   "esaTarjetaYaNoExiste": "Esa tarjeta ya no existe.",
   "tarjetaPalabraObligatoria": "Escribe la palabra a adivinar.",
   "tarjetaProhibidaRepetida": "Las prohibidas no pueden repetirse ni ser la propia palabra.",
-  "tarjetaProhibidasMinimo": "Rellena al menos {min} palabras prohibidas."
+  "tarjetaProhibidasMinimo": "Rellena al menos {min} palabras prohibidas.",
+  "ajustes": "Ajustes",
+  "cerrar": "Cerrar",
+  "ajustesSonido": "Sonido",
+  "ajustesSonidoSubtitulo": "Efectos de sonido de los juegos.",
+  "ajustesVibracion": "Vibración",
+  "ajustesVibracionSubtitulo": "El móvil vibra cuando explota la bomba.",
+  "ajustesReducirAnimaciones": "Reducir animaciones",
+  "ajustesReducirAnimacionesSubtitulo": "Sin brillos que laten ni transiciones entre pantallas."
 }
