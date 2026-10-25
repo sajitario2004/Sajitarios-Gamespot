@@ -7,7 +7,7 @@ using Gamespot.Games.Shared;
 namespace Gamespot.Games.Impostor
 {
     /// <summary>
-    /// Descriptor de "El Impostor": palabras (2176 de seed por categorías + las del usuario) e historial en SQLite; setup, pasar
+    /// Descriptor de "El Impostor": palabras (2525 de seed por categorías + las del usuario) e historial en SQLite; setup, pasar
     /// el móvil, revelar, votación, fin, gestión de palabras e historial.
     /// </summary>
     public sealed class ImpostorGame : IGameDescriptor

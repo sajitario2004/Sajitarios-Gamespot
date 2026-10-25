@@ -25,6 +25,8 @@ Archivo vivo. Añade una línea cada vez que el autor exprese un gusto, una corr
 
 - (2026-10-25) Prefiere palabras **fáciles y conocidas para jugar en grupo**: fuera los términos raros («feudo») y los famosos que un grupo joven no conoce («Andreu» Buenafuente, Eugenio). Y quiere **elegir categorías** en el Impostor y el Tabú.
 
+- (2026-10-25) Quiere una categoría **«Cachondeo»** con humor de fiesta muy bruto (política, porno, sexo, memes) en el Impostor y el Tabú. Se hace +18, desmarcada por defecto y con aviso; no se meten chistes sobre menores ni sobre grupos de personas (se le explicó). Prefiere decidir en persona qué palabras raras se quitan: hay que enseñarle solo las dudosas, no la lista entera.
+
 ## Diseño
 - (heredado) Estética **neón cyberpunk**: fondo casi negro, cian y magenta con brillo, rejilla de fondo.
 - (heredado) **Nada de emojis**, ni en el código ni en los textos: solo iconos.

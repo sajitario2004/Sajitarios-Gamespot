@@ -15,6 +15,10 @@ namespace Gamespot.Tests.EditMode.Core
             Assert.AreEqual(WordCategories.Propias, WordCategories.All.Last(), "Mis palabras va al final");
             CollectionAssert.DoesNotContain(WordCategories.Seed, WordCategories.Propias);
             Assert.AreEqual(WordCategories.All.Count, WordCategories.All.Distinct().Count());
+            Assert.IsTrue(WordCategories.IsAdult(WordCategories.Cachondeo));
+            Assert.IsFalse(WordCategories.IsAdult(WordCategories.Fiesta));
+            CollectionAssert.DoesNotContain(WordCategories.Default, WordCategories.Cachondeo, "Cachondeo va desmarcada por defecto");
+            CollectionAssert.AreEquivalent(WordCategories.All.Where(c => !WordCategories.IsAdult(c)), WordCategories.Default);
         }
     }
 }

@@ -46,9 +46,13 @@ namespace Gamespot.Tests.EditMode.Games.Tabu
         {
             var words = TabuSchema.Parse(new ResourcesSeedSource().Load(TabuSchema.SeedName)).Select(w => w.Palabra).ToList();
             Assert.That(words.Count, Is.GreaterThanOrEqualTo(1000));
-            foreach (var expected in new[] { "Ibai", "Rosalía", "Torre Eiffel", "Calimocho", "Mercadona", "Harry Potter" })
+            foreach (var expected in new[] { "Ibai", "Rosalía", "Torre Eiffel", "Calimocho", "Mercadona", "Harry Potter", "Desfiladero", "Vox" })
             {
                 CollectionAssert.Contains(words, expected);
+            }
+            foreach (var removed in new[] { "Candil", "Monzón", "Buzz", "Spain is different" })
+            {
+                CollectionAssert.DoesNotContain(words, removed);
             }
         }
 

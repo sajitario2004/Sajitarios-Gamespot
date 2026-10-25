@@ -36,8 +36,8 @@ namespace Gamespot.Games.Tabu
         /// <summary>De dónde saca tarjetas la partida (con las categorías del setup).</summary>
         public CategoryTabuWordSource WordSource { get; }
 
-        /// <summary>Categorías marcadas en el setup (por defecto todas).</summary>
-        public HashSet<string> DraftCategorias { get; } = new HashSet<string>(WordCategories.Seed);
+        /// <summary>Categorías marcadas en el setup (por defecto todas menos Cachondeo, +18).</summary>
+        public HashSet<string> DraftCategorias { get; } = new HashSet<string>(WordCategories.Default);
 
         public TabuFlowController Flow { get; }
         public Router Router { get; }

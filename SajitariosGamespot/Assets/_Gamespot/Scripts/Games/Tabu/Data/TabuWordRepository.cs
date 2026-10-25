@@ -9,7 +9,7 @@ namespace Gamespot.Games.Tabu.Data
 {
     /// <summary>
     /// Tabla <c>tabu_words</c> (prohibidas en JSON y categoría, <see cref="WordCategories"/>) y su seed
-    /// (<c>[{palabra, prohibidas[4..5], categoria}]</c>, 1065).
+    /// (<c>[{palabra, prohibidas[4..5], categoria}]</c>, 1161).
     /// </summary>
     public static class TabuSchema
     {
@@ -18,9 +18,9 @@ namespace Gamespot.Games.Tabu.Data
 
         /// <summary>
         /// Última versión de la BD en la que se renovó el seed: 2 (las 120 heredadas, sin tildes, por 607), 3 (1076,
-        /// con famosos, sitios, fiesta y cosas de España) y 4 (categorías y fuera las difíciles).
+        /// con famosos, sitios, fiesta y cosas de España), 4 (categorías y fuera las difíciles) y 5 (Cachondeo).
         /// </summary>
-        public const int SeedRenewedVersion = 4;
+        public const int SeedRenewedVersion = 5;
 
         /// <summary>
         /// Al migrar desde antes de <see cref="SeedRenewedVersion"/> se borran las filas de seed; el arranque las

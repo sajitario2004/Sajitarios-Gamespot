@@ -18,8 +18,8 @@ namespace Gamespot.Games.Impostor
         public bool RoundsTouched { get; set; }
         public bool HintEnabled { get; set; }
 
-        /// <summary>Categorías marcadas (por defecto todas). El setup solo enseña las que tienen palabras.</summary>
-        public HashSet<string> Categories { get; } = new HashSet<string>(WordCategories.All);
+        /// <summary>Categorías marcadas (por defecto todas menos Cachondeo, +18). El setup solo enseña las que tienen palabras.</summary>
+        public HashSet<string> Categories { get; } = new HashSet<string>(WordCategories.Default);
     }
 
     /// <summary>

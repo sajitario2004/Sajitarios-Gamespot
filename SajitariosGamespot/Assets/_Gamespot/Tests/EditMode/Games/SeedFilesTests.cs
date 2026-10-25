@@ -1,5 +1,6 @@
 using System.Linq;
 using Gamespot.Core.Runtime.Db;
+using Gamespot.Core;
 using Gamespot.Games.Impostor.Data;
 using NUnit.Framework;
 
@@ -31,11 +32,16 @@ namespace Gamespot.Tests.EditMode.Games
                 Assert.That(entries.Count(e => e.category == category), Is.GreaterThanOrEqualTo(20), category);
             }
             var words = entries.Select(e => e.word).ToList();
-            foreach (var removed in new[] { "feudo", "Eugenio", "Andreu Buenafuente", "obenque", "hamburgesa" })
+            foreach (var removed in new[] { "feudo", "Eugenio", "Andreu Buenafuente", "hamburgesa", "amnistía", "charada", "indulto", "katxi",
+                         "candil", "Laura Escanes", "Buzz", "Dixit", "Spain is different", "menores de edad" })
             {
                 CollectionAssert.DoesNotContain(words, removed);
             }
-            CollectionAssert.Contains(words, "hamburguesa");
+            foreach (var back in new[] { "hamburguesa", "tímpano", "torreón", "carril bici", "tienda de campaña", "Martes y Trece", "Templo de Debod" })
+            {
+                CollectionAssert.Contains(words, back);
+            }
+            Assert.AreEqual(WordCategories.Cachondeo, entries.Single(e => e.word == "Marta Díaz").category);
         }
 
         [Test]

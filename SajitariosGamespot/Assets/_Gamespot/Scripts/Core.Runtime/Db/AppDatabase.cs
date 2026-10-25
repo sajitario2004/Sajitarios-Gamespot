@@ -18,8 +18,9 @@ namespace Gamespot.Core.Runtime.Db
         /// 2 · el Tabú renueva su seed (607 palabras con tildes, V059e).
         /// 3 · palabras de fiesta y de España: el Impostor añade las nuevas a su seed y el Tabú lo renueva (1076).
         /// 4 · categorías y fuera las palabras difíciles: el Impostor y el Tabú renuevan su seed (columna de categoría).
+        /// 5 · categoría Cachondeo (+18) y vuelven las palabras fáciles: los dos renuevan su seed.
         /// </summary>
-        public const int CurrentVersion = 4;
+        public const int CurrentVersion = 5;
 
         /// <summary>Ruta del archivo en el dispositivo.</summary>
         public static string DefaultPath => System.IO.Path.Combine(Application.persistentDataPath, FileName);

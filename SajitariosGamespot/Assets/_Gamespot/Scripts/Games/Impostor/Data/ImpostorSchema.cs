@@ -17,10 +17,10 @@ namespace Gamespot.Games.Impostor.Data
         public const string SeedName = "impostor_words";
 
         /// <summary>
-        /// Última versión de la BD en la que cambió el seed: 3 (+664 de fiesta y de España) y 4 (categorías y fuera
-        /// las palabras difíciles).
+        /// Última versión de la BD en la que cambió el seed: 3 (+664 de fiesta y de España), 4 (categorías y fuera
+        /// las palabras difíciles) y 5 (Cachondeo y vuelven las fáciles).
         /// </summary>
-        public const int SeedRenewedVersion = 4;
+        public const int SeedRenewedVersion = 5;
 
         /// <summary>Si una BD de <paramref name="oldVersion"/> tiene que renovar las palabras del seed.</summary>
         public static bool NeedsSeedRefresh(int oldVersion) => oldVersion < SeedRenewedVersion;

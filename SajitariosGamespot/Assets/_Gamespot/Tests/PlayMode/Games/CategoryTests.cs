@@ -30,7 +30,13 @@ namespace Gamespot.Tests.PlayMode.Games
             var setup = (ImpostorSetupScreen)_app.Router.Current;
             yield return null;
             CollectionAssert.AreEqual(WordCategories.Seed, setup.Categories.Shown, "Sin palabras propias no sale «Mis palabras»");
-            Assert.AreEqual(WordCategories.Seed.Count, setup.Categories.Selected.Count, "Por defecto, todas");
+            Assert.AreEqual(WordCategories.Seed.Count - 1, setup.Categories.Selected.Count, "Por defecto, todas menos Cachondeo");
+            Assert.IsFalse(setup.Categories.IsSelected(WordCategories.Cachondeo));
+            Assert.IsFalse(setup.Categories.AdultWarningVisible);
+            setup.Categories.Toggle(WordCategories.Cachondeo);
+            Assert.IsTrue(setup.Categories.AdultWarningVisible, "Al marcar Cachondeo sale el aviso +18");
+            setup.Categories.Toggle(WordCategories.Cachondeo);
+            Assert.IsFalse(setup.Categories.AdultWarningVisible);
 
             setup.Categories.SelectOnly(WordCategories.Politica);
             setup.Categories.Toggle(WordCategories.Politica);
@@ -63,6 +69,24 @@ namespace Gamespot.Tests.PlayMode.Games
             setup.Start();
             yield return null;
             Assert.AreEqual("Nuestra frase", Game<ImpostorGame>().Module.Flow.Session.Word.Text, "La única propia");
+        }
+
+        [UnityTest]
+        public IEnumerator Cachondeo_SoloEsaCategoria()
+        {
+            _app = new AppTestHarness();
+            _app.Router.Go(TabuModule.SetupRoute);
+            var setup = (TabuSetupScreen)_app.Router.Current;
+            yield return null;
+            setup.TeamA.Value = "Rojos";
+            setup.TeamB.Value = "Azules";
+            setup.Categories.SelectOnly(WordCategories.Cachondeo);
+            Assert.IsTrue(setup.Categories.AdultWarningVisible);
+            setup.Start();
+            yield return null;
+            var cachondeo = TabuSchema.ParseEntries(new ResourcesSeedSource().Load(TabuSchema.SeedName))
+                .Where(e => e.categoria == WordCategories.Cachondeo).Select(e => e.word.Palabra).ToList();
+            CollectionAssert.Contains(cachondeo, Game<TabuGame>().Module.Flow.Session.PalabraActual.Palabra);
         }
 
         [UnityTest]

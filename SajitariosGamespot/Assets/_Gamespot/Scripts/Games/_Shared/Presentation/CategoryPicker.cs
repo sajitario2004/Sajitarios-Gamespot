@@ -12,12 +12,14 @@ namespace Gamespot.Games.Shared
     /// <summary>
     /// Panel "Categorías" de los setups del Impostor y del Tabú (V059i): un chip por categoría con palabras, en
     /// dos columnas. Siempre queda al menos una marcada. Trabaja sobre el conjunto del borrador del setup, así
-    /// la elección se conserva al ir y volver.
+    /// la elección se conserva al ir y volver. Con una categoría +18 marcada (Cachondeo) se ve un aviso fijo,
+    /// como el del modo picante de Yo Nunca.
     /// </summary>
     public sealed class CategoryPicker : MonoBehaviour
     {
         private readonly Dictionary<string, NeonChip> _chips = new Dictionary<string, NeonChip>();
         private ISet<string> _selected;
+        private GameObject _adultWarning;
 
         /// <summary>Se lanza al marcar o desmarcar.</summary>
         public event Action Changed;
@@ -30,6 +32,9 @@ namespace Gamespot.Games.Shared
 
         public bool IsSelected(string id) => _selected.Contains(id) && _chips.ContainsKey(id);
 
+        /// <summary>Si se ve el aviso +18.</summary>
+        public bool AdultWarningVisible => _adultWarning != null && _adultWarning.activeSelf;
+
         public static CategoryPicker Create(Transform parent, IReadOnlyList<string> shown, ISet<string> selected, Color accent)
         {
             var panel = Ui.Panel(parent, accent.WithAlpha(0.5f), glow: 0.3f, spacing: 10f);
@@ -39,10 +44,12 @@ namespace Gamespot.Games.Shared
             Ui.Text(panel.Content, Loc.T("categoriasTitulo"), TextRole.TitleMedium, accent, glow: 0.6f, bold: true);
             Ui.Text(panel.Content, Loc.T("categoriasAyuda"), TextRole.BodySmall, Palette.TextMuted);
 
-            // Si no queda marcada ninguna de las que se ven (p. ej. solo "Mis palabras" y ya no hay), se marcan todas.
+            // Si no queda marcada ninguna de las que se ven (p. ej. solo "Mis palabras" y ya no hay), se marcan todas
+            // menos las +18 (y, si solo hay +18, esas).
             if (!picker.Shown.Any(selected.Contains))
             {
-                foreach (var id in picker.Shown) selected.Add(id);
+                var normal = picker.Shown.Where(id => !WordCategories.IsAdult(id)).ToList();
+                foreach (var id in normal.Count > 0 ? normal : picker.Shown) selected.Add(id);
             }
             var grid = ResponsiveChipGrid.Create(panel.Content);
             foreach (var id in picker.Shown)
@@ -54,6 +61,13 @@ namespace Gamespot.Games.Shared
                 chip.name = Loc.T(WordCategories.LabelKey(category));
                 picker._chips[category] = chip;
             }
+
+            var warning = Ui.Panel(panel.Content, Palette.NeonMagenta, glow: 0.8f, padding: new RectOffset(14, 14, 12, 12));
+            var row = Ui.Row(warning.Content, 10f, alignment: TextAnchor.UpperLeft);
+            Ui.Icon(row, IconId.Warning, 24f, Palette.NeonMagenta, 0.8f);
+            Ui.Text(row, Loc.T("categoriaCachondeoAviso"), TextRole.BodySmall, Palette.TextPrimary).Sized(flexWidth: 1f);
+            picker._adultWarning = warning.gameObject;
+            picker.RefreshWarning();
             return picker;
         }
 
@@ -85,7 +99,10 @@ namespace Gamespot.Games.Shared
         private void Refresh()
         {
             foreach (var pair in _chips) pair.Value.Selected = _selected.Contains(pair.Key);
+            RefreshWarning();
             Changed?.Invoke();
         }
+
+        private void RefreshWarning() => _adultWarning.SetActive(Selected.Any(WordCategories.IsAdult));
     }
 }
