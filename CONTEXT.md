@@ -11,7 +11,7 @@
 > **Hecho (V059h–V059j):** Impostor (2525) y Tabú (1161) por categorías elegibles en el setup, con Cachondeo +18 desmarcada por defecto.
 > **Pendiente del autor:** aclarar 7 palabras de Cachondeo (Pereira, Fabiana Sevillano, «dedear panchas», «padalustro», «amigo kebap»,
 > «magic» y «virgen»; ver V059j en §10). Las 221 complicadas quedan fuera (V059k).
-> **APK de prueba:** `SajitariosGamespot-prueba.apk` en la raíz del repo (V065, en curso): instalarlo en el móvil y jugar.
+> **Icono:** el de la app Flutter (V060). **APK de prueba:** `SajitariosGamespot-prueba.apk` en la raíz del repo (V065, en curso): instalarlo en el móvil y jugar.
 > **Pendiente de probar a mano por el autor:** abrir `SajitariosGamespot/` en Unity 6000.3.27f1, Play en la escena
 > `App` y jugar una partida de cada juego (sobre todo Wavelength, que estaba roto, y la mecha de La Bomba).
 > **Escuchar los sonidos nuevos** (sintetizados, nadie los ha oído aún): tic-tac y explosión de La Bomba, pitidos
@@ -262,6 +262,11 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 | Paquetes de Unity (URP, uGUI/TextMeshPro, Input System, Test Framework, Pipeline) | Unity Companion License | Motor, UI, entrada, tests y puente de la CLI |
 
 ## 10. Registro de trabajo (lo más reciente arriba)
+
+### 2026-10-25 · V060 · Icono de la app (el de la app Flutter)
+- Al instalar el APK salía el icono de Unity: el proyecto no tenía icono. El autor quiere **el que tenía la app Flutter** (carta blanca con pica naranja sobre el morado `#7C3AED`), no uno nuevo con la paleta neón como decía el plan.
+- `Assets/_Gamespot/Art/Icon/`: `app_icon.png` y `app_icon_foreground.png` copiados de `Legacy/Flutter/assets/icon/`, y `app_icon_background.png` (morado liso, generado). El importador los trata sin compresión ni mipmaps. Menú *Gamespot → Configuración → Icono de la app* (`ProjectSetup.ApplyIcons`, también en *Aplicar todo*): icono por defecto (Android 7.1 e iOS) y adaptativo de Android (fondo + carta). Los tipos "Legacy" y "Round" de Android están obsoletos en Unity 6.3 y se dejan vacíos.
+- Comprobado dentro del APK (recursos `mipmap/app_icon`, `ic_launcher_background` y `ic_launcher_foreground`). APK rehecho sin errores ni avisos.
 
 ### 2026-10-25 · V065 (en curso) · Primer APK de prueba
 - `SajitariosGamespot-prueba.apk` en la raíz del repo (git lo ignora): plataforma activa cambiada a Android con `build.target switch` y build con `build run --target Android --outputPath <raíz>/SajitariosGamespot-prueba.apk --confirm true` (3 min 18 s, sin errores ni avisos). Release con la firma de depuración de Unity (no vale para Google Play), IL2CPP ARM64, 38,4 MB, `com.sajitarios.sajitarios_gamespot` 0.76.0 (76), API 25–36, permisos INTERNET (el de serie de Unity) y VIBRATE (de `Handheld.Vibrate`).

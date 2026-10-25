@@ -22,12 +22,41 @@ namespace Gamespot.Editor.Setup
 
         public const string TmpSettingsPath = "Assets/TextMesh Pro/Resources/TMP Settings.asset";
 
+        /// <summary>El icono de la app Flutter (carta con pica sobre el morado #7C3AED) y sus capas adaptativas.</summary>
+        public const string IconFolder = "Assets/_Gamespot/Art/Icon/";
+
         [MenuItem("Gamespot/Configuración/Aplicar todo", priority = 0)]
         public static void ApplyAll()
         {
             ImportTmpEssentials();
             ApplyPlayerSettings();
+            ApplyIcons();
             Debug.Log("[Gamespot] Configuración del proyecto aplicada.");
+        }
+
+        /// <summary>
+        /// Icono de la app: el mismo que tenía la app Flutter. Por defecto (también iOS, que lo reescala) y Android
+        /// adaptativo con el fondo morado y la carta delante.
+        /// </summary>
+        [MenuItem("Gamespot/Configuración/Icono de la app", priority = 30)]
+        public static void ApplyIcons()
+        {
+            var icon = AssetDatabase.LoadAssetAtPath<Texture2D>(IconFolder + "app_icon.png");
+            var foreground = AssetDatabase.LoadAssetAtPath<Texture2D>(IconFolder + "app_icon_foreground.png");
+            var background = AssetDatabase.LoadAssetAtPath<Texture2D>(IconFolder + "app_icon_background.png");
+            if (icon == null || foreground == null || background == null)
+            {
+                Debug.LogWarning($"[Gamespot] Faltan los iconos en {IconFolder}");
+                return;
+            }
+
+            // El icono por defecto sirve también para Android 7.1 (sin adaptativos: Unity 6.3 da por obsoletos los
+            // iconos "Legacy" y "Round") y para iOS.
+            PlayerSettings.SetIcons(NamedBuildTarget.Unknown, new[] { icon }, IconKind.Any);
+            var adaptive = PlayerSettings.GetPlatformIcons(NamedBuildTarget.Android, UnityEditor.Android.AndroidPlatformIconKind.Adaptive);
+            foreach (var platformIcon in adaptive) platformIcon.SetTextures(background, foreground);
+            PlayerSettings.SetPlatformIcons(NamedBuildTarget.Android, UnityEditor.Android.AndroidPlatformIconKind.Adaptive, adaptive);
+            Save();
         }
 
         /// <summary>

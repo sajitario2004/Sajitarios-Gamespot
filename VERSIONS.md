@@ -197,7 +197,8 @@ Cierre técnico de cada versión con código Unity: recompilación sin errores, 
   - Notas: Las 221 complicadas quedan fuera por decisión del autor. No cambia la BD (ya estaban fuera del seed desde V059j); `SeedFilesTests` comprueba una muestra de cada grupo. 230 EditMode en verde.
 
 ## Fase 11 — Pulido y paridad
-- [ ] **V060 · Icono y arranque** (placeholders con la paleta neón, mismos nombres).
+- [x] **V060 · Icono y arranque** (placeholders con la paleta neón, mismos nombres).
+  - Notas: el autor prefirió el icono de la app Flutter (carta con pica sobre morado `#7C3AED`): `Art/Icon/` + `ProjectSetup.ApplyIcons` (por defecto y adaptativo de Android; Legacy y Round, obsoletos, vacíos). Arranque sin el splash de Unity desde V007. Comprobado dentro del APK.
 - [ ] **V061 · Barrido responsive** (pantallas pequeñas, notch, textos largos).
 - [ ] **V062 · Accesibilidad básica** (objetivos táctiles ≥ 48 dp, contraste, "reducir animaciones").
 - [ ] **V063 · Rendimiento en reposo** (sin `Update` vacíos, Bloom ligero en móvil).

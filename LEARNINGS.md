@@ -27,6 +27,8 @@ Archivo vivo. Añade una línea cada vez que el autor exprese un gusto, una corr
 
 - (2026-10-25) Quiere una categoría **«Cachondeo»** con humor de fiesta muy bruto (política, porno, sexo, memes) en el Impostor y el Tabú. Se hace +18, desmarcada por defecto y con aviso; no se meten chistes sobre menores ni sobre grupos de personas (se le explicó). Prefiere decidir en persona qué palabras raras se quitan: hay que enseñarle solo las dudosas, no la lista entera.
 
+- (2026-10-25) Quiere **conservar el icono de la app Flutter** (carta blanca con pica naranja sobre morado), aunque no sea de la paleta neón.
+
 ## Diseño
 - (heredado) Estética **neón cyberpunk**: fondo casi negro, cian y magenta con brillo, rejilla de fondo.
 - (heredado) **Nada de emojis**, ni en el código ni en los textos: solo iconos.
