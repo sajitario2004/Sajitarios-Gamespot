@@ -1,9 +1,10 @@
 # CONTEXT.md — Sajitarios Gamespot
 
-> **Estado (2026-10-25):** migración de Flutter a Unity en curso, rama `feature/unity-port`. Hechas las fases 0–10:
-> base, núcleo, menú y **los 7 juegos portados y jugables** (Wavelength reescrito y arreglado), más el plan de
-> mejoras y 5 juegos nuevos propuestos en `Docs/PLAN_MEJORAS.md` (V059a/V059b). Versión en curso: V060 (fase 11,
-> pulido); lo que el autor elija del plan entra como versiones nuevas.
+> **Estado (2026-10-25):** migración de Flutter a Unity, rama `feature/unity-port` (el PR #1 ya se fusionó en `main`).
+> Hechas las fases 0–11 y de la 12, el APK (V065) y el proyecto de Xcode (V067): los 7 juegos portados (Wavelength
+> reescrito y arreglado), mejoras del plan, categorías y tarjetas propias, fuentes, accesibilidad, rendimiento y
+> Ajustes con textos legales. **Queda del autor:** probar en el móvil (V066), validar (V068) y, después, decidir si
+> se borra `Legacy/Flutter/` (V069). Lo que elija de `Docs/PLAN_MEJORAS.md` entra como versiones nuevas.
 > **Fuentes (V014, con permiso del autor):** Roboto con negrita real y Material Icons, las de la app Flutter: los
 > iconos ya son glifos de verdad.
 > **Pendiente de decisión del autor:** qué mejoras y cuáles de los 5 juegos nuevos se hacen (V059a/V059b).
@@ -17,7 +18,10 @@
 > **Ojo al probar en el móvil (V059l):** la captura de Wavelength roto que mandó el autor era de la **app Flutter antigua**,
 > no de la de Unity. Las dos usan el mismo id (`com.sajitarios.sajitarios_gamespot`): si al instalar el APK el móvil dice
 > que hay un conflicto con otra app, hay que desinstalar la antigua antes (sus palabras propias no pasan a la nueva).
-> **Icono:** el de la app Flutter (V060). **APK de prueba:** `SajitariosGamespot-prueba.apk` en la raíz del repo (V065, en curso): instalarlo en el móvil y jugar.
+> **Icono:** el de la app Flutter (V060). **APK de prueba:** `SajitariosGamespot-prueba.apk` en la raíz del repo (release, sin permiso de internet); el de desarrollo, en `SajitariosGamespot/Builds/Android/`.
+> **Probar en el móvil (V066):** una partida de cada juego; Ajustes (quitar sonido y vibración, textos legales);
+> volumen de los sonidos; categorías y tarjetas propias con el teclado; iconos y textos (que no se corte nada);
+> notch y barra de gestos; que las palabras propias y el historial sigan al cerrar la app.
 > **Pendiente de probar a mano por el autor:** abrir `SajitariosGamespot/` en Unity 6000.3.27f1, Play en la escena
 > `App` y jugar una partida de cada juego (sobre todo Wavelength, que estaba roto, y la mecha de La Bomba).
 > **Sonidos:** el autor los oía demasiado fuertes: nivelados en V059n y a la mitad en V059o (comprobar en el móvil; si alguno sigue alto o bajo, se toca ese).
