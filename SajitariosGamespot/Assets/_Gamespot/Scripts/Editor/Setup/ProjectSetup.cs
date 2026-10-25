@@ -20,11 +20,27 @@ namespace Gamespot.Editor.Setup
         public const string Version = "0.76.0";
         public const int BuildNumber = 76;
 
+        public const string TmpSettingsPath = "Assets/TextMesh Pro/Resources/TMP Settings.asset";
+
         [MenuItem("Gamespot/Configuración/Aplicar todo", priority = 0)]
         public static void ApplyAll()
         {
+            ImportTmpEssentials();
             ApplyPlayerSettings();
             Debug.Log("[Gamespot] Configuración del proyecto aplicada.");
+        }
+
+        /// <summary>
+        /// Importa los recursos esenciales de TextMeshPro (ajustes, fuente LiberationSans SDF y shaders) sin
+        /// diálogo, si aún no están en <c>Assets/TextMesh Pro</c>.
+        /// </summary>
+        [MenuItem("Gamespot/Configuración/Recursos de TextMeshPro", priority = 10)]
+        public static void ImportTmpEssentials()
+        {
+            if (AssetDatabase.LoadMainAssetAtPath(TmpSettingsPath) != null) return;
+            var package = System.IO.Path.GetFullPath("Packages/com.unity.ugui/Package Resources/TMP Essential Resources.unitypackage");
+            AssetDatabase.ImportPackage(package, false);
+            AssetDatabase.Refresh();
         }
 
         [MenuItem("Gamespot/Configuración/Player Settings", priority = 20)]

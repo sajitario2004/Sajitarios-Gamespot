@@ -7,6 +7,9 @@
         "Gamespot.Core",
         "Gamespot.Core.Runtime",
         "Gamespot.App",
+        "Gamespot.Games.Shared",
+        "Gamespot.Menu",
+        "Unity.InputSystem",
         "Unity.TextMeshPro",
         "UnityEngine.UI"
     ],

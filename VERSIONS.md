@@ -43,16 +43,22 @@ Cierre técnico de cada versión con código Unity: recompilación sin errores, 
   - Notas: `IDb` (Execute/Scalar/Query con alias/InTransaction) sobre sqlite-net; `AppDatabase.Open` crea o migra con `PRAGMA user_version` en una transacción y siembra cada juego solo si su tabla está vacía. 7 tests con archivo temporal (108 EditMode en total).
 - [x] **V012 · Localización.** `Loc.T`, placeholders y plurales ICU, importador de ARB → `es.json`/`en.json`, idioma en `PlayerPrefs`, selector. Tests (paridad de claves, plurales).
   - Notas: `Loc.T(clave, (nombre, valor)…)` estático (se reinicia en `SubsystemRegistration`), español por defecto, inglés cae al español si falta una clave. `Gamespot → i18n → Importar ARB del Flutter` añade solo las claves que faltan (305 por idioma). 26 claves nuevas de Unity (títulos del menú de 5 juegos, temáticas, palos, media de Wavelength, cargando, reducir animaciones) y la regla 4 del Tabú corregida: 331 claves por idioma. El selector de idioma va en V017.
-- [ ] **V013 · Paleta y kit neón.** `Palette`, `NeonText`, `NeonPanel`, `NeonButton`, `NeonBackground`, `PulseGlow`, layouts (columna, fila, scroll), campos de texto, diálogos y snackbar.
+- [x] **V013 · Paleta y kit neón.** `Palette`, `NeonText`, `NeonPanel`, `NeonButton`, `NeonBackground`, `PulseGlow`, layouts (columna, fila, scroll), campos de texto, diálogos y snackbar.
+  - Notas: Kit en `Core.Runtime/UI`: `NeonSprites` (rectángulos redondeados, bordes, círculos y halos generados por código, 9-slice a 2x), `Ui` (Column, Row, Space, Flex, Scroll, Text con halo por *underlay* de TMP, FittedText, Panel, Button, IconButton, Image, Divider, NumberBadge), `NeonPanel`, `NeonButton` (Filled/Outlined/Text, mín. 48), `NeonTextField`, `NeonSwitch`, `NeonChip`, `NeonStepper`, `AppBar`, `ScreenScaffold`, `PulseGlow` (respeta `AppSettings.ReduceMotion`), `CoverImage`, `ResponsiveGrid`, `Dialogs`, `Snackbar`. Recursos esenciales de TMP importados por código (LiberationSans SDF). En negrita no hay «…» hasta tener una fuente con variante bold real (V014): se corta sin puntos.
 - [ ] **V014 · Tipografía e iconos.** Fuente TMP con glifos del español e iconos (Material Symbols, Apache-2.0). **Pedir permiso antes de descargar.** Palos de la carta como sprites propios.
-- [ ] **V015 · Router.** Rutas por texto, pila, botón atrás de Android, ruta desconocida, `BackToMenuButton`.
-- [ ] **V016 · Audio.** `AudioService` con los 3 WAV, mute en `PlayerPrefs`, `MuteButton`.
-- [ ] **V017 · Compartidos.** `RulesScreen`, `AbandonGameDialog`, normalización de nombres, filas de jugadores reutilizables.
+- [x] **V015 · Router.** Rutas por texto, pila, botón atrás de Android, ruta desconocida, `BackToMenuButton`.
+  - Notas: `AppScreen` + `Router` (Go/Push/Pop/Back, ruta padre, Escape = atrás de Android, salir en el menú, `NotFoundScreen`, reconstruye al cambiar de idioma). Atrás cierra antes el diálogo abierto.
+- [x] **V016 · Audio.** `AudioService` con los 3 WAV, mute en `PlayerPrefs`, `MuteButton`.
+  - Notas: `AudioService` (los 3 WAV del Flutter en `Resources/Audio`, precarga en el arranque, `audio_enabled` en PlayerPrefs, errores ignorados) y `MuteButton`. Un `AssetPostprocessor` importa `Resources/Images` como sprites y el audio como clips cortos.
+- [x] **V017 · Compartidos.** `RulesScreen`, `AbandonGameDialog`, normalización de nombres, filas de jugadores reutilizables.
+  - Notas: En `Games/_Shared`: `IGameDescriptor` (también `IDbSchema`) + `GameContext`, `GameUi.HomeButton/RulesButton/RuleKeys`, `AbandonGameDialog` (ya fuera del Impostor), `RulesScreen`, `PlayerListEditor` (filas numeradas, quitar en el mínimo deshabilitado, «Máximo de jugadores alcanzado») y `NotFoundScreen`. `LanguageSelector` en `Core.Runtime/Localization`.
 
 ## Fase 3 — Menú
 
-- [ ] **V018 · MenuScreen** (cabecera, rejilla 2/3 columnas, tarjetas cian/magenta, idioma, mute, catálogo vacío).
-- [ ] **V019 · Tests del menú:** tantas tarjetas como descriptores; el asmdef del menú no referencia juegos.
+- [x] **V018 · MenuScreen** (cabecera, rejilla 2/3 columnas, tarjetas cian/magenta, idioma, mute, catálogo vacío).
+  - Notas: `MenuScreen` (solo recibe la lista de descriptores): título con PulseGlow 0.8–1.3, idioma y silencio, cabecera `menu_header` (cover, 140), rejilla 2/3 columnas proporción 0.9 con tarjetas cian/magenta, catálogo vacío. `Bootstrap` completo: Loc → UI → BD con todos los esquemas y seeds → audio → router → registro de juegos → menú. Captura `Docs/Capturas/V018_menu_vacio.png`.
+- [x] **V019 · Tests del menú:** tantas tarjetas como descriptores; el asmdef del menú no referencia juegos.
+  - Notas: PlayMode: arranque y menú, una tarjeta por juego y su ruta, atrás (padre y salir), ruta desconocida, reglas apiladas, atrás cierra el diálogo. EditMode `ArchitectureTests`: el menú no referencia juegos, los dominios son puros, ningún juego referencia a otro. 118 EditMode + 6 PlayMode en verde.
 
 ## Fase 4 — Es un 10 pero
 - [ ] **V020 · Dominio** `Card`, `DrawCardUseCase` + tests (las 40 cartas salen; misma seed, misma secuencia).

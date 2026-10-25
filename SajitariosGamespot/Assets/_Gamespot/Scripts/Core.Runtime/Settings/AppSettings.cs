@@ -1,0 +1,45 @@
+using System;
+using UnityEngine;
+
+namespace Gamespot.Core.Runtime.Settings
+{
+    /// <summary>Preferencias de la app guardadas en <c>PlayerPrefs</c> (mismas claves que el Flutter).</summary>
+    public static class AppSettings
+    {
+        public const string AudioEnabledKey = "audio_enabled";
+        public const string ReduceMotionKey = "reduce_motion";
+
+        /// <summary>Se lanza al cambiar "reducir animaciones".</summary>
+        public static event Action ReduceMotionChanged;
+
+        /// <summary>Sonido activado (por defecto sí).</summary>
+        public static bool AudioEnabled
+        {
+            get => PlayerPrefs.GetInt(AudioEnabledKey, 1) == 1;
+            set
+            {
+                PlayerPrefs.SetInt(AudioEnabledKey, value ? 1 : 0);
+                PlayerPrefs.Save();
+            }
+        }
+
+        /// <summary>
+        /// "Reducir animaciones": los brillos que laten se quedan fijos (el Flutter seguía la opción del
+        /// sistema; en Unity es una opción de la app). Por defecto no.
+        /// </summary>
+        public static bool ReduceMotion
+        {
+            get => PlayerPrefs.GetInt(ReduceMotionKey, 0) == 1;
+            set
+            {
+                if (value == ReduceMotion) return;
+                PlayerPrefs.SetInt(ReduceMotionKey, value ? 1 : 0);
+                PlayerPrefs.Save();
+                ReduceMotionChanged?.Invoke();
+            }
+        }
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void ResetStatics() => ReduceMotionChanged = null;
+    }
+}

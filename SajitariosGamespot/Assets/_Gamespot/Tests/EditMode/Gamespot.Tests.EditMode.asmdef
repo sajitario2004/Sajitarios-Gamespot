@@ -7,6 +7,8 @@
         "Gamespot.Core",
         "Gamespot.Core.Runtime",
         "Gamespot.App",
+        "Gamespot.Games.Shared",
+        "Gamespot.Menu",
         "Gamespot.Games.EsUn10Pero.Domain",
         "Gamespot.Games.Impostor.Domain",
         "Gilzoide.SqliteNet",

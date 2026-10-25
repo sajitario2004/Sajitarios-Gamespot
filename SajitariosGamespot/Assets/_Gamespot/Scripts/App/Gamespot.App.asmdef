@@ -4,6 +4,8 @@
     "references": [
         "Gamespot.Core",
         "Gamespot.Core.Runtime",
+        "Gamespot.Games.Shared",
+        "Gamespot.Menu",
         "Unity.TextMeshPro",
         "UnityEngine.UI"
     ],
