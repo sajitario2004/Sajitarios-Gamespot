@@ -281,6 +281,12 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 
 ## 10. Registro de trabajo (lo más reciente arriba)
 
+### 2026-10-25 · V063 · Rendimiento en reposo
+- **Medición:** los contadores del Profiler en Play dentro del Editor (`GC.Alloc`, `UGUI.Rendering.UpdateBatches`) daban miles de asignaciones por fotograma incluso con la UI apagada: son del propio Editor y no sirven. En su lugar, `PerformanceTests` comprueba con `AllocatingGCMemoryConstraint` que el trabajo de un fotograma (el `Tick` de la pantalla y los brillos) no asigna memoria en el menú, los siete setups, la lista de palabras, el turno del Tabú y la mecha de La Bomba.
+- **Arreglos:** el turno del Tabú rehacía el texto del contador y su nombre accesible en cada fotograma (60 cadenas por segundo): ahora solo al cambiar el segundo. `PulseGlow` aplica el brillo por escalones de 0,02 (cada cambio rehace los lotes del Canvas: ≈ 15 por segundo en vez de 60, sin diferencia visible) y expone `Advance` para los tests. `AppSettings.ReduceMotion` se guarda en memoria (antes, una llamada a `PlayerPrefs` por brillo y fotograma); `ClearReduceMotion` vuelve a seguir al sistema.
+- **Bloom ligero:** a un cuarto de resolución y 5 pasadas (antes, a la mitad y 6), sin filtrado de alta calidad. Menú *Gamespot → Configuración → Bloom*. Igual a la vista (`V063_menu_bloom_ligero.png`).
+- **Reposo:** `IdleRendering` (en el `Bootstrap`): tras 3 s sin tocar la pantalla se dibuja un fotograma de cada dos (30 fps) con `OnDemandRendering`; al tocar o al cambiar de pantalla, todos. La lógica sigue a 60 (temporizadores, mecha y sonidos no cambian). Sin `Update` vacíos: todos los que hay salen enseguida si no tienen nada que hacer.
+
 ### 2026-10-25 · V062 · Accesibilidad básica
 - **Objetivos táctiles:** barrido de todos los `Selectable` activos en las 88 pantallas: solo los chips bajaban de 48 (44 en las rejillas, 40 en las filas de tiempo, modo e intensidad). `NeonChip` y `ResponsiveChipGrid` usan `NeonButton.MinTouchSize` (48); las filas del selector de categorías, 56. `AccessibilityTests` lo comprueba en el menú, los siete setups y la lista de palabras.
 - **Contraste:** `ContrastTests` calcula el contraste WCAG de la paleta: texto (principal, atenuado y acentos) ≥ 4,5:1 sobre fondo y superficies; etiquetas de botón (18 en negrita) ≥ 3:1, rellenas y de borde. Ya cumplía: el violeta saturado solo se usa de halo y de borde.

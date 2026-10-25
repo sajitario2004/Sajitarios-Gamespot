@@ -31,6 +31,7 @@ namespace Gamespot.App
         public Router Router { get; private set; }
         public SqliteDb Database { get; private set; }
         public AudioService Audio { get; private set; }
+        public IdleRendering Idle { get; private set; }
         public IReadOnlyList<IGameDescriptor> Games { get; private set; }
 
         private void Awake()
@@ -49,6 +50,9 @@ namespace Gamespot.App
             Audio.Preload();
 
             Router = Router.Create(gameObject, Ui.ScreenLayer, path => new NotFoundScreen(path));
+            // En reposo se dibuja a 30 fps; al tocar o al cambiar de pantalla, a 60 (V063).
+            Idle = IdleRendering.Create(gameObject);
+            Router.Navigated += _ => Idle.Wake();
             Router.Register(Router.Home, () => new MenuScreen(Games, Audio));
             var context = new GameContext(Router, Database, new SeededRandom(), Audio);
             foreach (var game in Games) game.Register(context);

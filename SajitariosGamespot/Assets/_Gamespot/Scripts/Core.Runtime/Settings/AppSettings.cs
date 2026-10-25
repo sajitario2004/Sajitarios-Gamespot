@@ -45,15 +45,36 @@ namespace Gamespot.Core.Runtime.Settings
         /// </summary>
         public static bool ReduceMotion
         {
-            // Sin elegir en la app, sigue al sistema (V062).
-            get => PlayerPrefs.HasKey(ReduceMotionKey) ? PlayerPrefs.GetInt(ReduceMotionKey, 0) == 1 : SystemReduceMotion;
+            // Sin elegir en la app, sigue al sistema (V062). Se guarda en memoria: los brillos lo miran en cada
+            // fotograma y PlayerPrefs es una llamada nativa (V063).
+            get
+            {
+                if (!_reduceMotion.HasValue)
+                {
+                    _reduceMotion = PlayerPrefs.HasKey(ReduceMotionKey) ? PlayerPrefs.GetInt(ReduceMotionKey, 0) == 1 : SystemReduceMotion;
+                }
+                return _reduceMotion.Value;
+            }
             set
             {
                 if (value == ReduceMotion) return;
                 PlayerPrefs.SetInt(ReduceMotionKey, value ? 1 : 0);
                 PlayerPrefs.Save();
+                _reduceMotion = value;
                 ReduceMotionChanged?.Invoke();
             }
+        }
+
+        private static bool? _reduceMotion;
+
+        /// <summary>Olvida la elección de "reducir animaciones": vuelve a seguir al sistema.</summary>
+        public static void ClearReduceMotion()
+        {
+            var before = ReduceMotion;
+            PlayerPrefs.DeleteKey(ReduceMotionKey);
+            PlayerPrefs.Save();
+            _reduceMotion = null;
+            if (ReduceMotion != before) ReduceMotionChanged?.Invoke();
         }
 
         /// <summary>
@@ -115,6 +136,10 @@ namespace Gamespot.Core.Runtime.Settings
         }
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-        private static void ResetStatics() => ReduceMotionChanged = null;
+        private static void ResetStatics()
+        {
+            ReduceMotionChanged = null;
+            _reduceMotion = null;
+        }
     }
 }

@@ -1,6 +1,6 @@
 # TREE
 
-Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 21:11.
+Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 21:33.
 
 No se listan: Library, Temp, Logs, obj, UserSettings, .git, .vs, .idea, .vscode, .utmp, Build, Builds, MemoryCaptures, Recordings, node_modules, __pycache__, .venv, .dart_tool, build, coverage, *.meta, *.csproj, *.sln, *.slnx, *.user, *.pidb, *.unityproj, .DS_Store, Thumbs.db, *.apk, *.aab.
 Plegadas: skills, TextMesh Pro, Flutter, Capturas (Flutter = la app original en Legacy/Flutter, solo lectura).
@@ -11,7 +11,7 @@ Sajitarios-Gamespot/
 ├── .claude/
 │   └── settings.json
 ├── Docs/
-│   ├── Capturas/  (53 elementos, plegado)
+│   ├── Capturas/  (54 elementos, plegado)
 │   └── PLAN_MEJORAS.md
 ├── Legacy/
 │   └── Flutter/  (20 elementos, plegado)
@@ -112,6 +112,7 @@ Sajitarios-Gamespot/
 │   │   │   │   │   │   ├── IconId.cs
 │   │   │   │   │   │   ├── Icons.cs
 │   │   │   │   │   │   ├── IconView.cs
+│   │   │   │   │   │   ├── IdleRendering.cs
 │   │   │   │   │   │   ├── NeonBackground.cs
 │   │   │   │   │   │   ├── NeonButton.cs
 │   │   │   │   │   │   ├── NeonChip.cs
@@ -346,6 +347,7 @@ Sajitarios-Gamespot/
 │   │   │           ├── AppTestHarness.cs
 │   │   │           ├── BootstrapTests.cs
 │   │   │           ├── Gamespot.Tests.PlayMode.asmdef
+│   │   │           ├── PerformanceTests.cs
 │   │   │           └── SafeAreaTests.cs
 │   │   ├── Scenes/
 │   │   │   └── SampleScene.unity
