@@ -5,7 +5,8 @@
 > Verdad o Reto") y se convierte en versiones de `VERSIONS.md`.
 
 **Estado (2026-10-25):** hechas **C2, C3 + L1, B1 + B2, C4, I1, T1 y W2** (fase 10c de `VERSIONS.md`,
-V059c–V059g). Lo demás sigue pendiente de que elijas. Corrección: en C4 decía que Trivia y Wavelength no
+V059c–V059g) y, fuera del plan, **I4** (categorías en el Impostor y también en el Tabú) y el banco de
+fiesta y de España sin las palabras difíciles (V059h–V059i). Lo demás sigue pendiente de que elijas. Corrección: en C4 decía que Trivia y Wavelength no
 tenían "Jugar otra"; sí lo tenían, pero llevaba al setup. Ahora los cuatro empiezan al momento con los mismos
 ajustes y además tienen "Cambiar ajustes".
 
