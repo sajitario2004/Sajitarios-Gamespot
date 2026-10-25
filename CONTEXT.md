@@ -11,7 +11,7 @@
 > ¿Quién es más probable que…?, ¿Qué prefieres?, Mímica por equipos, ¿Quién soy? y Hombres Lobo (con reparto pasando el
 > móvil y un game master que lleva la partida; muy configurable y con todas las expansiones). Hecho: V070 (base común de cartas)
 > y V071 (Verdad o Reto), V072 (¿Quién es más probable que…?), V073 (¿Qué prefieres?), V074 (Mímica), V075 (¿Quién soy?) y el
-> dominio de Hombres Lobo (V076); faltan sus pantallas (V077–V081).
+> dominio y el setup de Hombres Lobo (V076–V077); faltan el reparto, la consola del game master y el final (V078–V081).
 > **Probar en el móvil (¿Quién soy?):** que el texto salga derecho con el móvil en la frente (gira solo según el lado que quede
 > abajo) y que inclinar abajo sea acierto y arriba pasar; si va al revés, la opción «Al revés» del setup lo cambia. **Probar en el móvil:** una partida de Verdad o Reto con picante y con
 > cartas propias que usen `{otro}`; ¿Quién es más probable…? llevando la cuenta (que la cuenta atrás y la vibración se noten).
@@ -387,6 +387,11 @@ el móvil (V066, V068).
 | LiberationSans (recursos esenciales de TextMeshPro) | OFL 1.1 | Respaldo de los caracteres que Roboto no tenga |
 
 ## 10. Registro de trabajo (lo más reciente arriba)
+
+### 2026-10-26 · V077 · Hombres Lobo: setup
+- Setup con jugadores en el orden de la mesa, presets (iniciación, clásica, pueblo con poderes, caos) que siguen al número de jugadores, la pantalla «Elegir roles» por paquetes y todas las reglas (revelar al morir, capitán, segunda votación, debate, los lobos se conocen, primera noche sin muertes, protector, bruja, igualar, anciano y eventos de luna).
+- Corregido en el barrido: los nombres largos de los roles se cortaban junto al contador (ahora contador de ancho fijo y la descripción debajo) y los presets van en dos columnas (el chip «Caos» bajaba de 48).
+- PlayMode 3/3, barrido limpio. Capturas `V077_lobo_*`.
 
 ### 2026-10-26 · V076 · Hombres Lobo: dominio
 - `Games/HombresLobo/Domain/` (puro): `LoboRoles` (28 roles en 4 paquetes), `LoboConfig` (reglas, validación y presets), `LoboState` (jugadores, pasos, registro, estado copiable), `LoboLuna` y `LoboGame` (el motor que guía al game master: reparto, noche, amanecer, día, victoria, eventos de luna y deshacer). Especificación en §6.13.

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Gamespot.Games.Bomba;
 using Gamespot.Games.EsUn10Pero;
+using Gamespot.Games.HombresLobo;
 using Gamespot.Games.Impostor;
 using Gamespot.Games.MasProbable;
 using Gamespot.Games.Mimica;
@@ -36,6 +37,7 @@ namespace Gamespot.App
             new QuePrefieresGame(),
             new MimicaGame(),
             new QuienSoyGame(),
+            new HombresLoboGame(),
         };
     }
 }

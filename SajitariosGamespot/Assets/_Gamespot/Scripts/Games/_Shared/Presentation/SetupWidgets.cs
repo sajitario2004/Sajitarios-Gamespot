@@ -50,11 +50,13 @@ namespace Gamespot.Games.Shared
 
         public IReadOnlyList<T> Values => _chips.Select(c => c.value).ToList();
 
+        /// <param name="columns">Columnas de la rejilla (0 = una fila con cuatro o menos opciones, y si no, tres columnas).</param>
         public static ChoiceChips<T> Create(Transform parent, IReadOnlyList<(T value, string label)> options, T current, Color accent,
-            Action<T> changed = null)
+            Action<T> changed = null, int columns = 0)
         {
             var choice = new ChoiceChips<T>(current, changed);
-            var container = options.Count > 4 ? ResponsiveChipGrid.Create(parent, 3) : Ui.Row(parent, 8f, alignment: TextAnchor.MiddleCenter);
+            var grid = columns > 0 || options.Count > 4;
+            var container = grid ? ResponsiveChipGrid.Create(parent, columns > 0 ? columns : 3) : Ui.Row(parent, 8f, alignment: TextAnchor.MiddleCenter);
             foreach (var (value, label) in options)
             {
                 var v = value;
@@ -62,19 +64,28 @@ namespace Gamespot.Games.Shared
                 chip.ToggleOnClick = false;
                 chip.Clicked += () => choice.Select(v);
                 chip.name = label;
-                if (options.Count <= 4) chip.Sized(flexWidth: 1f);
+                if (!grid) chip.Sized(flexWidth: 1f);
                 choice._chips.Add((v, chip));
             }
             return choice;
         }
 
         /// <summary>Elige un valor (también lo usan los tests). Los que no están en la fila no hacen nada.</summary>
-        public void Select(T value)
+        public void Select(T value) => Show(value, true);
+
+        /// <summary>Marca un valor sin avisar (cuando lo cambia otra cosa de la pantalla).</summary>
+        public void Show(T value, bool notify = false)
         {
             if (!_chips.Any(c => EqualityComparer<T>.Default.Equals(c.value, value))) return;
             Value = value;
             foreach (var (v, chip) in _chips) chip.Selected = EqualityComparer<T>.Default.Equals(v, value);
-            _changed?.Invoke(value);
+            if (notify) _changed?.Invoke(value);
+        }
+
+        /// <summary>Ninguno marcado (p. ej. un reparto a medida, que no es ningún preset).</summary>
+        public void ShowNone()
+        {
+            foreach (var (_, chip) in _chips) chip.Selected = false;
         }
 
         public NeonChip ChipOf(T value) => _chips.FirstOrDefault(c => EqualityComparer<T>.Default.Equals(c.value, value)).chip;

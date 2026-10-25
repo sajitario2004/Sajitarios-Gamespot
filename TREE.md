@@ -1,6 +1,6 @@
 # TREE
 
-Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-26 00:38.
+Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-26 00:48.
 
 No se listan: Library, Temp, Logs, obj, UserSettings, .git, .vs, .idea, .vscode, .utmp, Build, Builds, MemoryCaptures, Recordings, node_modules, __pycache__, .venv, .dart_tool, build, coverage, *.meta, *.csproj, *.sln, *.slnx, *.user, *.pidb, *.unityproj, .DS_Store, Thumbs.db, *.apk, *.aab.
 Plegadas: skills, TextMesh Pro, Flutter, Capturas (Flutter = la app original en Legacy/Flutter, solo lectura).
@@ -11,7 +11,7 @@ Sajitarios-Gamespot/
 ├── .claude/
 │   └── settings.json
 ├── Docs/
-│   ├── Capturas/  (84 elementos, plegado)
+│   ├── Capturas/  (86 elementos, plegado)
 │   └── PLAN_MEJORAS.md
 ├── Legacy/
 │   └── Flutter/  (20 elementos, plegado)
@@ -210,13 +210,16 @@ Sajitarios-Gamespot/
 │   │   │   │   │   │   ├── EsUn10PeroGame.cs
 │   │   │   │   │   │   └── Gamespot.Games.EsUn10Pero.asmdef
 │   │   │   │   │   ├── HombresLobo/
-│   │   │   │   │   │   └── Domain/
-│   │   │   │   │   │       ├── Gamespot.Games.HombresLobo.Domain.asmdef
-│   │   │   │   │   │       ├── LoboConfig.cs
-│   │   │   │   │   │       ├── LoboGame.cs
-│   │   │   │   │   │       ├── LoboLuna.cs
-│   │   │   │   │   │       ├── LoboRoles.cs
-│   │   │   │   │   │       └── LoboState.cs
+│   │   │   │   │   │   ├── Domain/
+│   │   │   │   │   │   │   ├── Gamespot.Games.HombresLobo.Domain.asmdef
+│   │   │   │   │   │   │   ├── LoboConfig.cs
+│   │   │   │   │   │   │   ├── LoboGame.cs
+│   │   │   │   │   │   │   ├── LoboLuna.cs
+│   │   │   │   │   │   │   ├── LoboRoles.cs
+│   │   │   │   │   │   │   └── LoboState.cs
+│   │   │   │   │   │   ├── Gamespot.Games.HombresLobo.asmdef
+│   │   │   │   │   │   ├── HombresLoboGame.cs
+│   │   │   │   │   │   └── LoboSetupScreens.cs
 │   │   │   │   │   ├── Impostor/
 │   │   │   │   │   │   ├── Data/
 │   │   │   │   │   │   │   ├── CategoryWordSource.cs
@@ -426,6 +429,7 @@ Sajitarios-Gamespot/
 │   │   │           │   ├── CategoryTests.cs
 │   │   │           │   ├── EsUn10PeroScreenTests.cs
 │   │   │           │   ├── ImpostorFlowTests.cs
+│   │   │           │   ├── LoboSetupTests.cs
 │   │   │           │   ├── MasProbableFlowTests.cs
 │   │   │           │   ├── MimicaFlowTests.cs
 │   │   │           │   ├── OwnCategoriesTests.cs

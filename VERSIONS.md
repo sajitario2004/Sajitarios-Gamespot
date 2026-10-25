@@ -318,8 +318,15 @@ gestionar la partida; muy configurable y con todas las expansiones». Se hacen d
     victoria de cada bando (pueblo, lobos —también al igualar—, enamorados, lobo blanco, ángel, flautista, sectario),
     eventos de luna, registro de la partida y deshacer. 52 tests nuevos (también en el arnés .NET, 233); 362
     EditMode.
-- [ ] **V077 · Hombres Lobo: setup.** Jugadores, roles y cantidades por paquete, ajustes de reglas (capitán,
+- [x] **V077 · Hombres Lobo: setup.** Jugadores, roles y cantidades por paquete, ajustes de reglas (capitán,
   revelar el rol al morir, tiempos, eventos) y presets.
+  - Notas: `HombresLoboGame.cs` (descriptor, módulo con el borrador y `LoboUi`: icono, color y textos de cada rol) y
+    `LoboSetupScreens.cs`: jugadores (5–30, en el orden de la mesa), presets que se rehacen al cambiar de jugadores,
+    «Elegir roles» (cada paquete con sus roles, lo que hacen y un contador; hermanas de 2 en 2 y hermanos de 3 en
+    3), «Cuadrar con aldeanos», el recuento de cartas (en verde si cuadra) y las 11 reglas con su explicación más el
+    tiempo de debate. `ChoiceChips` gana columnas y marcar sin avisar. 28 roles con nombre y descripción en es y en.
+    PlayMode 3/3; barrido (152 pantallas) limpio. Capturas `V077_lobo_*`. El juego ya sale en el menú; el reparto
+    llega en V078.
 - [ ] **V078 · Hombres Lobo: reparto.** Pasando el móvil, como el Impostor; al acabar, el móvil va al game master.
 - [ ] **V079 · Hombres Lobo: consola del game master, noche.** Paso a paso en el orden de los roles vivos, tocando
   jugadores; lo que ve la vidente, las pociones, los enamorados…
