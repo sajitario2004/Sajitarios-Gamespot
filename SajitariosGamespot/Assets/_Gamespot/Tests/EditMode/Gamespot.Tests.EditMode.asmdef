@@ -35,7 +35,8 @@
         "Gamespot.Games.Mimica",
         "Gamespot.Games.Mimica.Domain",
         "Gamespot.Games.QuienSoy",
-        "Gamespot.Games.QuienSoy.Domain"
+        "Gamespot.Games.QuienSoy.Domain",
+        "Gamespot.Games.HombresLobo.Domain"
     ],
     "includePlatforms": [
         "Editor"

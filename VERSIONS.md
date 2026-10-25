@@ -308,8 +308,16 @@ gestionar la partida; muy configurable y con todas las expansiones». Se hacen d
     tests; se apaga al salir del turno). Seed de 504 tarjetas. 323 EditMode; PlayMode del juego 2/2 con el sensor
     simulado; barrido (146 pantallas, es y en) limpio. Capturas `V075_quiensoy_*`. Falta probar en el móvil
     el sentido de la inclinación y del giro.
-- [ ] **V076 · Hombres Lobo: dominio.** Catálogo de roles por paquetes (básico y todas las expansiones), reparto,
+- [x] **V076 · Hombres Lobo: dominio.** Catálogo de roles por paquetes (básico y todas las expansiones), reparto,
   noche guiada, resolución de muertes y condiciones de victoria, todo puro y probado.
+  - Notas: `Games/HombresLobo/Domain/` (puro). 28 roles en 4 paquetes (básico, aldea, lobos, solitarios), reglas
+    (`LoboRules`), configuración con validación, 4 presets que siempre cuadran (iniciación, clásica, pueblo con poderes y
+    caos), reparto (Fisher-Yates del mazo, a mano para cartas de verdad), los 19 pasos de la noche en orden y solo si
+    el rol está vivo y con poder, amanecer (protector, infección, poción, anciano, enamorados, cazador, caballero, niño
+    salvaje, oso, lobo blanco), día (capitán y sucesor, linchamiento, tonto, chivo, segunda votación, sirvienta, juez),
+    victoria de cada bando (pueblo, lobos —también al igualar—, enamorados, lobo blanco, ángel, flautista, sectario),
+    eventos de luna, registro de la partida y deshacer. 52 tests nuevos (también en el arnés .NET, 233); 362
+    EditMode.
 - [ ] **V077 · Hombres Lobo: setup.** Jugadores, roles y cantidades por paquete, ajustes de reglas (capitán,
   revelar el rol al morir, tiempos, eventos) y presets.
 - [ ] **V078 · Hombres Lobo: reparto.** Pasando el móvil, como el Impostor; al acabar, el móvil va al game master.

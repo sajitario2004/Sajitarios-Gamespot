@@ -10,7 +10,8 @@
 > **Fase 13 en curso (juegos nuevos):** el autor eligió el 1, 2, 3, 4, 5 y 10 de `Docs/PLAN_MEJORAS.md` §4: Verdad o Reto,
 > ¿Quién es más probable que…?, ¿Qué prefieres?, Mímica por equipos, ¿Quién soy? y Hombres Lobo (con reparto pasando el
 > móvil y un game master que lleva la partida; muy configurable y con todas las expansiones). Hecho: V070 (base común de cartas)
-> y V071 (Verdad o Reto), V072 (¿Quién es más probable que…?), V073 (¿Qué prefieres?), V074 (Mímica), V075 (¿Quién soy?).
+> y V071 (Verdad o Reto), V072 (¿Quién es más probable que…?), V073 (¿Qué prefieres?), V074 (Mímica), V075 (¿Quién soy?) y el
+> dominio de Hombres Lobo (V076); faltan sus pantallas (V077–V081).
 > **Probar en el móvil (¿Quién soy?):** que el texto salga derecho con el móvil en la frente (gira solo según el lado que quede
 > abajo) y que inclinar abajo sea acierto y arriba pasar; si va al revés, la opción «Al revés» del setup lo cambia. **Probar en el móvil:** una partida de Verdad o Reto con picante y con
 > cartas propias que usen `{otro}`; ¿Quién es más probable…? llevando la cuenta (que la cuenta atrás y la vibración se noten).
@@ -291,6 +292,17 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 - **Inclinación (`TiltDetector`):** eje z del acelerómetro (sale de la pantalla): vertical en la frente ≈ 0, mirando al suelo → +1 (acierto), al techo → −1 (pasar). Umbral 0,6 g respecto a la postura al empezar (si estaba tumbado, la vertical), y hay que volver a menos de 0,3 antes del siguiente gesto. El giro del texto (+90° / −90°) sigue al eje x (> 0,5 / < −0,5).
 - **Pantallas:** setup, preparados, turno en horizontal (3 s «Ponte el móvil en la frente» con pitidos; después cuenta atrás, categoría, palabra en mayúsculas, aciertos y botones Pasar / Acierto a los lados; cada gesto suena, vibra y destella 0,6 s), resumen corregible y final (comunes). Gestión: `/quien-soy/tarjetas`.
 
+### 6.13 Hombres Lobo (`hombres_lobo`, V076–V081, juego nuevo)
+- **Cómo se juega en la app (lo pidió el autor):** el reparto se hace pasando el móvil, como en el Impostor; después el móvil lo tiene un **game master que no juega** y lleva la partida: la app le dice qué rol se despierta, a quién señala, qué pasa al amanecer, el día y quién gana.
+- **Roles (28, en 4 paquetes):** básico (aldeano, lobo, vidente, bruja, cazador, cupido, niña, ladrón); aldea (protector, anciano, chivo expiatorio, tonto del pueblo, dos hermanas, tres hermanos, zorro, cuervo, oso domador, caballero de la espada oxidada, juez tartamudo, sirvienta abnegada); lobos (perro lobo, niño salvaje, lobo blanco, gran lobo malo, padre de los lobos); solitarios (ángel, flautista, sectario). Nombres tradicionales, sin marcas.
+- **Configuración:** 5–30 jugadores en el orden en que se sientan (cuenta para el zorro, el oso y el caballero); una carta por jugador y, con ladrón, dos más; hermanas 2 y hermanos 3 o ninguno; al menos un lobo. Presets: iniciación, clásica, pueblo con poderes y caos (los especiales entran por prioridad mientras quepan). Reglas: revelar el rol al morir, capitán (voto doble y sucesor), tiempo de debate, los lobos ganan al igualar, los lobos se conocen al ver su carta, el protector puede protegerse y repetir, la bruja puede salvarse, el anciano quita poderes, primera noche sin muertes, segunda votación en el empate y eventos de luna.
+- **Reparto:** Fisher-Yates del mazo en el orden del catálogo; jugador i ← carta i; las dos que sobran, para el ladrón. Con sectario, los demás se reparten en dos grupos (Fisher-Yates). También hay reparto a mano.
+- **Noche (en este orden, solo si el rol está vivo y tiene poder):** ladrón, cupido, enamorados, perro lobo, niño salvaje, hermanas, hermanos (estos siete, la primera noche), protector, vidente, zorro, lobos, padre de los lobos, gran lobo malo, lobo blanco (noches pares), bruja (salvar y envenenar), flautista, encantados y cuervo.
+- **Amanecer:** óxido del caballero (el primer lobo a su izquierda, la noche siguiente), víctima de los lobos (salvo protegida, infectada —una vez— o salvada por la bruja; el anciano aguanta un ataque), segunda víctima (luna llena), la del gran lobo (mientras no muera ningún lobo), el veneno, la del lobo blanco, el oso (gruñe si un vecino vivo es lobo) y el evento de luna. Al morir: enamorado de pena, cazador dispara, capitán nombra sucesor, el niño salvaje se convierte si muere su modelo, y si el pueblo mata al anciano se pierden los poderes.
+- **Día:** capitán el primer día, linchamiento (el tonto se salva una vez y ya no vota; la sirvienta puede quedarse la carta del linchado; el juez pide otra votación una vez), empate (muere el chivo; si no, segunda votación entre los empatados o nadie; con luna de sangre, todos).
+- **Victoria:** nadie vivo; enamorados (los dos últimos); lobo blanco (solo); flautista (todos encantados); sectario (muerto el otro grupo); ángel (si muere en la primera ronda); pueblo (sin lobos); lobos (sin nadie más, o al igualar con la regla; con lobo blanco vivo se sigue).
+- **Eventos de luna (regla):** cada mañana, con probabilidad 1/3 (`NextDouble`), uno al azar (`NextInt(8)`): luna llena (dos víctimas), noche en calma, eclipse (sin debate), niebla (no se revelan roles), tormenta (dos votaciones), luna roja (la vidente no ve), rebelión (el capitán no vota doble) y luna de sangre (en el empate mueren todos).
+
 ## 7. Estado de la app Flutter (referencia)
 - v0.75.0+75, Flutter 3.41.4 / Dart 3.11.1, Riverpod 3, go_router 17, Flame 1.37, sqflite. `flutter analyze` limpio, **823 tests**, cobertura 78 %.
 - Código en `Legacy/Flutter/lib/`, tests en `Legacy/Flutter/test/`, roadmap completo (F1–F22) en `Legacy/Flutter/docs/version.md`, su contexto en `Legacy/Flutter/docs/context.md`.
@@ -375,6 +387,10 @@ el móvil (V066, V068).
 | LiberationSans (recursos esenciales de TextMeshPro) | OFL 1.1 | Respaldo de los caracteres que Roboto no tenga |
 
 ## 10. Registro de trabajo (lo más reciente arriba)
+
+### 2026-10-26 · V076 · Hombres Lobo: dominio
+- `Games/HombresLobo/Domain/` (puro): `LoboRoles` (28 roles en 4 paquetes), `LoboConfig` (reglas, validación y presets), `LoboState` (jugadores, pasos, registro, estado copiable), `LoboLuna` y `LoboGame` (el motor que guía al game master: reparto, noche, amanecer, día, victoria, eventos de luna y deshacer). Especificación en §6.13.
+- 52 tests nuevos (configuración, presets, reparto, cada rol de la noche y del día, victorias y lunas); pasan en el arnés .NET (233) y en Unity (362 EditMode).
 
 ### 2026-10-26 · V075 · ¿Quién soy?
 - Juego nuevo `Games/QuienSoy/`: el móvil en la frente, por equipos o cada uno a lo suyo, por rondas; inclinar para acertar o pasar (acelerómetro del Input System) y botones de respaldo. 504 tarjetas nuevas en 8 categorías.
