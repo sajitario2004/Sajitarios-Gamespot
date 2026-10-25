@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Gamespot.Games.EsUn10Pero;
 using Gamespot.Games.Shared;
 
 namespace Gamespot.App
@@ -12,7 +13,8 @@ namespace Gamespot.App
     {
         public static IReadOnlyList<IGameDescriptor> CreateAll() => new IGameDescriptor[]
         {
-            // Los juegos se añaden aquí según se portan (VERSIONS.md, fases 4–10).
+            new EsUn10PeroGame(),
+            // Los demás juegos se añaden aquí según se portan (VERSIONS.md, fases 5–10).
         };
     }
 }

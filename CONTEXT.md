@@ -1,8 +1,11 @@
 # CONTEXT.md — Sajitarios Gamespot
 
-> **Estado (2026-10-25):** migración de Flutter a Unity en curso, rama `feature/unity-port`.
-> Versión en curso: ver `VERSIONS.md` (la primera sin marcar).
-> **Pendiente de probar a mano por el autor:** nada todavía.
+> **Estado (2026-10-25):** migración de Flutter a Unity en curso, rama `feature/unity-port`. Hechas las fases 0–4
+> (base, núcleo, menú y "Es un 10 pero" jugable) y los dominios puros del Impostor. Versión en curso: V026.
+> **Pendiente de decisión del autor:** permiso para descargar las fuentes (V014): iconos Material Symbols y una
+> fuente de texto con negrita real. Hasta entonces los iconos son sustitutos de texto ("<", "?", "))").
+> **Pendiente de probar a mano por el autor:** abrir `SajitariosGamespot/` en Unity 6000.3.27f1, Play en la escena
+> `App`, entrar en "Es un 10 pero" y sacar varias cartas (cuenta atrás de 5 s, volteo, sonido, silencio).
 
 Documento vivo con todo el contexto del proyecto. Una IA nueva (o el mismo proyecto en otro PC) tiene que poder retomar el trabajo leyendo solo `CLAUDE.md`, este archivo, `LEARNINGS.md` y la versión en curso de `VERSIONS.md`.
 
@@ -234,6 +237,17 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 | Paquetes de Unity (URP, uGUI/TextMeshPro, Input System, Test Framework, Pipeline) | Unity Companion License | Motor, UI, entrada, tests y puente de la CLI |
 
 ## 10. Registro de trabajo (lo más reciente arriba)
+
+### 2026-10-25 · V011–V023 · Núcleo, menú y "Es un 10 pero"
+- **BD (V011):** `IDb` sobre sqlite-net; `AppDatabase.Open` crea o migra con `PRAGMA user_version` y siembra cada juego si su tabla está vacía. Funciona en el Editor (plugin nativo de Windows).
+- **Localización (V012):** `Loc.T` con ICU; importador `Gamespot → i18n → Importar ARB del Flutter` (solo añade claves que faltan); 331 claves es/en (26 nuevas de Unity) y regla 4 del Tabú corregida.
+- **Kit neón (V013):** todo por código sobre uGUI + TMP; sprites redondeados, bordes y halos generados en tiempo de ejecución; halo de texto con el *underlay* del shader móvil de TMP. Recursos esenciales de TMP importados por código.
+  - Gotcha de TMP: en negrita no encuentra «…» si la fuente no tiene variante bold real y avisa en consola; `Typography.SetEllipsis` usa corte simple en ese caso hasta tener una fuente con negrita (V014).
+- **Navegación, audio y compartidos (V015–V017):** `Router` con pila, Escape = atrás de Android, diálogos que se cierran primero; `AudioService` + `MuteButton`; `IGameDescriptor`, reglas, abandonar, lista de jugadores, ruta no encontrada, selector de idioma.
+- **Menú (V018–V019):** solo conoce los descriptores; tests de arquitectura sobre los asmdef (menú sin juegos, dominios puros, juegos aislados).
+- **Es un 10 pero (V020–V023):** primer juego jugable. Palos dibujados por código (`SuitSprites`) en vez de glifos o emojis.
+- **Tests:** 118 EditMode + 10 PlayMode en verde. Capturas en `Docs/Capturas/` (V018, V021, V022, V023).
+- Skills usadas: `unity:unity-cli`, `unity:new-unity-project` (y la guía de `unity:ui-ugui` para el kit).
 
 ### 2026-10-25 · V007–V010 (+ dominios de V020, V024, V025, V028) · Base del proyecto y dominios puros
 - Assemblies de `CONTEXT.md` §4; `Gamespot.Core` y los dominios con `noEngineReferences`.

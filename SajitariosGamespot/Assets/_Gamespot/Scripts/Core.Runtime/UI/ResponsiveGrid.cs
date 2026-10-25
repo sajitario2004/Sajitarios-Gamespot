@@ -24,7 +24,7 @@ namespace Gamespot.Core.Runtime.UI
             grid.spacing = new Vector2(spacing, spacing);
             grid.startCorner = GridLayoutGroup.Corner.UpperLeft;
             grid.startAxis = GridLayoutGroup.Axis.Horizontal;
-            grid.childAlignment = TextAnchor.UpperCenter;
+            grid.childAlignment = TextAnchor.UpperLeft;
             grid.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
             var responsive = go.AddComponent<ResponsiveGrid>();
             responsive._grid = grid;

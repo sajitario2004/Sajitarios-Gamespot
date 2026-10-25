@@ -6,6 +6,8 @@
         "Gamespot.Core.Runtime",
         "Gamespot.Games.Shared",
         "Gamespot.Menu",
+        "Gamespot.Games.EsUn10Pero",
+        "Gamespot.Games.EsUn10Pero.Domain",
         "Unity.TextMeshPro",
         "UnityEngine.UI"
     ],

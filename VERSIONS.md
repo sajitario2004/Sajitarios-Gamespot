@@ -61,17 +61,24 @@ Cierre técnico de cada versión con código Unity: recompilación sin errores, 
   - Notas: PlayMode: arranque y menú, una tarjeta por juego y su ruta, atrás (padre y salir), ruta desconocida, reglas apiladas, atrás cierra el diálogo. EditMode `ArchitectureTests`: el menú no referencia juegos, los dominios son puros, ningún juego referencia a otro. 118 EditMode + 6 PlayMode en verde.
 
 ## Fase 4 — Es un 10 pero
-- [ ] **V020 · Dominio** `Card`, `DrawCardUseCase` + tests (las 40 cartas salen; misma seed, misma secuencia).
-- [ ] **V021 · Pantalla y cuenta atrás** de 5 s (botón deshabilitado, overlay, etiqueta "Sacar otra carta").
-- [ ] **V022 · Carta neón con flip** 0.55 s *easeInOutCubic*, sombra, cara y dorso; SFX al revelar.
-- [ ] **V023 · Registro, reglas y test PlayMode.**
+- [x] **V020 · Dominio** `Card`, `DrawCardUseCase` + tests (las 40 cartas salen; misma seed, misma secuencia).
+  - Notas: Hecho junto con V010 (dominio puro + 5 tests).
+- [x] **V021 · Pantalla y cuenta atrás** de 5 s (botón deshabilitado, overlay, etiqueta "Sacar otra carta").
+  - Notas: `EsUn10PeroScreen`: cuenta atrás 5 → 1 con `Tick` del router (un paso por segundo), botón deshabilitado, overlay al 72 % con «Sacando carta en...» y el número a 96 con halo; la carta se saca al terminar; «Sacar otra carta» tras la primera. Capturas `V021_cuenta_atras.png`.
+- [x] **V022 · Carta neón con flip** 0.55 s *easeInOutCubic*, sombra, cara y dorso; SFX al revelar.
+  - Notas: `CardView` en uGUI: dorso `card_back` recortado por un rectángulo redondeado (o dibujado si falta), cara con valor y palo en las esquinas (girada 180° abajo) y palo grande en el centro; volteo 0,55 s *easeInOutCubic* con la cara nueva a mitad y sombra cian que sube y se difumina; rojos en magenta y negros en cian. Palos dibujados por código (`SuitSprites`), sin emojis ni glifos. Captura `V022_carta.png`.
+- [x] **V023 · Registro, reglas y test PlayMode.**
+  - Notas: `EsUn10PeroGame` (ruta `/es-un-10-pero`, sin tablas) registrado en `GameRegistry`. Tests PlayMode: tarjeta en el menú, cuenta atrás, carta a los 5 s, sonido una vez y nada si está silenciado. 118 EditMode + 10 PlayMode en verde. Captura `V023_menu.png`.
 
 ## Fase 5 — El Impostor
-- [ ] **V024 · Dominio:** `Player`, `Role`, `Word`, `GameConfig`, `GameSession` + tests.
-- [ ] **V025 · `AssignRolesUseCase`** + tests (10.000 iteraciones 10/10/80, casos especiales con `FakeRandom`, capado, orden de revelación).
+- [x] **V024 · Dominio:** `Player`, `Role`, `Word`, `GameConfig`, `GameSession` + tests.
+  - Notas: Adelantada (código puro): `Player` (igualdad exacta), `Role`, `Word` (recorta, pista obligatoria), `GameConfig` (errores en orden, impostores min(5, n−1), rondas max(1, n−3), nulo = máximo) y `GameSession` (orden de revelación = de entrada). Tests de configuración y sesión.
+- [x] **V025 · `AssignRolesUseCase`** + tests (10.000 iteraciones 10/10/80, casos especiales con `FakeRandom`, capado, orden de revelación).
+  - Notas: Adelantada: palabra → un solo `NextDouble()` → caso; reparto normal con Fisher-Yates sobre una copia. Tests: 10.000 iteraciones semilla 20240615 (±2/±2/±3 %), misma semilla = mismos conteos, bordes 0.10/0.20 y casos especiales con `ScriptedRandom`, capado, orden de revelación, palabra y pista.
 - [ ] **V026 · Datos:** esquema, `WordRepository` (CRUD, `NOCASE`, búsqueda con `ESCAPE`), seed de 2060 palabras + tests.
 - [ ] **V027 · `GameHistoryRepository`** + tests.
-- [ ] **V028 · `ImpostorFlowController`** (fases y votación) + tests.
+- [x] **V028 · `ImpostorFlowController`** (fases y votación) + tests.
+  - Notas: Adelantada: `ImpostorFlowController` puro en `Domain/Flow` (Iniciar con `IImpostorWordSource`, Revelar, Avanzar, Votar, Reiniciar; error SinPalabras/Desconocido). Tests de votación: pillar al único impostor, cada voto gasta ronda, hay que pillarlos a todos, re-votar eliminado no hace nada, sin impostores gana el impostor.
 - [ ] **V029 · Setup.**
 - [ ] **V030 · Pasar el móvil y Revelar.**
 - [ ] **V031 · Votación y Fin de partida.**
