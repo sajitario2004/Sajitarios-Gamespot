@@ -20,6 +20,10 @@ namespace Gamespot.Menu
     {
         public const float HeaderHeight = 140f;
         public const float CardAspect = 0.9f;
+        public const float IconSize = 44f;
+        public const float TitleHeight = 40f;
+        public const float TitleMinSize = 12f;
+        public const float DescriptionMinSize = 9f;
 
         private readonly IReadOnlyList<IGameDescriptor> _games;
         private readonly AudioService _audio;
@@ -72,15 +76,28 @@ namespace Gamespot.Menu
 
             // La tarjeta es una columna centrada: icono, título y descripción.
             var column = card.GetComponent<VerticalLayoutGroup>();
-            column.padding = new RectOffset(16, 16, 16, 16);
+            column.padding = new RectOffset(12, 12, 12, 12);
+            column.spacing = 4f;
             column.childForceExpandWidth = true;
 
-            var icon = Ui.Icon(card.transform, game.Icon, 56f, accent, 0.9f);
+            var icon = Ui.Icon(card.transform, game.Icon, IconSize, accent, 0.9f);
             icon.Text.alignment = TextAlignmentOptions.Center;
-            Ui.Space(card.transform, 8f);
-            Ui.Text(card.transform, title, TextRole.TitleMedium, Palette.TextPrimary, TextAlignmentOptions.Center, 0.8f, accent, 2, true);
-            Ui.Text(card.transform, description, TextRole.BodySmall, Palette.TextMuted, TextAlignmentOptions.Center, maxLines: 3);
+            // El título tiene su hueco de dos líneas fijo (si no, el layout lo aplastaba y desaparecía entero) y
+            // encoge si no cabe. La descripción es lo único que cede altura: encoge antes de cortarse.
+            var titleText = Ui.Text(card.transform, title, TextRole.TitleMedium, Palette.TextPrimary, TextAlignmentOptions.Center, 0.8f, accent, 2, true);
+            ShrinkToFit(titleText, TitleMinSize);
+            titleText.Sized(height: TitleHeight);
+            var descriptionText = Ui.Text(card.transform, description, TextRole.LabelSmall, Palette.TextMuted, TextAlignmentOptions.Top, maxLines: 3,
+                name: "Description");
+            ShrinkToFit(descriptionText, DescriptionMinSize);
             return card;
+        }
+
+        private static void ShrinkToFit(TextMeshProUGUI text, float minSize)
+        {
+            text.enableAutoSizing = true;
+            text.fontSizeMax = text.fontSize;
+            text.fontSizeMin = minSize;
         }
 
         private static void BuildEmpty(RectTransform content)

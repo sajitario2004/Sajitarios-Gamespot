@@ -17,6 +17,18 @@ namespace Gamespot.Games.Trivia.Data
         public const string QuestionsTable = "trivia_questions";
         public const string SeedName = "trivia_questions";
 
+        /// <summary>Última versión de la BD en la que cambió el seed: 6 (exponentes y subíndices con &lt;sup&gt;/&lt;sub&gt;).</summary>
+        public const int SeedRenewedVersion = 6;
+
+        /// <summary>
+        /// Al migrar desde antes de <see cref="SeedRenewedVersion"/> se borran las preguntas de seed; el arranque las
+        /// vuelve a cargar del banco nuevo. Las victorias no se tocan.
+        /// </summary>
+        public static void Upgrade(IDb db, int oldVersion)
+        {
+            if (oldVersion < SeedRenewedVersion) db.Execute("DELETE FROM trivia_questions WHERE is_seed = 1");
+        }
+
         public static void Create(IDb db)
         {
             db.Execute("CREATE TABLE IF NOT EXISTS trivia_questions (" +

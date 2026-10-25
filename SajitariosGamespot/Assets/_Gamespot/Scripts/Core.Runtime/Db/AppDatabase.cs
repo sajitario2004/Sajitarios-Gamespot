@@ -19,8 +19,10 @@ namespace Gamespot.Core.Runtime.Db
         /// 3 · palabras de fiesta y de España: el Impostor añade las nuevas a su seed y el Tabú lo renueva (1076).
         /// 4 · categorías y fuera las palabras difíciles: el Impostor y el Tabú renuevan su seed (columna de categoría).
         /// 5 · categoría Cachondeo (+18) y vuelven las palabras fáciles: los dos renuevan su seed.
+        /// 6 · la trivia renueva su seed (exponentes y subíndices que la fuente no tenía, como «10⁻¹¹», pasan a
+        ///     &lt;sup&gt;/&lt;sub&gt;). Las tablas de categorías propias (V059l) no necesitan versión: se crean al arrancar.
         /// </summary>
-        public const int CurrentVersion = 5;
+        public const int CurrentVersion = 6;
 
         /// <summary>Ruta del archivo en el dispositivo.</summary>
         public static string DefaultPath => System.IO.Path.Combine(Application.persistentDataPath, FileName);

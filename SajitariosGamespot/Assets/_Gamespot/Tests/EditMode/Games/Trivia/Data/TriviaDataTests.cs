@@ -28,6 +28,33 @@ namespace Gamespot.Tests.EditMode.Games.Trivia
         public void TearDown() => _temp.Dispose();
 
         [Test]
+        public void MigracionA6_RenuevaLasPreguntasYConservaLasVictorias()
+        {
+            using (var temp = new TempDatabase())
+            {
+                var db = temp.Open(new IDbSchema[] { new TriviaGame() }, new ResourcesSeedSource(), version: 5);
+                db.Execute("UPDATE trivia_questions SET enunciado = 'vieja' WHERE id = 1");
+                new WinnerRepository(db).IncrementWins("Ana");
+                temp.Close();
+
+                db = temp.Open(new IDbSchema[] { new TriviaGame() }, new ResourcesSeedSource());
+                Assert.AreEqual(0L, db.Scalar<long>("SELECT COUNT(*) FROM trivia_questions WHERE enunciado = 'vieja'"), "El seed viejo se va");
+                Assert.That(new QuestionRepository(db).Count(), Is.GreaterThanOrEqualTo(1000), "Y entra el nuevo");
+                Assert.AreEqual(1, new WinnerRepository(db).GetWins("Ana"), "Las victorias se quedan");
+            }
+        }
+
+        [Test]
+        public void Seed_ExponentesConEtiquetas()
+        {
+            var all = TriviaSchema.Parse(new ResourcesSeedSource().Load(TriviaSchema.SeedName));
+            var texts = all.SelectMany(q => q.Options.Prepend(q.Enunciado)).ToList();
+            Assert.IsFalse(texts.Any(t => t.Contains('\u207B') || t.Contains('\u2082')), "Los ⁻ y ₂ que la fuente no tiene van como <sup>/<sub>");
+            Assert.IsTrue(texts.Any(t => t.Contains("10<sup>-11</sup>")));
+            Assert.IsTrue(texts.Any(t => t == "H<sub>2</sub>O"));
+        }
+
+        [Test]
         public void Seed_1000PreguntasValidasEnLasTresDificultades()
         {
             Assert.That(_questions.Count(), Is.GreaterThanOrEqualTo(1000));

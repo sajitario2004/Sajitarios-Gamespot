@@ -196,10 +196,16 @@ Cierre técnico de cada versión con código Unity: recompilación sin errores, 
   - Acepta: ninguna está en el seed (ya estaban fuera desde V059j) y el test de los seeds lo comprueba con una muestra de cada grupo.
   - Notas: Las 221 complicadas quedan fuera por decisión del autor. No cambia la BD (ya estaban fuera del seed desde V059j); `SeedFilesTests` comprueba una muestra de cada grupo. 230 EditMode en verde.
 
+## Fase 10e — Lo que el autor vio en el móvil (2026-10-25)
+- [x] **V059l · Menú y textos que no caben.** Petición: «en el menú principal las descripciones de los juegos se cortan: que sean más cortas, con la fuente más pequeña, y comprueba que no se corta ningún texto»; y la ruleta de Wavelength descentrada, cortada a la mitad y sin tildes (captura del móvil).
+  - Acepta: el menú enseña títulos y descripciones enteros a tamaño de móvil; ningún texto cortado ni fuera de la pantalla en las pantallas de los 7 juegos, en español y en inglés, en varios tamaños; ningún carácter de los textos o los seeds sin glifo.
+  - Notas: la captura de Wavelength era de la **app Flutter antigua** (sus textos sin tildes, «Psiquico», «movil», y el icono de casa de Material); en Unity el dial sale centrado y con tildes (`V059l_wavelength_movil.png`). Menú: descripciones de 47 caracteres como mucho, letra de 11 que encoge hasta 9, título en un hueco fijo de dos líneas (el layout lo aplastaba y desaparecía entero) e icono de 44. Chips de una línea que encogen («Internet & social media»); la rejilla de respuestas de la trivia sale con su tamaño desde el primer fotograma y las respuestas largas encogen hasta caber; los exponentes y subíndices que la fuente no tiene («10⁻¹¹», «CO₂», salían como cuadraditos) pasan a `<sup>`/`<sub>` y la BD sube a la v6 para renovar las preguntas. Barrido automático de 88 pantallas en 4 tamaños (720×1280, 1080×2340, 1440×3200 y 1600×2560) y 2 idiomas: sin textos cortados. Test nuevo `GlyphCoverageTests`. Tests en verde con V059m. Capturas `V059l_*`.
+
 ## Fase 11 — Pulido y paridad
 - [x] **V060 · Icono y arranque** (placeholders con la paleta neón, mismos nombres).
   - Notas: el autor prefirió el icono de la app Flutter (carta con pica sobre morado `#7C3AED`): `Art/Icon/` + `ProjectSetup.ApplyIcons` (por defecto y adaptativo de Android; Legacy y Round, obsoletos, vacíos). Arranque sin el splash de Unity desde V007. Comprobado dentro del APK.
 - [ ] **V061 · Barrido responsive** (pantallas pequeñas, notch, textos largos).
+  - Notas: casi todo hecho en V059l (barrido automático de los textos en 88 pantallas, 4 tamaños y 2 idiomas). Falta comprobar el notch en un móvil real.
 - [ ] **V062 · Accesibilidad básica** (objetivos táctiles ≥ 48 dp, contraste, "reducir animaciones").
 - [ ] **V063 · Rendimiento en reposo** (sin `Update` vacíos, Bloom ligero en móvil).
 - [ ] **V064 · Lista de paridad** pantalla a pantalla contra el Flutter.

@@ -1190,12 +1190,12 @@
   {
     "tematica": "cultura_general",
     "difficulty": "muyDificil",
-    "enunciado": "¿Cuál es la constante gravitacional universal (G) aproximada en N·m²/kg²?",
+    "enunciado": "¿Cuál es la constante gravitacional universal (G) aproximada en N·m<sup>2</sup>/kg<sup>2</sup>?",
     "opciones": [
-      "6.67 × 10⁻¹¹",
-      "9.81 × 10⁻¹¹",
-      "3.14 × 10⁻¹¹",
-      "8.99 × 10⁻¹¹"
+      "6.67 × 10<sup>-11</sup>",
+      "9.81 × 10<sup>-11</sup>",
+      "3.14 × 10<sup>-11</sup>",
+      "8.99 × 10<sup>-11</sup>"
     ],
     "correcta": 0
   },
@@ -6280,10 +6280,10 @@
     "difficulty": "facil",
     "enunciado": "¿Cuál es el símbolo químico del agua?",
     "opciones": [
-      "CO₂",
-      "H₂O",
+      "CO<sub>2</sub>",
+      "H<sub>2</sub>O",
       "NaCl",
-      "O₂"
+      "O<sub>2</sub>"
     ],
     "correcta": 1
   },
@@ -6916,10 +6916,10 @@
     "difficulty": "dificil",
     "enunciado": "¿Cuál es el número de Avogadro (aproximado)?",
     "opciones": [
-      "6,022 × 10²³",
-      "3,011 × 10²³",
-      "6,022 × 10²⁰",
-      "1,602 × 10⁻¹⁹"
+      "6,022 × 10<sup>23</sup>",
+      "3,011 × 10<sup>23</sup>",
+      "6,022 × 10<sup>20</sup>",
+      "1,602 × 10<sup>-19</sup>"
     ],
     "correcta": 0
   },
@@ -7024,10 +7024,10 @@
     "difficulty": "dificil",
     "enunciado": "¿Cuál es la constante de Planck (orden de magnitud)?",
     "opciones": [
-      "6,626 × 10⁻³⁴ J·s",
-      "6,626 × 10³⁴ J·s",
-      "1,380 × 10⁻²³ J/K",
-      "9,109 × 10⁻³¹ kg"
+      "6,626 × 10<sup>-34</sup> J·s",
+      "6,626 × 10<sup>34</sup> J·s",
+      "1,380 × 10<sup>-23</sup> J/K",
+      "9,109 × 10<sup>-31</sup> kg"
     ],
     "correcta": 0
   },
@@ -7360,10 +7360,10 @@
     "difficulty": "muyDificil",
     "enunciado": "¿Cuál es la velocidad de la luz en el vacío, expresada en metros por segundo?",
     "opciones": [
-      "2.99 × 10⁸ m/s",
-      "3.00 × 10⁸ m/s",
-      "1.86 × 10⁸ m/s",
-      "6.67 × 10⁸ m/s"
+      "2.99 × 10<sup>8</sup> m/s",
+      "3.00 × 10<sup>8</sup> m/s",
+      "1.86 × 10<sup>8</sup> m/s",
+      "6.67 × 10<sup>8</sup> m/s"
     ],
     "correcta": 1
   },
@@ -7396,10 +7396,10 @@
     "difficulty": "muyDificil",
     "enunciado": "¿Cuál es la masa en reposo del electrón?",
     "opciones": [
-      "9,109 × 10⁻³¹ kg",
-      "1,673 × 10⁻²⁷ kg",
-      "1,675 × 10⁻²⁷ kg",
-      "6,022 × 10²³ kg"
+      "9,109 × 10<sup>-31</sup> kg",
+      "1,673 × 10<sup>-27</sup> kg",
+      "1,675 × 10<sup>-27</sup> kg",
+      "6,022 × 10<sup>23</sup> kg"
     ],
     "correcta": 0
   },
@@ -7468,10 +7468,10 @@
     "difficulty": "muyDificil",
     "enunciado": "¿Cuál es la constante de Boltzmann (orden de magnitud)?",
     "opciones": [
-      "1,380 × 10⁻²³ J/K",
-      "6,022 × 10²³ mol⁻¹",
+      "1,380 × 10<sup>-23</sup> J/K",
+      "6,022 × 10<sup>23</sup> mol<sup>-1</sup>",
       "8,314 J/(mol·K)",
-      "1,602 × 10⁻¹⁹ C"
+      "1,602 × 10<sup>-19</sup> C"
     ],
     "correcta": 0
   },
@@ -7480,8 +7480,8 @@
     "difficulty": "muyDificil",
     "enunciado": "¿Qué proceso ocurre en el ciclo de Krebs?",
     "opciones": [
-      "Síntesis de glucosa a partir de CO₂",
-      "Oxidación completa del acetil-CoA liberando CO₂ y NADH",
+      "Síntesis de glucosa a partir de CO<sub>2</sub>",
+      "Oxidación completa del acetil-CoA liberando CO<sub>2</sub> y NADH",
       "Reducción de piruvato a etanol",
       "Fosforilación del ADP en el citosol"
     ],

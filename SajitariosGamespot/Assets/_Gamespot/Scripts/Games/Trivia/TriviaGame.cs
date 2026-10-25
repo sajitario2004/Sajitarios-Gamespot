@@ -31,9 +31,7 @@ namespace Gamespot.Games.Trivia
 
         public void OnCreate(IDb db) => TriviaSchema.Create(db);
 
-        public void OnUpgrade(IDb db, int oldVersion, int newVersion)
-        {
-        }
+        public void OnUpgrade(IDb db, int oldVersion, int newVersion) => TriviaSchema.Upgrade(db, oldVersion);
 
         public void SeedIfEmpty(IDb db, ISeedSource seeds) => TriviaSchema.SeedIfEmpty(db, seeds);
     }

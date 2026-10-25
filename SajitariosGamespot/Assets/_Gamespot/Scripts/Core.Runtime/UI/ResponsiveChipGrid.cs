@@ -26,8 +26,14 @@ namespace Gamespot.Core.Runtime.UI
 
         private void Awake() => _grid = GetComponent<GridLayoutGroup>();
 
-        private void LateUpdate()
+        // También al cambiar de tamaño: así el primer fotograma ya sale con las celdas buenas.
+        private void OnRectTransformDimensionsChange() => Refresh();
+
+        private void LateUpdate() => Refresh();
+
+        private void Refresh()
         {
+            if (_grid == null) _grid = GetComponent<GridLayoutGroup>();
             var width = ((RectTransform)transform).rect.width;
             if (_grid == null || width <= 0f || Mathf.Approximately(width, _lastWidth)) return;
             _lastWidth = width;

@@ -53,15 +53,15 @@ namespace Gamespot.Core.Runtime.UI
             chip._border.raycastTarget = false;
 
             var layout = go.AddComponent<HorizontalLayoutGroup>();
-            layout.padding = new RectOffset(14, 14, 8, 8);
+            layout.padding = new RectOffset(10, 10, 8, 8);
             layout.childAlignment = TextAnchor.MiddleCenter;
             layout.childControlWidth = true;
             layout.childControlHeight = true;
             layout.childForceExpandWidth = false;
             layout.childForceExpandHeight = false;
 
-            chip._label = Ui.Text(go.transform, label, TextRole.LabelLarge, Palette.TextPrimary, TextAlignmentOptions.Center);
-            chip._label.textWrappingMode = TextWrappingModes.NoWrap;
+            // Una línea que encoge si no cabe («Internet & social media» en una rejilla de dos columnas).
+            chip._label = Ui.Text(go.transform, label, TextRole.LabelLarge, Palette.TextPrimary, TextAlignmentOptions.Center, maxLines: 1);
 
             var button = go.AddComponent<Button>();
             button.targetGraphic = chip._fill;

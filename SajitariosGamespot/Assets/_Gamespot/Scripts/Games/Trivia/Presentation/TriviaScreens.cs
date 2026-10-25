@@ -290,6 +290,8 @@ namespace Gamespot.Games.Trivia
     {
         public const float FeedbackSeconds = 0.8f;
         private static readonly string[] Letters = { "A", "B", "C", "D" };
+        private const float LetterHeight = 18f;
+        private const float AnswerMinSize = 9f;
 
         private readonly List<NeonPanel> _cells = new List<NeonPanel>();
         private readonly List<TMP_Text> _letters = new List<TMP_Text>();
@@ -346,9 +348,13 @@ namespace Gamespot.Games.Trivia
                 var button = cell.gameObject.AddComponent<Button>();
                 button.transition = Selectable.Transition.None;
                 button.onClick.AddListener(() => Choose(index));
-                _letters.Add(Ui.Text(cell.Content, Letters[i], TextRole.LabelLarge, color, TextAlignmentOptions.Center, bold: true));
-                var text = Ui.Text(cell.Content, question.Options[i], TextRole.BodySmall, Palette.TextPrimary, TextAlignmentOptions.Center, maxLines: 3,
-                    bold: true);
+                _letters.Add(Ui.Text(cell.Content, Letters[i], TextRole.LabelLarge, color, TextAlignmentOptions.Center, bold: true).MinHeight(LetterHeight));
+                // Hay respuestas de casi 80 caracteres: encogen hasta caber en la casilla en vez de cortarse a las tres líneas.
+                var text = Ui.Text(cell.Content, question.Options[i], TextRole.BodySmall, Palette.TextPrimary, TextAlignmentOptions.Center, bold: true);
+                text.enableAutoSizing = true;
+                text.fontSizeMax = text.fontSize;
+                text.fontSizeMin = AnswerMinSize;
+                text.overflowMode = TextOverflowModes.Truncate;
                 _texts.Add(text);
                 cell.name = Loc.T("triviaOpcionLetra", ("letra", Letters[i]), ("texto", question.Options[i]));
                 _cells.Add(cell);
@@ -403,7 +409,12 @@ namespace Gamespot.Games.Trivia
         public float Aspect = 1.3f;
         private float _lastWidth = -1f;
 
-        private void LateUpdate()
+        // También al cambiar de tamaño: así el primer fotograma ya sale con las celdas buenas.
+        private void OnRectTransformDimensionsChange() => Refresh();
+
+        private void LateUpdate() => Refresh();
+
+        private void Refresh()
         {
             var grid = GetComponent<GridLayoutGroup>();
             var width = ((RectTransform)transform).rect.width;
