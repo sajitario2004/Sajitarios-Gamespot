@@ -19,7 +19,7 @@
 > **Icono:** el de la app Flutter (V060). **APK de prueba:** `SajitariosGamespot-prueba.apk` en la raíz del repo (V065, en curso): instalarlo en el móvil y jugar.
 > **Pendiente de probar a mano por el autor:** abrir `SajitariosGamespot/` en Unity 6000.3.27f1, Play en la escena
 > `App` y jugar una partida de cada juego (sobre todo Wavelength, que estaba roto, y la mecha de La Bomba).
-> **Sonidos:** el autor los oía demasiado fuertes; desde V059n todos están nivelados más bajos (comprobar en el móvil si ahora suenan bien o hay que tocar alguno).
+> **Sonidos:** el autor los oía demasiado fuertes: nivelados en V059n y a la mitad en V059o (comprobar en el móvil; si alguno sigue alto o bajo, se toca ese).
 > **Escuchar los sonidos nuevos** (sintetizados, nadie los ha oído aún): tic-tac y explosión de La Bomba, pitidos
 > y bocina del Tabú, acierto/fallo de la Trivia, campanas de Wavelength y pasar de Yo Nunca; la vibración solo se
 > nota en el móvil.
@@ -153,7 +153,7 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 | `Correct` / `Wrong` | `correct.wav`, `wrong.wav` | Trivia: al elegir respuesta |
 | `Chime` | `chime.wav` (1.1 s) | Wavelength: al confirmar la adivinanza (revelado) |
 | `Swipe` | `swipe.wav` (0.3 s) | Yo Nunca: siguiente frase |
-- **Volumen (V059n):** el autor los oía «exageradamente fuertes». Todos los WAV (los 9 sintetizados y los 3 heredados) se dejan a **−20 dB de sonoridad** con el pico como mucho a **−6 dB** (`Editor/Audio/SoundLevel`: RMS de las ventanas de 10 ms que suenan, después de un paso alto de 200 Hz para no contar los graves que el altavoz del móvil no da). Menú *Gamespot → Audio → Generar y nivelar los sonidos*; nivelar dos veces da lo mismo. Las llamadas siguen bajando algunos un poco más (pitido 0,8, campanas 0,8, pasar 0,6). Los tests de PlayMode no se oyen (`AudioListener.volume = 0` en `AppTestHarness`). `AudioClipsTests` comprueba los niveles.
+- **Volumen (V059n):** el autor los oía «exageradamente fuertes». Todos los WAV (los 9 sintetizados y los 3 heredados) se dejan a **−26 dB de sonoridad** con el pico como mucho a **−12 dB** (V059o: «bájalos a la mitad»; en V059n eran −20 y −6) (`Editor/Audio/SoundLevel`: RMS de las ventanas de 10 ms que suenan, después de un paso alto de 200 Hz para no contar los graves que el altavoz del móvil no da). Menú *Gamespot → Audio → Generar y nivelar los sonidos*; nivelar dos veces da lo mismo. Las llamadas siguen bajando algunos un poco más (pitido 0,8, campanas 0,8, pasar 0,6). Los tests de PlayMode no se oyen (`AudioListener.volume = 0` en `AppTestHarness`). `AudioClipsTests` comprueba los niveles.
 - **Vibración:** `Haptics.Vibrate()` (`Handheld.Vibrate` solo en Android/iOS; Unity añade el permiso `VIBRATE` al usarlo). Preferencia `vibration_enabled` (por defecto sí), independiente del silencio y aún sin interruptor (llegará con C5).
 
 ### 5.6 Idiomas
@@ -326,6 +326,9 @@ el móvil (V066, V068).
 | LiberationSans (recursos esenciales de TextMeshPro) | OFL 1.1 | Respaldo de los caracteres que Roboto no tenga |
 
 ## 10. Registro de trabajo (lo más reciente arriba)
+
+### 2026-10-25 · V059o · Sonidos a la mitad
+- El autor los seguía oyendo demasiado altos: «bájalos a la mitad». `SoundLevel.TargetDb` −26 (antes −20) y `PeakCeilingDb` −12 (antes −6): mitad de amplitud en los 12. La explosión bajaba 0,9 dB menos de lo previsto (al bajarla, su cola salía del umbral de «lo que suena» y la medida subía): `Normalize` repite la medida hasta acertar.
 
 ### 2026-10-25 · V065 y V067 · APK de desarrollo y proyecto de Xcode
 - APK de desarrollo en `SajitariosGamespot/Builds/Android/SajitariosGamespot-dev.apk` (opciones `Development` y `DetailedBuildReport` del comando `build run`): 49 MB, sin errores ni avisos. El release de prueba sigue en la raíz.

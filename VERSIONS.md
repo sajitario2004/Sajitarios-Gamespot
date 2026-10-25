@@ -210,6 +210,10 @@ Cierre técnico de cada versión con código Unity: recompilación sin errores, 
   - Acepta: los 12 efectos suenan más bajos y parejos (ninguno destaca), con el pico lejos del máximo; los tests no se oyen.
   - Notas: los sintetizados se normalizaban a 0,85 de pico (−1,4 dB) y los pitidos y ondas cuadradas llegaban a −6/−9 dB de RMS; los tres del Flutter, a −9. Ahora todos a −20 dB de sonoridad (RMS de la parte que suena, sin los graves que no da el altavoz del móvil) y como mucho −6 dB de pico (`Editor/Audio/SoundLevel`); el menú *Generar y nivelar los sonidos* genera los 9 y nivela en su sitio los 3 heredados. Bajan entre 2 y 13 dB (el pitido del Tabú, 13). Los tests de PlayMode ponen `AudioListener.volume` a 0 y lo restauran. Test nuevo de niveles. 251 EditMode + 53 PlayMode.
 
+- [x] **V059o · Sonidos a la mitad.** Petición: «los sonidos siguen demasiado altos, bájalos a la mitad».
+  - Acepta: todos los efectos a la mitad de amplitud (−6 dB) que en V059n, igual de parejos.
+  - Notas: `SoundLevel` a −26 dB de sonoridad y −12 dB de pico (antes −20 y −6); los 12 bajan 6 dB (la explosión, 7: estaba casi 1 dB por encima porque al bajarla su cola salía de la medida; ahora la nivelación repite la medida hasta acertar). Regenerados con *Generar y nivelar los sonidos*.
+
 ## Fase 11 — Pulido y paridad
 - [x] **V060 · Icono y arranque** (placeholders con la paleta neón, mismos nombres).
   - Notas: el autor prefirió el icono de la app Flutter (carta con pica sobre morado `#7C3AED`): `Art/Icon/` + `ProjectSetup.ApplyIcons` (por defecto y adaptativo de Android; Legacy y Round, obsoletos, vacíos). Arranque sin el splash de Unity desde V007. Comprobado dentro del APK.

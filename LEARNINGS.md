@@ -33,7 +33,7 @@ Archivo vivo. Añade una línea cada vez que el autor exprese un gusto, una corr
 
 - (2026-10-25) Quiere la app **lo más personalizable posible**, empezando por el Impostor y el Tabú: crear sus propias categorías, elegir la categoría antes de empezar y crear sus propias palabras y tarjetas.
 
-- (2026-10-25) Los sonidos le parecían **demasiado fuertes**: prefiere efectos a un volumen moderado y parejo. Oye el Editor mientras Claude trabaja (los tests ya no suenan).
+- (2026-10-25) Los sonidos le parecían **demasiado fuertes**: prefiere efectos a un volumen moderado y parejo. Oye el Editor mientras Claude trabaja (los tests ya no suenan). Tras nivelarlos aún los quería **a la mitad**: mejor quedarse corto de volumen que pasarse.
 
 - (2026-10-25) Dio permiso para descargar las fuentes y eligió **las mismas de la app Flutter** (Roboto y Material Icons) frente a otras nuevas. Quiere que se termine todo lo que se pueda hacer sin él, fase a fase, y un APK al final para probar.
 
