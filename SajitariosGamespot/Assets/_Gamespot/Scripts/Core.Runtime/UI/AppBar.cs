@@ -14,6 +14,8 @@ namespace Gamespot.Core.Runtime.UI
     {
         public const float Height = 56f;
 
+        private float _actionsWidth;
+
         public TextMeshProUGUI Title { get; private set; }
         public TextMeshProUGUI Subtitle { get; private set; }
         public RectTransform Actions { get; private set; }
@@ -60,13 +62,34 @@ namespace Gamespot.Core.Runtime.UI
         public NeonButton AddAction(IconId icon, Action onClick, Color? color = null)
         {
             var button = NeonButton.CreateIcon(Actions, icon, onClick, color);
-            var count = Actions.childCount;
-            var width = NeonButton.MinTouchSize * count;
-            Actions.Sized(width, NeonButton.MinTouchSize);
+            GrowActions(NeonButton.MinTouchSize);
+            return button;
+        }
+
+        /// <summary>
+        /// Añade a la derecha una pastilla informativa que no se pulsa (icono + texto, como el <c>Chip</c> de
+        /// jugadores vivos de La Bomba). Devuelve el texto para actualizarlo.
+        /// </summary>
+        public TextMeshProUGUI AddInfo(IconId icon, string text, Color color)
+        {
+            const float width = 64f;
+            var chip = Ui.Panel(Actions, color.WithAlpha(0.4f), Palette.SurfaceHigh, padding: new RectOffset(8, 10, 4, 4), radius: 16f,
+                borderWidth: 1f, alignment: TextAnchor.MiddleCenter);
+            chip.Sized(width - 8f, 32f);
+            var row = Ui.Row(chip.Content, 4f, alignment: TextAnchor.MiddleCenter);
+            Ui.Icon(row, icon, 16f, color);
+            var label = Ui.Text(row, text, TextRole.LabelMedium, color, maxLines: 1, bold: true);
+            GrowActions(width);
+            return label;
+        }
+
+        private void GrowActions(float added)
+        {
+            _actionsWidth += added;
+            Actions.Sized(_actionsWidth, NeonButton.MinTouchSize);
             // Se equilibra la izquierda para centrar el título, pero sin pasar de dos botones: con más acciones el
             // título se corre un poco a la izquierda en vez de encogerse (como Flutter cuando no cabe centrado).
-            Leading.Sized(Mathf.Clamp(width, NeonButton.MinTouchSize, NeonButton.MinTouchSize * 2f), NeonButton.MinTouchSize);
-            return button;
+            Leading.Sized(Mathf.Clamp(_actionsWidth, NeonButton.MinTouchSize, NeonButton.MinTouchSize * 2f), NeonButton.MinTouchSize);
         }
     }
 }

@@ -42,6 +42,7 @@ namespace Gamespot.Core.Runtime.UI
         Refresh,
         Timer,
         SkipNext,
+        Group,
         Error,
         VideogameAsset,
         Visibility,

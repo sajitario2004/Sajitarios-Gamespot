@@ -1,13 +1,13 @@
 # CONTEXT.md — Sajitarios Gamespot
 
-> **Estado (2026-10-25):** migración de Flutter a Unity en curso, rama `feature/unity-port`. Hechas las fases 0–4
-> (base, núcleo, menú y "Es un 10 pero" jugable) y los dominios puros del Impostor. Versión en curso: V026.
+> **Estado (2026-10-25):** migración de Flutter a Unity en curso, rama `feature/unity-port`. Hechas las fases 0–10:
+> base, núcleo, menú y **los 7 juegos portados y jugables** (Wavelength reescrito y arreglado). Versión en curso:
+> V059a/V059b (plan de mejoras y juegos nuevos, en `Docs/PLAN_MEJORAS.md`); después, fases 11–12 (pulido y builds).
 > **Pendiente de decisión del autor:** permiso para descargar las fuentes (V014): iconos Material Symbols y una
 > fuente de texto con negrita real. Hasta entonces los iconos son sustitutos de texto ("<", "?", "))").
-> **Peticiones del autor (2026-10-25):** al terminar todos los juegos, plan de mejoras + 5 juegos nuevos propuestos
-> (V059a/V059b); Wavelength está roto en el Flutter y hay que arreglarlo a fondo (fase 7).
+> Qué mejoras y cuáles de los 5 juegos nuevos se hacen (V059a/V059b).
 > **Pendiente de probar a mano por el autor:** abrir `SajitariosGamespot/` en Unity 6000.3.27f1, Play en la escena
-> `App`, entrar en "Es un 10 pero" y sacar varias cartas (cuenta atrás de 5 s, volteo, sonido, silencio).
+> `App` y jugar una partida de cada juego (sobre todo Wavelength, que estaba roto, y la mecha de La Bomba).
 
 Documento vivo con todo el contexto del proyecto. Una IA nueva (o el mismo proyecto en otro PC) tiene que poder retomar el trabajo leyendo solo `CLAUDE.md`, este archivo, `LEARNINGS.md` y la versión en curso de `VERSIONS.md`.
 
@@ -203,7 +203,7 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
   - `BombaSession`: empieza con la bomba el primer jugador; `Pasar()` → siguiente (circular); `Explode()` elimina al que la tiene y la bomba pasa al **siguiente** (vuelve al 0 si era el último); termina con ≤ 1 vivo, ganador el que queda. `NewRound` mantiene el índice y saca mecha nueva.
   - `PickPromptUseCase`: sin repetir por modo hasta agotar; luego se vacía.
 - **Flow:** `Setup, Iniciando, Jugando, Explotando, GameOver, Error(sinPrompts)`. `Pasar()` no reinicia la mecha. `Explotar()` → `Explotando`; `ContinuarTrasExplosion()` → `GameOver` o ronda nueva con mecha y prompt nuevos (mismo modo).
-- **Pantallas:** setup con chips Sílaba (por defecto) / Categoría y 2–12 nombres. Juego: nombre del que tiene la bomba en MAYÚSCULAS, sílaba o categoría en MAYÚSCULAS en un panel con borde rojo que **late** (0.7–1.2, 1600 ms), tipo de prompt, botón **PASAR** (64 px) y chip con los vivos. **Sin cuenta atrás visible**; la mecha se comprueba cada 50 ms. Al explotar: overlay a pantalla completa **1,5 s** con fuego, "¡BOOM!", el eliminado y "ha sido eliminado", y sigue solo. Fin: trofeo, "Ganador" y el nombre (encogido para caber en una línea), "Volver al menú". Sin sonido.
+- **Pantallas:** setup con chips Sílaba (por defecto) / Categoría y 2–12 nombres. Juego: nombre del que tiene la bomba en MAYÚSCULAS, sílaba o categoría en MAYÚSCULAS en un panel con borde rojo que **late** (0.7–1.2, 1600 ms), tipo de prompt, botón **PASAR** (64 px) y chip con los vivos. **Sin cuenta atrás visible**; la mecha se comprueba cada 50 ms (en Unity, en cada frame). Al explotar: overlay a pantalla completa **1,5 s** con fuego, "¡BOOM!", el eliminado y "ha sido eliminado", y sigue solo. Fin: trofeo, "Ganador" y el nombre (encogido para caber en una línea), "Volver al menú". Sin sonido.
 
 ## 7. Estado de la app Flutter (referencia)
 - v0.75.0+75, Flutter 3.41.4 / Dart 3.11.1, Riverpod 3, go_router 17, Flame 1.37, sqflite. `flutter analyze` limpio, **823 tests**, cobertura 78 %.
@@ -220,7 +220,8 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 - Tabú y La Bomba: el temporizador seguía con el diálogo de salir abierto → se pausa.
 - Tabú: la regla 4 decía que una prohibida pasa el turno, pero el código resta un acierto → se conserva el código y se corrige el texto.
 - Wavelength: la aguja del revelado salía en 0.5 → muestra la respuesta del grupo; etiquetas duplicadas (lienzo + fila) → solo la fila; tocar bajo la base saltaba al polo derecho → polo más cercano.
-- La Bomba: los nombres solo se recortaban → misma normalización que el resto.
+- La Bomba: los nombres solo se recortaban → misma normalización que el resto. El setup pedía "¿Salir de la partida?" al volver sin haber partida → va directo, como los demás setups.
+- Yo Nunca: la frase iba en un panel con scroll cuya máscara recortaba el halo → centrada sin scroll (las frases son cortas).
 - BD y audio perezosos → preparados en el arranque. Botón de silencio también en el menú.
 - Icono, splash, dorso y cabecera en morado/ámbar → placeholders con la paleta neón.
 
@@ -239,6 +240,18 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 | Paquetes de Unity (URP, uGUI/TextMeshPro, Input System, Test Framework, Pipeline) | Unity Companion License | Motor, UI, entrada, tests y puente de la CLI |
 
 ## 10. Registro de trabajo (lo más reciente arriba)
+
+### 2026-10-25 · V055–V059 · La Bomba (los 7 juegos portados)
+- Dominio puro (mecha [10,60), pasar sin tocar la mecha, explosión que pasa la bomba al siguiente, sílabas y categorías sin repetir por modo), datos (93 + 83), flujo y 3 pantallas: setup, juego con mecha oculta y aviso «¡BOOM!» de 1,5 s, fin.
+- La mecha y el aviso se cuentan en `Tick` y se pausan con un diálogo abierto. Kit: `AppBar.AddInfo` (pastilla de vivos), `ScreenScaffold.Root` (para tapar la pantalla con un aviso a pantalla completa) e icono `Group`.
+- Gotcha de test: el router también llama a `Tick` en cada frame de un `[UnityTest]`; los tests de tiempo comparan contra lo ya consumido.
+- Tests: 213 EditMode + 31 PlayMode en verde; arnés .NET 168.
+
+### 2026-10-25 · V052–V054 · Yo Nunca
+- Dominio, seed de 192 frases, setup con aviso +18 fijo mientras Picante está activo y juego infinito sin repetir hasta agotar. Atrás y casa piden confirmación (arreglo). La frase va centrada sin scroll: la máscara recortaba el halo.
+
+### 2026-10-25 · V047–V051 · Tabú
+- Dominio, seed de 120, setup (equipos y 30/60/90 s), turno con cuenta atrás que se pausa con el diálogo de salir, marcador y fin. `NeonButton.Compact()` para tres botones en una fila sin partir la etiqueta.
 
 ### 2026-10-25 · V041–V046 · Wavelength reescrito y arreglado
 - El autor avisó de que Wavelength estaba roto. El dominio del Flutter era correcto; lo roto era el dial de Flame (estado perdido antes de cargar, aguja en 0,5 al revelar, etiquetas duplicadas, toque bajo la base al polo derecho, dial dentro de un scroll) y la UX (total sin la ronda actual, pista vacía ignorada en silencio, textos sin tildes).

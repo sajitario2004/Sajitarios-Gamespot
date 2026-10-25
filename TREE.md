@@ -1,6 +1,6 @@
 # TREE
 
-Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 10:23.
+Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 10:38.
 
 No se listan: Library, Temp, Logs, obj, UserSettings, .git, .vs, .idea, .vscode, .utmp, Build, Builds, MemoryCaptures, Recordings, node_modules, __pycache__, .venv, .dart_tool, build, coverage, *.meta, *.csproj, *.sln, *.slnx, *.user, *.pidb, *.unityproj, .DS_Store, Thumbs.db.
 Plegadas: skills, TextMesh Pro, Flutter, Capturas (Flutter = la app original en Legacy/Flutter, solo lectura).
@@ -11,7 +11,7 @@ Sajitarios-Gamespot/
 ├── .claude/
 │   └── settings.json
 ├── Docs/
-│   └── Capturas/  (18 elementos, plegado)
+│   └── Capturas/  (22 elementos, plegado)
 ├── Legacy/
 │   └── Flutter/  (20 elementos, plegado)
 ├── SajitariosGamespot/
@@ -124,6 +124,18 @@ Sajitarios-Gamespot/
 │   │   │   │   │   │   │   └── RulesScreen.cs
 │   │   │   │   │   │   ├── Gamespot.Games.Shared.asmdef
 │   │   │   │   │   │   └── IGameDescriptor.cs
+│   │   │   │   │   ├── Bomba/
+│   │   │   │   │   │   ├── Data/
+│   │   │   │   │   │   │   └── BombaPromptRepository.cs
+│   │   │   │   │   │   ├── Domain/
+│   │   │   │   │   │   │   ├── Flow/
+│   │   │   │   │   │   │   │   └── BombaFlowController.cs
+│   │   │   │   │   │   │   ├── BombaDomain.cs
+│   │   │   │   │   │   │   └── Gamespot.Games.Bomba.Domain.asmdef
+│   │   │   │   │   │   ├── Presentation/
+│   │   │   │   │   │   │   └── BombaScreens.cs
+│   │   │   │   │   │   ├── BombaGame.cs
+│   │   │   │   │   │   └── Gamespot.Games.Bomba.asmdef
 │   │   │   │   │   ├── EsUn10Pero/
 │   │   │   │   │   │   ├── Domain/
 │   │   │   │   │   │   │   ├── Card.cs
@@ -222,6 +234,10 @@ Sajitarios-Gamespot/
 │   │   │       │   │   ├── AppDatabaseTests.cs
 │   │   │       │   │   └── TempDatabase.cs
 │   │   │       │   ├── Games/
+│   │   │       │   │   ├── Bomba/
+│   │   │       │   │   │   ├── Domain/
+│   │   │       │   │   │   │   └── BombaDomainTests.cs
+│   │   │       │   │   │   └── BombaDataTests.cs
 │   │   │       │   │   ├── EsUn10Pero/
 │   │   │       │   │   │   └── Domain/
 │   │   │       │   │   │       └── DrawCardUseCaseTests.cs
@@ -258,6 +274,7 @@ Sajitarios-Gamespot/
 │   │   │       │   └── Gamespot.Tests.EditMode.asmdef
 │   │   │       └── PlayMode/
 │   │   │           ├── Games/
+│   │   │           │   ├── BombaFlowTests.cs
 │   │   │           │   ├── EsUn10PeroScreenTests.cs
 │   │   │           │   ├── ImpostorFlowTests.cs
 │   │   │           │   ├── TabuFlowTests.cs

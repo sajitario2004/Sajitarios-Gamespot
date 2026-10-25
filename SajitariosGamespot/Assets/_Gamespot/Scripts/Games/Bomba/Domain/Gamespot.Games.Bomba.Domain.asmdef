@@ -1,0 +1,16 @@
+{
+    "name": "Gamespot.Games.Bomba.Domain",
+    "rootNamespace": "Gamespot.Games.Bomba.Domain",
+    "references": [
+        "Gamespot.Core"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

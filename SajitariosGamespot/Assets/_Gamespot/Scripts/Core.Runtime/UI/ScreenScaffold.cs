@@ -7,11 +7,15 @@ namespace Gamespot.Core.Runtime.UI
     /// </summary>
     public sealed class ScreenScaffold
     {
-        private ScreenScaffold(AppBar appBar, RectTransform body)
+        private ScreenScaffold(RectTransform root, AppBar appBar, RectTransform body)
         {
+            Root = root;
             AppBar = appBar;
             Body = body;
         }
+
+        /// <summary>Columna que contiene barra y cuerpo (para ocultar la pantalla entera tras un aviso a pantalla completa).</summary>
+        public RectTransform Root { get; }
 
         public AppBar AppBar { get; }
 
@@ -25,7 +29,7 @@ namespace Gamespot.Core.Runtime.UI
             var appBar = AppBar.Create(column, title, subtitle);
             var body = Ui.Column(column, 0f, name: "Body");
             body.Sized(flexWidth: 1f, flexHeight: 1f);
-            return new ScreenScaffold(appBar, body);
+            return new ScreenScaffold(column, appBar, body);
         }
     }
 }

@@ -22,7 +22,9 @@
         "Gamespot.Games.Tabu.Domain",
         "Gamespot.Games.Tabu",
         "Gamespot.Games.YoNunca",
-        "Gamespot.Games.YoNunca.Domain"
+        "Gamespot.Games.YoNunca.Domain",
+        "Gamespot.Games.Bomba",
+        "Gamespot.Games.Bomba.Domain"
     ],
     "includePlatforms": [
         "Editor"

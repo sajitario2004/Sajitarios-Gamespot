@@ -145,11 +145,16 @@ Cierre técnico de cada versión con código Unity: recompilación sin errores, 
   - Notas: `YoNuncaGame` registrado. PlayMode: aviso aparece y desaparece, sin intensidades da aviso, «Siguiente» cambia la frase, atrás confirma, mínimos del seed. 196 EditMode + 28 PlayMode en verde.
 
 ## Fase 10 — La Bomba
-- [ ] **V055 · Dominio** (mecha [10,60), rotación, explosión) + tests.
-- [ ] **V056 · Datos** + seeds (93 sílabas, 83 categorías) + tests.
-- [ ] **V057 · `BombaFlowController`** + tests.
-- [ ] **V058 · Pantallas** (setup, juego con mecha oculta y overlay de 1,5 s, fin).
-- [ ] **V059 · Registro, reglas y test PlayMode.**
+- [x] **V055 · Dominio** (mecha [10,60), rotación, explosión) + tests.
+  - Notas: Dominio puro en `BombaDomain.cs`: `BombaMode`, `BombaPrompt`, `BombaConfig` (2–12 jugadores, mecha dentro de [10,60] y min < max), `BombaSession` inmutable (empieza el primero, pasar rota sin tocar la mecha, al explotar la bomba pasa al siguiente, gana el último) y `PickPromptUseCase` (sin repetir por modo hasta agotar). Tests portados del Flutter, también en el arnés .NET (168 en verde).
+- [x] **V056 · Datos** + seeds (93 sílabas, 83 categorías) + tests.
+  - Notas: `BombaSchema` (dos tablas, idempotente) y `BombaPromptRepository`; seeds de 93 sílabas y 83 categorías, cada tabla se siembra solo si está vacía y un elemento vacío o que no sea texto da error. Ojo: las categorías heredadas vienen sin tildes («paises»): va al plan de mejoras.
+- [x] **V057 · `BombaFlowController`** + tests.
+  - Notas: `BombaFlowController` puro: fases Setup → Jugando ⇄ Explotando → GameOver y Error(SinPrompts) si el modo no tiene contenido; pasar no reinicia la mecha; tras la explosión, ronda nueva con mecha y sílaba o categoría nuevas; acciones fuera de fase ignoradas.
+- [x] **V058 · Pantallas** (setup, juego con mecha oculta y overlay de 1,5 s, fin).
+  - Notas: Setup (chips Sílaba/Categoría en rojo, 2–12 jugadores con `PlayerListEditor`, nombres normalizados: arreglo), juego (portador en mayúsculas, prompt en panel rojo que late, «PASAR» de 64, pastilla de vivos con `AppBar.AddInfo`), aviso «¡BOOM!» a pantalla completa 1,5 s y fin con el ganador. La mecha se cuenta por frame y se pausa con un diálogo abierto (arreglo). Capturas `V058_bomba_setup/juego/explosion/fin.png`.
+- [x] **V059 · Registro, reglas y test PlayMode.**
+  - Notas: `BombaGame` registrado: el menú ya tiene los 7 juegos. PlayMode: errores del setup, partida completa (pasar, explotar, aviso de 1,5 s, ganador, salir reinicia) y mecha pausada con el diálogo de salir. 213 EditMode + 31 PlayMode en verde.
 
 ## Fase 10b — Plan de mejoras y juegos nuevos (petición del autor, 2026-10-25)
 - [ ] **V059a · Plan de mejoras** de los 7 juegos una vez portados (jugabilidad, contenido, UX y deuda de `CONTEXT.md` §8.2), con prioridades, para que el autor elija.
