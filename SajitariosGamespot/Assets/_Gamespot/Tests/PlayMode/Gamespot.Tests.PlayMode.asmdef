@@ -31,7 +31,9 @@
         "Gamespot.Games.MasProbable",
         "Gamespot.Games.MasProbable.Domain",
         "Gamespot.Games.QuePrefieres",
-        "Gamespot.Games.QuePrefieres.Domain"
+        "Gamespot.Games.QuePrefieres.Domain",
+        "Gamespot.Games.Mimica",
+        "Gamespot.Games.Mimica.Domain"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

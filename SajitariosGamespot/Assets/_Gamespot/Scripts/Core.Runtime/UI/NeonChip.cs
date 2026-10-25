@@ -78,6 +78,13 @@ namespace Gamespot.Core.Runtime.UI
             return chip;
         }
 
+        /// <summary>Cambia el color del chip (el resumen de turno lo pone verde o rojo al corregir).</summary>
+        public void SetAccent(Color accent)
+        {
+            _accent = accent;
+            Refresh();
+        }
+
         private void Refresh()
         {
             if (_fill == null) return;

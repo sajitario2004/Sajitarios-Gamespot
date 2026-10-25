@@ -286,8 +286,17 @@ gestionar la partida; muy configurable y con todas las expansiones». Se hacen d
     preguntas por partida, «Otra pregunta». Final: la que más os dividió, la más unánime y todas con sus porcentajes.
     Preguntas propias con las dos opciones obligatorias. Seed de 306 preguntas (150 suaves y 156 picantes). 309
     EditMode; PlayMode del juego 3/3; barrido (73 pantallas, es y en) limpio. Capturas `V073_queprefieres_*`.
-- [ ] **V074 · Mímica por equipos.** Como el Tabú sin hablar: equipos, tiempo, objetivo, categorías (también +18 y
+- [x] **V074 · Mímica por equipos.** Como el Tabú sin hablar: equipos, tiempo, objetivo, categorías (también +18 y
   propias), tarjetas propias.
+  - Notas: `Games/Mimica/`. 2–4 equipos, 8 categorías de serie (películas y series, acciones, famosos, animales,
+    oficios, objetos, deportes y Cachondeo +18, que pide la confirmación de edad) más «Mis palabras» y las propias;
+    turno de 30–120 s, puntos para ganar (5–30), pases por turno (sin límite, 0, 1, 3) y si restan, y modo mezcla
+    (cada tarjeta dice si es mímica, solo sonidos, dibujar en el aire o una sola palabra). Resumen del turno que se
+    puede corregir y desempate si hay empate arriba. Base común para ¿Quién soy?: `Core/Party/TeamMatch` y
+    `GuessGameController` (puros) y `_Shared/Presentation/GuessScreens` (preparados, resumen y final). El editor de
+    jugadores sirve para equipos (textos propios y sin los de la última partida). Seed de 557 tarjetas. 318 EditMode;
+    PlayMode del juego 3/3 (y las categorías propias del Impostor y el Tabú, 4/4); barrido (113 pantallas, es y en)
+    limpio. Capturas `V074_mimica_*`.
 - [ ] **V075 · ¿Quién soy?** Móvil en la frente, inclinar para acertar o pasar (acelerómetro y botones), por
   equipos, categorías y tarjetas propias.
 - [ ] **V076 · Hombres Lobo: dominio.** Catálogo de roles por paquetes (básico y todas las expansiones), reparto,

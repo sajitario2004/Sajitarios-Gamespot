@@ -23,10 +23,16 @@ namespace Gamespot.Games.Shared
         private readonly List<string> _values = new List<string>();
         private RectTransform _rows;
         private NeonButton _add;
-        private NeonButton _useLast;
+        private NeonButton _useLastButton;
         private int _min;
         private int _max;
         private Color _accent;
+        private bool _useLast = true;
+        private string _itemKey = "jugadorNumero";
+        private string _hintKey = "nombreDelJugadorNumero";
+        private string _addKey = "anadirJugador";
+        private string _fullKey = "maximoJugadoresAlcanzado";
+        private string _removeKey = "quitarJugador";
 
         /// <summary>Se lanza al añadir o quitar un jugador (los contadores dependientes se recortan).</summary>
         public event Action CountChanged;
@@ -43,22 +49,39 @@ namespace Gamespot.Games.Shared
         public IReadOnlyList<string> NormalizedNames => _values.Select(NameNormalizer.Normalize).ToList();
 
         /// <summary>Si se ve el botón "Usar los de la última partida".</summary>
-        public bool CanUseLastPlayers => _useLast != null && _useLast.gameObject.activeSelf;
+        public bool CanUseLastPlayers => _useLastButton != null && _useLastButton.gameObject.activeSelf;
 
         public static PlayerListEditor Create(Transform parent, int min, int max, Color accent, IReadOnlyList<string> initial = null)
+        {
+            return Create(parent, min, max, accent, initial, true);
+        }
+
+        /// <summary>
+        /// La misma lista para equipos (V074): con sus propios textos (claves con <c>{n}</c>) y, si
+        /// <paramref name="useLastPlayers"/> es falso, sin los nombres de la última partida.
+        /// </summary>
+        public static PlayerListEditor Create(Transform parent, int min, int max, Color accent, IReadOnlyList<string> initial, bool useLastPlayers,
+            string itemKey = "jugadorNumero", string hintKey = "nombreDelJugadorNumero", string addKey = "anadirJugador",
+            string fullKey = "maximoJugadoresAlcanzado", string removeKey = "quitarJugador")
         {
             var column = Ui.Column(parent, 10f, name: "PlayerList");
             var editor = column.gameObject.AddComponent<PlayerListEditor>();
             editor._min = min;
             editor._max = max;
             editor._accent = accent;
-            editor._useLast = Ui.Button(column, Loc.T("usarUltimosJugadores"), editor.UseLastPlayers, ButtonStyle.Text, IconId.History, accent);
+            editor._useLast = useLastPlayers;
+            editor._itemKey = itemKey;
+            editor._hintKey = hintKey;
+            editor._addKey = addKey;
+            editor._fullKey = fullKey;
+            editor._removeKey = removeKey;
+            editor._useLastButton = Ui.Button(column, Loc.T("usarUltimosJugadores"), editor.UseLastPlayers, ButtonStyle.Text, IconId.History, accent);
             editor._rows = Ui.Column(column, 10f, name: "Rows");
-            editor._add = Ui.Button(column, Loc.T("anadirJugador"), editor.AddPlayer, ButtonStyle.Outlined, IconId.PersonAdd, accent);
+            editor._add = Ui.Button(column, Loc.T(addKey), editor.AddPlayer, ButtonStyle.Outlined, IconId.PersonAdd, accent);
 
             // Sin ningún nombre escrito (primera vez en la sesión) se empieza con los de la última partida.
             var hasNames = initial != null && initial.Any(n => !string.IsNullOrWhiteSpace(n));
-            editor._values.AddRange(hasNames ? initial : editor.LastPlayers());
+            editor._values.AddRange(hasNames ? initial : useLastPlayers ? editor.LastPlayers() : new List<string>());
             while (editor._values.Count < min) editor._values.Add(string.Empty);
             editor.Rebuild(-1);
             return editor;
@@ -78,15 +101,18 @@ namespace Gamespot.Games.Shared
         }
 
         /// <summary>Guarda los nombres actuales como los de la última partida (se llama al empezar la partida).</summary>
-        public void Remember() => AppSettings.LastPlayers = NormalizedNames;
+        public void Remember()
+        {
+            if (_useLast) AppSettings.LastPlayers = NormalizedNames;
+        }
 
         private List<string> LastPlayers() => AppSettings.LastPlayers.Take(_max).ToList();
 
         private void RefreshUseLast()
         {
-            var last = LastPlayers();
+            var last = _useLast ? LastPlayers() : new List<string>();
             var current = NormalizedNames.Where(n => n.Length > 0);
-            _useLast.gameObject.SetActive(last.Count > 0 && !last.SequenceEqual(current));
+            _useLastButton.gameObject.SetActive(last.Count > 0 && !last.SequenceEqual(current));
         }
 
         public void AddPlayer()
@@ -121,7 +147,7 @@ namespace Gamespot.Games.Shared
                 var index = i;
                 var row = Ui.Row(_rows, 10f, alignment: TextAnchor.MiddleLeft, name: $"Player {i + 1}");
                 Ui.NumberBadge(row, (i + 1).ToString(), _accent, 32f);
-                var field = NeonTextField.Create(row, Loc.T("jugadorNumero", ("n", i + 1)), Loc.T("nombreDelJugadorNumero", ("n", i + 1)),
+                var field = NeonTextField.Create(row, Loc.T(_itemKey, ("n", i + 1)), Loc.T(_hintKey, ("n", i + 1)),
                     _values[i], characterLimit: 40);
                 field.Sized(flexWidth: 1f);
                 field.Changed += value =>
@@ -131,14 +157,14 @@ namespace Gamespot.Games.Shared
                     NamesChanged?.Invoke();
                 };
                 var remove = NeonButton.CreateIcon(row, IconId.RemoveCircle, () => RemovePlayer(index), Palette.TextMuted);
-                remove.name = Loc.T("quitarJugador");
+                remove.name = Loc.T(_removeKey);
                 remove.Interactable = _values.Count > _min;
                 if (i == focusIndex) field.Focus();
             }
 
             var full = _values.Count >= _max;
             _add.Interactable = !full;
-            _add.SetLabel(Loc.T(full ? "maximoJugadoresAlcanzado" : "anadirJugador"));
+            _add.SetLabel(Loc.T(full ? _fullKey : _addKey));
             RefreshUseLast();
         }
     }

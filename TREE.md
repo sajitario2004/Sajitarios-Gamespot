@@ -1,6 +1,6 @@
 # TREE
 
-Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-26 00:05.
+Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-26 00:14.
 
 No se listan: Library, Temp, Logs, obj, UserSettings, .git, .vs, .idea, .vscode, .utmp, Build, Builds, MemoryCaptures, Recordings, node_modules, __pycache__, .venv, .dart_tool, build, coverage, *.meta, *.csproj, *.sln, *.slnx, *.user, *.pidb, *.unityproj, .DS_Store, Thumbs.db, *.apk, *.aab.
 Plegadas: skills, TextMesh Pro, Flutter, Capturas (Flutter = la app original en Legacy/Flutter, solo lectura).
@@ -11,7 +11,7 @@ Sajitarios-Gamespot/
 ├── .claude/
 │   └── settings.json
 ├── Docs/
-│   ├── Capturas/  (75 elementos, plegado)
+│   ├── Capturas/  (80 elementos, plegado)
 │   └── PLAN_MEJORAS.md
 ├── Legacy/
 │   └── Flutter/  (20 elementos, plegado)
@@ -58,6 +58,7 @@ Sajitarios-Gamespot/
 │   │   │   │       ├── bomba_silabas.json
 │   │   │   │       ├── impostor_words.json
 │   │   │   │       ├── mas_probable_cards.json
+│   │   │   │       ├── mimica_cards.json
 │   │   │   │       ├── que_prefieres_cards.json
 │   │   │   │       ├── tabu_words.json
 │   │   │   │       ├── trivia_questions.json
@@ -78,6 +79,9 @@ Sajitarios-Gamespot/
 │   │   │   │   │   ├── Json/
 │   │   │   │   │   │   ├── Json.cs
 │   │   │   │   │   │   └── JsonWriter.cs
+│   │   │   │   │   ├── Party/
+│   │   │   │   │   │   ├── GuessGame.cs
+│   │   │   │   │   │   └── TeamMatch.cs
 │   │   │   │   │   ├── Random/
 │   │   │   │   │   │   ├── IRandomProvider.cs
 │   │   │   │   │   │   ├── RandomExtensions.cs
@@ -169,6 +173,7 @@ Sajitarios-Gamespot/
 │   │   │   │   │   │   │   ├── CategorySelectDialog.cs
 │   │   │   │   │   │   │   ├── CustomCategoriesScreen.cs
 │   │   │   │   │   │   │   ├── GameUi.cs
+│   │   │   │   │   │   │   ├── GuessScreens.cs
 │   │   │   │   │   │   │   ├── NotFoundScreen.cs
 │   │   │   │   │   │   │   ├── PlayerListEditor.cs
 │   │   │   │   │   │   │   ├── PromptCardsConfig.cs
@@ -236,6 +241,13 @@ Sajitarios-Gamespot/
 │   │   │   │   │   │   ├── Gamespot.Games.MasProbable.asmdef
 │   │   │   │   │   │   ├── MasProbableGame.cs
 │   │   │   │   │   │   └── MasProbableScreens.cs
+│   │   │   │   │   ├── Mimica/
+│   │   │   │   │   │   ├── Domain/
+│   │   │   │   │   │   │   ├── Gamespot.Games.Mimica.Domain.asmdef
+│   │   │   │   │   │   │   └── MimicaDomain.cs
+│   │   │   │   │   │   ├── Gamespot.Games.Mimica.asmdef
+│   │   │   │   │   │   ├── MimicaGame.cs
+│   │   │   │   │   │   └── MimicaScreens.cs
 │   │   │   │   │   ├── QuePrefieres/
 │   │   │   │   │   │   ├── Domain/
 │   │   │   │   │   │   │   ├── Gamespot.Games.QuePrefieres.Domain.asmdef
@@ -312,6 +324,7 @@ Sajitarios-Gamespot/
 │   │   │       │   ├── Audio/
 │   │   │       │   │   └── AudioClipsTests.cs
 │   │   │       │   ├── Core/
+│   │   │       │   │   ├── GuessGameTests.cs
 │   │   │       │   │   ├── IcuMessageFormatterTests.cs
 │   │   │       │   │   ├── JsonTests.cs
 │   │   │       │   │   ├── NameNormalizerTests.cs
@@ -342,6 +355,8 @@ Sajitarios-Gamespot/
 │   │   │       │   │   │       └── ImpostorTestData.cs
 │   │   │       │   │   ├── MasProbable/
 │   │   │       │   │   │   └── MasProbableFlowTests.cs
+│   │   │       │   │   ├── Mimica/
+│   │   │       │   │   │   └── MimicaConfigTests.cs
 │   │   │       │   │   ├── QuePrefieres/
 │   │   │       │   │   │   └── QuePrefieresFlowTests.cs
 │   │   │       │   │   ├── Shared/
@@ -385,6 +400,7 @@ Sajitarios-Gamespot/
 │   │   │           │   ├── EsUn10PeroScreenTests.cs
 │   │   │           │   ├── ImpostorFlowTests.cs
 │   │   │           │   ├── MasProbableFlowTests.cs
+│   │   │           │   ├── MimicaFlowTests.cs
 │   │   │           │   ├── OwnCategoriesTests.cs
 │   │   │           │   ├── PlayAgainTests.cs
 │   │   │           │   ├── PlayerRosterTests.cs

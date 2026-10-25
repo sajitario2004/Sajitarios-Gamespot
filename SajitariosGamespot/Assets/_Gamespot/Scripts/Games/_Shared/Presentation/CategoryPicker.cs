@@ -21,6 +21,7 @@ namespace Gamespot.Games.Shared
         private readonly Dictionary<string, NeonChip> _chips = new Dictionary<string, NeonChip>();
         private ISet<string> _selected;
         private GameObject _adultWarning;
+        private bool _confirmAdult;
 
         /// <summary>Se lanza al marcar o desmarcar.</summary>
         public event Action Changed;
@@ -40,12 +41,16 @@ namespace Gamespot.Games.Shared
         /// Las que ya se habían enseñado alguna vez: una que no esté (una categoría propia nueva, o "Mis palabras"
         /// al añadir la primera) se marca sola, salvo las +18. Nulo = no se marca nada solo.
         /// </param>
+        /// <param name="confirmAdult">
+        /// Marcar una +18 pide antes la confirmación de edad común (<see cref="AdultGate"/>; los juegos de la fase 13).
+        /// </param>
         public static CategoryPicker Create(Transform parent, IReadOnlyList<CategoryOption> shown, ISet<string> selected, Color accent,
-            ISet<string> known = null)
+            ISet<string> known = null, bool confirmAdult = false)
         {
             var panel = Ui.Panel(parent, accent.WithAlpha(0.5f), glow: 0.3f, spacing: 10f);
             var picker = panel.gameObject.AddComponent<CategoryPicker>();
             picker._selected = selected ?? throw new ArgumentNullException(nameof(selected));
+            picker._confirmAdult = confirmAdult;
             var options = shown ?? Array.Empty<CategoryOption>();
             picker.Shown = options.Select(o => o.Id).ToList();
             if (known != null)
@@ -93,6 +98,15 @@ namespace Gamespot.Games.Shared
             {
                 if (Selected.Count <= 1) return;
                 _selected.Remove(id);
+            }
+            else if (_confirmAdult && WordCategories.IsAdult(id))
+            {
+                AdultGate.Request(() =>
+                {
+                    _selected.Add(id);
+                    Refresh();
+                });
+                return;
             }
             else
             {

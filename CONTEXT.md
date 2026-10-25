@@ -10,7 +10,7 @@
 > **Fase 13 en curso (juegos nuevos):** el autor eligió el 1, 2, 3, 4, 5 y 10 de `Docs/PLAN_MEJORAS.md` §4: Verdad o Reto,
 > ¿Quién es más probable que…?, ¿Qué prefieres?, Mímica por equipos, ¿Quién soy? y Hombres Lobo (con reparto pasando el
 > móvil y un game master que lleva la partida; muy configurable y con todas las expansiones). Hecho: V070 (base común de cartas)
-> y V071 (Verdad o Reto), V072 (¿Quién es más probable que…?), V073 (¿Qué prefieres?). **Probar en el móvil:** una partida de Verdad o Reto con picante y con
+> y V071 (Verdad o Reto), V072 (¿Quién es más probable que…?), V073 (¿Qué prefieres?), V074 (Mímica). **Probar en el móvil:** una partida de Verdad o Reto con picante y con
 > cartas propias que usen `{otro}`; ¿Quién es más probable…? llevando la cuenta (que la cuenta atrás y la vibración se noten).
 > **Hechas las mejoras elegidas del plan (fase 10c):** C2, C3+L1, B1+B2, C4, I1, T1, W2 (estado en `Docs/PLAN_MEJORAS.md`).
 > **Hecho (V059h–V059j):** Impostor (2525) y Tabú (1161) por categorías elegibles en el setup, con Cachondeo +18 desmarcada por defecto.
@@ -141,6 +141,7 @@ SajitariosGamespot/Assets/_Gamespot/
 | `verdad_reto_cards.json` (V071) | `[{texto, tipo, nivel}]` (tabla común de cartas) | 562 (verdades 127 / 126, retos 124 / 125, prendas 30 / 30; suave / picante) | ≥ 120 verdades y retos por nivel, ≥ 25 prendas por nivel, sin repetidas, picante sin menores, los retos picantes que tocan a otro piden permiso |
 | `mas_probable_cards.json` (V072) | `[{texto, nivel}]` (lo que va detrás de «que…») | 302 (151 / 151) | ≥ 140 por nivel, ya normalizadas, en minúscula, sin repetidas ni menores |
 | `que_prefieres_cards.json` (V073) | `[{texto, texto_b, nivel}]` | 306 (150 / 156) | ≥ 140 por nivel, las dos opciones (≤ 90 caracteres) y distintas, sin repetidas ni menores |
+| `mimica_cards.json` (V074) | `[{texto, categoria}]` | 557 (películas 90, acciones 87, famosos 72, animales 70, oficios 70, objetos 70, deportes 48, Cachondeo 50) | ≥ 500, ≥ 45 por categoría, ≤ 60 caracteres, sin repetidas |
 | `bomba_silabas.json` | `["CA", …]` | 93 | ≥ 70 |
 | `bomba_categorias.json` | `["nombres de animales", …]` | 83 | ≥ 70 |
 
@@ -199,6 +200,7 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 - **Normalización de nombres** (setups): recortar y colapsar espacios internos a uno; duplicados sin distinguir mayúsculas.
 - **Cartas comunes (V070):** `PromptCard` (texto, segunda opción, nivel suave/picante, tipo y categoría), `NoRepeatDeck` (sin repetir hasta agotar; al volver a empezar no repite la última; una llamada a `NextInt` por carta), `PromptCardRepository` (tabla por juego; seed `[{texto, texto_b?, tipo?, nivel?, categoria?}]`; propias sin repetir otra del mismo tipo, sin mayúsculas ni signos finales) y `PromptCardsScreen` (gestión con búsqueda, filtro todas/mías/nivel/tipo/categoría y formulario con los campos que tenga el juego, según `PromptCardsConfig`).
 - **Confirmación de edad (V070):** `AdultGate.Request` pregunta si todos son mayores de 18 la primera vez en la sesión; si se confirma, ya no pregunta en ningún juego hasta cerrar la app. Yo Nunca la usa con sus textos.
+- **Juegos de adivinar por turnos (V074, Mímica y ¿Quién soy?):** `TeamMatch` (marcador por turnos: gana al acabar una ronda quien llega al objetivo o tras la última ronda; con empate arriba, ronda de desempate; los puntos no bajan de 0) y `GuessGameController` (fases `Preparado, Turno, Resumen, Final`; cartas sin repetir de las categorías elegidas; acierto +1, pases limitados o no y que pueden restar; la carta que está en juego al acabar el tiempo no cuenta; resumen corregible; etiqueta opcional por carta con `NextInt(n)` tras la del mazo). Pantallas comunes en `_Shared/Presentation/GuessScreens` (`GuessReadyScreen`, `GuessSummaryScreen`, `GuessEndScreen`, con `GuessGameHost`); el turno lo pinta cada juego. `PlayerListEditor` sirve para equipos (textos propios y sin los jugadores de la última partida) y `CategoryPicker` puede pedir la confirmación de edad al marcar una categoría +18.
 - **Jugadores guardados (Unity, C2):** al empezar una partida de Impostor, Trivia, Wavelength o La Bomba se guardan los nombres normalizados en la preferencia `last_players` (lista JSON). `PlayerListEditor` arranca con ellos si llega sin ningún nombre (recortados al máximo del juego) y muestra "Usar los de la última partida" cuando los de pantalla no coinciden. Tabú (equipos) y Yo Nunca no tienen lista de jugadores.
 
 ## 6. Especificación de los juegos
@@ -275,6 +277,11 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 - **Dominio:** `QuePrefieresConfig.Create(niveles, opciones)` (nula sin niveles). Opciones: modo (`SoloPreguntas` por defecto / `ContarVotos`), segundos para pensar (0; 5, 10), paga la minoría (sí), preguntas (0 = sin límite; 10, 20, 30), origen. Solo se juegan las cartas con segunda opción.
 - **Flow:** `Setup, Pregunta, Resultado, Final, Error`. Mazo sin repeticiones. `Votar(opción, ±n)` (0–99, solo contando), `Revelar()` (contando → `Resultado`; si no, siguiente), `Siguiente()`, `Saltar()` (no cuenta), `Terminar()`. `QuePrefieresRound`: porcentajes que suman 100, minoría (nula con empate o sin votos) y división (0 unanimidad, 1 mitad y mitad); el final usa la más dividida y la más unánime.
 - **Pantallas:** setup, pregunta (A cian «o» B magenta, contadores, «Pensadlo… n» → «¡Votad!» con bocina y vibración, Ver resultado / Siguiente, Otra pregunta), resultado (porcentaje, barra y votos de cada opción; «Paga la minoría: B, …» o empate) y final. Gestión de preguntas: `/que-prefieres/preguntas`.
+
+### 6.11 Mímica (`mimica`, V074, juego nuevo)
+- **Dominio:** `MimicaConfig.Create(equipos, categorías, opciones)`: 2–4 equipos normalizados y sin repetir, al menos una categoría. Opciones: segundos (60; 30, 45, 90, 120), objetivo (10; 5, 15, 20, 30), pases (sin límite; 0, 1, 3), pasar resta (no), modo (`Mimica` / `Mezcla`: estilos `Mimica, Sonidos, DibujarEnElAire, UnaPalabra`). Categorías: `peliculas, acciones, famosos, animales, oficios, objetos, deportes, cachondeo` (+18, desmarcada por defecto) y las propias; tabla `mimica_cards` y `mimica_categories`.
+- **Partida:** `GuessGameController` (ver §5.8) con `TeamMatch` por objetivo.
+- **Pantallas:** setup, preparados (a quién le toca, marcador, «Empezar turno»), turno (cuenta atrás cian/amarillo/rojo con pitidos y bocina, categoría, estilo en mezcla, tarjeta en mayúsculas —magenta si es +18—, Acierto / Pasar (n)), resumen (tarjetas en verde o rojo que se tocan para corregir, «Apuntar y seguir») y final. Gestión de tarjetas y categorías propias: `/mimica/tarjetas`.
 
 ## 7. Estado de la app Flutter (referencia)
 - v0.75.0+75, Flutter 3.41.4 / Dart 3.11.1, Riverpod 3, go_router 17, Flame 1.37, sqflite. `flutter analyze` limpio, **823 tests**, cobertura 78 %.
@@ -360,6 +367,11 @@ el móvil (V066, V068).
 | LiberationSans (recursos esenciales de TextMeshPro) | OFL 1.1 | Respaldo de los caracteres que Roboto no tenga |
 
 ## 10. Registro de trabajo (lo más reciente arriba)
+
+### 2026-10-26 · V074 · Mímica por equipos
+- Juego nuevo `Games/Mimica/`: el Tabú sin hablar, por equipos (2–4) y con muchas reglas a elegir: tiempo, puntos para ganar, pases (con límite y que restan) y modo mezcla (mímica, sonidos, dibujar en el aire o una palabra). Ocho categorías (Cachondeo +18 con la confirmación de edad), categorías y tarjetas propias. 557 tarjetas nuevas.
+- Base común para ¿Quién soy?: `TeamMatch`, `GuessGameController`, `GuessScreens`; `PlayerListEditor` para equipos; `CategoryPicker` con confirmación de edad opcional; `NeonChip.SetAccent`.
+- 318 EditMode, PlayMode del juego 3/3, barrido limpio (el script ya no cuenta como cortado lo escrito en un campo de texto, que se desplaza). Capturas `V074_mimica_*`.
 
 ### 2026-10-26 · V073 · ¿Qué prefieres?
 - Juego nuevo `Games/QuePrefieres/`: dos opciones imposibles, votación a mano y, si se quiere, recuento con porcentajes, «Paga la minoría» y resumen final (la que más os dividió y la más unánime). Suave y picante +18, preguntas propias con las dos opciones. 306 preguntas nuevas.

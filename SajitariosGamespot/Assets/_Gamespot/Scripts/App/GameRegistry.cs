@@ -3,6 +3,7 @@ using Gamespot.Games.Bomba;
 using Gamespot.Games.EsUn10Pero;
 using Gamespot.Games.Impostor;
 using Gamespot.Games.MasProbable;
+using Gamespot.Games.Mimica;
 using Gamespot.Games.QuePrefieres;
 using Gamespot.Games.Trivia;
 using Gamespot.Games.Wavelength;
@@ -32,6 +33,7 @@ namespace Gamespot.App
             new VerdadRetoGame(),
             new MasProbableGame(),
             new QuePrefieresGame(),
+            new MimicaGame(),
         };
     }
 }
