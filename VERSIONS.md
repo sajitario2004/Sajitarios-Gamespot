@@ -19,10 +19,12 @@ Cierre técnico de cada versión con código Unity: recompilación sin errores, 
 
 ## Fase 1 — Proyecto Unity base
 
-- [ ] **V005 · Crear el proyecto** `SajitariosGamespot/` con Unity 6000.3.27f1 y URP (skill `unity:new-unity-project`). *Visible Meta Files*, *Force Text*.
+- [x] **V005 · Crear el proyecto** `SajitariosGamespot/` con Unity 6000.3.27f1 y URP (skill `unity:new-unity-project`). *Visible Meta Files*, *Force Text*.
   - Acepta: el proyecto abre sin errores y la CLI conecta (`U editor status` → `ready`).
-- [ ] **V006 · Paquetes.** Input System, Test Framework, uGUI (TMP), `com.unity.pipeline`, sqlite-net (`https://github.com/gilzoide/unity-sqlite-net.git#1.3.3`).
+  - Notas: plantilla `com.unity.template.universal-2d` (URP con Renderer 2D), creada con `--with-pipeline --no-cloud` (sin proyecto en Unity Cloud).
+- [x] **V006 · Paquetes.** Input System, Test Framework, uGUI (TMP), `com.unity.pipeline`, sqlite-net (`https://github.com/gilzoide/unity-sqlite-net.git#1.3.3`).
   - Acepta: `manifest.json` con los paquetes; recompila sin errores; licencias anotadas en `CONTEXT.md` §9.
+  - Notas: Input System 1.20.1, Test Framework 1.6.0, uGUI 2.0.0, Pipeline 0.9.1-exp.1 y URP 17.3.0 venían con la plantilla. sqlite-net con `package add` (asmdef `Gilzoide.SqliteNet`, namespace `SQLite`). La plantilla trae paquetes 2D, Visual Scripting, Multiplayer Center y `collab-proxy` que no se usan: se pueden quitar con permiso del autor.
 - [ ] **V007 · Player Settings por código** (`Gamespot → Configuración → Aplicar todo`): compañía, producto, id `com.sajitarios.sajitarios_gamespot`, vertical, IL2CPP + ARM64, sin splash de Unity, fondo `#0A0A14`.
   - Acepta: `git diff ProjectSettings/` muestra los valores; repetir el menú no cambia nada.
 - [ ] **V008 · Estructura y assemblies** de `CONTEXT.md` §4, con `Gamespot.Core` y los `*.Domain` sin referencias a UnityEngine, y los asmdef de tests.

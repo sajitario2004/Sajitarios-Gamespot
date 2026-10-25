@@ -230,9 +230,16 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 | Componente | Licencia | Uso |
 |---|---|---|
 | Open Trivia DB (preguntas base de la trivia) | CC BY-SA 4.0 | Atribución en el setup de la trivia |
-| `gilzoide/unity-sqlite-net` 1.3.3 (SQLite-net 1.9 + SQLite3 Multiple Ciphers) | MIT | Persistencia SQLite (pendiente de instalar en V006) |
+| `gilzoide/unity-sqlite-net` 1.3.3 (SQLite-net 1.9 + SQLite3 Multiple Ciphers) | MIT | Persistencia SQLite. Revisado el 2026-10-25: 299 estrellas, activo (último push 2026-10-14), no archivado |
+| Paquetes de Unity (URP, uGUI/TextMeshPro, Input System, Test Framework, Pipeline) | Unity Companion License | Motor, UI, entrada, tests y puente de la CLI |
 
 ## 10. Registro de trabajo (lo más reciente arriba)
+
+### 2026-10-25 · V005–V006 · Proyecto Unity y paquetes
+- Skills: `unity:new-unity-project` y `unity:unity-cli`.
+- `unity projects create SajitariosGamespot --editor-version 6000.3.27f1 --template com.unity.template.universal-2d --with-pipeline --no-cloud`. Ya trae *Force Text* y *Visible Meta Files*. Abierto con `unity open`; la CLI conecta (`ready`).
+- sqlite-net 1.3.3 instalado con `U package add --identifier <git>#1.3.3 --confirm true --wait true`.
+- Aviso esperado en consola: el buscador del Package Manager falla sin credenciales («lacks valid authentication credentials») porque la sesión de Unity está caducada; no afecta a la compilación.
 
 ### 2026-10-25 · V003–V004 · Git, herramientas y memoria
 - `.gitignore` (Unity anclado a `SajitariosGamespot/` + Flutter anclado a `Legacy/Flutter/`) y `.gitattributes` (plantilla Unity de AZÚCAR: LFS para binarios, YAML de Unity con `unityyamlmerge`; `Legacy/**` fuera de LFS).
