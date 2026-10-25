@@ -31,6 +31,8 @@ Archivo vivo. Añade una línea cada vez que el autor exprese un gusto, una corr
 
 - (2026-10-25) Prueba la app **en su móvil** y manda capturas de lo que falla. Quiere las **descripciones del menú cortas y con la letra más pequeña**, y que se compruebe que **no se corta ningún texto** en ninguna pantalla.
 
+- (2026-10-25) Quiere la app **lo más personalizable posible**, empezando por el Impostor y el Tabú: crear sus propias categorías, elegir la categoría antes de empezar y crear sus propias palabras y tarjetas.
+
 ## Diseño
 - (heredado) Estética **neón cyberpunk**: fondo casi negro, cian y magenta con brillo, rejilla de fondo.
 - (heredado) **Nada de emojis**, ni en el código ni en los textos: solo iconos.

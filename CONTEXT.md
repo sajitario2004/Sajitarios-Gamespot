@@ -9,6 +9,8 @@
 > Qué mejoras y cuáles de los 5 juegos nuevos se hacen (V059a/V059b).
 > **Hechas las mejoras elegidas del plan (fase 10c):** C2, C3+L1, B1+B2, C4, I1, T1, W2 (estado en `Docs/PLAN_MEJORAS.md`).
 > **Hecho (V059h–V059j):** Impostor (2525) y Tabú (1161) por categorías elegibles en el setup, con Cachondeo +18 desmarcada por defecto.
+> **Hecho (V059m):** categorías propias en el Impostor y el Tabú, palabras y tarjetas propias en la categoría que se elija y gestión de tarjetas del Tabú.
+> **Pendiente de probar a mano (V059m):** crear una categoría, meter palabras o tarjetas en ella desde el móvil (con el teclado) y jugar solo con ella.
 > **Pendiente del autor:** aclarar 7 palabras de Cachondeo (Pereira, Fabiana Sevillano, «dedear panchas», «padalustro», «amigo kebap»,
 > «magic» y «virgen»; ver V059j en §10). Las 221 complicadas quedan fuera (V059k).
 > **Ojo al probar en el móvil (V059l):** la captura de Wavelength roto que mandó el autor era de la **app Flutter antigua**,
@@ -59,6 +61,10 @@ Historia: otra IA construyó la app completa en **Flutter** (v0.1 → v0.75, fas
 | 2026-10-25 | Localización con un servicio propio ligero (JSON convertido de los ARB, plurales ICU), sin el paquete Localization ni Addressables | Claude, revisable |
 | 2026-10-25 | BD Unity arranca en versión 1 con el esquema final (v8) del Flutter: no hay instalaciones Unity previas que migrar | Claude |
 | 2026-10-25 | Se corrigen de paso los fallos heredados de §8.1; el resto se porta 1:1 | Claude, revisable |
+| 2026-10-25 | Categorías propias (V059m): **una tabla por juego** (`impostor_categories`, `tabu_categories`) con el código común en `Games/_Shared`; ids `custom_N`; los nombres no se repiten (sin distinguir mayúsculas) ni con los de serie | Claude, revisable |
+| 2026-10-25 | Borrar una categoría propia **no borra sus palabras**: pasan a «Mis palabras» | Claude, revisable |
+| 2026-10-25 | Las palabras y tarjetas propias pueden ir a cualquier categoría: «Mis palabras», una propia o una de serie (también Cachondeo) | Claude, revisable |
+| 2026-10-25 | El editor de tarjetas del Tabú es una **pantalla con scroll**, no un diálogo (seis campos y el teclado del móvil) | Claude, revisable |
 
 ## 4. Arquitectura Unity
 
@@ -100,6 +106,7 @@ SajitariosGamespot/Assets/_Gamespot/
 | Tabla | Columnas | Índice |
 |---|---|---|
 | `impostor_words` | `id` PK AI, `word` TEXT NN **UNIQUE COLLATE NOCASE**, `hint` TEXT NN, `is_seed` INT NN DEF 0, `created_at` INT NN (epoch ms) | `idx_impostor_words_word(word)` |
+| `impostor_categories` / `tabu_categories` (V059m) | `id` PK AI, `name` TEXT NN **UNIQUE COLLATE NOCASE**, `created_at` INT NN | — |
 | `game_history` | `id` PK AI, `created_at` INT NN, `word` TEXT NN, `hint` TEXT nullable, `n_players` INT NN, `n_impostors` INT NN, `hint_enabled` INT NN, `players_json` TEXT NN | `idx_game_history_created_at(created_at)` |
 | `trivia_questions` | `id` PK AI, `tematica_id` TEXT NN, `difficulty` TEXT NN, `enunciado` TEXT NN, `options_json` TEXT NN, `correct_index` INT NN, `is_seed` INT NN DEF 0 | `idx_trivia_questions_tema_diff(tematica_id, difficulty)` |
 | `trivia_winners` | `id` PK AI, `name` TEXT NN **UNIQUE COLLATE NOCASE**, `wins` INT NN DEF 0 | — |
@@ -196,7 +203,7 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
   - **Revelar:** "Es el turno de {nombre}", rol oculto hasta pulsar "Revelar" (glow magenta, suena `Reveal`); animación 350 ms (fade + escala 0.92 → 1). Impostor: panel magenta con pulso 0.85–1.4, "IMPOSTOR" y, con pista, "Pista" + la pista con glow violeta. Palabra: panel cian con pulso 0.8–1.2, "Tu palabra es" + la palabra. Botón "Ocultar y pasar" ("Ocultar y ver resultados" en el último).
   - **Votación:** "Ronda X de Y" (magenta), instrucción, tras cada voto "El impostor sigue entre vosotros"; candidatos en tarjetas cian; impostores pillados tachados en gris; confirmar "¿Expulsar a {nombre}?".
   - **Fin:** suena `GameOver` y se guarda el historial (una vez). **Nunca muestra roles ni la palabra.** "¡Habéis ganado!" (trofeo cian) o "El impostor sigue entre vosotros" (máscara magenta). Botones "Jugar otra" y "Volver al menú". Las partidas abandonadas no se guardan.
-  - **Gestión de palabras:** búsqueda con *debounce* de **280 ms**; seed con borde violeta, chip "Predefinida" con candado y sin editar/borrar; propias con borde cian; formulario con palabra y pista obligatorias; confirmación al borrar; snackbars de resultado; estados vacío/sin coincidencias/error. Lista virtualizada (2060 filas).
+  - **Gestión de palabras:** búsqueda con *debounce* de **280 ms**; seed con borde violeta, chip "Predefinida" con candado y sin editar/borrar; propias con borde cian; formulario con palabra y pista obligatorias; confirmación al borrar; snackbars de resultado; estados vacío/sin coincidencias/error. Lista virtualizada (2060 filas). En Unity (V059m): cada fila enseña su categoría; filtro por categoría junto a la búsqueda (con «Todas»); el formulario elige la categoría en otro diálogo, con «Nueva categoría» para crearla sin salir (una nueva va a la del filtro si se puede elegir, si no a «Mis palabras»); la barra abre «Mis categorías» (`CustomCategoriesScreen`: crear, renombrar, borrar, con cuántas palabras tiene cada una).
   - **Historial:** estadísticas calculadas en la pantalla: total de partidas, palabra más repetida (agrupada en minúsculas, desempate por la menor, se muestra la grafía más reciente) y ranking de impostores (nombre exacto, más veces primero). Cada partida, desplegable: palabra, fecha corta + HH:mm, nº de jugadores e impostores, pista activa o no y el rol de cada jugador (el historial sí revela roles). "Borrar todo" con confirmación.
 
 ### 6.3 Preguntas por puntos (`trivia`)
@@ -217,6 +224,7 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 - **Dominio:** `TabuWord(palabra, prohibidas[4..5])`. `TabuConfig.Create(equipoA, equipoB, turnoSegundos = 60, objetivoVictorias = 3)`: errores en orden equipo A vacío, equipo B vacío, duplicados, turno fuera de [30,120], objetivo ≤ 0.
   - `TabuSession`: empieza el equipo A. Acierto +1; Saltar sin límite (no se muestra); Falta −1 sin bajar de 0 y **sin cortar el turno**. `TerminarTurno`: si los aciertos > 0, **+1 victoria de ronda** para el equipo; cambia de equipo y reinicia contadores. Gana el primero en llegar al objetivo. Palabras sin repetir en la partida (`PickTabuWordUseCase`). En el Flutter, si se agotaban se quedaba la actual; en Unity (V059e) vuelven a salir todas menos la actual y el turno avisa una vez (`tabuPalabrasAgotadas`).
 - **Pantallas:** setup (nombres de los dos equipos, chips 30/60/90 s, 60 por defecto; objetivo siempre 3). Turno: palabra en MAYÚSCULAS, lista de prohibidas, equipo en violeta, contador de aciertos en la AppBar, cuenta atrás (cian > 10, amarillo 6–10, rojo ≤ 5) y botones Acierto (verde), Saltar (cian), Falta (rojo). El temporizador vive en la pantalla (tic de 1 s; al llegar a 0 termina el turno). Marcador: "Objetivo: 3 victorias de ronda", "A: x / 3" (cian) y "B: y / 3" (violeta), "Siguiente turno". Fin: equipo ganador, marcadores y "Volver al menú" (en el Flutter no había "jugar otra"; en Unity sí, ver §8.1). Sin sonido en el Flutter.
+- **Tarjetas propias (V059m, nuevo en Unity):** el setup abre la gestión de tarjetas (`/tabu/words`): búsqueda, filtro por categoría, las de serie con candado y las propias editables. El editor (`TabuCardEditScreen`, apilado) pide la palabra, 5 prohibidas (la quinta opcional) y la categoría. Reglas (`TabuCardRules`, dominio): palabra obligatoria, 4–5 prohibidas, ninguna repetida ni igual a la palabra (sin distinguir mayúsculas); el repositorio, además, no deja repetir la palabra de otra tarjeta. Categorías propias como en el Impostor; el setup las enseña con «Mis palabras».
 
 ### 6.6 Yo Nunca (`yo_nunca`)
 - **Dominio:** `Intensidad {Suave, Picante}`, `NeverStatement(frase, intensidad)`, `YoNuncaConfig` (al menos una intensidad). `DrawStatementUseCase(pool, intensidades, vistas)`: filtra, quita las vistas; si ya se vieron todas, vacía las vistas y vuelve a empezar (puede repetirse la última); elige con `NextInt`.
@@ -265,6 +273,13 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 | Paquetes de Unity (URP, uGUI/TextMeshPro, Input System, Test Framework, Pipeline) | Unity Companion License | Motor, UI, entrada, tests y puente de la CLI |
 
 ## 10. Registro de trabajo (lo más reciente arriba)
+
+### 2026-10-25 · V059m · Categorías y tarjetas propias en el Impostor y el Tabú
+- **Común (`Games/_Shared`):** `CustomCategoryRepository` (tabla de cada juego, `CreateTable` desde su esquema; nombres limpios de hasta 24 caracteres, sin repetir sin distinguir mayúsculas, en C# porque NOCASE de SQLite solo iguala ASCII, ni con los nombres de serie del idioma actual); `CategoryOption` (id + nombre, «Mis palabras» si la propia ya no existe); `CategorySelectDialog` (chips en un scroll, «Todas» y «Nueva categoría» opcionales); `CategoryNameDialog`; `CustomCategoriesScreen`. `CategoryPicker` recibe opciones con nombre y un conjunto de «ya vistas»: una categoría que aparece por primera vez sale marcada (salvo las +18). `WordCategories.CustomId/IsCustom`. Iconos nuevos `Category` y `FilterList` (sustitutos «#» y «=» hasta que haya fuente de iconos). `Dialogs.Close`.
+- **Impostor:** `WordRepository.Insert/Update` con categoría, `Search(texto, categoría)` y `MoveCategory`; la gestión de palabras enseña la categoría, filtra y elige categoría en el formulario. El setup enseña las propias con palabras (al final, con su nombre).
+- **Tabú:** `TabuCard`, `TabuWordRepository.Search/GetById/Insert/Update/Delete/MoveCategory` con `TabuCardException` (no válida, repetida, no existe, de serie); `TabuWordsScreen` y `TabuCardEditScreen`; el setup abre las tarjetas desde la barra y enseña «Mis palabras» y las propias.
+- **Arreglos que salieron al mirarlo:** un `NeonButton` creado sin texto no tiene etiqueta que cambiar luego (el botón de categoría salía vacío); los chips del selector necesitaban margen dentro del scroll; las columnas de texto de las filas usan ancho preferido 0 para no aplastar el chip «Predefinida» y las prohibidas largas van en tres líneas.
+- Tests: repositorio de categorías, palabras y tarjetas con categoría, reglas de tarjeta (también en el arnés .NET), PlayMode del flujo completo (crear categoría, palabra o tarjeta en ella, sale marcada en el setup, partida solo con ella, filtro, renombrar, borrar sin perder palabras, validación del editor). Barrido de textos de las pantallas nuevas, con los diálogos abiertos y las tarjetas más largas: limpio. 250 EditMode + 53 PlayMode; arnés .NET 178. Capturas `V059m_*`.
 
 ### 2026-10-25 · V059l · Menú y textos que no caben
 - **Wavelength:** la captura del móvil era de la app Flutter (textos sin tildes del ARB: «Psiquico», «movil»; icono de casa de Material; el dial descentrado es el fallo que ya se arregló en el port). En Unity, a 1080×2340, el dial sale centrado y con tildes (`V059l_wavelength_movil.png`). Hay que instalar el APK nuevo (y, si el móvil dice que hay conflicto, desinstalar antes la app vieja: mismo id).

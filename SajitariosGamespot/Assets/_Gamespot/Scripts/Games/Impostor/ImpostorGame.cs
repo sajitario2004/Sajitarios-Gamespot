@@ -27,7 +27,8 @@ namespace Gamespot.Games.Impostor
             var history = new GameHistoryRepository(context.Db);
             var source = new CategoryWordSource(words);
             var flow = new ImpostorFlowController(source, context.Random);
-            var module = new ImpostorModule(flow, words, history, context.Audio, context.Router, source);
+            var categories = new CustomCategoryRepository(context.Db, ImpostorSchema.CategoriesTable);
+            var module = new ImpostorModule(flow, words, history, context.Audio, context.Router, source, categories);
             Module = module;
 
             var router = context.Router;

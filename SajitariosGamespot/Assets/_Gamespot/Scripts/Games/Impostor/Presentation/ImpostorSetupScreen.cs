@@ -16,8 +16,8 @@ namespace Gamespot.Games.Impostor
     /// Configuración de la partida (port de <c>SetupScreen</c>): 3–15 jugadores en orden de revelación, impostores
     /// 1..min(5, n−1), rondas de votación 1..max(1, n−3) y pista. Las rondas empiezan en el máximo y lo siguen al
     /// añadir o quitar jugadores hasta que se tocan; luego solo se recortan (I1; en el Flutter empezaban en 1).
-    /// Categorías (V059i): la palabra sale solo de las marcadas. Al empezar valida con <see cref="GameConfig.Create"/>
-    /// y reparte roles.
+    /// Categorías (V059i): la palabra sale solo de las marcadas, también de las propias (V059l). Al empezar valida con
+    /// <see cref="GameConfig.Create"/> y reparte roles.
     /// </summary>
     public sealed class ImpostorSetupScreen : AppScreen
     {
@@ -77,24 +77,28 @@ namespace Gamespot.Games.Impostor
                 _module.Draft.HintEnabled = v;
             };
 
-            _categories = CategoryPicker.Create(content, AvailableCategories(), draft.Categories, Palette.NeonCyan);
+            _categories = CategoryPicker.Create(content, AvailableCategories(), draft.Categories, Palette.NeonCyan, draft.KnownCategories);
 
             Ui.Space(content, 8f);
             Ui.Button(content, Loc.T("empezarPartida"), Start, ButtonStyle.Filled, IconId.ArrowForward, glow: 0.8f);
             OnPlayersChanged();
         }
 
-        /// <summary>Categorías con alguna palabra, en el orden de los chips ("Mis palabras" solo si hay propias).</summary>
-        private IReadOnlyList<string> AvailableCategories()
+        /// <summary>
+        /// Categorías con alguna palabra, en el orden de los chips: las de serie, "Mis palabras" y las propias (solo
+        /// las que tienen palabras).
+        /// </summary>
+        private IReadOnlyList<CategoryOption> AvailableCategories()
         {
+            var custom = _module.CustomCategoriesOrEmpty();
             try
             {
                 var counts = _module.Words.CountByCategory();
-                return WordCategories.All.Where(id => counts.TryGetValue(id, out var n) && n > 0).ToList();
+                return CategoryOption.For(CategoryOption.AllIds(custom).Where(id => counts.TryGetValue(id, out var n) && n > 0), custom);
             }
             catch (System.Exception)
             {
-                return WordCategories.Seed;
+                return CategoryOption.For(WordCategories.Seed, custom);
             }
         }
 

@@ -21,17 +21,40 @@ namespace Gamespot.Games.Tabu
         public const string TurnRoute = "/tabu/turn";
         public const string ScoreboardRoute = "/tabu/scoreboard";
         public const string GameOverRoute = "/tabu/game-over";
+        public const string WordsRoute = "/tabu/words";
 
-        public TabuModule(TabuFlowController flow, Router router, AudioService audio, TabuWordRepository words, CategoryTabuWordSource source)
+        public TabuModule(TabuFlowController flow, Router router, AudioService audio, TabuWordRepository words, CategoryTabuWordSource source,
+            CustomCategoryRepository categories)
         {
             Flow = flow;
             Router = router;
             Audio = audio;
             Words = words;
             WordSource = source;
+            Categories = categories;
         }
 
         public TabuWordRepository Words { get; }
+
+        /// <summary>Categorías que ha creado el usuario (V059l).</summary>
+        public CustomCategoryRepository Categories { get; }
+
+        /// <summary>Las que el setup ya ha enseñado: una propia que aparece por primera vez sale marcada (V059l).</summary>
+        public HashSet<string> KnownCategorias { get; } = new HashSet<string>(WordCategories.All);
+
+        /// <summary>Las categorías propias, o ninguna si la BD falla.</summary>
+        public List<CustomCategory> CustomCategoriesOrEmpty()
+        {
+            try
+            {
+                return Categories.GetAll();
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning($"[Tabú] No se pudieron cargar las categorías: {e.Message}");
+                return new List<CustomCategory>();
+            }
+        }
 
         /// <summary>De dónde saca tarjetas la partida (con las categorías del setup).</summary>
         public CategoryTabuWordSource WordSource { get; }
@@ -79,7 +102,7 @@ namespace Gamespot.Games.Tabu
 
     /// <summary>
     /// Setup: nombres de los dos equipos, duración del turno (30/60/90 s, 60 por defecto) y categorías de las
-    /// tarjetas (V059i). Objetivo fijo: 3.
+    /// tarjetas (V059i; también las propias, V059l). Objetivo fijo: 3. Desde la barra se abre la gestión de tarjetas.
     /// </summary>
     public sealed class TabuSetupScreen : AppScreen
     {
@@ -100,6 +123,7 @@ namespace Gamespot.Games.Tabu
             var scaffold = ScreenScaffold.Create(root, Loc.T("tabuTitulo"));
             GameUi.HomeButton(scaffold.AppBar, Router);
             GameUi.RulesButton(scaffold.AppBar, Router, "tabuTitulo", GameUi.RuleKeys("reglasTabu", 5));
+            scaffold.AppBar.AddAction(IconId.MenuBook, () => Router.Go(TabuModule.WordsRoute)).name = Loc.T("gestionarTarjetas");
             var content = Ui.Scroll(scaffold.Body, 16f, new RectOffset(16, 16, 8, 32));
 
             var teams = Ui.Panel(content, Palette.NeonCyan.WithAlpha(0.5f), glow: 0.3f, spacing: 10f);
@@ -124,21 +148,23 @@ namespace Gamespot.Games.Tabu
                 _chips[s] = chip;
             }
 
-            _categories = CategoryPicker.Create(content, AvailableCategories(), _module.DraftCategorias, Palette.NeonCyan);
+            _categories = CategoryPicker.Create(content, AvailableCategories(), _module.DraftCategorias, Palette.NeonCyan, _module.KnownCategorias);
 
             Ui.Button(content, Loc.T("tabuEmpezarPartida"), Start, ButtonStyle.Filled, IconId.ArrowForward, glow: 0.8f);
         }
 
-        private IReadOnlyList<string> AvailableCategories()
+        /// <summary>Las categorías con alguna tarjeta: las de serie, "Mis palabras" y las propias.</summary>
+        private IReadOnlyList<CategoryOption> AvailableCategories()
         {
+            var custom = _module.CustomCategoriesOrEmpty();
             try
             {
                 var counts = _module.Words.CountByCategoria();
-                return WordCategories.Seed.Where(id => counts.TryGetValue(id, out var n) && n > 0).ToList();
+                return CategoryOption.For(CategoryOption.AllIds(custom).Where(id => counts.TryGetValue(id, out var n) && n > 0), custom);
             }
             catch (System.Exception)
             {
-                return WordCategories.Seed;
+                return CategoryOption.For(WordCategories.Seed, custom);
             }
         }
 

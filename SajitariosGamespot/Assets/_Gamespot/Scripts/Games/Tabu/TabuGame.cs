@@ -6,7 +6,10 @@ using Gamespot.Games.Tabu.Domain;
 
 namespace Gamespot.Games.Tabu
 {
-    /// <summary>Descriptor del Tabú: dos equipos, turnos con tiempo y primero a 3 victorias de ronda.</summary>
+    /// <summary>
+    /// Descriptor del Tabú: dos equipos, turnos con tiempo y primero a 3 victorias de ronda. Tarjetas de seed por
+    /// categorías y, desde V059l, tarjetas y categorías propias.
+    /// </summary>
     public sealed class TabuGame : IGameDescriptor
     {
         public string Id => "tabu";
@@ -21,12 +24,14 @@ namespace Gamespot.Games.Tabu
         {
             var words = new TabuWordRepository(context.Db);
             var source = new CategoryTabuWordSource(words);
-            var module = new TabuModule(new TabuFlowController(source, context.Random), context.Router, context.Audio, words, source);
+            var categories = new CustomCategoryRepository(context.Db, TabuSchema.CategoriesTable);
+            var module = new TabuModule(new TabuFlowController(source, context.Random), context.Router, context.Audio, words, source, categories);
             Module = module;
             context.Router.Register(TabuModule.SetupRoute, () => new TabuSetupScreen(module));
             context.Router.Register(TabuModule.TurnRoute, () => new TabuTurnScreen(module));
             context.Router.Register(TabuModule.ScoreboardRoute, () => new TabuScoreboardScreen(module));
             context.Router.Register(TabuModule.GameOverRoute, () => new TabuGameOverScreen(module));
+            context.Router.Register(TabuModule.WordsRoute, () => new TabuWordsScreen(module));
         }
 
         public void OnCreate(IDb db) => TabuSchema.Create(db);

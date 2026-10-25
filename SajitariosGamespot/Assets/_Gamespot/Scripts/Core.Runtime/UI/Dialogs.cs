@@ -160,6 +160,13 @@ namespace Gamespot.Core.Runtime.UI
             return true;
         }
 
+        /// <summary>Cierra el diálogo que devolvió <see cref="Show"/> sin llamar a su <c>onDismiss</c> (p. ej. al elegir en una lista).</summary>
+        public static void Close(GameObject dialog)
+        {
+            var entry = Open.Find(e => e.Root == dialog);
+            if (entry != null) Close(entry);
+        }
+
         public static void CloseAll()
         {
             if (Open.Count == 0) return;

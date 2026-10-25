@@ -3,17 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using Gamespot.Core;
 using Gamespot.Core.Runtime.Db;
+using Gamespot.Games.Shared;
 using Gamespot.Games.Tabu.Domain;
 
 namespace Gamespot.Games.Tabu.Data
 {
     /// <summary>
-    /// Tabla <c>tabu_words</c> (prohibidas en JSON y categoría, <see cref="WordCategories"/>) y su seed
-    /// (<c>[{palabra, prohibidas[4..5], categoria}]</c>, 1161).
+    /// Tabla <c>tabu_words</c> (prohibidas en JSON y categoría, <see cref="WordCategories"/>), las categorías propias
+    /// (<c>tabu_categories</c>, V059l) y el seed (<c>[{palabra, prohibidas[4..5], categoria}]</c>, 1161).
     /// </summary>
     public static class TabuSchema
     {
         public const string Table = "tabu_words";
+        public const string CategoriesTable = "tabu_categories";
         public const string SeedName = "tabu_words";
 
         /// <summary>
@@ -38,6 +40,7 @@ namespace Gamespot.Games.Tabu.Data
                        "prohibidas_json TEXT NOT NULL, is_seed INTEGER NOT NULL DEFAULT 0, categoria TEXT NOT NULL DEFAULT 'general')");
             AppDatabase.AddColumnIfMissing(db, Table, "categoria", "TEXT NOT NULL DEFAULT 'general'");
             db.Execute("CREATE INDEX IF NOT EXISTS idx_tabu_words_categoria ON tabu_words(categoria)");
+            CustomCategoryRepository.CreateTable(db, CategoriesTable);
         }
 
         public static int SeedIfEmpty(IDb db, ISeedSource seeds)
@@ -76,16 +79,55 @@ namespace Gamespot.Games.Tabu.Data
         }
     }
 
-    /// <summary>Palabras del Tabú, por id.</summary>
+    /// <summary>Una tarjeta tal como está en la BD (para la gestión de tarjetas).</summary>
+    public sealed class TabuCard
+    {
+        public long Id { get; set; }
+        public string Palabra { get; set; }
+        public IReadOnlyList<string> Prohibidas { get; set; }
+        public bool IsSeed { get; set; }
+        public string Categoria { get; set; }
+    }
+
+    public enum TabuCardProblem
+    {
+        Invalida,
+        Duplicada,
+        NoExiste,
+        Predefinida
+    }
+
+    /// <summary>No se pudo guardar o borrar una tarjeta propia (con el motivo de validación si no era válida).</summary>
+    public sealed class TabuCardException : Exception
+    {
+        public TabuCardException(TabuCardProblem problem, TabuCardError? validation = null) : base($"Tarjeta no válida: {problem} {validation}")
+        {
+            Problem = problem;
+            Validation = validation;
+        }
+
+        public TabuCardProblem Problem { get; }
+        public TabuCardError? Validation { get; }
+    }
+
+    /// <summary>
+    /// Tarjetas del Tabú: la fuente de la partida (por id o por categorías) y, desde V059l, la gestión de las propias:
+    /// búsqueda (también por categoría), alta, edición y borrado, con las reglas de <see cref="TabuCardRules"/> y sin
+    /// repetir la palabra de otra tarjeta. Las del seed son de solo lectura.
+    /// </summary>
     public sealed class TabuWordRepository : ITabuWordSource
     {
-        private const string Select = "SELECT id AS Id, palabra AS Palabra, prohibidas_json AS ProhibidasJson FROM tabu_words";
+        private const string Select = "SELECT id AS Id, palabra AS Palabra, prohibidas_json AS ProhibidasJson, is_seed AS IsSeed, " +
+                                      "categoria AS Categoria FROM tabu_words";
+        private const string ByPalabra = " ORDER BY palabra COLLATE NOCASE ASC, id ASC";
 
         private sealed class Row
         {
             public long Id { get; set; }
             public string Palabra { get; set; }
             public string ProhibidasJson { get; set; }
+            public bool IsSeed { get; set; }
+            public string Categoria { get; set; }
         }
 
         private sealed class CategoryCount
@@ -113,6 +155,90 @@ namespace Gamespot.Games.Tabu.Data
         public Dictionary<string, long> CountByCategoria() =>
             _db.Query<CategoryCount>("SELECT categoria AS Categoria, COUNT(*) AS Total FROM tabu_words GROUP BY categoria")
                 .ToDictionary(c => c.Categoria, c => c.Total);
+
+        /// <summary>Todas las tarjetas ordenadas por palabra, o las que contienen <paramref name="query"/> y/o son de <paramref name="categoria"/>.</summary>
+        public List<TabuCard> Search(string query = null, string categoria = null)
+        {
+            var q = query?.Trim() ?? string.Empty;
+            var filters = new List<string>();
+            var args = new List<object>();
+            if (q.Length > 0)
+            {
+                filters.Add("palabra LIKE ? ESCAPE '\\'");
+                args.Add($"%{q.Replace("\\", "\\\\").Replace("%", "\\%").Replace("_", "\\_")}%");
+            }
+            if (!string.IsNullOrEmpty(categoria))
+            {
+                filters.Add("categoria = ?");
+                args.Add(categoria);
+            }
+            var where = filters.Count == 0 ? string.Empty : " WHERE " + string.Join(" AND ", filters);
+            return _db.Query<Row>(Select + where + ByPalabra, args.ToArray()).Select(ToCard).ToList();
+        }
+
+        public TabuCard GetById(long id) => _db.Query<Row>(Select + " WHERE id = ?", id).Select(ToCard).FirstOrDefault();
+
+        /// <summary>Añade una tarjeta propia en <paramref name="categoria"/> (vacía = "Mis palabras"). Lanza <see cref="TabuCardException"/>.</summary>
+        public long Insert(string palabra, IEnumerable<string> prohibidas, string categoria = WordCategories.Propias)
+        {
+            var (p, forbidden) = Clean(palabra, prohibidas);
+            if (Exists(p, null)) throw new TabuCardException(TabuCardProblem.Duplicada);
+            _db.Execute("INSERT INTO tabu_words (palabra, prohibidas_json, is_seed, categoria) VALUES (?, ?, 0, ?)", p,
+                JsonWriter.WriteStringArray(forbidden), CleanCategory(categoria));
+            return _db.LastInsertRowId;
+        }
+
+        /// <summary>Edita una tarjeta propia (<paramref name="categoria"/> nula = la que tenía). Errores: no válida, no existe, seed, duplicada.</summary>
+        public void Update(long id, string palabra, IEnumerable<string> prohibidas, string categoria = null)
+        {
+            var (p, forbidden) = Clean(palabra, prohibidas);
+            var current = GetById(id) ?? throw new TabuCardException(TabuCardProblem.NoExiste);
+            if (current.IsSeed) throw new TabuCardException(TabuCardProblem.Predefinida);
+            if (Exists(p, id)) throw new TabuCardException(TabuCardProblem.Duplicada);
+            _db.Execute("UPDATE tabu_words SET palabra = ?, prohibidas_json = ?, categoria = ? WHERE id = ? AND is_seed = 0", p,
+                JsonWriter.WriteStringArray(forbidden), categoria == null ? current.Categoria : CleanCategory(categoria), id);
+        }
+
+        /// <summary>Borra una tarjeta propia. Errores: no existe, seed.</summary>
+        public void Delete(long id)
+        {
+            var current = GetById(id) ?? throw new TabuCardException(TabuCardProblem.NoExiste);
+            if (current.IsSeed) throw new TabuCardException(TabuCardProblem.Predefinida);
+            _db.Execute("DELETE FROM tabu_words WHERE id = ? AND is_seed = 0", id);
+        }
+
+        /// <summary>Pasa las tarjetas propias de una categoría a otra (al borrar una categoría propia). Devuelve cuántas.</summary>
+        public int MoveCategory(string from, string to) =>
+            _db.Execute("UPDATE tabu_words SET categoria = ? WHERE categoria = ? AND is_seed = 0", CleanCategory(to), from);
+
+        private static (string palabra, List<string> prohibidas) Clean(string palabra, IEnumerable<string> prohibidas)
+        {
+            var error = TabuCardRules.Validate(palabra, prohibidas, out var p, out var forbidden);
+            if (error != null) throw new TabuCardException(TabuCardProblem.Invalida, error);
+            return (p, forbidden);
+        }
+
+        private static string CleanCategory(string categoria) => string.IsNullOrWhiteSpace(categoria) ? WordCategories.Propias : categoria.Trim();
+
+        /// <summary>
+        /// Si otra tarjeta ya tiene esa palabra. En C# y no con NOCASE: SQLite solo iguala mayúsculas ASCII
+        /// ("Ñandú" = "ñandú").
+        /// </summary>
+        private bool Exists(string palabra, long? exceptId)
+        {
+            var key = NameNormalizer.DuplicateKey(palabra);
+            return _db.Query<Row>("SELECT id AS Id, palabra AS Palabra FROM tabu_words")
+                .Any(r => r.Id != exceptId && NameNormalizer.DuplicateKey(r.Palabra) == key);
+        }
+
+        private static TabuCard ToCard(Row r) => new TabuCard
+        {
+            Id = r.Id,
+            Palabra = r.Palabra,
+            Prohibidas = Json.ParseArray(r.ProhibidasJson).Select(o => (string)o).ToList(),
+            IsSeed = r.IsSeed,
+            Categoria = r.Categoria
+        };
 
         private static IReadOnlyList<TabuWord> ToWords(IEnumerable<Row> rows) =>
             rows.Select(r => new TabuWord(r.Id, r.Palabra, Json.ParseArray(r.ProhibidasJson).Select(o => (string)o).ToList())).ToList();

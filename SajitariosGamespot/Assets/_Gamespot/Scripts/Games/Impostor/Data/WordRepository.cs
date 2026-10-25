@@ -38,8 +38,8 @@ namespace Gamespot.Games.Impostor.Data
 
     /// <summary>
     /// Palabras del Impostor (port de <c>WordRepository</c>): listado ordenado sin mayúsculas, búsqueda con
-    /// <c>LIKE … ESCAPE '\'</c>, alta, edición y borrado de las del usuario. Las seed no se tocan.
-    /// También es la fuente de palabras de la partida.
+    /// <c>LIKE … ESCAPE '\'</c> (y por categoría), alta, edición y borrado de las del usuario, cada una en la
+    /// categoría que elija (V059l). Las seed no se tocan. También es la fuente de palabras de la partida.
     /// </summary>
     public sealed class WordRepository : IImpostorWordSource
     {
@@ -57,37 +57,63 @@ namespace Gamespot.Games.Impostor.Data
 
         public List<ImpostorWord> GetAll() => _db.Query<ImpostorWord>(Select + Order);
 
-        /// <summary>Busca por texto contenido (recortado; vacío = todas). <c>%</c>, <c>_</c> y <c>\</c> se buscan literales.</summary>
-        public List<ImpostorWord> Search(string query)
+        /// <summary>
+        /// Busca por texto contenido (recortado; vacío = todas) y, si se da, solo en <paramref name="category"/>.
+        /// <c>%</c>, <c>_</c> y <c>\</c> se buscan literales.
+        /// </summary>
+        public List<ImpostorWord> Search(string query, string category = null)
         {
             var q = query?.Trim() ?? string.Empty;
-            if (q.Length == 0) return GetAll();
-            var escaped = q.Replace("\\", "\\\\").Replace("%", "\\%").Replace("_", "\\_");
-            return _db.Query<ImpostorWord>(Select + " WHERE word LIKE ? ESCAPE '\\'" + Order, $"%{escaped}%");
+            var filters = new List<string>();
+            var args = new List<object>();
+            if (q.Length > 0)
+            {
+                filters.Add("word LIKE ? ESCAPE '\\'");
+                args.Add($"%{q.Replace("\\", "\\\\").Replace("%", "\\%").Replace("_", "\\_")}%");
+            }
+            if (!string.IsNullOrEmpty(category))
+            {
+                filters.Add("category = ?");
+                args.Add(category);
+            }
+            var where = filters.Count == 0 ? string.Empty : " WHERE " + string.Join(" AND ", filters);
+            return _db.Query<ImpostorWord>(Select + where + Order, args.ToArray());
         }
 
         public ImpostorWord GetById(long id) => _db.Query<ImpostorWord>(Select + " WHERE id = ?", id).FirstOrDefault();
 
         public long Count() => _db.Scalar<long>("SELECT COUNT(*) FROM impostor_words");
 
-        /// <summary>Añade una palabra del usuario. Lanza <see cref="ArgumentException"/> o <see cref="DuplicateWordException"/>.</summary>
-        public long Insert(string word, string hint)
+        /// <summary>
+        /// Añade una palabra del usuario en <paramref name="category"/> (vacía = "Mis palabras"). Lanza
+        /// <see cref="ArgumentException"/> o <see cref="DuplicateWordException"/>.
+        /// </summary>
+        public long Insert(string word, string hint, string category = WordCategories.Propias)
         {
             var (w, h) = Clean(word, hint);
             if (Exists(w, null)) throw new DuplicateWordException(w);
-            _db.Execute("INSERT INTO impostor_words (word, hint, is_seed, created_at) VALUES (?, ?, 0, ?)", w, h, _now());
+            _db.Execute("INSERT INTO impostor_words (word, hint, is_seed, created_at, category) VALUES (?, ?, 0, ?, ?)", w, h, _now(),
+                CleanCategory(category));
             return _db.LastInsertRowId;
         }
 
-        /// <summary>Edita una palabra del usuario. Errores en orden: vacía, no existe, es seed, duplicada.</summary>
-        public void Update(long id, string word, string hint)
+        /// <summary>
+        /// Edita una palabra del usuario (<paramref name="category"/> nula = la que tenía). Errores en orden: vacía,
+        /// no existe, es seed, duplicada.
+        /// </summary>
+        public void Update(long id, string word, string hint, string category = null)
         {
             var (w, h) = Clean(word, hint);
             var current = GetById(id) ?? throw new WordNotFoundException(id);
             if (current.IsSeed) throw new ReadOnlySeedWordException(id);
             if (Exists(w, id)) throw new DuplicateWordException(w);
-            _db.Execute("UPDATE impostor_words SET word = ?, hint = ? WHERE id = ? AND is_seed = 0", w, h, id);
+            _db.Execute("UPDATE impostor_words SET word = ?, hint = ?, category = ? WHERE id = ? AND is_seed = 0", w, h,
+                category == null ? current.Category : CleanCategory(category), id);
         }
+
+        /// <summary>Pasa las palabras del usuario de una categoría a otra (al borrar una categoría propia). Devuelve cuántas.</summary>
+        public int MoveCategory(string from, string to) =>
+            _db.Execute("UPDATE impostor_words SET category = ? WHERE category = ? AND is_seed = 0", CleanCategory(to), from);
 
         /// <summary>Borra una palabra del usuario. Errores: no existe, es seed.</summary>
         public void Delete(long id)
@@ -124,6 +150,8 @@ namespace Gamespot.Games.Impostor.Data
             exceptId.HasValue
                 ? _db.Scalar<long>("SELECT COUNT(*) FROM impostor_words WHERE word = ? COLLATE NOCASE AND id <> ?", word, exceptId.Value) > 0
                 : _db.Scalar<long>("SELECT COUNT(*) FROM impostor_words WHERE word = ? COLLATE NOCASE", word) > 0;
+
+        private static string CleanCategory(string category) => string.IsNullOrWhiteSpace(category) ? WordCategories.Propias : category.Trim();
 
         private static (string word, string hint) Clean(string word, string hint)
         {

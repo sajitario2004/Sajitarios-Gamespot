@@ -48,6 +48,8 @@ namespace Gamespot.Core.Runtime.UI
         Visibility,
         CheckCircle,
         Cancel,
+        Category,
+        FilterList,
         SuitSpade,
         SuitHeart,
         SuitDiamond,

@@ -1,11 +1,12 @@
+using System;
 using System.Collections.Generic;
 
 namespace Gamespot.Core
 {
     /// <summary>
     /// Categorías de las palabras del Impostor y de las tarjetas del Tabú (V059i). El seed trae la categoría de
-    /// cada palabra; las que crea el usuario en el Impostor son <see cref="Propias"/>. Los ids se guardan en la BD:
-    /// no se cambian.
+    /// cada palabra; las que crea el usuario van a <see cref="Propias"/> o a la categoría que elija, también a las que
+    /// crea él mismo (V059l, ids <c>custom_N</c>). Los ids se guardan en la BD: no se cambian.
     /// </summary>
     public static class WordCategories
     {
@@ -33,6 +34,15 @@ namespace Gamespot.Core
 
         /// <summary>Las que van marcadas al abrir el setup: todas menos las +18.</summary>
         public static readonly IReadOnlyList<string> Default = new[] { General, Famosos, Politica, Internet, Tele, Ficcion, Juegos, Fiesta, Espana, Sitios, Propias };
+
+        /// <summary>Prefijo de los ids de las categorías que crea el usuario: <c>custom_7</c> es la fila 7 de su tabla.</summary>
+        public const string CustomPrefix = "custom_";
+
+        /// <summary>Id de la categoría propia de la fila <paramref name="rowId"/>.</summary>
+        public static string CustomId(long rowId) => CustomPrefix + rowId;
+
+        /// <summary>Si el id es de una categoría creada por el usuario.</summary>
+        public static bool IsCustom(string id) => id != null && id.StartsWith(CustomPrefix, StringComparison.Ordinal);
 
         /// <summary>Si la categoría es solo para mayores de edad (el setup avisa al marcarla).</summary>
         public static bool IsAdult(string id) => id == Cachondeo;

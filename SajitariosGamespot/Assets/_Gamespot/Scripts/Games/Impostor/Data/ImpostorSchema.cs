@@ -2,18 +2,20 @@ using System;
 using System.Collections.Generic;
 using Gamespot.Core;
 using Gamespot.Core.Runtime.Db;
+using Gamespot.Games.Shared;
 
 namespace Gamespot.Games.Impostor.Data
 {
     /// <summary>
     /// Tablas del Impostor (esquema final del Flutter + categoría): palabras con pista obligatoria, unicidad sin
-    /// mayúsculas y categoría (<see cref="WordCategories"/>), e historial de partidas. Seed:
+    /// mayúsculas y categoría (<see cref="WordCategories"/>), categorías propias (V059l) e historial de partidas. Seed:
     /// <c>Resources/Seed/impostor_words.json</c> (<c>[{word, hint, category}]</c>).
     /// </summary>
     public static class ImpostorSchema
     {
         public const string WordsTable = "impostor_words";
         public const string HistoryTable = "game_history";
+        public const string CategoriesTable = "impostor_categories";
         public const string SeedName = "impostor_words";
 
         /// <summary>
@@ -38,6 +40,7 @@ namespace Gamespot.Games.Impostor.Data
             AppDatabase.AddColumnIfMissing(db, WordsTable, "category", "TEXT NOT NULL DEFAULT 'propias'");
             db.Execute("CREATE INDEX IF NOT EXISTS idx_impostor_words_word ON impostor_words(word)");
             db.Execute("CREATE INDEX IF NOT EXISTS idx_impostor_words_category ON impostor_words(category)");
+            CustomCategoryRepository.CreateTable(db, CategoriesTable);
             db.Execute("CREATE TABLE IF NOT EXISTS game_history (" +
                        "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                        "created_at INTEGER NOT NULL, " +

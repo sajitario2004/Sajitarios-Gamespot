@@ -20,5 +20,15 @@ namespace Gamespot.Tests.EditMode.Core
             CollectionAssert.DoesNotContain(WordCategories.Default, WordCategories.Cachondeo, "Cachondeo va desmarcada por defecto");
             CollectionAssert.AreEquivalent(WordCategories.All.Where(c => !WordCategories.IsAdult(c)), WordCategories.Default);
         }
+
+        [Test]
+        public void IdsDeLasCategoriasPropias()
+        {
+            Assert.AreEqual("custom_7", WordCategories.CustomId(7));
+            Assert.IsTrue(WordCategories.IsCustom("custom_7"));
+            Assert.IsFalse(WordCategories.IsCustom(WordCategories.Propias));
+            Assert.IsFalse(WordCategories.IsCustom(null));
+            Assert.IsFalse(WordCategories.All.Any(WordCategories.IsCustom), "Ninguna de serie empieza por custom_");
+        }
     }
 }

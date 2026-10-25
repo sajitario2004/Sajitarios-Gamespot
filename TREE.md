@@ -1,6 +1,6 @@
 # TREE
 
-Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 19:14.
+Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 20:22.
 
 No se listan: Library, Temp, Logs, obj, UserSettings, .git, .vs, .idea, .vscode, .utmp, Build, Builds, MemoryCaptures, Recordings, node_modules, __pycache__, .venv, .dart_tool, build, coverage, *.meta, *.csproj, *.sln, *.slnx, *.user, *.pidb, *.unityproj, .DS_Store, Thumbs.db.
 Plegadas: skills, TextMesh Pro, Flutter, Capturas (Flutter = la app original en Legacy/Flutter, solo lectura).
@@ -11,7 +11,7 @@ Sajitarios-Gamespot/
 ├── .claude/
 │   └── settings.json
 ├── Docs/
-│   ├── Capturas/  (32 elementos, plegado)
+│   ├── Capturas/  (46 elementos, plegado)
 │   └── PLAN_MEJORAS.md
 ├── Legacy/
 │   └── Flutter/  (20 elementos, plegado)
@@ -138,8 +138,14 @@ Sajitarios-Gamespot/
 │   │   │   │   │   └── Gamespot.Editor.asmdef
 │   │   │   │   ├── Games/
 │   │   │   │   │   ├── _Shared/
+│   │   │   │   │   │   ├── Data/
+│   │   │   │   │   │   │   └── CustomCategoryRepository.cs
 │   │   │   │   │   │   ├── Presentation/
+│   │   │   │   │   │   │   ├── CategoryNameDialog.cs
+│   │   │   │   │   │   │   ├── CategoryOption.cs
 │   │   │   │   │   │   │   ├── CategoryPicker.cs
+│   │   │   │   │   │   │   ├── CategorySelectDialog.cs
+│   │   │   │   │   │   │   ├── CustomCategoriesScreen.cs
 │   │   │   │   │   │   │   ├── GameUi.cs
 │   │   │   │   │   │   │   ├── NotFoundScreen.cs
 │   │   │   │   │   │   │   ├── PlayerListEditor.cs
@@ -204,9 +210,12 @@ Sajitarios-Gamespot/
 │   │   │   │   │   │   │   ├── Flow/
 │   │   │   │   │   │   │   │   └── TabuFlowController.cs
 │   │   │   │   │   │   │   ├── Gamespot.Games.Tabu.Domain.asmdef
+│   │   │   │   │   │   │   ├── TabuCardRules.cs
 │   │   │   │   │   │   │   └── TabuDomain.cs
 │   │   │   │   │   │   ├── Presentation/
-│   │   │   │   │   │   │   └── TabuScreens.cs
+│   │   │   │   │   │   │   ├── TabuCardEditScreen.cs
+│   │   │   │   │   │   │   ├── TabuScreens.cs
+│   │   │   │   │   │   │   └── TabuWordsScreen.cs
 │   │   │   │   │   │   ├── Gamespot.Games.Tabu.asmdef
 │   │   │   │   │   │   └── TabuGame.cs
 │   │   │   │   │   ├── Trivia/
@@ -269,7 +278,8 @@ Sajitarios-Gamespot/
 │   │   │       │   │   │       └── DrawCardUseCaseTests.cs
 │   │   │       │   │   ├── Impostor/
 │   │   │       │   │   │   ├── Data/
-│   │   │       │   │   │   │   └── ImpostorDataTests.cs
+│   │   │       │   │   │   │   ├── ImpostorDataTests.cs
+│   │   │       │   │   │   │   └── ImpostorOwnCategoriesTests.cs
 │   │   │       │   │   │   └── Domain/
 │   │   │       │   │   │       ├── AssignRolesUseCaseTests.cs
 │   │   │       │   │   │       ├── GameConfigTests.cs
@@ -277,10 +287,14 @@ Sajitarios-Gamespot/
 │   │   │       │   │   │       ├── ImpostorFlowControllerTests.cs
 │   │   │       │   │   │       ├── ImpostorStatsTests.cs
 │   │   │       │   │   │       └── ImpostorTestData.cs
+│   │   │       │   │   ├── Shared/
+│   │   │       │   │   │   └── CustomCategoryRepositoryTests.cs
 │   │   │       │   │   ├── Tabu/
 │   │   │       │   │   │   ├── Domain/
+│   │   │       │   │   │   │   ├── TabuCardRulesTests.cs
 │   │   │       │   │   │   │   └── TabuDomainTests.cs
-│   │   │       │   │   │   └── TabuDataTests.cs
+│   │   │       │   │   │   ├── TabuDataTests.cs
+│   │   │       │   │   │   └── TabuOwnCardsTests.cs
 │   │   │       │   │   ├── Trivia/
 │   │   │       │   │   │   ├── Data/
 │   │   │       │   │   │   │   └── TriviaDataTests.cs
@@ -295,6 +309,7 @@ Sajitarios-Gamespot/
 │   │   │       │   │   │       └── YoNuncaDomainTests.cs
 │   │   │       │   │   └── SeedFilesTests.cs
 │   │   │       │   ├── Localization/
+│   │   │       │   │   ├── GlyphCoverageTests.cs
 │   │   │       │   │   └── LocTests.cs
 │   │   │       │   ├── ArchitectureTests.cs
 │   │   │       │   └── Gamespot.Tests.EditMode.asmdef
@@ -304,6 +319,7 @@ Sajitarios-Gamespot/
 │   │   │           │   ├── CategoryTests.cs
 │   │   │           │   ├── EsUn10PeroScreenTests.cs
 │   │   │           │   ├── ImpostorFlowTests.cs
+│   │   │           │   ├── OwnCategoriesTests.cs
 │   │   │           │   ├── PlayAgainTests.cs
 │   │   │           │   ├── PlayerRosterTests.cs
 │   │   │           │   ├── SoundTests.cs

@@ -59,7 +59,9 @@ namespace Gamespot.Core.Runtime.UI
             [IconId.VideogameAsset] = 0xE338,
             [IconId.Visibility] = 0xE8F4,
             [IconId.CheckCircle] = 0xE86C,
-            [IconId.Cancel] = 0xE5C9
+            [IconId.Cancel] = 0xE5C9,
+            [IconId.Category] = 0xE574,
+            [IconId.FilterList] = 0xE152
         };
 
         private static readonly Dictionary<IconId, string> Fallbacks = new Dictionary<IconId, string>
@@ -105,7 +107,9 @@ namespace Gamespot.Core.Runtime.UI
             [IconId.VideogameAsset] = "[+]",
             [IconId.Visibility] = "o",
             [IconId.CheckCircle] = "v",
-            [IconId.Cancel] = "x"
+            [IconId.Cancel] = "x",
+            [IconId.Category] = "#",
+            [IconId.FilterList] = "="
         };
 
         /// <summary>Fuente de iconos, o nula si aún no está en el proyecto.</summary>

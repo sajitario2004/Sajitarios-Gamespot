@@ -4,6 +4,7 @@ using Gamespot.Core.Runtime.Audio;
 using Gamespot.Core.Runtime.Navigation;
 using Gamespot.Games.Impostor.Data;
 using Gamespot.Games.Impostor.Domain;
+using Gamespot.Games.Shared;
 
 namespace Gamespot.Games.Impostor
 {
@@ -20,6 +21,9 @@ namespace Gamespot.Games.Impostor
 
         /// <summary>Categorías marcadas (por defecto todas menos Cachondeo, +18). El setup solo enseña las que tienen palabras.</summary>
         public HashSet<string> Categories { get; } = new HashSet<string>(WordCategories.Default);
+
+        /// <summary>Las que el setup ya ha enseñado: una propia que aparece por primera vez sale marcada (V059l).</summary>
+        public HashSet<string> KnownCategories { get; } = new HashSet<string>(WordCategories.All);
     }
 
     /// <summary>
@@ -39,9 +43,10 @@ namespace Gamespot.Games.Impostor
         private GameSession _savedSession;
 
         public ImpostorModule(ImpostorFlowController flow, WordRepository words, GameHistoryRepository history, AudioService audio, Router router,
-            CategoryWordSource source)
+            CategoryWordSource source, CustomCategoryRepository categories)
         {
             WordSource = source;
+            Categories = categories;
             Flow = flow;
             Words = words;
             History = history;
@@ -51,6 +56,9 @@ namespace Gamespot.Games.Impostor
 
         public ImpostorFlowController Flow { get; }
         public WordRepository Words { get; }
+
+        /// <summary>Categorías que ha creado el usuario (V059l).</summary>
+        public CustomCategoryRepository Categories { get; }
         public GameHistoryRepository History { get; }
         public AudioService Audio { get; }
         public Router Router { get; }
@@ -77,6 +85,20 @@ namespace Gamespot.Games.Impostor
             {
                 UnityEngine.Debug.LogWarning($"[Impostor] No se pudo guardar el historial: {e.Message}");
                 return false;
+            }
+        }
+
+        /// <summary>Las categorías propias, o ninguna si la BD falla (las pantallas siguen funcionando con las de serie).</summary>
+        public List<CustomCategory> CustomCategoriesOrEmpty()
+        {
+            try
+            {
+                return Categories.GetAll();
+            }
+            catch (System.Exception e)
+            {
+                UnityEngine.Debug.LogWarning($"[Impostor] No se pudieron cargar las categorías: {e.Message}");
+                return new List<CustomCategory>();
             }
         }
 
