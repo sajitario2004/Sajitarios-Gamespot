@@ -6,7 +6,8 @@ namespace Gamespot.Core.Runtime.UI
     /// <summary>
     /// Raíz de toda la UI: un Canvas en modo <i>Screen Space – Camera</i> (para que el Bloom de URP
     /// afecte a la UI) con tres capas: fondo neón, pantallas y superposiciones (diálogos y avisos).
-    /// Las pantallas y superposiciones respetan la zona segura.
+    /// Las pantallas respetan la zona segura; en las superposiciones, el velo de los diálogos cubre toda la pantalla
+    /// y el panel del diálogo y los avisos van dentro de la zona segura (V061).
     /// </summary>
     public sealed class UiRoot : MonoBehaviour
     {

@@ -213,8 +213,8 @@ Cierre técnico de cada versión con código Unity: recompilación sin errores, 
 ## Fase 11 — Pulido y paridad
 - [x] **V060 · Icono y arranque** (placeholders con la paleta neón, mismos nombres).
   - Notas: el autor prefirió el icono de la app Flutter (carta con pica sobre morado `#7C3AED`): `Art/Icon/` + `ProjectSetup.ApplyIcons` (por defecto y adaptativo de Android; Legacy y Round, obsoletos, vacíos). Arranque sin el splash de Unity desde V007. Comprobado dentro del APK.
-- [ ] **V061 · Barrido responsive** (pantallas pequeñas, notch, textos largos).
-  - Notas: casi todo hecho en V059l (barrido automático de los textos en 88 pantallas, 4 tamaños y 2 idiomas). Falta comprobar el notch en un móvil real.
+- [x] **V061 · Barrido responsive** (pantallas pequeñas, notch, textos largos).
+  - Notas: textos en V059l (barrido automático de 88 pantallas, 4 tamaños y 2 idiomas, repetido con las fuentes de V014). Notch: la capa de pantallas ya respetaba la zona segura, pero los diálogos y los avisos no (el comentario de `UiRoot` decía que sí): ahora el panel del diálogo y el aviso van dentro de la zona segura y el velo sigue cubriendo toda la pantalla. `SafeArea.Simulated` permite probar un notch en el Editor y en los tests (`SafeAreaTests`). El APK se dibuja también bajo el notch (`renderOutsideSafeArea`) a pantalla completa. Captura `V061_notch_simulado.png`. Queda verlo en un móvil con notch (V066).
 - [ ] **V062 · Accesibilidad básica** (objetivos táctiles ≥ 48 dp, contraste, "reducir animaciones").
 - [ ] **V063 · Rendimiento en reposo** (sin `Update` vacíos, Bloom ligero en móvil).
 - [ ] **V064 · Lista de paridad** pantalla a pantalla contra el Flutter.

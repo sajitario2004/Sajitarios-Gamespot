@@ -279,6 +279,11 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 
 ## 10. Registro de trabajo (lo más reciente arriba)
 
+### 2026-10-25 · V061 · Notch y zona segura
+- La capa de pantallas respetaba `Screen.safeArea`; los diálogos y los avisos (capa de superposiciones), no, aunque el comentario de `UiRoot` lo decía: en un móvil con barra de gestos el aviso de abajo podía quedar debajo de ella. Ahora el velo del diálogo cubre toda la pantalla y su panel va en un hijo con `SafeArea`; cada aviso va en su contenedor `SnackbarArea` con `SafeArea` (y se destruye con él).
+- `SafeArea.Simulated` (se reinicia al entrar en Play): zona segura de mentira para probar un notch en el Editor. `SafeAreaTests` simula un notch del 6 % arriba y una barra del 3 % abajo y comprueba pantallas, diálogo, velo y aviso. Con el notch simulado, barrido de textos limpio. 54 PlayMode. Captura `V061_notch_simulado.png`.
+- El APK va a pantalla completa (`androidStartInFullscreen`) y se dibuja también bajo el notch (`androidRenderOutsideSafeArea`): el fondo neón llena la pantalla y el contenido queda dentro de la zona segura.
+
 ### 2026-10-25 · V014 · Fuentes: Roboto con negrita real y Material Icons
 - Con permiso del autor («las de Flutter»): Roboto Regular y Bold y Material Icons, del GitHub oficial de Google (Apache-2.0, ≈ 650 KB, sumas SHA-256 comprobadas), en `Assets/_Gamespot/Fonts` con sus licencias. Roboto estático no está suelto en el repo actual (solo un zip de 29 MB o la variable): se tomó de `google/fonts` en el commit `ff11ed915971` (Roboto 3.005).
 - `Editor/Setup/FontSetup` (menú *Fuentes*, también en *Aplicar todo*; idempotente, conserva los GUID): crea `Resources/Fonts/Roboto SDF`, `Roboto Bold SDF` y `MaterialIcons SDF` (SDFAA, 56 pt, atlas de 1024 y 512 para los iconos, con el shader móvil del halo) con todos los caracteres de los textos y los seeds (204) y los 44 iconos, y los deja **estáticos** para que el Editor no los cambie al jugar; lo que falte lo pinta LiberationSans (respaldo, con su atlas dinámico). Roboto es la fuente por defecto de TMP, con la negrita real en su tabla de pesos. `Icons` busca `Resources/Fonts/MaterialIcons SDF` y expone `AllCodepoints`.
