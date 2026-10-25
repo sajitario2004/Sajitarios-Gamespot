@@ -16,8 +16,9 @@ namespace Gamespot.Core.Runtime.Db
         /// Versión del esquema en Unity. Empezó en 1 con el esquema final (v8) de la app Flutter. Cada cambio de
         /// esquema o de seed que haya que llevar a instalaciones existentes sube este número:
         /// 2 · el Tabú renueva su seed (607 palabras con tildes, V059e).
+        /// 3 · palabras de fiesta y de España: el Impostor añade las nuevas a su seed y el Tabú lo renueva (1076).
         /// </summary>
-        public const int CurrentVersion = 2;
+        public const int CurrentVersion = 3;
 
         /// <summary>Ruta del archivo en el dispositivo.</summary>
         public static string DefaultPath => System.IO.Path.Combine(Application.persistentDataPath, FileName);

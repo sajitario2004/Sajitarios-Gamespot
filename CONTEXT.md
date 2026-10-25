@@ -8,6 +8,8 @@
 > fuente de texto con negrita real. Hasta entonces los iconos son sustitutos de texto ("<", "?", "))").
 > Qué mejoras y cuáles de los 5 juegos nuevos se hacen (V059a/V059b).
 > **Hechas las mejoras elegidas del plan (fase 10c):** C2, C3+L1, B1+B2, C4, I1, T1, W2 (estado en `Docs/PLAN_MEJORAS.md`).
+> **Hecho (V059h):** Impostor (2724) y Tabú (1076) con famosos, sitios, fiesta y cosas de España. **Pendiente del autor:** repasar los nombres reales
+> por si alguno no le gusta para jugar (se quitan del seed y entra en la siguiente versión de la BD).
 > **Pendiente de probar a mano por el autor:** abrir `SajitariosGamespot/` en Unity 6000.3.27f1, Play en la escena
 > `App` y jugar una partida de cada juego (sobre todo Wavelength, que estaba roto, y la mecha de La Bomba).
 > **Escuchar los sonidos nuevos** (sintetizados, nadie los ha oído aún): tic-tac y explosión de La Bomba, pitidos
@@ -86,7 +88,7 @@ SajitariosGamespot/Assets/_Gamespot/
 
 ### 5.2 Base de datos
 - Archivo `sajitarios_gamespot.db` (en Unity, en `Application.persistentDataPath`). Flutter: versión 8, `PRAGMA foreign_keys = ON` (ninguna tabla tiene claves foráneas).
-- **Versiones en Unity** (`AppDatabase.CurrentVersion`): 1 = esquema final del Flutter; **2 = el Tabú renueva su seed** (`TabuSchema.Upgrade` borra las filas `is_seed = 1` y el arranque siembra el banco nuevo; el seed del Tabú se carga si no hay filas de seed, no si la tabla está vacía).
+- **Versiones en Unity** (`AppDatabase.CurrentVersion`): 1 = esquema final del Flutter; **2 = el Tabú renueva su seed** (`TabuSchema.Upgrade` borra las filas `is_seed = 1` y el arranque siembra el banco nuevo; el seed del Tabú se carga si no hay filas de seed, no si la tabla está vacía); **3 = palabras de fiesta y de España**: el Tabú vuelve a renovar su seed y el Impostor añade las que falten (`ImpostorSchema.TopUpSeed`, `INSERT OR IGNORE` sobre `UNIQUE COLLATE NOCASE`: las palabras propias con el mismo nombre se respetan). `ImpostorGame` recuerda en `OnUpgrade` que toca completar y lo hace en `SeedIfEmpty`, porque `OnUpgrade` no recibe los seeds.
 - `onCreate` llama a `OnCreateTables` de cada descriptor en orden de registro; `onUpgrade`, a `OnUpgradeTables` de cada uno, que aplica solo sus pasos.
 - **Seeds:** si `COUNT(*)` de la tabla > 0 no hace nada; si no, lee el JSON, valida (entrada inválida → error), recorta textos, inserta en lote con `is_seed = 1` e ignorando conflictos, y devuelve cuántas filas entraron.
 
@@ -105,10 +107,10 @@ SajitariosGamespot/Assets/_Gamespot/
 ### 5.3 Seeds (`Resources/Seed/`, copiados de `Legacy/Flutter/assets/seed/`)
 | Archivo | Forma | Elementos | Mínimo de los tests |
 |---|---|---|---|
-| `impostor_words.json` | `[{word, hint}]` | 2060 | ≥ 2000, sin duplicados sin distinguir mayúsculas, `word ≠ hint` |
+| `impostor_words.json` | `[{word, hint}]` | **2724** (las 2060 heredadas + 664 de fiesta y de España, V059h) | ≥ 2700, sin duplicados sin distinguir mayúsculas, `word ≠ hint` |
 | `trivia_questions.json` | `[{tematica, difficulty, enunciado, opciones[4], correcta}]` | 1151 (fácil 471 / difícil 462 / muy difícil 218) | ≥ 1000 |
 | `wavelength_spectra.json` | `[{izquierda, derecha}]` | 80 | ≥ 70 |
-| `tabu_words.json` | `[{palabra, prohibidas[]}]` | **607** (5 prohibidas cada una; las 120 heredadas corregidas + 487 nuevas, V059e) | ≥ 500, 5 prohibidas distintas que no repiten la palabra |
+| `tabu_words.json` | `[{palabra, prohibidas[]}]` | **1076** (5 prohibidas cada una; las 120 heredadas corregidas + 487 nuevas en V059e + 469 de fiesta y de España en V059h) | ≥ 1000, 5 prohibidas distintas que no repiten la palabra |
 | `yo_nunca_statements.json` | `[{frase, intensidad}]` | 192 (suave 98 / picante 94) | ≥ 140, suave ≥ 50, picante ≥ 30 |
 | `bomba_silabas.json` | `["CA", …]` | 93 | ≥ 70 |
 | `bomba_categorias.json` | `["nombres de animales", …]` | 83 | ≥ 70 |
@@ -258,6 +260,13 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 | Paquetes de Unity (URP, uGUI/TextMeshPro, Input System, Test Framework, Pipeline) | Unity Companion License | Motor, UI, entrada, tests y puente de la CLI |
 
 ## 10. Registro de trabajo (lo más reciente arriba)
+
+### 2026-10-25 · V059h · Palabras de fiesta y de España (Impostor y Tabú)
+- Petición del autor: más palabras del Impostor «a ser posible de España» (políticos, streamers, juegos famosos, creadores y creadoras de contenido, tipos de alcohol, cosas graciosas de fiesta) y también en el Tabú; luego añadió personas y sitios famosos.
+- **Impostor +664** (2724): política y realeza, creadoras y creadores, música, tele y cine, deporte, famosos del mundo, personajes de ficción, videojuegos, juegos de mesa, alcohol, fiesta y noche, ligar y redes, canciones de fiesta, series y programas, memes, marcas, sitios de España y del mundo, comida de bar. **Tabú +469** (1076) de los mismos temas. Escritas a mano y validadas por script (duplicados contra el banco sin tildes ni mayúsculas, pista ≠ palabra, prohibidas que no contienen la palabra, tildes).
+- **Criterio con personas reales:** pistas y prohibidas neutras, solo de su vida pública (partido, cargo, programa, canción); nada de insultos ni de polémicas personales, y fuera las personas con acusaciones graves recientes. Conviene que el autor revise los nombres: el banco refleja lo conocido hasta 2025.
+- BD v3 (ver §5.2), probada también en la BD real del Editor (2 → 3: 2724 y 1076).
+- **Arreglo de UI que destaparon los nombres largos:** `Ui.Text` de una línea ya no parte por palabras (en negrita, sin «…», se perdían palabras enteras: «Andreu Buenafuente» salía «Andreu» y «fisioterapeuta deportivo», «fisioterapeuta»); ahora encoge hasta el 70 % y luego corta. `Ui.FittedText(lines: 2)` para la palabra del revelado del Impostor, la del turno del Tabú y la sílaba/categoría de La Bomba; la lista de palabras usa dos líneas que encogen. Capturas `V059h_*`.
 
 ### 2026-10-25 · Fase 10c · Mejoras elegidas por el autor (C2, C3+L1, B1+B2, C4, I1/T1/W2)
 - **V059g · I1 / T1 / W2:** rondas del Impostor que siguen al máximo hasta tocarlas (`ImpostorSetupDraft.RoundsTouched`), Trivia sin preguntas repetidas en la partida y Wavelength sin espectros repetidos (con vuelta a empezar si se agotan). Se quitan de la deuda §8.2.

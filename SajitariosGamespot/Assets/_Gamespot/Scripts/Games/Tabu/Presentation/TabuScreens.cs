@@ -220,7 +220,7 @@ namespace Gamespot.Games.Tabu
             _countdown = Ui.FittedText(body, string.Empty, 56f, Palette.NeonCyan, 1f);
 
             var wordPanel = Ui.Panel(body, Palette.NeonCyan, glow: 1f, padding: new RectOffset(16, 16, 20, 20), alignment: TextAnchor.MiddleCenter);
-            _word = Ui.FittedText(wordPanel.Content, string.Empty, 40f, Palette.TextPrimary, 1f);
+            _word = Ui.FittedText(wordPanel.Content, string.Empty, 40f, Palette.TextPrimary, 1f, minSize: 18f, lines: 2);
 
             var forbiddenPanel = Ui.Panel(body, Palette.NeonError.WithAlpha(0.7f), padding: new RectOffset(16, 16, 12, 12), spacing: 6f,
                 alignment: TextAnchor.UpperCenter);

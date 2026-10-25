@@ -7,7 +7,7 @@ using Gamespot.Games.Shared;
 namespace Gamespot.Games.Impostor
 {
     /// <summary>
-    /// Descriptor de "El Impostor": palabras (2060 de seed + las del usuario) e historial en SQLite; setup, pasar
+    /// Descriptor de "El Impostor": palabras (2724 de seed + las del usuario) e historial en SQLite; setup, pasar
     /// el móvil, revelar, votación, fin, gestión de palabras e historial.
     /// </summary>
     public sealed class ImpostorGame : IGameDescriptor
@@ -39,13 +39,19 @@ namespace Gamespot.Games.Impostor
             router.Register(ImpostorModule.HistoryRoute, () => new HistoryScreen(module));
         }
 
+        // Lo marca OnUpgrade y lo usa SeedIfEmpty en el mismo arranque: AppDatabase.Open llama a los dos sobre este
+        // descriptor, y OnUpgrade no recibe los seeds.
+        private bool _topUpSeed;
+
         public void OnCreate(IDb db) => ImpostorSchema.Create(db);
 
-        public void OnUpgrade(IDb db, int oldVersion, int newVersion)
-        {
-            // Versión 1 en Unity = esquema final del Flutter: aún no hay migraciones.
-        }
+        public void OnUpgrade(IDb db, int oldVersion, int newVersion) => _topUpSeed = ImpostorSchema.NeedsSeedTopUp(oldVersion);
 
-        public void SeedIfEmpty(IDb db, ISeedSource seeds) => ImpostorSchema.SeedIfEmpty(db, seeds);
+        public void SeedIfEmpty(IDb db, ISeedSource seeds)
+        {
+            if (_topUpSeed) ImpostorSchema.TopUpSeed(db, seeds);
+            else ImpostorSchema.SeedIfEmpty(db, seeds);
+            _topUpSeed = false;
+        }
     }
 }

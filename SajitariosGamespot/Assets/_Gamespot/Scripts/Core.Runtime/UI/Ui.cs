@@ -106,7 +106,9 @@ namespace Gamespot.Core.Runtime.UI
 
         /// <summary>
         /// Texto con el estilo de <paramref name="role"/>. <paramref name="glow"/> &gt; 0 añade el halo neón
-        /// (como <c>NeonText</c>). <paramref name="maxLines"/> &gt; 0 corta con puntos suspensivos.
+        /// (como <c>NeonText</c>). <paramref name="maxLines"/> &gt; 0 corta con puntos suspensivos. Con una sola
+        /// línea no se parte por palabras (si no, «Andreu Buenafuente» se quedaba en «Andreu» sin avisar) y, si la
+        /// fuente no puede pintar «…» (negrita sin variante bold), primero encoge hasta el 70 % y luego corta.
         /// </summary>
         public static TextMeshProUGUI Text(Transform parent, string text, TextRole role = TextRole.BodyMedium, Color? color = null,
             TextAlignmentOptions alignment = TextAlignmentOptions.Left, float glow = 0f, Color? glowColor = null, int maxLines = 0,
@@ -126,6 +128,16 @@ namespace Gamespot.Core.Runtime.UI
             {
                 tmp.maxVisibleLines = maxLines;
                 Typography.SetEllipsis(tmp);
+                if (maxLines == 1)
+                {
+                    tmp.textWrappingMode = TextWrappingModes.NoWrap;
+                    if (tmp.overflowMode == TextOverflowModes.Truncate)
+                    {
+                        tmp.enableAutoSizing = true;
+                        tmp.fontSizeMax = tmp.fontSize;
+                        tmp.fontSizeMin = tmp.fontSize * 0.7f;
+                    }
+                }
             }
             if (glow > 0f) SetGlow(tmp, glowColor ?? c, glow);
             return tmp;
@@ -137,17 +149,21 @@ namespace Gamespot.Core.Runtime.UI
             text.fontSharedMaterial = NeonTextMaterials.Get(text.font != null ? text.font : TMP_Settings.defaultFontAsset, glowColor, intensity);
         }
 
-        /// <summary>Texto que se encoge para caber en una línea (como <c>FittedBox(scaleDown)</c>).</summary>
+        /// <summary>
+        /// Texto que se encoge para caber (como <c>FittedBox(scaleDown)</c>). Con <paramref name="lines"/> &gt; 1 puede
+        /// partirse en varias líneas antes de encoger: lo usan las palabras de juego, que ahora pueden ser nombres
+        /// largos («José Luis Rodríguez Zapatero»).
+        /// </summary>
         public static TextMeshProUGUI FittedText(Transform parent, string text, float maxSize, Color? color = null, float glow = 0f,
-            bool bold = true, float minSize = 10f)
+            bool bold = true, float minSize = 10f, int lines = 1)
         {
             var tmp = Text(parent, text, TextRole.DisplayMedium, color, TextAlignmentOptions.Center, glow, bold: bold, name: "FittedText");
-            tmp.textWrappingMode = TextWrappingModes.NoWrap;
+            tmp.textWrappingMode = lines > 1 ? TextWrappingModes.Normal : TextWrappingModes.NoWrap;
             tmp.enableAutoSizing = true;
             tmp.fontSizeMax = maxSize;
             tmp.fontSizeMin = minSize;
             tmp.fontSize = maxSize;
-            tmp.Sized(height: maxSize * 1.3f);
+            tmp.Sized(height: maxSize * 1.3f * Mathf.Max(1, lines));
             return tmp;
         }
 

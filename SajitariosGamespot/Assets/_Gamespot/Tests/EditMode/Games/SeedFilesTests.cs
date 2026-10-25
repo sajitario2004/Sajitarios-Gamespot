@@ -20,5 +20,16 @@ namespace Gamespot.Tests.EditMode.Games
             var duplicates = entries.GroupBy(e => e.word.ToLowerInvariant()).Where(g => g.Count() > 1).Select(g => g.Key).ToList();
             CollectionAssert.IsEmpty(duplicates);
         }
+
+        [Test]
+        public void Impostor_PalabrasDeFiestaYDeEspana()
+        {
+            var words = ImpostorSchema.Parse(Seeds.Load(ImpostorSchema.SeedName)).Select(e => e.word).ToList();
+            Assert.That(words.Count, Is.GreaterThanOrEqualTo(2700));
+            foreach (var expected in new[] { "Ibai", "Pedro Sánchez", "Rosalía", "Fortnite", "calimocho", "Torre Eiffel", "Sagrada Familia", "Mercadona" })
+            {
+                CollectionAssert.Contains(words, expected);
+            }
+        }
     }
 }

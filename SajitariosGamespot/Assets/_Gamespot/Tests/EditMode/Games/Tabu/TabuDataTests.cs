@@ -42,6 +42,17 @@ namespace Gamespot.Tests.EditMode.Games.Tabu
         }
 
         [Test]
+        public void Seed_ConFamososSitiosYFiesta()
+        {
+            var words = TabuSchema.Parse(new ResourcesSeedSource().Load(TabuSchema.SeedName)).Select(w => w.Palabra).ToList();
+            Assert.That(words.Count, Is.GreaterThanOrEqualTo(1000));
+            foreach (var expected in new[] { "Ibai", "Rosalía", "Torre Eiffel", "Calimocho", "Mercadona", "Harry Potter" })
+            {
+                CollectionAssert.Contains(words, expected);
+            }
+        }
+
+        [Test]
         public void Seed_ConTildes()
         {
             var words = TabuSchema.Parse(new ResourcesSeedSource().Load(TabuSchema.SeedName));

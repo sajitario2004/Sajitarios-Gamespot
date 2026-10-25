@@ -7,7 +7,7 @@ namespace Gamespot.Core.Runtime.UI
 {
     /// <summary>
     /// Lista con scroll que solo crea las filas visibles (como <c>ListView.builder</c>): filas de alto fijo que se
-    /// reciclan al desplazarse. Para listas largas (las 2060 palabras del Impostor).
+    /// reciclan al desplazarse. Para listas largas (las más de 2700 palabras del Impostor).
     /// </summary>
     public sealed class VirtualList : MonoBehaviour
     {

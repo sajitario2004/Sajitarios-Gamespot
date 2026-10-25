@@ -13,7 +13,7 @@ namespace Gamespot.Games.Impostor
 {
     /// <summary>
     /// Gestión de palabras (port de <c>WordsManagementScreen</c>): búsqueda (la consulta espera 280 ms desde la
-    /// última tecla), lista virtualizada (2060 palabras), alta, edición y borrado de las propias. Las predefinidas
+    /// última tecla), lista virtualizada (2724 palabras de seed), alta, edición y borrado de las propias. Las predefinidas
     /// llevan borde violeta y candado y no se pueden editar ni borrar.
     /// </summary>
     public sealed class WordsScreen : AppScreen
@@ -114,7 +114,13 @@ namespace Gamespot.Games.Impostor
             row.Sized(flexHeight: 1f);
             var texts = Ui.Column(row, 2f, alignment: TextAnchor.MiddleLeft);
             texts.Sized(flexWidth: 1f);
-            view.Word = Ui.Text(texts, string.Empty, TextRole.TitleMedium, maxLines: 1, bold: true);
+            // Hasta dos líneas que encogen en una caja fija: con los famosos y los sitios hay nombres largos
+            // («José Luis Rodríguez Zapatero») y la pista tiene que seguir viéndose debajo.
+            view.Word = Ui.Text(texts, string.Empty, TextRole.TitleMedium, alignment: TextAlignmentOptions.BottomLeft, maxLines: 2, bold: true);
+            view.Word.enableAutoSizing = true;
+            view.Word.fontSizeMax = view.Word.fontSize;
+            view.Word.fontSizeMin = 11f;
+            view.Word.Sized(height: 36f);
             view.Hint = Ui.Text(texts, string.Empty, TextRole.BodySmall, Palette.TextMuted, maxLines: 1);
             view.Seed = Ui.Row(row, 4f, new RectOffset(8, 8, 2, 2), TextAnchor.MiddleCenter, "SeedChip").gameObject;
             Ui.Icon(view.Seed.transform, IconId.Lock, 14f, Palette.NeonVioletText);

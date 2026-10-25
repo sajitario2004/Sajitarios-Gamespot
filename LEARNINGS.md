@@ -21,6 +21,8 @@ Archivo vivo. Añade una línea cada vez que el autor exprese un gusto, una corr
 - (heredado) Yo Nunca con nivel picante **+18 explícito**, con aviso claro de consentimiento entre adultos.
 - (heredado) Cada juego explica sus reglas desde su setup ("¿Cómo se juega?") y todas las pantallas tienen un botón para volver al menú (no quiere quedarse "atrapado" en un juego).
 
+- (2026-10-25) Quiere contenido **de España y de fiesta**: políticos, streamers, creadoras y creadores, juegos famosos, tipos de alcohol, personas y sitios famosos y «cosas graciosas de fiesta», tanto en el Impostor como en el Tabú. Pide los bancos grandes y con humor de grupo de amigos.
+
 ## Diseño
 - (heredado) Estética **neón cyberpunk**: fondo casi negro, cian y magenta con brillo, rejilla de fondo.
 - (heredado) **Nada de emojis**, ni en el código ni en los textos: solo iconos.

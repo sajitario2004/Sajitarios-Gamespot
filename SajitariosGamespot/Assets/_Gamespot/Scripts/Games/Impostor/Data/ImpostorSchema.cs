@@ -15,6 +15,12 @@ namespace Gamespot.Games.Impostor.Data
         public const string HistoryTable = "game_history";
         public const string SeedName = "impostor_words";
 
+        /// <summary>Versión de la BD en la que el seed creció con las palabras de fiesta y de España (2060 → 2724).</summary>
+        public const int SeedExpandedVersion = 3;
+
+        /// <summary>Si una BD de <paramref name="oldVersion"/> tiene que recibir las palabras nuevas del seed.</summary>
+        public static bool NeedsSeedTopUp(int oldVersion) => oldVersion < SeedExpandedVersion;
+
         public static void Create(IDb db)
         {
             db.Execute("CREATE TABLE IF NOT EXISTS impostor_words (" +
@@ -37,9 +43,16 @@ namespace Gamespot.Games.Impostor.Data
         }
 
         /// <summary>Carga las palabras iniciales si la tabla está vacía. Devuelve cuántas filas entraron.</summary>
-        public static int SeedIfEmpty(IDb db, ISeedSource seeds)
+        public static int SeedIfEmpty(IDb db, ISeedSource seeds) => AppDatabase.IsEmpty(db, WordsTable) ? InsertSeed(db, seeds) : 0;
+
+        /// <summary>
+        /// Añade las palabras del seed que falten en una BD que ya tenía palabras (al migrar). Las del usuario no se
+        /// tocan: si alguien ya había creado una palabra igual, se queda la suya (UNIQUE NOCASE + OR IGNORE).
+        /// </summary>
+        public static int TopUpSeed(IDb db, ISeedSource seeds) => InsertSeed(db, seeds);
+
+        private static int InsertSeed(IDb db, ISeedSource seeds)
         {
-            if (!AppDatabase.IsEmpty(db, WordsTable)) return 0;
             var entries = Parse(seeds.Load(SeedName));
             var now = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
             var inserted = 0;

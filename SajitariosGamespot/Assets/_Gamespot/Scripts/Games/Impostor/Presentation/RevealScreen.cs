@@ -110,7 +110,7 @@ namespace Gamespot.Games.Impostor
                 alignment: TextAnchor.UpperCenter);
             PulseGlow.On(wordPanel, 0.8f, 1.2f);
             Ui.Text(wordPanel.Content, Loc.T("tuPalabraEs"), TextRole.TitleMedium, Palette.TextMuted, TextAlignmentOptions.Center);
-            Ui.FittedText(wordPanel.Content, session.Word.Text, 45f, Palette.TextPrimary, 1f).fontSharedMaterial =
+            Ui.FittedText(wordPanel.Content, session.Word.Text, 45f, Palette.TextPrimary, 1f, minSize: 18f, lines: 2).fontSharedMaterial =
                 NeonTextMaterials.Get(TMP_Settings.defaultFontAsset, Palette.NeonCyan, 1f);
             wordPanel.name = Announcement;
             return wordPanel;

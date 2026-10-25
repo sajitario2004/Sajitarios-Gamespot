@@ -31,6 +31,10 @@ namespace Gamespot.Tests.PlayMode.Games
 
         private ImpostorModule Module => _app.Bootstrap.Games.OfType<ImpostorGame>().Single().Module;
 
+        /// <summary>Palabras del seed real (la BD temporal arranca con todas).</summary>
+        private static int SeedCount =>
+            Gamespot.Games.Impostor.Data.ImpostorSchema.Parse(new Gamespot.Core.Runtime.Db.ResourcesSeedSource().Load(Gamespot.Games.Impostor.Data.ImpostorSchema.SeedName)).Count;
+
         private ImpostorSetupScreen OpenSetup(params string[] names)
         {
             _app = new AppTestHarness();
@@ -51,7 +55,7 @@ namespace Gamespot.Tests.PlayMode.Games
             setup.Start();
             yield return null;
             Assert.IsInstanceOf<PassDeviceScreen>(_app.Router.Current);
-            Assert.AreEqual(2060, Module.Words.Count(), "El seed se cargó en la BD temporal");
+            Assert.AreEqual(SeedCount, Module.Words.Count(), "El seed se cargó en la BD temporal");
 
             var revealSounds = 0;
             for (var i = 0; i < 5; i++)
@@ -153,7 +157,7 @@ namespace Gamespot.Tests.PlayMode.Games
             _app.Router.Go(ImpostorModule.WordsRoute);
             yield return AppTestHarness.Frames();
             var words = (WordsScreen)_app.Router.Current;
-            Assert.AreEqual(2060, words.Items.Count);
+            Assert.AreEqual(SeedCount, words.Items.Count);
             Assert.Greater(words.List.CreatedRows, 0, "Pinta las filas visibles");
             Assert.Less(words.List.CreatedRows, 40, "La lista solo crea las filas visibles");
             _app.Router.Back();

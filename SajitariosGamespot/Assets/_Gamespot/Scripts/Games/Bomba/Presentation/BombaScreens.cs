@@ -224,7 +224,7 @@ namespace Gamespot.Games.Bomba
             Ui.Space(body, 32f);
             var panel = Ui.Panel(body, Palette.NeonError, glow: 1f, padding: new RectOffset(32, 32, 24, 24), alignment: TextAnchor.MiddleCenter);
             PulseGlow.On(panel, 0.5f, 1.2f);
-            _prompt = Ui.FittedText(panel.Content, string.Empty, 56f, Palette.TextPrimary, 1f);
+            _prompt = Ui.FittedText(panel.Content, string.Empty, 56f, Palette.TextPrimary, 1f, minSize: 18f, lines: 2);
             Ui.SetGlow((TextMeshProUGUI)_prompt, Palette.NeonError, 1f);
             Ui.Space(body, 16f);
             Ui.Text(body, Loc.T(flow.Config.Mode == BombaMode.Silaba ? "bombaTipoSilaba" : "bombaTipoCategoria"), TextRole.BodyMedium, Palette.TextMuted,

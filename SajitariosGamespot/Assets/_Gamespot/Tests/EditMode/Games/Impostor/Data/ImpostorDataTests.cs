@@ -35,6 +35,34 @@ namespace Gamespot.Tests.EditMode.Games.Impostor
         public void TearDown() => _temp.Dispose();
 
         [Test]
+        public void MigracionA3_AnadeLasPalabrasNuevasYRespetaLasPropias()
+        {
+            using (var temp = new TempDatabase())
+            {
+                var db = temp.Open(new IDbSchema[] { new ImpostorGame() }, SmallSeed, version: 2);
+                db.Execute("INSERT INTO impostor_words (word, hint, is_seed, created_at) VALUES ('Ibai', 'mi pista', 0, 1)");
+                temp.Close();
+
+                var bigger = new DictionarySeedSource(new Dictionary<string, string>
+                {
+                    ["impostor_words"] = "[{\"word\": \"playa\", \"hint\": \"arena\"}, {\"word\": \"Pirata\", \"hint\": \"barco\"}, " +
+                                         "{\"word\": \"Ibai\", \"hint\": \"Kings League\"}, {\"word\": \"Rosalía\", \"hint\": \"Motomami\"}]"
+                });
+                db = temp.Open(new IDbSchema[] { new ImpostorGame() }, bigger, version: ImpostorSchema.SeedExpandedVersion);
+                var words = new WordRepository(db, () => 1).GetAll();
+                Assert.IsTrue(words.Any(w => w.Word == "Rosalía" && w.IsSeed), "La palabra nueva entra como predefinida");
+                var ibai = words.Single(w => w.Word == "Ibai");
+                Assert.IsFalse(ibai.IsSeed, "La que ya había creado el usuario se queda suya");
+                Assert.AreEqual("mi pista", ibai.Hint);
+                Assert.AreEqual(4, words.Count, "playa, Pirata, Ibai (propia) y Rosalía");
+
+                temp.Close();
+                db = temp.Open(new IDbSchema[] { new ImpostorGame() }, bigger, version: ImpostorSchema.SeedExpandedVersion);
+                Assert.AreEqual(4, new WordRepository(db, () => 1).GetAll().Count, "Sin migración no se vuelve a sembrar");
+            }
+        }
+
+        [Test]
         public void Seed_SeCargaConIsSeedEIgnoraDuplicadosSinMayusculas()
         {
             var all = _words.GetAll();

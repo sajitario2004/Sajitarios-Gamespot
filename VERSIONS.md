@@ -179,6 +179,11 @@ Cierre técnico de cada versión con código Unity: recompilación sin errores, 
   - Acepta: tests de dominio y de pantalla.
   - Notas: I1: `ImpostorSetupDraft.RoundsTouched`; las rondas empiezan en max(1, n−3) y lo siguen hasta que se pulsa el contador, luego solo se recortan. T1: `TriviaFlowController` reparte con las preguntas no salidas (si no llegan para los vivos, con todo el pool). W2: `WavelengthFlowController` elige entre los espectros no salidos (si se agotan, todos). Tests: Trivia (sin repetir en 27 preguntas; con pool corto repite sin error), Wavelength (3 espectros antes de repetir), Impostor PlayMode (rondas siguen y se recortan). 222 EditMode + 45 PlayMode; arnés .NET 173. Captura `V059g_impostor_rondas.png`.
 
+## Fase 10d — Palabras de fiesta y de España (el autor, 2026-10-25)
+- [x] **V059h · Impostor y Tabú con famosos, sitios y fiesta.** Petición: «más palabras, a ser posible de España: políticos, streamers, juegos famosos, creadores y creadoras de contenido, tipos de alcohol… y otras cosas graciosas de fiesta; también en el Tabú», y después «también personas famosas o sitios famosos».
+  - Acepta: bancos ampliados sin duplicados; la BD sube a la versión 3 y lleva las palabras nuevas a instalaciones existentes sin tocar las propias; los nombres largos se leen enteros.
+  - Notas: Impostor 2060 → 2724 (+664) y Tabú 607 → 1076 (+469): política y realeza, streamers y creadoras/es, música, tele, deporte, famosos del mundo, ficción, videojuegos, juegos de mesa, alcohol, fiesta, ligar y redes, canciones, series, memes, marcas y sitios de España y del mundo. Pistas neutras para personas reales. BD v3: el Tabú renueva el seed y el Impostor completa el suyo sin tocar las propias (`TopUpSeed`). Arreglo de UI para nombres largos (`Ui.Text` de una línea, `FittedText(lines: 2)`, lista de palabras). Tests: migración a 3, contenido de los seeds. 225 EditMode + 45 PlayMode. Capturas `V059h_*`.
+
 ## Fase 11 — Pulido y paridad
 - [ ] **V060 · Icono y arranque** (placeholders con la paleta neón, mismos nombres).
 - [ ] **V061 · Barrido responsive** (pantallas pequeñas, notch, textos largos).

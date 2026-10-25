@@ -7,14 +7,17 @@ using Gamespot.Games.Tabu.Domain;
 
 namespace Gamespot.Games.Tabu.Data
 {
-    /// <summary>Tabla <c>tabu_words</c> (prohibidas en JSON) y su seed (<c>[{palabra, prohibidas[4..5]}]</c>, 607).</summary>
+    /// <summary>Tabla <c>tabu_words</c> (prohibidas en JSON) y su seed (<c>[{palabra, prohibidas[4..5]}]</c>, 1076).</summary>
     public static class TabuSchema
     {
         public const string Table = "tabu_words";
         public const string SeedName = "tabu_words";
 
-        /// <summary>Versión de la BD en la que se renovó el seed (las 120 heredadas, sin tildes, por las 607).</summary>
-        public const int SeedRenewedVersion = 2;
+        /// <summary>
+        /// Última versión de la BD en la que se renovó el seed: 2 (las 120 heredadas, sin tildes, por 607) y 3
+        /// (1076, con famosos, sitios, fiesta y cosas de España).
+        /// </summary>
+        public const int SeedRenewedVersion = 3;
 
         /// <summary>
         /// Al migrar desde antes de <see cref="SeedRenewedVersion"/> se borran las filas de seed; el arranque las
