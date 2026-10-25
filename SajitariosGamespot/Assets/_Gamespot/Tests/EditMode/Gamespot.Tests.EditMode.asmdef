@@ -27,7 +27,9 @@
         "Gamespot.Games.Bomba.Domain",
         "Gamespot.Editor",
         "Gamespot.Games.VerdadReto",
-        "Gamespot.Games.VerdadReto.Domain"
+        "Gamespot.Games.VerdadReto.Domain",
+        "Gamespot.Games.MasProbable",
+        "Gamespot.Games.MasProbable.Domain"
     ],
     "includePlatforms": [
         "Editor"

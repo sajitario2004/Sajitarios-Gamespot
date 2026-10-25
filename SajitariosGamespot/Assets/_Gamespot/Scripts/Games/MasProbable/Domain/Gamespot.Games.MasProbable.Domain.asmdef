@@ -1,0 +1,16 @@
+{
+    "name": "Gamespot.Games.MasProbable.Domain",
+    "rootNamespace": "Gamespot.Games.MasProbable.Domain",
+    "references": [
+        "Gamespot.Core"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

@@ -42,6 +42,23 @@ namespace Gamespot.Tests.EditMode.Games
         }
 
         [Test]
+        public void MasProbable_FrasesSinLaPreguntaEnLosDosNiveles()
+        {
+            var cards = PromptCardRepository.ParseSeed(Seeds.Load(Gamespot.Games.MasProbable.MasProbableSchema.SeedName));
+            CheckCommon(cards);
+            foreach (var level in PromptLevels.All)
+            {
+                Assert.That(cards.Count(c => c.Level == level), Is.GreaterThanOrEqualTo(140), level.ToString());
+            }
+            foreach (var card in cards)
+            {
+                Assert.AreEqual(Gamespot.Games.MasProbable.Domain.MasProbableText.Normalize(card.Text), card.Text, "Ya normalizada: " + card.Text);
+                Assert.IsTrue(char.IsLower(card.Text[0]), "Sigue a «que…»: " + card.Text);
+                Assert.IsEmpty(card.Kind);
+            }
+        }
+
+        [Test]
         public void VerdadReto_BancosGrandesEnLosDosNiveles()
         {
             var cards = PromptCardRepository.ParseSeed(Seeds.Load(VerdadRetoSchema.SeedName));

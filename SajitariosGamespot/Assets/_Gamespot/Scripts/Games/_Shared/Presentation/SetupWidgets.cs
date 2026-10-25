@@ -159,7 +159,8 @@ namespace Gamespot.Games.Shared
         public bool Visible => _own != null;
 
         /// <param name="ownCount">Cuántas propias hay (con 0 no se pinta nada).</param>
-        public static PromptOriginPicker Create(Transform parent, long ownCount, bool seed, bool own, Action<bool, bool> changed)
+        public static PromptOriginPicker Create(Transform parent, long ownCount, bool seed, bool own, Action<bool, bool> changed,
+            string titleKey = "origenTitulo", string helpKey = "origenAyuda")
         {
             var picker = new PromptOriginPicker { IncludeSeed = seed || !own, IncludeOwn = own };
             if (ownCount <= 0)
@@ -168,7 +169,7 @@ namespace Gamespot.Games.Shared
                 picker.IncludeOwn = false;
                 return picker;
             }
-            var panel = SetupSection.Create(parent, Loc.T("origenTitulo"), Loc.T("origenAyuda"), Palette.NeonViolet);
+            var panel = SetupSection.Create(parent, Loc.T(titleKey), Loc.T(helpKey), Palette.NeonViolet);
             var row = Ui.Row(panel.Content, 10f, alignment: TextAnchor.MiddleCenter);
             picker._seed = NeonChip.Create(row, Loc.T("origenSerie"), picker.IncludeSeed, Palette.NeonViolet);
             picker._seed.Sized(flexWidth: 1f);

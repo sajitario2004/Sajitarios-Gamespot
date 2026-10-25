@@ -10,7 +10,8 @@
 > **Fase 13 en curso (juegos nuevos):** el autor eligió el 1, 2, 3, 4, 5 y 10 de `Docs/PLAN_MEJORAS.md` §4: Verdad o Reto,
 > ¿Quién es más probable que…?, ¿Qué prefieres?, Mímica por equipos, ¿Quién soy? y Hombres Lobo (con reparto pasando el
 > móvil y un game master que lleva la partida; muy configurable y con todas las expansiones). Hecho: V070 (base común de cartas)
-> y V071 (Verdad o Reto). **Probar en el móvil:** una partida de Verdad o Reto con picante y con cartas propias que usen `{otro}`.
+> y V071 (Verdad o Reto), V072 (¿Quién es más probable que…?). **Probar en el móvil:** una partida de Verdad o Reto con picante y con
+> cartas propias que usen `{otro}`; ¿Quién es más probable…? llevando la cuenta (que la cuenta atrás y la vibración se noten).
 > **Hechas las mejoras elegidas del plan (fase 10c):** C2, C3+L1, B1+B2, C4, I1, T1, W2 (estado en `Docs/PLAN_MEJORAS.md`).
 > **Hecho (V059h–V059j):** Impostor (2525) y Tabú (1161) por categorías elegibles en el setup, con Cachondeo +18 desmarcada por defecto.
 > **Hecho (V059m):** categorías propias en el Impostor y el Tabú, palabras y tarjetas propias en la categoría que se elija y gestión de tarjetas del Tabú.
@@ -138,6 +139,7 @@ SajitariosGamespot/Assets/_Gamespot/
 | `tabu_words.json` | `[{palabra, prohibidas[], categoria}]` | **1161** (5 prohibidas cada una; 605 clásicas, 467 de fiesta y de España y 89 de Cachondeo; V059e–V059j) | ≥ 1000, 5 prohibidas distintas que no repiten la palabra |
 | `yo_nunca_statements.json` | `[{frase, intensidad}]` | 358 (suave 98 / picante 260, V059q) | suave ≥ 90, picante ≥ 250, todas empiezan por «Yo nunca», sin repetidas ni menores |
 | `verdad_reto_cards.json` (V071) | `[{texto, tipo, nivel}]` (tabla común de cartas) | 562 (verdades 127 / 126, retos 124 / 125, prendas 30 / 30; suave / picante) | ≥ 120 verdades y retos por nivel, ≥ 25 prendas por nivel, sin repetidas, picante sin menores, los retos picantes que tocan a otro piden permiso |
+| `mas_probable_cards.json` (V072) | `[{texto, nivel}]` (lo que va detrás de «que…») | 302 (151 / 151) | ≥ 140 por nivel, ya normalizadas, en minúscula, sin repetidas ni menores |
 | `bomba_silabas.json` | `["CA", …]` | 93 | ≥ 70 |
 | `bomba_categorias.json` | `["nombres de animales", …]` | 83 | ≥ 70 |
 
@@ -263,6 +265,11 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 - **Orden del random:** al empezar al azar `NextInt(n)`; al sortear (si se pueden los dos) `NextInt(2)` (0 = verdad); cada carta, la llamada del mazo y, si lleva `{otro}`, `NextInt(n − 1)` para el otro jugador; al pasar turno al azar, `NextInt` entre los que no han jugado en la ronda.
 - **Pantallas:** setup (jugadores, nivel, origen, turnos, reglas), turno («Le toca a» + Verdad cian / Reto magenta, o Sortear), carta (tipo, texto, aviso +18, cuenta atrás del reto con pitidos y bocina, ¡Hecho! (+n), Me rajo, Otra carta (n)), prenda y final (ganador o empate, clasificación con verdades, retos y rajadas; jugar otra, cambiar ajustes, menú). La barra tiene marcador y «Terminar»; casa y atrás piden confirmación. Gestión de cartas: `/verdad-reto/cartas`.
 
+### 6.9 ¿Quién es más probable que…? (`mas_probable`, V072, juego nuevo)
+- **Dominio:** `MasProbableConfig.Create(niveles, nombres, opciones)`: al menos un nivel; con `ConCuenta`, 3–20 nombres sin repetir. Opciones: modo (`Senalar` por defecto / `ConCuenta`), cuenta atrás (3 s; 0 o 5), frases (0 = sin límite; 10, 20, 30), origen. `MasProbableText.Normalize` quita «¿Quién es más probable que…» (con o sin tildes) y la interrogación, y recorta a 120.
+- **Flow:** `Setup, Frase, Apuntar, Final, Error`. Mazo sin repeticiones (una llamada al random por frase). `Senalado()` → apuntar (con cuenta) o siguiente; `Apuntar(índices)` suma un título a cada marcado (empates: todos; vacío: nadie); `Saltar()` cambia la frase sin contarla; con límite, se acaba tras la última; `Terminar()`. Ranking por títulos y orden de los nombres.
+- **Pantallas:** setup (nivel, origen, modo, jugadores solo con cuenta, cuenta atrás, frases), frase («¿Quién es más probable que…», «…frase?» en grande —magenta si es picante—, «¡A la de tres!» → 3, 2, 1 con pitidos → «¡Señalad!» con bocina y vibración → Siguiente / Apuntar; «Otra frase»), apuntar (chips con los nombres, «No hubo acuerdo» / «Apuntar») y final («el más probable de todo» o empate, clasificación con la última frase de cada uno). Gestión de frases: `/mas-probable/frases`.
+
 ## 7. Estado de la app Flutter (referencia)
 - v0.75.0+75, Flutter 3.41.4 / Dart 3.11.1, Riverpod 3, go_router 17, Flame 1.37, sqflite. `flutter analyze` limpio, **823 tests**, cobertura 78 %.
 - Código en `Legacy/Flutter/lib/`, tests en `Legacy/Flutter/test/`, roadmap completo (F1–F22) en `Legacy/Flutter/docs/version.md`, su contexto en `Legacy/Flutter/docs/context.md`.
@@ -347,6 +354,11 @@ el móvil (V066, V068).
 | LiberationSans (recursos esenciales de TextMeshPro) | OFL 1.1 | Respaldo de los caracteres que Roboto no tenga |
 
 ## 10. Registro de trabajo (lo más reciente arriba)
+
+### 2026-10-25 · V072 · ¿Quién es más probable que…?
+- Juego nuevo `Games/MasProbable/`: frase, cuenta atrás y todos señalan; con «Llevar la cuenta» se apunta al más señalado y al final sale el más probable de todo. Suave y picante +18, frases propias (se puede escribir la pregunta entera: se limpia sola). 302 frases nuevas.
+- El archivo de dominio entró por error en el commit de V071 (estaba a medias); el resto, aquí.
+- 302 EditMode, PlayMode del juego 3/3, barrido de textos y pulsables limpio. Capturas `V072_masprobable_*`.
 
 ### 2026-10-25 · V071 · Verdad o Reto
 - Juego nuevo `Games/VerdadReto/`, el primero de los seis elegidos por el autor: verdad o reto por turnos, con «Me rajo» y prenda, suave y picante +18 (con la confirmación de edad común) y cartas propias. Muy configurable: orden de turnos, quién elige, rondas, puntos, cambios de carta, máximo de verdades seguidas y tiempo para los retos. Las cartas pueden nombrar a otro jugador (`{otro}`).

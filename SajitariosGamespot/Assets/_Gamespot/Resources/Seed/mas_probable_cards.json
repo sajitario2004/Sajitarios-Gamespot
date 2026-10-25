@@ -1,0 +1,1210 @@
+[
+  {
+    "texto": "acabe en comisaría esta noche",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se case en Las Vegas sin avisar a nadie",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se haga famoso en internet",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se pierda en su propia ciudad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "llegue tarde a su propia boda",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se quede dormido en una fiesta",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se haga millonario",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se gaste todo el sueldo el primer día del mes",
+    "nivel": "suave"
+  },
+  {
+    "texto": "adopte diez gatos",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se apunte a un reality",
+    "nivel": "suave"
+  },
+  {
+    "texto": "llore viendo un anuncio",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se olvide del cumpleaños de su pareja",
+    "nivel": "suave"
+  },
+  {
+    "texto": "viva en otro país dentro de cinco años",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se coma algo que se ha caído al suelo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "monte su propia empresa",
+    "nivel": "suave"
+  },
+  {
+    "texto": "deje el trabajo para viajar por el mundo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se haga vegano y lo cuente a todas horas",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se ría en un funeral",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se caiga en público",
+    "nivel": "suave"
+  },
+  {
+    "texto": "pierda el móvil esta noche",
+    "nivel": "suave"
+  },
+  {
+    "texto": "escriba a su ex a las tres de la mañana",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se enamore en un viaje",
+    "nivel": "suave"
+  },
+  {
+    "texto": "tenga cinco hijos",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se tatúe el nombre de alguien",
+    "nivel": "suave"
+  },
+  {
+    "texto": "cante en un karaoke sin que se lo pidan",
+    "nivel": "suave"
+  },
+  {
+    "texto": "sobreviva a un apocalipsis zombi",
+    "nivel": "suave"
+  },
+  {
+    "texto": "muera el primero en una película de terror",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se apunte al gimnasio y no vaya nunca",
+    "nivel": "suave"
+  },
+  {
+    "texto": "lleve la contraria solo por gusto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "gane la lotería y se lo gaste todo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se presente a alcalde",
+    "nivel": "suave"
+  },
+  {
+    "texto": "salga en las noticias",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se quede encerrado fuera de casa",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se compre algo carísimo que no sirve para nada",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se emborrache con dos cervezas",
+    "nivel": "suave"
+  },
+  {
+    "texto": "ligue con el camarero",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se haga influencer",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se cuele en una boda sin estar invitado",
+    "nivel": "suave"
+  },
+  {
+    "texto": "olvide dónde ha aparcado el coche",
+    "nivel": "suave"
+  },
+  {
+    "texto": "cocine algo que nadie se pueda comer",
+    "nivel": "suave"
+  },
+  {
+    "texto": "mienta sobre su edad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se pase un videojuego entero en un día",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se duerma en el cine",
+    "nivel": "suave"
+  },
+  {
+    "texto": "hable con los animales como si le entendieran",
+    "nivel": "suave"
+  },
+  {
+    "texto": "llame a su madre todos los días",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se apunte a una carrera y la deje a la mitad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se meta en una pelea por una tontería",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se pierda en un aeropuerto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "haga un viaje sin planear nada",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se tire en paracaídas",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se case con su primer amor",
+    "nivel": "suave"
+  },
+  {
+    "texto": "vuelva con su ex",
+    "nivel": "suave"
+  },
+  {
+    "texto": "hable solo por la calle",
+    "nivel": "suave"
+  },
+  {
+    "texto": "pase la noche entera viendo series",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se quede calvo antes de los 40",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se ponga a bailar en mitad de la calle",
+    "nivel": "suave"
+  },
+  {
+    "texto": "discuta con un desconocido en internet",
+    "nivel": "suave"
+  },
+  {
+    "texto": "acabe viviendo en el campo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "cambie de trabajo cada año",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se olvide las llaves dentro de casa",
+    "nivel": "suave"
+  },
+  {
+    "texto": "lleve chanclas con calcetines",
+    "nivel": "suave"
+  },
+  {
+    "texto": "provoque un desastre en la cocina",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se ponga a llorar con una canción",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se quede sin batería en el peor momento",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se gaste más en comida a domicilio",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se apunte a clases de salsa",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se haga cantante",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se cuele en un concierto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "salga en la tele por casualidad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "pida perdón sin tener la culpa",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se caiga a la piscina vestido",
+    "nivel": "suave"
+  },
+  {
+    "texto": "sea el último en irse de la fiesta",
+    "nivel": "suave"
+  },
+  {
+    "texto": "sea el primero en irse a dormir",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se ría de su chiste antes de contarlo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "cuente un secreto sin querer",
+    "nivel": "suave"
+  },
+  {
+    "texto": "deje un mensaje en visto una semana",
+    "nivel": "suave"
+  },
+  {
+    "texto": "tenga la habitación más desordenada",
+    "nivel": "suave"
+  },
+  {
+    "texto": "busque las gafas que lleva puestas",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se coma la comida de otro de la nevera",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se olvide de su propia contraseña",
+    "nivel": "suave"
+  },
+  {
+    "texto": "ponga una alarma y no la oiga",
+    "nivel": "suave"
+  },
+  {
+    "texto": "acabe convertido en un meme",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se lleve fatal con su suegra",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se apunte a todo y luego no vaya a nada",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se ofrezca a pagar y no lleve la cartera",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se haga una foto con un famoso",
+    "nivel": "suave"
+  },
+  {
+    "texto": "gane un concurso de comer",
+    "nivel": "suave"
+  },
+  {
+    "texto": "viva con sus padres hasta los 40",
+    "nivel": "suave"
+  },
+  {
+    "texto": "le ponga a su perro un nombre de persona",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se líe con un compañero de trabajo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se pase de frenada en la cena de empresa",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se duerma en el autobús y se pase de parada",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se choque con una puerta de cristal",
+    "nivel": "suave"
+  },
+  {
+    "texto": "deje plantado a alguien en una cita",
+    "nivel": "suave"
+  },
+  {
+    "texto": "mande un audio de cinco minutos",
+    "nivel": "suave"
+  },
+  {
+    "texto": "llore en su propia boda",
+    "nivel": "suave"
+  },
+  {
+    "texto": "organice una fiesta sorpresa que salga fatal",
+    "nivel": "suave"
+  },
+  {
+    "texto": "salude a un desconocido creyendo que es otra persona",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se crea todas las noticias falsas",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se gaste el sueldo en ropa",
+    "nivel": "suave"
+  },
+  {
+    "texto": "sea abducido por extraterrestres",
+    "nivel": "suave"
+  },
+  {
+    "texto": "escriba un libro",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se obsesione con una afición muy rara",
+    "nivel": "suave"
+  },
+  {
+    "texto": "monte una bronca en una tienda",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se compre una moto sin tener carné",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se pase el día entero en pijama",
+    "nivel": "suave"
+  },
+  {
+    "texto": "le pillen mintiendo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "tenga más seguidores en redes",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se meta en una secta",
+    "nivel": "suave"
+  },
+  {
+    "texto": "pierda una apuesta tonta",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se haga una operación estética",
+    "nivel": "suave"
+  },
+  {
+    "texto": "viaje solo a la otra punta del mundo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "vuelva de una semana fuera hablando con acento",
+    "nivel": "suave"
+  },
+  {
+    "texto": "tarde más en contestar los mensajes",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se duerma en clase o en una reunión",
+    "nivel": "suave"
+  },
+  {
+    "texto": "cuente el final de una película sin querer",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se pase la noche entera bailando",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se quede sin voz de tanto gritar",
+    "nivel": "suave"
+  },
+  {
+    "texto": "gane un Óscar",
+    "nivel": "suave"
+  },
+  {
+    "texto": "viva hasta los cien años",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se haga rico con criptomonedas",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se pierda en el monte",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se queme en la playa el primer día",
+    "nivel": "suave"
+  },
+  {
+    "texto": "tenga más exparejas",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se enfade por perder a un juego de mesa",
+    "nivel": "suave"
+  },
+  {
+    "texto": "haga trampas jugando a las cartas",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se coma algo picantísimo y pida más",
+    "nivel": "suave"
+  },
+  {
+    "texto": "cante en la ducha a todo volumen",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se haga un piercing en un viaje",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se olvide de comer",
+    "nivel": "suave"
+  },
+  {
+    "texto": "sea el alma de la fiesta",
+    "nivel": "suave"
+  },
+  {
+    "texto": "termine la noche cantando",
+    "nivel": "suave"
+  },
+  {
+    "texto": "llore de risa",
+    "nivel": "suave"
+  },
+  {
+    "texto": "gaste una broma pesada",
+    "nivel": "suave"
+  },
+  {
+    "texto": "acabe en urgencias por una tontería",
+    "nivel": "suave"
+  },
+  {
+    "texto": "vuelva de fiesta a casa andando",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se encuentre a su ex en todas partes",
+    "nivel": "suave"
+  },
+  {
+    "texto": "siga a su crush en redes sin atreverse a hablarle",
+    "nivel": "suave"
+  },
+  {
+    "texto": "pida comida a domicilio a las cinco de la mañana",
+    "nivel": "suave"
+  },
+  {
+    "texto": "le cuente su vida a un taxista",
+    "nivel": "suave"
+  },
+  {
+    "texto": "llore en el aeropuerto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "tenga un plan B para todo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "guarde mejor un secreto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se le escape antes un secreto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "sobreviva en una isla desierta",
+    "nivel": "suave"
+  },
+  {
+    "texto": "pierda la cabeza por amor",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se haga un selfie en un sitio prohibido",
+    "nivel": "suave"
+  },
+  {
+    "texto": "monte un drama por un mensaje",
+    "nivel": "suave"
+  },
+  {
+    "texto": "compre en la teletienda",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se quede atrapado en un ascensor",
+    "nivel": "suave"
+  },
+  {
+    "texto": "se ponga a hablar de su ex en una cita",
+    "nivel": "suave"
+  },
+  {
+    "texto": "tenga sexo en un sitio público",
+    "nivel": "picante"
+  },
+  {
+    "texto": "haya hecho un trío",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se líe con alguien de este grupo esta noche",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga una colección de juguetes sexuales",
+    "nivel": "picante"
+  },
+  {
+    "texto": "mande fotos desnudo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "acabe la noche en la cama de un desconocido",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga un follamigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "haya fingido un orgasmo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se acueste con su ex",
+    "nivel": "picante"
+  },
+  {
+    "texto": "haya tenido sexo en el coche",
+    "nivel": "picante"
+  },
+  {
+    "texto": "sea el más salvaje en la cama",
+    "nivel": "picante"
+  },
+  {
+    "texto": "vea porno en el trabajo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga el fetiche más raro",
+    "nivel": "picante"
+  },
+  {
+    "texto": "haya tenido sexo en la playa",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se apunte a una orgía",
+    "nivel": "picante"
+  },
+  {
+    "texto": "sea infiel",
+    "nivel": "picante"
+  },
+  {
+    "texto": "haya tenido sexo en casa de sus padres",
+    "nivel": "picante"
+  },
+  {
+    "texto": "haga un striptease en una fiesta",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga una aplicación de ligar abierta ahora mismo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se líe con dos personas la misma noche",
+    "nivel": "picante"
+  },
+  {
+    "texto": "haya tenido más parejas sexuales",
+    "nivel": "picante"
+  },
+  {
+    "texto": "haya tenido sexo en un baño público",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se case con alguien que conoció en una aplicación",
+    "nivel": "picante"
+  },
+  {
+    "texto": "grabe un vídeo íntimo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "repita con un rollo de una noche",
+    "nivel": "picante"
+  },
+  {
+    "texto": "mande un desnudo a la persona equivocada",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se acueste con alguien en la primera cita",
+    "nivel": "picante"
+  },
+  {
+    "texto": "sea el más ruidoso en la cama",
+    "nivel": "picante"
+  },
+  {
+    "texto": "haya tenido sexo en el trabajo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se acueste con un compañero de piso",
+    "nivel": "picante"
+  },
+  {
+    "texto": "abra una cuenta de contenido para adultos",
+    "nivel": "picante"
+  },
+  {
+    "texto": "haya tenido sexo en un avión",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga una fantasía con un famoso",
+    "nivel": "picante"
+  },
+  {
+    "texto": "le guste que le aten",
+    "nivel": "picante"
+  },
+  {
+    "texto": "le guste dominar en la cama",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se líe con el ex de un amigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga sexo en una piscina",
+    "nivel": "picante"
+  },
+  {
+    "texto": "haga sexting en horas de trabajo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga una lista de todas sus conquistas",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se ponga cachondo viendo una película",
+    "nivel": "picante"
+  },
+  {
+    "texto": "haya pagado por porno",
+    "nivel": "picante"
+  },
+  {
+    "texto": "duerma desnudo todas las noches",
+    "nivel": "picante"
+  },
+  {
+    "texto": "vaya a un club de intercambio",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga un rollo con su jefe",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se acueste con alguien mucho mayor",
+    "nivel": "picante"
+  },
+  {
+    "texto": "haya tenido sexo al aire libre",
+    "nivel": "picante"
+  },
+  {
+    "texto": "lo prefiera en la ducha",
+    "nivel": "picante"
+  },
+  {
+    "texto": "le pillen sus compañeros de piso en plena faena",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga sexo por teléfono",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se haya acostado con alguien famoso",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se líe con un desconocido en el baño de una discoteca",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga chupetones ahora mismo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "le guste que le hablen sucio",
+    "nivel": "picante"
+  },
+  {
+    "texto": "haya probado el sexo anal",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga un perfil secreto para ligar",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga la despedida de soltero más salvaje",
+    "nivel": "picante"
+  },
+  {
+    "texto": "haya tenido sexo en un probador",
+    "nivel": "picante"
+  },
+  {
+    "texto": "sea el mejor haciendo sexo oral",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se enrolle con alguien de aquí antes de irse",
+    "nivel": "picante"
+  },
+  {
+    "texto": "lleve lencería sexy debajo de la ropa ahora mismo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "ligue con todo el mundo cuando bebe",
+    "nivel": "picante"
+  },
+  {
+    "texto": "diga el nombre equivocado en la cama",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga sexo en un coche esta semana",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se haya masturbado en el trabajo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga un sueño erótico con alguien de aquí",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se compre un disfraz sexy",
+    "nivel": "picante"
+  },
+  {
+    "texto": "le pillen sus padres en plena faena",
+    "nivel": "picante"
+  },
+  {
+    "texto": "dure más en la cama",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga una relación abierta",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se acueste con alguien solo por despecho",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se enamore de un rollo de una noche",
+    "nivel": "picante"
+  },
+  {
+    "texto": "use esposas en la cama",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga sexo en un ascensor",
+    "nivel": "picante"
+  },
+  {
+    "texto": "le guste que le den azotes",
+    "nivel": "picante"
+  },
+  {
+    "texto": "grabe un porno casero",
+    "nivel": "picante"
+  },
+  {
+    "texto": "gima tan alto en un hotel que se quejen los vecinos",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se líe con el camarero esta noche",
+    "nivel": "picante"
+  },
+  {
+    "texto": "haya tenido una aventura con alguien casado",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga más juguetes que ropa interior",
+    "nivel": "picante"
+  },
+  {
+    "texto": "lo prefiera por la mañana",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se apunte a una fiesta nudista",
+    "nivel": "picante"
+  },
+  {
+    "texto": "practique el sexo tántrico",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga sexo en la cama de un amigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se líe con alguien de su gimnasio",
+    "nivel": "picante"
+  },
+  {
+    "texto": "lo prefiera con la luz encendida",
+    "nivel": "picante"
+  },
+  {
+    "texto": "haya tenido sexo en la oficina después de cerrar",
+    "nivel": "picante"
+  },
+  {
+    "texto": "mande audios guarros",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga un rollo en cada ciudad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "le dé morbo un uniforme",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se enrolle con alguien en un concierto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga sexo en una tienda de campaña",
+    "nivel": "picante"
+  },
+  {
+    "texto": "lleve preservativos en la cartera ahora mismo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "le guste el sexo duro",
+    "nivel": "picante"
+  },
+  {
+    "texto": "le guste el sexo romántico con velas",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga sexo en el sofá de otra persona",
+    "nivel": "picante"
+  },
+  {
+    "texto": "haya tenido sexo con la regla",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se acueste con su mejor amigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "lo haga en un hotel con las cortinas abiertas",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se líe con su profesor de baile",
+    "nivel": "picante"
+  },
+  {
+    "texto": "le ponga que le muerdan",
+    "nivel": "picante"
+  },
+  {
+    "texto": "cuente sus intimidades a todo el mundo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "no cuente nunca nada de su vida sexual",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se acueste con un desconocido en un viaje",
+    "nivel": "picante"
+  },
+  {
+    "texto": "haya probado todas las posturas del Kamasutra",
+    "nivel": "picante"
+  },
+  {
+    "texto": "lo haga donde puedan pillarle",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga una colección de lencería",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se haya disfrazado en la cama",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga sexo en el mar",
+    "nivel": "picante"
+  },
+  {
+    "texto": "haga sexting con alguien de este grupo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga el récord de veces en una noche",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se acueste con alguien cuyo nombre no recuerda",
+    "nivel": "picante"
+  },
+  {
+    "texto": "le encante el sexo de reconciliación",
+    "nivel": "picante"
+  },
+  {
+    "texto": "provoque una discusión para reconciliarse en la cama",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se líe con alguien solo por su coche",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga sexo en el gimnasio",
+    "nivel": "picante"
+  },
+  {
+    "texto": "le pillen en una aplicación de ligar teniendo pareja",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se enrolle con un famoso en una discoteca",
+    "nivel": "picante"
+  },
+  {
+    "texto": "le haga un striptease a su pareja por sorpresa",
+    "nivel": "picante"
+  },
+  {
+    "texto": "baile en una barra de striptease",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga sexo en el trastero",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se haya acostado con el ex de alguien de aquí",
+    "nivel": "picante"
+  },
+  {
+    "texto": "lleve un juguete sexual en el bolso",
+    "nivel": "picante"
+  },
+  {
+    "texto": "le dé morbo que le graben",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se ponga cachondo con una canción",
+    "nivel": "picante"
+  },
+  {
+    "texto": "haga topless en la playa",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se líe con su vecino",
+    "nivel": "picante"
+  },
+  {
+    "texto": "le encante hacerlo en el coche",
+    "nivel": "picante"
+  },
+  {
+    "texto": "escriba guarradas por mensaje en el trabajo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga sexo antes de una entrevista de trabajo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "acabe en un club de striptease esta noche",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se enamore de su follamigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga sexo en un tren",
+    "nivel": "picante"
+  },
+  {
+    "texto": "sea el más atrevido haciendo sexting",
+    "nivel": "picante"
+  },
+  {
+    "texto": "haga un calendario sexy",
+    "nivel": "picante"
+  },
+  {
+    "texto": "salga en una película para adultos",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se enrolle con alguien en una boda",
+    "nivel": "picante"
+  },
+  {
+    "texto": "sea el primero en desnudarse en una fiesta",
+    "nivel": "picante"
+  },
+  {
+    "texto": "use un disfraz de enfermera o de bombero en la cama",
+    "nivel": "picante"
+  },
+  {
+    "texto": "le guste que le venden los ojos",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga sexo en el balcón",
+    "nivel": "picante"
+  },
+  {
+    "texto": "ligue con un desconocido en el metro",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga la noche más loca en Ibiza",
+    "nivel": "picante"
+  },
+  {
+    "texto": "haya tenido un gatillazo en el peor momento",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se líe con dos amigos que no se conocen entre sí",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga una cita con alguien de una aplicación cada semana",
+    "nivel": "picante"
+  },
+  {
+    "texto": "pida un juguete sexual por su cumpleaños",
+    "nivel": "picante"
+  },
+  {
+    "texto": "haga un trío en su despedida de soltero",
+    "nivel": "picante"
+  },
+  {
+    "texto": "acabe en la cama con alguien de su trabajo tras una cena de empresa",
+    "nivel": "picante"
+  },
+  {
+    "texto": "le encante el sexo en sitios incómodos",
+    "nivel": "picante"
+  },
+  {
+    "texto": "tenga más morbo con la ropa puesta",
+    "nivel": "picante"
+  },
+  {
+    "texto": "se líe con alguien solo por su acento",
+    "nivel": "picante"
+  }
+]

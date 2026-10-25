@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Gamespot.Games.Bomba;
 using Gamespot.Games.EsUn10Pero;
 using Gamespot.Games.Impostor;
+using Gamespot.Games.MasProbable;
 using Gamespot.Games.Trivia;
 using Gamespot.Games.Wavelength;
 using Gamespot.Games.YoNunca;
@@ -28,6 +29,7 @@ namespace Gamespot.App
             new YoNuncaGame(),
             new BombaGame(),
             new VerdadRetoGame(),
+            new MasProbableGame(),
         };
     }
 }

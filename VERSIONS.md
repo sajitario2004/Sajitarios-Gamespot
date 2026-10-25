@@ -273,7 +273,13 @@ gestionar la partida; muy configurable y con todas las expansiones». Se hacen d
     `Core/Time/Countdown`, `SetupWidgets` (secciones, `ChoiceChips`, `PromptLevelPicker`, `PromptOriginPicker`),
     `ScoreList`, `GameUi.FinishButton`, y 45 iconos nuevos para la fase (atlas de iconos de 1024). 293 EditMode;
     PlayMode del juego 3/3; barrido de textos y pulsables limpio en es y en. Capturas `V071_verdadreto_*`.
-- [ ] **V072 · ¿Quién es más probable que…?** Frase, cuenta atrás de 3 s y todos señalan; suave y +18; propias.
+- [x] **V072 · ¿Quién es más probable que…?** Frase, cuenta atrás de 3 s y todos señalan; suave y +18; propias.
+  - Notas: `Games/MasProbable/`. Dos modos: «Solo señalar» (sin nombres) y «Llevar la cuenta» (3–20 nombres: tras
+    señalar se marca al más señalado, o a los empatados, y al final sale «el más probable de todo» con la última frase
+    que «ganó» cada uno). Cuenta atrás sin, 3 o 5 s con pitidos, bocina y vibración; frases por partida (sin límite,
+    10, 20, 30); «Otra frase» salta sin contar. Las frases guardan solo lo que va detrás de «¿Quién es más probable
+    que…» (`MasProbableText.Normalize` lo quita si se escribe entero). Seed de 302 frases (151 por nivel). 302
+    EditMode; PlayMode del juego 3/3; barrido (45 pantallas, es y en) limpio. Capturas `V072_masprobable_*`.
 - [ ] **V073 · ¿Qué prefieres?** Dos opciones, se vota con la mano y se puede apuntar el resultado; suave y +18; propias.
 - [ ] **V074 · Mímica por equipos.** Como el Tabú sin hablar: equipos, tiempo, objetivo, categorías (también +18 y
   propias), tarjetas propias.

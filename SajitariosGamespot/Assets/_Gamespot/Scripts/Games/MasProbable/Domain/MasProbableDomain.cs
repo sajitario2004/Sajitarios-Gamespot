@@ -99,7 +99,8 @@ namespace Gamespot.Games.MasProbable.Domain
 
         public static string Normalize(string text)
         {
-            var clean = NameNormalizer.Normalize(text ?? string.Empty).TrimStart('¿', ' ').TrimEnd('?', ' ', '.');
+            // En NFC: así cada letra con tilde es un solo carácter y el prefijo mide lo mismo con y sin tildes.
+            var clean = NameNormalizer.Normalize((text ?? string.Empty).Normalize(NormalizationForm.FormC)).TrimStart('¿', ' ').TrimEnd('?', ' ', '.');
             var plain = RemoveAccents(clean).ToLowerInvariant();
             if (plain.StartsWith(Prefix, StringComparison.Ordinal)) clean = clean.Substring(Prefix.Length).TrimStart(' ', '.', '…', ',');
             clean = clean.TrimStart('.', '…', ' ');
