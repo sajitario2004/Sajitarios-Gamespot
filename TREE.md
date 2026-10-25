@@ -1,6 +1,6 @@
 # TREE
 
-Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 21:50.
+Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 22:57.
 
 No se listan: Library, Temp, Logs, obj, UserSettings, .git, .vs, .idea, .vscode, .utmp, Build, Builds, MemoryCaptures, Recordings, node_modules, __pycache__, .venv, .dart_tool, build, coverage, *.meta, *.csproj, *.sln, *.slnx, *.user, *.pidb, *.unityproj, .DS_Store, Thumbs.db, *.apk, *.aab.
 Plegadas: skills, TextMesh Pro, Flutter, Capturas (Flutter = la app original en Legacy/Flutter, solo lectura).
@@ -11,7 +11,7 @@ Sajitarios-Gamespot/
 ├── .claude/
 │   └── settings.json
 ├── Docs/
-│   ├── Capturas/  (56 elementos, plegado)
+│   ├── Capturas/  (61 elementos, plegado)
 │   └── PLAN_MEJORAS.md
 ├── Legacy/
 │   └── Flutter/  (20 elementos, plegado)
@@ -261,9 +261,11 @@ Sajitarios-Gamespot/
 │   │   │   │   │   └── YoNunca/
 │   │   │   │   │       ├── Domain/
 │   │   │   │   │       │   ├── Gamespot.Games.YoNunca.Domain.asmdef
+│   │   │   │   │       │   ├── NeverStatementText.cs
 │   │   │   │   │       │   └── YoNuncaDomain.cs
 │   │   │   │   │       ├── Gamespot.Games.YoNunca.asmdef
-│   │   │   │   │       └── YoNuncaGame.cs
+│   │   │   │   │       ├── YoNuncaGame.cs
+│   │   │   │   │       └── YoNuncaPhrasesScreen.cs
 │   │   │   │   └── Menu/
 │   │   │   │       ├── Gamespot.Menu.asmdef
 │   │   │   │       ├── LegalScreen.cs
@@ -321,8 +323,10 @@ Sajitarios-Gamespot/
 │   │   │       │   │   │   │   └── WavelengthDomainTests.cs
 │   │   │       │   │   │   └── WavelengthDialAndDataTests.cs
 │   │   │       │   │   ├── YoNunca/
-│   │   │       │   │   │   └── Domain/
-│   │   │       │   │   │       └── YoNuncaDomainTests.cs
+│   │   │       │   │   │   ├── Domain/
+│   │   │       │   │   │   │   ├── NeverStatementTextTests.cs
+│   │   │       │   │   │   │   └── YoNuncaDomainTests.cs
+│   │   │       │   │   │   └── YoNuncaPhrasesTests.cs
 │   │   │       │   │   └── SeedFilesTests.cs
 │   │   │       │   ├── Localization/
 │   │   │       │   │   ├── GlyphCoverageTests.cs

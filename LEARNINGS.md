@@ -39,6 +39,8 @@ Archivo vivo. Añade una línea cada vez que el autor exprese un gusto, una corr
 
 - (2026-10-25) Quiere un **apartado de Ajustes** como el de cualquier app: quitar el sonido y la vibración y ver términos y condiciones, privacidad y cookies.
 
+- (2026-10-25) El resto de juegos y los ajustes le funcionan «perfecto». Quiere **poder añadir sus propias frases** en Yo Nunca y un **picante mucho más fuerte, +18**: humor de fiesta bruto entre adultos (se mantiene sin menores ni nada sin consentimiento).
+
 ## Diseño
 - (heredado) Estética **neón cyberpunk**: fondo casi negro, cian y magenta con brillo, rejilla de fondo.
 - (heredado) **Nada de emojis**, ni en el código ni en los textos: solo iconos.

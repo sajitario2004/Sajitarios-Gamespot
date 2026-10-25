@@ -21,8 +21,9 @@ namespace Gamespot.Core.Runtime.Db
         /// 5 · categoría Cachondeo (+18) y vuelven las palabras fáciles: los dos renuevan su seed.
         /// 6 · la trivia renueva su seed (exponentes y subíndices que la fuente no tenía, como «10⁻¹¹», pasan a
         ///     &lt;sup&gt;/&lt;sub&gt;). Las tablas de categorías propias (V059l) no necesitan versión: se crean al arrancar.
+        /// 7 · Yo Nunca renueva su seed (picante mucho más fuerte, V059q); sus frases propias se conservan.
         /// </summary>
-        public const int CurrentVersion = 6;
+        public const int CurrentVersion = 7;
 
         /// <summary>Ruta del archivo en el dispositivo.</summary>
         public static string DefaultPath => System.IO.Path.Combine(Application.persistentDataPath, FileName);

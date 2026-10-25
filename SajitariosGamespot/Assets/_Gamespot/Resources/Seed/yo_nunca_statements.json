@@ -460,10 +460,6 @@
     "intensidad": "picante"
   },
   {
-    "frase": "Yo nunca he espiado a alguien cambiándose sin que lo supiera.",
-    "intensidad": "picante"
-  },
-  {
     "frase": "Yo nunca he tenido una relación sexual por dinero u otro beneficio material.",
     "intensidad": "picante"
   },
@@ -765,6 +761,674 @@
   },
   {
     "frase": "Yo nunca he tenido una experiencia sexual que no le he contado a nadie hasta hoy.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he follado en el coche de mis padres.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he hecho un trío.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he hecho un trío con una pareja.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he participado en una orgía.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he liado con alguien de este grupo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he acostado con alguien de este grupo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido ganas de acostarme con alguien de esta habitación.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido un sueño guarro con alguien de este grupo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he liado con dos personas la misma noche.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he liado con tres o más personas la misma noche.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he hecho una mamada en un sitio público.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he hecho un 69.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he follado con la regla.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido un gatillazo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he fingido un orgasmo para acabar antes.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he durado menos de dos minutos.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he corrido en menos de un minuto.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he echado más de cuatro polvos en una noche.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he echado un polvo en menos de diez minutos antes de una comida familiar.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he grabado follando.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he visto un vídeo mío follando.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he usado Tinder solo para follar.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he follado con alguien de Tinder el mismo día del match.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he usado una app de ligar estando en pareja.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he follado en un festival.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he follado en una tienda de campaña.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he follado en un probador.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he follado en la oficina.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he follado en el baño de un avión.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he follado en un tren.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he follado en una piscina o en un jacuzzi.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he follado en un parque.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he follado en la mesa de la cocina.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he follado encima de la lavadora.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he follado en la cama de otra persona sin que lo supiera.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he follado en casa de mis suegros.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he follado con mis compañeros de piso en casa.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he hecho ruido a propósito para que se enteraran los vecinos.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me han pillado mis padres follando.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he pillado a mis padres follando.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me han pillado masturbándome.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he masturbado en el trabajo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he masturbado en el baño de un bar.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he masturbado más de tres veces en un día.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he masturbado con algo que no era un juguete.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he usado un vibrador con mi pareja.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he usado un consolador.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he comprado algo en un sex shop.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he regalado un juguete sexual.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he usado ropa interior comestible.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he puesto un disfraz sexy para follar.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he usado lencería para dar una sorpresa.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he hecho guarradas con nata o chocolate.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he usado hielo en la cama.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he dejado que me aten a la cama.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he atado a alguien a la cama.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he dado azotes en la cama.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me han dado azotes en la cama y me ha gustado.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he dicho el nombre de otra persona en la cama.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he quedado dormido o dormida a mitad de un polvo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he contestado al móvil a mitad de un polvo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he seguido follando mientras llamaban a la puerta.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido que ir a por la píldora del día después.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he follado sin condón con un ligue de una noche.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca se me ha roto el condón.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he buscado en internet cómo se hacía una postura.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he probado más de diez posturas.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he hecho el pino o una postura imposible en la cama.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he hecho daño follando.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he roto una cama follando.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido sexo por videollamada.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he hecho sexo telefónico.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido cibersexo con un desconocido.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he mandado un audio guarro.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he grabado un audio gimiendo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he mandado nudes.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he mandado nudes a la persona equivocada.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he mandado un nude por error a un grupo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido una carpeta de nudes en el móvil.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he pagado un OnlyFans.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he pensado en abrirme un OnlyFans.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he vendido fotos de mis pies.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he buscado porno de alguien famoso.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he visto porno con mi pareja.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he visto porno en el móvil en el transporte público.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he buscado porno de una categoría que me daría vergüenza decir aquí.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he liado con alguien de mi mismo sexo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he hecho un striptease.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he ido a un club de striptease.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he contratado a un stripper.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he ido a un local de intercambio de parejas.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he intercambiado pareja.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he ido a una playa nudista.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he hecho topless en la playa.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he follado en la playa de noche.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he hecho guarradas en un cine.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he hecho guarradas en un ascensor.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he hecho guarradas en una despedida de soltero o soltera.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he enrollado con el camarero o la camarera para que me invitaran.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he fingido ir más borracho o borracha para liarme con alguien.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he fingido no ir borracho o borracha para que me dejaran entrar en una discoteca.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he perreado tan guarro que me han llamado la atención.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he enseñado el culo en público.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he hecho un calvo a un coche.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he meado en la calle.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he vomitado en un taxi.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he vomitado después de liarme con alguien.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he vuelto a casa sin la ropa interior.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he despertado en una casa sin saber dónde estaba.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he despertado al lado de alguien sin saber cómo se llamaba.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he despertado con un chupetón sin saber de quién era.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he hecho un chupetón a propósito para que se viera.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he afeitado ahí abajo por una cita.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he mentido sobre el número de personas con las que me he acostado.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he acostado con más de diez personas.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he acostado con más de veinte personas.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he acostado con alguien diez años mayor que yo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he acostado con alguien de otro país en vacaciones.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he acostado con alguien que conocí en una boda.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he acostado con un compañero o una compañera de trabajo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he acostado con mi jefe o mi jefa.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he acostado con alguien famoso o con un influencer.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he acostado con el ex de un amigo o una amiga.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he acostado con un ex después de cortar.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he vuelto con un ex solo por el sexo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido un follamigo o una follamiga.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he puesto los cuernos.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me han puesto los cuernos y lo he perdonado.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he sido el tercero o la tercera en discordia.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he hecho ghosting después de acostarme con alguien.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he dado un número falso a un ligue.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he stalkeado a un ligue hasta llegar a su ex.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he ligado por Instagram con alguien que tenía pareja.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he follado la primera noche de conocer a alguien.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he follado en el portal porque no podíamos esperar.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he follado en el coche con los cristales empañados.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he hecho un polvo rápido en una fiesta en casa de otro.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he follado en el baño de una discoteca.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he follado en un after.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he follado en un hotel por horas.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he follado en un coche de alquiler.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he follado escuchando reguetón.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he puesto una lista de música para follar.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he grabado mis gemidos sin querer en un audio.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he lamido algo de otra persona que no era comida.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me lo he tragado.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he hecho sexo anal.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he probado algo en la cama que no repetiría jamás.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he hecho realidad una fantasía sexual.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he contado a mis amigos un polvo con todos los detalles.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he acostado con alguien solo para dar celos a otra persona.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he liado con alguien solo para ganar una apuesta.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he liado con el hermano o la hermana de un amigo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he liado con alguien en una cena de empresa.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he hecho guarradas en una videollamada de trabajo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he mandado un mensaje guarro a mi jefe por error.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido una fantasía con un profesor o una profesora.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca me he puesto cachondo o cachonda en una reunión de trabajo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido un orgasmo en un sitio público.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido sexo en la naturaleza, en mitad del monte.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he hecho guarradas en la última fila de un autobús.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he follado mientras alguien dormía al lado.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he tenido que esconderme en un armario o debajo de la cama.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he salido por la ventana después de un polvo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he dicho «te quiero» en la cama sin sentirlo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he pedido perdón por un polvo malísimo.",
+    "intensidad": "picante"
+  },
+  {
+    "frase": "Yo nunca he puesto una nota a un polvo.",
     "intensidad": "picante"
   }
 ]
