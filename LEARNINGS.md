@@ -8,6 +8,9 @@ Archivo vivo. Añade una línea cada vez que el autor exprese un gusto, una corr
 - (2026-10-25) Le gusta planificar antes de construir (pidió `/plan`) y que se le pregunte con opciones antes de las decisiones grandes. En las cuatro preguntas de la migración eligió **todas las opciones recomendadas**.
 - (2026-10-25) Avisa de que otra IA ya tocó el repo y dejó sus propios `.md`: hay que analizarlo todo antes de decidir, y no fiarse de los docs viejos sin comprobar el código (el `README.md` heredado decía v0.30 y la app estaba en v0.75).
 - (2026-10-25) Git en este proyecto: rama de trabajo, commit por versión terminada, y permiso antes de `push` o de fusionar en `main`.
+- (2026-10-25) Al terminar de portar todos los juegos quiere **un plan para mejorarlos** y **unas 5 propuestas de juegos nuevos** para elegir (VERSIONS.md, fase 10b).
+- (2026-10-25) Recuerda que **Wavelength es un juego roto** en la app Flutter: hay que arreglarlo de verdad, no portar sus fallos.
+- (2026-10-25) No contestó a la pregunta de descargar fuentes de iconos y texto: sin respuesta, no se descarga nada y se siguen usando los iconos provisionales.
 
 ## Producto
 - (2026-10-25) Lleva tiempo intentando hacer este juego. Pide convertir **todo el proyecto a Unity**, con los 7 juegos de la app Flutter.

@@ -95,6 +95,8 @@ Cierre técnico de cada versión con código Unity: recompilación sin errores, 
 - [ ] **V040 · Fin, registro, reglas y test PlayMode.**
 
 ## Fase 7 — Wavelength
+> El autor recuerda (2026-10-25) que **Wavelength está roto** en la app Flutter, aunque la v0.72 decía haberlo arreglado. No se porta su código tal cual: se reescribe desde la especificación de `CONTEXT.md` §6.4 con los arreglos de §8.1, y no se da por cerrado sin un test PlayMode de partida completa (pista → pasar → arrastrar el dial → revelado → siguiente ronda → fin) y una prueba en Play arrastrando el dial de verdad.
+
 - [ ] **V041 · Dominio** (puntos con bordes inclusivos) + tests.
 - [ ] **V042 · Datos** + seed de 80 + tests.
 - [ ] **V043 · Dial** (`Graphic` uGUI con malla propia, arrastre, revelado 0.7 s).
@@ -120,6 +122,10 @@ Cierre técnico de cada versión con código Unity: recompilación sin errores, 
 - [ ] **V057 · `BombaFlowController`** + tests.
 - [ ] **V058 · Pantallas** (setup, juego con mecha oculta y overlay de 1,5 s, fin).
 - [ ] **V059 · Registro, reglas y test PlayMode.**
+
+## Fase 10b — Plan de mejoras y juegos nuevos (petición del autor, 2026-10-25)
+- [ ] **V059a · Plan de mejoras** de los 7 juegos una vez portados (jugabilidad, contenido, UX y deuda de `CONTEXT.md` §8.2), con prioridades, para que el autor elija.
+- [ ] **V059b · Cinco juegos nuevos** propuestos (reglas, por qué encajan en un hub local de pasar el móvil, esfuerzo estimado), para que el autor elija cuáles añadir.
 
 ## Fase 11 — Pulido y paridad
 - [ ] **V060 · Icono y arranque** (placeholders con la paleta neón, mismos nombres).

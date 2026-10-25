@@ -4,6 +4,8 @@
 > (base, núcleo, menú y "Es un 10 pero" jugable) y los dominios puros del Impostor. Versión en curso: V026.
 > **Pendiente de decisión del autor:** permiso para descargar las fuentes (V014): iconos Material Symbols y una
 > fuente de texto con negrita real. Hasta entonces los iconos son sustitutos de texto ("<", "?", "))").
+> **Peticiones del autor (2026-10-25):** al terminar todos los juegos, plan de mejoras + 5 juegos nuevos propuestos
+> (V059a/V059b); Wavelength está roto en el Flutter y hay que arreglarlo a fondo (fase 7).
 > **Pendiente de probar a mano por el autor:** abrir `SajitariosGamespot/` en Unity 6000.3.27f1, Play en la escena
 > `App`, entrar en "Es un 10 pero" y sacar varias cartas (cuenta atrás de 5 s, volteo, sonido, silencio).
 
