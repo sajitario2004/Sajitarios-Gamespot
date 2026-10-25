@@ -9,7 +9,8 @@
 > iconos ya son glifos de verdad.
 > **Fase 13 en curso (juegos nuevos):** el autor eligió el 1, 2, 3, 4, 5 y 10 de `Docs/PLAN_MEJORAS.md` §4: Verdad o Reto,
 > ¿Quién es más probable que…?, ¿Qué prefieres?, Mímica por equipos, ¿Quién soy? y Hombres Lobo (con reparto pasando el
-> móvil y un game master que lleva la partida; muy configurable y con todas las expansiones). Hecho: V070 (base común de cartas).
+> móvil y un game master que lleva la partida; muy configurable y con todas las expansiones). Hecho: V070 (base común de cartas)
+> y V071 (Verdad o Reto). **Probar en el móvil:** una partida de Verdad o Reto con picante y con cartas propias que usen `{otro}`.
 > **Hechas las mejoras elegidas del plan (fase 10c):** C2, C3+L1, B1+B2, C4, I1, T1, W2 (estado en `Docs/PLAN_MEJORAS.md`).
 > **Hecho (V059h–V059j):** Impostor (2525) y Tabú (1161) por categorías elegibles en el setup, con Cachondeo +18 desmarcada por defecto.
 > **Hecho (V059m):** categorías propias en el Impostor y el Tabú, palabras y tarjetas propias en la categoría que se elija y gestión de tarjetas del Tabú.
@@ -136,6 +137,7 @@ SajitariosGamespot/Assets/_Gamespot/
 | `wavelength_spectra.json` | `[{izquierda, derecha}]` | 80 | ≥ 70 |
 | `tabu_words.json` | `[{palabra, prohibidas[], categoria}]` | **1161** (5 prohibidas cada una; 605 clásicas, 467 de fiesta y de España y 89 de Cachondeo; V059e–V059j) | ≥ 1000, 5 prohibidas distintas que no repiten la palabra |
 | `yo_nunca_statements.json` | `[{frase, intensidad}]` | 358 (suave 98 / picante 260, V059q) | suave ≥ 90, picante ≥ 250, todas empiezan por «Yo nunca», sin repetidas ni menores |
+| `verdad_reto_cards.json` (V071) | `[{texto, tipo, nivel}]` (tabla común de cartas) | 562 (verdades 127 / 126, retos 124 / 125, prendas 30 / 30; suave / picante) | ≥ 120 verdades y retos por nivel, ≥ 25 prendas por nivel, sin repetidas, picante sin menores, los retos picantes que tocan a otro piden permiso |
 | `bomba_silabas.json` | `["CA", …]` | 93 | ≥ 70 |
 | `bomba_categorias.json` | `["nombres de animales", …]` | 83 | ≥ 70 |
 
@@ -255,6 +257,12 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 - **Flow:** `Setup, Iniciando, Jugando, Explotando, GameOver, Error(sinPrompts)`. `Pasar()` no reinicia la mecha. `Explotar()` → `Explotando`; `ContinuarTrasExplosion()` → `GameOver` o ronda nueva con mecha y prompt nuevos (mismo modo).
 - **Pantallas:** setup con chips Sílaba (por defecto) / Categoría y 2–12 nombres. Juego: nombre del que tiene la bomba en MAYÚSCULAS, sílaba o categoría en MAYÚSCULAS en un panel con borde rojo que **late** (0.7–1.2, 1600 ms), tipo de prompt, botón **PASAR** (64 px) y chip con los vivos. **Sin cuenta atrás visible**; la mecha se comprueba cada 50 ms (en Unity, en cada frame). Al explotar: overlay a pantalla completa **1,5 s** con fuego, "¡BOOM!", el eliminado y "ha sido eliminado", y sigue solo. Fin: trofeo, "Ganador" y el nombre (encogido para caber en una línea), "Volver al menú". Sin sonido.
 
+### 6.8 Verdad o Reto (`verdad_reto`, V071, juego nuevo)
+- **Dominio:** `VerdadRetoConfig.Create(nombres, niveles, opciones)`: 2–20 jugadores normalizados y sin repetir (sin mayúsculas), al menos un nivel; las opciones se copian. `VerdadRetoOptions`: orden (`EnOrden` / `AlAzar`), elección (`ElJugador` / `AlAzar`), rajarse (sí), puntos (sí), rondas (0 = sin límite), segundos de los retos (0), máximo de verdades seguidas (0 = sin límite), cambios por turno (1), origen (de serie y propias).
+- **Flow:** `Setup, Eleccion, Carta, Castigo, Final, Error`. Un mazo sin repeticiones por tipo (`verdad`, `reto`, `castigo`) con los niveles y el origen elegidos; sin verdades ni retos → `Error`. `Elegir(tipo)` (verdad bloqueada si el jugador lleva el máximo seguidas y hay retos), `Sortear()`, `OtraCarta()`, `Cumplir()` (verdad +1, reto +2 con puntos), `Rajarse()` (prenda; sin cartas de castigo, la elige el grupo), `CastigoCumplido()`, `Terminar()`. Todos juegan una vez por ronda; al azar, nunca el mismo dos turnos seguidos. Con rondas, se acaba al terminar la última. Ranking: puntos, menos rajadas, orden de los nombres.
+- **Orden del random:** al empezar al azar `NextInt(n)`; al sortear (si se pueden los dos) `NextInt(2)` (0 = verdad); cada carta, la llamada del mazo y, si lleva `{otro}`, `NextInt(n − 1)` para el otro jugador; al pasar turno al azar, `NextInt` entre los que no han jugado en la ronda.
+- **Pantallas:** setup (jugadores, nivel, origen, turnos, reglas), turno («Le toca a» + Verdad cian / Reto magenta, o Sortear), carta (tipo, texto, aviso +18, cuenta atrás del reto con pitidos y bocina, ¡Hecho! (+n), Me rajo, Otra carta (n)), prenda y final (ganador o empate, clasificación con verdades, retos y rajadas; jugar otra, cambiar ajustes, menú). La barra tiene marcador y «Terminar»; casa y atrás piden confirmación. Gestión de cartas: `/verdad-reto/cartas`.
+
 ## 7. Estado de la app Flutter (referencia)
 - v0.75.0+75, Flutter 3.41.4 / Dart 3.11.1, Riverpod 3, go_router 17, Flame 1.37, sqflite. `flutter analyze` limpio, **823 tests**, cobertura 78 %.
 - Código en `Legacy/Flutter/lib/`, tests en `Legacy/Flutter/test/`, roadmap completo (F1–F22) en `Legacy/Flutter/docs/version.md`, su contexto en `Legacy/Flutter/docs/context.md`.
@@ -339,6 +347,12 @@ el móvil (V066, V068).
 | LiberationSans (recursos esenciales de TextMeshPro) | OFL 1.1 | Respaldo de los caracteres que Roboto no tenga |
 
 ## 10. Registro de trabajo (lo más reciente arriba)
+
+### 2026-10-25 · V071 · Verdad o Reto
+- Juego nuevo `Games/VerdadReto/`, el primero de los seis elegidos por el autor: verdad o reto por turnos, con «Me rajo» y prenda, suave y picante +18 (con la confirmación de edad común) y cartas propias. Muy configurable: orden de turnos, quién elige, rondas, puntos, cambios de carta, máximo de verdades seguidas y tiempo para los retos. Las cartas pueden nombrar a otro jugador (`{otro}`).
+- Seed de 562 cartas escrito para el juego; el picante es bruto pero siempre entre adultos que consienten (nada de menores; los retos que tocan a otro llevan «si quiere»), vigilado por `PromptSeedFilesTests`.
+- Piezas comunes para los juegos que vienen: `Countdown` (puro), `SetupWidgets`, `ScoreList`, `GameUi.FinishButton` y 45 iconos de Material Icons comprobados en la propia fuente (ligaduras GSUB). Arreglado de paso en la carta: el botón «Otra carta» salía sin texto (botón creado vacío).
+- 293 EditMode, PlayMode del juego 3/3, barrido de textos y pulsables (es y en) sin problemas. Capturas `V071_verdadreto_*`.
 
 ### 2026-10-25 · V070 · Base común de cartas (fase 13)
 - El autor eligió seis juegos de la lista: Verdad o Reto, ¿Quién es más probable que…?, ¿Qué prefieres?, Mímica por equipos, ¿Quién soy? y Hombres Lobo («que los usuarios se pasen el móvil como en el impostor y luego lo tenga un game master en la mano para gestionar la partida, quiero que sea muy configurable y con todas las expansiones del juego»). Plan en `VERSIONS.md`, fase 13 (V070–V082).

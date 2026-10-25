@@ -41,6 +41,21 @@ namespace Gamespot.Games.Shared
             return button;
         }
 
+        /// <summary>
+        /// Botón «Terminar partida» (bandera) de los juegos sin final fijo (V071): pide confirmación y, al confirmar,
+        /// ejecuta <paramref name="onConfirm"/> (que lleva a la clasificación).
+        /// </summary>
+        public static NeonButton FinishButton(AppBar appBar, Action onConfirm)
+        {
+            var button = appBar.AddAction(IconId.Flag, () => Dialogs.Confirm(Loc.T("terminarPartidaTitulo"), Loc.T("terminarPartidaMensaje"),
+                Loc.T("seguirJugando"), Loc.T("terminar"), ok =>
+                {
+                    if (ok) onConfirm?.Invoke();
+                }, Palette.NeonMagenta));
+            button.name = Loc.T("terminarPartida");
+            return button;
+        }
+
         /// <summary>Claves <c>prefijo1..N</c> de los pasos de las reglas.</summary>
         public static IReadOnlyList<string> RuleKeys(string prefix, int count)
         {

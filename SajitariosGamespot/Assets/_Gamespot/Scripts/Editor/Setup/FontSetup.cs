@@ -30,8 +30,8 @@ namespace Gamespot.Editor.Setup
         private const int SamplingPointSize = 56;
         private const int AtlasPadding = 6;
         private const int TextAtlasSize = 1024;
-        // 44 iconos caben de sobra en 512 × 512.
-        private const int IconAtlasSize = 512;
+        // Con los de la fase 13 son unos 90 iconos: en 512 × 512 caben 49 (celdas de 68), así que 1024 × 1024.
+        private const int IconAtlasSize = 1024;
 
         // Además de lo que sale en los textos y los seeds: ASCII, Latin-1 y la puntuación habitual del español.
         private const string Extra = "…«»¿¡–—‘’“”€•·×";

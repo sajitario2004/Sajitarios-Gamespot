@@ -1,6 +1,6 @@
 # TREE
 
-Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 23:24.
+Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 23:47.
 
 No se listan: Library, Temp, Logs, obj, UserSettings, .git, .vs, .idea, .vscode, .utmp, Build, Builds, MemoryCaptures, Recordings, node_modules, __pycache__, .venv, .dart_tool, build, coverage, *.meta, *.csproj, *.sln, *.slnx, *.user, *.pidb, *.unityproj, .DS_Store, Thumbs.db, *.apk, *.aab.
 Plegadas: skills, TextMesh Pro, Flutter, Capturas (Flutter = la app original en Legacy/Flutter, solo lectura).
@@ -11,7 +11,7 @@ Sajitarios-Gamespot/
 ├── .claude/
 │   └── settings.json
 ├── Docs/
-│   ├── Capturas/  (61 elementos, plegado)
+│   ├── Capturas/  (66 elementos, plegado)
 │   └── PLAN_MEJORAS.md
 ├── Legacy/
 │   └── Flutter/  (20 elementos, plegado)
@@ -59,6 +59,7 @@ Sajitarios-Gamespot/
 │   │   │   │       ├── impostor_words.json
 │   │   │   │       ├── tabu_words.json
 │   │   │   │       ├── trivia_questions.json
+│   │   │   │       ├── verdad_reto_cards.json
 │   │   │   │       ├── wavelength_spectra.json
 │   │   │   │       └── yo_nunca_statements.json
 │   │   │   ├── Scenes/
@@ -83,6 +84,8 @@ Sajitarios-Gamespot/
 │   │   │   │   │   ├── Text/
 │   │   │   │   │   │   ├── IcuMessageFormatter.cs
 │   │   │   │   │   │   └── NameNormalizer.cs
+│   │   │   │   │   ├── Time/
+│   │   │   │   │   │   └── Countdown.cs
 │   │   │   │   │   └── Gamespot.Core.asmdef
 │   │   │   │   ├── Core.Runtime/
 │   │   │   │   │   ├── Audio/
@@ -168,7 +171,9 @@ Sajitarios-Gamespot/
 │   │   │   │   │   │   │   ├── PlayerListEditor.cs
 │   │   │   │   │   │   │   ├── PromptCardsConfig.cs
 │   │   │   │   │   │   │   ├── PromptCardsScreen.cs
-│   │   │   │   │   │   │   └── RulesScreen.cs
+│   │   │   │   │   │   │   ├── RulesScreen.cs
+│   │   │   │   │   │   │   ├── ScoreList.cs
+│   │   │   │   │   │   │   └── SetupWidgets.cs
 │   │   │   │   │   │   ├── Gamespot.Games.Shared.asmdef
 │   │   │   │   │   │   └── IGameDescriptor.cs
 │   │   │   │   │   ├── Bomba/
@@ -222,6 +227,9 @@ Sajitarios-Gamespot/
 │   │   │   │   │   │   │   └── WordsScreen.cs
 │   │   │   │   │   │   ├── Gamespot.Games.Impostor.asmdef
 │   │   │   │   │   │   └── ImpostorGame.cs
+│   │   │   │   │   ├── MasProbable/
+│   │   │   │   │   │   └── Domain/
+│   │   │   │   │   │       └── MasProbableDomain.cs
 │   │   │   │   │   ├── Tabu/
 │   │   │   │   │   │   ├── Data/
 │   │   │   │   │   │   │   └── TabuWordRepository.cs
@@ -250,6 +258,14 @@ Sajitarios-Gamespot/
 │   │   │   │   │   │   │   └── TriviaScreens.cs
 │   │   │   │   │   │   ├── Gamespot.Games.Trivia.asmdef
 │   │   │   │   │   │   └── TriviaGame.cs
+│   │   │   │   │   ├── VerdadReto/
+│   │   │   │   │   │   ├── Domain/
+│   │   │   │   │   │   │   ├── Gamespot.Games.VerdadReto.Domain.asmdef
+│   │   │   │   │   │   │   ├── VerdadRetoConfig.cs
+│   │   │   │   │   │   │   └── VerdadRetoFlowController.cs
+│   │   │   │   │   │   ├── Gamespot.Games.VerdadReto.asmdef
+│   │   │   │   │   │   ├── VerdadRetoGame.cs
+│   │   │   │   │   │   └── VerdadRetoScreens.cs
 │   │   │   │   │   ├── Wavelength/
 │   │   │   │   │   │   ├── Data/
 │   │   │   │   │   │   │   └── SpectrumRepository.cs
@@ -325,6 +341,8 @@ Sajitarios-Gamespot/
 │   │   │       │   │   │   │   └── TriviaDataTests.cs
 │   │   │       │   │   │   └── Domain/
 │   │   │       │   │   │       └── TriviaDomainTests.cs
+│   │   │       │   │   ├── VerdadReto/
+│   │   │       │   │   │   └── VerdadRetoFlowTests.cs
 │   │   │       │   │   ├── Wavelength/
 │   │   │       │   │   │   ├── Domain/
 │   │   │       │   │   │   │   └── WavelengthDomainTests.cs
@@ -334,6 +352,7 @@ Sajitarios-Gamespot/
 │   │   │       │   │   │   │   ├── NeverStatementTextTests.cs
 │   │   │       │   │   │   │   └── YoNuncaDomainTests.cs
 │   │   │       │   │   │   └── YoNuncaPhrasesTests.cs
+│   │   │       │   │   ├── PromptSeedFilesTests.cs
 │   │   │       │   │   └── SeedFilesTests.cs
 │   │   │       │   ├── Localization/
 │   │   │       │   │   ├── GlyphCoverageTests.cs
@@ -355,6 +374,7 @@ Sajitarios-Gamespot/
 │   │   │           │   ├── SoundTests.cs
 │   │   │           │   ├── TabuFlowTests.cs
 │   │   │           │   ├── TriviaFlowTests.cs
+│   │   │           │   ├── VerdadRetoFlowTests.cs
 │   │   │           │   ├── WavelengthFlowTests.cs
 │   │   │           │   └── YoNuncaFlowTests.cs
 │   │   │           ├── AccessibilityTests.cs

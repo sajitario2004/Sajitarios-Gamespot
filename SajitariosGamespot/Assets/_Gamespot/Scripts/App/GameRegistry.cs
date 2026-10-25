@@ -7,6 +7,7 @@ using Gamespot.Games.Wavelength;
 using Gamespot.Games.YoNunca;
 using Gamespot.Games.Shared;
 using Gamespot.Games.Tabu;
+using Gamespot.Games.VerdadReto;
 
 namespace Gamespot.App
 {
@@ -26,6 +27,7 @@ namespace Gamespot.App
             new TabuGame(),
             new YoNuncaGame(),
             new BombaGame(),
+            new VerdadRetoGame(),
         };
     }
 }

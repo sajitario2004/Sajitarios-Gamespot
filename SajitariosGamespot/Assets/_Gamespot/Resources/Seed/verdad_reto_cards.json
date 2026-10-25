@@ -1,0 +1,2812 @@
+[
+  {
+    "texto": "¿Cuál es la mentira más gorda que les has contado a tus padres?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo más vergonzoso que te ha pasado en público?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿A quién de aquí llamarías si tuvieras que esconder un cadáver?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál es tu mayor miedo?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo más raro que has comido?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál es el peor regalo que te han hecho?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué canción te sabes entera y te da vergüenza admitirlo?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál ha sido tu peor cita?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo que más te molesta de {otro}?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué fue lo primero que pensaste de {otro} cuando le conociste?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál es tu placer culpable?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Has fingido estar enfermo para no ir a algún sitio? ¿Adónde?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo más caro que has roto?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál es el mote más ridículo que te han puesto?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué harías si fueras invisible un día entero?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿A qué famoso te pareces, según te dicen?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál es la peor nota que has sacado y en qué?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué serie has visto entera más de una vez?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál es tu mayor manía?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo que nunca le contarías a tu madre?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Has leído alguna vez los mensajes del móvil de otra persona?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál es el último mensaje que borraste antes de que lo vieran?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo más infantil que sigues haciendo?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál es tu recuerdo más bonito de cuando eras pequeño?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué superpoder elegirías y para qué lo usarías de verdad?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuánto tiempo has llegado a estar sin ducharte?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo más tonto por lo que has llorado?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Alguna vez has culpado a otro de algo que hiciste tú?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál es la peor excusa que has puesto para no quedar?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Quién de este grupo crees que llegará más lejos en la vida?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Quién de aquí sería el peor compañero de piso?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué app usas más y cuántas horas al día?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál es la última búsqueda que hiciste en internet?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo más ilegal que has hecho que se pueda contar?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál es tu peor hábito?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Has cotilleado las redes de un ex? ¿Cuánto tiempo seguido?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo que más te arrepientes de haber dicho?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuántas veces suspendiste el examen de conducir?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Si pudieras cambiar una cosa de tu físico, ¿cuál sería?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo más raro que haces cuando estás solo en casa?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál fue tu primer amor platónico famoso?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo más ridículo que has hecho para impresionar a alguien?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿A quién de aquí le contarías un secreto y a quién nunca?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál es el peor trabajo que has tenido?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué comida odias aunque todo el mundo la adore?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Te has quedado dormido en algún sitio donde no debías?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo que más miedo te da del futuro?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál es la peor moda que has seguido?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué foto tuya te gustaría borrar de internet?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Has hablado mal de alguien de este grupo? ¿De quién?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo más bonito que te han dicho nunca?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Has tenido alguna vez un amigo imaginario?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo más tarde que has llegado a algo importante?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué te contaron de pequeño que te creíste durante años?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué película te encanta y te da vergüenza reconocerlo?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Has regalado algo que te habían regalado a ti?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué harías con un millón de euros mañana mismo?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál es la peor resaca que has tenido?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿A quién de aquí te llevarías a una isla desierta?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo que mejor se te da y casi nadie sabe?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál es la mayor tontería en la que has gastado dinero?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Te has colado alguna vez en algún sitio sin pagar?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo más asqueroso que has hecho?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál es tu mayor inseguridad?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Has fingido que te gustaba un regalo? ¿Cuál era?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué cosa haces que te parece normal y a los demás no?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Quién fue la última persona que te hizo llorar?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué opinión impopular tienes?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo que más echas de menos de ser niño?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál es el sitio más raro donde te has quedado dormido?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Has mentido en lo que va de partida?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo peor que has cocinado?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuántos mensajes sin leer tienes ahora mismo?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué famoso te cae fatal y por qué?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál es tu talento más inútil?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo que más te cuesta perdonar?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Te ha gustado alguna vez un profesor o un jefe?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué serías capaz de hacer por mil euros?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo que más vergüenza te da de tu familia?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál ha sido tu momento más incómodo con {otro}?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo que más admiras de {otro}?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Si pudieras cambiarte la vida un día con alguien de aquí, ¿con quién sería?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué secreto has guardado durante más tiempo?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Has escuchado a escondidas una conversación? ¿Qué oíste?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál es la peor excusa que has puesto en el trabajo o en clase?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Has hecho trampas en algún juego de mesa? ¿En cuál?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo último que te ha dado vergüenza ajena?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué te gustaría que la gente supiera de ti?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué canción cantas en la ducha como si fuera un concierto?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál es el peor corte de pelo que has llevado?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál fue tu primer móvil?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo más atrevido que has hecho en un viaje?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Te ha pillado alguien hablando solo? ¿Qué decías?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo más raro que tienes en tu habitación?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál es el peor consejo que has seguido?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo que más te enfada que te digan?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué personaje de ficción te gustaría ser?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál fue tu peor época y cómo saliste de ella?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo más raro que has buscado en Google?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Tienes alguna superstición?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿De qué estás más orgulloso?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué harías si mañana fuera el fin del mundo?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Quién de aquí crees que miente mejor?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál ha sido el mejor día de tu vida?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Has dejado a alguien por mensaje?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo más vergonzoso de tu historial de música?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Has fingido saber de algo de lo que no tenías ni idea?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál es el peor mensaje que has mandado a la persona equivocada?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo que más te cuesta decir en voz alta?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Has llorado con una película de dibujos? ¿Con cuál?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué te gustaría haber hecho hace años y no hiciste?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué no soportarías de tu pareja ideal?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Quién de aquí tiene peor gusto vistiendo?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué te hace reír aunque no deberías?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo más impulsivo que has hecho?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo más importante que has perdido?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál es el último audio que te dio vergüenza mandar?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Si tuvieras que borrar todas tus redes menos una, ¿cuál dejarías?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué te pondrías si nadie te fuera a juzgar?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Con qué famoso te irías a cenar?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo más bonito que has hecho por alguien?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo que más te gusta de ti?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué es lo peor que has dicho estando enfadado?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál es tu recuerdo más vergonzoso del colegio?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Quién de aquí crees que se hará famoso antes?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Qué mentira piadosa dices más a menudo?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál es la última vez que lloraste y por qué?",
+    "tipo": "verdad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Imita a {otro} hasta que alguien adivine a quién imitas.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Habla con voz de locutor de radio hasta tu próximo turno.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz 15 sentadillas.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Baila sin música durante 30 segundos.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Canta el estribillo de la última canción que escuchaste.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Deja que {otro} te haga un peinado.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz una declaración de amor dramática a una silla.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Di el abecedario al revés lo más rápido que puedas.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Cuenta un chiste; si nadie se ríe, cuenta otro.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz el sonido de cinco animales distintos.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Di una frase larga sin juntar los labios.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Enseña la última foto de tu galería.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Deja que {otro} lea en voz alta tu último mensaje enviado.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz una pose de modelo y aguántala 20 segundos.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Imita a un famoso hasta que alguien lo adivine.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Llama a alguien y cántale «Cumpleaños feliz».",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Aguanta a la pata coja 30 segundos.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz de hombre o mujer del tiempo y cuenta el tiempo de mañana.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Habla como un robot hasta tu próximo turno.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz 10 flexiones (o 20 contra la pared).",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Cuenta tu día como si fuera el tráiler de una película.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Deja que el grupo elija tu foto de perfil durante una hora.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Di una cosa buena de cada persona del grupo.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Imita a tu profesor o a tu jefe más famoso.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Bebe un vaso de agua sin usar las manos.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Escribe un poema de cuatro versos sobre {otro} y léelo en voz alta.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ponte los calcetines en las manos hasta tu próximo turno.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz un desfile de moda por la habitación.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Intenta lamerte el codo.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Dibuja a {otro} con los ojos cerrados.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Preséntate con un rap.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Di «Tres tristes tigres tragaban trigo en un trigal» tres veces seguidas sin fallar.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Habla de ti en tercera persona hasta tu próximo turno.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Baila el último baile de moda que te sepas.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Deja que {otro} te pinte un bigote.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Imita a un bebé que pide comida.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Narra lo que hace {otro} como un documental de animales durante 30 segundos.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Llama a un amigo, dile que le quieres y cuelga sin explicar nada.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Aguanta una cuchara en la nariz 10 segundos.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Cuenta del 1 al 20 en otro idioma.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Deja que el grupo te cambie el nombre en tu perfil de mensajería durante un día.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz una reverencia a cada jugador.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz de mimo atrapado en una caja durante 30 segundos.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Súbete a una silla y da un discurso de victoria.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Manda un audio de 5 segundos maullando a alguien de tu lista.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Hazte un selfie con la cara más fea que puedas y enséñalo.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Intenta tocarte la nariz con la lengua.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Da cinco vueltas sobre ti mismo y camina en línea recta (con cuidado).",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Mira a {otro} a los ojos 30 segundos sin reírte.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Habla con voz de pito hasta tu próximo turno.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Inventa una canción sobre lo que has comido hoy.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz de camarero y pregunta a cada uno qué quiere tomar.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Hazle una entrevista a {otro} como si fuera famoso.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Di la palabra «patata» en cada frase hasta tu próximo turno.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz 20 saltos de tijera.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Imita a una gallina poniendo un huevo.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Recita una receta de cocina como si fuera una tragedia.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ponte una prenda de {otro} hasta tu próximo turno (si te la deja).",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Habla solo con preguntas hasta tu próximo turno.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz un anuncio de teletienda de un objeto de la habitación.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Di cinco palabras que rimen con «amor» en 10 segundos.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz una sesión de fotos dramática a {otro}.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Camina como un pingüino por la habitación.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Lee tu última conversación del móvil con voz de telenovela.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Quédate como una estatua hasta que alguien te haga reír.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Cuenta una anécdota tuya como si fueras un abuelo.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Pon como alarma de mañana la canción que elija el grupo.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz un brindis por la persona de tu izquierda.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Intenta hacer reír a {otro} en 30 segundos sin tocarle.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Escribe tu nombre en el aire con el culo.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Habla como un pirata hasta tu próximo turno.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz una plancha de 30 segundos.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Enseña el último vídeo que grabaste.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Cuenta tu peor momento del año con voz de locutor deportivo.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Pide perdón a {otro} de forma muy dramática por algo inventado.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz de influencer y presenta un producto de la nevera.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Di algo bonito a cada uno sin repetir.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Imita la forma de andar de alguien del grupo hasta que adivinen quién es.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ponte un objeto en la cabeza y que no se te caiga hasta tu próximo turno.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Celebra como un futbolista que acaba de marcar en la final.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Canta una canción cambiando todas las vocales por la «i».",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Llama a alguien de tu familia y pregúntale una receta.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Escribe con la mano que no usas el nombre de todos los jugadores.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Deja que {otro} elija una canción y báilala.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz un monólogo de humor de 30 segundos.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Imita a un perro que acaba de ver una pelota.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Dile a {otro} lo que más te gusta de su forma de ser.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz la reseña de restaurante de lo último que comiste.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Habla en susurros hasta tu próximo turno.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Pon una cara distinta cada vez que alguien diga tu nombre hasta tu próximo turno.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Camina con un libro en la cabeza sin que se caiga.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Imita el tono de llamada de tu móvil.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Inventa un saludo secreto con {otro}.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Cuenta el sueño más raro que hayas tenido.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz como si fueras un astronauta pisando la Luna.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Di diez frutas en 15 segundos.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz un rap de cuatro versos sobre el grupo.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Di «te quiero» con voz de actor de doblaje.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Deja que el grupo te escriba algo en la mano con boli.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz una coreografía de 15 segundos con {otro}.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Habla como un niño pequeño hasta tu próximo turno.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Di un piropo cutre a cada jugador.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Recrea con {otro} una escena famosa de una película.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz como si te hubieran dado un premio y da el discurso.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Pon cara de malo 30 segundos sin reírte.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz el paso de baile hacia atrás de Michael Jackson.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz de presentador de telediario y da una noticia del grupo.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Intenta hacer malabares con tres objetos blandos.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz tu mejor imitación de un villano de película.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Cuenta un secreto pequeño que nadie de aquí sepa.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Escribe un tuit sobre esta fiesta y léelo en voz alta.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz de guía turístico de la casa.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Silba una canción hasta que alguien la adivine.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Aplaude como una foca durante 10 segundos.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Cuenta 30 segundos de tu vida como un narrador de fútbol.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Deja que {otro} te ponga un apodo para el resto de la partida.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz de estatua viviente y pide propina.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz que todos se rían en un minuto o haz 10 sentadillas.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Di el trabalenguas que elija el grupo.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Di tu frase favorita con la nariz tapada.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz la ola tú solo.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Cámbiate de sitio con {otro} hasta el final de la partida.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Habla sin usar la letra «a» durante 30 segundos.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz el saludo militar cada vez que alguien beba hasta tu próximo turno.",
+    "tipo": "reto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "¿Cuál es tu fantasía sexual que nunca has contado?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Con quién de aquí te acostarías si tuvieras que elegir?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Cuál es el sitio más raro donde lo has hecho?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Qué es lo más atrevido que has hecho en la cama?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Te has acostado con alguien cuyo nombre no recuerdas?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Cuántas personas han pasado por tu cama?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Qué es lo que más te pone de una persona?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has mandado fotos subidas de tono? ¿A quién?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Cuál es la peor experiencia sexual que has tenido?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has fingido un orgasmo? ¿Por qué?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿En qué parte del cuerpo te gusta más que te besen?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has hecho un trío o te gustaría hacerlo?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Te has liado con alguien de este grupo? ¿Con quién?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Qué es lo más guarro que le has escrito a alguien por mensaje?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has usado juguetes sexuales? ¿Cuál es tu favorito?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Cuál ha sido tu rollo de una noche más memorable?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Te han pillado alguna vez en plena faena?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Qué te gustaría probar en la cama que aún no has probado?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has tenido sexo en un coche?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has visto porno con tu pareja?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Qué tipo de porno es el que más buscas?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has tenido un sueño erótico con alguien de aquí?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has sido infiel o te han sido infiel?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Con qué famoso pasarías una noche loca?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Cuál es la cosa más rara que te ha excitado?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Le has hecho un striptease a alguien?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Prefieres dominar o que te dominen?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Cuál es tu postura favorita?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has tenido sexo en la playa o en el mar?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Cuánto ha durado tu sesión de sexo más larga?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Te has acostado con un ex después de dejarlo?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Qué es lo más vergonzoso que te ha pasado en la cama?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has ligado por aplicaciones? ¿Cuál fue tu cita más loca?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Te has masturbado pensando en alguien de este grupo?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Cuál es el mejor sexo oral que te han hecho?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Te gusta que te hablen sucio? ¿Qué te gusta oír?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has tenido sexo en el baño de un bar o de una discoteca?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has hecho sexting con alguien a quien no conocías en persona?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Cuál es tu zona erógena secreta?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿En qué te fijas para saber si alguien es bueno en la cama?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Te has acostado con alguien mucho mayor que tú? ¿Cuántos años más tenía?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has probado el sexo anal? ¿Qué tal fue?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Te has acostado con alguien del trabajo o de clase?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Cuál es tu récord de veces en una noche?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Te han atado alguna vez o has atado tú a alguien?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Qué ropa interior llevas ahora mismo?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has besado a alguien de tu mismo sexo? ¿Te gustó?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿A quién de aquí le darías un beso ahora mismo?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has tenido un follamigo? ¿Cómo acabó?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has grabado algún vídeo íntimo?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Cuál es el sitio público más arriesgado donde has hecho algo?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Qué es lo que peor llevas de otra persona en la cama?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has tenido sexo en casa de tus padres con ellos dentro?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has gemido tan alto que te han oído los vecinos?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Te gusta más el sexo por la mañana o por la noche?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has tenido un gatillazo o te ha tocado uno? ¿Cómo lo llevaste?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Qué es lo más pervertido que has buscado en internet?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has pagado alguna vez por contenido para adultos?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Cuál sería tu juguete sexual soñado?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has fantaseado con un profesor o con un jefe?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Te has enrollado con dos personas la misma noche?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has tenido sexo al aire libre?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Cuál es la frase más cutre que te ha funcionado para ligar?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Te has acostado con alguien a quien conociste esa misma noche?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Qué te parece más sexy: la voz, las manos o la mirada?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has hecho algo sexual en un avión, un tren o un autobús?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has ido a un club de intercambio o te gustaría ir?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Cuál es la parte del cuerpo de {otro} que más te gusta?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Qué nota le pondrías del 1 al 10 a tu último polvo?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has dicho el nombre equivocado en la cama?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Te pone más que te desnuden o desnudarte tú?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has tenido sexo en un ascensor o en un probador?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Qué es lo más bonito que te han hecho en la cama?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has repetido con alguien que sabías que no te convenía?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Te has liado con el ex de un amigo o de una amiga?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Prefieres la luz encendida o apagada?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Qué te corta el rollo al instante en la cama?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has jugado a algún juego de rol en la cama? ¿De qué ibas?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Te has acostado con alguien famoso o medio famoso?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Qué es lo más atrevido que has hecho por videollamada?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has tenido sexo en tu trabajo?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Cuál es la persona más inesperada con la que te has liado?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has besado a más de una persona de este grupo? ¿A quiénes?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Si tuvieras que acostarte con alguien de aquí con los ojos vendados, ¿quién te gustaría que fuera?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has entrado en una tienda erótica? ¿Qué compraste?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Cuál es el mensaje más caliente que tienes ahora mismo en el móvil?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Cuánto tiempo aguantas sin sexo sin ponerte de mal humor?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Qué es lo más raro que te han pedido en la cama?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has dicho que no a algo en la cama y luego te has arrepentido?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has tenido sexo con la regla? ¿Qué tal?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has tenido sexo en un hotel con las cortinas abiertas?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Cuál es tu fetiche?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Te ha puesto alguna vez una discusión con tu pareja?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has mandado un desnudo a la persona equivocada?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Qué harías con {otro} si os quedarais solos en una isla?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has tenido sexo en la cama de alguien sin que lo supiera?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Cuál es el tiempo más largo que has estado sin sexo?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has dormido desnudo en casa de alguien que no era tu pareja?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Tienes alguna foto íntima guardada en el móvil ahora mismo?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Te gustaría ver a tu pareja con otra persona?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has hecho algo sexual en una discoteca?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Qué es lo más guarro que has hecho estando borracho?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has ligado con alguien solo para dar celos a otra persona?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Qué te gusta que te hagan con las manos?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Cuál fue tu último sueño erótico?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has tenido una aventura con alguien que tenía pareja?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Qué te pone más: lencería o nada?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has grabado audios guarros?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Del 1 al 10, ¿qué nota te pones en la cama?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has tenido sexo en una habitación donde había más gente durmiendo?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Qué cosa sexual no harías ni por todo el dinero del mundo?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has repetido con un ligue de una noche?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Quién de aquí crees que es más salvaje en la cama?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Qué es lo primero que harías en una noche sin límites?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has tenido sexo en la ducha? ¿Mereció la pena?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has besado a un desconocido en una fiesta por un reto?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Qué es lo más picante que has hecho en una piscina?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has tenido sexo por teléfono?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Te has enamorado de un rollo de una noche?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Qué te gustaría que te susurraran al oído?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Cuál es el momento más incómodo que has vivido desnudo?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has tenido sexo en el sofá de un amigo?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Te has acostado con alguien solo por despecho?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Cuál es el piropo más guarro que te han dicho y te gustó?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Has hecho algo sexual de lo que te arrepientas?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "¿Qué es lo más loco que has hecho por un calentón?",
+    "tipo": "verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Dale un beso a {otro} donde elija (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Quítate una prenda, la que tú elijas.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hazle un baile sensual a {otro} durante 30 segundos (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Deja que {otro} te dé un mordisco suave en el cuello.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Lee en voz alta el último mensaje subido de tono que mandaste.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Haz un gemido falso lo más realista que puedas.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Imita con un cojín tu postura favorita durante 10 segundos.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Dale un masaje en los hombros a {otro} durante un minuto (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Susúrrale al oído a {otro} lo que le harías esta noche.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Besa a {otro} en el cuello durante 5 segundos (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Siéntate en las piernas de {otro} hasta tu próximo turno (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Haz un striptease de 30 segundos sin quitarte nada.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Cuenta con detalle tu mejor noche de sexo.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Enseña la foto más sexy que tengas en el móvil (en la que no salga nadie más).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Deja que {otro} te quite una prenda con los dientes (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hazle un baile en el regazo de 20 segundos a quien elijas (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Lame algo dulce del dedo de {otro} (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Pasa un cubito de hielo de tu boca a la de {otro} (si los dos queréis).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Muérdele suavemente la oreja a {otro} (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Imita durante 15 segundos cómo eres en la cama.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Mira a {otro} a los ojos y dile lo más guarro que se te ocurra.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Manda un mensaje picante a alguien de confianza de tu lista.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Toma un trago del ombligo de {otro} (si los dos queréis).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Besa a {otro} con los ojos vendados (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Quítate la camiseta hasta tu próximo turno.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Deja que {otro} te escriba algo picante en la piel con boli.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Pon tu mejor cara de orgasmo.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Acaricia el muslo de {otro} durante 10 segundos (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Representa con {otro} una escena de película porno solo con la voz.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Haz un baile en barra con lo que tengas cerca (una escoba vale).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Cuenta en 30 segundos tu fantasía más sucia.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Desabróchate el pantalón hasta tu próximo turno.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Deja que {otro} te dé un azote (si tú quieres).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Dale un azote a {otro} (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hazle un chupetón a {otro} donde no se vea (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Bésate apasionadamente la mano durante 10 segundos.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Elige a alguien y finge que le estás seduciendo en una discoteca.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Lee la lista de la compra con tu voz más sexy.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Haz 10 movimientos de cadera seguidos mirando a {otro}.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Quítale una prenda a {otro} (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Enseña tu historial de búsqueda de los últimos días.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Graba un audio gimiendo y bórralo delante de todos.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Deja que {otro} te ate las manos con algo suave hasta tu próximo turno (si tú quieres).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Dale un masaje en los pies a {otro} durante un minuto (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Finge un orgasmo con todo el realismo que puedas.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Dile a cada jugador qué parte de su cuerpo te gusta más.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Encerraos {otro} y tú en otra habitación durante siete minutos (si los dos queréis).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Besa la parte del cuerpo de {otro} que elija el grupo (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Haz que {otro} adivine qué ropa interior llevas.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Sopla suavemente en el cuello de {otro} durante 10 segundos.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Haz una postura del Kamasutra con {otro}, vestidos (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Recorre con un dedo la espalda de {otro} hasta que diga basta.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Cuenta con todo detalle el sitio más raro donde lo has hecho.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Imita los gemidos de tres personas distintas.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Quédate de cintura para arriba sin ropa durante un minuto.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Deja que {otro} elija qué prenda te quitas.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Haz una declaración erótica a la persona de tu derecha.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Pon las manos en el culo de {otro} durante 10 segundos (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Besa a la persona que tengas enfrente (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Lámele el cuello a {otro} (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Perrea durante 20 segundos.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Describe tu cita perfecta con {otro}, acabando en la cama.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Mete la mano en el bolsillo trasero de {otro} y déjala ahí 30 segundos (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Imita el ruido de una cama que chirría.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hazle a {otro} la mejor caricia que sepas en la cara.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Elige a dos jugadores para que se den un pico (si quieren).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Enseña tu tatuaje o tu lunar más escondido.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Di de qué color es tu ropa interior y enséñalo un segundo.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Haz un baile erótico con una silla.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Mira fijamente a {otro} mordiéndote el labio durante 10 segundos.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Bebe de la copa de {otro} poniéndole ojitos.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Pasa una uva de tu boca a la de {otro} (si los dos queréis).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Inventa y cuenta 30 segundos de un relato erótico sobre ti.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Abraza por detrás a {otro} durante 20 segundos (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Gime cada vez que alguien diga tu nombre hasta tu próximo turno.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hazte un selfie sexy y enséñaselo al grupo.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Di tres cosas que te pongan de {otro}.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Véndate los ojos y adivina quién te da un beso en la mejilla.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Di la frase que dirías en una película porno.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Abraza a {otro} sin camiseta (si los dos queréis).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Besa el aire como besarías a tu crush.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Quítate los calcetines con la boca.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Dale un masaje a {otro} en la espalda por debajo de la camiseta (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Escribe a tu ex que le echas de menos (o haz 20 sentadillas).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Señala en tu cuerpo dónde te gusta que te toquen.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Siéntate a horcajadas sobre {otro} durante 10 segundos (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Deja que {otro} elija una postura y hazla con un cojín.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Besa a {otro} en la mejilla, luego en el cuello y luego donde quiera (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hazle a {otro} un baile de despedida de soltero.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Contesta con gemidos a todo hasta tu próximo turno.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Graba con {otro} un audio de 10 segundos de película subida de tono y borradlo.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Pon un cubito de hielo en el cuello de {otro} y déjalo bajar (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Dale un beso de tornillo a quien elijas (si quiere) o bebe dos tragos.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Desabrocha con una mano el cinturón de {otro} (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Describe tu orgasmo perfecto con el título de una canción.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Muérdele el labio a {otro} suavemente (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Ponte una prenda que lleve puesta {otro} (si te la deja).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Haz el ruido que haces cuando acabas.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Deja que {otro} te susurre una guarrada al oído.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Haz una pose sexy y que el grupo te haga una foto con tu móvil.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Toca a {otro} por encima de la ropa donde te diga (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Bebe sin manos de las manos de {otro}.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Haz twerking durante 15 segundos.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Imita una escena de «Cincuenta sombras de Grey».",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Di el nombre de la última persona con la que te acostaste.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Mándale a tu pareja o a tu crush una foto de tus labios.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Pon las manos de {otro} en tu cintura y bailad una lenta (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Da una clase de educación sexual de 30 segundos.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Deja que el grupo lea tu última conversación con tu crush.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Quítale los zapatos a {otro} con la boca (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Besa el ombligo de {otro} (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Finge una llamada caliente con el móvil apagado.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Elige a la persona más sexy del grupo y di por qué.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Haz que {otro} te dé de comer algo de forma sensual.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Quítate tantas prendas como personas levanten la mano, hasta tres.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Dale un pico a {otro} (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Haz 10 sentadillas sensuales mirando a {otro}.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hazle un chupetón a {otro} en el brazo (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Cuenta en voz alta cómo te tocas.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Deja que {otro} te vende los ojos y te toque la cara durante 20 segundos.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Dale un beso de película a tu reflejo en el móvil.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Pon la cara que pones cuando ves a alguien que te gusta.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Ponte de rodillas y declárale tu deseo a {otro}.",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Dale un masaje en el cuello a quien elijas durante un minuto (si quiere).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Deja que {otro} te quite el cinturón (si los dos queréis).",
+    "tipo": "reto",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Haz 20 sentadillas.",
+    "tipo": "castigo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Bébete un vaso de agua de un trago.",
+    "tipo": "castigo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Deja que el grupo te ponga un apodo para el resto de la partida.",
+    "tipo": "castigo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Canta una canción entera delante de todos.",
+    "tipo": "castigo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Habla como un robot hasta tu próximo turno.",
+    "tipo": "castigo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ponte la camiseta del revés hasta el final de la partida.",
+    "tipo": "castigo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz 10 flexiones.",
+    "tipo": "castigo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Deja que {otro} te haga una foto poniendo la cara que elija el grupo.",
+    "tipo": "castigo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Imita a una gallina durante 15 segundos.",
+    "tipo": "castigo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Cuenta tu momento más vergonzoso.",
+    "tipo": "castigo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Deja que el grupo elija tu estado del móvil durante una hora.",
+    "tipo": "castigo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Llama a alguien y dile que le quieres.",
+    "tipo": "castigo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Baila lo que elija el grupo.",
+    "tipo": "castigo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "No puedes hablar hasta tu próximo turno.",
+    "tipo": "castigo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz un cumplido a cada jugador.",
+    "tipo": "castigo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz de camarero del grupo hasta tu próximo turno.",
+    "tipo": "castigo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Deja que {otro} te despeine.",
+    "tipo": "castigo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Baila sin pareja la canción que elija el grupo.",
+    "tipo": "castigo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Cuenta un chiste malo.",
+    "tipo": "castigo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz una plancha de 40 segundos.",
+    "tipo": "castigo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Sirve la bebida a todos.",
+    "tipo": "castigo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Habla en verso hasta tu próximo turno.",
+    "tipo": "castigo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Enseña la última foto de tu galería.",
+    "tipo": "castigo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Cuenta tres cosas tuyas que nadie de aquí sepa.",
+    "tipo": "castigo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Imita al jugador que elija el grupo.",
+    "tipo": "castigo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ponte un calcetín en la mano hasta el final de la partida.",
+    "tipo": "castigo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Haz 30 saltos de tijera.",
+    "tipo": "castigo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Recoge y limpia lo que haya en la mesa.",
+    "tipo": "castigo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Di el abecedario en 10 segundos.",
+    "tipo": "castigo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Deja que {otro} te dibuje algo en la mano.",
+    "tipo": "castigo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Quítate una prenda.",
+    "tipo": "castigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Bebe un chupito (o haz 20 sentadillas si no bebes).",
+    "tipo": "castigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Da un beso en la mejilla a cada jugador que quiera.",
+    "tipo": "castigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Cuenta tu experiencia sexual más vergonzosa.",
+    "tipo": "castigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hazle un baile sensual a {otro} durante 20 segundos (si quiere).",
+    "tipo": "castigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Deja que el grupo lea tu último mensaje subido de tono.",
+    "tipo": "castigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Gime en voz alta durante 5 segundos.",
+    "tipo": "castigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Quítate dos prendas.",
+    "tipo": "castigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Bebe dos tragos o cuenta tu último ligue con detalle.",
+    "tipo": "castigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Deja que {otro} te dé un azote (si tú quieres).",
+    "tipo": "castigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Di con quién de aquí te acostarías.",
+    "tipo": "castigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Haz un striptease de 20 segundos.",
+    "tipo": "castigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Enseña la foto más sexy de tu galería.",
+    "tipo": "castigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Dale un pico a {otro} (si quiere).",
+    "tipo": "castigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Dale un masaje en los pies a {otro} durante un minuto (si quiere).",
+    "tipo": "castigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Contesta sin mentir a la pregunta picante que te haga el grupo.",
+    "tipo": "castigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Siéntate en las piernas de {otro} hasta tu próximo turno (si quiere).",
+    "tipo": "castigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Describe tu fantasía más sucia.",
+    "tipo": "castigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Quédate sin camiseta hasta tu próximo turno.",
+    "tipo": "castigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Manda un mensaje picante a quien diga el grupo (alguien de confianza).",
+    "tipo": "castigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Pon tu mejor cara de orgasmo.",
+    "tipo": "castigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Bebe un trago del vaso de cada jugador que te deje.",
+    "tipo": "castigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Muérdele suavemente la oreja a {otro} (si quiere).",
+    "tipo": "castigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Cuenta con quién fue tu último rollo y cómo fue.",
+    "tipo": "castigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Perrea durante 20 segundos.",
+    "tipo": "castigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Deja que {otro} te escriba algo guarro en el brazo.",
+    "tipo": "castigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Imita tu postura favorita con un cojín.",
+    "tipo": "castigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Bésale el cuello a {otro} (si quiere).",
+    "tipo": "castigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Di tres cosas que te pongan de {otro}.",
+    "tipo": "castigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hazle a quien elijas un baile en el regazo de 15 segundos (si quiere).",
+    "tipo": "castigo",
+    "nivel": "picante"
+  }
+]

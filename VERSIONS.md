@@ -262,8 +262,17 @@ gestionar la partida; muy configurable y con todas las expansiones». Se hacen d
     (la gestión de cartas de los cinco juegos de cartas, con los campos que tenga cada uno) y `AdultGate` (confirmar
     una vez por sesión que todos son mayores de 18; Yo Nunca ya la usa). 278 EditMode; PlayMode de cartas y Yo Nunca
     en verde.
-- [ ] **V071 · Verdad o Reto.** Por turnos, verdad o reto; «me rajo» con prenda; suave y +18; cartas propias.
+- [x] **V071 · Verdad o Reto.** Por turnos, verdad o reto; «me rajo» con prenda; suave y +18; cartas propias.
   - Acepta: partida completa en PlayMode, sin repetir cartas hasta agotarlas, bancos grandes en los dos niveles.
+  - Notas: `Games/VerdadReto/` (dominio puro con `VerdadRetoConfig` y `VerdadRetoFlowController`). Setup: 2–20
+    jugadores, nivel (picante con la confirmación de edad común), origen de las cartas si hay propias, orden de turnos
+    (en orden / al azar, todos una vez por ronda), quién elige (el jugador / el móvil), rondas (sin límite, 3, 5, 10),
+    puntos (verdad 1, reto 2), rajarse con prenda, cambios de carta (0–2), máximo de verdades seguidas y tiempo para
+    los retos. Las cartas pueden nombrar a otro jugador con `{otro}`. Seed de 562 cartas (≈125 verdades y ≈125 retos
+    por nivel y 30 prendas por nivel), gestión de cartas propias con la pantalla común. Piezas comunes nuevas:
+    `Core/Time/Countdown`, `SetupWidgets` (secciones, `ChoiceChips`, `PromptLevelPicker`, `PromptOriginPicker`),
+    `ScoreList`, `GameUi.FinishButton`, y 45 iconos nuevos para la fase (atlas de iconos de 1024). 293 EditMode;
+    PlayMode del juego 3/3; barrido de textos y pulsables limpio en es y en. Capturas `V071_verdadreto_*`.
 - [ ] **V072 · ¿Quién es más probable que…?** Frase, cuenta atrás de 3 s y todos señalan; suave y +18; propias.
 - [ ] **V073 · ¿Qué prefieres?** Dos opciones, se vota con la mano y se puede apuntar el resultado; suave y +18; propias.
 - [ ] **V074 · Mímica por equipos.** Como el Tabú sin hablar: equipos, tiempo, objetivo, categorías (también +18 y

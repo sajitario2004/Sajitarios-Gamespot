@@ -1,0 +1,16 @@
+{
+    "name": "Gamespot.Games.VerdadReto.Domain",
+    "rootNamespace": "Gamespot.Games.VerdadReto.Domain",
+    "references": [
+        "Gamespot.Core"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}
