@@ -1,0 +1,28 @@
+# LEARNINGS.md — gustos y forma de trabajar del autor
+
+Archivo vivo. Añade una línea cada vez que el autor exprese un gusto, una corrección o una preferencia, con la fecha. Lo más reciente va al final de cada sección.
+
+## Forma de trabajar
+- (2026-10-25) Trabaja igual en todos sus proyectos con `CLAUDE.md` (reglas), `CONTEXT.md` (todo el contexto), `LEARNINGS.md` (cómo trabaja el autor) y `TREE.md` (el árbol de carpetas, como el comando `tree`). En sus otros proyectos añade una hoja de ruta (`VERSIONS.md` en AZÚCAR, `ROADMAP.md` en SSG); aquí es `VERSIONS.md`.
+- (2026-10-25) Quiere que una IA nueva pueda retomar el trabajo solo leyendo esos archivos.
+- (2026-10-25) Le gusta planificar antes de construir (pidió `/plan`) y que se le pregunte con opciones antes de las decisiones grandes. En las cuatro preguntas de la migración eligió **todas las opciones recomendadas**.
+- (2026-10-25) Avisa de que otra IA ya tocó el repo y dejó sus propios `.md`: hay que analizarlo todo antes de decidir, y no fiarse de los docs viejos sin comprobar el código (el `README.md` heredado decía v0.30 y la app estaba en v0.75).
+- (2026-10-25) Git en este proyecto: rama de trabajo, commit por versión terminada, y permiso antes de `push` o de fusionar en `main`.
+
+## Producto
+- (2026-10-25) Lleva tiempo intentando hacer este juego. Pide convertir **todo el proyecto a Unity**, con los 7 juegos de la app Flutter.
+- (heredado del Flutter, 2026) App **offline y local**, Android + iOS, persistencia con **SQLite**, fácil de ampliar con juegos nuevos.
+- (heredado) Las reglas del Impostor son suyas y exactas (10 % todos impostores, 10 % ninguno, pista obligatoria, orden de revelación = orden de los nombres): no se improvisan.
+- (heredado) Quiere bancos de contenido grandes: 2000+ palabras del Impostor y 1000+ preguntas de trivia.
+- (heredado) Yo Nunca con nivel picante **+18 explícito**, con aviso claro de consentimiento entre adultos.
+- (heredado) Cada juego explica sus reglas desde su setup ("¿Cómo se juega?") y todas las pantallas tienen un botón para volver al menú (no quiere quedarse "atrapado" en un juego).
+
+## Diseño
+- (heredado) Estética **neón cyberpunk**: fondo casi negro, cian y magenta con brillo, rejilla de fondo.
+- (heredado) **Nada de emojis**, ni en el código ni en los textos: solo iconos.
+- (heredado) Toda la UI en **español** (con inglés como segundo idioma) y sin textos cortados en ninguna pantalla, también con letra grande.
+- (heredado) Trivia: caja de la pregunta en morado neón y las 4 respuestas con marcos azul, verde, rojo y amarillo.
+
+## Herramientas que ya usa
+- (2026-10-25) Trabaja con Claude conectado a **Unity** por la CLI (`unity command …`), como en su proyecto AZÚCAR (`C:\Users\nacha\Documents\DEV\Unity\AzucarClaudio`), de donde se reutilizan los scripts de `tools/`.
+- (2026-10-25) Tiene instalados Unity 6000.3.27f1 (con Android e iOS) y 6000.5.1f1, Unity Hub, git-lfs y GitHub CLI.
