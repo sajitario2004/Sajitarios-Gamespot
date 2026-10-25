@@ -330,5 +330,6 @@
   "wavelengthPuntosPorRonda": "{avg} puntos/ronda",
   "cargando": "Cargando...",
   "reducirAnimaciones": "Reducir animaciones",
-  "usarUltimosJugadores": "Usar los de la última partida"
+  "usarUltimosJugadores": "Usar los de la última partida",
+  "tabuPalabrasAgotadas": "Han salido todas las palabras: vuelven a salir desde el principio."
 }

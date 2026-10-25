@@ -3,7 +3,7 @@ using Gamespot.Core.Runtime.Audio;
 using NUnit.Framework;
 using UnityEngine;
 
-namespace Gamespot.Tests.EditMode.Core
+namespace Gamespot.Tests.EditMode.Audio
 {
     public sealed class AudioClipsTests
     {

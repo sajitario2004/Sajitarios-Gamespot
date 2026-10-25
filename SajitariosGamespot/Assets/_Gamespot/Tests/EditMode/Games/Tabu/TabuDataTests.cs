@@ -1,4 +1,6 @@
+using System.Globalization;
 using System.Linq;
+using System.Text;
 using Gamespot.Core.Runtime.Db;
 using Gamespot.Games.Tabu;
 using Gamespot.Games.Tabu.Data;
@@ -9,16 +11,76 @@ namespace Gamespot.Tests.EditMode.Games.Tabu
 {
     public sealed class TabuDataTests
     {
+        /// <summary>Minúsculas y sin tildes, para comparar como lo haría alguien jugando.</summary>
+        private static string Plain(string s)
+        {
+            var sb = new StringBuilder();
+            foreach (var c in s.ToLowerInvariant().Normalize(NormalizationForm.FormD))
+            {
+                if (CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark) sb.Append(c);
+            }
+            return sb.ToString().Trim();
+        }
+
         [Test]
-        public void Seed_100PalabrasCon4o5ProhibidasSinDuplicados()
+        public void Seed_500PalabrasSinDuplicadosNiProhibidasRepetidas()
         {
             using (var temp = new TempDatabase())
             {
                 var db = temp.Open(new IDbSchema[] { new TabuGame() }, new ResourcesSeedSource());
                 var all = new TabuWordRepository(db).GetAll();
-                Assert.That(all.Count, Is.GreaterThanOrEqualTo(100));
-                Assert.IsTrue(all.All(w => w.Prohibidas.Count >= 4 && w.Prohibidas.Count <= 5));
-                Assert.AreEqual(all.Count, all.Select(w => w.Palabra.ToLowerInvariant()).Distinct().Count(), "Sin palabras repetidas");
+                Assert.That(all.Count, Is.GreaterThanOrEqualTo(500));
+                Assert.IsTrue(all.All(w => w.Prohibidas.Count == 5), "5 prohibidas en cada tarjeta");
+                Assert.AreEqual(all.Count, all.Select(w => Plain(w.Palabra)).Distinct().Count(), "Sin palabras repetidas");
+                foreach (var word in all)
+                {
+                    var forbidden = word.Prohibidas.Select(Plain).ToList();
+                    Assert.AreEqual(5, forbidden.Distinct().Count(), $"Prohibidas repetidas en {word.Palabra}");
+                    CollectionAssert.DoesNotContain(forbidden, Plain(word.Palabra), $"La palabra {word.Palabra} está entre sus prohibidas");
+                }
+            }
+        }
+
+        [Test]
+        public void Seed_ConTildes()
+        {
+            var words = TabuSchema.Parse(new ResourcesSeedSource().Load(TabuSchema.SeedName));
+            var byWord = words.ToDictionary(w => w.Palabra);
+            Assert.IsTrue(byWord.ContainsKey("Volcán"));
+            Assert.IsTrue(byWord.ContainsKey("Brújula"));
+            CollectionAssert.Contains(byWord["Volcán"].Prohibidas, "erupción");
+            Assert.IsFalse(byWord.ContainsKey("Volcan"), "La versión sin tilde ya no está");
+        }
+
+        [Test]
+        public void MigracionA2_RenuevaElSeedYConservaLasPropias()
+        {
+            using (var temp = new TempDatabase())
+            {
+                var db = temp.Open(new IDbSchema[] { new TabuGame() }, new ResourcesSeedSource(), version: 1);
+                // Así estaba una BD con el seed heredado (sin tildes) y, por si algún día existen, una palabra propia.
+                db.Execute("DELETE FROM tabu_words");
+                db.Execute("INSERT INTO tabu_words (palabra, prohibidas_json, is_seed) VALUES ('Volcan', '[\"lava\",\"erupcion\",\"magma\",\"humo\"]', 1)");
+                db.Execute("INSERT INTO tabu_words (palabra, prohibidas_json, is_seed) VALUES ('Mi palabra', '[\"a\",\"b\",\"c\",\"d\"]', 0)");
+                temp.Close();
+
+                db = temp.Open(new IDbSchema[] { new TabuGame() }, new ResourcesSeedSource());
+                Assert.AreEqual(AppDatabase.CurrentVersion, db.UserVersion);
+                var all = new TabuWordRepository(db).GetAll();
+                Assert.IsFalse(all.Any(w => w.Palabra == "Volcan"), "El seed viejo se borra");
+                Assert.IsTrue(all.Any(w => w.Palabra == "Volcán"), "Y entra el nuevo");
+                Assert.IsTrue(all.Any(w => w.Palabra == "Mi palabra"), "Las propias se quedan");
+                Assert.That(db.Scalar<long>("SELECT COUNT(*) FROM tabu_words WHERE is_seed = 1"), Is.GreaterThanOrEqualTo(500));
+            }
+        }
+
+        [Test]
+        public void Seed_SoloSiNoHayFilasDeSeed()
+        {
+            using (var temp = new TempDatabase())
+            {
+                var db = temp.Open(new IDbSchema[] { new TabuGame() }, new ResourcesSeedSource());
+                Assert.AreEqual(0, TabuSchema.SeedIfEmpty(db, new ResourcesSeedSource()));
             }
         }
 

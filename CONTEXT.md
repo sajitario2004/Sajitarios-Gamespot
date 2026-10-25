@@ -82,6 +82,7 @@ SajitariosGamespot/Assets/_Gamespot/
 
 ### 5.2 Base de datos
 - Archivo `sajitarios_gamespot.db` (en Unity, en `Application.persistentDataPath`). Flutter: versión 8, `PRAGMA foreign_keys = ON` (ninguna tabla tiene claves foráneas).
+- **Versiones en Unity** (`AppDatabase.CurrentVersion`): 1 = esquema final del Flutter; **2 = el Tabú renueva su seed** (`TabuSchema.Upgrade` borra las filas `is_seed = 1` y el arranque siembra el banco nuevo; el seed del Tabú se carga si no hay filas de seed, no si la tabla está vacía).
 - `onCreate` llama a `OnCreateTables` de cada descriptor en orden de registro; `onUpgrade`, a `OnUpgradeTables` de cada uno, que aplica solo sus pasos.
 - **Seeds:** si `COUNT(*)` de la tabla > 0 no hace nada; si no, lee el JSON, valida (entrada inválida → error), recorta textos, inserta en lote con `is_seed = 1` e ignorando conflictos, y devuelve cuántas filas entraron.
 
@@ -103,7 +104,7 @@ SajitariosGamespot/Assets/_Gamespot/
 | `impostor_words.json` | `[{word, hint}]` | 2060 | ≥ 2000, sin duplicados sin distinguir mayúsculas, `word ≠ hint` |
 | `trivia_questions.json` | `[{tematica, difficulty, enunciado, opciones[4], correcta}]` | 1151 (fácil 471 / difícil 462 / muy difícil 218) | ≥ 1000 |
 | `wavelength_spectra.json` | `[{izquierda, derecha}]` | 80 | ≥ 70 |
-| `tabu_words.json` | `[{palabra, prohibidas[]}]` | 120 (5 prohibidas cada una) | ≥ 100, 4–5 prohibidas |
+| `tabu_words.json` | `[{palabra, prohibidas[]}]` | **607** (5 prohibidas cada una; las 120 heredadas corregidas + 487 nuevas, V059e) | ≥ 500, 5 prohibidas distintas que no repiten la palabra |
 | `yo_nunca_statements.json` | `[{frase, intensidad}]` | 192 (suave 98 / picante 94) | ≥ 140, suave ≥ 50, picante ≥ 30 |
 | `bomba_silabas.json` | `["CA", …]` | 93 | ≥ 70 |
 | `bomba_categorias.json` | `["nombres de animales", …]` | 83 | ≥ 70 |
@@ -203,7 +204,7 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 
 ### 6.5 Tabú (`tabu`)
 - **Dominio:** `TabuWord(palabra, prohibidas[4..5])`. `TabuConfig.Create(equipoA, equipoB, turnoSegundos = 60, objetivoVictorias = 3)`: errores en orden equipo A vacío, equipo B vacío, duplicados, turno fuera de [30,120], objetivo ≤ 0.
-  - `TabuSession`: empieza el equipo A. Acierto +1; Saltar sin límite (no se muestra); Falta −1 sin bajar de 0 y **sin cortar el turno**. `TerminarTurno`: si los aciertos > 0, **+1 victoria de ronda** para el equipo; cambia de equipo y reinicia contadores. Gana el primero en llegar al objetivo. Palabras sin repetir en la partida (`PickTabuWordUseCase`; si se agotan, se queda la actual).
+  - `TabuSession`: empieza el equipo A. Acierto +1; Saltar sin límite (no se muestra); Falta −1 sin bajar de 0 y **sin cortar el turno**. `TerminarTurno`: si los aciertos > 0, **+1 victoria de ronda** para el equipo; cambia de equipo y reinicia contadores. Gana el primero en llegar al objetivo. Palabras sin repetir en la partida (`PickTabuWordUseCase`). En el Flutter, si se agotaban se quedaba la actual; en Unity (V059e) vuelven a salir todas menos la actual y el turno avisa una vez (`tabuPalabrasAgotadas`).
 - **Pantallas:** setup (nombres de los dos equipos, chips 30/60/90 s, 60 por defecto; objetivo siempre 3). Turno: palabra en MAYÚSCULAS, lista de prohibidas, equipo en violeta, contador de aciertos en la AppBar, cuenta atrás (cian > 10, amarillo 6–10, rojo ≤ 5) y botones Acierto (verde), Saltar (cian), Falta (rojo). El temporizador vive en la pantalla (tic de 1 s; al llegar a 0 termina el turno). Marcador: "Objetivo: 3 victorias de ronda", "A: x / 3" (cian) y "B: y / 3" (violeta), "Siguiente turno". Fin: equipo ganador, marcadores y "Volver al menú" (no hay "jugar otra"). Sin sonido.
 
 ### 6.6 Yo Nunca (`yo_nunca`)
@@ -256,6 +257,7 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 ## 10. Registro de trabajo (lo más reciente arriba)
 
 ### 2026-10-25 · Fase 10c · Mejoras elegidas por el autor (C2, C3+L1, B1+B2, C4, I1/T1/W2)
+- **V059e · B1 + B2:** Tabú con 607 tarjetas (las 120 heredadas con tildes y erratas corregidas: «maze», «paddlear», «crocodilo», «greco», «bufo», duplicados como «Cofre del tesoro»/«Candelero»; y 487 nuevas por temas), validadas por script (duplicados sin tildes, prohibidas repetidas o que contienen la palabra, palabras que suelen llevar tilde). Al agotarse, vuelven a salir y se avisa. BD v2 con migración del seed (comprobada también en la BD real del Editor: 1 → 2, 607 palabras).
 - **V059d · C3 + L1:** 9 sonidos sintetizados en el Editor (sin descargas), tic-tac de La Bomba que acelera, explosión con vibración, pitidos y bocina del Tabú, acierto/fallo de la Trivia, campanas del revelado de Wavelength y pasar página en Yo Nunca. Los módulos de esos juegos reciben el `AudioService`. No he podido escucharlos: se comprobó duración, pico y nivel de cada WAV; falta oírlos en el móvil.
 - **V059c · C2:** jugadores guardados entre juegos (`AppSettings.LastPlayers` + `PlayerListEditor`). El arnés de PlayMode guarda y restaura la preferencia para que un test no rellene el siguiente.
 

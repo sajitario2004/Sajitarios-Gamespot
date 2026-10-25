@@ -145,5 +145,41 @@ namespace Gamespot.Tests.EditMode.Games.Tabu
             flow.SiguienteTurno();
             Assert.AreEqual(TabuFase.Turno, flow.Fase);
         }
+
+        [Test]
+        public void PalabrasAgotadas_VuelvenASalirYSeAvisaUnaVez()
+        {
+            var flow = new TabuFlowController(new FakeTabuSource(3), new SeededRandom(4));
+            flow.Iniciar(Config());
+            var seen = new HashSet<long> { flow.Session.PalabraActual.Id };
+            flow.Acierto();
+            seen.Add(flow.Session.PalabraActual.Id);
+            flow.Saltar();
+            seen.Add(flow.Session.PalabraActual.Id);
+            Assert.AreEqual(3, seen.Count, "Las 3 sin repetir");
+            Assert.IsFalse(flow.PalabrasReiniciadas);
+
+            var last = flow.Session.PalabraActual.Id;
+            flow.Falta();
+            Assert.IsTrue(flow.PalabrasReiniciadas, "Se acabaron: vuelven a salir");
+            Assert.AreNotEqual(last, flow.Session.PalabraActual.Id, "No se queda la misma tarjeta (en el Flutter sí)");
+            Assert.AreEqual(2, flow.Session.PalabrasUsadas.Count, "La anterior y la nueva");
+            Assert.IsTrue(flow.ConsumirAvisoPalabras());
+            Assert.IsFalse(flow.ConsumirAvisoPalabras(), "Se avisa una sola vez");
+
+            flow.TerminarTurno();
+            Assert.AreEqual(TabuFase.FinRonda, flow.Fase);
+        }
+
+        [Test]
+        public void UnaSolaPalabra_SeQuedaYNoAvisa()
+        {
+            var flow = new TabuFlowController(new FakeTabuSource(1), new SeededRandom(4));
+            flow.Iniciar(Config());
+            flow.Acierto();
+            Assert.AreEqual(1, flow.Session.PalabraActual.Id);
+            Assert.IsFalse(flow.PalabrasReiniciadas);
+            Assert.AreEqual(1, flow.Session.AciertosTurno);
+        }
     }
 }

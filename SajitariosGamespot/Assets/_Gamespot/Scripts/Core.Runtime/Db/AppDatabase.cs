@@ -13,10 +13,11 @@ namespace Gamespot.Core.Runtime.Db
         public const string FileName = "sajitarios_gamespot.db";
 
         /// <summary>
-        /// Versión del esquema en Unity. Empieza en 1 con el esquema final (v8) de la app Flutter: no hay
-        /// instalaciones Unity anteriores que migrar. Cada cambio de esquema futuro sube este número.
+        /// Versión del esquema en Unity. Empezó en 1 con el esquema final (v8) de la app Flutter. Cada cambio de
+        /// esquema o de seed que haya que llevar a instalaciones existentes sube este número:
+        /// 2 · el Tabú renueva su seed (607 palabras con tildes, V059e).
         /// </summary>
-        public const int CurrentVersion = 1;
+        public const int CurrentVersion = 2;
 
         /// <summary>Ruta del archivo en el dispositivo.</summary>
         public static string DefaultPath => System.IO.Path.Combine(Application.persistentDataPath, FileName);

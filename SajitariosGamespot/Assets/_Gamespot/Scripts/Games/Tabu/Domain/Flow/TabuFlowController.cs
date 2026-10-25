@@ -28,8 +28,9 @@ namespace Gamespot.Games.Tabu.Domain
 
     /// <summary>
     /// Partida de Tabú (port de <c>TabuFlowController</c>). El temporizador del turno vive en la pantalla; este
-    /// controlador es puro. Cada acierto, salto o falta pasa a una palabra que no haya salido (si se acaban, se
-    /// queda la actual).
+    /// controlador es puro. Cada acierto, salto o falta pasa a una palabra que no haya salido. Si se acaban,
+    /// vuelven a salir todas menos la actual y se avisa una vez (<see cref="ConsumirAvisoPalabras"/>); en el
+    /// Flutter se quedaba siempre la misma tarjeta.
     /// </summary>
     public sealed class TabuFlowController
     {
@@ -49,6 +50,9 @@ namespace Gamespot.Games.Tabu.Domain
         public TabuConfig Config { get; private set; }
         public TabuSession Session { get; private set; }
         public TabuErrorKind? ErrorKind { get; private set; }
+
+        /// <summary>Si las palabras se acaban de reiniciar y la pantalla aún no lo ha avisado.</summary>
+        public bool PalabrasReiniciadas { get; private set; }
 
         public int TurnDurationSeconds => Config?.TurnoSegundos ?? TabuConfig.DefaultTurnSeconds;
         public string CurrentTeamName => Config != null && Session != null ? Config.NameOf(Session.EquipoActual) : null;
@@ -88,8 +92,9 @@ namespace Gamespot.Games.Tabu.Domain
         public void TerminarTurno()
         {
             if (Fase != TabuFase.Turno || Session == null || Session.IsOver) return;
-            var next = PickNext(Session) ?? Session.PalabraActual;
-            Session = Session.TerminarTurno(next);
+            var session = Session;
+            var next = PickNext(ref session) ?? session.PalabraActual;
+            Session = session.TerminarTurno(next);
             Fase = Session.IsOver ? TabuFase.GameOver : TabuFase.FinRonda;
             Notify();
         }
@@ -108,20 +113,37 @@ namespace Gamespot.Games.Tabu.Domain
             Notify();
         }
 
+        /// <summary>Devuelve si hay que avisar de que las palabras se reiniciaron, y lo da por avisado.</summary>
+        public bool ConsumirAvisoPalabras()
+        {
+            var pending = PalabrasReiniciadas;
+            PalabrasReiniciadas = false;
+            return pending;
+        }
+
         private void Act(Func<TabuSession, TabuSession> change)
         {
             if (Fase != TabuFase.Turno || Session == null || Session.IsOver) return;
             var updated = change(Session);
-            var next = PickNext(updated);
+            var next = PickNext(ref updated);
             Session = next != null ? updated.AvanzarPalabra(next) : updated;
             Notify();
         }
 
-        private TabuWord PickNext(TabuSession session)
+        /// <summary>Palabra siguiente sin repetir; si no queda ninguna, reinicia las usadas (con una sola palabra, nula).</summary>
+        private TabuWord PickNext(ref TabuSession session)
         {
             var used = session.PalabrasUsadas;
             var available = _pool.Where(w => !used.Contains(w.Id)).ToList();
-            return available.Count == 0 ? null : _pick.Execute(available, Array.Empty<long>());
+            if (available.Count == 0)
+            {
+                if (_pool.Count <= 1) return null;
+                session = session.ReiniciarPalabras();
+                PalabrasReiniciadas = true;
+                var current = session.PalabraActual.Id;
+                available = _pool.Where(w => w.Id != current).ToList();
+            }
+            return _pick.Execute(available, Array.Empty<long>());
         }
 
         private void Fail()
@@ -138,6 +160,7 @@ namespace Gamespot.Games.Tabu.Domain
             Config = null;
             Session = null;
             ErrorKind = null;
+            PalabrasReiniciadas = false;
             _pool = Array.Empty<TabuWord>();
         }
 

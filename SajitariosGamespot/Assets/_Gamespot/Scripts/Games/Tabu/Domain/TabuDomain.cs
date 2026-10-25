@@ -87,7 +87,8 @@ namespace Gamespot.Games.Tabu.Domain
     /// <summary>
     /// Partida de Tabú por equipos (port de <c>TabuSession</c>, inmutable). Acierto +1; saltar no puntúa (sin
     /// límite); falta −1 sin bajar de 0 y sin cortar el turno. Al terminar el turno, si hubo algún acierto el equipo
-    /// gana una ronda; luego juega el otro. Gana el primero en llegar al objetivo. No se repiten palabras.
+    /// gana una ronda; luego juega el otro. Gana el primero en llegar al objetivo. No se repiten palabras hasta
+    /// que se agotan (entonces <see cref="ReiniciarPalabras"/>).
     /// </summary>
     public sealed class TabuSession
     {
@@ -151,6 +152,13 @@ namespace Gamespot.Games.Tabu.Domain
             var next = EquipoActual == TabuEquipo.A ? TabuEquipo.B : TabuEquipo.A;
             var used = new HashSet<long>(_used) { newWord.Id };
             return new TabuSession(Config, winsA, winsB, next, newWord, 0, 0, used);
+        }
+
+        /// <summary>Se acabaron las palabras: vuelven a estar disponibles todas menos la actual.</summary>
+        public TabuSession ReiniciarPalabras()
+        {
+            AssertNotOver();
+            return new TabuSession(Config, VictoriasA, VictoriasB, EquipoActual, PalabraActual, AciertosTurno, Saltos, new HashSet<long> { PalabraActual.Id });
         }
 
         private TabuSession With(int? correct = null, int? skips = null)

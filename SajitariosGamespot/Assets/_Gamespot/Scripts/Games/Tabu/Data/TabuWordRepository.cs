@@ -7,11 +7,24 @@ using Gamespot.Games.Tabu.Domain;
 
 namespace Gamespot.Games.Tabu.Data
 {
-    /// <summary>Tabla <c>tabu_words</c> (prohibidas en JSON) y su seed (<c>[{palabra, prohibidas[4..5]}]</c>, 120).</summary>
+    /// <summary>Tabla <c>tabu_words</c> (prohibidas en JSON) y su seed (<c>[{palabra, prohibidas[4..5]}]</c>, 607).</summary>
     public static class TabuSchema
     {
         public const string Table = "tabu_words";
         public const string SeedName = "tabu_words";
+
+        /// <summary>Versión de la BD en la que se renovó el seed (las 120 heredadas, sin tildes, por las 607).</summary>
+        public const int SeedRenewedVersion = 2;
+
+        /// <summary>
+        /// Al migrar desde antes de <see cref="SeedRenewedVersion"/> se borran las filas de seed; el arranque las
+        /// vuelve a sembrar con el banco nuevo (<see cref="SeedIfEmpty"/> mira solo las de seed, así que las
+        /// palabras propias, si algún día las hay, se conservan y no lo impiden).
+        /// </summary>
+        public static void Upgrade(IDb db, int oldVersion)
+        {
+            if (oldVersion < SeedRenewedVersion) db.Execute("DELETE FROM tabu_words WHERE is_seed = 1");
+        }
 
         public static void Create(IDb db) =>
             db.Execute("CREATE TABLE IF NOT EXISTS tabu_words (id INTEGER PRIMARY KEY AUTOINCREMENT, palabra TEXT NOT NULL, " +
@@ -19,17 +32,12 @@ namespace Gamespot.Games.Tabu.Data
 
         public static int SeedIfEmpty(IDb db, ISeedSource seeds)
         {
-            if (!AppDatabase.IsEmpty(db, Table)) return 0;
+            if (db.Scalar<long>("SELECT COUNT(*) FROM tabu_words WHERE is_seed = 1") > 0) return 0;
             var inserted = 0;
             foreach (var word in Parse(seeds.Load(SeedName)))
             {
-                var json = new System.Text.StringBuilder("[");
-                for (var i = 0; i < word.Prohibidas.Count; i++)
-                {
-                    if (i > 0) json.Append(',');
-                    JsonWriter.AppendString(json, word.Prohibidas[i]);
-                }
-                inserted += db.Execute("INSERT INTO tabu_words (palabra, prohibidas_json, is_seed) VALUES (?, ?, 1)", word.Palabra, json.Append(']').ToString());
+                inserted += db.Execute("INSERT INTO tabu_words (palabra, prohibidas_json, is_seed) VALUES (?, ?, 1)", word.Palabra,
+                    JsonWriter.WriteStringArray(word.Prohibidas));
             }
             return inserted;
         }

@@ -252,6 +252,7 @@ namespace Gamespot.Games.Tabu
             {
                 Ui.Text(_forbidden, word, TextRole.TitleMedium, Palette.TextPrimary, TextAlignmentOptions.Center, maxLines: 1);
             }
+            if (Module.Flow.ConsumirAvisoPalabras()) Snackbar.Show(Loc.T("tabuPalabrasAgotadas"), Palette.NeonYellow);
             if (_correct != null)
             {
                 _correct.text = Loc.T("tabuAciertosContador", ("n", session.AciertosTurno));

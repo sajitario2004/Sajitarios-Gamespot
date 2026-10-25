@@ -29,9 +29,7 @@ namespace Gamespot.Games.Tabu
 
         public void OnCreate(IDb db) => TabuSchema.Create(db);
 
-        public void OnUpgrade(IDb db, int oldVersion, int newVersion)
-        {
-        }
+        public void OnUpgrade(IDb db, int oldVersion, int newVersion) => TabuSchema.Upgrade(db, oldVersion);
 
         public void SeedIfEmpty(IDb db, ISeedSource seeds) => TabuSchema.SeedIfEmpty(db, seeds);
     }
