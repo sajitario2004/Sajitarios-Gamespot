@@ -140,6 +140,25 @@ namespace Gamespot.Core.Runtime.UI
             if (Label != null) Label.text = label;
         }
 
+        /// <summary>
+        /// Para botones estrechos en fila: menos margen y la etiqueta en una línea que se encoge (hasta 12) en vez
+        /// de partirse a media palabra.
+        /// </summary>
+        public NeonButton Compact()
+        {
+            var layout = GetComponent<HorizontalOrVerticalLayoutGroup>();
+            layout.padding = new RectOffset(8, 8, 14, 14);
+            layout.spacing = 4f;
+            if (Label != null)
+            {
+                Label.textWrappingMode = TextWrappingModes.NoWrap;
+                Label.enableAutoSizing = true;
+                Label.fontSizeMax = Label.fontSize;
+                Label.fontSizeMin = 12f;
+            }
+            return this;
+        }
+
         /// <summary>Cambia el color de acento (relleno en Filled; borde y texto en los demás).</summary>
         public void SetAccent(Color accent)
         {

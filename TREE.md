@@ -1,6 +1,6 @@
 # TREE
 
-Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 10:12.
+Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 10:17.
 
 No se listan: Library, Temp, Logs, obj, UserSettings, .git, .vs, .idea, .vscode, .utmp, Build, Builds, MemoryCaptures, Recordings, node_modules, __pycache__, .venv, .dart_tool, build, coverage, *.meta, *.csproj, *.sln, *.slnx, *.user, *.pidb, *.unityproj, .DS_Store, Thumbs.db.
 Plegadas: skills, TextMesh Pro, Flutter, Capturas (Flutter = la app original en Legacy/Flutter, solo lectura).
@@ -11,7 +11,7 @@ Sajitarios-Gamespot/
 ├── .claude/
 │   └── settings.json
 ├── Docs/
-│   └── Capturas/  (15 elementos, plegado)
+│   └── Capturas/  (16 elementos, plegado)
 ├── Legacy/
 │   └── Flutter/  (20 elementos, plegado)
 ├── SajitariosGamespot/
@@ -163,11 +163,17 @@ Sajitarios-Gamespot/
 │   │   │   │   │   │   ├── Gamespot.Games.Impostor.asmdef
 │   │   │   │   │   │   └── ImpostorGame.cs
 │   │   │   │   │   ├── Tabu/
-│   │   │   │   │   │   └── Domain/
-│   │   │   │   │   │       ├── Flow/
-│   │   │   │   │   │       │   └── TabuFlowController.cs
-│   │   │   │   │   │       ├── Gamespot.Games.Tabu.Domain.asmdef
-│   │   │   │   │   │       └── TabuDomain.cs
+│   │   │   │   │   │   ├── Data/
+│   │   │   │   │   │   │   └── TabuWordRepository.cs
+│   │   │   │   │   │   ├── Domain/
+│   │   │   │   │   │   │   ├── Flow/
+│   │   │   │   │   │   │   │   └── TabuFlowController.cs
+│   │   │   │   │   │   │   ├── Gamespot.Games.Tabu.Domain.asmdef
+│   │   │   │   │   │   │   └── TabuDomain.cs
+│   │   │   │   │   │   ├── Presentation/
+│   │   │   │   │   │   │   └── TabuScreens.cs
+│   │   │   │   │   │   ├── Gamespot.Games.Tabu.asmdef
+│   │   │   │   │   │   └── TabuGame.cs
 │   │   │   │   │   ├── Trivia/
 │   │   │   │   │   │   ├── Data/
 │   │   │   │   │   │   │   └── TriviaData.cs
@@ -224,8 +230,9 @@ Sajitarios-Gamespot/
 │   │   │       │   │   │       ├── ImpostorStatsTests.cs
 │   │   │       │   │   │       └── ImpostorTestData.cs
 │   │   │       │   │   ├── Tabu/
-│   │   │       │   │   │   └── Domain/
-│   │   │       │   │   │       └── TabuDomainTests.cs
+│   │   │       │   │   │   ├── Domain/
+│   │   │       │   │   │   │   └── TabuDomainTests.cs
+│   │   │       │   │   │   └── TabuDataTests.cs
 │   │   │       │   │   ├── Trivia/
 │   │   │       │   │   │   ├── Data/
 │   │   │       │   │   │   │   └── TriviaDataTests.cs
@@ -244,6 +251,7 @@ Sajitarios-Gamespot/
 │   │   │           ├── Games/
 │   │   │           │   ├── EsUn10PeroScreenTests.cs
 │   │   │           │   ├── ImpostorFlowTests.cs
+│   │   │           │   ├── TabuFlowTests.cs
 │   │   │           │   ├── TriviaFlowTests.cs
 │   │   │           │   └── WavelengthFlowTests.cs
 │   │   │           ├── AppTestHarness.cs

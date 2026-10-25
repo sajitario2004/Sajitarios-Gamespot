@@ -4,6 +4,7 @@ using Gamespot.Games.Impostor;
 using Gamespot.Games.Trivia;
 using Gamespot.Games.Wavelength;
 using Gamespot.Games.Shared;
+using Gamespot.Games.Tabu;
 
 namespace Gamespot.App
 {
@@ -20,6 +21,7 @@ namespace Gamespot.App
             new ImpostorGame(),
             new TriviaGame(),
             new WavelengthGame(),
+            new TabuGame(),
             // Los demás juegos se añaden aquí según se portan (VERSIONS.md, fases 5–10).
         };
     }

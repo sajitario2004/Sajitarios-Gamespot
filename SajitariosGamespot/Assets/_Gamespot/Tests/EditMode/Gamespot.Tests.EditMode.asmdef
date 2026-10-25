@@ -19,7 +19,8 @@
         "Gamespot.Games.Trivia.Domain",
         "Gamespot.Games.Wavelength",
         "Gamespot.Games.Wavelength.Domain",
-        "Gamespot.Games.Tabu.Domain"
+        "Gamespot.Games.Tabu.Domain",
+        "Gamespot.Games.Tabu"
     ],
     "includePlatforms": [
         "Editor"

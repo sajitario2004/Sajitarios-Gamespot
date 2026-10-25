@@ -125,11 +125,16 @@ Cierre técnico de cada versión con código Unity: recompilación sin errores, 
   - Notas: `WavelengthGame` registrado. PlayMode: partida completa de 2 rondas arrastrando el dial con eventos de puntero reales (pantalla → punto local), aguja del revelado = la del grupo, banda y total con la ronda, animación terminada, y el arrastre lo recibe el dial (no hay scroll). 188 EditMode + 20 PlayMode en verde.
 
 ## Fase 8 — Tabú
-- [ ] **V047 · Dominio** + tests.
-- [ ] **V048 · Datos** + seed de 120 + tests.
-- [ ] **V049 · `TabuFlowController`** + tests.
-- [ ] **V050 · Pantallas** (setup, turno con temporizador, marcador, fin).
-- [ ] **V051 · Registro, reglas y test PlayMode.**
+- [x] **V047 · Dominio** + tests.
+  - Notas: Dominio puro: `TabuWord` (4–5 prohibidas), `TabuConfig` (equipos, 30–120 s, objetivo 3), `TabuSession` inmutable (falta −1 sin bajar de 0 y sin cortar el turno, victoria de ronda con ≥1 acierto, sin repetir palabras) y `PickTabuWordUseCase`. Tests en el arnés y en Unity.
+- [x] **V048 · Datos** + seed de 120 + tests.
+  - Notas: `TabuSchema` + `TabuWordRepository` y seed de 120 palabras (4–5 prohibidas, sin duplicados). Ojo: el seed heredado trae palabras sin tildes («Volcan», «erupcion»): va al plan de mejoras.
+- [x] **V049 · `TabuFlowController`** + tests.
+  - Notas: `TabuFlowController` puro: acierto/saltar/falta pasan a una palabra nueva (si se acaban, se queda la actual), fin de turno → marcador o fin, acciones fuera de fase ignoradas.
+- [x] **V050 · Pantallas** (setup, turno con temporizador, marcador, fin).
+  - Notas: Setup (equipos + chips 30/60/90), turno (palabra en mayúsculas, prohibidas, cuenta atrás cian/amarillo/rojo, aciertos en la barra, botones compactos), marcador y fin. El temporizador se pausa con un diálogo abierto (arreglo). `NeonButton.Compact()` para botones estrechos en fila. Captura `V050_tabu_turno.png`.
+- [x] **V051 · Registro, reglas y test PlayMode.**
+  - Notas: `TabuGame` registrado. PlayMode: equipos iguales dan aviso, el tiempo termina el turno y da la victoria, pausa con el diálogo, primero a 3 gana. 190 EditMode + 24 PlayMode en verde.
 
 ## Fase 9 — Yo Nunca
 - [ ] **V052 · Dominio, datos y seed de 192** + tests.
