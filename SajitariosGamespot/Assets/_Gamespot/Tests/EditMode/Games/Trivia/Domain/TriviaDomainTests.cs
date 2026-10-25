@@ -210,6 +210,42 @@ namespace Gamespot.Tests.EditMode.Games.Trivia
         }
 
         [Test]
+        public void Flow_NoRepitePreguntasEnLaPartida()
+        {
+            var flow = new TriviaFlowController(new FakeQuestionSource(), new FakeWinnerSink(), new SeededRandom(8));
+            flow.Iniciar(Config("Ana", "Bea", "Carlos"));
+            var asked = new List<long>();
+            while (flow.Fase != TriviaFase.GameOver)
+            {
+                flow.PasarDispositivo();
+                asked.Add(flow.CurrentQuestion.Id);
+                flow.Responder(0);
+            }
+            Assert.AreEqual(27, asked.Count, "3 jugadores × 9 rondas");
+            Assert.AreEqual(asked.Count, asked.Distinct().Count(), "Ninguna pregunta repetida (T1)");
+        }
+
+        [Test]
+        public void Flow_SinPreguntasNuevasSuficientes_RepiteEnVezDeFallar()
+        {
+            var source = new FakeQuestionSource();
+            source.Sizes[Difficulty.Facil] = 4;
+            var flow = new TriviaFlowController(source, new FakeWinnerSink(), new SeededRandom(9));
+            flow.Iniciar(Config("Ana", "Bea"));
+            var asked = new List<long>();
+            while (flow.Fase != TriviaFase.GameOver)
+            {
+                Assert.AreNotEqual(TriviaFase.Error, flow.Fase);
+                flow.PasarDispositivo();
+                asked.Add(flow.CurrentQuestion.Id);
+                flow.Responder(0);
+            }
+            Assert.AreEqual(18, asked.Count);
+            Assert.AreEqual(4, asked.Take(4).Distinct().Count(), "Las 4 fáciles salen antes de repetir");
+            Assert.Less(asked.Distinct().Count(), 18, "La tercera ronda fácil repite: no quedan 2 nuevas");
+        }
+
+        [Test]
         public void Flow_AccionesFueraDeFaseNoHacenNada()
         {
             var flow = new TriviaFlowController(new FakeQuestionSource(), new FakeWinnerSink(), new SeededRandom(7));

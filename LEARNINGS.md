@@ -11,6 +11,7 @@ Archivo vivo. Añade una línea cada vez que el autor exprese un gusto, una corr
 - (2026-10-25) Al terminar de portar todos los juegos quiere **un plan para mejorarlos** y **unas 5 propuestas de juegos nuevos** para elegir (VERSIONS.md, fase 10b).
 - (2026-10-25) Recuerda que **Wavelength es un juego roto** en la app Flutter: hay que arreglarlo de verdad, no portar sus fallos.
 - (2026-10-25) No contestó a la pregunta de descargar fuentes de iconos y texto: sin respuesta, no se descarga nada y se siguen usando los iconos provisionales.
+- (2026-10-25) Del plan de mejoras eligió **exactamente el orden recomendado** (C2, C3+L1, B1+B2, C4, I1/T1/W2) y repitió «sin descargar fuentes todavía»: las cosas que necesitan descargas se dejan para cuando lo diga expresamente; mientras, se hace con recursos propios (los sonidos se sintetizaron en el Editor).
 
 ## Producto
 - (2026-10-25) Lleva tiempo intentando hacer este juego. Pide convertir **todo el proyecto a Unity**, con los 7 juegos de la app Flutter.

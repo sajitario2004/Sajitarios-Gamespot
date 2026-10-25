@@ -175,8 +175,9 @@ Cierre técnico de cada versión con código Unity: recompilación sin errores, 
 - [x] **V059f · C4 · Jugar otra con los mismos jugadores** en Tabú, Trivia, Wavelength y La Bomba (empieza al momento con los mismos ajustes), más "Cambiar ajustes" para volver al setup.
   - Acepta: test PlayMode por juego.
   - Notas: `PlayAgain()` y `ResetToSetup()` en los módulos de Tabú, Trivia, Wavelength y La Bomba; sus pantallas de fin tienen «Jugar otra» (principal), «Cambiar ajustes» y «Volver al menú». Trivia y Wavelength ya tenían «Jugar otra», pero llevaba al setup. PlayMode `PlayAgainTests` (4: misma configuración, marcador o mecha a cero, cambiar ajustes conserva el borrador). 44 PlayMode en verde. Captura `V059f_bomba_jugar_otra.png`.
-- [ ] **V059g · I1 / T1 / W2.** Rondas del Impostor: empiezan en el máximo y lo siguen hasta que se tocan. Trivia sin preguntas repetidas en la partida y Wavelength sin espectros repetidos (si no quedan, vuelven a salir).
+- [x] **V059g · I1 / T1 / W2.** Rondas del Impostor: empiezan en el máximo y lo siguen hasta que se tocan. Trivia sin preguntas repetidas en la partida y Wavelength sin espectros repetidos (si no quedan, vuelven a salir).
   - Acepta: tests de dominio y de pantalla.
+  - Notas: I1: `ImpostorSetupDraft.RoundsTouched`; las rondas empiezan en max(1, n−3) y lo siguen hasta que se pulsa el contador, luego solo se recortan. T1: `TriviaFlowController` reparte con las preguntas no salidas (si no llegan para los vivos, con todo el pool). W2: `WavelengthFlowController` elige entre los espectros no salidos (si se agotan, todos). Tests: Trivia (sin repetir en 27 preguntas; con pool corto repite sin error), Wavelength (3 espectros antes de repetir), Impostor PlayMode (rondas siguen y se recortan). 222 EditMode + 45 PlayMode; arnés .NET 173. Captura `V059g_impostor_rondas.png`.
 
 ## Fase 11 — Pulido y paridad
 - [ ] **V060 · Icono y arranque** (placeholders con la paleta neón, mismos nombres).

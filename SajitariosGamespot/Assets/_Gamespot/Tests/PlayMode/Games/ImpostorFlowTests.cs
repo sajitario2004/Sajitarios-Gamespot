@@ -47,7 +47,7 @@ namespace Gamespot.Tests.PlayMode.Games
             var setup = OpenSetup("Nacho", "Iker", "Lucía", "Ana", "Bea");
             yield return null;
             Assert.AreEqual(2, setup.RoundsStepper.Max, "5 jugadores → máx. 2 rondas");
-            Assert.AreEqual(1, setup.RoundsStepper.Value, "Empieza en 1 (como el Flutter)");
+            Assert.AreEqual(2, setup.RoundsStepper.Value, "Empieza en el máximo (I1; en el Flutter empezaba en 1)");
             setup.Start();
             yield return null;
             Assert.IsInstanceOf<PassDeviceScreen>(_app.Router.Current);
@@ -112,6 +112,23 @@ namespace Gamespot.Tests.PlayMode.Games
             Assert.AreEqual(4, setup.Players.Count);
             Assert.AreEqual(3, setup.ImpostorsStepper.Value, "min(5, 4−1)");
             Assert.AreEqual(1, setup.RoundsStepper.Value, "max(1, 4−3)");
+        }
+
+        [UnityTest]
+        public IEnumerator Setup_LasRondasSiguenAlMaximoHastaQueSeTocan()
+        {
+            var setup = OpenSetup("A", "B", "C", "D", "E");
+            yield return null;
+            Assert.AreEqual(2, setup.RoundsStepper.Value);
+            setup.Players.AddPlayer();
+            setup.Players.AddPlayer();
+            Assert.AreEqual(4, setup.RoundsStepper.Value, "7 jugadores: sube solo a max(1, 7−3)");
+            setup.RoundsStepper.Set(3, true);
+            setup.Players.AddPlayer();
+            Assert.AreEqual(5, setup.RoundsStepper.Max);
+            Assert.AreEqual(3, setup.RoundsStepper.Value, "Tocadas: ya no suben solas");
+            for (var i = 0; i < 4; i++) setup.Players.RemovePlayer(0);
+            Assert.AreEqual(1, setup.RoundsStepper.Value, "Pero sí se recortan");
         }
 
         [UnityTest]

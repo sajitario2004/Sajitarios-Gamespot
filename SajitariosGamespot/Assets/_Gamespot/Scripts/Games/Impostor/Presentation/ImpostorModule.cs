@@ -12,6 +12,9 @@ namespace Gamespot.Games.Impostor
         public List<string> Names { get; } = new List<string>();
         public int Impostores { get; set; } = 1;
         public int Rounds { get; set; } = GameConfig.MinRounds;
+
+        /// <summary>Si se han tocado las rondas: hasta entonces siguen al máximo según los jugadores (I1).</summary>
+        public bool RoundsTouched { get; set; }
         public bool HintEnabled { get; set; }
     }
 

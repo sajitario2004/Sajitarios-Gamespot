@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Gamespot.Core;
 
 namespace Gamespot.Games.Wavelength.Domain
@@ -124,7 +125,7 @@ namespace Gamespot.Games.Wavelength.Domain
             }
             try
             {
-                CurrentRound = _pick.Execute(_spectra.GetAll());
+                CurrentRound = _pick.Execute(Unused(_spectra.GetAll()));
                 Fase = WavelengthFase.Clue;
             }
             catch (Exception)
@@ -133,6 +134,17 @@ namespace Gamespot.Games.Wavelength.Domain
                 Fase = WavelengthFase.GameOver;
             }
             Notify();
+        }
+
+        /// <summary>
+        /// Espectros que aún no han salido en la partida (W2; en el Flutter podían repetirse). Si ya salieron
+        /// todos, vuelven a estar todos.
+        /// </summary>
+        private IReadOnlyList<Spectrum> Unused(IReadOnlyList<Spectrum> pool)
+        {
+            var used = new HashSet<long>(Session.CompletedRounds.Select(r => r.Spectrum.Id));
+            var fresh = (pool ?? Array.Empty<Spectrum>()).Where(s => !used.Contains(s.Id)).ToList();
+            return fresh.Count > 0 ? fresh : pool;
         }
 
         public void Reiniciar()

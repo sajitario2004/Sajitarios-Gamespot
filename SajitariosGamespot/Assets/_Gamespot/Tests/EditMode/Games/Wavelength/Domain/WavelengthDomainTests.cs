@@ -134,6 +134,28 @@ namespace Gamespot.Tests.EditMode.Games.Wavelength
         }
 
         [Test]
+        public void Flow_NoRepiteEspectroHastaAgotarlos()
+        {
+            var source = new FakeSpectrumSource
+            {
+                Pool = new[] { new Spectrum(1, "frío", "caliente"), new Spectrum(2, "barato", "caro"), new Spectrum(3, "feo", "bonito") }
+            };
+            var flow = new WavelengthFlowController(source, new SeededRandom(3));
+            flow.Iniciar(WavelengthConfig.Create(new[] { "Ana", "Luis" }, 4).config);
+            var ids = new List<long>();
+            for (var i = 0; i < 4; i++)
+            {
+                ids.Add(flow.CurrentRound.Spectrum.Id);
+                flow.ConfirmarPista("pista");
+                flow.PasarDispositivo();
+                flow.SubmitGuess(0.5);
+                flow.Next();
+            }
+            CollectionAssert.AreEquivalent(new long[] { 1, 2, 3 }, ids.Take(3), "Los 3 antes de repetir (W2)");
+            Assert.AreEqual(WavelengthFase.GameOver, flow.Fase, "Con todos usados vuelven a salir y la partida sigue");
+        }
+
+        [Test]
         public void Flow_SinEspectros_Error()
         {
             var flow = new WavelengthFlowController(new FakeSpectrumSource { Pool = new Spectrum[0] }, new SeededRandom(1));

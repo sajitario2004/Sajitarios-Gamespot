@@ -52,6 +52,9 @@ namespace Gamespot.Games.Trivia.Domain
             _deal = new DealQuestionsUseCase(random);
         }
 
+        /// <summary>Ids de las preguntas que ya han salido en esta partida.</summary>
+        private readonly HashSet<long> _asked = new HashSet<long>();
+
         public event Action Changed;
 
         public TriviaFase Fase { get; private set; } = TriviaFase.Setup;
@@ -95,7 +98,7 @@ namespace Gamespot.Games.Trivia.Domain
                     return;
                 }
                 Session = session;
-                _roundQuestions = _deal.Execute(session.AlivePlayers, pools[Difficulty.Facil]);
+                _roundQuestions = Deal(session.AlivePlayers, pools[Difficulty.Facil]);
                 CurrentPlayerIndex = 0;
                 Fase = TriviaFase.Pass;
             }
@@ -175,7 +178,7 @@ namespace Gamespot.Games.Trivia.Domain
             {
                 var pools = LoadPools();
                 Session = nextSession;
-                _roundQuestions = _deal.Execute(nextSession.AlivePlayers, pools[TriviaSession.DifficultyForRound(nextSession.CurrentRound)]);
+                _roundQuestions = Deal(nextSession.AlivePlayers, pools[TriviaSession.DifficultyForRound(nextSession.CurrentRound)]);
                 CurrentPlayerIndex = 0;
                 Fase = TriviaFase.Pass;
                 Notify();
@@ -204,6 +207,18 @@ namespace Gamespot.Games.Trivia.Domain
             Notify();
         }
 
+        /// <summary>
+        /// Reparte con las preguntas que aún no han salido en la partida (T1; en el Flutter podían repetirse entre
+        /// rondas). Si no quedan suficientes para todos los vivos, se reparte del pool completo.
+        /// </summary>
+        private IReadOnlyList<(TriviaPlayer player, Question question)> Deal(IReadOnlyList<TriviaPlayer> alive, IReadOnlyList<Question> pool)
+        {
+            var fresh = pool.Where(q => !_asked.Contains(q.Id)).ToList();
+            var dealt = _deal.Execute(alive, fresh.Count >= alive.Count ? fresh : pool);
+            foreach (var entry in dealt) _asked.Add(entry.question.Id);
+            return dealt;
+        }
+
         private Dictionary<Difficulty, IReadOnlyList<Question>> LoadPools() =>
             Difficulties.All.ToDictionary(d => d, d => _questions.GetPool(Config.TematicaIds, d) ?? Array.Empty<Question>());
 
@@ -224,6 +239,7 @@ namespace Gamespot.Games.Trivia.Domain
             CurrentQuestion = null;
             ErrorKind = null;
             _roundQuestions = Array.Empty<(TriviaPlayer, Question)>();
+            _asked.Clear();
         }
 
         private static int IndexOf(IReadOnlyList<TriviaPlayer> list, TriviaPlayer player)

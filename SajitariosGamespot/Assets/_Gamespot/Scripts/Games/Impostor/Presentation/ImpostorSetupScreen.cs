@@ -12,7 +12,8 @@ namespace Gamespot.Games.Impostor
 {
     /// <summary>
     /// Configuración de la partida (port de <c>SetupScreen</c>): 3–15 jugadores en orden de revelación, impostores
-    /// 1..min(5, n−1), rondas de votación 1..max(1, n−3) (empieza en 1 y solo se recorta, como el Flutter) y pista.
+    /// 1..min(5, n−1), rondas de votación 1..max(1, n−3) y pista. Las rondas empiezan en el máximo y lo siguen al
+    /// añadir o quitar jugadores hasta que se tocan; luego solo se recortan (I1; en el Flutter empezaban en 1).
     /// Al empezar valida con <see cref="GameConfig.Create"/> y reparte roles.
     /// </summary>
     public sealed class ImpostorSetupScreen : AppScreen
@@ -59,7 +60,11 @@ namespace Gamespot.Games.Impostor
             _rounds = NeonStepper.Create(roundsPanel.Content, draft.Rounds, GameConfig.MinRounds, GameConfig.MaxRoundsFor(_players.Count),
                 n => Loc.T("rondasContador", ("n", n)), Palette.NeonViolet);
             _rounds.SetButtonNames(Loc.T("menosRondas"), Loc.T("masRondas"));
-            _rounds.Changed += _ => SaveDraft();
+            _rounds.Changed += _ =>
+            {
+                _module.Draft.RoundsTouched = true;
+                SaveDraft();
+            };
 
             var hint = NeonSwitch.Create(content, Loc.T("darPistaAlImpostor"), Loc.T("darPistaAlImpostorSubtitulo"), draft.HintEnabled);
             hint.Changed += v =>
@@ -72,13 +77,17 @@ namespace Gamespot.Games.Impostor
             OnPlayersChanged();
         }
 
-        /// <summary>Al añadir o quitar jugadores los máximos cambian; los valores solo se recortan (nunca suben solos).</summary>
+        /// <summary>
+        /// Al añadir o quitar jugadores los máximos cambian: los impostores solo se recortan; las rondas siguen al
+        /// máximo mientras no se hayan tocado.
+        /// </summary>
         private void OnPlayersChanged()
         {
             var n = _players.Count;
             _impostores.SetRange(GameConfig.MinImpostores, GameConfig.MaxImpostoresFor(n));
             _impostores.SetHelper(Loc.T("maximoImpostoresPara", ("max", GameConfig.MaxImpostoresFor(n)), ("jugadores", n)));
-            _rounds.SetRange(GameConfig.MinRounds, GameConfig.MaxRoundsFor(n));
+            var maxRounds = GameConfig.MaxRoundsFor(n);
+            _rounds.SetRange(GameConfig.MinRounds, maxRounds, _module.Draft.RoundsTouched ? (int?)null : maxRounds);
             _rounds.SetHelper(Loc.T("setupRondasAyuda", ("min", GameConfig.MinRounds), ("max", GameConfig.MaxRoundsFor(n))));
             SaveDraft();
         }
