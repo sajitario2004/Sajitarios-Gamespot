@@ -327,6 +327,10 @@ el móvil (V066, V068).
 
 ## 10. Registro de trabajo (lo más reciente arriba)
 
+### 2026-10-25 · V065 y V067 · APK de desarrollo y proyecto de Xcode
+- APK de desarrollo en `SajitariosGamespot/Builds/Android/SajitariosGamespot-dev.apk` (opciones `Development` y `DetailedBuildReport` del comando `build run`): 49 MB, sin errores ni avisos. El release de prueba sigue en la raíz.
+- Proyecto de Xcode generado desde Windows (`build.target switch` a iOS, `build run --target iOS`, vuelta a Android): `SajitariosGamespot/Builds/iOS/Unity-iPhone.xcodeproj`, 57 s sin errores. Al cambiar de plataforma Unity añade al `ProjectSettings` la entrada de batching de iPhone. Compilar y firmar necesita un Mac.
+
 ### 2026-10-25 · V064 · Lista de paridad con el Flutter
 - §8.3: las 29 pantallas del Flutter (y la de ruta desconocida) con su pantalla Unity, estado (igual, igual con mejoras o arreglada), diferencias y el test que la cubre; más las 4 que solo tiene Unity.
 - Comprobación de textos por pantalla (script en el scratchpad: claves `l10n.*` de cada pantalla del Flutter frente a las que usa el código Unity): no falta ninguna; solo sobran los cinco «Iniciando…» (en Unity el arranque es instantáneo) y tres etiquetas de lector de pantalla (deuda en §8.2).

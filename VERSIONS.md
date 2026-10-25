@@ -223,10 +223,11 @@ Cierre técnico de cada versión con código Unity: recompilación sin errores, 
   - Notas: tabla en `CONTEXT.md` §8.3: 29 pantallas + ruta desconocida, todas con equivalente (iguales, con mejoras o arregladas, como Wavelength) y el test que las cubre; 4 pantallas nuevas solo en Unity. Textos comprobados por script: no falta ninguno (sobran los «Iniciando…» y tres etiquetas de lector de pantalla).
 
 ## Fase 12 — Builds y cierre
-- [ ] **V065 · Build Android** (`.apk` release y desarrollo).
-  - Notas (en curso, 2026-10-25): APK de prueba `SajitariosGamespot-prueba.apk` en la raíz del repo (ignorado por git): release, firma de depuración de Unity, IL2CPP ARM64, 38,4 MB, Android 7.1+ (API 25, objetivo 36), permisos INTERNET y VIBRATE; 3 min 18 s sin errores ni avisos. Falta la de desarrollo.
+- [x] **V065 · Build Android** (`.apk` release y desarrollo).
+  - Notas (2026-10-25): release `SajitariosGamespot-prueba.apk` en la raíz del repo (lo pidió el autor; ignorado por git): firma de depuración de Unity, IL2CPP ARM64, Android 7.1+ (API 25, objetivo 36). Desarrollo `SajitariosGamespot/Builds/Android/SajitariosGamespot-dev.apk` (`build run --options ["Development","DetailedBuildReport"]`, 49 MB, 2 min 10 s): con profiler. Los dos sin errores ni avisos. Desde V059p el release ya no pide el permiso de internet (solo vibración). Para publicar en Google Play hará falta una firma propia (keystore) y un AAB.
 - [ ] **V066 · Prueba en emulador o dispositivo:** una partida de cada juego; palabras propias e historial persisten tras cerrar.
-- [ ] **V067 · Proyecto de Xcode** para iOS (compilar y firmar en un Mac).
+- [x] **V067 · Proyecto de Xcode** para iOS (compilar y firmar en un Mac).
+  - Notas (2026-10-25): generado en Windows en `SajitariosGamespot/Builds/iOS/Unity-iPhone.xcodeproj` (ignorado por git): cambio a iOS, build de 57 s sin errores ni avisos y vuelta a Android. Versión 0.76.0, bundle `com.sajitarios.sajitariosGamespot`, iOS 15+. Compilarlo y firmarlo necesita un Mac con Xcode y una cuenta de desarrollador de Apple (equipo de firma): queda para cuando el autor tenga Mac.
 - [ ] **V068 · Validación del autor.**
 - [ ] **V069 · Cierre** (con permiso): borrar `Legacy/Flutter/`, `TREE.md`, PR de `feature/unity-port` a `main`.
   - Notas (2026-10-25): el autor fusionó el PR #1 en `main`. `Legacy/Flutter/` se queda hasta que valide la app en el móvil (lo decidió el autor).
