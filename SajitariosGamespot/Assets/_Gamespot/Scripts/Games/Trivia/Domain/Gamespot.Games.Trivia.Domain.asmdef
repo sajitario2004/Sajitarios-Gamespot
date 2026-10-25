@@ -1,0 +1,16 @@
+{
+    "name": "Gamespot.Games.Trivia.Domain",
+    "rootNamespace": "Gamespot.Games.Trivia.Domain",
+    "references": [
+        "Gamespot.Core"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

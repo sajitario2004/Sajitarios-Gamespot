@@ -1,0 +1,43 @@
+using Gamespot.Core.Runtime.Db;
+using Gamespot.Core.Runtime.UI;
+using Gamespot.Games.Shared;
+using Gamespot.Games.Tabu.Data;
+using Gamespot.Games.Tabu.Domain;
+
+namespace Gamespot.Games.Tabu
+{
+    /// <summary>
+    /// Descriptor del Tabú: dos equipos, turnos con tiempo y primero a 3 victorias de ronda. Tarjetas de seed por
+    /// categorías y, desde V059l, tarjetas y categorías propias.
+    /// </summary>
+    public sealed class TabuGame : IGameDescriptor
+    {
+        public string Id => "tabu";
+        public string TitleKey => "tabuMenuTitulo";
+        public string DescriptionKey => "tabuMenuDescripcion";
+        public IconId Icon => IconId.DoNotDisturb;
+        public string EntryRoute => TabuModule.SetupRoute;
+
+        public TabuModule Module { get; private set; }
+
+        public void Register(GameContext context)
+        {
+            var words = new TabuWordRepository(context.Db);
+            var source = new CategoryTabuWordSource(words);
+            var categories = new CustomCategoryRepository(context.Db, TabuSchema.CategoriesTable);
+            var module = new TabuModule(new TabuFlowController(source, context.Random), context.Router, context.Audio, words, source, categories);
+            Module = module;
+            context.Router.Register(TabuModule.SetupRoute, () => new TabuSetupScreen(module));
+            context.Router.Register(TabuModule.TurnRoute, () => new TabuTurnScreen(module));
+            context.Router.Register(TabuModule.ScoreboardRoute, () => new TabuScoreboardScreen(module));
+            context.Router.Register(TabuModule.GameOverRoute, () => new TabuGameOverScreen(module));
+            context.Router.Register(TabuModule.WordsRoute, () => new TabuWordsScreen(module));
+        }
+
+        public void OnCreate(IDb db) => TabuSchema.Create(db);
+
+        public void OnUpgrade(IDb db, int oldVersion, int newVersion) => TabuSchema.Upgrade(db, oldVersion);
+
+        public void SeedIfEmpty(IDb db, ISeedSource seeds) => TabuSchema.SeedIfEmpty(db, seeds);
+    }
+}

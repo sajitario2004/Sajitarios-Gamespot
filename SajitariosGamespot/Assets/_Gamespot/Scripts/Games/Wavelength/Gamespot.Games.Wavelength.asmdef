@@ -1,0 +1,21 @@
+{
+    "name": "Gamespot.Games.Wavelength",
+    "rootNamespace": "Gamespot.Games.Wavelength",
+    "references": [
+        "Gamespot.Core",
+        "Gamespot.Core.Runtime",
+        "Gamespot.Games.Shared",
+        "Gamespot.Games.Wavelength.Domain",
+        "Unity.TextMeshPro",
+        "UnityEngine.UI"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

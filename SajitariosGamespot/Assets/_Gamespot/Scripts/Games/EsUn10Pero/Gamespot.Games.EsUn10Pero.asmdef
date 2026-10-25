@@ -1,0 +1,21 @@
+{
+    "name": "Gamespot.Games.EsUn10Pero",
+    "rootNamespace": "Gamespot.Games.EsUn10Pero",
+    "references": [
+        "Gamespot.Core",
+        "Gamespot.Core.Runtime",
+        "Gamespot.Games.Shared",
+        "Gamespot.Games.EsUn10Pero.Domain",
+        "Unity.TextMeshPro",
+        "UnityEngine.UI"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,26 @@
+{
+    "name": "Gamespot.Editor",
+    "rootNamespace": "Gamespot.Editor",
+    "references": [
+        "Gamespot.Core",
+        "Gamespot.Core.Runtime",
+        "Gamespot.App",
+        "Unity.TextMeshPro",
+        "Unity.TextMeshPro.Editor",
+        "UnityEngine.UI",
+        "Unity.InputSystem",
+        "Unity.RenderPipelines.Core.Runtime",
+        "Unity.RenderPipelines.Universal.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

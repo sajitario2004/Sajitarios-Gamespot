@@ -1,0 +1,16 @@
+{
+    "name": "Gamespot.Games.Impostor.Domain",
+    "rootNamespace": "Gamespot.Games.Impostor.Domain",
+    "references": [
+        "Gamespot.Core"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

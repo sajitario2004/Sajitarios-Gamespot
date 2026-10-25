@@ -1,0 +1,21 @@
+{
+    "name": "Gamespot.Games.Bomba",
+    "rootNamespace": "Gamespot.Games.Bomba",
+    "references": [
+        "Gamespot.Core",
+        "Gamespot.Core.Runtime",
+        "Gamespot.Games.Shared",
+        "Gamespot.Games.Bomba.Domain",
+        "Unity.TextMeshPro",
+        "UnityEngine.UI"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

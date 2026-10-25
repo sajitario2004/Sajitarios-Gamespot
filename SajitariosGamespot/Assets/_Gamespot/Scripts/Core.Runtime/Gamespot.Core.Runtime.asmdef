@@ -1,0 +1,20 @@
+{
+    "name": "Gamespot.Core.Runtime",
+    "rootNamespace": "Gamespot.Core.Runtime",
+    "references": [
+        "Gamespot.Core",
+        "Gilzoide.SqliteNet",
+        "Unity.TextMeshPro",
+        "UnityEngine.UI",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

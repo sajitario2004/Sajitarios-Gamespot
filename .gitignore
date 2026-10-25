@@ -1,45 +1,78 @@
-# Miscellaneous
-*.class
-*.log
-*.pyc
-*.swp
-.DS_Store
-.atom/
-.build/
-.buildlog/
-.history
-.svn/
-.swiftpm/
-migrate_working_dir/
+# .gitignore del repo Sajitarios Gamespot
+# - Proyecto Unity en SajitariosGamespot/ (plantilla Unity de github/gitignore, CC0-1.0, con las rutas ancladas a esa carpeta)
+# - App Flutter heredada en Legacy/Flutter/ (solo lectura, se borra al cerrar la migracion)
 
-# IntelliJ related
+# ---------------------------------------------------------------- General
+.DS_Store
+Thumbs.db
+*.swp
+*.log
+.idea/
+.vs/
+.vscode/
 *.iml
 *.ipr
 *.iws
-.idea/
 
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
+# ---------------------------------------------------------------- Unity (SajitariosGamespot/)
+/SajitariosGamespot/.utmp/
+/SajitariosGamespot/[Ll]ibrary/
+/SajitariosGamespot/[Tt]emp/
+/SajitariosGamespot/[Oo]bj/
+/SajitariosGamespot/[Bb]uild/
+/SajitariosGamespot/[Bb]uilds/
+/SajitariosGamespot/[Ll]ogs/
+/SajitariosGamespot/[Uu]ser[Ss]ettings/
+/SajitariosGamespot/[Mm]emoryCaptures/
+/SajitariosGamespot/[Rr]ecordings/
+/SajitariosGamespot/[Aa]ssets/Plugins/Editor/JetBrains*
+*.DotSettings.user
+.gradle/
+ExportedObj/
+.consulo/
+*.csproj
+*.unityproj
+*.sln
+*.slnx
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+sysinfo.txt
+mono_crash.*
+*.apk
+*.aab
+# Símbolos de Burst que la build deja junto al APK (no se distribuyen)
+*_BurstDebugInformation_DoNotShip/
+*.unitypackage
+*.unitypackage.meta
+*.app
+crashlytics-build.properties
+InitTestScene*.unity*
+/SajitariosGamespot/[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+/SajitariosGamespot/[Aa]ssets/[Ss]ceneDependencyCache*
 
-# Flutter/Dart/Pub related
-**/doc/api/
-**/ios/Flutter/.last_build_id
-.dart_tool/
-.flutter-plugins-dependencies
-.pub-cache/
-.pub/
-/build/
-/coverage/
-
-# Symbolication related
+# ---------------------------------------------------------------- Flutter heredado (Legacy/Flutter/)
+/Legacy/Flutter/.dart_tool/
+/Legacy/Flutter/.flutter-plugins-dependencies
+/Legacy/Flutter/.pub-cache/
+/Legacy/Flutter/.pub/
+/Legacy/Flutter/build/
+/Legacy/Flutter/coverage/
+/Legacy/Flutter/**/doc/api/
+/Legacy/Flutter/ios/Flutter/.last_build_id
+/Legacy/Flutter/android/app/debug
+/Legacy/Flutter/android/app/profile
+/Legacy/Flutter/android/app/release
 app.*.symbols
-
-# Obfuscation related
 app.*.map.json
-
-# Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release

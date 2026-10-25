@@ -1,0 +1,45 @@
+{
+    "name": "Gamespot.Tests.EditMode",
+    "rootNamespace": "Gamespot.Tests.EditMode",
+    "references": [
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner",
+        "Gamespot.Core",
+        "Gamespot.Core.Runtime",
+        "Gamespot.App",
+        "Gamespot.Games.Shared",
+        "Gamespot.Menu",
+        "Gamespot.Games.EsUn10Pero.Domain",
+        "Gamespot.Games.Impostor.Domain",
+        "Gilzoide.SqliteNet",
+        "Unity.TextMeshPro",
+        "UnityEngine.UI",
+        "Gamespot.Games.Impostor",
+        "Gamespot.Games.Trivia",
+        "Gamespot.Games.Trivia.Domain",
+        "Gamespot.Games.Wavelength",
+        "Gamespot.Games.Wavelength.Domain",
+        "Gamespot.Games.Tabu.Domain",
+        "Gamespot.Games.Tabu",
+        "Gamespot.Games.YoNunca",
+        "Gamespot.Games.YoNunca.Domain",
+        "Gamespot.Games.Bomba",
+        "Gamespot.Games.Bomba.Domain",
+        "Gamespot.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
