@@ -31,26 +31,22 @@ namespace Gamespot.Core.Runtime.Db
             try
             {
                 var stored = db.UserVersion;
-                if (stored == 0)
-                {
-                    db.InTransaction(() =>
-                    {
-                        foreach (var schema in schemas) schema.OnCreate(db);
-                        db.UserVersion = version;
-                    });
-                }
-                else if (stored < version)
-                {
-                    db.InTransaction(() =>
-                    {
-                        foreach (var schema in schemas) schema.OnUpgrade(db, stored, version);
-                        db.UserVersion = version;
-                    });
-                }
-                else if (stored > version)
+                if (stored > version)
                 {
                     throw new InvalidOperationException($"La base de datos es de una versión más nueva ({stored}) que la app ({version})");
                 }
+                db.InTransaction(() =>
+                {
+                    // Las tablas de cada juego se aseguran en cada arranque (CREATE ... IF NOT EXISTS): un juego
+                    // nuevo trae sus tablas sin subir la versión. La versión solo sirve para cambiar tablas que ya
+                    // existían (OnUpgrade).
+                    foreach (var schema in schemas) schema.OnCreate(db);
+                    if (stored > 0 && stored < version)
+                    {
+                        foreach (var schema in schemas) schema.OnUpgrade(db, stored, version);
+                    }
+                    if (stored != version) db.UserVersion = version;
+                });
 
                 if (seeds != null)
                 {

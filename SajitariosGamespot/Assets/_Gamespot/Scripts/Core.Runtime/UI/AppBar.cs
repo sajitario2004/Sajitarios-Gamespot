@@ -63,8 +63,9 @@ namespace Gamespot.Core.Runtime.UI
             var count = Actions.childCount;
             var width = NeonButton.MinTouchSize * count;
             Actions.Sized(width, NeonButton.MinTouchSize);
-            // Se equilibra la izquierda para que el título siga centrado.
-            Leading.Sized(Mathf.Max(NeonButton.MinTouchSize, width), NeonButton.MinTouchSize);
+            // Se equilibra la izquierda para centrar el título, pero sin pasar de dos botones: con más acciones el
+            // título se corre un poco a la izquierda en vez de encogerse (como Flutter cuando no cabe centrado).
+            Leading.Sized(Mathf.Clamp(width, NeonButton.MinTouchSize, NeonButton.MinTouchSize * 2f), NeonButton.MinTouchSize);
             return button;
         }
     }

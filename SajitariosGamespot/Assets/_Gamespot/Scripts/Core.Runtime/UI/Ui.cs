@@ -54,11 +54,15 @@ namespace Gamespot.Core.Runtime.UI
             return rect;
         }
 
-        /// <summary>Hueco que se lleva el espacio sobrante (como <c>Spacer</c>/<c>Expanded</c>).</summary>
+        /// <summary>
+        /// Hueco que se lleva el espacio sobrante (como <c>Spacer</c>) solo en el eje del padre: ancho en una fila,
+        /// alto en una columna. (Si fuera flexible en los dos ejes, la fila entera se estiraría en vertical.)
+        /// </summary>
         public static RectTransform Flex(Transform parent, float weight = 1f)
         {
             var rect = Create("Flex", parent);
-            rect.Sized(flexWidth: weight, flexHeight: weight);
+            if (parent.GetComponent<HorizontalLayoutGroup>() != null) rect.Sized(flexWidth: weight);
+            else rect.Sized(flexHeight: weight);
             return rect;
         }
 

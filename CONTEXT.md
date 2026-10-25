@@ -240,6 +240,13 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 
 ## 10. Registro de trabajo (lo más reciente arriba)
 
+### 2026-10-25 · V026–V034 · El Impostor completo
+- Datos (palabras con seed de 2060, historial), estadísticas puras, 7 pantallas y registro en el menú. Detalle en `VERSIONS.md`.
+- **Arreglo de arquitectura en la BD:** `IDbSchema.OnCreate` se llama en cada arranque y tiene que ser idempotente (`IF NOT EXISTS`). Así un juego añadido más tarde crea sus tablas en instalaciones existentes sin subir la versión. Se descubrió en Play: la BD de antes del Impostor no tenía sus tablas.
+- Kit: `VirtualList` (recicla filas en `LateUpdate`: hacerlo dentro del layout de uGUI da «inside a rebuild loop»), `FadeScaleIn`, diálogos con validación (`DialogAction` con `Func<bool>`), `Ui.Flex` flexible solo en el eje del padre (si no, la fila se estira en vertical) y la AppBar equilibra como mucho dos botones.
+- Mejora sobre el Flutter: el borrador del setup se conserva al ir a palabras o historial.
+- Tests: 135 EditMode + 15 PlayMode en verde. Capturas V029–V032.
+
 ### 2026-10-25 · V011–V023 · Núcleo, menú y "Es un 10 pero"
 - **BD (V011):** `IDb` sobre sqlite-net; `AppDatabase.Open` crea o migra con `PRAGMA user_version` y siembra cada juego si su tabla está vacía. Funciona en el Editor (plugin nativo de Windows).
 - **Localización (V012):** `Loc.T` con ICU; importador `Gamespot → i18n → Importar ARB del Flutter` (solo añade claves que faltan); 331 claves es/en (26 nuevas de Unity) y regla 4 del Tabú corregida.

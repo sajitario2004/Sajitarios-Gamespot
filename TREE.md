@@ -1,6 +1,6 @@
 # TREE
 
-Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 09:23.
+Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 09:42.
 
 No se listan: Library, Temp, Logs, obj, UserSettings, .git, .vs, .idea, .vscode, .utmp, Build, Builds, MemoryCaptures, Recordings, node_modules, __pycache__, .venv, .dart_tool, build, coverage, *.meta, *.csproj, *.sln, *.slnx, *.user, *.pidb, *.unityproj, .DS_Store, Thumbs.db.
 Plegadas: skills, TextMesh Pro, Flutter, Capturas (Flutter = la app original en Legacy/Flutter, solo lectura).
@@ -11,7 +11,7 @@ Sajitarios-Gamespot/
 ├── .claude/
 │   └── settings.json
 ├── Docs/
-│   └── Capturas/  (5 elementos, plegado)
+│   └── Capturas/  (9 elementos, plegado)
 ├── Legacy/
 │   └── Flutter/  (20 elementos, plegado)
 ├── SajitariosGamespot/
@@ -80,6 +80,7 @@ Sajitarios-Gamespot/
 │   │   │   │   │   │   ├── AppBar.cs
 │   │   │   │   │   │   ├── CoverImage.cs
 │   │   │   │   │   │   ├── Dialogs.cs
+│   │   │   │   │   │   ├── FadeScaleIn.cs
 │   │   │   │   │   │   ├── IconId.cs
 │   │   │   │   │   │   ├── Icons.cs
 │   │   │   │   │   │   ├── IconView.cs
@@ -102,7 +103,8 @@ Sajitarios-Gamespot/
 │   │   │   │   │   │   ├── Ui.cs
 │   │   │   │   │   │   ├── UiExtensions.cs
 │   │   │   │   │   │   ├── UiLayout.cs
-│   │   │   │   │   │   └── UiRoot.cs
+│   │   │   │   │   │   ├── UiRoot.cs
+│   │   │   │   │   │   └── VirtualList.cs
 │   │   │   │   │   └── Gamespot.Core.Runtime.asmdef
 │   │   │   │   ├── Editor/
 │   │   │   │   │   ├── Import/
@@ -133,16 +135,33 @@ Sajitarios-Gamespot/
 │   │   │   │   │   │   ├── EsUn10PeroGame.cs
 │   │   │   │   │   │   └── Gamespot.Games.EsUn10Pero.asmdef
 │   │   │   │   │   └── Impostor/
-│   │   │   │   │       └── Domain/
-│   │   │   │   │           ├── Flow/
-│   │   │   │   │           │   └── ImpostorFlowController.cs
-│   │   │   │   │           ├── AssignRolesUseCase.cs
-│   │   │   │   │           ├── GameConfig.cs
-│   │   │   │   │           ├── GameSession.cs
-│   │   │   │   │           ├── Gamespot.Games.Impostor.Domain.asmdef
-│   │   │   │   │           ├── Player.cs
-│   │   │   │   │           ├── Role.cs
-│   │   │   │   │           └── Word.cs
+│   │   │   │   │       ├── Data/
+│   │   │   │   │       │   ├── GameHistoryRepository.cs
+│   │   │   │   │       │   ├── ImpostorSchema.cs
+│   │   │   │   │       │   └── WordRepository.cs
+│   │   │   │   │       ├── Domain/
+│   │   │   │   │       │   ├── Flow/
+│   │   │   │   │       │   │   └── ImpostorFlowController.cs
+│   │   │   │   │       │   ├── AssignRolesUseCase.cs
+│   │   │   │   │       │   ├── GameConfig.cs
+│   │   │   │   │       │   ├── GameRecord.cs
+│   │   │   │   │       │   ├── GameSession.cs
+│   │   │   │   │       │   ├── Gamespot.Games.Impostor.Domain.asmdef
+│   │   │   │   │       │   ├── Player.cs
+│   │   │   │   │       │   ├── Role.cs
+│   │   │   │   │       │   └── Word.cs
+│   │   │   │   │       ├── Presentation/
+│   │   │   │   │       │   ├── GameOverScreen.cs
+│   │   │   │   │       │   ├── HistoryScreen.cs
+│   │   │   │   │       │   ├── ImpostorModule.cs
+│   │   │   │   │       │   ├── ImpostorPlayScreen.cs
+│   │   │   │   │       │   ├── ImpostorSetupScreen.cs
+│   │   │   │   │       │   ├── PassDeviceScreen.cs
+│   │   │   │   │       │   ├── RevealScreen.cs
+│   │   │   │   │       │   ├── VotingScreen.cs
+│   │   │   │   │       │   └── WordsScreen.cs
+│   │   │   │   │       ├── Gamespot.Games.Impostor.asmdef
+│   │   │   │   │       └── ImpostorGame.cs
 │   │   │   │   └── Menu/
 │   │   │   │       ├── Gamespot.Menu.asmdef
 │   │   │   │       └── MenuScreen.cs
@@ -162,20 +181,25 @@ Sajitarios-Gamespot/
 │   │   │       │   │   ├── EsUn10Pero/
 │   │   │       │   │   │   └── Domain/
 │   │   │       │   │   │       └── DrawCardUseCaseTests.cs
-│   │   │       │   │   └── Impostor/
-│   │   │       │   │       └── Domain/
-│   │   │       │   │           ├── AssignRolesUseCaseTests.cs
-│   │   │       │   │           ├── GameConfigTests.cs
-│   │   │       │   │           ├── GameSessionTests.cs
-│   │   │       │   │           ├── ImpostorFlowControllerTests.cs
-│   │   │       │   │           └── ImpostorTestData.cs
+│   │   │       │   │   ├── Impostor/
+│   │   │       │   │   │   ├── Data/
+│   │   │       │   │   │   │   └── ImpostorDataTests.cs
+│   │   │       │   │   │   └── Domain/
+│   │   │       │   │   │       ├── AssignRolesUseCaseTests.cs
+│   │   │       │   │   │       ├── GameConfigTests.cs
+│   │   │       │   │   │       ├── GameSessionTests.cs
+│   │   │       │   │   │       ├── ImpostorFlowControllerTests.cs
+│   │   │       │   │   │       ├── ImpostorStatsTests.cs
+│   │   │       │   │   │       └── ImpostorTestData.cs
+│   │   │       │   │   └── SeedFilesTests.cs
 │   │   │       │   ├── Localization/
 │   │   │       │   │   └── LocTests.cs
 │   │   │       │   ├── ArchitectureTests.cs
 │   │   │       │   └── Gamespot.Tests.EditMode.asmdef
 │   │   │       └── PlayMode/
 │   │   │           ├── Games/
-│   │   │           │   └── EsUn10PeroScreenTests.cs
+│   │   │           │   ├── EsUn10PeroScreenTests.cs
+│   │   │           │   └── ImpostorFlowTests.cs
 │   │   │           ├── AppTestHarness.cs
 │   │   │           ├── BootstrapTests.cs
 │   │   │           └── Gamespot.Tests.PlayMode.asmdef

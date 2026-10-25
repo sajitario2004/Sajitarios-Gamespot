@@ -9,7 +9,9 @@
         "Gamespot.Games.EsUn10Pero",
         "Gamespot.Games.EsUn10Pero.Domain",
         "Unity.TextMeshPro",
-        "UnityEngine.UI"
+        "UnityEngine.UI",
+        "Gamespot.Games.Impostor",
+        "Gamespot.Games.Impostor.Domain"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

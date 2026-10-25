@@ -19,7 +19,7 @@ namespace Gamespot.Tests.EditMode.Db
             public void OnCreate(IDb db)
             {
                 Creates++;
-                db.Execute("CREATE TABLE things (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL UNIQUE COLLATE NOCASE, is_seed INTEGER NOT NULL DEFAULT 0)");
+                db.Execute("CREATE TABLE IF NOT EXISTS things (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL UNIQUE COLLATE NOCASE, is_seed INTEGER NOT NULL DEFAULT 0)");
                 if (ThrowOnCreate) throw new InvalidOperationException("fallo a mitad");
             }
 
@@ -75,9 +75,31 @@ namespace Gamespot.Tests.EditMode.Db
             _temp.Close();
             var again = new FakeSchema();
             db = _temp.Open(new IDbSchema[] { again }, Seeds);
-            Assert.AreEqual(0, again.Creates, "Al reabrir no se vuelve a crear");
+            Assert.AreEqual(1, again.Creates, "Las tablas se aseguran en cada arranque (idempotente)");
             Assert.AreEqual(0, again.Seeds, "Con datos no se vuelve a sembrar");
+            Assert.AreEqual(2L, db.Scalar<long>("SELECT COUNT(*) FROM things"), "Los datos siguen ahí");
+        }
+
+        /// <summary>Esquema de un juego añadido en una versión posterior de la app.</summary>
+        private sealed class LateGameSchema : IDbSchema
+        {
+            public void OnCreate(IDb db) => db.Execute("CREATE TABLE IF NOT EXISTS late_things (id INTEGER PRIMARY KEY, name TEXT)");
+            public void OnUpgrade(IDb db, int oldVersion, int newVersion) { }
+            public void SeedIfEmpty(IDb db, ISeedSource seeds)
+            {
+                if (AppDatabase.IsEmpty(db, "late_things")) db.Execute("INSERT INTO late_things (name) VALUES ('nuevo')");
+            }
+        }
+
+        [Test]
+        public void JuegoNuevoEnUnaInstalacionExistente_CreaSusTablasSinSubirLaVersion()
+        {
+            _temp.Open(new IDbSchema[] { new FakeSchema() }, Seeds);
+            _temp.Close();
+            var db = _temp.Open(new IDbSchema[] { new FakeSchema(), new LateGameSchema() }, Seeds);
+            Assert.AreEqual(1L, db.Scalar<long>("SELECT COUNT(*) FROM late_things"));
             Assert.AreEqual(2L, db.Scalar<long>("SELECT COUNT(*) FROM things"));
+            Assert.AreEqual(AppDatabase.CurrentVersion, db.UserVersion);
         }
 
         [Test]

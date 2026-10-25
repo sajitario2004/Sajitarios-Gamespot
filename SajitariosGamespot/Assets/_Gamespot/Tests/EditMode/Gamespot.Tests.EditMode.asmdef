@@ -13,7 +13,8 @@
         "Gamespot.Games.Impostor.Domain",
         "Gilzoide.SqliteNet",
         "Unity.TextMeshPro",
-        "UnityEngine.UI"
+        "UnityEngine.UI",
+        "Gamespot.Games.Impostor"
     ],
     "includePlatforms": [
         "Editor"

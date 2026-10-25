@@ -75,16 +75,24 @@ Cierre técnico de cada versión con código Unity: recompilación sin errores, 
   - Notas: Adelantada (código puro): `Player` (igualdad exacta), `Role`, `Word` (recorta, pista obligatoria), `GameConfig` (errores en orden, impostores min(5, n−1), rondas max(1, n−3), nulo = máximo) y `GameSession` (orden de revelación = de entrada). Tests de configuración y sesión.
 - [x] **V025 · `AssignRolesUseCase`** + tests (10.000 iteraciones 10/10/80, casos especiales con `FakeRandom`, capado, orden de revelación).
   - Notas: Adelantada: palabra → un solo `NextDouble()` → caso; reparto normal con Fisher-Yates sobre una copia. Tests: 10.000 iteraciones semilla 20240615 (±2/±2/±3 %), misma semilla = mismos conteos, bordes 0.10/0.20 y casos especiales con `ScriptedRandom`, capado, orden de revelación, palabra y pista.
-- [ ] **V026 · Datos:** esquema, `WordRepository` (CRUD, `NOCASE`, búsqueda con `ESCAPE`), seed de 2060 palabras + tests.
-- [ ] **V027 · `GameHistoryRepository`** + tests.
+- [x] **V026 · Datos:** esquema, `WordRepository` (CRUD, `NOCASE`, búsqueda con `ESCAPE`), seed de 2060 palabras + tests.
+  - Notas: `ImpostorSchema` (tablas finales del Flutter, `IF NOT EXISTS`), `WordRepository` (orden NOCASE, `LIKE … ESCAPE '\'`, unicidad sin mayúsculas comprobada antes de escribir, errores en el orden del Flutter, seed de solo lectura) y seed de 2060 palabras validado (sin duplicados, `word ≠ hint`). **Arreglo en el núcleo:** `AppDatabase` asegura las tablas de todos los juegos en cada arranque; la versión solo sirve para cambiar tablas existentes (en Play, la BD creada antes de añadir el Impostor no tenía sus tablas).
+- [x] **V027 · `GameHistoryRepository`** + tests.
+  - Notas: `GameHistoryRepository` (`players_json` con `name`/`role`, la más reciente primero, borrar todo) e `ImpostorStats` puras (palabra más repetida sin mayúsculas con la grafía más reciente, ranking de impostores). Tests de datos con BD temporal.
 - [x] **V028 · `ImpostorFlowController`** (fases y votación) + tests.
   - Notas: Adelantada: `ImpostorFlowController` puro en `Domain/Flow` (Iniciar con `IImpostorWordSource`, Revelar, Avanzar, Votar, Reiniciar; error SinPalabras/Desconocido). Tests de votación: pillar al único impostor, cada voto gasta ronda, hay que pillarlos a todos, re-votar eliminado no hace nada, sin impostores gana el impostor.
-- [ ] **V029 · Setup.**
-- [ ] **V030 · Pasar el móvil y Revelar.**
-- [ ] **V031 · Votación y Fin de partida.**
-- [ ] **V032 · Gestión de palabras** (lista virtualizada, búsqueda con *debounce* de 280 ms, formulario).
-- [ ] **V033 · Historial y estadísticas.**
-- [ ] **V034 · Registro, reglas y test PlayMode** del flujo completo.
+- [x] **V029 · Setup.**
+  - Notas: `ImpostorSetupScreen` con `PlayerListEditor` (3–15), contadores de impostores y rondas que solo se recortan, pista, validación con avisos y diálogo «No hay palabras». El borrador del setup se conserva al ir a palabras o historial (mejora: en el Flutter se perdía). Captura `V029_impostor_setup.png`.
+- [x] **V030 · Pasar el móvil y Revelar.**
+  - Notas: `PassDeviceScreen` (círculo que late, nombre grande, Continuar) y `RevealScreen` (rol oculto hasta Revelar, sonido, impostor magenta con pista violeta, palabra cian; aparición 350 ms). Captura `V030_impostor_revelar.png`.
+- [x] **V031 · Votación y Fin de partida.**
+  - Notas: `VotingScreen` (ronda X de Y, candidatos, impostores pillados tachados, confirmación, aviso tras cada voto) y `GameOverScreen` (solo el desenlace, suena y guarda el historial una vez). Atrás interceptado en votación y fin. Captura `V031_impostor_votacion.png`.
+- [x] **V032 · Gestión de palabras** (lista virtualizada, búsqueda con *debounce* de 280 ms, formulario).
+  - Notas: `WordsScreen` con `VirtualList` (solo las filas visibles de 2060), búsqueda con espera de 280 ms, formulario que no se cierra con campos vacíos, borrado con confirmación y avisos de cada error. Captura `V032_impostor_palabras.png`.
+- [x] **V033 · Historial y estadísticas.**
+  - Notas: `HistoryScreen`: estadísticas, partidas desplegables con pista y rol de cada jugador, borrar todo con confirmación, estados vacío y de error.
+- [x] **V034 · Registro, reglas y test PlayMode** del flujo completo.
+  - Notas: `ImpostorGame` en `GameRegistry` (7 rutas). PlayMode: partida completa (5 revelaciones con sonido, votación, fin, historial guardado una vez, atrás vuelve al setup), validación, recorte de contadores, atrás con confirmación y borrador conservado. 135 EditMode + 15 PlayMode en verde.
 
 ## Fase 6 — Preguntas por puntos
 - [ ] **V035 · Dominio** + tests.

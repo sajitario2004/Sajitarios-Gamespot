@@ -6,10 +6,17 @@ namespace Gamespot.Core.Runtime.Db
     /// </summary>
     public interface IDbSchema
     {
-        /// <summary>Crea las tablas del juego en una base de datos nueva.</summary>
+        /// <summary>
+        /// Asegura las tablas del juego. Se llama en CADA arranque, así que tiene que ser idempotente
+        /// (<c>CREATE TABLE IF NOT EXISTS</c>, <c>CREATE INDEX IF NOT EXISTS</c>): así un juego añadido en una
+        /// versión posterior de la app crea sus tablas en instalaciones existentes.
+        /// </summary>
         void OnCreate(IDb db);
 
-        /// <summary>Aplica los pasos propios de <paramref name="oldVersion"/>+1 a <paramref name="newVersion"/>.</summary>
+        /// <summary>
+        /// Cambios en tablas que ya existían, de <paramref name="oldVersion"/>+1 a <paramref name="newVersion"/>
+        /// (se llama después de <see cref="OnCreate"/>).
+        /// </summary>
         void OnUpgrade(IDb db, int oldVersion, int newVersion);
 
         /// <summary>Carga los datos iniciales solo si sus tablas están vacías (idempotente).</summary>

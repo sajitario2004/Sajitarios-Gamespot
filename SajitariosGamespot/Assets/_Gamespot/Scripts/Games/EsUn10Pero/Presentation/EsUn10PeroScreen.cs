@@ -54,7 +54,7 @@ namespace Gamespot.Games.EsUn10Pero
             GameUi.RulesButton(scaffold.AppBar, Router, "esUn10PeroTitulo", GameUi.RuleKeys("reglasEsUn10Pero", 4));
             if (_audio != null) MuteButton.Create(scaffold.AppBar.Actions, _audio).Sized(NeonButton.MinTouchSize, NeonButton.MinTouchSize);
             scaffold.AppBar.Actions.Sized(NeonButton.MinTouchSize * scaffold.AppBar.Actions.childCount, NeonButton.MinTouchSize);
-            scaffold.AppBar.Leading.Sized(NeonButton.MinTouchSize * scaffold.AppBar.Actions.childCount, NeonButton.MinTouchSize);
+            scaffold.AppBar.Leading.Sized(Mathf.Min(2, scaffold.AppBar.Actions.childCount) * NeonButton.MinTouchSize, NeonButton.MinTouchSize);
 
             var column = Ui.Column(scaffold.Body, 24f, new RectOffset(24, 24, 24, 24));
             column.Sized(flexHeight: 1f);

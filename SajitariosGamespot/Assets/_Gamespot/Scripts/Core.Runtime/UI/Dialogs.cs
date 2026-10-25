@@ -19,8 +19,19 @@ namespace Gamespot.Core.Runtime.UI
             Glow = glow;
         }
 
+        /// <summary>
+        /// Acción que decide si el diálogo se cierra (por ejemplo, un formulario con errores): devuelve falso
+        /// para dejarlo abierto.
+        /// </summary>
+        public DialogAction(string label, Func<bool> tryRun, ButtonStyle style = ButtonStyle.Text, Color? accent = null, float glow = 0f)
+            : this(label, (Action)null, style, accent, glow)
+        {
+            TryRun = tryRun;
+        }
+
         public string Label { get; }
         public Action OnClick { get; }
+        public Func<bool> TryRun { get; }
         public ButtonStyle Style { get; }
         public Color? Accent { get; }
         public float Glow { get; }
@@ -113,6 +124,11 @@ namespace Gamespot.Core.Runtime.UI
                     var a = action;
                     NeonButton.Create(buttons, a.Label, () =>
                     {
+                        if (a.TryRun != null)
+                        {
+                            if (a.TryRun()) Close(entry);
+                            return;
+                        }
                         Close(entry);
                         a.OnClick?.Invoke();
                     }, a.Style, accent: a.Accent, glow: a.Glow, fontSize: 16f);

@@ -23,7 +23,7 @@ namespace Gamespot.Core.Runtime.Localization
             var current = Loc.Preference;
             Dialogs.Show(Loc.T("idioma"), null, new[]
             {
-                new DialogAction(Loc.T("cancelar"), null, ButtonStyle.Text, Palette.NeonCyan)
+                new DialogAction(Loc.T("cancelar"), (System.Action)null, ButtonStyle.Text, Palette.NeonCyan)
             }, buildContent: content =>
             {
                 Option(content, Loc.T("idiomaDelSistema"), current == null, null);

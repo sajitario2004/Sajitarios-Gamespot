@@ -40,7 +40,7 @@ namespace Gamespot.Tests.PlayMode.Games
             _app = new AppTestHarness();
             yield return AppTestHarness.Frames();
             var menu = (Gamespot.Menu.MenuScreen)_app.Router.Current;
-            Assert.AreEqual(1, menu.Cards.Count);
+            Assert.AreEqual(_app.Bootstrap.Games.Count, menu.Cards.Count);
             menu.Cards[0].Button.onClick.Invoke();
             yield return null;
             Assert.IsInstanceOf<EsUn10PeroScreen>(_app.Router.Current);
