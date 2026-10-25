@@ -329,5 +329,6 @@
   "paloTreboles": "Tréboles",
   "wavelengthPuntosPorRonda": "{avg} puntos/ronda",
   "cargando": "Cargando...",
-  "reducirAnimaciones": "Reducir animaciones"
+  "reducirAnimaciones": "Reducir animaciones",
+  "usarUltimosJugadores": "Usar los de la última partida"
 }

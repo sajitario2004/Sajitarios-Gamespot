@@ -1,6 +1,6 @@
 # TREE
 
-Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 10:41.
+Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 15:58.
 
 No se listan: Library, Temp, Logs, obj, UserSettings, .git, .vs, .idea, .vscode, .utmp, Build, Builds, MemoryCaptures, Recordings, node_modules, __pycache__, .venv, .dart_tool, build, coverage, *.meta, *.csproj, *.sln, *.slnx, *.user, *.pidb, *.unityproj, .DS_Store, Thumbs.db.
 Plegadas: skills, TextMesh Pro, Flutter, Capturas (Flutter = la app original en Legacy/Flutter, solo lectura).
@@ -11,7 +11,7 @@ Sajitarios-Gamespot/
 ├── .claude/
 │   └── settings.json
 ├── Docs/
-│   ├── Capturas/  (22 elementos, plegado)
+│   ├── Capturas/  (23 elementos, plegado)
 │   └── PLAN_MEJORAS.md
 ├── Legacy/
 │   └── Flutter/  (20 elementos, plegado)
@@ -278,6 +278,7 @@ Sajitarios-Gamespot/
 │   │   │           │   ├── BombaFlowTests.cs
 │   │   │           │   ├── EsUn10PeroScreenTests.cs
 │   │   │           │   ├── ImpostorFlowTests.cs
+│   │   │           │   ├── PlayerRosterTests.cs
 │   │   │           │   ├── TabuFlowTests.cs
 │   │   │           │   ├── TriviaFlowTests.cs
 │   │   │           │   ├── WavelengthFlowTests.cs

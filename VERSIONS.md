@@ -162,6 +162,19 @@ Cierre técnico de cada versión con código Unity: recompilación sin errores, 
 - [x] **V059b · Cinco juegos nuevos** propuestos (reglas, por qué encajan en un hub local de pasar el móvil, esfuerzo estimado), para que el autor elija cuáles añadir.
   - Notas: Cinco juegos propuestos en el mismo archivo (§3): Verdad o Reto (S), ¿Quién soy? (M), Dibuja y adivina (M), Código secreto (M–L) y Hombres Lobo con el móvil de narrador (L), más tres ideas pequeñas en el banquillo. Pendiente de que el autor elija.
 
+## Fase 10c — Mejoras elegidas del plan (el autor, 2026-10-25: «C2, C3+L1, B1+B2, C4 e I1/T1/W2, sin descargar fuentes»)
+- [x] **V059c · C2 · Jugadores guardados entre juegos.** Al empezar una partida se guardan los nombres; los setups con lista de jugadores (Impostor, Trivia, Wavelength, Bomba) arrancan con ellos si están vacíos, y "Usar los de la última partida" los recupera.
+  - Acepta: test PlayMode que juega en un juego y abre otro con los nombres puestos; los tests no dejan nombres guardados.
+  - Notas: `AppSettings.LastPlayers` (preferencia `last_players`, lista JSON) se guarda al empezar en Impostor, Trivia, Wavelength y Bomba. `PlayerListEditor` arranca con esos nombres si no hay ninguno escrito (recortados al máximo del juego) y enseña «Usar los de la última partida» cuando no coinciden. PlayMode `PlayerRosterTests` (4); el arnés restaura la preferencia. 35 PlayMode en verde. Captura `V059c_jugadores_guardados.png`.
+- [ ] **V059d · C3 + L1 · Sonido y vibración.** Sonidos sintetizados propios (sin descargas): tic-tac de La Bomba que acelera, explosión y vibración; pitidos de los últimos 5 s y bocina en Tabú; acierto y fallo en Trivia; revelado en Wavelength; pasar en Yo Nunca.
+  - Acepta: los WAV se generan desde el Editor y suenan en su momento (test con el contador de `AudioService`).
+- [ ] **V059e · B1 + B2 · Tabú con 500+ palabras y tildes.** Seed ampliado y corregido; si se agotan las palabras, aviso y vuelven a salir; la BD sube a la versión 2 y renueva el seed del Tabú en las instalaciones existentes.
+  - Acepta: seed ≥ 500 sin duplicados ni prohibidas repetidas; test de la migración 1 → 2; test del aviso.
+- [ ] **V059f · C4 · Jugar otra con los mismos jugadores** en Tabú, Trivia, Wavelength y La Bomba (empieza al momento con los mismos ajustes), más "Cambiar ajustes" para volver al setup.
+  - Acepta: test PlayMode por juego.
+- [ ] **V059g · I1 / T1 / W2.** Rondas del Impostor: empiezan en el máximo y lo siguen hasta que se tocan. Trivia sin preguntas repetidas en la partida y Wavelength sin espectros repetidos (si no quedan, vuelven a salir).
+  - Acepta: tests de dominio y de pantalla.
+
 ## Fase 11 — Pulido y paridad
 - [ ] **V060 · Icono y arranque** (placeholders con la paleta neón, mismos nombres).
 - [ ] **V061 · Barrido responsive** (pantallas pequeñas, notch, textos largos).

@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using Gamespot.Core;
 using UnityEngine;
 
 namespace Gamespot.Core.Runtime.Settings
@@ -8,6 +11,7 @@ namespace Gamespot.Core.Runtime.Settings
     {
         public const string AudioEnabledKey = "audio_enabled";
         public const string ReduceMotionKey = "reduce_motion";
+        public const string LastPlayersKey = "last_players";
 
         /// <summary>Se lanza al cambiar "reducir animaciones".</summary>
         public static event Action ReduceMotionChanged;
@@ -36,6 +40,34 @@ namespace Gamespot.Core.Runtime.Settings
                 PlayerPrefs.SetInt(ReduceMotionKey, value ? 1 : 0);
                 PlayerPrefs.Save();
                 ReduceMotionChanged?.Invoke();
+            }
+        }
+
+        /// <summary>
+        /// Nombres de la última partida empezada, en orden (los comparten todos los setups con lista de jugadores).
+        /// Vacío si no hay o si lo guardado está mal; asignar una lista vacía lo borra.
+        /// </summary>
+        public static IReadOnlyList<string> LastPlayers
+        {
+            get
+            {
+                var raw = PlayerPrefs.GetString(LastPlayersKey, string.Empty);
+                if (string.IsNullOrEmpty(raw)) return Array.Empty<string>();
+                try
+                {
+                    return Json.ParseArray(raw).OfType<string>().Select(n => n.Trim()).Where(n => n.Length > 0).ToList();
+                }
+                catch (Exception)
+                {
+                    return Array.Empty<string>();
+                }
+            }
+            set
+            {
+                var names = (value ?? Array.Empty<string>()).Where(n => !string.IsNullOrWhiteSpace(n)).Select(n => n.Trim()).ToList();
+                if (names.Count == 0) PlayerPrefs.DeleteKey(LastPlayersKey);
+                else PlayerPrefs.SetString(LastPlayersKey, JsonWriter.WriteStringArray(names));
+                PlayerPrefs.Save();
             }
         }
 

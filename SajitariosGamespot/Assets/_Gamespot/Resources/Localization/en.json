@@ -329,5 +329,6 @@
   "paloTreboles": "Clubs",
   "wavelengthPuntosPorRonda": "{avg} points/round",
   "cargando": "Loading...",
-  "reducirAnimaciones": "Reduce motion"
+  "reducirAnimaciones": "Reduce motion",
+  "usarUltimosJugadores": "Use last game's players"
 }

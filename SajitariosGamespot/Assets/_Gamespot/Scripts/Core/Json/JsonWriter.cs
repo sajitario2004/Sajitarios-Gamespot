@@ -26,6 +26,20 @@ namespace Gamespot.Core
             return sb.ToString();
         }
 
+        /// <summary>Lista de textos en una línea: <c>["a","b"]</c>.</summary>
+        public static string WriteStringArray(IEnumerable<string> values)
+        {
+            var sb = new StringBuilder("[");
+            var first = true;
+            foreach (var value in values ?? new string[0])
+            {
+                if (!first) sb.Append(',');
+                first = false;
+                AppendString(sb, value);
+            }
+            return sb.Append(']').ToString();
+        }
+
         /// <summary>Cadena JSON entre comillas con los escapes necesarios (las tildes se dejan tal cual).</summary>
         public static void AppendString(StringBuilder sb, string value)
         {

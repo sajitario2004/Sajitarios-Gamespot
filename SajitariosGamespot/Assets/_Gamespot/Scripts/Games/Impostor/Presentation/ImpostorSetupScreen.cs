@@ -104,6 +104,7 @@ namespace Gamespot.Games.Impostor
                 return;
             }
 
+            _players.Remember();
             _module.Flow.Iniciar(result.Config);
             switch (_module.Flow.Phase)
             {

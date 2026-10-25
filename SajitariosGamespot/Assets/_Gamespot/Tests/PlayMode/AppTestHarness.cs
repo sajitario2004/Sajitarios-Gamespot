@@ -5,6 +5,7 @@ using System.IO;
 using Gamespot.App;
 using Gamespot.Core.Runtime.Db;
 using Gamespot.Core.Runtime.Navigation;
+using Gamespot.Core.Runtime.Settings;
 using Gamespot.Core.Runtime.UI;
 using Gamespot.Games.Shared;
 using UnityEngine;
@@ -19,10 +20,14 @@ namespace Gamespot.Tests.PlayMode
     public sealed class AppTestHarness : IDisposable
     {
         private readonly string _dbPath;
+        private readonly IReadOnlyList<string> _savedLastPlayers;
         private GameObject _root;
 
         public AppTestHarness(Func<IReadOnlyList<IGameDescriptor>> games = null)
         {
+            // Los jugadores guardados se comparten entre juegos: cada test empieza sin ninguno y deja los de antes.
+            _savedLastPlayers = AppSettings.LastPlayers;
+            AppSettings.LastPlayers = null;
             _dbPath = Path.Combine(Path.GetTempPath(), $"gamespot_play_{Guid.NewGuid():N}.db");
             Bootstrap.DatabasePathOverride = _dbPath;
             Bootstrap.GamesOverride = games;
@@ -48,6 +53,7 @@ namespace Gamespot.Tests.PlayMode
             _root = null;
             Bootstrap.DatabasePathOverride = null;
             Bootstrap.GamesOverride = null;
+            AppSettings.LastPlayers = _savedLastPlayers;
             try
             {
                 if (File.Exists(_dbPath)) File.Delete(_dbPath);

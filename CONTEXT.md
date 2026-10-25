@@ -148,6 +148,7 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 - **Botón "volver al menú"** (icono casa, tooltip `volverAlMenu`) en todas las pantallas. En setup y fin de partida va directo a `/`; con partida en curso pide confirmación.
 - **Diálogo de abandonar:** título `salirDeLaPartidaTitulo`, mensaje `salirDeLaPartidaMensaje`, botones `seguirJugando` (falso) y `salir` (verdadero, glow magenta). Confirmar reinicia el controller del juego (y cancela temporizadores) y va a `/`. El botón atrás del sistema con partida en curso abre el mismo diálogo y, al confirmar, vuelve al setup del juego.
 - **Normalización de nombres** (setups): recortar y colapsar espacios internos a uno; duplicados sin distinguir mayúsculas.
+- **Jugadores guardados (Unity, C2):** al empezar una partida de Impostor, Trivia, Wavelength o La Bomba se guardan los nombres normalizados en la preferencia `last_players` (lista JSON). `PlayerListEditor` arranca con ellos si llega sin ningún nombre (recortados al máximo del juego) y muestra "Usar los de la última partida" cuando los de pantalla no coinciden. Tabú (equipos) y Yo Nunca no tienen lista de jugadores.
 
 ## 6. Especificación de los juegos
 
@@ -241,6 +242,9 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 | Paquetes de Unity (URP, uGUI/TextMeshPro, Input System, Test Framework, Pipeline) | Unity Companion License | Motor, UI, entrada, tests y puente de la CLI |
 
 ## 10. Registro de trabajo (lo más reciente arriba)
+
+### 2026-10-25 · Fase 10c · Mejoras elegidas por el autor (C2, C3+L1, B1+B2, C4, I1/T1/W2)
+- **V059c · C2:** jugadores guardados entre juegos (`AppSettings.LastPlayers` + `PlayerListEditor`). El arnés de PlayMode guarda y restaura la preferencia para que un test no rellene el siguiente.
 
 ### 2026-10-25 · V059a–V059b · Plan de mejoras y 5 juegos nuevos
 - `Docs/PLAN_MEJORAS.md`: mejoras comunes y por juego con prioridad y esfuerzo, y 5 juegos nuevos (Verdad o Reto, ¿Quién soy?, Dibuja y adivina, Código secreto, Hombres Lobo). Hallazgos de contenido: faltan tildes en ~1 de cada 4 tarjetas de Tabú, 10 categorías de La Bomba y un centenar de palabras del Impostor; Tabú (120) se queda corto; los bancos solo existen en español aunque la app tenga inglés.

@@ -168,6 +168,7 @@ namespace Gamespot.Games.Trivia
                 Snackbar.Show(ErrorText(error.Value), Palette.NeonError);
                 return;
             }
+            _players.Remember();
             _module.Flow.Iniciar(config);
             if (_module.Flow.Fase == TriviaFase.Pass)
             {
