@@ -17,7 +17,9 @@
         "Gamespot.Games.Impostor",
         "Gamespot.Games.Impostor.Domain",
         "Gamespot.Games.Trivia",
-        "Gamespot.Games.Trivia.Domain"
+        "Gamespot.Games.Trivia.Domain",
+        "Gamespot.Games.Wavelength",
+        "Gamespot.Games.Wavelength.Domain"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

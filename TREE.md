@@ -1,6 +1,6 @@
 # TREE
 
-Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 09:50.
+Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 10:12.
 
 No se listan: Library, Temp, Logs, obj, UserSettings, .git, .vs, .idea, .vscode, .utmp, Build, Builds, MemoryCaptures, Recordings, node_modules, __pycache__, .venv, .dart_tool, build, coverage, *.meta, *.csproj, *.sln, *.slnx, *.user, *.pidb, *.unityproj, .DS_Store, Thumbs.db.
 Plegadas: skills, TextMesh Pro, Flutter, Capturas (Flutter = la app original en Legacy/Flutter, solo lectura).
@@ -11,7 +11,7 @@ Sajitarios-Gamespot/
 ├── .claude/
 │   └── settings.json
 ├── Docs/
-│   └── Capturas/  (12 elementos, plegado)
+│   └── Capturas/  (15 elementos, plegado)
 ├── Legacy/
 │   └── Flutter/  (20 elementos, plegado)
 ├── SajitariosGamespot/
@@ -162,19 +162,38 @@ Sajitarios-Gamespot/
 │   │   │   │   │   │   │   └── WordsScreen.cs
 │   │   │   │   │   │   ├── Gamespot.Games.Impostor.asmdef
 │   │   │   │   │   │   └── ImpostorGame.cs
-│   │   │   │   │   └── Trivia/
+│   │   │   │   │   ├── Tabu/
+│   │   │   │   │   │   └── Domain/
+│   │   │   │   │   │       ├── Flow/
+│   │   │   │   │   │       │   └── TabuFlowController.cs
+│   │   │   │   │   │       ├── Gamespot.Games.Tabu.Domain.asmdef
+│   │   │   │   │   │       └── TabuDomain.cs
+│   │   │   │   │   ├── Trivia/
+│   │   │   │   │   │   ├── Data/
+│   │   │   │   │   │   │   └── TriviaData.cs
+│   │   │   │   │   │   ├── Domain/
+│   │   │   │   │   │   │   ├── Flow/
+│   │   │   │   │   │   │   │   └── TriviaFlowController.cs
+│   │   │   │   │   │   │   ├── Gamespot.Games.Trivia.Domain.asmdef
+│   │   │   │   │   │   │   ├── Question.cs
+│   │   │   │   │   │   │   └── TriviaSession.cs
+│   │   │   │   │   │   ├── Presentation/
+│   │   │   │   │   │   │   └── TriviaScreens.cs
+│   │   │   │   │   │   ├── Gamespot.Games.Trivia.asmdef
+│   │   │   │   │   │   └── TriviaGame.cs
+│   │   │   │   │   └── Wavelength/
 │   │   │   │   │       ├── Data/
-│   │   │   │   │       │   └── TriviaData.cs
+│   │   │   │   │       │   └── SpectrumRepository.cs
 │   │   │   │   │       ├── Domain/
 │   │   │   │   │       │   ├── Flow/
-│   │   │   │   │       │   │   └── TriviaFlowController.cs
-│   │   │   │   │       │   ├── Gamespot.Games.Trivia.Domain.asmdef
-│   │   │   │   │       │   ├── Question.cs
-│   │   │   │   │       │   └── TriviaSession.cs
+│   │   │   │   │       │   │   └── WavelengthFlowController.cs
+│   │   │   │   │       │   ├── Gamespot.Games.Wavelength.Domain.asmdef
+│   │   │   │   │       │   └── WavelengthDomain.cs
 │   │   │   │   │       ├── Presentation/
-│   │   │   │   │       │   └── TriviaScreens.cs
-│   │   │   │   │       ├── Gamespot.Games.Trivia.asmdef
-│   │   │   │   │       └── TriviaGame.cs
+│   │   │   │   │       │   ├── WavelengthDial.cs
+│   │   │   │   │       │   └── WavelengthScreens.cs
+│   │   │   │   │       ├── Gamespot.Games.Wavelength.asmdef
+│   │   │   │   │       └── WavelengthGame.cs
 │   │   │   │   └── Menu/
 │   │   │   │       ├── Gamespot.Menu.asmdef
 │   │   │   │       └── MenuScreen.cs
@@ -204,11 +223,18 @@ Sajitarios-Gamespot/
 │   │   │       │   │   │       ├── ImpostorFlowControllerTests.cs
 │   │   │       │   │   │       ├── ImpostorStatsTests.cs
 │   │   │       │   │   │       └── ImpostorTestData.cs
+│   │   │       │   │   ├── Tabu/
+│   │   │       │   │   │   └── Domain/
+│   │   │       │   │   │       └── TabuDomainTests.cs
 │   │   │       │   │   ├── Trivia/
 │   │   │       │   │   │   ├── Data/
 │   │   │       │   │   │   │   └── TriviaDataTests.cs
 │   │   │       │   │   │   └── Domain/
 │   │   │       │   │   │       └── TriviaDomainTests.cs
+│   │   │       │   │   ├── Wavelength/
+│   │   │       │   │   │   ├── Domain/
+│   │   │       │   │   │   │   └── WavelengthDomainTests.cs
+│   │   │       │   │   │   └── WavelengthDialAndDataTests.cs
 │   │   │       │   │   └── SeedFilesTests.cs
 │   │   │       │   ├── Localization/
 │   │   │       │   │   └── LocTests.cs
@@ -218,7 +244,8 @@ Sajitarios-Gamespot/
 │   │   │           ├── Games/
 │   │   │           │   ├── EsUn10PeroScreenTests.cs
 │   │   │           │   ├── ImpostorFlowTests.cs
-│   │   │           │   └── TriviaFlowTests.cs
+│   │   │           │   ├── TriviaFlowTests.cs
+│   │   │           │   └── WavelengthFlowTests.cs
 │   │   │           ├── AppTestHarness.cs
 │   │   │           ├── BootstrapTests.cs
 │   │   │           └── Gamespot.Tests.PlayMode.asmdef

@@ -78,6 +78,10 @@ function Get-UnityConsole([int]$Tail = 0) {
 }
 
 function Invoke-UnityTests([ValidateSet('EditMode', 'PlayMode')][string]$Mode) {
+    # Si la tanda arranca durante una recarga de dominio, solo se ejecuta una parte de los tests
+    Wait-UnityCompile 120 | Out-Null
+    Wait-UnityReady 120 | Out-Null
+    Start-Sleep -Seconds 3
     $assembly = "Gamespot.Tests.$Mode"
     if ($Mode -eq 'EditMode') {
         $result = U test run --mode EditMode --filter $assembly --filter_type assembly --timeout 300

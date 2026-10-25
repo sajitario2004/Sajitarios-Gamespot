@@ -111,12 +111,18 @@ Cierre técnico de cada versión con código Unity: recompilación sin errores, 
 ## Fase 7 — Wavelength
 > El autor recuerda (2026-10-25) que **Wavelength está roto** en la app Flutter, aunque la v0.72 decía haberlo arreglado. No se porta su código tal cual: se reescribe desde la especificación de `CONTEXT.md` §6.4 con los arreglos de §8.1, y no se da por cerrado sin un test PlayMode de partida completa (pista → pasar → arrastrar el dial → revelado → siguiente ronda → fin) y una prueba en Play arrastrando el dial de verdad.
 
-- [ ] **V041 · Dominio** (puntos con bordes inclusivos) + tests.
-- [ ] **V042 · Datos** + seed de 80 + tests.
-- [ ] **V043 · Dial** (`Graphic` uGUI con malla propia, arrastre, revelado 0.7 s).
-- [ ] **V044 · `WavelengthFlowController`** + tests.
-- [ ] **V045 · Pantallas** (setup, pista, pasar, adivinar, revelado, fin).
-- [ ] **V046 · Registro, reglas y test PlayMode.**
+- [x] **V041 · Dominio** (puntos con bordes inclusivos) + tests.
+  - Notas: Dominio puro: `Spectrum`, `WavelengthScoring` (bordes inclusivos con tolerancia 1e-9: en coma flotante 0,5 + 0,06 no daba «en el blanco»), `WavelengthRound`, `WavelengthConfig` (2–8, 1–20 rondas, 8 por defecto), `WavelengthSession` (psíquico rotatorio, marcador) y `PickRoundUseCase`.
+- [x] **V042 · Datos** + seed de 80 + tests.
+  - Notas: `WavelengthSchema` + `SpectrumRepository` y seed de 80 espectros (validado, idempotente).
+- [x] **V043 · Dial** (`Graphic` uGUI con malla propia, arrastre, revelado 0.7 s).
+  - Notas: `WavelengthDial`: `MaskableGraphic` con malla propia (fondo, 3 bandas, objetivo, arco con halo, 5 marcas, aguja con pomo). Recibe toque y arrastre directamente (`useDragThreshold = false`); bajo la base va al extremo más cercano; sin aguja en el modo del psíquico; revelado de 0,7 s con la aguja del grupo. **Gotcha:** el `CanvasRenderer` va explícito al crear el objeto (sin él la malla no se pintaba).
+- [x] **V044 · `WavelengthFlowController`** + tests.
+  - Notas: `WavelengthFlowController` puro (pista, pasar, adivinar, revelar, siguiente; fallo al cargar → fin). `ScoreIncludingCurrent` para enseñar el total con la ronda revelada.
+- [x] **V045 · Pantallas** (setup, pista, pasar, adivinar, revelado, fin).
+  - Notas: 6 pantallas; las del dial en columna SIN scroll (el dial no compite con ningún arrastre). Pista vacía avisa en vez de ignorarse; «Siguiente» con doble toque no salta rondas; media por ronda localizada; textos sin tilde corregidos en `es.json`. Capturas `V045_wavelength_pista/adivinar/revelado.png`.
+- [x] **V046 · Registro, reglas y test PlayMode.**
+  - Notas: `WavelengthGame` registrado. PlayMode: partida completa de 2 rondas arrastrando el dial con eventos de puntero reales (pantalla → punto local), aguja del revelado = la del grupo, banda y total con la ronda, animación terminada, y el arrastre lo recibe el dial (no hay scroll). 188 EditMode + 20 PlayMode en verde.
 
 ## Fase 8 — Tabú
 - [ ] **V047 · Dominio** + tests.

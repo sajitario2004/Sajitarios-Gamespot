@@ -240,6 +240,16 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 
 ## 10. Registro de trabajo (lo más reciente arriba)
 
+### 2026-10-25 · V041–V046 · Wavelength reescrito y arreglado
+- El autor avisó de que Wavelength estaba roto. El dominio del Flutter era correcto; lo roto era el dial de Flame (estado perdido antes de cargar, aguja en 0,5 al revelar, etiquetas duplicadas, toque bajo la base al polo derecho, dial dentro de un scroll) y la UX (total sin la ronda actual, pista vacía ignorada en silencio, textos sin tildes).
+- Reescrito: dial como `Graphic` de uGUI con malla propia, pantallas del dial sin scroll, aguja del grupo en el revelado, total con la ronda, tolerancia en los bordes de puntuación, textos corregidos.
+- Gotcha de uGUI: un `Graphic` propio creado por código necesita el `CanvasRenderer` en el `new GameObject(...)`; si no, no pinta nada y no da error.
+- `Invoke-UnityTests` ahora espera a que termine la recarga (si no, la tanda corre solo una parte).
+- Tests: 188 EditMode + 20 PlayMode, incluida una partida completa arrastrando el dial con eventos de puntero.
+
+### 2026-10-25 · V035–V040 · Preguntas por puntos
+- Dominio, datos (1151 preguntas, victorias por nombre), 4 pantallas (rejilla 2×2 con los 4 colores y 800 ms de respuesta) y registro. `Sized` ya no deja flexible un eje con tamaño fijo.
+
 ### 2026-10-25 · V026–V034 · El Impostor completo
 - Datos (palabras con seed de 2060, historial), estadísticas puras, 7 pantallas y registro en el menú. Detalle en `VERSIONS.md`.
 - **Arreglo de arquitectura en la BD:** `IDbSchema.OnCreate` se llama en cada arranque y tiene que ser idempotente (`IF NOT EXISTS`). Así un juego añadido más tarde crea sus tablas en instalaciones existentes sin subir la versión. Se descubrió en Play: la BD de antes del Impostor no tenía sus tablas.
