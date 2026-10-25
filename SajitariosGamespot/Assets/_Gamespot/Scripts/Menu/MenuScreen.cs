@@ -46,8 +46,8 @@ namespace Gamespot.Menu
             scaffold.AppBar.Actions.Sized(NeonButton.MinTouchSize * (_audio != null ? 3f : 2f), NeonButton.MinTouchSize);
             LanguageSelector.CreateButton(scaffold.AppBar.Actions);
             if (_audio != null) MuteButton.Create(scaffold.AppBar.Actions, _audio);
-            // Ajustes (V062): sonido, vibración y reducir animaciones.
-            NeonButton.CreateIcon(scaffold.AppBar.Actions, IconId.Settings, () => SettingsDialog.Show(_audio), Palette.NeonCyan).name = Loc.T("ajustes");
+            // Ajustes (V062, pantalla desde V059p): sonido, vibración, animaciones, idioma e información legal.
+            NeonButton.CreateIcon(scaffold.AppBar.Actions, IconId.Settings, () => Router.Go(SettingsScreen.Route), Palette.NeonCyan).name = Loc.T("ajustes");
             // El menú no tiene botón a la izquierda: el título usa ese hueco (como Flutter cuando no cabe centrado).
             scaffold.AppBar.Leading.Sized(8f, NeonButton.MinTouchSize);
 

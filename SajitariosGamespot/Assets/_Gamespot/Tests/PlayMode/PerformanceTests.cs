@@ -20,12 +20,13 @@ namespace Gamespot.Tests.PlayMode
     public sealed class PerformanceTests
     {
         private AppTestHarness _app;
-        private bool _reduceMotionWas;
+        private bool? _reduceMotionWas;
 
         [SetUp]
         public void SetUp()
         {
-            _reduceMotionWas = AppSettings.ReduceMotion;
+            // Nulo = no se había elegido (sigue al sistema): se deja igual al terminar.
+            _reduceMotionWas = PlayerPrefs.HasKey(AppSettings.ReduceMotionKey) ? AppSettings.ReduceMotion : (bool?)null;
             AppSettings.ReduceMotion = false;
         }
 
@@ -33,7 +34,8 @@ namespace Gamespot.Tests.PlayMode
         public void TearDown()
         {
             _app?.Dispose();
-            AppSettings.ReduceMotion = _reduceMotionWas;
+            if (_reduceMotionWas.HasValue) AppSettings.ReduceMotion = _reduceMotionWas.Value;
+            else AppSettings.ClearReduceMotion();
         }
 
         [Test]
@@ -86,7 +88,7 @@ namespace Gamespot.Tests.PlayMode
         public IEnumerator UnFotogramaEnReposoNoGeneraBasura()
         {
             _app = new AppTestHarness();
-            foreach (var route in new[] { "/", "/impostor", "/trivia", "/tabu", "/yo-nunca", "/bomba", "/es-un-10-pero", "/impostor/words" })
+            foreach (var route in new[] { "/", "/impostor", "/trivia", "/tabu", "/yo-nunca", "/bomba", "/es-un-10-pero", "/impostor/words", "/ajustes" })
             {
                 _app.Router.Go(route);
                 yield return AppTestHarness.Frames();

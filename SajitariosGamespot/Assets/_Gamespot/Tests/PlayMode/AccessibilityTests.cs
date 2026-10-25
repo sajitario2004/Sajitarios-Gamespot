@@ -16,21 +16,25 @@ namespace Gamespot.Tests.PlayMode
         private AppTestHarness _app;
         private int? _savedReduceMotion;
         private bool _savedVibration;
+        private bool _savedAudio;
 
         [SetUp]
         public void SetUp()
         {
             _savedReduceMotion = PlayerPrefs.HasKey(AppSettings.ReduceMotionKey) ? PlayerPrefs.GetInt(AppSettings.ReduceMotionKey) : (int?)null;
             _savedVibration = AppSettings.VibrationEnabled;
+            _savedAudio = AppSettings.AudioEnabled;
         }
 
         [TearDown]
         public void TearDown()
         {
             _app?.Dispose();
-            if (_savedReduceMotion.HasValue) PlayerPrefs.SetInt(AppSettings.ReduceMotionKey, _savedReduceMotion.Value);
-            else PlayerPrefs.DeleteKey(AppSettings.ReduceMotionKey);
+            // Por AppSettings y no por PlayerPrefs: el valor se guarda también en memoria (V063).
+            if (_savedReduceMotion.HasValue) AppSettings.ReduceMotion = _savedReduceMotion.Value == 1;
+            else AppSettings.ClearReduceMotion();
             AppSettings.VibrationEnabled = _savedVibration;
+            AppSettings.AudioEnabled = _savedAudio;
         }
 
         [UnityTest]
@@ -38,7 +42,7 @@ namespace Gamespot.Tests.PlayMode
         {
             _app = new AppTestHarness();
             var small = new List<string>();
-            foreach (var route in new[] { "/", "/impostor", "/trivia", "/wavelength", "/tabu", "/yo-nunca", "/bomba", "/es-un-10-pero", "/impostor/words" })
+            foreach (var route in new[] { "/", "/impostor", "/trivia", "/wavelength", "/tabu", "/yo-nunca", "/bomba", "/es-un-10-pero", "/impostor/words", "/ajustes" })
             {
                 _app.Router.Go(route);
                 yield return AppTestHarness.Frames();
@@ -59,22 +63,48 @@ namespace Gamespot.Tests.PlayMode
         private static void Tap(NeonSwitch toggle) => toggle.GetComponentInChildren<Button>().onClick.Invoke();
 
         [UnityTest]
-        public IEnumerator LosAjustesCambianVibracionYAnimaciones()
+        public IEnumerator LosAjustesCambianSonidoVibracionYAnimaciones()
         {
             _app = new AppTestHarness();
-            _app.Router.Go("/");
+            _app.Router.Go(SettingsScreen.Route);
             yield return null;
-            var (sound, vibration, reduceMotion) = SettingsDialog.Show(_app.Bootstrap.Audio);
-            Assert.IsNotNull(sound, "Con audio, también el sonido");
-            Assert.AreEqual(AppSettings.ReduceMotion, reduceMotion.Value);
-            var motionWas = AppSettings.ReduceMotion;
-            Tap(reduceMotion);
-            Assert.AreEqual(!motionWas, AppSettings.ReduceMotion);
+            var settings = (SettingsScreen)_app.Router.Current;
+            Assert.IsNotNull(settings.Sound, "Con audio, también el sonido");
+            var soundWas = _app.Bootstrap.Audio.Enabled;
+            Tap(settings.Sound);
+            Assert.AreEqual(!soundWas, _app.Bootstrap.Audio.Enabled, "Quitar el sonido");
             var vibrationWas = AppSettings.VibrationEnabled;
-            Tap(vibration);
-            Assert.AreEqual(!vibrationWas, AppSettings.VibrationEnabled);
-            Assert.IsTrue(Dialogs.IsOpen);
-            Dialogs.CloseAll();
+            Tap(settings.Vibration);
+            Assert.AreEqual(!vibrationWas, AppSettings.VibrationEnabled, "Quitar la vibración");
+            Assert.AreEqual(AppSettings.ReduceMotion, settings.ReduceMotion.Value);
+            var motionWas = AppSettings.ReduceMotion;
+            Tap(settings.ReduceMotion);
+            Assert.AreEqual(!motionWas, AppSettings.ReduceMotion);
+
+            _app.Router.Back();
+            yield return null;
+            Assert.AreEqual(Gamespot.Core.Runtime.Navigation.Router.Home, _app.Router.CurrentPath, "Atrás vuelve al menú");
+        }
+
+        [UnityTest]
+        public IEnumerator LosDocumentosLegalesSeLeenYVuelvenALosAjustes()
+        {
+            _app = new AppTestHarness();
+            _app.Router.Go(SettingsScreen.Route);
+            yield return null;
+            var settings = (SettingsScreen)_app.Router.Current;
+            Assert.AreEqual(4, SettingsScreen.LegalDocuments.Length, "Términos, privacidad, cookies y licencias");
+            foreach (var (title, body) in SettingsScreen.LegalDocuments)
+            {
+                var legal = settings.OpenLegal(title, body);
+                yield return null;
+                Assert.AreSame(legal, _app.Router.Current);
+                Assert.AreEqual(Gamespot.Core.Runtime.Localization.Loc.T(body), legal.Body.text);
+                Assert.That(legal.Body.text.Length, Is.GreaterThan(200), title);
+                _app.Router.Back();
+                yield return null;
+                Assert.AreSame(settings, _app.Router.Current, "Atrás vuelve a los ajustes");
+            }
         }
     }
 }

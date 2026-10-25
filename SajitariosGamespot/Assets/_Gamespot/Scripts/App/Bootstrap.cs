@@ -54,6 +54,7 @@ namespace Gamespot.App
             Idle = IdleRendering.Create(gameObject);
             Router.Navigated += _ => Idle.Wake();
             Router.Register(Router.Home, () => new MenuScreen(Games, Audio));
+            Router.Register(SettingsScreen.Route, () => new SettingsScreen(Audio));
             var context = new GameContext(Router, Database, new SeededRandom(), Audio);
             foreach (var game in Games) game.Register(context);
 

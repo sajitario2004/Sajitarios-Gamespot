@@ -37,6 +37,8 @@ Archivo vivo. Añade una línea cada vez que el autor exprese un gusto, una corr
 
 - (2026-10-25) Dio permiso para descargar las fuentes y eligió **las mismas de la app Flutter** (Roboto y Material Icons) frente a otras nuevas. Quiere que se termine todo lo que se pueda hacer sin él, fase a fase, y un APK al final para probar.
 
+- (2026-10-25) Quiere un **apartado de Ajustes** como el de cualquier app: quitar el sonido y la vibración y ver términos y condiciones, privacidad y cookies.
+
 ## Diseño
 - (heredado) Estética **neón cyberpunk**: fondo casi negro, cian y magenta con brillo, rejilla de fondo.
 - (heredado) **Nada de emojis**, ni en el código ni en los textos: solo iconos.

@@ -214,6 +214,10 @@ Cierre técnico de cada versión con código Unity: recompilación sin errores, 
   - Acepta: todos los efectos a la mitad de amplitud (−6 dB) que en V059n, igual de parejos.
   - Notas: `SoundLevel` a −26 dB de sonoridad y −12 dB de pico (antes −20 y −6); los 12 bajan 6 dB (la explosión, 7: estaba casi 1 dB por encima porque al bajarla su cola salía de la medida; ahora la nivelación repite la medida hasta acertar). Regenerados con *Generar y nivelar los sonidos*.
 
+- [x] **V059p · Ajustes y textos legales.** Petición: «falta un apartado de ajustes en la app, para quitar el sonido, para quitar la vibración y para ver los términos y condiciones de uso, política de privacidad, política de cookies…».
+  - Acepta: pantalla de Ajustes desde el menú con sonido, vibración, reducir animaciones e idioma, y los textos legales (términos y condiciones de uso, privacidad, cookies y licencias), en español y en inglés, que digan la verdad de la app.
+  - Notas: `Menu/SettingsScreen` (ruta `/ajustes`, engranaje del menú; sustituye al diálogo de V062) y `Menu/LegalScreen` (texto con apartados en negrita y scroll). Textos ajustados a la app: sin conexión, sin cuentas, sin publicidad ni analítica, datos solo en el móvil, aviso +18 y de alcohol. Para que la privacidad sea cierta, el release ya no pide `INTERNET` (`Editor/Setup/AndroidPermissions`: `tools:node="remove"` en el manifiesto; el de desarrollo lo conserva para el profiler); comprobado con `aapt` en el APK. Los textos legales son orientativos: conviene que los revise un profesional y añadir un contacto antes de publicar. Tests: Ajustes (sonido, vibración, animaciones), los 4 documentos, el limpiador del manifiesto. Capturas `V059p_*`.
+
 ## Fase 11 — Pulido y paridad
 - [x] **V060 · Icono y arranque** (placeholders con la paleta neón, mismos nombres).
   - Notas: el autor prefirió el icono de la app Flutter (carta con pica sobre morado `#7C3AED`): `Art/Icon/` + `ProjectSetup.ApplyIcons` (por defecto y adaptativo de Android; Legacy y Round, obsoletos, vacíos). Arranque sin el splash de Unity desde V007. Comprobado dentro del APK.
