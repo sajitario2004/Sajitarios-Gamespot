@@ -7,13 +7,14 @@ namespace Gamespot.Core.Runtime.UI
     /// <summary>
     /// Fondo neón de todas las pantallas (port de <c>NeonBackground</c>): degradado radial del 10 % de
     /// magenta sobre el fondo, centrado en (−0.6, −0.8) con radio 1.4 × el lado corto, más una rejilla
-    /// de líneas cian al 5 % cada 36 unidades.
+    /// de líneas cian cada 36 unidades. El Flutter usaba un 5 % de alfa mezclado en sRGB; Unity mezcla en
+    /// espacio lineal y ese 5 % sale mucho más brillante, así que aquí va más bajo para el mismo aspecto.
     /// </summary>
     [RequireComponent(typeof(RectTransform))]
     public sealed class NeonBackground : MonoBehaviour
     {
         private const float GridSpacing = 36f;
-        private const float GridAlpha = 0.05f;
+        private const float GridAlpha = 0.018f;
         private const float GradientRadius = 1.4f;
         private static readonly Vector2 GradientCenter = new Vector2(-0.6f, -0.8f);
         private const int GradientDownscale = 6;

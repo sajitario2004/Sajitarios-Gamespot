@@ -25,16 +25,20 @@ Cierre técnico de cada versión con código Unity: recompilación sin errores, 
 - [x] **V006 · Paquetes.** Input System, Test Framework, uGUI (TMP), `com.unity.pipeline`, sqlite-net (`https://github.com/gilzoide/unity-sqlite-net.git#1.3.3`).
   - Acepta: `manifest.json` con los paquetes; recompila sin errores; licencias anotadas en `CONTEXT.md` §9.
   - Notas: Input System 1.20.1, Test Framework 1.6.0, uGUI 2.0.0, Pipeline 0.9.1-exp.1 y URP 17.3.0 venían con la plantilla. sqlite-net con `package add` (asmdef `Gilzoide.SqliteNet`, namespace `SQLite`). La plantilla trae paquetes 2D, Visual Scripting, Multiplayer Center y `collab-proxy` que no se usan: se pueden quitar con permiso del autor.
-- [ ] **V007 · Player Settings por código** (`Gamespot → Configuración → Aplicar todo`): compañía, producto, id `com.sajitarios.sajitarios_gamespot`, vertical, IL2CPP + ARM64, sin splash de Unity, fondo `#0A0A14`.
+- [x] **V007 · Player Settings por código** (`Gamespot → Configuración → Aplicar todo`): compañía, producto, id `com.sajitarios.sajitarios_gamespot`, vertical, IL2CPP + ARM64, sin splash de Unity, fondo `#0A0A14`.
   - Acepta: `git diff ProjectSettings/` muestra los valores; repetir el menú no cambia nada.
-- [ ] **V008 · Estructura y assemblies** de `CONTEXT.md` §4, con `Gamespot.Core` y los `*.Domain` sin referencias a UnityEngine, y los asmdef de tests.
+  - Notas: ids iguales a los del Flutter: Android `com.sajitarios.sajitarios_gamespot`, iOS `com.sajitarios.sajitariosGamespot` (iOS no admite `_`). Versión 0.76.0 (76), siguiendo la numeración del Flutter.
+- [x] **V008 · Estructura y assemblies** de `CONTEXT.md` §4, con `Gamespot.Core` y los `*.Domain` sin referencias a UnityEngine, y los asmdef de tests.
   - Acepta: compila; un test EditMode vacío pasa.
-- [ ] **V009 · Escena App y arranque.** `App.unity` con cámara URP, EventSystem (Input System), Canvas *Screen Space – Camera* con `CanvasScaler` 390×844 / 0.5, `SafeArea`, Bloom, `Bootstrap`.
+  - Notas: asmdef: `Gamespot.Core` (puro), `Gamespot.Core.Runtime`, `Gamespot.App`, `Gamespot.Editor`, `Gamespot.Tests.EditMode/PlayMode` y los `Gamespot.Games.<Juego>.Domain` (puros) según se añaden juegos.
+- [x] **V009 · Escena App y arranque.** `App.unity` con cámara URP, EventSystem (Input System), Canvas *Screen Space – Camera* con `CanvasScaler` 390×844 / 0.5, `SafeArea`, Bloom, `Bootstrap`.
   - Acepta: Play muestra el fondo neón vacío sin errores en consola.
+  - Notas: Captura `Docs/Capturas/V009_fondo.png`. La UI la crea el código (`UiRoot`): la escena solo tiene cámara, volumen con Bloom, EventSystem y `AppRoot`.
 
 ## Fase 2 — Núcleo
 
-- [ ] **V010 · Random.** `IRandomProvider`, `SeededRandom`, `FakeRandom`, `Shuffle` (Fisher-Yates del Flutter). Tests.
+- [x] **V010 · Random.** `IRandomProvider`, `SeededRandom`, `FakeRandom`, `Shuffle` (Fisher-Yates del Flutter). Tests.
+  - Notas: 101 tests EditMode en verde (con los dominios de V020/V024/V025/V028).
 - [ ] **V011 · AppDatabase** (sqlite-net): archivo, `user_version`, hooks de esquema por descriptor, seed loader genérico idempotente. Tests con BD temporal.
 - [ ] **V012 · Localización.** `Loc.T`, placeholders y plurales ICU, importador de ARB → `es.json`/`en.json`, idioma en `PlayerPrefs`, selector. Tests (paridad de claves, plurales).
 - [ ] **V013 · Paleta y kit neón.** `Palette`, `NeonText`, `NeonPanel`, `NeonButton`, `NeonBackground`, `PulseGlow`, layouts (columna, fila, scroll), campos de texto, diálogos y snackbar.

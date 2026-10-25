@@ -171,8 +171,8 @@ PlayerSettings:
   androidMinAspectRatio: 1
   applicationIdentifier:
     Android: com.sajitarios.sajitarios_gamespot
-    Standalone: com.sajitarios.sajitarios-gamespot
-    iPhone: com.sajitarios.sajitarios-gamespot
+    Standalone: com.sajitarios.sajitariosGamespot
+    iPhone: com.sajitarios.sajitariosGamespot
   buildNumber:
     Standalone: 0
     VisionOS: 0

@@ -235,6 +235,16 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 
 ## 10. Registro de trabajo (lo más reciente arriba)
 
+### 2026-10-25 · V007–V010 (+ dominios de V020, V024, V025, V028) · Base del proyecto y dominios puros
+- Assemblies de `CONTEXT.md` §4; `Gamespot.Core` y los dominios con `noEngineReferences`.
+- Player Settings por código (`Gamespot → Configuración → Aplicar todo`) con los mismos ids que el Flutter (Android `com.sajitarios.sajitarios_gamespot`, iOS `com.sajitarios.sajitariosGamespot`).
+- Escena `App.unity` por código (`Gamespot → Construir → Escena App`): cámara URP con post-procesado, volumen global con Bloom (`Settings/GamespotVolume.asset`), EventSystem del Input System y `AppRoot` con `Bootstrap`. La UI (Canvas, fondo neón, capas) la crea el código.
+- Core puro: random inyectable (Fisher-Yates del Flutter), normalización de nombres, lector JSON y formateador ICU.
+- Dominio y *flow controllers* puros de Es un 10 pero y del Impostor (reglas 10/10/80 con un solo `NextDouble()`, votación por rondas).
+- **Tests:** 101 EditMode y 1 PlayMode en verde dentro de Unity. Captura `Docs/Capturas/V009_fondo.png`.
+- **Incidente:** tras `unity open`, el Editor se colgó en una recarga de dominio esperando al auxiliar `unity.exe --internal-identity-serve` (IPC de Hub). Al cerrar ese auxiliar se recuperó solo. Mientras, el código puro se comprobó con el SDK de .NET (netstandard2.1, C# 9) y el NUnit de Unity. Lección en `CLAUDE.md` §3.
+- La mezcla de transparencias en espacio lineal hace los alfas del Flutter más brillantes: la rejilla del fondo baja del 5 % al 1,8 %.
+
 ### 2026-10-25 · V005–V006 · Proyecto Unity y paquetes
 - Skills: `unity:new-unity-project` y `unity:unity-cli`.
 - `unity projects create SajitariosGamespot --editor-version 6000.3.27f1 --template com.unity.template.universal-2d --with-pipeline --no-cloud`. Ya trae *Force Text* y *Visible Meta Files*. Abierto con `unity open`; la CLI conecta (`ready`).
