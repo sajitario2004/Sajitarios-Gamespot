@@ -15,7 +15,9 @@
         "Unity.TextMeshPro",
         "UnityEngine.UI",
         "Gamespot.Games.Impostor",
-        "Gamespot.Games.Impostor.Domain"
+        "Gamespot.Games.Impostor.Domain",
+        "Gamespot.Games.Trivia",
+        "Gamespot.Games.Trivia.Domain"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

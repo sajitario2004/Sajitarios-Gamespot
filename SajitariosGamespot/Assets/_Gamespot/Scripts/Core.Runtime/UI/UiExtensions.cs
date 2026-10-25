@@ -19,15 +19,19 @@ namespace Gamespot.Core.Runtime.UI
         public static T Sized<T>(this T component, float width = -1f, float height = -1f, float flexWidth = -1f, float flexHeight = -1f) where T : Component
         {
             var element = component.gameObject.GetOrAdd<LayoutElement>();
+            // Un tamaño fijo no es flexible en ese eje: si no, un grupo con childForceExpand se declara flexible
+            // y el padre lo estira (un círculo de 128 acababa como una píldora a todo el ancho).
             if (width >= 0f)
             {
                 element.minWidth = width;
                 element.preferredWidth = width;
+                if (flexWidth < 0f) element.flexibleWidth = 0f;
             }
             if (height >= 0f)
             {
                 element.minHeight = height;
                 element.preferredHeight = height;
+                if (flexHeight < 0f) element.flexibleHeight = 0f;
             }
             if (flexWidth >= 0f) element.flexibleWidth = flexWidth;
             if (flexHeight >= 0f) element.flexibleHeight = flexHeight;

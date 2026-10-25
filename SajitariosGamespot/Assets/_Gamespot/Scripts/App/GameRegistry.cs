@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Gamespot.Games.EsUn10Pero;
 using Gamespot.Games.Impostor;
+using Gamespot.Games.Trivia;
 using Gamespot.Games.Shared;
 
 namespace Gamespot.App
@@ -16,6 +17,7 @@ namespace Gamespot.App
         {
             new EsUn10PeroGame(),
             new ImpostorGame(),
+            new TriviaGame(),
             // Los demás juegos se añaden aquí según se portan (VERSIONS.md, fases 5–10).
         };
     }

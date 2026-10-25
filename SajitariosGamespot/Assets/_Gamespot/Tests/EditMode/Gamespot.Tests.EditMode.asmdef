@@ -14,7 +14,9 @@
         "Gilzoide.SqliteNet",
         "Unity.TextMeshPro",
         "UnityEngine.UI",
-        "Gamespot.Games.Impostor"
+        "Gamespot.Games.Impostor",
+        "Gamespot.Games.Trivia",
+        "Gamespot.Games.Trivia.Domain"
     ],
     "includePlatforms": [
         "Editor"

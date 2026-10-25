@@ -95,12 +95,18 @@ Cierre técnico de cada versión con código Unity: recompilación sin errores, 
   - Notas: `ImpostorGame` en `GameRegistry` (7 rutas). PlayMode: partida completa (5 revelaciones con sonido, votación, fin, historial guardado una vez, atrás vuelve al setup), validación, recorte de contadores, atrás con confirmación y borrador conservado. 135 EditMode + 15 PlayMode en verde.
 
 ## Fase 6 — Preguntas por puntos
-- [ ] **V035 · Dominio** + tests.
-- [ ] **V036 · Datos** (preguntas y victorias) + seed de 1151 + tests.
-- [ ] **V037 · `TriviaFlowController`** + tests.
-- [ ] **V038 · Setup** (temáticas, ranking, atribución).
-- [ ] **V039 · Pasar el móvil y Pregunta** (rejilla 2×2 con los 4 colores, 800 ms).
-- [ ] **V040 · Fin, registro, reglas y test PlayMode.**
+- [x] **V035 · Dominio** + tests.
+  - Notas: Dominio puro: `Difficulty` (nombres de BD y OpenTDB), `Tematicas`, `Question` (4 opciones, índice válido), `TriviaConfig` (2–6, nombres recortados, al menos una temática), `TriviaSession` inmutable (9 rondas, tramos de 3, eliminación, empate) y `DealQuestionsUseCase` (lista ordenada). Tests en el arnés .NET y en Unity.
+- [x] **V036 · Datos** (preguntas y victorias) + seed de 1151 + tests.
+  - Notas: `TriviaSchema` (`IF NOT EXISTS`, opciones en JSON), `QuestionRepository` (pool por temáticas IN (…) y dificultad, por id) y `WinnerRepository` (sumar sin mayúsculas en una transacción, ranking). Seed de 1151 con preguntas en las 9 temáticas × 3 dificultades.
+- [x] **V037 · `TriviaFlowController`** + tests.
+  - Notas: `TriviaFlowController` puro: reparte por ronda, el siguiente es el primer vivo tras el actual en el orden de la ronda, recarga pools al cerrar ronda, +1 victoria a cada superviviente, cualquier fallo de carga → SinPreguntas, acciones fuera de fase no hacen nada.
+- [x] **V038 · Setup** (temáticas, ranking, atribución).
+  - Notas: `TriviaSetupScreen`: jugadores 2–6 en violeta, chips de temáticas en rejilla de 2 (la última no se desmarca), ranking de victorias y atribución OpenTDB. Captura `V038_trivia_setup.png`.
+- [x] **V039 · Pasar el móvil y Pregunta** (rejilla 2×2 con los 4 colores, 800 ms).
+  - Notas: `TriviaPassScreen` y `TriviaQuestionScreen` (panel violeta, rejilla 2×2 azul/verde/rojo/amarillo, verde la correcta y rojo la elegida errónea, resto atenuado, 800 ms y avanza; bloqueada tras la primera pulsación). Arreglo del kit: un tamaño fijo con `Sized` ya no es flexible en ese eje (el círculo salía como píldora). Captura `V039_trivia_pasar.png`.
+- [x] **V040 · Fin, registro, reglas y test PlayMode.**
+  - Notas: `TriviaGameOverScreen` (ganadores o «Nadie ganó esta partida»), `TriviaGame` registrado. PlayMode: temáticas, todos fallan → nadie gana sin victorias, todo acertado → 18 respuestas y +1 victoria a los dos. 158 EditMode + 18 PlayMode en verde.
 
 ## Fase 7 — Wavelength
 > El autor recuerda (2026-10-25) que **Wavelength está roto** en la app Flutter, aunque la v0.72 decía haberlo arreglado. No se porta su código tal cual: se reescribe desde la especificación de `CONTEXT.md` §6.4 con los arreglos de §8.1, y no se da por cerrado sin un test PlayMode de partida completa (pista → pasar → arrastrar el dial → revelado → siguiente ronda → fin) y una prueba en Play arrastrando el dial de verdad.
