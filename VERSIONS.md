@@ -246,3 +246,38 @@ Cierre técnico de cada versión con código Unity: recompilación sin errores, 
 - [ ] **V068 · Validación del autor.**
 - [ ] **V069 · Cierre** (con permiso): borrar `Legacy/Flutter/`, `TREE.md`, PR de `feature/unity-port` a `main`.
   - Notas (2026-10-25): el autor fusionó el PR #1 en `main`. `Legacy/Flutter/` se queda hasta que valide la app en el móvil (lo decidió el autor).
+
+## Fase 13 — Juegos nuevos que eligió el autor (2026-10-25)
+Elección del autor de la lista de `Docs/PLAN_MEJORAS.md` §4: «el 1, 2, 3, 4, 5 y el 10». Hombres Lobo, como lo
+pidió: «que los usuarios se pasen el móvil como en el Impostor y luego lo tenga un game master en la mano para
+gestionar la partida; muy configurable y con todas las expansiones». Se hacen de menor a mayor.
+- [x] **V070 · Base común de cartas.** Cartas de serie y propias con nivel (suave / +18), tipo y categoría, en una
+  tabla por juego; gestión de cartas propias común; confirmación de edad común.
+  - Acepta: tests de repositorio, de la gestión y de la confirmación; Yo Nunca sigue igual.
+  - Notas: `Core/Content/PromptCard.cs` (puro: `PromptCard` con texto, segunda opción, nivel, tipo y categoría;
+    `PromptQuery`, `IPromptSource` y `NoRepeatDeck`, que no repite hasta agotar el montón ni repite la última al
+    volver a empezar, con una sola llamada al random por carta). `_Shared/Data/PromptCardRepository` (una tabla por
+    juego con `CreateTable`, seed `[{texto, texto_b?, tipo?, nivel?, categoria?}]`, búsqueda, alta, edición y borrado
+    de las propias sin repetir otra carta del mismo tipo). `_Shared/Presentation/PromptCardsScreen` + `PromptCardsConfig`
+    (la gestión de cartas de los cinco juegos de cartas, con los campos que tenga cada uno) y `AdultGate` (confirmar
+    una vez por sesión que todos son mayores de 18; Yo Nunca ya la usa). 278 EditMode; PlayMode de cartas y Yo Nunca
+    en verde.
+- [ ] **V071 · Verdad o Reto.** Por turnos, verdad o reto; «me rajo» con prenda; suave y +18; cartas propias.
+  - Acepta: partida completa en PlayMode, sin repetir cartas hasta agotarlas, bancos grandes en los dos niveles.
+- [ ] **V072 · ¿Quién es más probable que…?** Frase, cuenta atrás de 3 s y todos señalan; suave y +18; propias.
+- [ ] **V073 · ¿Qué prefieres?** Dos opciones, se vota con la mano y se puede apuntar el resultado; suave y +18; propias.
+- [ ] **V074 · Mímica por equipos.** Como el Tabú sin hablar: equipos, tiempo, objetivo, categorías (también +18 y
+  propias), tarjetas propias.
+- [ ] **V075 · ¿Quién soy?** Móvil en la frente, inclinar para acertar o pasar (acelerómetro y botones), por
+  equipos, categorías y tarjetas propias.
+- [ ] **V076 · Hombres Lobo: dominio.** Catálogo de roles por paquetes (básico y todas las expansiones), reparto,
+  noche guiada, resolución de muertes y condiciones de victoria, todo puro y probado.
+- [ ] **V077 · Hombres Lobo: setup.** Jugadores, roles y cantidades por paquete, ajustes de reglas (capitán,
+  revelar el rol al morir, tiempos, eventos) y presets.
+- [ ] **V078 · Hombres Lobo: reparto.** Pasando el móvil, como el Impostor; al acabar, el móvil va al game master.
+- [ ] **V079 · Hombres Lobo: consola del game master, noche.** Paso a paso en el orden de los roles vivos, tocando
+  jugadores; lo que ve la vidente, las pociones, los enamorados…
+- [ ] **V080 · Hombres Lobo: día y final.** Muertes de la noche, cadenas (enamorados, cazador…), debate con
+  tiempo, votación, capitán y victoria; registro de la partida.
+- [ ] **V081 · Hombres Lobo: eventos de luna y pulido.**
+- [ ] **V082 · APK con los seis juegos.**

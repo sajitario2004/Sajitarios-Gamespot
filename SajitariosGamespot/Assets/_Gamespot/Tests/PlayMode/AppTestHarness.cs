@@ -30,6 +30,8 @@ namespace Gamespot.Tests.PlayMode
             // Los jugadores guardados se comparten entre juegos: cada test empieza sin ninguno y deja los de antes.
             _savedLastPlayers = AppSettings.LastPlayers;
             AppSettings.LastPlayers = null;
+            // La confirmación de edad dura toda la sesión de la app (V070): cada test empieza sin ella.
+            AdultGate.Confirmed = false;
             _savedVolume = AudioListener.volume;
             AudioListener.volume = 0f;
             _dbPath = Path.Combine(Path.GetTempPath(), $"gamespot_play_{Guid.NewGuid():N}.db");

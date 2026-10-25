@@ -251,8 +251,15 @@ namespace Gamespot.Games.YoNunca
         public bool DraftSeed { get; set; } = true;
         public bool DraftOwn { get; set; } = true;
 
-        /// <summary>Si ya se confirmó en esta sesión que todos son mayores de edad (para el picante, V059q).</summary>
-        public bool AdultsConfirmed { get; set; }
+        /// <summary>
+        /// Si ya se confirmó en esta sesión que todos son mayores de edad (para el picante, V059q). Desde V070 es la
+        /// confirmación común de todos los juegos (<see cref="AdultGate"/>).
+        /// </summary>
+        public bool AdultsConfirmed
+        {
+            get => AdultGate.Confirmed;
+            set => AdultGate.Confirmed = value;
+        }
 
         public long OwnCountOrZero()
         {
@@ -360,18 +367,13 @@ namespace Gamespot.Games.YoNunca
         /// </summary>
         public void RequestPicante(bool selected)
         {
-            if (!selected || _module.AdultsConfirmed)
+            if (!selected)
             {
-                Toggle(Intensidad.Picante, selected);
+                Toggle(Intensidad.Picante, false);
                 return;
             }
-            Dialogs.Confirm(Loc.T("yoNuncaConfirmarPicanteTitulo"), Loc.T("yoNuncaConfirmarPicanteMensaje"), Loc.T("cancelar"),
-                Loc.T("yoNuncaConfirmarPicanteSi"), ok =>
-                {
-                    if (!ok) return;
-                    _module.AdultsConfirmed = true;
-                    Toggle(Intensidad.Picante, true);
-                }, Palette.NeonMagenta, Palette.NeonMagenta);
+            AdultGate.Request(() => Toggle(Intensidad.Picante, true), "yoNuncaConfirmarPicanteTitulo", "yoNuncaConfirmarPicanteMensaje",
+                "yoNuncaConfirmarPicanteSi");
         }
 
         /// <summary>De dónde salen las frases; siempre queda al menos uno.</summary>

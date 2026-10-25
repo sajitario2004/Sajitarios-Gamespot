@@ -7,7 +7,9 @@
 > se borra `Legacy/Flutter/` (V069). Lo que elija de `Docs/PLAN_MEJORAS.md` entra como versiones nuevas.
 > **Fuentes (V014, con permiso del autor):** Roboto con negrita real y Material Icons, las de la app Flutter: los
 > iconos ya son glifos de verdad.
-> **Pendiente de decisión del autor:** qué 5 de los 10 juegos nuevos de `Docs/PLAN_MEJORAS.md` §4 se hacen (V059r) y qué mejoras del plan.
+> **Fase 13 en curso (juegos nuevos):** el autor eligió el 1, 2, 3, 4, 5 y 10 de `Docs/PLAN_MEJORAS.md` §4: Verdad o Reto,
+> ¿Quién es más probable que…?, ¿Qué prefieres?, Mímica por equipos, ¿Quién soy? y Hombres Lobo (con reparto pasando el
+> móvil y un game master que lleva la partida; muy configurable y con todas las expansiones). Hecho: V070 (base común de cartas).
 > **Hechas las mejoras elegidas del plan (fase 10c):** C2, C3+L1, B1+B2, C4, I1, T1, W2 (estado en `Docs/PLAN_MEJORAS.md`).
 > **Hecho (V059h–V059j):** Impostor (2525) y Tabú (1161) por categorías elegibles en el setup, con Cachondeo +18 desmarcada por defecto.
 > **Hecho (V059m):** categorías propias en el Impostor y el Tabú, palabras y tarjetas propias en la categoría que se elija y gestión de tarjetas del Tabú.
@@ -72,6 +74,9 @@ Historia: otra IA construyó la app completa en **Flutter** (v0.1 → v0.75, fas
 | 2026-10-25 | Las palabras y tarjetas propias pueden ir a cualquier categoría: «Mis palabras», una propia o una de serie (también Cachondeo) | Claude, revisable |
 | 2026-10-25 | El editor de tarjetas del Tabú es una **pantalla con scroll**, no un diálogo (seis campos y el teclado del móvil) | Claude, revisable |
 | 2026-10-25 | «Reducir animaciones» sigue al ajuste «Quitar animaciones» de Android mientras no se elija en la app; en iOS, apagado (haría falta un plugin nativo) | Claude, revisable |
+| 2026-10-25 | Juegos nuevos de la fase 13: Verdad o Reto, ¿Quién es más probable que…?, ¿Qué prefieres?, Mímica por equipos, ¿Quién soy? y Hombres Lobo con game master | Autor |
+| 2026-10-25 | Los juegos de cartas nuevos comparten el código (`PromptCardRepository`, `PromptCardsScreen`) pero cada uno tiene **su tabla** (`<juego>_cards`) y su seed, como las categorías propias | Claude, revisable |
+| 2026-10-25 | La confirmación de edad del contenido +18 es **común a toda la app** y dura la sesión (`AdultGate`): confirmada en un juego, no se vuelve a preguntar en otro hasta cerrar la app | Claude, revisable |
 
 ## 4. Arquitectura Unity
 
@@ -187,6 +192,8 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 - **Botón "volver al menú"** (icono casa, tooltip `volverAlMenu`) en todas las pantallas. En setup y fin de partida va directo a `/`; con partida en curso pide confirmación.
 - **Diálogo de abandonar:** título `salirDeLaPartidaTitulo`, mensaje `salirDeLaPartidaMensaje`, botones `seguirJugando` (falso) y `salir` (verdadero, glow magenta). Confirmar reinicia el controller del juego (y cancela temporizadores) y va a `/`. El botón atrás del sistema con partida en curso abre el mismo diálogo y, al confirmar, vuelve al setup del juego.
 - **Normalización de nombres** (setups): recortar y colapsar espacios internos a uno; duplicados sin distinguir mayúsculas.
+- **Cartas comunes (V070):** `PromptCard` (texto, segunda opción, nivel suave/picante, tipo y categoría), `NoRepeatDeck` (sin repetir hasta agotar; al volver a empezar no repite la última; una llamada a `NextInt` por carta), `PromptCardRepository` (tabla por juego; seed `[{texto, texto_b?, tipo?, nivel?, categoria?}]`; propias sin repetir otra del mismo tipo, sin mayúsculas ni signos finales) y `PromptCardsScreen` (gestión con búsqueda, filtro todas/mías/nivel/tipo/categoría y formulario con los campos que tenga el juego, según `PromptCardsConfig`).
+- **Confirmación de edad (V070):** `AdultGate.Request` pregunta si todos son mayores de 18 la primera vez en la sesión; si se confirma, ya no pregunta en ningún juego hasta cerrar la app. Yo Nunca la usa con sus textos.
 - **Jugadores guardados (Unity, C2):** al empezar una partida de Impostor, Trivia, Wavelength o La Bomba se guardan los nombres normalizados en la preferencia `last_players` (lista JSON). `PlayerListEditor` arranca con ellos si llega sin ningún nombre (recortados al máximo del juego) y muestra "Usar los de la última partida" cuando los de pantalla no coinciden. Tabú (equipos) y Yo Nunca no tienen lista de jugadores.
 
 ## 6. Especificación de los juegos
@@ -332,6 +339,11 @@ el móvil (V066, V068).
 | LiberationSans (recursos esenciales de TextMeshPro) | OFL 1.1 | Respaldo de los caracteres que Roboto no tenga |
 
 ## 10. Registro de trabajo (lo más reciente arriba)
+
+### 2026-10-25 · V070 · Base común de cartas (fase 13)
+- El autor eligió seis juegos de la lista: Verdad o Reto, ¿Quién es más probable que…?, ¿Qué prefieres?, Mímica por equipos, ¿Quién soy? y Hombres Lobo («que los usuarios se pasen el móvil como en el impostor y luego lo tenga un game master en la mano para gestionar la partida, quiero que sea muy configurable y con todas las expansiones del juego»). Plan en `VERSIONS.md`, fase 13 (V070–V082).
+- **Base común:** `Core/Content/PromptCard.cs` (cartas, consulta de la partida y `NoRepeatDeck`), `_Shared/Data/PromptCardRepository.cs` (tabla de cartas por juego), `_Shared/Presentation/PromptCardsScreen.cs` + `PromptCardsConfig.cs` (gestión de cartas propias con los campos de cada juego) y `AdultGate.cs` (confirmación de edad común, que ya usa Yo Nunca).
+- Tests: `PromptCardTests`, `PromptCardRepositoryTests` (EditMode, 278 en total) y `PromptCardsTests` (PlayMode: gestión, segunda opción obligatoria y confirmación una vez por sesión); Yo Nunca sigue en verde.
 
 ### 2026-10-25 · V059q · Yo Nunca: frases propias y picante +18 mucho más fuerte
 - El autor dio por buenos el resto de juegos y los ajustes, y pidió que Yo Nunca deje añadir frases y que el picante sea «mucho peor» y +18.

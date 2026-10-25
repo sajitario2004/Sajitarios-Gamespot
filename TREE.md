@@ -1,6 +1,6 @@
 # TREE
 
-Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 22:57.
+Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 23:24.
 
 No se listan: Library, Temp, Logs, obj, UserSettings, .git, .vs, .idea, .vscode, .utmp, Build, Builds, MemoryCaptures, Recordings, node_modules, __pycache__, .venv, .dart_tool, build, coverage, *.meta, *.csproj, *.sln, *.slnx, *.user, *.pidb, *.unityproj, .DS_Store, Thumbs.db, *.apk, *.aab.
 Plegadas: skills, TextMesh Pro, Flutter, Capturas (Flutter = la app original en Legacy/Flutter, solo lectura).
@@ -70,6 +70,7 @@ Sajitarios-Gamespot/
 │   │   │   │   │   └── Gamespot.App.asmdef
 │   │   │   │   ├── Core/
 │   │   │   │   │   ├── Content/
+│   │   │   │   │   │   ├── PromptCard.cs
 │   │   │   │   │   │   └── WordCategories.cs
 │   │   │   │   │   ├── Json/
 │   │   │   │   │   │   ├── Json.cs
@@ -153,8 +154,10 @@ Sajitarios-Gamespot/
 │   │   │   │   ├── Games/
 │   │   │   │   │   ├── _Shared/
 │   │   │   │   │   │   ├── Data/
-│   │   │   │   │   │   │   └── CustomCategoryRepository.cs
+│   │   │   │   │   │   │   ├── CustomCategoryRepository.cs
+│   │   │   │   │   │   │   └── PromptCardRepository.cs
 │   │   │   │   │   │   ├── Presentation/
+│   │   │   │   │   │   │   ├── AdultGate.cs
 │   │   │   │   │   │   │   ├── CategoryNameDialog.cs
 │   │   │   │   │   │   │   ├── CategoryOption.cs
 │   │   │   │   │   │   │   ├── CategoryPicker.cs
@@ -163,6 +166,8 @@ Sajitarios-Gamespot/
 │   │   │   │   │   │   │   ├── GameUi.cs
 │   │   │   │   │   │   │   ├── NotFoundScreen.cs
 │   │   │   │   │   │   │   ├── PlayerListEditor.cs
+│   │   │   │   │   │   │   ├── PromptCardsConfig.cs
+│   │   │   │   │   │   │   ├── PromptCardsScreen.cs
 │   │   │   │   │   │   │   └── RulesScreen.cs
 │   │   │   │   │   │   ├── Gamespot.Games.Shared.asmdef
 │   │   │   │   │   │   └── IGameDescriptor.cs
@@ -281,6 +286,7 @@ Sajitarios-Gamespot/
 │   │   │       │   │   ├── IcuMessageFormatterTests.cs
 │   │   │       │   │   ├── JsonTests.cs
 │   │   │       │   │   ├── NameNormalizerTests.cs
+│   │   │       │   │   ├── PromptCardTests.cs
 │   │   │       │   │   ├── RandomTests.cs
 │   │   │       │   │   └── WordCategoriesTests.cs
 │   │   │       │   ├── Db/
@@ -306,7 +312,8 @@ Sajitarios-Gamespot/
 │   │   │       │   │   │       ├── ImpostorStatsTests.cs
 │   │   │       │   │   │       └── ImpostorTestData.cs
 │   │   │       │   │   ├── Shared/
-│   │   │       │   │   │   └── CustomCategoryRepositoryTests.cs
+│   │   │       │   │   │   ├── CustomCategoryRepositoryTests.cs
+│   │   │       │   │   │   └── PromptCardRepositoryTests.cs
 │   │   │       │   │   ├── Tabu/
 │   │   │       │   │   │   ├── Domain/
 │   │   │       │   │   │   │   ├── TabuCardRulesTests.cs
@@ -344,6 +351,7 @@ Sajitarios-Gamespot/
 │   │   │           │   ├── OwnCategoriesTests.cs
 │   │   │           │   ├── PlayAgainTests.cs
 │   │   │           │   ├── PlayerRosterTests.cs
+│   │   │           │   ├── PromptCardsTests.cs
 │   │   │           │   ├── SoundTests.cs
 │   │   │           │   ├── TabuFlowTests.cs
 │   │   │           │   ├── TriviaFlowTests.cs

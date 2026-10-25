@@ -41,6 +41,8 @@ Archivo vivo. Añade una línea cada vez que el autor exprese un gusto, una corr
 
 - (2026-10-25) El resto de juegos y los ajustes le funcionan «perfecto». Quiere **poder añadir sus propias frases** en Yo Nunca y un **picante mucho más fuerte, +18**: humor de fiesta bruto entre adultos (se mantiene sin menores ni nada sin consentimiento).
 
+- (2026-10-25) De los 10 juegos propuestos eligió **seis**: Verdad o Reto, ¿Quién es más probable que…?, ¿Qué prefieres?, Mímica por equipos, ¿Quién soy? y Hombres Lobo. Hombres Lobo lo ha jugado y lo quiere **como se juega de verdad**: el reparto pasando el móvil como en el Impostor y después **un game master** (que no juega) con el móvil en la mano para llevar la partida; **muy configurable y con todas las expansiones**.
+
 ## Diseño
 - (heredado) Estética **neón cyberpunk**: fondo casi negro, cian y magenta con brillo, rejilla de fondo.
 - (heredado) **Nada de emojis**, ni en el código ni en los textos: solo iconos.
