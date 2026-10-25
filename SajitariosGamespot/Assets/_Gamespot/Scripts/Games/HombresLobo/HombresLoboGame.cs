@@ -196,6 +196,7 @@ namespace Gamespot.Games.HombresLobo
             var module = new HombresLoboModule(new LoboGame(context.Random), context.Router, context.Audio);
             Module = module;
             context.Router.Register(HombresLoboModule.SetupRoute, () => new LoboSetupScreen(module));
+            context.Router.Register(HombresLoboModule.RevealRoute, () => new LoboRevealScreen(module));
         }
 
         // Hombres Lobo no guarda nada en la base de datos.

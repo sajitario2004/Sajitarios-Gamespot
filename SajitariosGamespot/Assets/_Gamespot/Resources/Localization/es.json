@@ -883,5 +883,21 @@
   "reglasLobo5": "De día se debate y se vota: el más votado es linchado. El capitán vota doble y el cuervo pone dos votos más.",
   "reglasLobo6": "Algunos roles cambian las reglas: el cazador dispara al morir, los enamorados mueren juntos, el tonto se salva una vez…",
   "reglasLobo7": "Gana el pueblo si mueren todos los lobos; los lobos, si acaban con los demás. Los solitarios tienen su propio objetivo.",
-  "reglasLobo8": "El game master puede deshacer, matar o revivir a mano y ver el registro de toda la partida."
+  "reglasLobo8": "El game master puede deshacer, matar o revivir a mano y ver el registro de toda la partida.",
+  "loboQueNadieMire": "Que nadie más mire la pantalla.",
+  "loboVerMiCarta": "Soy yo: ver mi carta",
+  "loboEres": "Eres",
+  "loboCartaSemantica": "Tu carta: {rol}",
+  "loboOcultarYPasar": "Ocultar y pasar",
+  "loboOcultarUltimo": "Ocultar y terminar",
+  "loboEresElUnicoLobo": "Eres el único lobo.",
+  "loboTusCompaneros": "Tus compañeros lobos: {nombres}",
+  "loboTuHermana": "Tu hermana: {nombres}",
+  "loboTusHermanos": "Tus hermanos: {nombres}",
+  "loboTuGrupo": "Tu grupo: {nombres}. Ganas si muere todo el otro grupo.",
+  "loboLadronAviso": "La primera noche podrás cambiar tu carta por una de las dos que sobran.",
+  "loboAngelAviso": "Haz que te maten en la primera noche o en la primera votación.",
+  "loboDaleElMovil": "Dale el móvil al game master",
+  "loboDaleElMovilAyuda": "Ya habéis visto todos vuestra carta. A partir de ahora el móvil lo tiene el game master, que no juega.",
+  "loboSoyElMaster": "Empezar la noche"
 }

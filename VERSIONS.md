@@ -327,7 +327,11 @@ gestionar la partida; muy configurable y con todas las expansiones». Se hacen d
     tiempo de debate. `ChoiceChips` gana columnas y marcar sin avisar. 28 roles con nombre y descripción en es y en.
     PlayMode 3/3; barrido (152 pantallas) limpio. Capturas `V077_lobo_*`. El juego ya sale en el menú; el reparto
     llega en V078.
-- [ ] **V078 · Hombres Lobo: reparto.** Pasando el móvil, como el Impostor; al acabar, el móvil va al game master.
+- [x] **V078 · Hombres Lobo: reparto.** Pasando el móvil, como el Impostor; al acabar, el móvil va al game master.
+  - Notas: `LoboRevealScreen`: «Pásale el móvil a…», «Soy yo: ver mi carta» (icono, nombre y lo que hace el rol; los
+    lobos ven a sus compañeros si la regla lo dice; hermanas, hermanos y sectario ven a los suyos; avisos del ladrón y
+    del ángel), «Ocultar y pasar» y, tras el último, «Dale el móvil al game master». PlayMode 2/2; barrido (167
+    pantallas) limpio tras acortar tres botones. Capturas `V078_lobo_*`.
 - [ ] **V079 · Hombres Lobo: consola del game master, noche.** Paso a paso en el orden de los roles vivos, tocando
   jugadores; lo que ve la vidente, las pociones, los enamorados…
 - [ ] **V080 · Hombres Lobo: día y final.** Muertes de la noche, cadenas (enamorados, cazador…), debate con

@@ -11,7 +11,7 @@
 > ¿Quién es más probable que…?, ¿Qué prefieres?, Mímica por equipos, ¿Quién soy? y Hombres Lobo (con reparto pasando el
 > móvil y un game master que lleva la partida; muy configurable y con todas las expansiones). Hecho: V070 (base común de cartas)
 > y V071 (Verdad o Reto), V072 (¿Quién es más probable que…?), V073 (¿Qué prefieres?), V074 (Mímica), V075 (¿Quién soy?) y el
-> dominio y el setup de Hombres Lobo (V076–V077); faltan el reparto, la consola del game master y el final (V078–V081).
+> dominio, el setup y el reparto de Hombres Lobo (V076–V078); faltan la consola del game master y el final (V079–V081).
 > **Probar en el móvil (¿Quién soy?):** que el texto salga derecho con el móvil en la frente (gira solo según el lado que quede
 > abajo) y que inclinar abajo sea acierto y arriba pasar; si va al revés, la opción «Al revés» del setup lo cambia. **Probar en el móvil:** una partida de Verdad o Reto con picante y con
 > cartas propias que usen `{otro}`; ¿Quién es más probable…? llevando la cuenta (que la cuenta atrás y la vibración se noten).
@@ -387,6 +387,11 @@ el móvil (V066, V068).
 | LiberationSans (recursos esenciales de TextMeshPro) | OFL 1.1 | Respaldo de los caracteres que Roboto no tenga |
 
 ## 10. Registro de trabajo (lo más reciente arriba)
+
+### 2026-10-26 · V078 · Hombres Lobo: reparto
+- Reparto pasando el móvil, como en el Impostor: cada uno ve su carta en secreto (con sus compañeros lobos, si la regla lo dice, o sus hermanos o su grupo) y la oculta; al final, el móvil va al game master.
+- El barrido pilló tres botones con el texto demasiado largo: acortados (el nombre ya sale en grande encima).
+- PlayMode 2/2, barrido limpio. Capturas `V078_lobo_*`.
 
 ### 2026-10-26 · V077 · Hombres Lobo: setup
 - Setup con jugadores en el orden de la mesa, presets (iniciación, clásica, pueblo con poderes, caos) que siguen al número de jugadores, la pantalla «Elegir roles» por paquetes y todas las reglas (revelar al morir, capitán, segunda votación, debate, los lobos se conocen, primera noche sin muertes, protector, bruja, igualar, anciano y eventos de luna).
