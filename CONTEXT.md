@@ -7,7 +7,7 @@
 > se borra `Legacy/Flutter/` (V069). Lo que elija de `Docs/PLAN_MEJORAS.md` entra como versiones nuevas.
 > **Fuentes (V014, con permiso del autor):** Roboto con negrita real y Material Icons, las de la app Flutter: los
 > iconos ya son glifos de verdad.
-> **Pendiente de decisión del autor:** qué mejoras y cuáles de los 5 juegos nuevos se hacen (V059a/V059b).
+> **Pendiente de decisión del autor:** qué 5 de los 10 juegos nuevos de `Docs/PLAN_MEJORAS.md` §4 se hacen (V059r) y qué mejoras del plan.
 > **Hechas las mejoras elegidas del plan (fase 10c):** C2, C3+L1, B1+B2, C4, I1, T1, W2 (estado en `Docs/PLAN_MEJORAS.md`).
 > **Hecho (V059h–V059j):** Impostor (2525) y Tabú (1161) por categorías elegibles en el setup, con Cachondeo +18 desmarcada por defecto.
 > **Hecho (V059m):** categorías propias en el Impostor y el Tabú, palabras y tarjetas propias en la categoría que se elija y gestión de tarjetas del Tabú.

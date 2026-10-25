@@ -6,7 +6,7 @@
 
 **Estado (2026-10-25):** hechas **C2, C3 + L1, B1 + B2, C4, I1, T1 y W2** (fase 10c de `VERSIONS.md`,
 V059c–V059g) y, fuera del plan, **I4** (categorías en el Impostor y también en el Tabú) y el banco de
-fiesta y de España sin las palabras difíciles (V059h–V059i). Lo demás sigue pendiente de que elijas. Corrección: en C4 decía que Trivia y Wavelength no
+fiesta y de España sin las palabras difíciles (V059h–V059i). Lo demás sigue pendiente de que elijas. **Nuevo (V059r):** sección 4, diez juegos para elegir cinco. Corrección: en C4 decía que Trivia y Wavelength no
 tenían "Jugar otra"; sí lo tenían, pero llevaba al setup. Ahora los cuatro empiezan al momento con los mismos
 ajustes y además tienen "Cambiar ajustes".
 
@@ -179,3 +179,43 @@ como proyecto grande, Hombres Lobo.
 - **Mente colmena.** Sale una categoría y gana quien coincida con la mayoría. (S)
 - **Cadena de palabras.** Cada palabra empieza por la última sílaba de la anterior, con la mecha de La
   Bomba. (S)
+
+---
+
+## 4. Diez juegos nuevos para elegir cinco (V059r, 2026-10-25)
+
+El autor pidió unos 10 juegos nuevos de fiesta para elegir 5 (con todo lo demás ya probado y funcionando). Incluye
+los 5 de la sección 3 y 5 nuevos, varios como variantes de los que ya hay. Todos: un solo móvil, sin internet,
+pasándolo o en el centro de la mesa, estética neón, y los que tienen nivel +18 con el mismo aviso y confirmación
+de edad que Yo Nunca.
+
+| # | Juego | Jugadores | Cómo se juega | +18 | Reutiliza | Esfuerzo |
+|---|---|---|---|---|---|---|
+| 1 | **Verdad o Reto** ★ | 2–15 | Por turnos, cada uno elige verdad o reto y sale una tarjeta; quien se raja, bebe o paga prenda | Sí | Yo Nunca: niveles, frases propias, aviso +18 | **S** |
+| 2 | **¿Quién es más probable que…?** ★ | 3–15 | Sale una frase («…acabe en comisaría»); a la de tres todos señalan; el más señalado bebe | Sí | Yo Nunca casi entero | **S** |
+| 3 | **¿Qué prefieres?** | 2–15 | Dos opciones imposibles; cada uno vota con la mano; la minoría bebe | Sí | Yo Nunca | **S** |
+| 4 | **Mímica por equipos** | 4+ en 2 equipos | Como el Tabú pero sin hablar: películas, acciones, famosos… contra reloj | Sí (categoría) | Tabú: equipos, tiempo, marcador, categorías y tarjetas propias | **S–M** |
+| 5 | **¿Quién soy?** (en la frente) ★ | 4+ en equipos | El móvil en la frente; tu equipo describe; inclinas abajo si aciertas y arriba si pasas | Sí (categoría) | Tabú (tiempo, equipos), palabras del Impostor | **M** |
+| 6 | **El Espía** (variante del Impostor) ★ | 4–12 | Todos saben el lugar y su papel menos el espía; preguntas por turnos durante 8 min; el espía intenta adivinar el lugar | No | Impostor: pasar, revelar, votación, historial | **M** |
+| 7 | **Dibuja y adivina** | 4+ en equipos | El que dibuja ve una palabra y la dibuja con el dedo; su equipo tiene 60 s | Sí (categoría) | Tabú (tiempo, equipos), palabras del Impostor | **M** |
+| 8 | **Duelo de reflejos** (pantalla partida) | 2–4 a la vez | El móvil en el centro, cada uno en su esquina: pulsar el primero cuando salga el color, no pulsar antes… el que pierde, bebe | No | Sonidos, vibración | **M** |
+| 9 | **Código secreto** | 4–10 en 2 equipos | Rejilla de 5×5 palabras; el jefe de cada equipo ve la clave y da una pista y un número | No | Palabras del Impostor | **M–L** |
+| 10 | **Hombres Lobo** (el móvil narra) ★ | 6–15 | Roles secretos pasando el móvil; de noche el móvil narra, de día se debate y se vota | No | Impostor: pasar, revelar, votación | **L** |
+
+★ = los 5 que recomiendo: los dos baratos que más juego dan en una fiesta (1 y 2), el que usa el móvil como pieza
+(5), la variante del juego que más gusta (6) y el grande de roles ocultos (10).
+
+**Detalle de los nuevos de esta ronda** (los de la sección 3 siguen igual):
+- **¿Quién es más probable que…?** Sin turnos: sale la frase, cuenta atrás de 3 s y todos señalan a la vez. El
+  móvil no cuenta votos (se ve en la mesa); solo saca frases sin repetir, con nivel suave y +18 y frases propias.
+- **¿Qué prefieres?** Dos tarjetas grandes, A y B, y «Votad»; se puede marcar cuántos eligieron cada una para ver
+  el porcentaje del grupo al final. Banco de preguntas suaves y +18.
+- **Mímica por equipos.** El Tabú sin prohibidas: la palabra a hacer con mímica y Acierto / Pasar. Categorías:
+  películas y series, acciones, famosos, animales, oficios, Cachondeo +18.
+- **El Espía.** Banco de lugares (playa, discoteca, hospital, nave espacial…) con papeles (socorrista, DJ,
+  enfermera…). Reloj de 8 min visible; en cualquier momento se puede parar para votar al espía. Si el espía acierta
+  el lugar, gana él.
+- **Duelo de reflejos.** Minijuegos cortos con la pantalla dividida en 2–4 zonas: «pulsa cuando sea verde»,
+  «¿coinciden el color y la palabra?», «toca más rápido». Quien pulsa antes de tiempo pierde la ronda.
+
+**Para elegir:** di los 5 números (p. ej. «1, 2, 5, 6 y 10») y se convierten en versiones de `VERSIONS.md`.
