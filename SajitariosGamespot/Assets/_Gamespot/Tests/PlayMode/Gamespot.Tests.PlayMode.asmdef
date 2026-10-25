@@ -21,7 +21,9 @@
         "Gamespot.Games.Wavelength",
         "Gamespot.Games.Wavelength.Domain",
         "Gamespot.Games.Tabu",
-        "Gamespot.Games.Tabu.Domain"
+        "Gamespot.Games.Tabu.Domain",
+        "Gamespot.Games.YoNunca",
+        "Gamespot.Games.YoNunca.Domain"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -137,9 +137,12 @@ Cierre técnico de cada versión con código Unity: recompilación sin errores, 
   - Notas: `TabuGame` registrado. PlayMode: equipos iguales dan aviso, el tiempo termina el turno y da la victoria, pausa con el diálogo, primero a 3 gana. 190 EditMode + 24 PlayMode en verde.
 
 ## Fase 9 — Yo Nunca
-- [ ] **V052 · Dominio, datos y seed de 192** + tests.
-- [ ] **V053 · Flow y pantallas** (aviso +18).
-- [ ] **V054 · Registro, reglas y test PlayMode.**
+- [x] **V052 · Dominio, datos y seed de 192** + tests.
+  - Notas: Dominio puro (`Intensidad`, `NeverStatement`, `YoNuncaConfig`, `DrawStatementUseCase` sin repetir hasta agotar y luego vuelve a empezar, `YoNuncaFlowController`), esquema, repositorio por intensidades y seed de 192 frases (98 suaves, 94 picantes) validado.
+- [x] **V053 · Flow y pantallas** (aviso +18).
+  - Notas: Setup con chips Suave/Picante y aviso +18 fijo mientras Picante está activo; juego con la frase centrada (sin scroll, que recortaba el halo) y «Siguiente». Atrás y casa piden confirmación (arreglo). Capturas `V053_yo_nunca_setup/juego.png`.
+- [x] **V054 · Registro, reglas y test PlayMode.**
+  - Notas: `YoNuncaGame` registrado. PlayMode: aviso aparece y desaparece, sin intensidades da aviso, «Siguiente» cambia la frase, atrás confirma, mínimos del seed. 196 EditMode + 28 PlayMode en verde.
 
 ## Fase 10 — La Bomba
 - [ ] **V055 · Dominio** (mecha [10,60), rotación, explosión) + tests.

@@ -1,6 +1,6 @@
 # TREE
 
-Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 10:17.
+Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 10:23.
 
 No se listan: Library, Temp, Logs, obj, UserSettings, .git, .vs, .idea, .vscode, .utmp, Build, Builds, MemoryCaptures, Recordings, node_modules, __pycache__, .venv, .dart_tool, build, coverage, *.meta, *.csproj, *.sln, *.slnx, *.user, *.pidb, *.unityproj, .DS_Store, Thumbs.db.
 Plegadas: skills, TextMesh Pro, Flutter, Capturas (Flutter = la app original en Legacy/Flutter, solo lectura).
@@ -11,7 +11,7 @@ Sajitarios-Gamespot/
 ├── .claude/
 │   └── settings.json
 ├── Docs/
-│   └── Capturas/  (16 elementos, plegado)
+│   └── Capturas/  (18 elementos, plegado)
 ├── Legacy/
 │   └── Flutter/  (20 elementos, plegado)
 ├── SajitariosGamespot/
@@ -187,19 +187,25 @@ Sajitarios-Gamespot/
 │   │   │   │   │   │   │   └── TriviaScreens.cs
 │   │   │   │   │   │   ├── Gamespot.Games.Trivia.asmdef
 │   │   │   │   │   │   └── TriviaGame.cs
-│   │   │   │   │   └── Wavelength/
-│   │   │   │   │       ├── Data/
-│   │   │   │   │       │   └── SpectrumRepository.cs
+│   │   │   │   │   ├── Wavelength/
+│   │   │   │   │   │   ├── Data/
+│   │   │   │   │   │   │   └── SpectrumRepository.cs
+│   │   │   │   │   │   ├── Domain/
+│   │   │   │   │   │   │   ├── Flow/
+│   │   │   │   │   │   │   │   └── WavelengthFlowController.cs
+│   │   │   │   │   │   │   ├── Gamespot.Games.Wavelength.Domain.asmdef
+│   │   │   │   │   │   │   └── WavelengthDomain.cs
+│   │   │   │   │   │   ├── Presentation/
+│   │   │   │   │   │   │   ├── WavelengthDial.cs
+│   │   │   │   │   │   │   └── WavelengthScreens.cs
+│   │   │   │   │   │   ├── Gamespot.Games.Wavelength.asmdef
+│   │   │   │   │   │   └── WavelengthGame.cs
+│   │   │   │   │   └── YoNunca/
 │   │   │   │   │       ├── Domain/
-│   │   │   │   │       │   ├── Flow/
-│   │   │   │   │       │   │   └── WavelengthFlowController.cs
-│   │   │   │   │       │   ├── Gamespot.Games.Wavelength.Domain.asmdef
-│   │   │   │   │       │   └── WavelengthDomain.cs
-│   │   │   │   │       ├── Presentation/
-│   │   │   │   │       │   ├── WavelengthDial.cs
-│   │   │   │   │       │   └── WavelengthScreens.cs
-│   │   │   │   │       ├── Gamespot.Games.Wavelength.asmdef
-│   │   │   │   │       └── WavelengthGame.cs
+│   │   │   │   │       │   ├── Gamespot.Games.YoNunca.Domain.asmdef
+│   │   │   │   │       │   └── YoNuncaDomain.cs
+│   │   │   │   │       ├── Gamespot.Games.YoNunca.asmdef
+│   │   │   │   │       └── YoNuncaGame.cs
 │   │   │   │   └── Menu/
 │   │   │   │       ├── Gamespot.Menu.asmdef
 │   │   │   │       └── MenuScreen.cs
@@ -242,6 +248,9 @@ Sajitarios-Gamespot/
 │   │   │       │   │   │   ├── Domain/
 │   │   │       │   │   │   │   └── WavelengthDomainTests.cs
 │   │   │       │   │   │   └── WavelengthDialAndDataTests.cs
+│   │   │       │   │   ├── YoNunca/
+│   │   │       │   │   │   └── Domain/
+│   │   │       │   │   │       └── YoNuncaDomainTests.cs
 │   │   │       │   │   └── SeedFilesTests.cs
 │   │   │       │   ├── Localization/
 │   │   │       │   │   └── LocTests.cs
@@ -253,7 +262,8 @@ Sajitarios-Gamespot/
 │   │   │           │   ├── ImpostorFlowTests.cs
 │   │   │           │   ├── TabuFlowTests.cs
 │   │   │           │   ├── TriviaFlowTests.cs
-│   │   │           │   └── WavelengthFlowTests.cs
+│   │   │           │   ├── WavelengthFlowTests.cs
+│   │   │           │   └── YoNuncaFlowTests.cs
 │   │   │           ├── AppTestHarness.cs
 │   │   │           ├── BootstrapTests.cs
 │   │   │           └── Gamespot.Tests.PlayMode.asmdef
