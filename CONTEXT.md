@@ -10,7 +10,9 @@
 > **Fase 13 en curso (juegos nuevos):** el autor eligió el 1, 2, 3, 4, 5 y 10 de `Docs/PLAN_MEJORAS.md` §4: Verdad o Reto,
 > ¿Quién es más probable que…?, ¿Qué prefieres?, Mímica por equipos, ¿Quién soy? y Hombres Lobo (con reparto pasando el
 > móvil y un game master que lleva la partida; muy configurable y con todas las expansiones). Hecho: V070 (base común de cartas)
-> y V071 (Verdad o Reto), V072 (¿Quién es más probable que…?), V073 (¿Qué prefieres?), V074 (Mímica). **Probar en el móvil:** una partida de Verdad o Reto con picante y con
+> y V071 (Verdad o Reto), V072 (¿Quién es más probable que…?), V073 (¿Qué prefieres?), V074 (Mímica), V075 (¿Quién soy?).
+> **Probar en el móvil (¿Quién soy?):** que el texto salga derecho con el móvil en la frente (gira solo según el lado que quede
+> abajo) y que inclinar abajo sea acierto y arriba pasar; si va al revés, la opción «Al revés» del setup lo cambia. **Probar en el móvil:** una partida de Verdad o Reto con picante y con
 > cartas propias que usen `{otro}`; ¿Quién es más probable…? llevando la cuenta (que la cuenta atrás y la vibración se noten).
 > **Hechas las mejoras elegidas del plan (fase 10c):** C2, C3+L1, B1+B2, C4, I1, T1, W2 (estado en `Docs/PLAN_MEJORAS.md`).
 > **Hecho (V059h–V059j):** Impostor (2525) y Tabú (1161) por categorías elegibles en el setup, con Cachondeo +18 desmarcada por defecto.
@@ -142,6 +144,7 @@ SajitariosGamespot/Assets/_Gamespot/
 | `mas_probable_cards.json` (V072) | `[{texto, nivel}]` (lo que va detrás de «que…») | 302 (151 / 151) | ≥ 140 por nivel, ya normalizadas, en minúscula, sin repetidas ni menores |
 | `que_prefieres_cards.json` (V073) | `[{texto, texto_b, nivel}]` | 306 (150 / 156) | ≥ 140 por nivel, las dos opciones (≤ 90 caracteres) y distintas, sin repetidas ni menores |
 | `mimica_cards.json` (V074) | `[{texto, categoria}]` | 557 (películas 90, acciones 87, famosos 72, animales 70, oficios 70, objetos 70, deportes 48, Cachondeo 50) | ≥ 500, ≥ 45 por categoría, ≤ 60 caracteres, sin repetidas |
+| `quien_soy_cards.json` (V075) | `[{texto, categoria}]` | 504 (famosos 80, personajes 74, animales 60, oficios 60, objetos 60, sitios 60, comida 60, Cachondeo 50) | ≥ 480, ≥ 45 por categoría, ≤ 50 caracteres, sin repetidas |
 | `bomba_silabas.json` | `["CA", …]` | 93 | ≥ 70 |
 | `bomba_categorias.json` | `["nombres de animales", …]` | 83 | ≥ 70 |
 
@@ -283,6 +286,11 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 - **Partida:** `GuessGameController` (ver §5.8) con `TeamMatch` por objetivo.
 - **Pantallas:** setup, preparados (a quién le toca, marcador, «Empezar turno»), turno (cuenta atrás cian/amarillo/rojo con pitidos y bocina, categoría, estilo en mezcla, tarjeta en mayúsculas —magenta si es +18—, Acierto / Pasar (n)), resumen (tarjetas en verde o rojo que se tocan para corregir, «Apuntar y seguir») y final. Gestión de tarjetas y categorías propias: `/mimica/tarjetas`.
 
+### 6.12 ¿Quién soy? (`quien_soy`, V075, juego nuevo)
+- **Dominio:** `QuienSoyConfig.Create(nombres, categorías, opciones)`: por equipos 2–4, cada uno a lo suyo 2–12 (sin repetir), al menos una categoría. Opciones: modo, segundos (60; 30–120), rondas (3; 1, 2, 5), pases (sin límite; 0, 1, 3), pasar resta, inclinar (sí) y al revés (no). Categorías `famosos, personajes, animales, oficios, objetos, sitios, comida, cachondeo` (+18) y propias; tablas `quien_soy_cards` y `quien_soy_categories`. Partida: `GuessGameController` por rondas.
+- **Inclinación (`TiltDetector`):** eje z del acelerómetro (sale de la pantalla): vertical en la frente ≈ 0, mirando al suelo → +1 (acierto), al techo → −1 (pasar). Umbral 0,6 g respecto a la postura al empezar (si estaba tumbado, la vertical), y hay que volver a menos de 0,3 antes del siguiente gesto. El giro del texto (+90° / −90°) sigue al eje x (> 0,5 / < −0,5).
+- **Pantallas:** setup, preparados, turno en horizontal (3 s «Ponte el móvil en la frente» con pitidos; después cuenta atrás, categoría, palabra en mayúsculas, aciertos y botones Pasar / Acierto a los lados; cada gesto suena, vibra y destella 0,6 s), resumen corregible y final (comunes). Gestión: `/quien-soy/tarjetas`.
+
 ## 7. Estado de la app Flutter (referencia)
 - v0.75.0+75, Flutter 3.41.4 / Dart 3.11.1, Riverpod 3, go_router 17, Flame 1.37, sqflite. `flutter analyze` limpio, **823 tests**, cobertura 78 %.
 - Código en `Legacy/Flutter/lib/`, tests en `Legacy/Flutter/test/`, roadmap completo (F1–F22) en `Legacy/Flutter/docs/version.md`, su contexto en `Legacy/Flutter/docs/context.md`.
@@ -367,6 +375,11 @@ el móvil (V066, V068).
 | LiberationSans (recursos esenciales de TextMeshPro) | OFL 1.1 | Respaldo de los caracteres que Roboto no tenga |
 
 ## 10. Registro de trabajo (lo más reciente arriba)
+
+### 2026-10-26 · V075 · ¿Quién soy?
+- Juego nuevo `Games/QuienSoy/`: el móvil en la frente, por equipos o cada uno a lo suyo, por rondas; inclinar para acertar o pasar (acelerómetro del Input System) y botones de respaldo. 504 tarjetas nuevas en 8 categorías.
+- Piezas nuevas: `MotionSensor` (sensor con lectura fija para los tests), `LandscapeFrame` (pinta en horizontal dentro de la app vertical; recalcula su tamaño cuando cambia el del padre para que el primer fotograma salga bien) y `TiltDetector` (puro).
+- 323 EditMode, PlayMode del juego 2/2, barrido limpio. Capturas `V075_quiensoy_*`. Pendiente del móvil: el sentido de la inclinación y del giro.
 
 ### 2026-10-26 · V074 · Mímica por equipos
 - Juego nuevo `Games/Mimica/`: el Tabú sin hablar, por equipos (2–4) y con muchas reglas a elegir: tiempo, puntos para ganar, pases (con límite y que restan) y modo mezcla (mímica, sonidos, dibujar en el aire o una palabra). Ocho categorías (Cachondeo +18 con la confirmación de edad), categorías y tarjetas propias. 557 tarjetas nuevas.

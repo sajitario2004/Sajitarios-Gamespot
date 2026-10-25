@@ -297,8 +297,17 @@ gestionar la partida; muy configurable y con todas las expansiones». Se hacen d
     jugadores sirve para equipos (textos propios y sin los de la última partida). Seed de 557 tarjetas. 318 EditMode;
     PlayMode del juego 3/3 (y las categorías propias del Impostor y el Tabú, 4/4); barrido (113 pantallas, es y en)
     limpio. Capturas `V074_mimica_*`.
-- [ ] **V075 · ¿Quién soy?** Móvil en la frente, inclinar para acertar o pasar (acelerómetro y botones), por
+- [x] **V075 · ¿Quién soy?** Móvil en la frente, inclinar para acertar o pasar (acelerómetro y botones), por
   equipos, categorías y tarjetas propias.
+  - Notas: `Games/QuienSoy/`. Por equipos (2–4) o cada uno a lo suyo (2–12), por rondas (1, 2, 3, 5; empate →
+    desempate), 8 categorías (famosos, personajes, animales, oficios, objetos, sitios, comida y bebida, Cachondeo +18)
+    y las propias. El turno se pinta en horizontal (`Core.Runtime/UI/LandscapeFrame`, que gira hacia el lado que
+    quede abajo) con 3 s para colocarse el móvil; inclinar hacia abajo es acierto y hacia arriba pasar
+    (`TiltDetector` en el dominio, respecto a la postura del principio y con rearme), con opción «al revés» y botones
+    a los lados. Acelerómetro del Input System en `Core.Runtime/Sensors/MotionSensor` (con lectura fija para los
+    tests; se apaga al salir del turno). Seed de 504 tarjetas. 323 EditMode; PlayMode del juego 2/2 con el sensor
+    simulado; barrido (146 pantallas, es y en) limpio. Capturas `V075_quiensoy_*`. Falta probar en el móvil
+    el sentido de la inclinación y del giro.
 - [ ] **V076 · Hombres Lobo: dominio.** Catálogo de roles por paquetes (básico y todas las expansiones), reparto,
   noche guiada, resolución de muertes y condiciones de victoria, todo puro y probado.
 - [ ] **V077 · Hombres Lobo: setup.** Jugadores, roles y cantidades por paquete, ajustes de reglas (capitán,

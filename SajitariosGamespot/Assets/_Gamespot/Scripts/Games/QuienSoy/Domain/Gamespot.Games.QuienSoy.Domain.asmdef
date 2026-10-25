@@ -1,0 +1,16 @@
+{
+    "name": "Gamespot.Games.QuienSoy.Domain",
+    "rootNamespace": "Gamespot.Games.QuienSoy.Domain",
+    "references": [
+        "Gamespot.Core"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

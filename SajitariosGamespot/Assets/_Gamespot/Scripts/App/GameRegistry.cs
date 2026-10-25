@@ -5,6 +5,7 @@ using Gamespot.Games.Impostor;
 using Gamespot.Games.MasProbable;
 using Gamespot.Games.Mimica;
 using Gamespot.Games.QuePrefieres;
+using Gamespot.Games.QuienSoy;
 using Gamespot.Games.Trivia;
 using Gamespot.Games.Wavelength;
 using Gamespot.Games.YoNunca;
@@ -34,6 +35,7 @@ namespace Gamespot.App
             new MasProbableGame(),
             new QuePrefieresGame(),
             new MimicaGame(),
+            new QuienSoyGame(),
         };
     }
 }

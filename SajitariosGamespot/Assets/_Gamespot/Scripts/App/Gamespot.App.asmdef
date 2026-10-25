@@ -29,7 +29,9 @@
         "Gamespot.Games.QuePrefieres",
         "Gamespot.Games.QuePrefieres.Domain",
         "Gamespot.Games.Mimica",
-        "Gamespot.Games.Mimica.Domain"
+        "Gamespot.Games.Mimica.Domain",
+        "Gamespot.Games.QuienSoy",
+        "Gamespot.Games.QuienSoy.Domain"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
