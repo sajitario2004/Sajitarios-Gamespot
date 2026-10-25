@@ -205,6 +205,7 @@ Cierre técnico de cada versión con código Unity: recompilación sin errores, 
 
 ## Fase 12 — Builds y cierre
 - [ ] **V065 · Build Android** (`.apk` release y desarrollo).
+  - Notas (en curso, 2026-10-25): APK de prueba `SajitariosGamespot-prueba.apk` en la raíz del repo (ignorado por git): release, firma de depuración de Unity, IL2CPP ARM64, 38,4 MB, Android 7.1+ (API 25, objetivo 36), permisos INTERNET y VIBRATE; 3 min 18 s sin errores ni avisos. Falta la de desarrollo.
 - [ ] **V066 · Prueba en emulador o dispositivo:** una partida de cada juego; palabras propias e historial persisten tras cerrar.
 - [ ] **V067 · Proyecto de Xcode** para iOS (compilar y firmar en un Mac).
 - [ ] **V068 · Validación del autor.**

@@ -11,6 +11,7 @@
 > **Hecho (V059h–V059j):** Impostor (2525) y Tabú (1161) por categorías elegibles en el setup, con Cachondeo +18 desmarcada por defecto.
 > **Pendiente del autor:** aclarar 7 palabras de Cachondeo (Pereira, Fabiana Sevillano, «dedear panchas», «padalustro», «amigo kebap»,
 > «magic» y «virgen»; ver V059j en §10). Las 221 complicadas quedan fuera (V059k).
+> **APK de prueba:** `SajitariosGamespot-prueba.apk` en la raíz del repo (V065, en curso): instalarlo en el móvil y jugar.
 > **Pendiente de probar a mano por el autor:** abrir `SajitariosGamespot/` en Unity 6000.3.27f1, Play en la escena
 > `App` y jugar una partida de cada juego (sobre todo Wavelength, que estaba roto, y la mecha de La Bomba).
 > **Escuchar los sonidos nuevos** (sintetizados, nadie los ha oído aún): tic-tac y explosión de La Bomba, pitidos
@@ -261,6 +262,11 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 | Paquetes de Unity (URP, uGUI/TextMeshPro, Input System, Test Framework, Pipeline) | Unity Companion License | Motor, UI, entrada, tests y puente de la CLI |
 
 ## 10. Registro de trabajo (lo más reciente arriba)
+
+### 2026-10-25 · V065 (en curso) · Primer APK de prueba
+- `SajitariosGamespot-prueba.apk` en la raíz del repo (git lo ignora): plataforma activa cambiada a Android con `build.target switch` y build con `build run --target Android --outputPath <raíz>/SajitariosGamespot-prueba.apk --confirm true` (3 min 18 s, sin errores ni avisos). Release con la firma de depuración de Unity (no vale para Google Play), IL2CPP ARM64, 38,4 MB, `com.sajitarios.sajitarios_gamespot` 0.76.0 (76), API 25–36, permisos INTERNET (el de serie de Unity) y VIBRATE (de `Handheld.Vibrate`).
+- La build guarda ajustes en el proyecto (filtros de shaders de URP, batching de Android, el mapa del Input System en los precargados, la fuente de respaldo de TMP): se versionan para que la siguiente build no ensucie el árbol. La carpeta `*_BurstDebugInformation_DoNotShip/` que deja junto al APK se ignora.
+- La plataforma activa del Editor se queda en Android.
 
 ### 2026-10-25 · V059k · Las 221 complicadas, fuera
 - El autor decidió que las 221 palabras complicadas que seguían pendientes se quedan fuera. Ya no estaban en el seed, así que no cambia la BD (sigue en la versión 5); `SeedFilesTests` comprueba una muestra de cada grupo (actuario, úvula, talabartero, obenque, tuya, okapi, fenogreco, pizzicato, cromorno, yokai, feldespato, firmware, trébede, turbera, acuaplano, sustrato). La lista completa está en el registro de V059j y en el diff del seed de V059i.

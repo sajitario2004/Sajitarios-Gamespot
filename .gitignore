@@ -52,6 +52,8 @@ sysinfo.txt
 mono_crash.*
 *.apk
 *.aab
+# Símbolos de Burst que la build deja junto al APK (no se distribuyen)
+*_BurstDebugInformation_DoNotShip/
 *.unitypackage
 *.unitypackage.meta
 *.app
