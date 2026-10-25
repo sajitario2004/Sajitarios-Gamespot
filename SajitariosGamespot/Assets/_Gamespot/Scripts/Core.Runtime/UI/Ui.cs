@@ -107,8 +107,8 @@ namespace Gamespot.Core.Runtime.UI
         /// <summary>
         /// Texto con el estilo de <paramref name="role"/>. <paramref name="glow"/> &gt; 0 añade el halo neón
         /// (como <c>NeonText</c>). <paramref name="maxLines"/> &gt; 0 corta con puntos suspensivos. Con una sola
-        /// línea no se parte por palabras (si no, «Andreu Buenafuente» se quedaba en «Andreu» sin avisar) y, si la
-        /// fuente no puede pintar «…» (negrita sin variante bold), primero encoge hasta el 70 % y luego corta.
+        /// línea no se parte por palabras (si no, «Andreu Buenafuente» se quedaba en «Andreu» sin avisar) y primero
+        /// encoge hasta el 70 %; solo después corta (con «…» si la fuente lo puede pintar).
         /// </summary>
         public static TextMeshProUGUI Text(Transform parent, string text, TextRole role = TextRole.BodyMedium, Color? color = null,
             TextAlignmentOptions alignment = TextAlignmentOptions.Left, float glow = 0f, Color? glowColor = null, int maxLines = 0,
@@ -130,13 +130,12 @@ namespace Gamespot.Core.Runtime.UI
                 Typography.SetEllipsis(tmp);
                 if (maxLines == 1)
                 {
+                    // Antes solo encogía cuando no había «…» (LiberationSans sin negrita real); con Roboto (V014) la
+                    // negrita sí lo pinta y cortaba sin encoger: «Internet & social media» en un chip.
                     tmp.textWrappingMode = TextWrappingModes.NoWrap;
-                    if (tmp.overflowMode == TextOverflowModes.Truncate)
-                    {
-                        tmp.enableAutoSizing = true;
-                        tmp.fontSizeMax = tmp.fontSize;
-                        tmp.fontSizeMin = tmp.fontSize * 0.7f;
-                    }
+                    tmp.enableAutoSizing = true;
+                    tmp.fontSizeMax = tmp.fontSize;
+                    tmp.fontSizeMin = tmp.fontSize * 0.7f;
                 }
             }
             if (glow > 0f) SetGlow(tmp, glowColor ?? c, glow);

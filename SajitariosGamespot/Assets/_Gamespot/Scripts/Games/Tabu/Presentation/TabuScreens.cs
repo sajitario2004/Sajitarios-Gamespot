@@ -385,7 +385,12 @@ namespace Gamespot.Games.Tabu
         {
             var panel = Ui.Panel(parent, color, glow: 0.7f, padding: new RectOffset(20, 20, 16, 16));
             var row = Ui.Row(panel.Content, 10f);
-            Ui.Text(row, team, TextRole.TitleLarge, Palette.TextPrimary, maxLines: 1, bold: true).Sized(flexWidth: 1f);
+            // Nombres de hasta 30 caracteres: dos líneas que encogen (con la negrita real de Roboto no cabían en una).
+            var name = Ui.Text(row, team, TextRole.TitleLarge, Palette.TextPrimary, maxLines: 2, bold: true);
+            name.enableAutoSizing = true;
+            name.fontSizeMax = name.fontSize;
+            name.fontSizeMin = 14f;
+            name.Sized(width: 0f, flexWidth: 1f);
             Ui.Text(row, $"{wins} / {target}", TextRole.HeadlineSmall, color, TextAlignmentOptions.Right, 0.8f, bold: true);
         }
     }

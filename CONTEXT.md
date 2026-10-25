@@ -4,9 +4,9 @@
 > base, núcleo, menú y **los 7 juegos portados y jugables** (Wavelength reescrito y arreglado), más el plan de
 > mejoras y 5 juegos nuevos propuestos en `Docs/PLAN_MEJORAS.md` (V059a/V059b). Versión en curso: V060 (fase 11,
 > pulido); lo que el autor elija del plan entra como versiones nuevas.
-> **Pendiente de decisión del autor:** permiso para descargar las fuentes (V014): iconos Material Symbols y una
-> fuente de texto con negrita real. Hasta entonces los iconos son sustitutos de texto ("<", "?", "))").
-> Qué mejoras y cuáles de los 5 juegos nuevos se hacen (V059a/V059b).
+> **Fuentes (V014, con permiso del autor):** Roboto con negrita real y Material Icons, las de la app Flutter: los
+> iconos ya son glifos de verdad.
+> **Pendiente de decisión del autor:** qué mejoras y cuáles de los 5 juegos nuevos se hacen (V059a/V059b).
 > **Hechas las mejoras elegidas del plan (fase 10c):** C2, C3+L1, B1+B2, C4, I1, T1, W2 (estado en `Docs/PLAN_MEJORAS.md`).
 > **Hecho (V059h–V059j):** Impostor (2525) y Tabú (1161) por categorías elegibles en el setup, con Cachondeo +18 desmarcada por defecto.
 > **Hecho (V059m):** categorías propias en el Impostor y el Tabú, palabras y tarjetas propias en la categoría que se elija y gestión de tarjetas del Tabú.
@@ -273,8 +273,17 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 | Open Trivia DB (preguntas base de la trivia) | CC BY-SA 4.0 | Atribución en el setup de la trivia |
 | `gilzoide/unity-sqlite-net` 1.3.3 (SQLite-net 1.9 + SQLite3 Multiple Ciphers) | MIT | Persistencia SQLite. Revisado el 2026-10-25: 299 estrellas, activo (último push 2026-10-14), no archivado |
 | Paquetes de Unity (URP, uGUI/TextMeshPro, Input System, Test Framework, Pipeline) | Unity Companion License | Motor, UI, entrada, tests y puente de la CLI |
+| Roboto 3.005 Regular y Bold (`google/fonts`, `apache/roboto/static` en el commit `ff11ed915971`) | Apache-2.0 (`Fonts/LICENSE-Roboto.txt`) | Fuente de texto (V014, permiso del autor el 2026-10-25). Repo oficial de Google Fonts |
+| Material Icons Regular (`google/material-design-icons`, `font/MaterialIcons-Regular.ttf`) | Apache-2.0 (`Fonts/LICENSE-MaterialIcons.txt`) | Iconos (V014). Repo oficial de Google, 54 000 estrellas |
+| LiberationSans (recursos esenciales de TextMeshPro) | OFL 1.1 | Respaldo de los caracteres que Roboto no tenga |
 
 ## 10. Registro de trabajo (lo más reciente arriba)
+
+### 2026-10-25 · V014 · Fuentes: Roboto con negrita real y Material Icons
+- Con permiso del autor («las de Flutter»): Roboto Regular y Bold y Material Icons, del GitHub oficial de Google (Apache-2.0, ≈ 650 KB, sumas SHA-256 comprobadas), en `Assets/_Gamespot/Fonts` con sus licencias. Roboto estático no está suelto en el repo actual (solo un zip de 29 MB o la variable): se tomó de `google/fonts` en el commit `ff11ed915971` (Roboto 3.005).
+- `Editor/Setup/FontSetup` (menú *Fuentes*, también en *Aplicar todo*; idempotente, conserva los GUID): crea `Resources/Fonts/Roboto SDF`, `Roboto Bold SDF` y `MaterialIcons SDF` (SDFAA, 56 pt, atlas de 1024 y 512 para los iconos, con el shader móvil del halo) con todos los caracteres de los textos y los seeds (204) y los 44 iconos, y los deja **estáticos** para que el Editor no los cambie al jugar; lo que falte lo pinta LiberationSans (respaldo, con su atlas dinámico). Roboto es la fuente por defecto de TMP, con la negrita real en su tabla de pesos. `Icons` busca `Resources/Fonts/MaterialIcons SDF` y expone `AllCodepoints`.
+- Con la negrita real, `Ui.Text` de una línea cortaba con «…» sin encoger (solo encogía cuando no había «…»): ahora encoge siempre hasta el 70 % antes. El nombre del equipo del marcador del Tabú va en dos líneas que encogen.
+- Tests: `GlyphCoverageTests` sigue la cadena Roboto → LiberationSans y comprueba que todos los iconos salen de la fuente de iconos. Barrido de textos limpio (88 pantallas, es/en, 4 tamaños). 252 EditMode + 53 PlayMode. Capturas `V014_*`.
 
 ### 2026-10-25 · V059n · Sonidos más bajos
 - El autor oía los sonidos «exageradamente fuertes» mientras corrían los tests. Medidos: los sintetizados se normalizaban a 0,85 de pico (−1,4 dB) y el pitido del Tabú y el fallo de la trivia llegaban a −6 y −9 dB de RMS; los tres heredados del Flutter (carta, revelar, fin), a −9. Ahora todos a −20 dB de sonoridad y como mucho −6 dB de pico (`SoundLevel`); bajan entre 2 dB (tic-tac, que ya era bajo) y 13 dB (pitido). Se mide sin los graves (paso alto de 200 Hz) para que la explosión, que es casi todo graves, no se quede corta en el altavoz del móvil.
