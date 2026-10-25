@@ -1,6 +1,6 @@
 # TREE
 
-Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 17:02.
+Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 17:17.
 
 No se listan: Library, Temp, Logs, obj, UserSettings, .git, .vs, .idea, .vscode, .utmp, Build, Builds, MemoryCaptures, Recordings, node_modules, __pycache__, .venv, .dart_tool, build, coverage, *.meta, *.csproj, *.sln, *.slnx, *.user, *.pidb, *.unityproj, .DS_Store, Thumbs.db.
 Plegadas: skills, TextMesh Pro, Flutter, Capturas (Flutter = la app original en Legacy/Flutter, solo lectura).
@@ -11,7 +11,7 @@ Sajitarios-Gamespot/
 ├── .claude/
 │   └── settings.json
 ├── Docs/
-│   ├── Capturas/  (29 elementos, plegado)
+│   ├── Capturas/  (31 elementos, plegado)
 │   └── PLAN_MEJORAS.md
 ├── Legacy/
 │   └── Flutter/  (20 elementos, plegado)
@@ -54,6 +54,8 @@ Sajitarios-Gamespot/
 │   │   │   │   │   ├── GameRegistry.cs
 │   │   │   │   │   └── Gamespot.App.asmdef
 │   │   │   │   ├── Core/
+│   │   │   │   │   ├── Content/
+│   │   │   │   │   │   └── WordCategories.cs
 │   │   │   │   │   ├── Json/
 │   │   │   │   │   │   ├── Json.cs
 │   │   │   │   │   │   └── JsonWriter.cs
@@ -105,6 +107,7 @@ Sajitarios-Gamespot/
 │   │   │   │   │   │   ├── NeonTextField.cs
 │   │   │   │   │   │   ├── NeonTextMaterials.cs
 │   │   │   │   │   │   ├── PulseGlow.cs
+│   │   │   │   │   │   ├── ResponsiveChipGrid.cs
 │   │   │   │   │   │   ├── ResponsiveGrid.cs
 │   │   │   │   │   │   ├── SafeArea.cs
 │   │   │   │   │   │   ├── ScreenScaffold.cs
@@ -131,6 +134,7 @@ Sajitarios-Gamespot/
 │   │   │   │   ├── Games/
 │   │   │   │   │   ├── _Shared/
 │   │   │   │   │   │   ├── Presentation/
+│   │   │   │   │   │   │   ├── CategoryPicker.cs
 │   │   │   │   │   │   │   ├── GameUi.cs
 │   │   │   │   │   │   │   ├── NotFoundScreen.cs
 │   │   │   │   │   │   │   ├── PlayerListEditor.cs
@@ -161,6 +165,7 @@ Sajitarios-Gamespot/
 │   │   │   │   │   │   └── Gamespot.Games.EsUn10Pero.asmdef
 │   │   │   │   │   ├── Impostor/
 │   │   │   │   │   │   ├── Data/
+│   │   │   │   │   │   │   ├── CategoryWordSource.cs
 │   │   │   │   │   │   │   ├── GameHistoryRepository.cs
 │   │   │   │   │   │   │   ├── ImpostorSchema.cs
 │   │   │   │   │   │   │   └── WordRepository.cs
@@ -244,7 +249,8 @@ Sajitarios-Gamespot/
 │   │   │       │   │   ├── IcuMessageFormatterTests.cs
 │   │   │       │   │   ├── JsonTests.cs
 │   │   │       │   │   ├── NameNormalizerTests.cs
-│   │   │       │   │   └── RandomTests.cs
+│   │   │       │   │   ├── RandomTests.cs
+│   │   │       │   │   └── WordCategoriesTests.cs
 │   │   │       │   ├── Db/
 │   │   │       │   │   ├── AppDatabaseTests.cs
 │   │   │       │   │   └── TempDatabase.cs
@@ -290,6 +296,7 @@ Sajitarios-Gamespot/
 │   │   │       └── PlayMode/
 │   │   │           ├── Games/
 │   │   │           │   ├── BombaFlowTests.cs
+│   │   │           │   ├── CategoryTests.cs
 │   │   │           │   ├── EsUn10PeroScreenTests.cs
 │   │   │           │   ├── ImpostorFlowTests.cs
 │   │   │           │   ├── PlayAgainTests.cs

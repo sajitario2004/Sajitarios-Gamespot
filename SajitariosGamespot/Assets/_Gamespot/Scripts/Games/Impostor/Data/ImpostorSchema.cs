@@ -6,8 +6,9 @@ using Gamespot.Core.Runtime.Db;
 namespace Gamespot.Games.Impostor.Data
 {
     /// <summary>
-    /// Tablas del Impostor (esquema final del Flutter, v2 + v3): palabras con pista obligatoria y unicidad sin
-    /// mayúsculas, e historial de partidas. Seed: <c>Resources/Seed/impostor_words.json</c> (<c>[{word, hint}]</c>).
+    /// Tablas del Impostor (esquema final del Flutter + categoría): palabras con pista obligatoria, unicidad sin
+    /// mayúsculas y categoría (<see cref="WordCategories"/>), e historial de partidas. Seed:
+    /// <c>Resources/Seed/impostor_words.json</c> (<c>[{word, hint, category}]</c>).
     /// </summary>
     public static class ImpostorSchema
     {
@@ -15,11 +16,14 @@ namespace Gamespot.Games.Impostor.Data
         public const string HistoryTable = "game_history";
         public const string SeedName = "impostor_words";
 
-        /// <summary>Versión de la BD en la que el seed creció con las palabras de fiesta y de España (2060 → 2724).</summary>
-        public const int SeedExpandedVersion = 3;
+        /// <summary>
+        /// Última versión de la BD en la que cambió el seed: 3 (+664 de fiesta y de España) y 4 (categorías y fuera
+        /// las palabras difíciles).
+        /// </summary>
+        public const int SeedRenewedVersion = 4;
 
-        /// <summary>Si una BD de <paramref name="oldVersion"/> tiene que recibir las palabras nuevas del seed.</summary>
-        public static bool NeedsSeedTopUp(int oldVersion) => oldVersion < SeedExpandedVersion;
+        /// <summary>Si una BD de <paramref name="oldVersion"/> tiene que renovar las palabras del seed.</summary>
+        public static bool NeedsSeedRefresh(int oldVersion) => oldVersion < SeedRenewedVersion;
 
         public static void Create(IDb db)
         {
@@ -28,8 +32,12 @@ namespace Gamespot.Games.Impostor.Data
                        "word TEXT NOT NULL UNIQUE COLLATE NOCASE, " +
                        "hint TEXT NOT NULL, " +
                        "is_seed INTEGER NOT NULL DEFAULT 0, " +
-                       "created_at INTEGER NOT NULL)");
+                       "created_at INTEGER NOT NULL, " +
+                       "category TEXT NOT NULL DEFAULT 'propias')");
+            // Las BD de antes de las categorías reciben la columna aquí; sus palabras propias quedan como "propias".
+            AppDatabase.AddColumnIfMissing(db, WordsTable, "category", "TEXT NOT NULL DEFAULT 'propias'");
             db.Execute("CREATE INDEX IF NOT EXISTS idx_impostor_words_word ON impostor_words(word)");
+            db.Execute("CREATE INDEX IF NOT EXISTS idx_impostor_words_category ON impostor_words(category)");
             db.Execute("CREATE TABLE IF NOT EXISTS game_history (" +
                        "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                        "created_at INTEGER NOT NULL, " +
@@ -46,27 +54,36 @@ namespace Gamespot.Games.Impostor.Data
         public static int SeedIfEmpty(IDb db, ISeedSource seeds) => AppDatabase.IsEmpty(db, WordsTable) ? InsertSeed(db, seeds) : 0;
 
         /// <summary>
-        /// Añade las palabras del seed que falten en una BD que ya tenía palabras (al migrar). Las del usuario no se
-        /// tocan: si alguien ya había creado una palabra igual, se queda la suya (UNIQUE NOCASE + OR IGNORE).
+        /// Al migrar: borra las palabras del seed (son de solo lectura: nadie las ha cambiado) y carga el seed
+        /// actual, así salen las quitadas y entran las nuevas con su categoría. Las del usuario no se tocan: si
+        /// alguien había creado una igual a una del seed, se queda la suya (UNIQUE NOCASE + OR IGNORE).
         /// </summary>
-        public static int TopUpSeed(IDb db, ISeedSource seeds) => InsertSeed(db, seeds);
+        public static int RefreshSeed(IDb db, ISeedSource seeds)
+        {
+            db.Execute("DELETE FROM impostor_words WHERE is_seed = 1");
+            return InsertSeed(db, seeds);
+        }
 
         private static int InsertSeed(IDb db, ISeedSource seeds)
         {
             var entries = Parse(seeds.Load(SeedName));
             var now = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
             var inserted = 0;
-            foreach (var (word, hint) in entries)
+            foreach (var (word, hint, category) in entries)
             {
-                inserted += db.Execute("INSERT OR IGNORE INTO impostor_words (word, hint, is_seed, created_at) VALUES (?, ?, 1, ?)", word, hint, now);
+                inserted += db.Execute("INSERT OR IGNORE INTO impostor_words (word, hint, is_seed, created_at, category) VALUES (?, ?, 1, ?, ?)",
+                    word, hint, now, category);
             }
             return inserted;
         }
 
-        /// <summary>Lee y valida el seed: cada entrada con <c>word</c> y <c>hint</c> no vacíos (recortados).</summary>
-        public static List<(string word, string hint)> Parse(string json)
+        /// <summary>
+        /// Lee y valida el seed: cada entrada con <c>word</c> y <c>hint</c> no vacíos (recortados) y, opcional,
+        /// <c>category</c> (si falta, <see cref="WordCategories.General"/>).
+        /// </summary>
+        public static List<(string word, string hint, string category)> Parse(string json)
         {
-            var result = new List<(string, string)>();
+            var result = new List<(string, string, string)>();
             foreach (var item in Json.ParseArray(json))
             {
                 if (!(item is Dictionary<string, object> map)
@@ -78,7 +95,8 @@ namespace Gamespot.Games.Impostor.Data
                 word = word.Trim();
                 hint = hint.Trim();
                 if (word.Length == 0 || hint.Length == 0) throw new FormatException("Palabra o pista vacía en el seed del Impostor");
-                result.Add((word, hint));
+                var category = map.TryGetValue("category", out var c) && c is string text && text.Trim().Length > 0 ? text.Trim() : WordCategories.General;
+                result.Add((word, hint, category));
             }
             return result;
         }

@@ -23,6 +23,8 @@ Archivo vivo. Añade una línea cada vez que el autor exprese un gusto, una corr
 
 - (2026-10-25) Quiere contenido **de España y de fiesta**: políticos, streamers, creadoras y creadores, juegos famosos, tipos de alcohol, personas y sitios famosos y «cosas graciosas de fiesta», tanto en el Impostor como en el Tabú. Pide los bancos grandes y con humor de grupo de amigos.
 
+- (2026-10-25) Prefiere palabras **fáciles y conocidas para jugar en grupo**: fuera los términos raros («feudo») y los famosos que un grupo joven no conoce («Andreu» Buenafuente, Eugenio). Y quiere **elegir categorías** en el Impostor y el Tabú.
+
 ## Diseño
 - (heredado) Estética **neón cyberpunk**: fondo casi negro, cian y magenta con brillo, rejilla de fondo.
 - (heredado) **Nada de emojis**, ni en el código ni en los textos: solo iconos.

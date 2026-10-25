@@ -8,8 +8,8 @@
 > fuente de texto con negrita real. Hasta entonces los iconos son sustitutos de texto ("<", "?", "))").
 > Qué mejoras y cuáles de los 5 juegos nuevos se hacen (V059a/V059b).
 > **Hechas las mejoras elegidas del plan (fase 10c):** C2, C3+L1, B1+B2, C4, I1, T1, W2 (estado en `Docs/PLAN_MEJORAS.md`).
-> **Hecho (V059h):** Impostor (2724) y Tabú (1076) con famosos, sitios, fiesta y cosas de España. **Pendiente del autor:** repasar los nombres reales
-> por si alguno no le gusta para jugar (se quitan del seed y entra en la siguiente versión de la BD).
+> **Hecho (V059h–V059i):** Impostor (2176) y Tabú (1065) con famosos, sitios, fiesta y cosas de España, por categorías elegibles en el setup,
+> y sin las palabras difíciles. **Pendiente del autor:** decir si alguna palabra quitada debería volver o si sobra alguna más.
 > **Pendiente de probar a mano por el autor:** abrir `SajitariosGamespot/` en Unity 6000.3.27f1, Play en la escena
 > `App` y jugar una partida de cada juego (sobre todo Wavelength, que estaba roto, y la mecha de La Bomba).
 > **Escuchar los sonidos nuevos** (sintetizados, nadie los ha oído aún): tic-tac y explosión de La Bomba, pitidos
@@ -88,7 +88,7 @@ SajitariosGamespot/Assets/_Gamespot/
 
 ### 5.2 Base de datos
 - Archivo `sajitarios_gamespot.db` (en Unity, en `Application.persistentDataPath`). Flutter: versión 8, `PRAGMA foreign_keys = ON` (ninguna tabla tiene claves foráneas).
-- **Versiones en Unity** (`AppDatabase.CurrentVersion`): 1 = esquema final del Flutter; **2 = el Tabú renueva su seed** (`TabuSchema.Upgrade` borra las filas `is_seed = 1` y el arranque siembra el banco nuevo; el seed del Tabú se carga si no hay filas de seed, no si la tabla está vacía); **3 = palabras de fiesta y de España**: el Tabú vuelve a renovar su seed y el Impostor añade las que falten (`ImpostorSchema.TopUpSeed`, `INSERT OR IGNORE` sobre `UNIQUE COLLATE NOCASE`: las palabras propias con el mismo nombre se respetan). `ImpostorGame` recuerda en `OnUpgrade` que toca completar y lo hace en `SeedIfEmpty`, porque `OnUpgrade` no recibe los seeds.
+- **Versiones en Unity** (`AppDatabase.CurrentVersion`): 1 = esquema final del Flutter; **2 = el Tabú renueva su seed** (`TabuSchema.Upgrade` borra las filas `is_seed = 1` y el arranque siembra el banco nuevo; el seed del Tabú se carga si no hay filas de seed, no si la tabla está vacía); **3 = palabras de fiesta y de España**: el Tabú vuelve a renovar su seed y el Impostor añade las que falten; **4 = categorías y fuera las difíciles**: columna `category` (Impostor, por defecto `'propias'`) y `categoria` (Tabú), que `OnCreate` añade con `AppDatabase.AddColumnIfMissing` a las tablas antiguas, y los dos renuevan su seed: el Impostor borra sus filas `is_seed = 1` y carga el seed actual (`ImpostorSchema.RefreshSeed`, `INSERT OR IGNORE` sobre `UNIQUE COLLATE NOCASE`: las palabras propias, también las que se llaman igual que una del seed, se respetan). `ImpostorGame` recuerda en `OnUpgrade` que toca renovar y lo hace en `SeedIfEmpty`, porque `OnUpgrade` no recibe los seeds.
 - `onCreate` llama a `OnCreateTables` de cada descriptor en orden de registro; `onUpgrade`, a `OnUpgradeTables` de cada uno, que aplica solo sus pasos.
 - **Seeds:** si `COUNT(*)` de la tabla > 0 no hace nada; si no, lee el JSON, valida (entrada inválida → error), recorta textos, inserta en lote con `is_seed = 1` e ignorando conflictos, y devuelve cuántas filas entraron.
 
@@ -107,10 +107,10 @@ SajitariosGamespot/Assets/_Gamespot/
 ### 5.3 Seeds (`Resources/Seed/`, copiados de `Legacy/Flutter/assets/seed/`)
 | Archivo | Forma | Elementos | Mínimo de los tests |
 |---|---|---|---|
-| `impostor_words.json` | `[{word, hint}]` | **2724** (las 2060 heredadas + 664 de fiesta y de España, V059h) | ≥ 2700, sin duplicados sin distinguir mayúsculas, `word ≠ hint` |
+| `impostor_words.json` | `[{word, hint, category}]` | **2176** (1544 clásicas de las 2060 heredadas + 632 de fiesta y de España, por categorías; V059h–V059i) | ≥ 2100, ≥ 20 por categoría, sin duplicados sin distinguir mayúsculas, `word ≠ hint` |
 | `trivia_questions.json` | `[{tematica, difficulty, enunciado, opciones[4], correcta}]` | 1151 (fácil 471 / difícil 462 / muy difícil 218) | ≥ 1000 |
 | `wavelength_spectra.json` | `[{izquierda, derecha}]` | 80 | ≥ 70 |
-| `tabu_words.json` | `[{palabra, prohibidas[]}]` | **1076** (5 prohibidas cada una; las 120 heredadas corregidas + 487 nuevas en V059e + 469 de fiesta y de España en V059h) | ≥ 1000, 5 prohibidas distintas que no repiten la palabra |
+| `tabu_words.json` | `[{palabra, prohibidas[], categoria}]` | **1065** (5 prohibidas cada una; 601 clásicas y 464 de fiesta y de España por categorías; V059e–V059i) | ≥ 1000, 5 prohibidas distintas que no repiten la palabra |
 | `yo_nunca_statements.json` | `[{frase, intensidad}]` | 192 (suave 98 / picante 94) | ≥ 140, suave ≥ 50, picante ≥ 30 |
 | `bomba_silabas.json` | `["CA", …]` | 93 | ≥ 70 |
 | `bomba_categorias.json` | `["nombres de animales", …]` | 83 | ≥ 70 |
@@ -260,6 +260,11 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 | Paquetes de Unity (URP, uGUI/TextMeshPro, Input System, Test Framework, Pipeline) | Unity Companion License | Motor, UI, entrada, tests y puente de la CLI |
 
 ## 10. Registro de trabajo (lo más reciente arriba)
+
+### 2026-10-25 · V059i · Categorías en el Impostor y el Tabú, y fuera las palabras difíciles
+- **Categorías** (`Gamespot.Core.WordCategories`, compartidas por los dos dominios): Clásicas, Famosos, Política, Internet y redes, Tele y series, Personajes, Juegos, Fiesta, Muy de España, Sitios, y en el Impostor "Mis palabras" (las del usuario, `propias`), que solo sale si hay alguna. Panel `CategoryPicker` (Games/_Shared) en los dos setups: por defecto todas, al menos una, se conserva en el borrador. La partida las respeta a través de `CategoryWordSource` / `CategoryTabuWordSource` (el dominio sigue recibiendo una lista: no sabe de categorías), también en "Jugar otra". `ResponsiveChipGrid` pasa al kit (`Core.Runtime/UI`).
+- **Palabras quitadas** (petición: «andreu, eugenio, feudo»): 516 de las 2060 heredadas del Impostor (náutica, arquitectura y minerales raros, especias e instrumentos antiguos, mitología poco conocida, oficios técnicos, latinoamericanismos, erratas y repetidas) y 32 de las de fiesta (famosos y cosas poco conocidas: Andreu Buenafuente, Eugenio, Martes y Trece, Los Morancos, streamers pequeños, Buzz, Dixit…); 11 tarjetas del Tabú (Candil, Desfiladero, Pedestal, Monzón, Tifón, Anfiteatro, Martes y Trece…). Errata corregida: «hamburgesa». La lista completa está en el diff de este commit (`git show` del seed); cualquier palabra se puede recuperar.
+- BD v4 (ver §5.2), probada en la BD real del Editor (3 → 4: 2176 y 1065, sin «feudo»). Tests: migración a 4 (seed renovado, propias respetadas, tabla antigua sin columna), filtros y conteos, contenido de los seeds, PlayMode de categorías (solo Política, Mis palabras, Tabú solo Sitios y Jugar otra). 230 EditMode + 48 PlayMode; arnés .NET 174. Capturas `V059i_*`.
 
 ### 2026-10-25 · V059h · Palabras de fiesta y de España (Impostor y Tabú)
 - Petición del autor: más palabras del Impostor «a ser posible de España» (políticos, streamers, juegos famosos, creadores y creadoras de contenido, tipos de alcohol, cosas graciosas de fiesta) y también en el Tabú; luego añadió personas y sitios famosos.

@@ -17,8 +17,9 @@ namespace Gamespot.Core.Runtime.Db
         /// esquema o de seed que haya que llevar a instalaciones existentes sube este número:
         /// 2 · el Tabú renueva su seed (607 palabras con tildes, V059e).
         /// 3 · palabras de fiesta y de España: el Impostor añade las nuevas a su seed y el Tabú lo renueva (1076).
+        /// 4 · categorías y fuera las palabras difíciles: el Impostor y el Tabú renuevan su seed (columna de categoría).
         /// </summary>
-        public const int CurrentVersion = 3;
+        public const int CurrentVersion = 4;
 
         /// <summary>Ruta del archivo en el dispositivo.</summary>
         public static string DefaultPath => System.IO.Path.Combine(Application.persistentDataPath, FileName);
@@ -68,5 +69,29 @@ namespace Gamespot.Core.Runtime.Db
 
         /// <summary>Verdadero si la tabla no tiene filas (para los seeds idempotentes).</summary>
         public static bool IsEmpty(IDb db, string table) => db.Scalar<long>($"SELECT COUNT(*) FROM {table}") == 0;
+
+        private sealed class ColumnInfo
+        {
+            public string Name { get; set; }
+        }
+
+        /// <summary>Si <paramref name="table"/> tiene la columna (nombres fijos del código, nunca del usuario).</summary>
+        public static bool HasColumn(IDb db, string table, string column)
+        {
+            foreach (var info in db.Query<ColumnInfo>($"PRAGMA table_info({table})"))
+            {
+                if (string.Equals(info.Name, column, StringComparison.OrdinalIgnoreCase)) return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Añade la columna si falta (para llamar desde <c>OnCreate</c>, que corre en cada arranque: así una tabla
+        /// creada por una versión anterior la recibe antes de los índices y los seeds).
+        /// </summary>
+        public static void AddColumnIfMissing(IDb db, string table, string column, string definition)
+        {
+            if (!HasColumn(db, table, column)) db.Execute($"ALTER TABLE {table} ADD COLUMN {column} {definition}");
+        }
     }
 }

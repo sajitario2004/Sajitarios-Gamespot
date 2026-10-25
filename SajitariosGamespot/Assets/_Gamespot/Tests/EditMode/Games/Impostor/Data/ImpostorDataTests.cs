@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Gamespot.Core;
 using Gamespot.Core.Runtime.Db;
 using Gamespot.Games.Impostor;
 using Gamespot.Games.Impostor.Data;
@@ -35,30 +36,60 @@ namespace Gamespot.Tests.EditMode.Games.Impostor
         public void TearDown() => _temp.Dispose();
 
         [Test]
-        public void MigracionA3_AnadeLasPalabrasNuevasYRespetaLasPropias()
+        public void MigracionA4_RenuevaElSeedConCategoriasYRespetaLasPropias()
         {
             using (var temp = new TempDatabase())
             {
-                var db = temp.Open(new IDbSchema[] { new ImpostorGame() }, SmallSeed, version: 2);
+                var db = temp.Open(new IDbSchema[] { new ImpostorGame() }, SmallSeed, version: 3);
                 db.Execute("INSERT INTO impostor_words (word, hint, is_seed, created_at) VALUES ('Ibai', 'mi pista', 0, 1)");
                 temp.Close();
 
-                var bigger = new DictionarySeedSource(new Dictionary<string, string>
+                var renewed = new DictionarySeedSource(new Dictionary<string, string>
                 {
-                    ["impostor_words"] = "[{\"word\": \"playa\", \"hint\": \"arena\"}, {\"word\": \"Pirata\", \"hint\": \"barco\"}, " +
-                                         "{\"word\": \"Ibai\", \"hint\": \"Kings League\"}, {\"word\": \"Rosalía\", \"hint\": \"Motomami\"}]"
+                    ["impostor_words"] = "[{\"word\": \"Pirata\", \"hint\": \"barco\", \"category\": \"general\"}, " +
+                                         "{\"word\": \"Ibai\", \"hint\": \"Kings League\", \"category\": \"internet\"}, " +
+                                         "{\"word\": \"Rosalía\", \"hint\": \"Motomami\", \"category\": \"famosos\"}]"
                 });
-                db = temp.Open(new IDbSchema[] { new ImpostorGame() }, bigger, version: ImpostorSchema.SeedExpandedVersion);
-                var words = new WordRepository(db, () => 1).GetAll();
-                Assert.IsTrue(words.Any(w => w.Word == "Rosalía" && w.IsSeed), "La palabra nueva entra como predefinida");
+                db = temp.Open(new IDbSchema[] { new ImpostorGame() }, renewed, version: ImpostorSchema.SeedRenewedVersion);
+                var repo = new WordRepository(db, () => 1);
+                var words = repo.GetAll();
+                Assert.IsFalse(words.Any(w => w.Word == "playa"), "La que se quitó del seed se va");
+                Assert.AreEqual("famosos", words.Single(w => w.Word == "Rosalía").Category);
                 var ibai = words.Single(w => w.Word == "Ibai");
                 Assert.IsFalse(ibai.IsSeed, "La que ya había creado el usuario se queda suya");
                 Assert.AreEqual("mi pista", ibai.Hint);
-                Assert.AreEqual(4, words.Count, "playa, Pirata, Ibai (propia) y Rosalía");
+                Assert.AreEqual(WordCategories.Propias, ibai.Category);
+                CollectionAssert.AreEqual(new[] { "Rosalía" }, repo.GetWords(new[] { "famosos" }).Select(w => w.Text));
+                CollectionAssert.AreEquivalent(new[] { "Ibai", "Pirata" }, repo.GetWords(new[] { "general", WordCategories.Propias }).Select(w => w.Text));
+                var counts = repo.CountByCategory();
+                Assert.AreEqual(1, counts["general"]);
+                Assert.AreEqual(1, counts[WordCategories.Propias]);
+                Assert.IsFalse(counts.ContainsKey("internet"), "Ibai del seed no entra: ya existía la propia");
 
                 temp.Close();
-                db = temp.Open(new IDbSchema[] { new ImpostorGame() }, bigger, version: ImpostorSchema.SeedExpandedVersion);
-                Assert.AreEqual(4, new WordRepository(db, () => 1).GetAll().Count, "Sin migración no se vuelve a sembrar");
+                db = temp.Open(new IDbSchema[] { new ImpostorGame() }, renewed, version: ImpostorSchema.SeedRenewedVersion);
+                Assert.AreEqual(3, new WordRepository(db, () => 1).GetAll().Count, "Sin migración no se vuelve a sembrar");
+            }
+        }
+
+        [Test]
+        public void TablaAnteriorSinCategoria_RecibeLaColumnaYLasPropiasQuedanPropias()
+        {
+            using (var temp = new TempDatabase())
+            {
+                var raw = temp.OpenRaw();
+                raw.Execute("CREATE TABLE impostor_words (id INTEGER PRIMARY KEY AUTOINCREMENT, word TEXT NOT NULL UNIQUE COLLATE NOCASE, " +
+                            "hint TEXT NOT NULL, is_seed INTEGER NOT NULL DEFAULT 0, created_at INTEGER NOT NULL)");
+                raw.Execute("INSERT INTO impostor_words (word, hint, is_seed, created_at) VALUES ('feudo', 'castillo', 1, 1), ('Mi casa', 'hogar', 0, 1)");
+                raw.UserVersion = 3;
+                temp.Close();
+
+                var db = temp.Open(new IDbSchema[] { new ImpostorGame() }, SmallSeed);
+                Assert.IsTrue(AppDatabase.HasColumn(db, ImpostorSchema.WordsTable, "category"));
+                var words = new WordRepository(db, () => 1).GetAll();
+                Assert.IsFalse(words.Any(w => w.Word == "feudo"), "El seed viejo se renueva");
+                Assert.AreEqual(WordCategories.Propias, words.Single(w => w.Word == "Mi casa").Category);
+                Assert.AreEqual(WordCategories.General, words.Single(w => w.Word == "Pirata").Category, "Sin categoría en el JSON: general");
             }
         }
 

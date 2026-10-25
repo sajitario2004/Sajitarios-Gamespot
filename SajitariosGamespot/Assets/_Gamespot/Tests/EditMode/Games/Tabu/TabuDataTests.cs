@@ -53,6 +53,46 @@ namespace Gamespot.Tests.EditMode.Games.Tabu
         }
 
         [Test]
+        public void Categorias_FiltranYCuentan()
+        {
+            using (var temp = new TempDatabase())
+            {
+                var db = temp.Open(new IDbSchema[] { new TabuGame() }, new ResourcesSeedSource());
+                var repo = new TabuWordRepository(db);
+                var counts = repo.CountByCategoria();
+                CollectionAssert.IsSubsetOf(counts.Keys, Gamespot.Core.WordCategories.Seed);
+                var sitios = repo.GetByCategorias(new[] { Gamespot.Core.WordCategories.Sitios });
+                Assert.AreEqual(counts[Gamespot.Core.WordCategories.Sitios], sitios.Count);
+                Assert.IsTrue(sitios.Any(w => w.Palabra == "Torre Eiffel"));
+                Assert.IsFalse(sitios.Any(w => w.Palabra == "Pirata"));
+                var source = new CategoryTabuWordSource(repo) { Categorias = new[] { Gamespot.Core.WordCategories.Politica } };
+                Assert.IsTrue(source.GetAll().All(w => w.Palabra != "Pirata"));
+                source.Categorias = null;
+                Assert.AreEqual(repo.GetAll().Count, source.GetAll().Count, "Sin categorías: todas");
+            }
+        }
+
+        [Test]
+        public void TablaAnteriorSinCategoria_RecibeLaColumna()
+        {
+            using (var temp = new TempDatabase())
+            {
+                var raw = temp.OpenRaw();
+                raw.Execute("CREATE TABLE tabu_words (id INTEGER PRIMARY KEY AUTOINCREMENT, palabra TEXT NOT NULL, prohibidas_json TEXT NOT NULL, " +
+                            "is_seed INTEGER NOT NULL DEFAULT 0)");
+                raw.Execute("INSERT INTO tabu_words (palabra, prohibidas_json, is_seed) VALUES ('Candil', '[\"a\",\"b\",\"c\",\"d\"]', 1)");
+                raw.UserVersion = 3;
+                temp.Close();
+
+                var db = temp.Open(new IDbSchema[] { new TabuGame() }, new ResourcesSeedSource());
+                Assert.IsTrue(AppDatabase.HasColumn(db, TabuSchema.Table, "categoria"));
+                var all = new TabuWordRepository(db).GetAll();
+                Assert.IsFalse(all.Any(w => w.Palabra == "Candil"), "La difícil se va con el seed viejo");
+                Assert.That(all.Count, Is.GreaterThanOrEqualTo(1000));
+            }
+        }
+
+        [Test]
         public void Seed_ConTildes()
         {
             var words = TabuSchema.Parse(new ResourcesSeedSource().Load(TabuSchema.SeedName));

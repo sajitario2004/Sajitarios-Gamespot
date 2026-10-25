@@ -22,10 +22,27 @@ namespace Gamespot.Tests.EditMode.Games
         }
 
         [Test]
+        public void Impostor_CategoriasYSinLasDificiles()
+        {
+            var entries = ImpostorSchema.Parse(Seeds.Load(ImpostorSchema.SeedName));
+            CollectionAssert.IsSubsetOf(entries.Select(e => e.category).Distinct(), Gamespot.Core.WordCategories.Seed, "Categorías conocidas");
+            foreach (var category in Gamespot.Core.WordCategories.Seed)
+            {
+                Assert.That(entries.Count(e => e.category == category), Is.GreaterThanOrEqualTo(20), category);
+            }
+            var words = entries.Select(e => e.word).ToList();
+            foreach (var removed in new[] { "feudo", "Eugenio", "Andreu Buenafuente", "obenque", "hamburgesa" })
+            {
+                CollectionAssert.DoesNotContain(words, removed);
+            }
+            CollectionAssert.Contains(words, "hamburguesa");
+        }
+
+        [Test]
         public void Impostor_PalabrasDeFiestaYDeEspana()
         {
             var words = ImpostorSchema.Parse(Seeds.Load(ImpostorSchema.SeedName)).Select(e => e.word).ToList();
-            Assert.That(words.Count, Is.GreaterThanOrEqualTo(2700));
+            Assert.That(words.Count, Is.GreaterThanOrEqualTo(2100));
             foreach (var expected in new[] { "Ibai", "Pedro Sánchez", "Rosalía", "Fortnite", "calimocho", "Torre Eiffel", "Sagrada Familia", "Mercadona" })
             {
                 CollectionAssert.Contains(words, expected);

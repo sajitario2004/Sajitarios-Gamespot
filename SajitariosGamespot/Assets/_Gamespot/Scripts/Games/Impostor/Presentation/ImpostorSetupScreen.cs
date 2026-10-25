@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using System.Linq;
+using Gamespot.Core;
 using Gamespot.Core.Runtime.Localization;
 using Gamespot.Core.Runtime.Navigation;
 using Gamespot.Core.Runtime.Theme;
@@ -14,7 +16,8 @@ namespace Gamespot.Games.Impostor
     /// Configuración de la partida (port de <c>SetupScreen</c>): 3–15 jugadores en orden de revelación, impostores
     /// 1..min(5, n−1), rondas de votación 1..max(1, n−3) y pista. Las rondas empiezan en el máximo y lo siguen al
     /// añadir o quitar jugadores hasta que se tocan; luego solo se recortan (I1; en el Flutter empezaban en 1).
-    /// Al empezar valida con <see cref="GameConfig.Create"/> y reparte roles.
+    /// Categorías (V059i): la palabra sale solo de las marcadas. Al empezar valida con <see cref="GameConfig.Create"/>
+    /// y reparte roles.
     /// </summary>
     public sealed class ImpostorSetupScreen : AppScreen
     {
@@ -22,12 +25,14 @@ namespace Gamespot.Games.Impostor
         private PlayerListEditor _players;
         private NeonStepper _impostores;
         private NeonStepper _rounds;
+        private CategoryPicker _categories;
 
         public ImpostorSetupScreen(ImpostorModule module) => _module = module;
 
         public PlayerListEditor Players => _players;
         public NeonStepper ImpostorsStepper => _impostores;
         public NeonStepper RoundsStepper => _rounds;
+        public CategoryPicker Categories => _categories;
 
         public override void Build(RectTransform root)
         {
@@ -72,9 +77,25 @@ namespace Gamespot.Games.Impostor
                 _module.Draft.HintEnabled = v;
             };
 
+            _categories = CategoryPicker.Create(content, AvailableCategories(), draft.Categories, Palette.NeonCyan);
+
             Ui.Space(content, 8f);
             Ui.Button(content, Loc.T("empezarPartida"), Start, ButtonStyle.Filled, IconId.ArrowForward, glow: 0.8f);
             OnPlayersChanged();
+        }
+
+        /// <summary>Categorías con alguna palabra, en el orden de los chips ("Mis palabras" solo si hay propias).</summary>
+        private IReadOnlyList<string> AvailableCategories()
+        {
+            try
+            {
+                var counts = _module.Words.CountByCategory();
+                return WordCategories.All.Where(id => counts.TryGetValue(id, out var n) && n > 0).ToList();
+            }
+            catch (System.Exception)
+            {
+                return WordCategories.Seed;
+            }
         }
 
         /// <summary>
@@ -114,6 +135,7 @@ namespace Gamespot.Games.Impostor
             }
 
             _players.Remember();
+            _module.WordSource.Categories = _categories.Selected;
             _module.Flow.Iniciar(result.Config);
             switch (_module.Flow.Phase)
             {

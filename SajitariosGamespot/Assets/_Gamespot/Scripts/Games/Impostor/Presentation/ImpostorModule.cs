@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Gamespot.Core;
 using Gamespot.Core.Runtime.Audio;
 using Gamespot.Core.Runtime.Navigation;
 using Gamespot.Games.Impostor.Data;
@@ -16,6 +17,9 @@ namespace Gamespot.Games.Impostor
         /// <summary>Si se han tocado las rondas: hasta entonces siguen al máximo según los jugadores (I1).</summary>
         public bool RoundsTouched { get; set; }
         public bool HintEnabled { get; set; }
+
+        /// <summary>Categorías marcadas (por defecto todas). El setup solo enseña las que tienen palabras.</summary>
+        public HashSet<string> Categories { get; } = new HashSet<string>(WordCategories.All);
     }
 
     /// <summary>
@@ -34,8 +38,10 @@ namespace Gamespot.Games.Impostor
 
         private GameSession _savedSession;
 
-        public ImpostorModule(ImpostorFlowController flow, WordRepository words, GameHistoryRepository history, AudioService audio, Router router)
+        public ImpostorModule(ImpostorFlowController flow, WordRepository words, GameHistoryRepository history, AudioService audio, Router router,
+            CategoryWordSource source)
         {
+            WordSource = source;
             Flow = flow;
             Words = words;
             History = history;
@@ -49,6 +55,9 @@ namespace Gamespot.Games.Impostor
         public AudioService Audio { get; }
         public Router Router { get; }
         public ImpostorSetupDraft Draft { get; } = new ImpostorSetupDraft();
+
+        /// <summary>De dónde saca palabras la partida (con las categorías del setup).</summary>
+        public CategoryWordSource WordSource { get; }
 
         /// <summary>
         /// Guarda la partida terminada en el historial una sola vez (si falla, se podrá reintentar). Las partidas

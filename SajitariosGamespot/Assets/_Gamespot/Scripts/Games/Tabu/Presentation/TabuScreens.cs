@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using System.Linq;
+using Gamespot.Core;
 using Gamespot.Core.Runtime.Audio;
 using Gamespot.Core.Runtime.Localization;
 using Gamespot.Core.Runtime.Navigation;
@@ -19,12 +22,22 @@ namespace Gamespot.Games.Tabu
         public const string ScoreboardRoute = "/tabu/scoreboard";
         public const string GameOverRoute = "/tabu/game-over";
 
-        public TabuModule(TabuFlowController flow, Router router, AudioService audio)
+        public TabuModule(TabuFlowController flow, Router router, AudioService audio, TabuWordRepository words, CategoryTabuWordSource source)
         {
             Flow = flow;
             Router = router;
             Audio = audio;
+            Words = words;
+            WordSource = source;
         }
+
+        public TabuWordRepository Words { get; }
+
+        /// <summary>De dónde saca tarjetas la partida (con las categorías del setup).</summary>
+        public CategoryTabuWordSource WordSource { get; }
+
+        /// <summary>Categorías marcadas en el setup (por defecto todas).</summary>
+        public HashSet<string> DraftCategorias { get; } = new HashSet<string>(WordCategories.Seed);
 
         public TabuFlowController Flow { get; }
         public Router Router { get; }
@@ -64,18 +77,23 @@ namespace Gamespot.Games.Tabu
         }
     }
 
-    /// <summary>Setup: nombres de los dos equipos y duración del turno (30/60/90 s, 60 por defecto). Objetivo fijo: 3.</summary>
+    /// <summary>
+    /// Setup: nombres de los dos equipos, duración del turno (30/60/90 s, 60 por defecto) y categorías de las
+    /// tarjetas (V059i). Objetivo fijo: 3.
+    /// </summary>
     public sealed class TabuSetupScreen : AppScreen
     {
         private readonly TabuModule _module;
         private NeonTextField _teamA;
         private NeonTextField _teamB;
+        private CategoryPicker _categories;
         private readonly System.Collections.Generic.Dictionary<int, NeonChip> _chips = new System.Collections.Generic.Dictionary<int, NeonChip>();
 
         public TabuSetupScreen(TabuModule module) => _module = module;
 
         public NeonTextField TeamA => _teamA;
         public NeonTextField TeamB => _teamB;
+        public CategoryPicker Categories => _categories;
 
         public override void Build(RectTransform root)
         {
@@ -106,7 +124,22 @@ namespace Gamespot.Games.Tabu
                 _chips[s] = chip;
             }
 
+            _categories = CategoryPicker.Create(content, AvailableCategories(), _module.DraftCategorias, Palette.NeonCyan);
+
             Ui.Button(content, Loc.T("tabuEmpezarPartida"), Start, ButtonStyle.Filled, IconId.ArrowForward, glow: 0.8f);
+        }
+
+        private IReadOnlyList<string> AvailableCategories()
+        {
+            try
+            {
+                var counts = _module.Words.CountByCategoria();
+                return WordCategories.Seed.Where(id => counts.TryGetValue(id, out var n) && n > 0).ToList();
+            }
+            catch (System.Exception)
+            {
+                return WordCategories.Seed;
+            }
         }
 
         public void SelectSeconds(int seconds)
@@ -124,6 +157,7 @@ namespace Gamespot.Games.Tabu
                 Snackbar.Show(ErrorText(error.Value), Palette.NeonError);
                 return;
             }
+            _module.WordSource.Categorias = _categories.Selected;
             _module.Flow.Iniciar(config);
             if (_module.Flow.Fase == TabuFase.Turno)
             {

@@ -184,6 +184,10 @@ Cierre técnico de cada versión con código Unity: recompilación sin errores, 
   - Acepta: bancos ampliados sin duplicados; la BD sube a la versión 3 y lleva las palabras nuevas a instalaciones existentes sin tocar las propias; los nombres largos se leen enteros.
   - Notas: Impostor 2060 → 2724 (+664) y Tabú 607 → 1076 (+469): política y realeza, streamers y creadoras/es, música, tele, deporte, famosos del mundo, ficción, videojuegos, juegos de mesa, alcohol, fiesta, ligar y redes, canciones, series, memes, marcas y sitios de España y del mundo. Pistas neutras para personas reales. BD v3: el Tabú renueva el seed y el Impostor completa el suyo sin tocar las propias (`TopUpSeed`). Arreglo de UI para nombres largos (`Ui.Text` de una línea, `FittedText(lines: 2)`, lista de palabras). Tests: migración a 3, contenido de los seeds. 225 EditMode + 45 PlayMode. Capturas `V059h_*`.
 
+- [x] **V059i · Categorías y fuera las palabras difíciles.** Petición: «pon lo de elegir la categoría en los juegos que me dijiste; hay palabras demasiado difíciles, vamos a quitar algunas como andreu, eugenio, feudo».
+  - Acepta: el setup del Impostor y el del Tabú dejan elegir categorías (al menos una; "Mis palabras" en el Impostor si hay propias) y la partida y "Jugar otra" salen solo de ellas; los bancos sin las difíciles; la BD sube a la versión 4 sin perder las palabras propias.
+  - Notas: `WordCategories` (10 + «Mis palabras»), columnas `category`/`categoria` con `AppDatabase.AddColumnIfMissing`, seeds con categoría y renovados en la BD v4 (Impostor `RefreshSeed` conserva las propias). `CategoryPicker` en los setups del Impostor y del Tabú; la partida y «Jugar otra» usan solo las marcadas. Quitadas 548 palabras difíciles del Impostor (516 heredadas + 32 de fiesta) y 11 del Tabú; «hamburgesa» corregida. 230 EditMode + 48 PlayMode; arnés .NET 174. Capturas `V059i_impostor_categorias.png` y `V059i_tabu_categorias.png`.
+
 ## Fase 11 — Pulido y paridad
 - [ ] **V060 · Icono y arranque** (placeholders con la paleta neón, mismos nombres).
 - [ ] **V061 · Barrido responsive** (pantallas pequeñas, notch, textos largos).

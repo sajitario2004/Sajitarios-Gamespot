@@ -332,5 +332,18 @@
   "reducirAnimaciones": "Reduce motion",
   "usarUltimosJugadores": "Use last game's players",
   "tabuPalabrasAgotadas": "All the words have come up: they start again from the beginning.",
-  "cambiarAjustes": "Change settings"
+  "cambiarAjustes": "Change settings",
+  "categoriasTitulo": "Categories",
+  "categoriasAyuda": "Choose which topics the words come from. At least one stays selected.",
+  "categoriaGeneral": "Classics",
+  "categoriaFamosos": "Celebrities",
+  "categoriaPolitica": "Politics",
+  "categoriaInternet": "Internet & social media",
+  "categoriaTele": "TV & series",
+  "categoriaFiccion": "Characters",
+  "categoriaJuegos": "Games",
+  "categoriaFiesta": "Party",
+  "categoriaEspana": "Very Spanish",
+  "categoriaSitios": "Places",
+  "categoriaPropias": "My words"
 }

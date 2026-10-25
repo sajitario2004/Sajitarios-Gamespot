@@ -332,5 +332,18 @@
   "reducirAnimaciones": "Reducir animaciones",
   "usarUltimosJugadores": "Usar los de la última partida",
   "tabuPalabrasAgotadas": "Han salido todas las palabras: vuelven a salir desde el principio.",
-  "cambiarAjustes": "Cambiar ajustes"
+  "cambiarAjustes": "Cambiar ajustes",
+  "categoriasTitulo": "Categorías",
+  "categoriasAyuda": "Elige de qué temas salen las palabras. Siempre queda al menos una.",
+  "categoriaGeneral": "Clásicas",
+  "categoriaFamosos": "Famosos",
+  "categoriaPolitica": "Política",
+  "categoriaInternet": "Internet y redes",
+  "categoriaTele": "Tele y series",
+  "categoriaFiccion": "Personajes",
+  "categoriaJuegos": "Juegos",
+  "categoriaFiesta": "Fiesta",
+  "categoriaEspana": "Muy de España",
+  "categoriaSitios": "Sitios",
+  "categoriaPropias": "Mis palabras"
 }

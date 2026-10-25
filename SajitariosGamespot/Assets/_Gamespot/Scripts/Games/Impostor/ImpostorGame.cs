@@ -7,7 +7,7 @@ using Gamespot.Games.Shared;
 namespace Gamespot.Games.Impostor
 {
     /// <summary>
-    /// Descriptor de "El Impostor": palabras (2724 de seed + las del usuario) e historial en SQLite; setup, pasar
+    /// Descriptor de "El Impostor": palabras (2176 de seed por categorías + las del usuario) e historial en SQLite; setup, pasar
     /// el móvil, revelar, votación, fin, gestión de palabras e historial.
     /// </summary>
     public sealed class ImpostorGame : IGameDescriptor
@@ -25,8 +25,9 @@ namespace Gamespot.Games.Impostor
         {
             var words = new WordRepository(context.Db);
             var history = new GameHistoryRepository(context.Db);
-            var flow = new ImpostorFlowController(words, context.Random);
-            var module = new ImpostorModule(flow, words, history, context.Audio, context.Router);
+            var source = new CategoryWordSource(words);
+            var flow = new ImpostorFlowController(source, context.Random);
+            var module = new ImpostorModule(flow, words, history, context.Audio, context.Router, source);
             Module = module;
 
             var router = context.Router;
@@ -41,17 +42,17 @@ namespace Gamespot.Games.Impostor
 
         // Lo marca OnUpgrade y lo usa SeedIfEmpty en el mismo arranque: AppDatabase.Open llama a los dos sobre este
         // descriptor, y OnUpgrade no recibe los seeds.
-        private bool _topUpSeed;
+        private bool _refreshSeed;
 
         public void OnCreate(IDb db) => ImpostorSchema.Create(db);
 
-        public void OnUpgrade(IDb db, int oldVersion, int newVersion) => _topUpSeed = ImpostorSchema.NeedsSeedTopUp(oldVersion);
+        public void OnUpgrade(IDb db, int oldVersion, int newVersion) => _refreshSeed = ImpostorSchema.NeedsSeedRefresh(oldVersion);
 
         public void SeedIfEmpty(IDb db, ISeedSource seeds)
         {
-            if (_topUpSeed) ImpostorSchema.TopUpSeed(db, seeds);
+            if (_refreshSeed) ImpostorSchema.RefreshSeed(db, seeds);
             else ImpostorSchema.SeedIfEmpty(db, seeds);
-            _topUpSeed = false;
+            _refreshSeed = false;
         }
     }
 }

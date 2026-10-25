@@ -215,24 +215,6 @@ namespace Gamespot.Games.Trivia
         }
     }
 
-    /// <summary>Rejilla de chips que reparte el ancho en N columnas.</summary>
-    public sealed class ResponsiveChipGrid : MonoBehaviour
-    {
-        public int Columns = 2;
-        private GridLayoutGroup _grid;
-        private float _lastWidth = -1f;
-
-        private void Awake() => _grid = GetComponent<GridLayoutGroup>();
-
-        private void LateUpdate()
-        {
-            var width = ((RectTransform)transform).rect.width;
-            if (_grid == null || width <= 0f || Mathf.Approximately(width, _lastWidth)) return;
-            _lastWidth = width;
-            _grid.cellSize = new Vector2((width - _grid.spacing.x * (Columns - 1)) / Columns, 44f);
-        }
-    }
-
     /// <summary>Base de las pantallas con partida en curso: casa y atrás piden confirmación.</summary>
     public abstract class TriviaPlayScreen : AppScreen
     {

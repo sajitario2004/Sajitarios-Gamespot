@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Gamespot.Core;
 using Gamespot.Core.Runtime.Db;
 using Gamespot.Games.Impostor.Domain;
 
@@ -14,6 +15,7 @@ namespace Gamespot.Games.Impostor.Data
         public string Hint { get; set; }
         public bool IsSeed { get; set; }
         public long CreatedAt { get; set; }
+        public string Category { get; set; }
     }
 
     /// <summary>Ya existe una palabra igual (sin distinguir mayúsculas).</summary>
@@ -41,7 +43,7 @@ namespace Gamespot.Games.Impostor.Data
     /// </summary>
     public sealed class WordRepository : IImpostorWordSource
     {
-        private const string Select = "SELECT id AS Id, word AS Word, hint AS Hint, is_seed AS IsSeed, created_at AS CreatedAt FROM impostor_words";
+        private const string Select = "SELECT id AS Id, word AS Word, hint AS Hint, is_seed AS IsSeed, created_at AS CreatedAt, category AS Category FROM impostor_words";
         private const string Order = " ORDER BY word COLLATE NOCASE ASC, id ASC";
 
         private readonly IDb _db;
@@ -97,6 +99,26 @@ namespace Gamespot.Games.Impostor.Data
 
         /// <summary>Todas las palabras (seed y propias) como dominio, para la partida.</summary>
         public IReadOnlyList<Word> GetAllWords() => GetAll().Select(r => new Word(r.Word, r.Hint)).ToList();
+
+        /// <summary>Las palabras de esas categorías (las propias son <see cref="WordCategories.Propias"/>).</summary>
+        public IReadOnlyList<Word> GetWords(IReadOnlyCollection<string> categories)
+        {
+            if (categories == null || categories.Count == 0) return Array.Empty<Word>();
+            var args = categories.Cast<object>().ToArray();
+            var placeholders = string.Join(", ", args.Select(_ => "?"));
+            return _db.Query<ImpostorWord>(Select + $" WHERE category IN ({placeholders})" + Order, args).Select(r => new Word(r.Word, r.Hint)).ToList();
+        }
+
+        /// <summary>Cuántas palabras hay en cada categoría (solo las que tienen alguna).</summary>
+        public Dictionary<string, long> CountByCategory() =>
+            _db.Query<CategoryCount>("SELECT category AS Category, COUNT(*) AS Total FROM impostor_words GROUP BY category")
+                .ToDictionary(c => c.Category, c => c.Total);
+
+        private sealed class CategoryCount
+        {
+            public string Category { get; set; }
+            public long Total { get; set; }
+        }
 
         private bool Exists(string word, long? exceptId) =>
             exceptId.HasValue
