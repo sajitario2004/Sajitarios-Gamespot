@@ -256,6 +256,7 @@ namespace Gamespot.Games.Tabu
         private TMP_Text _word;
         private RectTransform _forbidden;
         private TMP_Text _countdown;
+        private int _countdownShown = -1;
         private TMP_Text _correct;
 
         public TabuTurnScreen(TabuModule module) : base(module)
@@ -278,6 +279,7 @@ namespace Gamespot.Games.Tabu
             Ui.Text(body, Module.Flow.CurrentTeamName, TextRole.TitleLarge, Palette.NeonVioletText, TextAlignmentOptions.Center, 0.8f, Palette.NeonViolet,
                 1, true);
             _countdown = Ui.FittedText(body, string.Empty, 56f, Palette.NeonCyan, 1f);
+            _countdownShown = -1;
 
             var wordPanel = Ui.Panel(body, Palette.NeonCyan, glow: 1f, padding: new RectOffset(16, 16, 20, 20), alignment: TextAnchor.MiddleCenter);
             _word = Ui.FittedText(wordPanel.Content, string.Empty, 40f, Palette.TextPrimary, 1f, minSize: 18f, lines: 2);
@@ -347,7 +349,10 @@ namespace Gamespot.Games.Tabu
 
         private void UpdateCountdown()
         {
+            // Solo cuando cambia el segundo: antes se rehacía el texto (y su nombre) en cada fotograma (V063).
             var seconds = SecondsShown;
+            if (seconds == _countdownShown) return;
+            _countdownShown = seconds;
             _countdown.text = seconds.ToString();
             _countdown.color = seconds > 10 ? Palette.NeonCyan : seconds > 5 ? Palette.NeonYellow : Palette.NeonRed;
             Ui.SetGlow((TextMeshProUGUI)_countdown, _countdown.color, 1f);
@@ -385,7 +390,12 @@ namespace Gamespot.Games.Tabu
         {
             var panel = Ui.Panel(parent, color, glow: 0.7f, padding: new RectOffset(20, 20, 16, 16));
             var row = Ui.Row(panel.Content, 10f);
-            Ui.Text(row, team, TextRole.TitleLarge, Palette.TextPrimary, maxLines: 1, bold: true).Sized(flexWidth: 1f);
+            // Nombres de hasta 30 caracteres: dos líneas que encogen (con la negrita real de Roboto no cabían en una).
+            var name = Ui.Text(row, team, TextRole.TitleLarge, Palette.TextPrimary, maxLines: 2, bold: true);
+            name.enableAutoSizing = true;
+            name.fontSizeMax = name.fontSize;
+            name.fontSizeMin = 14f;
+            name.Sized(width: 0f, flexWidth: 1f);
             Ui.Text(row, $"{wins} / {target}", TextRole.HeadlineSmall, color, TextAlignmentOptions.Right, 0.8f, bold: true);
         }
     }

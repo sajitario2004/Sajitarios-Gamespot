@@ -82,8 +82,11 @@ namespace Gamespot.Core.Runtime.UI
             scrimButton.transition = Selectable.Transition.None;
             if (dismissOnScrim) scrimButton.onClick.AddListener(() => Dismiss(entry));
 
+            // El velo cubre toda la pantalla; el diálogo, solo la zona segura (V061: notch y barra de gestos).
+            var safe = UiLayout.CreateStretched("Safe", root);
+            safe.gameObject.AddComponent<SafeArea>();
             var holder = new GameObject("Holder", typeof(RectTransform));
-            holder.transform.SetParent(root, false);
+            holder.transform.SetParent(safe, false);
             var holderRect = (RectTransform)holder.transform;
             holderRect.anchorMin = new Vector2(0f, 0.5f);
             holderRect.anchorMax = new Vector2(1f, 0.5f);

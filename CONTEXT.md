@@ -1,25 +1,30 @@
 # CONTEXT.md — Sajitarios Gamespot
 
-> **Estado (2026-10-25):** migración de Flutter a Unity en curso, rama `feature/unity-port`. Hechas las fases 0–10:
-> base, núcleo, menú y **los 7 juegos portados y jugables** (Wavelength reescrito y arreglado), más el plan de
-> mejoras y 5 juegos nuevos propuestos en `Docs/PLAN_MEJORAS.md` (V059a/V059b). Versión en curso: V060 (fase 11,
-> pulido); lo que el autor elija del plan entra como versiones nuevas.
-> **Pendiente de decisión del autor:** permiso para descargar las fuentes (V014): iconos Material Symbols y una
-> fuente de texto con negrita real. Hasta entonces los iconos son sustitutos de texto ("<", "?", "))").
-> Qué mejoras y cuáles de los 5 juegos nuevos se hacen (V059a/V059b).
+> **Estado (2026-10-25):** migración de Flutter a Unity, rama `feature/unity-port` (el PR #1 ya se fusionó en `main`).
+> Hechas las fases 0–11 y de la 12, el APK (V065) y el proyecto de Xcode (V067): los 7 juegos portados (Wavelength
+> reescrito y arreglado), mejoras del plan, categorías y tarjetas propias, fuentes, accesibilidad, rendimiento y
+> Ajustes con textos legales. **Queda del autor:** probar en el móvil (V066), validar (V068) y, después, decidir si
+> se borra `Legacy/Flutter/` (V069). Lo que elija de `Docs/PLAN_MEJORAS.md` entra como versiones nuevas.
+> **Fuentes (V014, con permiso del autor):** Roboto con negrita real y Material Icons, las de la app Flutter: los
+> iconos ya son glifos de verdad.
+> **Pendiente de decisión del autor:** qué mejoras y cuáles de los 5 juegos nuevos se hacen (V059a/V059b).
 > **Hechas las mejoras elegidas del plan (fase 10c):** C2, C3+L1, B1+B2, C4, I1, T1, W2 (estado en `Docs/PLAN_MEJORAS.md`).
 > **Hecho (V059h–V059j):** Impostor (2525) y Tabú (1161) por categorías elegibles en el setup, con Cachondeo +18 desmarcada por defecto.
 > **Hecho (V059m):** categorías propias en el Impostor y el Tabú, palabras y tarjetas propias en la categoría que se elija y gestión de tarjetas del Tabú.
 > **Pendiente de probar a mano (V059m):** crear una categoría, meter palabras o tarjetas en ella desde el móvil (con el teclado) y jugar solo con ella.
+> **Textos legales (V059p):** orientativos, ajustados a lo que hace la app; antes de publicar en las tiendas conviene que los revise un profesional y añadir un contacto (correo) del responsable.
 > **Pendiente del autor:** aclarar 7 palabras de Cachondeo (Pereira, Fabiana Sevillano, «dedear panchas», «padalustro», «amigo kebap»,
 > «magic» y «virgen»; ver V059j en §10). Las 221 complicadas quedan fuera (V059k).
 > **Ojo al probar en el móvil (V059l):** la captura de Wavelength roto que mandó el autor era de la **app Flutter antigua**,
 > no de la de Unity. Las dos usan el mismo id (`com.sajitarios.sajitarios_gamespot`): si al instalar el APK el móvil dice
 > que hay un conflicto con otra app, hay que desinstalar la antigua antes (sus palabras propias no pasan a la nueva).
-> **Icono:** el de la app Flutter (V060). **APK de prueba:** `SajitariosGamespot-prueba.apk` en la raíz del repo (V065, en curso): instalarlo en el móvil y jugar.
+> **Icono:** el de la app Flutter (V060). **APK de prueba:** `SajitariosGamespot-prueba.apk` en la raíz del repo (release, sin permiso de internet); el de desarrollo, en `SajitariosGamespot/Builds/Android/`.
+> **Probar en el móvil (V066):** una partida de cada juego; Ajustes (quitar sonido y vibración, textos legales);
+> volumen de los sonidos; categorías y tarjetas propias con el teclado; iconos y textos (que no se corte nada);
+> notch y barra de gestos; que las palabras propias y el historial sigan al cerrar la app.
 > **Pendiente de probar a mano por el autor:** abrir `SajitariosGamespot/` en Unity 6000.3.27f1, Play en la escena
 > `App` y jugar una partida de cada juego (sobre todo Wavelength, que estaba roto, y la mecha de La Bomba).
-> **Sonidos:** el autor los oía demasiado fuertes; desde V059n todos están nivelados más bajos (comprobar en el móvil si ahora suenan bien o hay que tocar alguno).
+> **Sonidos:** el autor los oía demasiado fuertes: nivelados en V059n y a la mitad en V059o (comprobar en el móvil; si alguno sigue alto o bajo, se toca ese).
 > **Escuchar los sonidos nuevos** (sintetizados, nadie los ha oído aún): tic-tac y explosión de La Bomba, pitidos
 > y bocina del Tabú, acierto/fallo de la Trivia, campanas de Wavelength y pasar de Yo Nunca; la vibración solo se
 > nota en el móvil.
@@ -66,6 +71,7 @@ Historia: otra IA construyó la app completa en **Flutter** (v0.1 → v0.75, fas
 | 2026-10-25 | Borrar una categoría propia **no borra sus palabras**: pasan a «Mis palabras» | Claude, revisable |
 | 2026-10-25 | Las palabras y tarjetas propias pueden ir a cualquier categoría: «Mis palabras», una propia o una de serie (también Cachondeo) | Claude, revisable |
 | 2026-10-25 | El editor de tarjetas del Tabú es una **pantalla con scroll**, no un diálogo (seis campos y el teclado del móvil) | Claude, revisable |
+| 2026-10-25 | «Reducir animaciones» sigue al ajuste «Quitar animaciones» de Android mientras no se elija en la app; en iOS, apagado (haría falta un plugin nativo) | Claude, revisable |
 
 ## 4. Arquitectura Unity
 
@@ -96,7 +102,7 @@ SajitariosGamespot/Assets/_Gamespot/
 ### 5.1 Arranque y menú
 - En Flutter todo era perezoso (BD al primer acceso, audio precargado solo en "Es un 10 pero"). En Unity el `Bootstrap` abre la BD, aplica esquema y seeds, precarga audio y carga el idioma antes de mostrar el menú.
 - **Orden del registro:** 1 Es un 10 pero (`es_un_10_pero`, icono "style"), 2 El Impostor (`impostor`, "theater_comedy", `/impostor`), 3 Preguntas por puntos (`trivia`, "quiz", `/trivia`), 4 Wavelength (`wavelength`, "tune", `/wavelength`), 5 Tabú (`tabu`, "do_not_disturb_on", `/tabu`), 6 Yo Nunca (`yo_nunca`, "front_hand", `/yo-nunca`), 7 La Bomba (`bomba`, "local_fire_department", `/bomba`).
-- **Menú:** AppBar con el título de la app en NeonText con PulseGlow (0.8–1.3) y el selector de idioma. Cuerpo: NeonBackground › SafeArea › cabecera `menu_header.png` (alto máx. 140, cover, oculta a lectores) + rejilla. Rejilla de 3 columnas si el ancho > 600, si no 2; ancho máx. 900, padding 16, separación 16. Tarjeta: acento cian (índice par) o magenta (impar), radio 20, borde 1.5 px, icono con glow, título (máx. 2 líneas) y descripción (máx. 3 líneas, color atenuado). En Unity (V059l, petición del autor): descripciones cortas (≤ 47 caracteres), letra de 11 que encoge hasta 9, título en un hueco fijo de dos líneas que encoge hasta 12 e icono de 44. Lector de pantalla: "Jugar a {titulo}. {descripcion}". Catálogo vacío: panel con icono, `menuVacioTitulo` y `menuVacioMensaje`.
+- **Menú:** AppBar con el título de la app en NeonText con PulseGlow (0.8–1.3) y el selector de idioma. Cuerpo: NeonBackground › SafeArea › cabecera `menu_header.png` (alto máx. 140, cover, oculta a lectores) + rejilla. Rejilla de 3 columnas si el ancho > 600, si no 2; ancho máx. 900, padding 16, separación 16. Tarjeta: acento cian (índice par) o magenta (impar), radio 20, borde 1.5 px, icono con glow, título (máx. 2 líneas) y descripción (máx. 3 líneas, color atenuado). En Unity (V059l, petición del autor): descripciones cortas (≤ 47 caracteres), letra de 11 que encoge hasta 9, título en un hueco fijo de dos líneas que encoge hasta 12 e icono de 44. Lector de pantalla: "Jugar a {titulo}. {descripcion}". Catálogo vacío: panel con icono, `menuVacioTitulo` y `menuVacioMensaje`. En Unity (V062, pantalla desde V059p) la barra del menú tiene también **Ajustes** (`/ajustes`): sonido, vibración, reducir animaciones, idioma e información legal (términos y condiciones de uso, privacidad, cookies y licencias).
 
 ### 5.2 Base de datos
 - Archivo `sajitarios_gamespot.db` (en Unity, en `Application.persistentDataPath`). Flutter: versión 8, `PRAGMA foreign_keys = ON` (ninguna tabla tiene claves foráneas).
@@ -152,7 +158,7 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 | `Correct` / `Wrong` | `correct.wav`, `wrong.wav` | Trivia: al elegir respuesta |
 | `Chime` | `chime.wav` (1.1 s) | Wavelength: al confirmar la adivinanza (revelado) |
 | `Swipe` | `swipe.wav` (0.3 s) | Yo Nunca: siguiente frase |
-- **Volumen (V059n):** el autor los oía «exageradamente fuertes». Todos los WAV (los 9 sintetizados y los 3 heredados) se dejan a **−20 dB de sonoridad** con el pico como mucho a **−6 dB** (`Editor/Audio/SoundLevel`: RMS de las ventanas de 10 ms que suenan, después de un paso alto de 200 Hz para no contar los graves que el altavoz del móvil no da). Menú *Gamespot → Audio → Generar y nivelar los sonidos*; nivelar dos veces da lo mismo. Las llamadas siguen bajando algunos un poco más (pitido 0,8, campanas 0,8, pasar 0,6). Los tests de PlayMode no se oyen (`AudioListener.volume = 0` en `AppTestHarness`). `AudioClipsTests` comprueba los niveles.
+- **Volumen (V059n):** el autor los oía «exageradamente fuertes». Todos los WAV (los 9 sintetizados y los 3 heredados) se dejan a **−26 dB de sonoridad** con el pico como mucho a **−12 dB** (V059o: «bájalos a la mitad»; en V059n eran −20 y −6) (`Editor/Audio/SoundLevel`: RMS de las ventanas de 10 ms que suenan, después de un paso alto de 200 Hz para no contar los graves que el altavoz del móvil no da). Menú *Gamespot → Audio → Generar y nivelar los sonidos*; nivelar dos veces da lo mismo. Las llamadas siguen bajando algunos un poco más (pitido 0,8, campanas 0,8, pasar 0,6). Los tests de PlayMode no se oyen (`AudioListener.volume = 0` en `AppTestHarness`). `AudioClipsTests` comprueba los niveles.
 - **Vibración:** `Haptics.Vibrate()` (`Handheld.Vibrate` solo en Android/iOS; Unity añade el permiso `VIBRATE` al usarlo). Preferencia `vibration_enabled` (por defecto sí), independiente del silencio y aún sin interruptor (llegará con C5).
 
 ### 5.6 Idiomas
@@ -260,12 +266,59 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 - Yo Nunca: la frase iba en un panel con scroll cuya máscara recortaba el halo → centrada sin scroll (las frases son cortas).
 - BD y audio perezosos → preparados en el arranque. Botón de silencio también en el menú.
 - **"Jugar otra" (C4, V059f):** en Tabú, Trivia, Wavelength y La Bomba empieza al momento otra partida con la misma configuración (equipos y tiempo; jugadores y temáticas; jugadores y rondas; jugadores y modo). En el Flutter, Trivia y Wavelength volvían al setup y Tabú y La Bomba no tenían el botón. "Cambiar ajustes" vuelve al setup con el borrador. El Impostor sigue como en el Flutter (vuelve al setup).
-- Icono, splash, dorso y cabecera en morado/ámbar → placeholders con la paleta neón.
+- Icono, splash, dorso y cabecera en morado/ámbar → placeholders con la paleta neón; el icono, al final, es el de la app Flutter (V060, lo pidió el autor).
+
+### 8.3 Lista de paridad pantalla a pantalla (V064)
+Las 29 pantallas del Flutter (`Legacy/Flutter/lib/**/*_screen.dart`) y su pantalla de ruta desconocida tienen su
+equivalente en Unity. **Textos:** un script compara las claves de localización que usa cada pantalla del Flutter con
+las que usa el código Unity: están todas, salvo los «Iniciando…» de los cinco setups (en Unity el arranque es
+instantáneo, no hay espera que enseñar) y tres etiquetas solo para el lector de pantalla (dial de Wavelength y roles
+del historial; ver §8.2). «Igual» = mismo contenido, reglas y flujo (especificación en §6); las diferencias son las
+de §8.1 y las mejoras pedidas por el autor (fases 10c–10e).
+
+| Flutter | Unity | Estado | Diferencias | Lo cubre |
+|---|---|---|---|---|
+| `menu_screen` | `MenuScreen` | Igual + mejoras | Silencio y Ajustes en la barra (V062); descripciones cortas (V059l); iconos de verdad (V014) | `BootstrapTests` |
+| `rules_screen` | `RulesScreen` | Igual | — | `BootstrapTests` |
+| `_RouteErrorScreen` | `NotFoundScreen` | Igual | — | `BootstrapTests` |
+| `es_un_10_pero_screen` | `EsUn10PeroScreen` | Igual | Palos dibujados por código | `EsUn10PeroScreenTests` |
+| `impostor/setup_screen` | `ImpostorSetupScreen` | Igual + mejoras | Rondas empiezan en el máximo (I1); últimos jugadores (C2); categorías, también propias (V059i, V059m) | `ImpostorFlowTests`, `CategoryTests`, `OwnCategoriesTests`, `PlayerRosterTests` |
+| `impostor/pass_device_screen` | `PassDeviceScreen` | Igual | — | `ImpostorFlowTests` |
+| `impostor/reveal_screen` | `RevealScreen` | Igual | Palabras largas en dos líneas que encogen | `ImpostorFlowTests` |
+| `impostor/voting_screen` | `VotingScreen` | Igual | Atrás del sistema interceptado (§8.1) | `ImpostorFlowTests` |
+| `impostor/game_over_screen` | `GameOverScreen` | Igual | Atrás interceptado; nunca revela roles (como el Flutter) | `ImpostorFlowTests` |
+| `impostor/words_management_screen` | `WordsScreen` | Igual + mejoras | Categoría en cada fila, filtro y «Mis categorías» (V059m) | `ImpostorFlowTests`, `OwnCategoriesTests` |
+| `impostor/history_screen` | `HistoryScreen` | Igual | — | `ImpostorFlowTests` (guardado), barrido de textos |
+| `trivia/trivia_setup_screen` | `TriviaSetupScreen` | Igual + mejoras | Últimos jugadores (C2); chips de 48 | `TriviaFlowTests` |
+| `trivia/trivia_pass_device_screen` | `TriviaPassScreen` | Igual | — | `TriviaFlowTests` |
+| `trivia/trivia_question_screen` | `TriviaQuestionScreen` | Igual + mejoras | Preguntas sin repetir (T1); sonido de acierto y fallo (C3); respuestas largas que encogen; exponentes con `<sup>` (V059l) | `TriviaFlowTests`, `SoundTests` |
+| `trivia/trivia_game_over_screen` | `TriviaGameOverScreen` | Igual + mejoras | «Jugar otra» al momento (C4) | `PlayAgainTests` |
+| `wavelength/wavelength_setup_screen` | `WavelengthSetupScreen` | Igual | — | `WavelengthFlowTests` |
+| `wavelength/wavelength_clue_screen` | `WavelengthClueScreen` | Arreglada | El dial del Flutter estaba roto (reescrito); conceptos solo en la fila (§8.1) | `WavelengthFlowTests` |
+| `wavelength/wavelength_pass_device_screen` | `WavelengthPassScreen` | Igual | — | `WavelengthFlowTests` |
+| `wavelength/wavelength_guess_screen` | `WavelengthGuessScreen` | Arreglada | Arrastre real; bajo la base va al polo más cercano (§8.1) | `WavelengthFlowTests` |
+| `wavelength/wavelength_reveal_screen` | `WavelengthRevealScreen` | Arreglada | La aguja es la respuesta del grupo (en el Flutter, 0,5); «Ronda X de Y» en la barra; campanas (C3); espectros sin repetir (W2) | `WavelengthFlowTests` |
+| `wavelength/wavelength_game_over_screen` | `WavelengthGameOverScreen` | Igual + mejoras | Media localizada; «Jugar otra» (C4) | `PlayAgainTests` |
+| `tabu/tabu_setup_screen` | `TabuSetupScreen` | Igual + mejoras | Categorías y tarjetas propias (V059i, V059m) | `TabuFlowTests`, `CategoryTests`, `OwnCategoriesTests` |
+| `tabu/tabu_turn_screen` | `TabuTurnScreen` | Igual + mejoras | Tiempo en pausa con el diálogo (§8.1); pitidos y bocina (C3); palabras agotadas avisan y vuelven (V059e) | `TabuFlowTests`, `SoundTests` |
+| `tabu/tabu_scoreboard_screen` | `TabuScoreboardScreen` | Igual | Nombres largos en dos líneas | `TabuFlowTests` |
+| `tabu/tabu_game_over_screen` | `TabuGameOverScreen` | Igual + mejoras | «Jugar otra» y «Cambiar ajustes» (C4) | `PlayAgainTests` |
+| `yo_nunca/yo_nunca_setup_screen` | `YoNuncaSetupScreen` | Igual | Aviso +18 con picante | `YoNuncaFlowTests` |
+| `yo_nunca/yo_nunca_play_screen` | `YoNuncaPlayScreen` | Igual + mejoras | Atrás confirma (§8.1); frase centrada sin scroll; sonido al pasar (C3) | `YoNuncaFlowTests` |
+| `bomba/bomba_setup_screen` | `BombaSetupScreen` | Igual | Nombres normalizados; atrás sin diálogo (§8.1) | `BombaFlowTests` |
+| `bomba/bomba_play_screen` | `BombaPlayScreen` | Igual + mejoras | Mecha en pausa con el diálogo (§8.1); tic-tac, explosión y vibración (C3, L1) | `BombaFlowTests`, `SoundTests` |
+| `bomba/bomba_game_over_screen` | `BombaGameOverScreen` | Igual + mejoras | «Jugar otra» (C4) | `BombaFlowTests`, `PlayAgainTests` |
+
+**Solo en Unity:** `CustomCategoriesScreen` (Mis categorías), `TabuWordsScreen` y `TabuCardEditScreen` (tarjetas propias,
+V059m) y el diálogo de Ajustes (V062). **Comunes a todas:** zona segura y notch (V061), pulsables de 48 y contraste
+(V062), sin textos cortados en 4 tamaños y 2 idiomas (V059l). Lo que queda para la validación del autor es jugarlo en
+el móvil (V066, V068).
 
 ### 8.2 Deuda que se conserva (decide el autor)
 - El objetivo de victorias del Tabú no se puede cambiar.
 - La mecha de La Bomba no se puede configurar (siempre 10–60 s).
 - Contenido de los bancos generado por máquina: conviene una revisión factual.
+- Sin lector de pantalla (TalkBack/VoiceOver): uGUI no expone la jerarquía a la accesibilidad del sistema; haría falta el módulo de accesibilidad de Unity 6 (`AccessibilityHierarchy`) pantalla a pantalla. En el Flutter había `Semantics` (V062).
 
 ## 9. Registro de licencias
 | Componente | Licencia | Uso |
@@ -273,8 +326,52 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 | Open Trivia DB (preguntas base de la trivia) | CC BY-SA 4.0 | Atribución en el setup de la trivia |
 | `gilzoide/unity-sqlite-net` 1.3.3 (SQLite-net 1.9 + SQLite3 Multiple Ciphers) | MIT | Persistencia SQLite. Revisado el 2026-10-25: 299 estrellas, activo (último push 2026-10-14), no archivado |
 | Paquetes de Unity (URP, uGUI/TextMeshPro, Input System, Test Framework, Pipeline) | Unity Companion License | Motor, UI, entrada, tests y puente de la CLI |
+| Roboto 3.005 Regular y Bold (`google/fonts`, `apache/roboto/static` en el commit `ff11ed915971`) | Apache-2.0 (`Fonts/LICENSE-Roboto.txt`) | Fuente de texto (V014, permiso del autor el 2026-10-25). Repo oficial de Google Fonts |
+| Material Icons Regular (`google/material-design-icons`, `font/MaterialIcons-Regular.ttf`) | Apache-2.0 (`Fonts/LICENSE-MaterialIcons.txt`) | Iconos (V014). Repo oficial de Google, 54 000 estrellas |
+| LiberationSans (recursos esenciales de TextMeshPro) | OFL 1.1 | Respaldo de los caracteres que Roboto no tenga |
 
 ## 10. Registro de trabajo (lo más reciente arriba)
+
+### 2026-10-25 · V059p · Pantalla de Ajustes y textos legales
+- El autor pidió un apartado de ajustes para quitar el sonido y la vibración y ver los términos y condiciones de uso, la política de privacidad y la de cookies. `Menu/SettingsScreen` (ruta `/ajustes`, la registra el `Bootstrap`; el engranaje del menú va ahí) con tres paneles: sonido y vibración; pantalla (reducir animaciones e idioma); información legal (términos y condiciones de uso, política de privacidad, política de cookies y licencias), más la versión. Cada documento se abre en `Menu/LegalScreen`, apilado. Sustituye al diálogo `SettingsDialog` de V062 (borrado, y su clave `cerrar`).
+- **Textos** (es/en, en la localización): describen la app tal cual es: gratis, sin conexión, sin cuentas, sin publicidad ni analítica; lo que guarda solo en el móvil y cómo borrarlo; solo usa la vibración; sin cookies (almacenamiento técnico local); contenido +18 marcado; aviso de alcohol para Yo Nunca (no anima a beber, sin obligar, sin conducir, edad legal); propiedad intelectual y referencias a personas y marcas; sin garantías; licencias (Open Trivia DB CC BY-SA 4.0, Roboto y Material Icons Apache 2.0, LiberationSans OFL, SQLite-net MIT). Son orientativos: sin contacto del responsable (falta que el autor lo dé) y sin revisión legal.
+- **Permiso de internet:** el release lo pedía aunque la app no usa la red (lo añade algún paquete; el ajuste estaba en automático y nuestro código no la usa). `Editor/Setup/AndroidPermissions` (`IPostGenerateGradleAndroidProject`) pone `tools:node="remove"` en el manifiesto de `unityLibrary`, que gana al fusionar con las librerías; en los builds de desarrollo no lo toca (el profiler lo necesita). Comprobado con `aapt dump permissions` en el APK final.
+- Tests: `AccessibilityTests` (Ajustes: sonido, vibración, animaciones y atrás; los 4 documentos y vuelta), `AndroidPermissionsTests`. Ajustes en los barridos de textos y pulsables. Capturas `V059p_ajustes.png` y `V059p_privacidad.png`.
+
+### 2026-10-25 · V059o · Sonidos a la mitad
+- El autor los seguía oyendo demasiado altos: «bájalos a la mitad». `SoundLevel.TargetDb` −26 (antes −20) y `PeakCeilingDb` −12 (antes −6): mitad de amplitud en los 12. La explosión bajaba 0,9 dB menos de lo previsto (al bajarla, su cola salía del umbral de «lo que suena» y la medida subía): `Normalize` repite la medida hasta acertar.
+
+### 2026-10-25 · V065 y V067 · APK de desarrollo y proyecto de Xcode
+- APK de desarrollo en `SajitariosGamespot/Builds/Android/SajitariosGamespot-dev.apk` (opciones `Development` y `DetailedBuildReport` del comando `build run`): 49 MB, sin errores ni avisos. El release de prueba sigue en la raíz.
+- Proyecto de Xcode generado desde Windows (`build.target switch` a iOS, `build run --target iOS`, vuelta a Android): `SajitariosGamespot/Builds/iOS/Unity-iPhone.xcodeproj`, 57 s sin errores. Al cambiar de plataforma Unity añade al `ProjectSettings` la entrada de batching de iPhone. Compilar y firmar necesita un Mac.
+
+### 2026-10-25 · V064 · Lista de paridad con el Flutter
+- §8.3: las 29 pantallas del Flutter (y la de ruta desconocida) con su pantalla Unity, estado (igual, igual con mejoras o arreglada), diferencias y el test que la cubre; más las 4 que solo tiene Unity.
+- Comprobación de textos por pantalla (script en el scratchpad: claves `l10n.*` de cada pantalla del Flutter frente a las que usa el código Unity): no falta ninguna; solo sobran los cinco «Iniciando…» (en Unity el arranque es instantáneo) y tres etiquetas de lector de pantalla (deuda en §8.2).
+- `Legacy/Flutter/` se queda hasta que el autor valide la app en el móvil (decisión del autor, 2026-10-25).
+
+### 2026-10-25 · V063 · Rendimiento en reposo
+- **Medición:** los contadores del Profiler en Play dentro del Editor (`GC.Alloc`, `UGUI.Rendering.UpdateBatches`) daban miles de asignaciones por fotograma incluso con la UI apagada: son del propio Editor y no sirven. En su lugar, `PerformanceTests` comprueba con `AllocatingGCMemoryConstraint` que el trabajo de un fotograma (el `Tick` de la pantalla y los brillos) no asigna memoria en el menú, los siete setups, la lista de palabras, el turno del Tabú y la mecha de La Bomba.
+- **Arreglos:** el turno del Tabú rehacía el texto del contador y su nombre accesible en cada fotograma (60 cadenas por segundo): ahora solo al cambiar el segundo. `PulseGlow` aplica el brillo por escalones de 0,02 (cada cambio rehace los lotes del Canvas: ≈ 15 por segundo en vez de 60, sin diferencia visible) y expone `Advance` para los tests. `AppSettings.ReduceMotion` se guarda en memoria (antes, una llamada a `PlayerPrefs` por brillo y fotograma); `ClearReduceMotion` vuelve a seguir al sistema.
+- **Bloom ligero:** a un cuarto de resolución y 5 pasadas (antes, a la mitad y 6), sin filtrado de alta calidad. Menú *Gamespot → Configuración → Bloom*. Igual a la vista (`V063_menu_bloom_ligero.png`).
+- **Reposo:** `IdleRendering` (en el `Bootstrap`): tras 3 s sin tocar la pantalla se dibuja un fotograma de cada dos (30 fps) con `OnDemandRendering`; al tocar o al cambiar de pantalla, todos. La lógica sigue a 60 (temporizadores, mecha y sonidos no cambian). Sin `Update` vacíos: todos los que hay salen enseguida si no tienen nada que hacer.
+
+### 2026-10-25 · V062 · Accesibilidad básica
+- **Objetivos táctiles:** barrido de todos los `Selectable` activos en las 88 pantallas: solo los chips bajaban de 48 (44 en las rejillas, 40 en las filas de tiempo, modo e intensidad). `NeonChip` y `ResponsiveChipGrid` usan `NeonButton.MinTouchSize` (48); las filas del selector de categorías, 56. `AccessibilityTests` lo comprueba en el menú, los siete setups y la lista de palabras.
+- **Contraste:** `ContrastTests` calcula el contraste WCAG de la paleta: texto (principal, atenuado y acentos) ≥ 4,5:1 sobre fondo y superficies; etiquetas de botón (18 en negrita) ≥ 3:1, rellenas y de borde. Ya cumplía: el violeta saturado solo se usa de halo y de borde.
+- **Reducir animaciones:** `AppSettings.ReduceMotion` existía (lo respetan `PulseGlow` y `FadeScaleIn`, igual que en el Flutter) pero no había dónde activarlo. Diálogo `Menu/SettingsDialog` (icono `Settings`, engranaje) con sonido, vibración (`vibration_enabled`, el interruptor que faltaba de C5) y reducir animaciones. Sin elegir, `SystemReduceMotion` lee `animator_duration_scale` de Android (0 = «Quitar animaciones»).
+- 254 EditMode + 56 PlayMode; barridos de textos y pulsables limpios. Captura `V062_ajustes.png`.
+
+### 2026-10-25 · V061 · Notch y zona segura
+- La capa de pantallas respetaba `Screen.safeArea`; los diálogos y los avisos (capa de superposiciones), no, aunque el comentario de `UiRoot` lo decía: en un móvil con barra de gestos el aviso de abajo podía quedar debajo de ella. Ahora el velo del diálogo cubre toda la pantalla y su panel va en un hijo con `SafeArea`; cada aviso va en su contenedor `SnackbarArea` con `SafeArea` (y se destruye con él).
+- `SafeArea.Simulated` (se reinicia al entrar en Play): zona segura de mentira para probar un notch en el Editor. `SafeAreaTests` simula un notch del 6 % arriba y una barra del 3 % abajo y comprueba pantallas, diálogo, velo y aviso. Con el notch simulado, barrido de textos limpio. 54 PlayMode. Captura `V061_notch_simulado.png`.
+- El APK va a pantalla completa (`androidStartInFullscreen`) y se dibuja también bajo el notch (`androidRenderOutsideSafeArea`): el fondo neón llena la pantalla y el contenido queda dentro de la zona segura.
+
+### 2026-10-25 · V014 · Fuentes: Roboto con negrita real y Material Icons
+- Con permiso del autor («las de Flutter»): Roboto Regular y Bold y Material Icons, del GitHub oficial de Google (Apache-2.0, ≈ 650 KB, sumas SHA-256 comprobadas), en `Assets/_Gamespot/Fonts` con sus licencias. Roboto estático no está suelto en el repo actual (solo un zip de 29 MB o la variable): se tomó de `google/fonts` en el commit `ff11ed915971` (Roboto 3.005).
+- `Editor/Setup/FontSetup` (menú *Fuentes*, también en *Aplicar todo*; idempotente, conserva los GUID): crea `Resources/Fonts/Roboto SDF`, `Roboto Bold SDF` y `MaterialIcons SDF` (SDFAA, 56 pt, atlas de 1024 y 512 para los iconos, con el shader móvil del halo) con todos los caracteres de los textos y los seeds (204) y los 44 iconos, y los deja **estáticos** para que el Editor no los cambie al jugar; lo que falte lo pinta LiberationSans (respaldo, con su atlas dinámico). Roboto es la fuente por defecto de TMP, con la negrita real en su tabla de pesos. `Icons` busca `Resources/Fonts/MaterialIcons SDF` y expone `AllCodepoints`.
+- Con la negrita real, `Ui.Text` de una línea cortaba con «…» sin encoger (solo encogía cuando no había «…»): ahora encoge siempre hasta el 70 % antes. El nombre del equipo del marcador del Tabú va en dos líneas que encogen.
+- Tests: `GlyphCoverageTests` sigue la cadena Roboto → LiberationSans y comprueba que todos los iconos salen de la fuente de iconos. Barrido de textos limpio (88 pantallas, es/en, 4 tamaños). 252 EditMode + 53 PlayMode. Capturas `V014_*`.
 
 ### 2026-10-25 · V059n · Sonidos más bajos
 - El autor oía los sonidos «exageradamente fuertes» mientras corrían los tests. Medidos: los sintetizados se normalizaban a 0,85 de pico (−1,4 dB) y el pitido del Tabú y el fallo de la trivia llegaban a −6 y −9 dB de RMS; los tres heredados del Flutter (carta, revelar, fin), a −9. Ahora todos a −20 dB de sonoridad y como mucho −6 dB de pico (`SoundLevel`); bajan entre 2 dB (tic-tac, que ya era bajo) y 13 dB (pitido). Se mide sin los graves (paso alto de 200 Hz) para que la explosión, que es casi todo graves, no se quede corta en el altavoz del móvil.

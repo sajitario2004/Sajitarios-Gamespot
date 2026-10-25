@@ -72,7 +72,8 @@ namespace Gamespot.Core.Runtime.UI
                 chip.Selected = !chip.Selected;
                 chip.Changed?.Invoke(chip.Selected);
             });
-            chip.MinHeight(40f);
+            // 48 de alto: el mínimo táctil (V062; antes 40).
+            chip.MinHeight(NeonButton.MinTouchSize);
             chip.Selected = selected;
             return chip;
         }

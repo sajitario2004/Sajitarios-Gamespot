@@ -1,6 +1,6 @@
 # TREE
 
-Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 20:30.
+Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 21:50.
 
 No se listan: Library, Temp, Logs, obj, UserSettings, .git, .vs, .idea, .vscode, .utmp, Build, Builds, MemoryCaptures, Recordings, node_modules, __pycache__, .venv, .dart_tool, build, coverage, *.meta, *.csproj, *.sln, *.slnx, *.user, *.pidb, *.unityproj, .DS_Store, Thumbs.db, *.apk, *.aab.
 Plegadas: skills, TextMesh Pro, Flutter, Capturas (Flutter = la app original en Legacy/Flutter, solo lectura).
@@ -11,7 +11,7 @@ Sajitarios-Gamespot/
 ├── .claude/
 │   └── settings.json
 ├── Docs/
-│   ├── Capturas/  (46 elementos, plegado)
+│   ├── Capturas/  (56 elementos, plegado)
 │   └── PLAN_MEJORAS.md
 ├── Legacy/
 │   └── Flutter/  (20 elementos, plegado)
@@ -23,6 +23,12 @@ Sajitarios-Gamespot/
 │   │   │   │       ├── app_icon.png
 │   │   │   │       ├── app_icon_background.png
 │   │   │   │       └── app_icon_foreground.png
+│   │   │   ├── Fonts/
+│   │   │   │   ├── LICENSE-MaterialIcons.txt
+│   │   │   │   ├── LICENSE-Roboto.txt
+│   │   │   │   ├── MaterialIcons-Regular.ttf
+│   │   │   │   ├── Roboto-Bold.ttf
+│   │   │   │   └── Roboto-Regular.ttf
 │   │   │   ├── Resources/
 │   │   │   │   ├── Audio/
 │   │   │   │   │   ├── beep.wav
@@ -37,6 +43,10 @@ Sajitarios-Gamespot/
 │   │   │   │   │   ├── tick.wav
 │   │   │   │   │   ├── tock.wav
 │   │   │   │   │   └── wrong.wav
+│   │   │   │   ├── Fonts/
+│   │   │   │   │   ├── MaterialIcons SDF.asset
+│   │   │   │   │   ├── Roboto Bold SDF.asset
+│   │   │   │   │   └── Roboto SDF.asset
 │   │   │   │   ├── Images/
 │   │   │   │   │   ├── card_back.png
 │   │   │   │   │   └── menu_header.png
@@ -102,6 +112,7 @@ Sajitarios-Gamespot/
 │   │   │   │   │   │   ├── IconId.cs
 │   │   │   │   │   │   ├── Icons.cs
 │   │   │   │   │   │   ├── IconView.cs
+│   │   │   │   │   │   ├── IdleRendering.cs
 │   │   │   │   │   │   ├── NeonBackground.cs
 │   │   │   │   │   │   ├── NeonButton.cs
 │   │   │   │   │   │   ├── NeonChip.cs
@@ -134,7 +145,9 @@ Sajitarios-Gamespot/
 │   │   │   │   │   ├── Localization/
 │   │   │   │   │   │   └── ArbImporter.cs
 │   │   │   │   │   ├── Setup/
+│   │   │   │   │   │   ├── AndroidPermissions.cs
 │   │   │   │   │   │   ├── AppSceneBuilder.cs
+│   │   │   │   │   │   ├── FontSetup.cs
 │   │   │   │   │   │   └── ProjectSetup.cs
 │   │   │   │   │   └── Gamespot.Editor.asmdef
 │   │   │   │   ├── Games/
@@ -253,7 +266,9 @@ Sajitarios-Gamespot/
 │   │   │   │   │       └── YoNuncaGame.cs
 │   │   │   │   └── Menu/
 │   │   │   │       ├── Gamespot.Menu.asmdef
-│   │   │   │       └── MenuScreen.cs
+│   │   │   │       ├── LegalScreen.cs
+│   │   │   │       ├── MenuScreen.cs
+│   │   │   │       └── SettingsScreen.cs
 │   │   │   ├── Settings/
 │   │   │   │   └── GamespotVolume.asset
 │   │   │   └── Tests/
@@ -312,6 +327,8 @@ Sajitarios-Gamespot/
 │   │   │       │   ├── Localization/
 │   │   │       │   │   ├── GlyphCoverageTests.cs
 │   │   │       │   │   └── LocTests.cs
+│   │   │       │   ├── Theme/
+│   │   │       │   │   └── ContrastTests.cs
 │   │   │       │   ├── ArchitectureTests.cs
 │   │   │       │   └── Gamespot.Tests.EditMode.asmdef
 │   │   │       └── PlayMode/
@@ -328,9 +345,12 @@ Sajitarios-Gamespot/
 │   │   │           │   ├── TriviaFlowTests.cs
 │   │   │           │   ├── WavelengthFlowTests.cs
 │   │   │           │   └── YoNuncaFlowTests.cs
+│   │   │           ├── AccessibilityTests.cs
 │   │   │           ├── AppTestHarness.cs
 │   │   │           ├── BootstrapTests.cs
-│   │   │           └── Gamespot.Tests.PlayMode.asmdef
+│   │   │           ├── Gamespot.Tests.PlayMode.asmdef
+│   │   │           ├── PerformanceTests.cs
+│   │   │           └── SafeAreaTests.cs
 │   │   ├── Scenes/
 │   │   │   └── SampleScene.unity
 │   │   ├── Settings/

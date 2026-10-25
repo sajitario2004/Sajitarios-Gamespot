@@ -5,13 +5,13 @@ using UnityEngine;
 namespace Gamespot.Core.Runtime.UI
 {
     /// <summary>
-    /// Glifos de <see cref="IconId"/>. Si existe <c>Resources/Fonts/MaterialSymbols SDF</c> se usan los
-    /// puntos de código de Material Symbols; si no, un sustituto ASCII legible (provisional, V014).
+    /// Glifos de <see cref="IconId"/>. Con <c>Resources/Fonts/MaterialIcons SDF</c> (V014, la fuente de iconos de la
+    /// app Flutter) se usan sus puntos de código; si faltara, un sustituto ASCII legible.
     /// Los palos de la carta usan U+2660–U+2666 de la fuente de texto (glifos, no emojis).
     /// </summary>
     public static class Icons
     {
-        public const string IconFontResource = "Fonts/MaterialSymbols SDF";
+        public const string IconFontResource = "Fonts/MaterialIcons SDF";
 
         private static TMP_FontAsset _iconFont;
         private static bool _searched;
@@ -61,7 +61,8 @@ namespace Gamespot.Core.Runtime.UI
             [IconId.CheckCircle] = 0xE86C,
             [IconId.Cancel] = 0xE5C9,
             [IconId.Category] = 0xE574,
-            [IconId.FilterList] = 0xE152
+            [IconId.FilterList] = 0xE152,
+            [IconId.Settings] = 0xE8B8
         };
 
         private static readonly Dictionary<IconId, string> Fallbacks = new Dictionary<IconId, string>
@@ -109,8 +110,12 @@ namespace Gamespot.Core.Runtime.UI
             [IconId.CheckCircle] = "v",
             [IconId.Cancel] = "x",
             [IconId.Category] = "#",
-            [IconId.FilterList] = "="
+            [IconId.FilterList] = "=",
+            [IconId.Settings] = "*"
         };
+
+        /// <summary>Todos los puntos de código que usa la app (para crear el atlas de la fuente de iconos).</summary>
+        public static IEnumerable<int> AllCodepoints => Codepoints.Values;
 
         /// <summary>Fuente de iconos, o nula si aún no está en el proyecto.</summary>
         public static TMP_FontAsset IconFont

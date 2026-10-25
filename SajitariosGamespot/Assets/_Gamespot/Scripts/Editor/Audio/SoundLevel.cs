@@ -6,16 +6,17 @@ using UnityEngine;
 namespace Gamespot.Editor.Audio
 {
     /// <summary>
-    /// Nivel de los efectos de sonido (V059n: el autor los oía «exageradamente fuertes»). Todos se dejan a la misma
-    /// sonoridad, <see cref="TargetDb"/>, con el pico como mucho a <see cref="PeakCeilingDb"/>. La sonoridad es el RMS
+    /// Nivel de los efectos de sonido (V059n: el autor los oía «exageradamente fuertes»; V059o: «siguen demasiado
+    /// altos, bájalos a la mitad», −6 dB más). Todos se dejan a la misma sonoridad, <see cref="TargetDb"/>, con el pico
+    /// como mucho a <see cref="PeakCeilingDb"/>. La sonoridad es el RMS
     /// de la parte que suena (ventanas de 10 ms por encima de −60 dB) después de quitar los graves que el altavoz de
     /// un móvil no reproduce (paso alto de 200 Hz): así la explosión, que es casi todo graves, no se queda corta.
     /// WAV de 16 bit mono, como los de <c>Resources/Audio</c>.
     /// </summary>
     public static class SoundLevel
     {
-        public const float TargetDb = -20f;
-        public const float PeakCeilingDb = -6f;
+        public const float TargetDb = -26f;
+        public const float PeakCeilingDb = -12f;
         public const float HighPassHz = 200f;
         public const int SampleRate = 44100;
 
@@ -48,11 +49,17 @@ namespace Gamespot.Editor.Audio
         /// <summary>Escala a <see cref="TargetDb"/> sin pasar de <see cref="PeakCeilingDb"/> de pico.</summary>
         public static float[] Normalize(float[] samples)
         {
-            var loudness = LoudnessDb(samples);
-            if (loudness <= -120f) return samples;
-            var gainDb = Mathf.Min(TargetDb - loudness, PeakCeilingDb - PeakDb(samples));
-            var gain = Mathf.Pow(10f, gainDb / 20f);
-            for (var i = 0; i < samples.Length; i++) samples[i] *= gain;
+            // Unas pocas vueltas: al bajar el volumen, la cola de algunos sonidos cae por debajo del umbral de "lo
+            // que suena" y la medida cambia (la explosión se quedaba 0,9 dB por encima).
+            for (var pass = 0; pass < 4; pass++)
+            {
+                var loudness = LoudnessDb(samples);
+                if (loudness <= -120f) return samples;
+                var gainDb = Mathf.Min(TargetDb - loudness, PeakCeilingDb - PeakDb(samples));
+                if (Mathf.Abs(gainDb) < 0.05f) break;
+                var gain = Mathf.Pow(10f, gainDb / 20f);
+                for (var i = 0; i < samples.Length; i++) samples[i] *= gain;
+            }
             return samples;
         }
 

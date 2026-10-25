@@ -29,6 +29,7 @@ namespace Gamespot.Editor.Setup
         public static void ApplyAll()
         {
             ImportTmpEssentials();
+            FontSetup.Apply();
             ApplyPlayerSettings();
             ApplyIcons();
             Debug.Log("[Gamespot] Configuración del proyecto aplicada.");
