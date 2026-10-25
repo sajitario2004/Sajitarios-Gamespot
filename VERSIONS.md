@@ -192,6 +192,10 @@ Cierre técnico de cada versión con código Unity: recompilación sin errores, 
   - Acepta: Cachondeo desmarcada por defecto y con aviso +18 al marcarla; las fáciles quitadas en V059i vuelven (con la ortografía corregida); BD v5.
   - Notas: Categoría Cachondeo (+18, desmarcada por defecto, aviso fijo en el `CategoryPicker`): 82 palabras en el Impostor y 89 tarjetas en el Tabú de la lista del autor; las que ya existían siguen en su categoría. No se metieron 6 (menores de edad, Epstein, gitano, rumano, homosexual, macaco) y quedan 7 por aclarar. Vuelven 268 de las quitadas en V059i (ortografía corregida); fuera las que pidió el autor; 221 complicadas pendientes de decisión. BD v5. 230 EditMode + 49 PlayMode; arnés .NET 174. Captura `V059j_cachondeo_aviso.png`.
 
+- [x] **V059k · Las 221 complicadas, fuera.** Decisión del autor: «quita las 221 complicadas: que se queden fuera del juego».
+  - Acepta: ninguna está en el seed (ya estaban fuera desde V059j) y el test de los seeds lo comprueba con una muestra de cada grupo.
+  - Notas: Las 221 complicadas quedan fuera por decisión del autor. No cambia la BD (ya estaban fuera del seed desde V059j); `SeedFilesTests` comprueba una muestra de cada grupo. 230 EditMode en verde.
+
 ## Fase 11 — Pulido y paridad
 - [ ] **V060 · Icono y arranque** (placeholders con la paleta neón, mismos nombres).
 - [ ] **V061 · Barrido responsive** (pantallas pequeñas, notch, textos largos).

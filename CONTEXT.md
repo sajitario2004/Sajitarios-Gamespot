@@ -9,7 +9,8 @@
 > Qué mejoras y cuáles de los 5 juegos nuevos se hacen (V059a/V059b).
 > **Hechas las mejoras elegidas del plan (fase 10c):** C2, C3+L1, B1+B2, C4, I1, T1, W2 (estado en `Docs/PLAN_MEJORAS.md`).
 > **Hecho (V059h–V059j):** Impostor (2525) y Tabú (1161) por categorías elegibles en el setup, con Cachondeo +18 desmarcada por defecto.
-> **Pendiente del autor:** cuáles de las 221 complicadas se quitan (las demás vuelven) y aclarar 7 palabras de Cachondeo (V059j en `CONTEXT.md` §10).
+> **Pendiente del autor:** aclarar 7 palabras de Cachondeo (Pereira, Fabiana Sevillano, «dedear panchas», «padalustro», «amigo kebap»,
+> «magic» y «virgen»; ver V059j en §10). Las 221 complicadas quedan fuera (V059k).
 > **Pendiente de probar a mano por el autor:** abrir `SajitariosGamespot/` en Unity 6000.3.27f1, Play en la escena
 > `App` y jugar una partida de cada juego (sobre todo Wavelength, que estaba roto, y la mecha de La Bomba).
 > **Escuchar los sonidos nuevos** (sintetizados, nadie los ha oído aún): tic-tac y explosión de La Bomba, pitidos
@@ -261,10 +262,13 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 
 ## 10. Registro de trabajo (lo más reciente arriba)
 
+### 2026-10-25 · V059k · Las 221 complicadas, fuera
+- El autor decidió que las 221 palabras complicadas que seguían pendientes se quedan fuera. Ya no estaban en el seed, así que no cambia la BD (sigue en la versión 5); `SeedFilesTests` comprueba una muestra de cada grupo (actuario, úvula, talabartero, obenque, tuya, okapi, fenogreco, pizzicato, cromorno, yokai, feldespato, firmware, trébede, turbera, acuaplano, sustrato). La lista completa está en el registro de V059j y en el diff del seed de V059i.
+
 ### 2026-10-25 · V059j · Cachondeo (+18), vuelven las fáciles y fuera las que dice el autor
 - **Cachondeo** (`WordCategories.Cachondeo`, `IsAdult`): lista del autor (política y polémica, streamers, porno y sexo explícito, humor bruto, dibujos de la infancia…), 82 palabras en el Impostor y 89 tarjetas en el Tabú. Las que ya existían se quedan en su categoría (Trump, Sánchez, Abascal, Ibai, Messi, Peppa Pig…); Marta Díaz vuelve dentro de Cachondeo. Va **desmarcada por defecto** (`WordCategories.Default`) y el `CategoryPicker` enseña un aviso +18 fijo mientras está marcada (elegido por Claude, como el modo picante de Yo Nunca; revisable).
 - **No se metieron** (decisión de Claude, se le explica al autor): «menores de edad» y Jeffrey Epstein (con sexo en la misma categoría sería humor sobre abuso de menores), y «gitano», «rumano», «homosexual» y «macaco» (grupos de personas como chiste; «macaco» es el insulto racista contra Vinícius). **Pendientes de que el autor aclare:** Pereira, Fabiana Sevillano, «dedear panchas», «padalustro», «amigo kebap», «magic» y «virgen».
-- **Vuelven 268 de las quitadas en V059i** (las que no eran complicadas, con ortografía corregida: tímpano, torreón, rosetón, gibón, laúd, punzón, carril bici, tienda de campaña…, y 19 de las de fiesta). **Fuera del todo:** las que dijo el autor, más feudo, Andreu Buenafuente y Eugenio, y las repetidas o con errata. **Pendientes de decisión:** 221 complicadas (siguen fuera hasta que diga cuáles quitar; las demás volverán).
+- **Vuelven 268 de las quitadas en V059i** (las que no eran complicadas, con ortografía corregida: tímpano, torreón, rosetón, gibón, laúd, punzón, carril bici, tienda de campaña…, y 19 de las de fiesta). **Fuera del todo:** las que dijo el autor, más feudo, Andreu Buenafuente y Eugenio, y las repetidas o con errata. **Pendientes de decisión:** 221 complicadas (el autor decidió en V059k que se quedan fuera).
 - BD v5 (ver §5.2), probada en la BD real del Editor (4 → 5: 2525 y 1161). 230 EditMode + 49 PlayMode; arnés .NET 174. Captura `V059j_cachondeo_aviso.png`.
 
 ### 2026-10-25 · V059i · Categorías en el Impostor y el Tabú, y fuera las palabras difíciles

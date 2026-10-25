@@ -32,8 +32,11 @@ namespace Gamespot.Tests.EditMode.Games
                 Assert.That(entries.Count(e => e.category == category), Is.GreaterThanOrEqualTo(20), category);
             }
             var words = entries.Select(e => e.word).ToList();
+            // Quitadas por el autor (V059i–V059k): las difíciles que nombró y las 221 complicadas (aquí, una muestra de cada grupo).
             foreach (var removed in new[] { "feudo", "Eugenio", "Andreu Buenafuente", "hamburgesa", "amnistía", "charada", "indulto", "katxi",
-                         "candil", "Laura Escanes", "Buzz", "Dixit", "Spain is different", "menores de edad" })
+                         "candil", "Laura Escanes", "Buzz", "Dixit", "Spain is different", "menores de edad",
+                         "actuario", "úvula", "talabartero", "obenque", "tuya", "okapi", "fenogreco", "pizzicato", "cromorno", "yokai",
+                         "feldespato", "firmware", "trebede", "turbera", "acuaplano", "sustrato" })
             {
                 CollectionAssert.DoesNotContain(words, removed);
             }
