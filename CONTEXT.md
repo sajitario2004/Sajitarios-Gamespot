@@ -120,7 +120,19 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 | `CardFlip` | `card_flip.wav` (0.12 s) | Es un 10 pero: al revelarse la carta (fin de la cuenta atrás) |
 | `Reveal` | `reveal.wav` (0.30 s) | Impostor: al pulsar "Revelar" |
 | `GameOver` | `game_over.wav` (0.50 s) | Impostor: al abrir el fin de partida (si hay sesión) |
-- Ningún otro juego tiene sonido. Mute guardado en la preferencia `audio_enabled` (por defecto activado); errores silenciados. Botón: icono volumen on/off con tooltip `silenciarSonido` / `activarSonido`. Los WAV son placeholders sintetizados (16 bit, mono, 44.1 kHz).
+- En el Flutter ningún otro juego tenía sonido. Mute guardado en la preferencia `audio_enabled` (por defecto activado); errores silenciados. Botón: icono volumen on/off con tooltip `silenciarSonido` / `activarSonido`. Los WAV son placeholders sintetizados (16 bit, mono, 44.1 kHz).
+- **Sonidos nuevos en Unity (V059d, C3 + L1)**, sintetizados por código con el menú *Gamespot → Audio → Generar sonidos sintetizados* (`Editor/Audio/SoundSynth.cs`, semilla fija; se pueden sustituir por sonidos finales con el mismo nombre):
+
+| Sonido | Archivo | Cuándo |
+|---|---|---|
+| `Tick` / `Tock` | `tick.wav`, `tock.wav` (0.05 s) | La Bomba: alternos mientras corre la mecha, cada 0,9 s al principio y cada 0,18 s al final (lineal con lo consumido) |
+| `Explosion` | `explosion.wav` (1.4 s) | La Bomba: al explotar, con **vibración** |
+| `Beep` | `beep.wav` (0.15 s) | Tabú: en cada uno de los últimos 5 segundos |
+| `Buzzer` | `buzzer.wav` (0.8 s) | Tabú: se acaba el turno |
+| `Correct` / `Wrong` | `correct.wav`, `wrong.wav` | Trivia: al elegir respuesta |
+| `Chime` | `chime.wav` (1.1 s) | Wavelength: al confirmar la adivinanza (revelado) |
+| `Swipe` | `swipe.wav` (0.3 s) | Yo Nunca: siguiente frase |
+- **Vibración:** `Haptics.Vibrate()` (`Handheld.Vibrate` solo en Android/iOS; Unity añade el permiso `VIBRATE` al usarlo). Preferencia `vibration_enabled` (por defecto sí), independiente del silencio y aún sin interruptor (llegará con C5).
 
 ### 5.6 Idiomas
 - Preferencia `app_locale` con el código de idioma; sin valor = idioma del sistema; si no es es/en, español. Diálogo con "Idioma del sistema", "Español", "Inglés" y Cancelar.
@@ -244,6 +256,7 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 ## 10. Registro de trabajo (lo más reciente arriba)
 
 ### 2026-10-25 · Fase 10c · Mejoras elegidas por el autor (C2, C3+L1, B1+B2, C4, I1/T1/W2)
+- **V059d · C3 + L1:** 9 sonidos sintetizados en el Editor (sin descargas), tic-tac de La Bomba que acelera, explosión con vibración, pitidos y bocina del Tabú, acierto/fallo de la Trivia, campanas del revelado de Wavelength y pasar página en Yo Nunca. Los módulos de esos juegos reciben el `AudioService`. No he podido escucharlos: se comprobó duración, pico y nivel de cada WAV; falta oírlos en el móvil.
 - **V059c · C2:** jugadores guardados entre juegos (`AppSettings.LastPlayers` + `PlayerListEditor`). El arnés de PlayMode guarda y restaura la preferencia para que un test no rellene el siguiente.
 
 ### 2026-10-25 · V059a–V059b · Plan de mejoras y 5 juegos nuevos

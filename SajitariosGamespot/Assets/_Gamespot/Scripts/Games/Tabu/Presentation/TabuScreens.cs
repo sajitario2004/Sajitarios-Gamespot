@@ -1,3 +1,4 @@
+using Gamespot.Core.Runtime.Audio;
 using Gamespot.Core.Runtime.Localization;
 using Gamespot.Core.Runtime.Navigation;
 using Gamespot.Core.Runtime.Theme;
@@ -18,14 +19,16 @@ namespace Gamespot.Games.Tabu
         public const string ScoreboardRoute = "/tabu/scoreboard";
         public const string GameOverRoute = "/tabu/game-over";
 
-        public TabuModule(TabuFlowController flow, Router router)
+        public TabuModule(TabuFlowController flow, Router router, AudioService audio)
         {
             Flow = flow;
             Router = router;
+            Audio = audio;
         }
 
         public TabuFlowController Flow { get; }
         public Router Router { get; }
+        public AudioService Audio { get; }
         public string DraftTeamA { get; set; } = string.Empty;
         public string DraftTeamB { get; set; } = string.Empty;
         public int DraftSeconds { get; set; } = TabuConfig.DefaultTurnSeconds;
@@ -158,9 +161,13 @@ namespace Gamespot.Games.Tabu
     /// Turno (port de <c>TabuTurnScreen</c>): palabra en mayúsculas, prohibidas, equipo en violeta, cuenta atrás
     /// (cian &gt; 10, amarillo 6–10, rojo ≤ 5) y Acierto / Saltar / Falta. El temporizador vive aquí y se PAUSA
     /// mientras hay un diálogo abierto (en el Flutter seguía corriendo detrás del diálogo de salir).
+    /// Sonido (V059d): un pitido en cada uno de los últimos 5 segundos y bocina al acabarse.
     /// </summary>
     public sealed class TabuTurnScreen : TabuPlayScreen
     {
+        /// <summary>Desde qué segundo suena el pitido de aviso.</summary>
+        public const int BeepSeconds = 5;
+
         private float _remaining;
         private TMP_Text _word;
         private RectTransform _forbidden;
@@ -220,14 +227,18 @@ namespace Gamespot.Games.Tabu
         public override void Tick(float deltaTime)
         {
             if (Module.Flow.Fase != TabuFase.Turno || Module.Flow.Session == null || Dialogs.IsOpen) return;
+            var before = SecondsShown;
             _remaining -= deltaTime;
             if (_remaining <= 0f)
             {
                 _remaining = 0f;
+                Module.Audio?.Play(AppSound.Buzzer);
                 Module.Flow.TerminarTurno();
                 Router.Go(Module.Flow.Fase == TabuFase.GameOver ? TabuModule.GameOverRoute : TabuModule.ScoreboardRoute);
                 return;
             }
+            var now = SecondsShown;
+            if (now < before && now <= BeepSeconds) Module.Audio?.Play(AppSound.Beep, 0.8f);
             UpdateCountdown();
         }
 

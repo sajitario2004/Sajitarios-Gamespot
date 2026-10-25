@@ -5,7 +5,10 @@ using UnityEngine;
 
 namespace Gamespot.Core.Runtime.Audio
 {
-    /// <summary>Efectos de sonido de la app (los mismos WAV que el Flutter).</summary>
+    /// <summary>
+    /// Efectos de sonido de la app: los tres primeros son los WAV del Flutter; el resto, sustitutos sintetizados
+    /// por <c>Gamespot.Editor.Audio.SoundSynth</c> (V059d).
+    /// </summary>
     public enum AppSound
     {
         /// <summary>Es un 10 pero: al revelarse la carta.</summary>
@@ -13,7 +16,25 @@ namespace Gamespot.Core.Runtime.Audio
         /// <summary>Impostor: al pulsar "Revelar".</summary>
         Reveal,
         /// <summary>Impostor: al abrir el fin de partida.</summary>
-        GameOver
+        GameOver,
+        /// <summary>La Bomba: tic del reloj (alterna con <see cref="Tock"/>).</summary>
+        Tick,
+        /// <summary>La Bomba: tac del reloj.</summary>
+        Tock,
+        /// <summary>La Bomba: explosión.</summary>
+        Explosion,
+        /// <summary>Tabú: cada uno de los últimos 5 segundos.</summary>
+        Beep,
+        /// <summary>Tabú: se acaba el turno.</summary>
+        Buzzer,
+        /// <summary>Trivia: respuesta correcta.</summary>
+        Correct,
+        /// <summary>Trivia: respuesta incorrecta.</summary>
+        Wrong,
+        /// <summary>Wavelength: revelado del objetivo.</summary>
+        Chime,
+        /// <summary>Yo Nunca: siguiente frase.</summary>
+        Swipe
     }
 
     /// <summary>
@@ -29,10 +50,20 @@ namespace Gamespot.Core.Runtime.Audio
         {
             [AppSound.CardFlip] = "card_flip",
             [AppSound.Reveal] = "reveal",
-            [AppSound.GameOver] = "game_over"
+            [AppSound.GameOver] = "game_over",
+            [AppSound.Tick] = "tick",
+            [AppSound.Tock] = "tock",
+            [AppSound.Explosion] = "explosion",
+            [AppSound.Beep] = "beep",
+            [AppSound.Buzzer] = "buzzer",
+            [AppSound.Correct] = "correct",
+            [AppSound.Wrong] = "wrong",
+            [AppSound.Chime] = "chime",
+            [AppSound.Swipe] = "swipe"
         };
 
         private readonly Dictionary<AppSound, AudioClip> _clips = new Dictionary<AppSound, AudioClip>();
+        private readonly Dictionary<AppSound, int> _counts = new Dictionary<AppSound, int>();
         private AudioSource _source;
 
         /// <summary>Se lanza al activar o silenciar el sonido.</summary>
@@ -42,6 +73,12 @@ namespace Gamespot.Core.Runtime.Audio
         public int PlayCount { get; private set; }
 
         public AppSound? LastPlayed { get; private set; }
+
+        /// <summary>Nombre del archivo en <c>Resources/Audio</c> (sin extensión).</summary>
+        public static string FileOf(AppSound sound) => Files[sound];
+
+        /// <summary>Cuántas veces ha sonado <paramref name="sound"/> (para los tests).</summary>
+        public int CountOf(AppSound sound) => _counts.TryGetValue(sound, out var n) ? n : 0;
 
         public bool Enabled
         {
@@ -62,7 +99,7 @@ namespace Gamespot.Core.Runtime.Audio
             return service;
         }
 
-        /// <summary>Carga los tres clips (se llama en el arranque).</summary>
+        /// <summary>Carga todos los clips (se llama en el arranque).</summary>
         public void Preload()
         {
             foreach (var pair in Files)
@@ -103,6 +140,7 @@ namespace Gamespot.Core.Runtime.Audio
                 }
                 PlayCount++;
                 LastPlayed = sound;
+                _counts[sound] = CountOf(sound) + 1;
                 _source.PlayOneShot(clip, Mathf.Clamp01(volume));
             }
             catch (Exception e)

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Gamespot.Core.Runtime.Audio;
 using Gamespot.Core.Runtime.Localization;
 using Gamespot.Core.Runtime.Navigation;
 using Gamespot.Core.Runtime.Theme;
@@ -21,12 +22,15 @@ namespace Gamespot.Games.Wavelength
         public const string RevealRoute = "/wavelength/reveal";
         public const string GameOverRoute = "/wavelength/game-over";
 
-        public WavelengthModule(WavelengthFlowController flow, SpectrumRepository spectra, Router router)
+        public WavelengthModule(WavelengthFlowController flow, SpectrumRepository spectra, Router router, AudioService audio)
         {
             Flow = flow;
             Spectra = spectra;
             Router = router;
+            Audio = audio;
         }
+
+        public AudioService Audio { get; }
 
         public WavelengthFlowController Flow { get; }
         public SpectrumRepository Spectra { get; }
@@ -301,6 +305,7 @@ namespace Gamespot.Games.Wavelength
         public void Confirm()
         {
             Module.Flow.SubmitGuess(Dial.Needle);
+            Module.Audio?.Play(AppSound.Chime, 0.8f);
             Router.Go(WavelengthModule.RevealRoute);
         }
     }

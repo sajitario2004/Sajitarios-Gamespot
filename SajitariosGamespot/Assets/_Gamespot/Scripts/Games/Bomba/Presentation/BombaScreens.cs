@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Gamespot.Core.Runtime.Audio;
 using Gamespot.Core.Runtime.Localization;
 using Gamespot.Core.Runtime.Navigation;
 using Gamespot.Core.Runtime.Theme;
@@ -17,14 +18,16 @@ namespace Gamespot.Games.Bomba
         public const string PlayRoute = "/bomba/play";
         public const string GameOverRoute = "/bomba/game-over";
 
-        public BombaModule(BombaFlowController flow, Router router)
+        public BombaModule(BombaFlowController flow, Router router, AudioService audio)
         {
             Flow = flow;
             Router = router;
+            Audio = audio;
         }
 
         public BombaFlowController Flow { get; }
         public Router Router { get; }
+        public AudioService Audio { get; }
         public BombaMode DraftMode { get; set; } = BombaMode.Silaba;
         public List<string> DraftNames { get; } = new List<string>();
 
@@ -143,14 +146,19 @@ namespace Gamespot.Games.Bomba
     /// late y "PASAR". La mecha es oculta (sin cuenta atrás) y se cuenta aquí, frame a frame; al acabarse sale
     /// "¡BOOM!" con el eliminado durante 1,5 s y sigue sola. Las dos esperas se PAUSAN mientras hay un diálogo
     /// abierto (en el Flutter la bomba podía explotar detrás del diálogo de salir).
+    /// Sonido (V059d, L1): tic-tac que acelera según se consume la mecha, y explosión con vibración.
     /// </summary>
     public sealed class BombaPlayScreen : AppScreen
     {
         public const float ExplosionSeconds = 1.5f;
+        public const float SlowestTick = 0.9f;
+        public const float FastestTick = 0.18f;
 
         private readonly BombaModule _module;
         private float _elapsed;
         private float _explosionLeft;
+        private float _nextTick;
+        private bool _tock;
         private ScreenScaffold _scaffold;
         private RectTransform _overlay;
         private TMP_Text _holder;
@@ -166,6 +174,9 @@ namespace Gamespot.Games.Bomba
         public string HolderText => _holder != null ? _holder.text : null;
         public string PromptText => _prompt != null ? _prompt.text : null;
         public string EliminatedText => _eliminated != null ? _eliminated.text : null;
+
+        /// <summary>Segundos entre tic y tac según lo consumido de la mecha (0..1): de 0,9 s a 0,18 s.</summary>
+        public static float TickInterval(float progress) => Mathf.Lerp(SlowestTick, FastestTick, Mathf.Clamp01(progress));
 
         public override void Build(RectTransform root)
         {
@@ -229,7 +240,18 @@ namespace Gamespot.Games.Bomba
             if (flow.Fase == BombaFase.Jugando && flow.Session != null)
             {
                 _elapsed += deltaTime;
-                if (_elapsed >= flow.FuseSeconds) Explode();
+                if (_elapsed >= flow.FuseSeconds)
+                {
+                    Explode();
+                    return;
+                }
+                _nextTick -= deltaTime;
+                if (_nextTick <= 0f)
+                {
+                    _module.Audio?.Play(_tock ? AppSound.Tock : AppSound.Tick, 0.7f);
+                    _tock = !_tock;
+                    _nextTick = TickInterval(_elapsed / (float)flow.FuseSeconds);
+                }
             }
             else if (flow.Fase == BombaFase.Explotando && _overlay != null)
             {
@@ -250,6 +272,8 @@ namespace Gamespot.Games.Bomba
             _module.Flow.Explotar();
             if (_module.Flow.Fase != BombaFase.Explotando) return;
             _explosionLeft = ExplosionSeconds;
+            _module.Audio?.Play(AppSound.Explosion);
+            Haptics.Vibrate();
             ShowExplosion();
         }
 
@@ -272,6 +296,7 @@ namespace Gamespot.Games.Bomba
                 return;
             }
             _elapsed = 0f;
+            _nextTick = 0f;
             _overlay.gameObject.SetActive(false);
             _scaffold.Root.gameObject.SetActive(true);
             Refresh();

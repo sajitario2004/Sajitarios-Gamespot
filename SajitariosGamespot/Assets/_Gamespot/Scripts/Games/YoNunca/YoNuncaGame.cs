@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Gamespot.Core;
+using Gamespot.Core.Runtime.Audio;
 using Gamespot.Core.Runtime.Db;
 using Gamespot.Core.Runtime.Localization;
 using Gamespot.Core.Runtime.Navigation;
@@ -84,14 +85,16 @@ namespace Gamespot.Games.YoNunca
         public const string SetupRoute = "/yo-nunca";
         public const string PlayRoute = "/yo-nunca/play";
 
-        public YoNuncaModule(YoNuncaFlowController flow, Router router)
+        public YoNuncaModule(YoNuncaFlowController flow, Router router, AudioService audio)
         {
             Flow = flow;
             Router = router;
+            Audio = audio;
         }
 
         public YoNuncaFlowController Flow { get; }
         public Router Router { get; }
+        public AudioService Audio { get; }
         public HashSet<Intensidad> Draft { get; } = new HashSet<Intensidad> { Intensidad.Suave };
 
         public void ResetToMenu()
@@ -211,6 +214,7 @@ namespace Gamespot.Games.YoNunca
         public void Next()
         {
             _module.Flow.Siguiente();
+            _module.Audio?.Play(AppSound.Swipe, 0.6f);
             Refresh();
             FadeScaleIn.Play(_panel.gameObject, 0.25f, 0.96f);
         }
@@ -243,7 +247,7 @@ namespace Gamespot.Games.YoNunca
 
         public void Register(GameContext context)
         {
-            var module = new YoNuncaModule(new YoNuncaFlowController(new NeverStatementRepository(context.Db), context.Random), context.Router);
+            var module = new YoNuncaModule(new YoNuncaFlowController(new NeverStatementRepository(context.Db), context.Random), context.Router, context.Audio);
             Module = module;
             context.Router.Register(YoNuncaModule.SetupRoute, () => new YoNuncaSetupScreen(module));
             context.Router.Register(YoNuncaModule.PlayRoute, () => new YoNuncaPlayScreen(module));

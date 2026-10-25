@@ -12,6 +12,7 @@ namespace Gamespot.Core.Runtime.Settings
         public const string AudioEnabledKey = "audio_enabled";
         public const string ReduceMotionKey = "reduce_motion";
         public const string LastPlayersKey = "last_players";
+        public const string VibrationEnabledKey = "vibration_enabled";
 
         /// <summary>Se lanza al cambiar "reducir animaciones".</summary>
         public static event Action ReduceMotionChanged;
@@ -23,6 +24,17 @@ namespace Gamespot.Core.Runtime.Settings
             set
             {
                 PlayerPrefs.SetInt(AudioEnabledKey, value ? 1 : 0);
+                PlayerPrefs.Save();
+            }
+        }
+
+        /// <summary>Vibración activada (por defecto sí). Aún sin interruptor: llegará con la pantalla de ajustes (C5).</summary>
+        public static bool VibrationEnabled
+        {
+            get => PlayerPrefs.GetInt(VibrationEnabledKey, 1) == 1;
+            set
+            {
+                PlayerPrefs.SetInt(VibrationEnabledKey, value ? 1 : 0);
                 PlayerPrefs.Save();
             }
         }

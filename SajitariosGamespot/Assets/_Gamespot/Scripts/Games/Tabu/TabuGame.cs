@@ -19,7 +19,7 @@ namespace Gamespot.Games.Tabu
 
         public void Register(GameContext context)
         {
-            var module = new TabuModule(new TabuFlowController(new TabuWordRepository(context.Db), context.Random), context.Router);
+            var module = new TabuModule(new TabuFlowController(new TabuWordRepository(context.Db), context.Random), context.Router, context.Audio);
             Module = module;
             context.Router.Register(TabuModule.SetupRoute, () => new TabuSetupScreen(module));
             context.Router.Register(TabuModule.TurnRoute, () => new TabuTurnScreen(module));

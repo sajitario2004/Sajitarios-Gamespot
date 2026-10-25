@@ -21,7 +21,7 @@ namespace Gamespot.Games.Trivia
         {
             var questions = new QuestionRepository(context.Db);
             var winners = new WinnerRepository(context.Db);
-            var module = new TriviaModule(new TriviaFlowController(questions, winners, context.Random), questions, winners, context.Router);
+            var module = new TriviaModule(new TriviaFlowController(questions, winners, context.Random), questions, winners, context.Router, context.Audio);
             Module = module;
             context.Router.Register(TriviaModule.SetupRoute, () => new TriviaSetupScreen(module));
             context.Router.Register(TriviaModule.PassRoute, () => new TriviaPassScreen(module));

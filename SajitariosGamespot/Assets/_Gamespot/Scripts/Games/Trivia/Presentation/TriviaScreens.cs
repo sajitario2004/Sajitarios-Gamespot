@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Gamespot.Core.Runtime.Audio;
 using Gamespot.Core.Runtime.Localization;
 using Gamespot.Core.Runtime.Navigation;
 using Gamespot.Core.Runtime.Theme;
@@ -21,13 +22,16 @@ namespace Gamespot.Games.Trivia
         public const string QuestionRoute = "/trivia/question";
         public const string GameOverRoute = "/trivia/game-over";
 
-        public TriviaModule(TriviaFlowController flow, QuestionRepository questions, WinnerRepository winners, Router router)
+        public TriviaModule(TriviaFlowController flow, QuestionRepository questions, WinnerRepository winners, Router router, AudioService audio)
         {
             Flow = flow;
             Questions = questions;
             Winners = winners;
             Router = router;
+            Audio = audio;
         }
+
+        public AudioService Audio { get; }
 
         public TriviaFlowController Flow { get; }
         public QuestionRepository Questions { get; }
@@ -359,6 +363,7 @@ namespace Gamespot.Games.Trivia
             if (Locked || question == null) return;
             _chosen = index;
             _wait = FeedbackSeconds;
+            Module.Audio?.Play(question.IsCorrect(index) ? AppSound.Correct : AppSound.Wrong, 0.8f);
             for (var i = 0; i < _cells.Count; i++)
             {
                 var frame = Palette.AnswerFrameColors[i];

@@ -19,7 +19,7 @@ namespace Gamespot.Games.Bomba
 
         public void Register(GameContext context)
         {
-            var module = new BombaModule(new BombaFlowController(new BombaPromptRepository(context.Db), context.Random), context.Router);
+            var module = new BombaModule(new BombaFlowController(new BombaPromptRepository(context.Db), context.Random), context.Router, context.Audio);
             Module = module;
             context.Router.Register(BombaModule.SetupRoute, () => new BombaSetupScreen(module));
             context.Router.Register(BombaModule.PlayRoute, () => new BombaPlayScreen(module));

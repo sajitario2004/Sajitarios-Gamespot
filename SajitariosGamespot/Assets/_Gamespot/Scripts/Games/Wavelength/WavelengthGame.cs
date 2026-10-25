@@ -20,7 +20,7 @@ namespace Gamespot.Games.Wavelength
         public void Register(GameContext context)
         {
             var spectra = new SpectrumRepository(context.Db);
-            var module = new WavelengthModule(new WavelengthFlowController(spectra, context.Random), spectra, context.Router);
+            var module = new WavelengthModule(new WavelengthFlowController(spectra, context.Random), spectra, context.Router, context.Audio);
             Module = module;
             var router = context.Router;
             router.Register(WavelengthModule.SetupRoute, () => new WavelengthSetupScreen(module));

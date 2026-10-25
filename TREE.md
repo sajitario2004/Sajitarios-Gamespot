@@ -1,6 +1,6 @@
 # TREE
 
-Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 15:58.
+Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 16:05.
 
 No se listan: Library, Temp, Logs, obj, UserSettings, .git, .vs, .idea, .vscode, .utmp, Build, Builds, MemoryCaptures, Recordings, node_modules, __pycache__, .venv, .dart_tool, build, coverage, *.meta, *.csproj, *.sln, *.slnx, *.user, *.pidb, *.unityproj, .DS_Store, Thumbs.db.
 Plegadas: skills, TextMesh Pro, Flutter, Capturas (Flutter = la app original en Legacy/Flutter, solo lectura).
@@ -20,9 +20,18 @@ Sajitarios-Gamespot/
 │   │   ├── _Gamespot/
 │   │   │   ├── Resources/
 │   │   │   │   ├── Audio/
+│   │   │   │   │   ├── beep.wav
+│   │   │   │   │   ├── buzzer.wav
 │   │   │   │   │   ├── card_flip.wav
+│   │   │   │   │   ├── chime.wav
+│   │   │   │   │   ├── correct.wav
+│   │   │   │   │   ├── explosion.wav
 │   │   │   │   │   ├── game_over.wav
-│   │   │   │   │   └── reveal.wav
+│   │   │   │   │   ├── reveal.wav
+│   │   │   │   │   ├── swipe.wav
+│   │   │   │   │   ├── tick.wav
+│   │   │   │   │   ├── tock.wav
+│   │   │   │   │   └── wrong.wav
 │   │   │   │   ├── Images/
 │   │   │   │   │   ├── card_back.png
 │   │   │   │   │   └── menu_header.png
@@ -60,6 +69,7 @@ Sajitarios-Gamespot/
 │   │   │   │   ├── Core.Runtime/
 │   │   │   │   │   ├── Audio/
 │   │   │   │   │   │   ├── AudioService.cs
+│   │   │   │   │   │   ├── Haptics.cs
 │   │   │   │   │   │   └── MuteButton.cs
 │   │   │   │   │   ├── Db/
 │   │   │   │   │   │   ├── AppDatabase.cs
@@ -108,6 +118,8 @@ Sajitarios-Gamespot/
 │   │   │   │   │   │   └── VirtualList.cs
 │   │   │   │   │   └── Gamespot.Core.Runtime.asmdef
 │   │   │   │   ├── Editor/
+│   │   │   │   │   ├── Audio/
+│   │   │   │   │   │   └── SoundSynth.cs
 │   │   │   │   │   ├── Import/
 │   │   │   │   │   │   └── GamespotAssetPostprocessor.cs
 │   │   │   │   │   ├── Localization/
@@ -227,6 +239,7 @@ Sajitarios-Gamespot/
 │   │   │   └── Tests/
 │   │   │       ├── EditMode/
 │   │   │       │   ├── Core/
+│   │   │       │   │   ├── AudioClipsTests.cs
 │   │   │       │   │   ├── IcuMessageFormatterTests.cs
 │   │   │       │   │   ├── JsonTests.cs
 │   │   │       │   │   ├── NameNormalizerTests.cs
@@ -279,6 +292,7 @@ Sajitarios-Gamespot/
 │   │   │           │   ├── EsUn10PeroScreenTests.cs
 │   │   │           │   ├── ImpostorFlowTests.cs
 │   │   │           │   ├── PlayerRosterTests.cs
+│   │   │           │   ├── SoundTests.cs
 │   │   │           │   ├── TabuFlowTests.cs
 │   │   │           │   ├── TriviaFlowTests.cs
 │   │   │           │   ├── WavelengthFlowTests.cs
