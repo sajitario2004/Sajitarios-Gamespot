@@ -15,6 +15,7 @@ Reglas obligatorias para cualquier IA o persona que trabaje en este repo. Si una
 | Gustos y forma de trabajar del autor | `LEARNINGS.md` |
 | Árbol de carpetas | `TREE.md` (se regenera con `tools/Update-Tree.ps1`) |
 | Hoja de ruta (V001–V069) | `VERSIONS.md` |
+| Plan de mejoras y juegos nuevos propuestos (el autor elige qué se hace) | `Docs/PLAN_MEJORAS.md` |
 | Funciones para la CLI de Unity | `tools/UnityCli.ps1` (ver §3) |
 | Capturas del Game view | `tools/Capture-GameView.ps1 -Name Vxxx_algo` → `Docs/Capturas/` |
 

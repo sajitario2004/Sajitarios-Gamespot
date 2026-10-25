@@ -1,8 +1,9 @@
 # CONTEXT.md — Sajitarios Gamespot
 
 > **Estado (2026-10-25):** migración de Flutter a Unity en curso, rama `feature/unity-port`. Hechas las fases 0–10:
-> base, núcleo, menú y **los 7 juegos portados y jugables** (Wavelength reescrito y arreglado). Versión en curso:
-> V059a/V059b (plan de mejoras y juegos nuevos, en `Docs/PLAN_MEJORAS.md`); después, fases 11–12 (pulido y builds).
+> base, núcleo, menú y **los 7 juegos portados y jugables** (Wavelength reescrito y arreglado), más el plan de
+> mejoras y 5 juegos nuevos propuestos en `Docs/PLAN_MEJORAS.md` (V059a/V059b). Versión en curso: V060 (fase 11,
+> pulido); lo que el autor elija del plan entra como versiones nuevas.
 > **Pendiente de decisión del autor:** permiso para descargar las fuentes (V014): iconos Material Symbols y una
 > fuente de texto con negrita real. Hasta entonces los iconos son sustitutos de texto ("<", "?", "))").
 > Qué mejoras y cuáles de los 5 juegos nuevos se hacen (V059a/V059b).
@@ -240,6 +241,10 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 | Paquetes de Unity (URP, uGUI/TextMeshPro, Input System, Test Framework, Pipeline) | Unity Companion License | Motor, UI, entrada, tests y puente de la CLI |
 
 ## 10. Registro de trabajo (lo más reciente arriba)
+
+### 2026-10-25 · V059a–V059b · Plan de mejoras y 5 juegos nuevos
+- `Docs/PLAN_MEJORAS.md`: mejoras comunes y por juego con prioridad y esfuerzo, y 5 juegos nuevos (Verdad o Reto, ¿Quién soy?, Dibuja y adivina, Código secreto, Hombres Lobo). Hallazgos de contenido: faltan tildes en ~1 de cada 4 tarjetas de Tabú, 10 categorías de La Bomba y un centenar de palabras del Impostor; Tabú (120) se queda corto; los bancos solo existen en español aunque la app tenga inglés.
+- Nada se implementa hasta que el autor elija.
 
 ### 2026-10-25 · V055–V059 · La Bomba (los 7 juegos portados)
 - Dominio puro (mecha [10,60), pasar sin tocar la mecha, explosión que pasa la bomba al siguiente, sílabas y categorías sin repetir por modo), datos (93 + 83), flujo y 3 pantallas: setup, juego con mecha oculta y aviso «¡BOOM!» de 1,5 s, fin.

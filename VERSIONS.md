@@ -157,8 +157,10 @@ Cierre técnico de cada versión con código Unity: recompilación sin errores, 
   - Notas: `BombaGame` registrado: el menú ya tiene los 7 juegos. PlayMode: errores del setup, partida completa (pasar, explotar, aviso de 1,5 s, ganador, salir reinicia) y mecha pausada con el diálogo de salir. 213 EditMode + 31 PlayMode en verde.
 
 ## Fase 10b — Plan de mejoras y juegos nuevos (petición del autor, 2026-10-25)
-- [ ] **V059a · Plan de mejoras** de los 7 juegos una vez portados (jugabilidad, contenido, UX y deuda de `CONTEXT.md` §8.2), con prioridades, para que el autor elija.
-- [ ] **V059b · Cinco juegos nuevos** propuestos (reglas, por qué encajan en un hub local de pasar el móvil, esfuerzo estimado), para que el autor elija cuáles añadir.
+- [x] **V059a · Plan de mejoras** de los 7 juegos una vez portados (jugabilidad, contenido, UX y deuda de `CONTEXT.md` §8.2), con prioridades, para que el autor elija.
+  - Notas: Plan en `Docs/PLAN_MEJORAS.md`: 11 mejoras comunes (C1–C11) y mejoras por juego (E, I, T, W, B, Y, L) con prioridad y esfuerzo; orden recomendado arriba. Basado en el análisis del contenido (tildes que faltan, tamaño de los bancos) y la deuda de `CONTEXT.md` §8.2. Pendiente de que el autor elija.
+- [x] **V059b · Cinco juegos nuevos** propuestos (reglas, por qué encajan en un hub local de pasar el móvil, esfuerzo estimado), para que el autor elija cuáles añadir.
+  - Notas: Cinco juegos propuestos en el mismo archivo (§3): Verdad o Reto (S), ¿Quién soy? (M), Dibuja y adivina (M), Código secreto (M–L) y Hombres Lobo con el móvil de narrador (L), más tres ideas pequeñas en el banquillo. Pendiente de que el autor elija.
 
 ## Fase 11 — Pulido y paridad
 - [ ] **V060 · Icono y arranque** (placeholders con la paleta neón, mismos nombres).
