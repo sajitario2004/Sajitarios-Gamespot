@@ -1,0 +1,16 @@
+{
+    "name": "Gamespot.Games.EsUn10Pero.Domain",
+    "rootNamespace": "Gamespot.Games.EsUn10Pero.Domain",
+    "references": [
+        "Gamespot.Core"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

@@ -74,7 +74,9 @@ No crees otros .md de documentación sin que el autor lo pida (los `SKILL.md` y 
 - **Colores** solo desde `Palette` (la paleta neón de `CONTEXT.md` §5); nada de valores sueltos.
 - **UI:** uGUI + TextMeshPro construida por código con el kit neón de `Core.Runtime/UI` (como los widgets de Flutter). Canvas en *Screen Space – Camera* con Bloom de URP.
 - **Datos:** SQLite con sqlite-net (`gilzoide/unity-sqlite-net`). Consultas siempre parametrizadas. Las filas de seed (`is_seed = 1`) son de solo lectura.
-- **Estilo:** identificadores en **inglés** (clases, métodos, archivos); **comentarios en español**. Un tipo público por archivo.
+- **Estilo:** identificadores en **inglés** (clases, métodos, archivos); **comentarios en español**. Un tipo principal por archivo (sus enums y ayudas pequeñas pueden ir con él). Los nombres del dominio que vienen del Flutter se conservan en español (`Iniciar`, `Votar`, `Rondas`…) para que el port se pueda comparar línea a línea.
+- **Lógica de partida pura:** los *flow controllers* (fases y acciones de cada juego) viven en `Domain/Flow/`, sin Unity, y se prueban como el dominio. Las pantallas solo los leen y les llaman.
+- **Comprobación fuera de Unity:** el código puro (Core + `Games/*/Domain`) también compila y pasa sus tests con el SDK de .NET (netstandard2.1, C# 9) usando el `nunit.framework.dll` de Unity; sirve cuando el Editor no está disponible, pero no sustituye a la tanda de Unity.
 
 ## 5. Reglas críticas del Impostor (NO improvisar)
 `AssignRolesUseCase` encapsula las reglas probabilísticas, el núcleo testeado del proyecto. Orden exacto de llamadas al random: primero se elige la palabra (`Pick`), después **un solo `NextDouble()`** decide el caso:
