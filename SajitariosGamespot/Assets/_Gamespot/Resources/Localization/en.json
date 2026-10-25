@@ -331,5 +331,6 @@
   "cargando": "Loading...",
   "reducirAnimaciones": "Reduce motion",
   "usarUltimosJugadores": "Use last game's players",
-  "tabuPalabrasAgotadas": "All the words have come up: they start again from the beginning."
+  "tabuPalabrasAgotadas": "All the words have come up: they start again from the beginning.",
+  "cambiarAjustes": "Change settings"
 }

@@ -44,6 +44,23 @@ namespace Gamespot.Games.Wavelength
             Router.Go(SetupRoute);
         }
 
+        /// <summary>
+        /// "Jugar otra" (C4): partida nueva al momento con la misma configuración. Si no se puede (p. ej. sin
+        /// contenido), vuelve al setup, que conserva el borrador.
+        /// </summary>
+        public void PlayAgain()
+        {
+            var config = Flow.Config;
+            if (config == null)
+            {
+                ResetToSetup();
+                return;
+            }
+            Flow.Iniciar(config);
+            if (Flow.Fase == WavelengthFase.Clue) Router.Go(ClueRoute);
+            else ResetToSetup();
+        }
+
         public void ResetToMenu()
         {
             Flow.Reiniciar();
@@ -383,8 +400,9 @@ namespace Gamespot.Games.Wavelength
                 1f, Palette.NeonCyan, bold: true);
             Ui.Text(panel.Content, Loc.T("wavelengthPuntosPorRonda", ("avg", average.ToString("0.0", Loc.Culture))), TextRole.TitleMedium, Palette.NeonCyan,
                 TextAlignmentOptions.Center);
-            Ui.Button(content, Loc.T("wavelengthJugarOtra"), _module.ResetToSetup, ButtonStyle.Filled, IconId.Refresh, glow: 0.8f);
-            Ui.Button(content, Loc.T("volverAlMenu"), _module.ResetToMenu, ButtonStyle.Outlined, IconId.Home);
+            Ui.Button(content, Loc.T("wavelengthJugarOtra"), _module.PlayAgain, ButtonStyle.Filled, IconId.Refresh, glow: 0.8f);
+            Ui.Button(content, Loc.T("cambiarAjustes"), _module.ResetToSetup, ButtonStyle.Outlined, IconId.Tune);
+            Ui.Button(content, Loc.T("volverAlMenu"), _module.ResetToMenu, ButtonStyle.Text, IconId.Home);
         }
 
         public override bool OnBack()

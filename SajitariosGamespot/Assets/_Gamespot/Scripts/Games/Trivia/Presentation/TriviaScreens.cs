@@ -54,6 +54,23 @@ namespace Gamespot.Games.Trivia
             Router.Go(Router.Home);
         }
 
+        /// <summary>
+        /// "Jugar otra" (C4): partida nueva al momento con la misma configuración. Si no se puede (p. ej. sin
+        /// contenido), vuelve al setup, que conserva el borrador.
+        /// </summary>
+        public void PlayAgain()
+        {
+            var config = Flow.Config;
+            if (config == null)
+            {
+                ResetToSetup();
+                return;
+            }
+            Flow.Iniciar(config);
+            if (Flow.Fase == TriviaFase.Pass) Router.Go(PassRoute);
+            else ResetToSetup();
+        }
+
         /// <summary>Clave del nombre localizado de una temática.</summary>
         public static string ThemeKey(string id)
         {
@@ -440,8 +457,9 @@ namespace Gamespot.Games.Trivia
                 Ui.Text(panel.Content, Loc.T("triviaGanadoresList", ("nombres", string.Join(", ", winners.Select(w => w.Name)))), TextRole.TitleMedium,
                     Palette.TextPrimary, TextAlignmentOptions.Center);
             }
-            Ui.Button(content, Loc.T("triviaJugarOtra"), _module.ResetToSetup, ButtonStyle.Filled, IconId.Refresh, Palette.NeonViolet, 0.8f);
-            Ui.Button(content, Loc.T("volverAlMenu"), _module.ResetToMenu, ButtonStyle.Outlined, IconId.Home);
+            Ui.Button(content, Loc.T("triviaJugarOtra"), _module.PlayAgain, ButtonStyle.Filled, IconId.Refresh, Palette.NeonViolet, 0.8f);
+            Ui.Button(content, Loc.T("cambiarAjustes"), _module.ResetToSetup, ButtonStyle.Outlined, IconId.Tune, Palette.NeonViolet);
+            Ui.Button(content, Loc.T("volverAlMenu"), _module.ResetToMenu, ButtonStyle.Text, IconId.Home);
         }
 
         public override bool OnBack()

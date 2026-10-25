@@ -205,7 +205,7 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 ### 6.5 Tabú (`tabu`)
 - **Dominio:** `TabuWord(palabra, prohibidas[4..5])`. `TabuConfig.Create(equipoA, equipoB, turnoSegundos = 60, objetivoVictorias = 3)`: errores en orden equipo A vacío, equipo B vacío, duplicados, turno fuera de [30,120], objetivo ≤ 0.
   - `TabuSession`: empieza el equipo A. Acierto +1; Saltar sin límite (no se muestra); Falta −1 sin bajar de 0 y **sin cortar el turno**. `TerminarTurno`: si los aciertos > 0, **+1 victoria de ronda** para el equipo; cambia de equipo y reinicia contadores. Gana el primero en llegar al objetivo. Palabras sin repetir en la partida (`PickTabuWordUseCase`). En el Flutter, si se agotaban se quedaba la actual; en Unity (V059e) vuelven a salir todas menos la actual y el turno avisa una vez (`tabuPalabrasAgotadas`).
-- **Pantallas:** setup (nombres de los dos equipos, chips 30/60/90 s, 60 por defecto; objetivo siempre 3). Turno: palabra en MAYÚSCULAS, lista de prohibidas, equipo en violeta, contador de aciertos en la AppBar, cuenta atrás (cian > 10, amarillo 6–10, rojo ≤ 5) y botones Acierto (verde), Saltar (cian), Falta (rojo). El temporizador vive en la pantalla (tic de 1 s; al llegar a 0 termina el turno). Marcador: "Objetivo: 3 victorias de ronda", "A: x / 3" (cian) y "B: y / 3" (violeta), "Siguiente turno". Fin: equipo ganador, marcadores y "Volver al menú" (no hay "jugar otra"). Sin sonido.
+- **Pantallas:** setup (nombres de los dos equipos, chips 30/60/90 s, 60 por defecto; objetivo siempre 3). Turno: palabra en MAYÚSCULAS, lista de prohibidas, equipo en violeta, contador de aciertos en la AppBar, cuenta atrás (cian > 10, amarillo 6–10, rojo ≤ 5) y botones Acierto (verde), Saltar (cian), Falta (rojo). El temporizador vive en la pantalla (tic de 1 s; al llegar a 0 termina el turno). Marcador: "Objetivo: 3 victorias de ronda", "A: x / 3" (cian) y "B: y / 3" (violeta), "Siguiente turno". Fin: equipo ganador, marcadores y "Volver al menú" (en el Flutter no había "jugar otra"; en Unity sí, ver §8.1). Sin sonido en el Flutter.
 
 ### 6.6 Yo Nunca (`yo_nunca`)
 - **Dominio:** `Intensidad {Suave, Picante}`, `NeverStatement(frase, intensidad)`, `YoNuncaConfig` (al menos una intensidad). `DrawStatementUseCase(pool, intensidades, vistas)`: filtra, quita las vistas; si ya se vieron todas, vacía las vistas y vuelve a empezar (puede repetirse la última); elige con `NextInt`.
@@ -238,12 +238,13 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 - La Bomba: los nombres solo se recortaban → misma normalización que el resto. El setup pedía "¿Salir de la partida?" al volver sin haber partida → va directo, como los demás setups.
 - Yo Nunca: la frase iba en un panel con scroll cuya máscara recortaba el halo → centrada sin scroll (las frases son cortas).
 - BD y audio perezosos → preparados en el arranque. Botón de silencio también en el menú.
+- **"Jugar otra" (C4, V059f):** en Tabú, Trivia, Wavelength y La Bomba empieza al momento otra partida con la misma configuración (equipos y tiempo; jugadores y temáticas; jugadores y rondas; jugadores y modo). En el Flutter, Trivia y Wavelength volvían al setup y Tabú y La Bomba no tenían el botón. "Cambiar ajustes" vuelve al setup con el borrador. El Impostor sigue como en el Flutter (vuelve al setup).
 - Icono, splash, dorso y cabecera en morado/ámbar → placeholders con la paleta neón.
 
 ### 8.2 Deuda que se conserva (decide el autor)
 - El selector de rondas del Impostor empieza en 1 y no sube solo al añadir jugadores.
 - Las preguntas de la trivia y los espectros de Wavelength pueden repetirse entre rondas.
-- Tabú no tiene "jugar otra"; el objetivo de victorias no se puede cambiar.
+- El objetivo de victorias del Tabú no se puede cambiar.
 - La mecha de La Bomba no se puede configurar (siempre 10–60 s).
 - Contenido de los bancos generado por máquina: conviene una revisión factual.
 
@@ -257,6 +258,7 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 ## 10. Registro de trabajo (lo más reciente arriba)
 
 ### 2026-10-25 · Fase 10c · Mejoras elegidas por el autor (C2, C3+L1, B1+B2, C4, I1/T1/W2)
+- **V059f · C4:** "Jugar otra" (`Module.PlayAgain`: misma configuración, partida nueva al momento; si falla, al setup) y "Cambiar ajustes" (`ResetToSetup`) en los fines de Tabú, Trivia, Wavelength y La Bomba. Ojo: el plan decía que Trivia y Wavelength no tenían "Jugar otra"; sí lo tenían, pero volvía al setup.
 - **V059e · B1 + B2:** Tabú con 607 tarjetas (las 120 heredadas con tildes y erratas corregidas: «maze», «paddlear», «crocodilo», «greco», «bufo», duplicados como «Cofre del tesoro»/«Candelero»; y 487 nuevas por temas), validadas por script (duplicados sin tildes, prohibidas repetidas o que contienen la palabra, palabras que suelen llevar tilde). Al agotarse, vuelven a salir y se avisa. BD v2 con migración del seed (comprobada también en la BD real del Editor: 1 → 2, 607 palabras).
 - **V059d · C3 + L1:** 9 sonidos sintetizados en el Editor (sin descargas), tic-tac de La Bomba que acelera, explosión con vibración, pitidos y bocina del Tabú, acierto/fallo de la Trivia, campanas del revelado de Wavelength y pasar página en Yo Nunca. Los módulos de esos juegos reciben el `AudioService`. No he podido escucharlos: se comprobó duración, pico y nivel de cada WAV; falta oírlos en el móvil.
 - **V059c · C2:** jugadores guardados entre juegos (`AppSettings.LastPlayers` + `PlayerListEditor`). El arnés de PlayMode guarda y restaura la preferencia para que un test no rellene el siguiente.

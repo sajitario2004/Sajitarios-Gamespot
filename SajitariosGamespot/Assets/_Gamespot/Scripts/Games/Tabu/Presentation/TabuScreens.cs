@@ -38,6 +38,30 @@ namespace Gamespot.Games.Tabu
             Flow.Reiniciar();
             Router.Go(Router.Home);
         }
+
+        /// <summary>"Cambiar ajustes": al setup con los equipos y el tiempo de antes.</summary>
+        public void ResetToSetup()
+        {
+            Flow.Reiniciar();
+            Router.Go(SetupRoute);
+        }
+
+        /// <summary>
+        /// "Jugar otra" (C4): partida nueva al momento con la misma configuración. Si no se puede (p. ej. sin
+        /// contenido), vuelve al setup, que conserva el borrador.
+        /// </summary>
+        public void PlayAgain()
+        {
+            var config = Flow.Config;
+            if (config == null)
+            {
+                ResetToSetup();
+                return;
+            }
+            Flow.Iniciar(config);
+            if (Flow.Fase == TabuFase.Turno) Router.Go(TurnRoute);
+            else ResetToSetup();
+        }
     }
 
     /// <summary>Setup: nombres de los dos equipos y duración del turno (30/60/90 s, 60 por defecto). Objetivo fijo: 3.</summary>
@@ -306,7 +330,7 @@ namespace Gamespot.Games.Tabu
         }
     }
 
-    /// <summary>Fin: equipo ganador y marcador final.</summary>
+    /// <summary>Fin: equipo ganador, marcador final, "Jugar otra" (mismos equipos y tiempo), "Cambiar ajustes" y menú.</summary>
     public sealed class TabuGameOverScreen : TabuPlayScreen
     {
         public TabuGameOverScreen(TabuModule module) : base(module)
@@ -327,7 +351,9 @@ namespace Gamespot.Games.Tabu
             Ui.FittedText(panel.Content, session.Ganador.HasValue ? config.NameOf(session.Ganador.Value) : "—", 40f, Palette.TextPrimary, 1f);
             TabuScoreboardScreen.ScoreCard(content, config.EquipoA, session.VictoriasA, config.ObjetivoVictorias, Palette.NeonCyan);
             TabuScoreboardScreen.ScoreCard(content, config.EquipoB, session.VictoriasB, config.ObjetivoVictorias, Palette.NeonViolet);
-            Ui.Button(content, Loc.T("volverAlMenu"), Module.ResetToMenu, ButtonStyle.Filled, IconId.Home, glow: 0.8f);
+            Ui.Button(content, Loc.T("jugarOtra"), Module.PlayAgain, ButtonStyle.Filled, IconId.Refresh, glow: 0.8f);
+            Ui.Button(content, Loc.T("cambiarAjustes"), Module.ResetToSetup, ButtonStyle.Outlined, IconId.Tune);
+            Ui.Button(content, Loc.T("volverAlMenu"), Module.ResetToMenu, ButtonStyle.Text, IconId.Home);
         }
 
         public override bool OnBack()

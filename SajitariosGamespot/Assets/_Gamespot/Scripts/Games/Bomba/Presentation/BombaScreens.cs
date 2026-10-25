@@ -37,6 +37,30 @@ namespace Gamespot.Games.Bomba
             Router.Go(Router.Home);
         }
 
+        /// <summary>"Cambiar ajustes": al setup con el modo y los nombres de antes.</summary>
+        public void ResetToSetup()
+        {
+            Flow.Reiniciar();
+            Router.Go(SetupRoute);
+        }
+
+        /// <summary>
+        /// "Jugar otra" (C4): partida nueva al momento con la misma configuración. Si no se puede (p. ej. sin
+        /// contenido), vuelve al setup, que conserva el borrador.
+        /// </summary>
+        public void PlayAgain()
+        {
+            var config = Flow.Config;
+            if (config == null)
+            {
+                ResetToSetup();
+                return;
+            }
+            Flow.Iniciar(config);
+            if (Flow.Fase == BombaFase.Jugando) Router.Go(PlayRoute);
+            else ResetToSetup();
+        }
+
         /// <summary>Título de la barra con el halo rojo del juego (como el Flutter).</summary>
         public static ScreenScaffold Scaffold(RectTransform root)
         {
@@ -314,7 +338,10 @@ namespace Gamespot.Games.Bomba
         }
     }
 
-    /// <summary>Fin: trofeo, "Fin de la partida" y el ganador. Casa, atrás y "Volver al menú" reinician.</summary>
+    /// <summary>
+    /// Fin: trofeo, "Fin de la partida" y el ganador; "Jugar otra" (mismos jugadores y modo), "Cambiar ajustes" y
+    /// "Volver al menú". Casa y atrás reinician y van al menú.
+    /// </summary>
     public sealed class BombaGameOverScreen : AppScreen
     {
         private readonly BombaModule _module;
@@ -343,7 +370,9 @@ namespace Gamespot.Games.Bomba
             Ui.Text(panel.Content, Loc.T("bombaGanadorLabel"), TextRole.TitleMedium, Palette.TextMuted, TextAlignmentOptions.Center);
             Ui.FittedText(panel.Content, winner, 44f, Palette.TextPrimary, 1f).name = winner;
             Ui.Space(content, 16f);
-            Ui.Button(content, Loc.T("volverAlMenu"), _module.ResetToMenu, ButtonStyle.Filled, IconId.Home, glow: 0.8f);
+            Ui.Button(content, Loc.T("jugarOtra"), _module.PlayAgain, ButtonStyle.Filled, IconId.Refresh, Palette.NeonError, 0.8f);
+            Ui.Button(content, Loc.T("cambiarAjustes"), _module.ResetToSetup, ButtonStyle.Outlined, IconId.Tune);
+            Ui.Button(content, Loc.T("volverAlMenu"), _module.ResetToMenu, ButtonStyle.Text, IconId.Home);
         }
 
         public override bool OnBack()
