@@ -261,7 +261,53 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 - Yo Nunca: la frase iba en un panel con scroll cuya máscara recortaba el halo → centrada sin scroll (las frases son cortas).
 - BD y audio perezosos → preparados en el arranque. Botón de silencio también en el menú.
 - **"Jugar otra" (C4, V059f):** en Tabú, Trivia, Wavelength y La Bomba empieza al momento otra partida con la misma configuración (equipos y tiempo; jugadores y temáticas; jugadores y rondas; jugadores y modo). En el Flutter, Trivia y Wavelength volvían al setup y Tabú y La Bomba no tenían el botón. "Cambiar ajustes" vuelve al setup con el borrador. El Impostor sigue como en el Flutter (vuelve al setup).
-- Icono, splash, dorso y cabecera en morado/ámbar → placeholders con la paleta neón.
+- Icono, splash, dorso y cabecera en morado/ámbar → placeholders con la paleta neón; el icono, al final, es el de la app Flutter (V060, lo pidió el autor).
+
+### 8.3 Lista de paridad pantalla a pantalla (V064)
+Las 29 pantallas del Flutter (`Legacy/Flutter/lib/**/*_screen.dart`) y su pantalla de ruta desconocida tienen su
+equivalente en Unity. **Textos:** un script compara las claves de localización que usa cada pantalla del Flutter con
+las que usa el código Unity: están todas, salvo los «Iniciando…» de los cinco setups (en Unity el arranque es
+instantáneo, no hay espera que enseñar) y tres etiquetas solo para el lector de pantalla (dial de Wavelength y roles
+del historial; ver §8.2). «Igual» = mismo contenido, reglas y flujo (especificación en §6); las diferencias son las
+de §8.1 y las mejoras pedidas por el autor (fases 10c–10e).
+
+| Flutter | Unity | Estado | Diferencias | Lo cubre |
+|---|---|---|---|---|
+| `menu_screen` | `MenuScreen` | Igual + mejoras | Silencio y Ajustes en la barra (V062); descripciones cortas (V059l); iconos de verdad (V014) | `BootstrapTests` |
+| `rules_screen` | `RulesScreen` | Igual | — | `BootstrapTests` |
+| `_RouteErrorScreen` | `NotFoundScreen` | Igual | — | `BootstrapTests` |
+| `es_un_10_pero_screen` | `EsUn10PeroScreen` | Igual | Palos dibujados por código | `EsUn10PeroScreenTests` |
+| `impostor/setup_screen` | `ImpostorSetupScreen` | Igual + mejoras | Rondas empiezan en el máximo (I1); últimos jugadores (C2); categorías, también propias (V059i, V059m) | `ImpostorFlowTests`, `CategoryTests`, `OwnCategoriesTests`, `PlayerRosterTests` |
+| `impostor/pass_device_screen` | `PassDeviceScreen` | Igual | — | `ImpostorFlowTests` |
+| `impostor/reveal_screen` | `RevealScreen` | Igual | Palabras largas en dos líneas que encogen | `ImpostorFlowTests` |
+| `impostor/voting_screen` | `VotingScreen` | Igual | Atrás del sistema interceptado (§8.1) | `ImpostorFlowTests` |
+| `impostor/game_over_screen` | `GameOverScreen` | Igual | Atrás interceptado; nunca revela roles (como el Flutter) | `ImpostorFlowTests` |
+| `impostor/words_management_screen` | `WordsScreen` | Igual + mejoras | Categoría en cada fila, filtro y «Mis categorías» (V059m) | `ImpostorFlowTests`, `OwnCategoriesTests` |
+| `impostor/history_screen` | `HistoryScreen` | Igual | — | `ImpostorFlowTests` (guardado), barrido de textos |
+| `trivia/trivia_setup_screen` | `TriviaSetupScreen` | Igual + mejoras | Últimos jugadores (C2); chips de 48 | `TriviaFlowTests` |
+| `trivia/trivia_pass_device_screen` | `TriviaPassScreen` | Igual | — | `TriviaFlowTests` |
+| `trivia/trivia_question_screen` | `TriviaQuestionScreen` | Igual + mejoras | Preguntas sin repetir (T1); sonido de acierto y fallo (C3); respuestas largas que encogen; exponentes con `<sup>` (V059l) | `TriviaFlowTests`, `SoundTests` |
+| `trivia/trivia_game_over_screen` | `TriviaGameOverScreen` | Igual + mejoras | «Jugar otra» al momento (C4) | `PlayAgainTests` |
+| `wavelength/wavelength_setup_screen` | `WavelengthSetupScreen` | Igual | — | `WavelengthFlowTests` |
+| `wavelength/wavelength_clue_screen` | `WavelengthClueScreen` | Arreglada | El dial del Flutter estaba roto (reescrito); conceptos solo en la fila (§8.1) | `WavelengthFlowTests` |
+| `wavelength/wavelength_pass_device_screen` | `WavelengthPassScreen` | Igual | — | `WavelengthFlowTests` |
+| `wavelength/wavelength_guess_screen` | `WavelengthGuessScreen` | Arreglada | Arrastre real; bajo la base va al polo más cercano (§8.1) | `WavelengthFlowTests` |
+| `wavelength/wavelength_reveal_screen` | `WavelengthRevealScreen` | Arreglada | La aguja es la respuesta del grupo (en el Flutter, 0,5); «Ronda X de Y» en la barra; campanas (C3); espectros sin repetir (W2) | `WavelengthFlowTests` |
+| `wavelength/wavelength_game_over_screen` | `WavelengthGameOverScreen` | Igual + mejoras | Media localizada; «Jugar otra» (C4) | `PlayAgainTests` |
+| `tabu/tabu_setup_screen` | `TabuSetupScreen` | Igual + mejoras | Categorías y tarjetas propias (V059i, V059m) | `TabuFlowTests`, `CategoryTests`, `OwnCategoriesTests` |
+| `tabu/tabu_turn_screen` | `TabuTurnScreen` | Igual + mejoras | Tiempo en pausa con el diálogo (§8.1); pitidos y bocina (C3); palabras agotadas avisan y vuelven (V059e) | `TabuFlowTests`, `SoundTests` |
+| `tabu/tabu_scoreboard_screen` | `TabuScoreboardScreen` | Igual | Nombres largos en dos líneas | `TabuFlowTests` |
+| `tabu/tabu_game_over_screen` | `TabuGameOverScreen` | Igual + mejoras | «Jugar otra» y «Cambiar ajustes» (C4) | `PlayAgainTests` |
+| `yo_nunca/yo_nunca_setup_screen` | `YoNuncaSetupScreen` | Igual | Aviso +18 con picante | `YoNuncaFlowTests` |
+| `yo_nunca/yo_nunca_play_screen` | `YoNuncaPlayScreen` | Igual + mejoras | Atrás confirma (§8.1); frase centrada sin scroll; sonido al pasar (C3) | `YoNuncaFlowTests` |
+| `bomba/bomba_setup_screen` | `BombaSetupScreen` | Igual | Nombres normalizados; atrás sin diálogo (§8.1) | `BombaFlowTests` |
+| `bomba/bomba_play_screen` | `BombaPlayScreen` | Igual + mejoras | Mecha en pausa con el diálogo (§8.1); tic-tac, explosión y vibración (C3, L1) | `BombaFlowTests`, `SoundTests` |
+| `bomba/bomba_game_over_screen` | `BombaGameOverScreen` | Igual + mejoras | «Jugar otra» (C4) | `BombaFlowTests`, `PlayAgainTests` |
+
+**Solo en Unity:** `CustomCategoriesScreen` (Mis categorías), `TabuWordsScreen` y `TabuCardEditScreen` (tarjetas propias,
+V059m) y el diálogo de Ajustes (V062). **Comunes a todas:** zona segura y notch (V061), pulsables de 48 y contraste
+(V062), sin textos cortados en 4 tamaños y 2 idiomas (V059l). Lo que queda para la validación del autor es jugarlo en
+el móvil (V066, V068).
 
 ### 8.2 Deuda que se conserva (decide el autor)
 - El objetivo de victorias del Tabú no se puede cambiar.
@@ -280,6 +326,11 @@ Temáticas de la trivia: deportes 176, videojuegos 144, cocina 135, cultura_gene
 | LiberationSans (recursos esenciales de TextMeshPro) | OFL 1.1 | Respaldo de los caracteres que Roboto no tenga |
 
 ## 10. Registro de trabajo (lo más reciente arriba)
+
+### 2026-10-25 · V064 · Lista de paridad con el Flutter
+- §8.3: las 29 pantallas del Flutter (y la de ruta desconocida) con su pantalla Unity, estado (igual, igual con mejoras o arreglada), diferencias y el test que la cubre; más las 4 que solo tiene Unity.
+- Comprobación de textos por pantalla (script en el scratchpad: claves `l10n.*` de cada pantalla del Flutter frente a las que usa el código Unity): no falta ninguna; solo sobran los cinco «Iniciando…» (en Unity el arranque es instantáneo) y tres etiquetas de lector de pantalla (deuda en §8.2).
+- `Legacy/Flutter/` se queda hasta que el autor valide la app en el móvil (decisión del autor, 2026-10-25).
 
 ### 2026-10-25 · V063 · Rendimiento en reposo
 - **Medición:** los contadores del Profiler en Play dentro del Editor (`GC.Alloc`, `UGUI.Rendering.UpdateBatches`) daban miles de asignaciones por fotograma incluso con la UI apagada: son del propio Editor y no sirven. En su lugar, `PerformanceTests` comprueba con `AllocatingGCMemoryConstraint` que el trabajo de un fotograma (el `Tick` de la pantalla y los brillos) no asigna memoria en el menú, los siete setups, la lista de palabras, el turno del Tabú y la mecha de La Bomba.

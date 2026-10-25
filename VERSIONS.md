@@ -219,7 +219,8 @@ Cierre técnico de cada versión con código Unity: recompilación sin errores, 
   - Notas: barrido de pulsables en las 88 pantallas: solo los chips medían menos (44 en rejilla, 40 en fila); ahora 48. Contraste WCAG de la paleta: todo el texto ≥ 4,5:1 sobre los cuatro fondos y las etiquetas de botón (texto grande) ≥ 3:1. «Reducir animaciones» ya existía pero no se podía activar: diálogo **Ajustes** en el menú (icono de engranaje) con sonido, vibración (C5) y reducir animaciones; sin elegir, sigue a «Quitar animaciones» de Android. Tests `ContrastTests`, `AccessibilityTests` (pulsables de los setups, ajustes). Lector de pantalla (TalkBack/VoiceOver): fuera de esta versión, queda como deuda. Captura `V062_ajustes.png`.
 - [x] **V063 · Rendimiento en reposo** (sin `Update` vacíos, Bloom ligero en móvil).
   - Notas: ningún `Update` vacío (todos salen enseguida si no hay nada que hacer). En reposo, ni el menú ni los setups ni una partida en marcha generan basura por fotograma (`PerformanceTests` con `AllocatingGCMemoryConstraint`); el turno del Tabú sí la generaba (rehacía el contador y su nombre en cada fotograma) y ya no. Los brillos que laten se aplican por escalones de 0,02 (unas 15 veces por segundo en vez de 60, cada una rehace el Canvas). `AppSettings.ReduceMotion` en memoria (lo miran los brillos cada fotograma). Bloom a un cuarto de resolución y 5 pasadas (igual a la vista). En reposo (3 s sin tocar) se dibuja a 30 fps con `OnDemandRendering`; la lógica sigue a 60. Medir en el Editor no sirve (el contador del Profiler recoge al propio Editor): la prueba en el móvil queda para V066. Captura `V063_menu_bloom_ligero.png`.
-- [ ] **V064 · Lista de paridad** pantalla a pantalla contra el Flutter.
+- [x] **V064 · Lista de paridad** pantalla a pantalla contra el Flutter.
+  - Notas: tabla en `CONTEXT.md` §8.3: 29 pantallas + ruta desconocida, todas con equivalente (iguales, con mejoras o arregladas, como Wavelength) y el test que las cubre; 4 pantallas nuevas solo en Unity. Textos comprobados por script: no falta ninguno (sobran los «Iniciando…» y tres etiquetas de lector de pantalla).
 
 ## Fase 12 — Builds y cierre
 - [ ] **V065 · Build Android** (`.apk` release y desarrollo).
@@ -228,3 +229,4 @@ Cierre técnico de cada versión con código Unity: recompilación sin errores, 
 - [ ] **V067 · Proyecto de Xcode** para iOS (compilar y firmar en un Mac).
 - [ ] **V068 · Validación del autor.**
 - [ ] **V069 · Cierre** (con permiso): borrar `Legacy/Flutter/`, `TREE.md`, PR de `feature/unity-port` a `main`.
+  - Notas (2026-10-25): el autor fusionó el PR #1 en `main`. `Legacy/Flutter/` se queda hasta que valide la app en el móvil (lo decidió el autor).
