@@ -41,7 +41,8 @@ Cierre técnico de cada versión con código Unity: recompilación sin errores, 
   - Notas: 101 tests EditMode en verde (con los dominios de V020/V024/V025/V028).
 - [x] **V011 · AppDatabase** (sqlite-net): archivo, `user_version`, hooks de esquema por descriptor, seed loader genérico idempotente. Tests con BD temporal.
   - Notas: `IDb` (Execute/Scalar/Query con alias/InTransaction) sobre sqlite-net; `AppDatabase.Open` crea o migra con `PRAGMA user_version` en una transacción y siembra cada juego solo si su tabla está vacía. 7 tests con archivo temporal (108 EditMode en total).
-- [ ] **V012 · Localización.** `Loc.T`, placeholders y plurales ICU, importador de ARB → `es.json`/`en.json`, idioma en `PlayerPrefs`, selector. Tests (paridad de claves, plurales).
+- [x] **V012 · Localización.** `Loc.T`, placeholders y plurales ICU, importador de ARB → `es.json`/`en.json`, idioma en `PlayerPrefs`, selector. Tests (paridad de claves, plurales).
+  - Notas: `Loc.T(clave, (nombre, valor)…)` estático (se reinicia en `SubsystemRegistration`), español por defecto, inglés cae al español si falta una clave. `Gamespot → i18n → Importar ARB del Flutter` añade solo las claves que faltan (305 por idioma). 26 claves nuevas de Unity (títulos del menú de 5 juegos, temáticas, palos, media de Wavelength, cargando, reducir animaciones) y la regla 4 del Tabú corregida: 331 claves por idioma. El selector de idioma va en V017.
 - [ ] **V013 · Paleta y kit neón.** `Palette`, `NeonText`, `NeonPanel`, `NeonButton`, `NeonBackground`, `PulseGlow`, layouts (columna, fila, scroll), campos de texto, diálogos y snackbar.
 - [ ] **V014 · Tipografía e iconos.** Fuente TMP con glifos del español e iconos (Material Symbols, Apache-2.0). **Pedir permiso antes de descargar.** Palos de la carta como sprites propios.
 - [ ] **V015 · Router.** Rutas por texto, pila, botón atrás de Android, ruta desconocida, `BackToMenuButton`.
