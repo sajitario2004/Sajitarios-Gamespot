@@ -361,4 +361,13 @@ gestionar la partida; muy configurable y con todas las expansiones». Se hacen d
     `Bootstrap.RandomOverride` (y el arnés de PlayMode) para fijar el azar en los tests. PlayMode `LoboMoonTests` 3/3
     (tormenta, eclipse, guía) y todos los de Hombres Lobo (14) en verde; barrido con las ocho lunas forzadas en el
     amanecer y el día, limpio en es y en. Capturas `V081_lobo_*`.
-- [ ] **V082 · APK con los seis juegos.**
+- [x] **V082 · APK con los seis juegos.**
+  - Notas (2026-10-26): `SajitariosGamespot-prueba.apk` en la raíz (ignorado por git), release con la firma de
+    depuración de Unity, 0.76.0 (76), IL2CPP ARM64, Android 7.1+ (API 25, objetivo 36), 37,7 MB, 1 min 47 s sin
+    errores ni avisos; con `aapt`: solo pide `VIBRATE` (más el permiso interno de receptores de Android). Textos
+    legales al día: el contenido +18 de los juegos nuevos (Cachondeo de Mímica y ¿Quién soy?, picante de Verdad o
+    Reto, ¿Quién es más probable…? y ¿Qué prefieres?), los juegos que se pueden jugar bebiendo y, en privacidad, el
+    sensor de movimiento de ¿Quién soy? (no guarda nada) y la vibración en más avisos. Fuentes regeneradas: ya estaban
+    todos los caracteres (204) y los 90 iconos. Tests: EditMode 364/364; PlayMode 93/93 (en la primera tanda falló una
+    vez `PerformanceTests.UnFotogramaEnReposoNoGeneraBasura` en el menú; pasó solo dos veces y en la tanda repetida:
+    intermitente, anotado como deuda).

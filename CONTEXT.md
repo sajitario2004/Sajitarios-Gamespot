@@ -1,6 +1,6 @@
 # CONTEXT.md — Sajitarios Gamespot
 
-> **Estado (2026-10-25):** migración de Flutter a Unity, rama `feature/unity-port` (el PR #1 ya se fusionó en `main`).
+> **Estado (2026-10-26):** migración de Flutter a Unity, rama `feature/unity-port` (el PR #1 ya se fusionó en `main`).
 > Hechas las fases 0–11 y de la 12, el APK (V065) y el proyecto de Xcode (V067): los 7 juegos portados (Wavelength
 > reescrito y arreglado), mejoras del plan, categorías y tarjetas propias, fuentes, accesibilidad, rendimiento y
 > Ajustes con textos legales. **Queda del autor:** probar en el móvil (V066), validar (V068) y, después, decidir si
@@ -11,7 +11,11 @@
 > ¿Quién es más probable que…?, ¿Qué prefieres?, Mímica por equipos, ¿Quién soy? y Hombres Lobo (con reparto pasando el
 > móvil y un game master que lleva la partida; muy configurable y con todas las expansiones). Hecho: V070 (base común de cartas)
 > y V071 (Verdad o Reto), V072 (¿Quién es más probable que…?), V073 (¿Qué prefieres?), V074 (Mímica), V075 (¿Quién soy?) y el
-> Hombres Lobo entero (V076–V081): setup, reparto, noche, amanecer, día, final, eventos de luna y guía de cartas. Falta el APK (V082).
+> Hombres Lobo entero (V076–V081): setup, reparto, noche, amanecer, día, final, eventos de luna y guía de cartas. **Fase 13 terminada**
+> con el APK de V082 (`SajitariosGamespot-prueba.apk` en la raíz).
+> **Probar en el móvil (V082):** una partida entera de Hombres Lobo con un game master (reparto pasando el móvil, la noche paso
+> a paso, el amanecer, el debate con reloj, la votación con los contadores y el final) y otra con eventos de luna; Mímica por
+> equipos con el reloj y los pases; ¿Qué prefieres? con «Paga la minoría».
 > **Probar en el móvil (¿Quién soy?):** que el texto salga derecho con el móvil en la frente (gira solo según el lado que quede
 > abajo) y que inclinar abajo sea acierto y arriba pasar; si va al revés, la opción «Al revés» del setup lo cambia. **Probar en el móvil:** una partida de Verdad o Reto con picante y con
 > cartas propias que usen `{otro}`; ¿Quién es más probable…? llevando la cuenta (que la cuenta atrás y la vibración se noten).
@@ -374,6 +378,7 @@ el móvil (V066, V068).
 - El objetivo de victorias del Tabú no se puede cambiar.
 - La mecha de La Bomba no se puede configurar (siempre 10–60 s).
 - Contenido de los bancos generado por máquina: conviene una revisión factual.
+- `PerformanceTests.UnFotogramaEnReposoNoGeneraBasura` falló una vez en la tanda completa de PlayMode (V082, en el menú) y pasó al repetirla: intermitente; si vuelve, mirar qué deja vivo el test anterior.
 - Sin lector de pantalla (TalkBack/VoiceOver): uGUI no expone la jerarquía a la accesibilidad del sistema; haría falta el módulo de accesibilidad de Unity 6 (`AccessibilityHierarchy`) pantalla a pantalla. En el Flutter había `Semantics` (V062).
 
 ## 9. Registro de licencias
@@ -387,6 +392,10 @@ el móvil (V066, V068).
 | LiberationSans (recursos esenciales de TextMeshPro) | OFL 1.1 | Respaldo de los caracteres que Roboto no tenga |
 
 ## 10. Registro de trabajo (lo más reciente arriba)
+
+### 2026-10-26 · V082 · APK con los seis juegos nuevos
+- `SajitariosGamespot-prueba.apk` (release, 37,7 MB, solo vibración) con los 13 juegos. Textos legales al día con el contenido +18 y la bebida de los juegos nuevos y con el sensor de movimiento de ¿Quién soy?.
+- EditMode 364/364 y PlayMode 93/93 (un fallo intermitente del test de basura en reposo, que pasó al repetir; en la deuda). Fuentes regeneradas sin caracteres nuevos.
 
 ### 2026-10-26 · V081 · Hombres Lobo: eventos de luna y pulido
 - La luna de la mañana se ve en el amanecer, en el día y al empezar la noche siguiente (luna llena, noche en calma y luna roja cuentan esa noche), con lo que cambia. El motor ya la aplicaba desde V076 (sin debate con eclipse, sin cartas con niebla, dos votaciones con tormenta, capitán sin voto doble con rebelión, todos los empatados con luna de sangre).
