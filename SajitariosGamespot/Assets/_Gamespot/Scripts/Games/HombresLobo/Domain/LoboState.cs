@@ -198,6 +198,8 @@ namespace Gamespot.Games.HombresLobo.Domain
         public bool Noche { get; }
         public LoboEventoTipo Tipo { get; }
         public int? Jugador { get; }
+
+        /// <summary>El otro jugador (o, en los eventos de luna, el número de la luna).</summary>
         public int? Otro { get; }
         public LoboRol? Rol { get; }
         public LoboMuerte? Causa { get; }
@@ -287,6 +289,7 @@ namespace Gamespot.Games.HombresLobo.Domain
 
         // Noche en curso.
         public LoboPaso? Paso;
+        public int PasosNoche;
         public int? VictimaLobos;
         public int? VictimaLuna;
         public int? VictimaGranLobo;

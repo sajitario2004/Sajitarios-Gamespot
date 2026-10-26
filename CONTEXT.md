@@ -11,7 +11,7 @@
 > ¿Quién es más probable que…?, ¿Qué prefieres?, Mímica por equipos, ¿Quién soy? y Hombres Lobo (con reparto pasando el
 > móvil y un game master que lleva la partida; muy configurable y con todas las expansiones). Hecho: V070 (base común de cartas)
 > y V071 (Verdad o Reto), V072 (¿Quién es más probable que…?), V073 (¿Qué prefieres?), V074 (Mímica), V075 (¿Quién soy?) y el
-> dominio, el setup y el reparto de Hombres Lobo (V076–V078); faltan la consola del game master y el final (V079–V081).
+> dominio, el setup, el reparto y la noche de Hombres Lobo (V076–V079); faltan el amanecer, el día y el final (V080–V081).
 > **Probar en el móvil (¿Quién soy?):** que el texto salga derecho con el móvil en la frente (gira solo según el lado que quede
 > abajo) y que inclinar abajo sea acierto y arriba pasar; si va al revés, la opción «Al revés» del setup lo cambia. **Probar en el móvil:** una partida de Verdad o Reto con picante y con
 > cartas propias que usen `{otro}`; ¿Quién es más probable…? llevando la cuenta (que la cuenta atrás y la vibración se noten).
@@ -387,6 +387,11 @@ el móvil (V066, V068).
 | LiberationSans (recursos esenciales de TextMeshPro) | OFL 1.1 | Respaldo de los caracteres que Roboto no tenga |
 
 ## 10. Registro de trabajo (lo más reciente arriba)
+
+### 2026-10-26 · V079 · Hombres Lobo: la noche del game master
+- Consola nocturna: cada paso dice qué rol despertar, quién lo tiene y qué leer en voz alta; se toca a quien señale (los chips llevan el nombre y la carta) o se elige la opción. Lo que ve la vidente y lo que huele el zorro salen en grande para enseñárselo. En la barra: deshacer, los jugadores (con matar y revivir a mano) y el registro de la partida.
+- El registro guarda en el propio evento qué luna salió (para que no cambie con la del día siguiente) y el motor cuenta los pasos de cada noche.
+- PlayMode 2/2, barrido limpio. Capturas `V079_lobo_*`.
 
 ### 2026-10-26 · V078 · Hombres Lobo: reparto
 - Reparto pasando el móvil, como en el Impostor: cada uno ve su carta en secreto (con sus compañeros lobos, si la regla lo dice, o sus hermanos o su grupo) y la oculta; al final, el móvil va al game master.

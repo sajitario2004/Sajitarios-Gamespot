@@ -332,8 +332,15 @@ gestionar la partida; muy configurable y con todas las expansiones». Se hacen d
     lobos ven a sus compañeros si la regla lo dice; hermanas, hermanos y sectario ven a los suyos; avisos del ladrón y
     del ángel), «Ocultar y pasar» y, tras el último, «Dale el móvil al game master». PlayMode 2/2; barrido (167
     pantallas) limpio tras acortar tres botones. Capturas `V078_lobo_*`.
-- [ ] **V079 · Hombres Lobo: consola del game master, noche.** Paso a paso en el orden de los roles vivos, tocando
+- [x] **V079 · Hombres Lobo: consola del game master, noche.** Paso a paso en el orden de los roles vivos, tocando
   jugadores; lo que ve la vidente, las pociones, los enamorados…
+  - Notas: `LoboMasterScreens.cs` (base de la consola con deshacer, jugadores y registro en la barra; la noche; la
+    lista de jugadores con su carta, su estado y matar o revivir a mano; el registro) y `LoboTexts.cs`. Cada paso: el
+    rol que se despierta y quién lo tiene, lo que hay que leer en voz alta, avisos (la niña, la luna llena, la víctima
+    para la bruja y el padre, las cartas del ladrón), chips con nombre y carta para señalar u opciones, «Hecho» / «A
+    nadie» y una ayuda. La vidente y el zorro enseñan su resultado en grande. 19 pasos con título, narración y ayuda
+    en es y en; causas, registro, ganadores y lunas. PlayMode 2/2; barrido (182 pantallas) limpio. Capturas
+    `V079_lobo_*`.
 - [ ] **V080 · Hombres Lobo: día y final.** Muertes de la noche, cadenas (enamorados, cazador…), debate con
   tiempo, votación, capitán y victoria; registro de la partida.
 - [ ] **V081 · Hombres Lobo: eventos de luna y pulido.**

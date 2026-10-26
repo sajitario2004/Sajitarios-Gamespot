@@ -71,6 +71,9 @@ namespace Gamespot.Games.HombresLobo.Domain
 
         public bool PuedeDeshacer => _undo.Count > 0;
 
+        /// <summary>Pasos ya resueltos esta noche (0 = acaba de empezar).</summary>
+        public int PasosResueltos => _s.PasosNoche;
+
         /// <summary>Si hoy se dice el rol de los que mueren (la regla, salvo con niebla).</summary>
         public bool RevelarRoles => Rules != null && Rules.RevelarRolAlMorir && _s.Luna != LoboLuna.Niebla;
 
@@ -219,6 +222,7 @@ namespace Gamespot.Games.HombresLobo.Domain
             if (picked.Count < step.Min || picked.Count > step.Max || picked.Any(i => !step.Candidatos.Contains(i))) return false;
             if (step.Opciones.Count > 0 && (!opcion.HasValue || !step.Opciones.Contains(opcion.Value))) return false;
             Save();
+            _s.PasosNoche++;
             Apply(step, picked, opcion);
             Advance(step.Paso);
             Changed?.Invoke();
@@ -243,6 +247,7 @@ namespace Gamespot.Games.HombresLobo.Domain
             _s.CuervoMarcado = null;
             _s.MuertesRecientes.Clear();
             _s.Paso = null;
+            _s.PasosNoche = 0;
             Advance(null);
         }
 
@@ -495,7 +500,7 @@ namespace Gamespot.Games.HombresLobo.Domain
             if (Rules.EventosLuna && _s.Victoria == null)
             {
                 _s.Luna = _random.NextDouble() < LoboLunas.Probabilidad ? _random.Pick(LoboLunas.All) : (LoboLuna?)null;
-                if (_s.Luna.HasValue) Log(LoboEventoTipo.Luna);
+                if (_s.Luna.HasValue) Log(LoboEventoTipo.Luna, otro: (int)_s.Luna.Value);
             }
             else
             {
