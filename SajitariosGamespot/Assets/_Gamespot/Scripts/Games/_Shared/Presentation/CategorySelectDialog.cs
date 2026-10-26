@@ -13,7 +13,7 @@ namespace Gamespot.Games.Shared
     /// </summary>
     public static class CategorySelectDialog
     {
-        public const float RowHeight = 52f;
+        public const float RowHeight = 56f;
         public const float MaxListHeight = 340f;
 
         /// <param name="current">La elegida ahora (nulo = "Todas").</param>

@@ -45,14 +45,36 @@ namespace Gamespot.Core.Runtime.Settings
         /// </summary>
         public static bool ReduceMotion
         {
-            get => PlayerPrefs.GetInt(ReduceMotionKey, 0) == 1;
+            // Sin elegir en la app, sigue al sistema (V062). Se guarda en memoria: los brillos lo miran en cada
+            // fotograma y PlayerPrefs es una llamada nativa (V063).
+            get
+            {
+                if (!_reduceMotion.HasValue)
+                {
+                    _reduceMotion = PlayerPrefs.HasKey(ReduceMotionKey) ? PlayerPrefs.GetInt(ReduceMotionKey, 0) == 1 : SystemReduceMotion;
+                }
+                return _reduceMotion.Value;
+            }
             set
             {
                 if (value == ReduceMotion) return;
                 PlayerPrefs.SetInt(ReduceMotionKey, value ? 1 : 0);
                 PlayerPrefs.Save();
+                _reduceMotion = value;
                 ReduceMotionChanged?.Invoke();
             }
+        }
+
+        private static bool? _reduceMotion;
+
+        /// <summary>Olvida la elección de "reducir animaciones": vuelve a seguir al sistema.</summary>
+        public static void ClearReduceMotion()
+        {
+            var before = ReduceMotion;
+            PlayerPrefs.DeleteKey(ReduceMotionKey);
+            PlayerPrefs.Save();
+            _reduceMotion = null;
+            if (ReduceMotion != before) ReduceMotionChanged?.Invoke();
         }
 
         /// <summary>
@@ -83,7 +105,41 @@ namespace Gamespot.Core.Runtime.Settings
             }
         }
 
+        private static bool? _systemReduceMotion;
+
+        /// <summary>
+        /// Si el sistema pide menos movimiento: en Android, «Quitar animaciones» (escala de animación a 0). En iOS haría
+        /// falta un plugin nativo: por ahora, no.
+        /// </summary>
+        public static bool SystemReduceMotion
+        {
+            get
+            {
+                if (_systemReduceMotion.HasValue) return _systemReduceMotion.Value;
+                _systemReduceMotion = false;
+#if UNITY_ANDROID && !UNITY_EDITOR
+                try
+                {
+                    using (var resolver = UnityEngine.Android.AndroidApplication.currentContext.Call<AndroidJavaObject>("getContentResolver"))
+                    using (var global = new AndroidJavaClass("android.provider.Settings$Global"))
+                    {
+                        _systemReduceMotion = global.CallStatic<float>("getFloat", resolver, "animator_duration_scale", 1f) == 0f;
+                    }
+                }
+                catch (Exception e)
+                {
+                    Debug.LogWarning($"[Ajustes] No se pudo leer la escala de animación del sistema: {e.Message}");
+                }
+#endif
+                return _systemReduceMotion.Value;
+            }
+        }
+
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-        private static void ResetStatics() => ReduceMotionChanged = null;
+        private static void ResetStatics()
+        {
+            ReduceMotionChanged = null;
+            _reduceMotion = null;
+        }
     }
 }

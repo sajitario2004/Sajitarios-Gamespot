@@ -1,0 +1,16 @@
+{
+    "name": "Gamespot.Games.QuePrefieres.Domain",
+    "rootNamespace": "Gamespot.Games.QuePrefieres.Domain",
+    "references": [
+        "Gamespot.Core"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

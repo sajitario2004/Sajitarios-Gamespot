@@ -25,7 +25,19 @@
         "Gamespot.Games.YoNunca.Domain",
         "Gamespot.Games.Bomba",
         "Gamespot.Games.Bomba.Domain",
-        "Gamespot.Editor"
+        "Gamespot.Editor",
+        "Gamespot.Games.VerdadReto",
+        "Gamespot.Games.VerdadReto.Domain",
+        "Gamespot.Games.MasProbable",
+        "Gamespot.Games.MasProbable.Domain",
+        "Gamespot.Games.QuePrefieres",
+        "Gamespot.Games.QuePrefieres.Domain",
+        "Gamespot.Games.Mimica",
+        "Gamespot.Games.Mimica.Domain",
+        "Gamespot.Games.QuienSoy",
+        "Gamespot.Games.QuienSoy.Domain",
+        "Gamespot.Games.HombresLobo.Domain",
+        "Gamespot.Games.HombresLobo"
     ],
     "includePlatforms": [
         "Editor"

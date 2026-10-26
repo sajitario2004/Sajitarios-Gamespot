@@ -1,0 +1,2018 @@
+[
+  {
+    "texto": "Rosalía",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Shakira",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Messi",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Cristiano Ronaldo",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Rafa Nadal",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Fernando Alonso",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Pau Gasol",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Alexia Putellas",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Michael Jackson",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Elvis Presley",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Freddie Mercury",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Lady Gaga",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Beyoncé",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Taylor Swift",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Bad Bunny",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Madonna",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Charles Chaplin",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Marilyn Monroe",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Albert Einstein",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Pablo Picasso",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Salvador Dalí",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Frida Kahlo",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Cristóbal Colón",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Napoleón",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Cleopatra",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Julio César",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Ibai Llanos",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Belén Esteban",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Isabel Pantoja",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Julio Iglesias",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Raphael",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Lola Flores",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Antonio Banderas",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Penélope Cruz",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Javier Bardem",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Santiago Segura",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Pablo Motos",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Karlos Arguiñano",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "David Bisbal",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Alejandro Sanz",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Ana Obregón",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Aitana",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Usain Bolt",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Michael Jordan",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Elon Musk",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Steve Jobs",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Bill Gates",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Arnold Schwarzenegger",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Jackie Chan",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Leonardo DiCaprio",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Brad Pitt",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Johnny Depp",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Tom Cruise",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Will Smith",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Justin Bieber",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Britney Spears",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Rihanna",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Mozart",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Beethoven",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "William Shakespeare",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Miguel de Cervantes",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Jordi Hurtado",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Mario Casas",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Úrsula Corberó",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "C. Tangana",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Quevedo",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "El Rubius",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Kim Kardashian",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Ed Sheeran",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Harry Styles",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Adele",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Dua Lipa",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Mbappé",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Lamine Yamal",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Carlos Alcaraz",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Gandhi",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Martin Luther King",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Marie Curie",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Leonardo da Vinci",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Isaac Newton",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Harry Potter",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Darth Vader",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Spiderman",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Batman",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Superman",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Wonder Woman",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Shrek",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Mickey Mouse",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Bob Esponja",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Homer Simpson",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Bart Simpson",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Peppa Pig",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Pikachu",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Goku",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Mario Bros",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Sonic",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Lara Croft",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Sherlock Holmes",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Drácula",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Frankenstein",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Papá Noel",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Los Reyes Magos",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "El Ratoncito Pérez",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Cenicienta",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Blancanieves",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Pinocho",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Peter Pan",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Campanilla",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Elsa de Frozen",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Aladdín",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Simba",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Nemo",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Buzz Lightyear",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Woody",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "El Grinch",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Gollum",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Gandalf",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Jack Sparrow",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Indiana Jones",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "James Bond",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Rocky Balboa",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Terminator",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "E.T.",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "King Kong",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Godzilla",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Hulk",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Iron Man",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Capitán América",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Thor",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Joker",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Tarzán",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Mowgli",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Don Quijote",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Sancho Panza",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Mortadelo",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Filemón",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Astérix",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Obélix",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Tintín",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Garfield",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Snoopy",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Scooby-Doo",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Los Pitufos",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Bugs Bunny",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Popeye",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Barbie",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Ken",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Yoda",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Chewbacca",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Mr. Bean",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Willy Wonka",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "La Pantera Rosa",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Shin Chan",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Doraemon",
+    "categoria": "personajes"
+  },
+  {
+    "texto": "Perro",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Gato",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Elefante",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Jirafa",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Mono",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Gorila",
+    "categoria": "animales"
+  },
+  {
+    "texto": "León",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Tigre",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Canguro",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Koala",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Pingüino",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Oso polar",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Oso panda",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Serpiente",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Cocodrilo",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Tiburón",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Delfín",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Ballena",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Pulpo",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Cangrejo",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Medusa",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Foca",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Flamenco",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Avestruz",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Pavo real",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Gallina",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Pato",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Búho",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Águila",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Loro",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Murciélago",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Mariposa",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Abeja",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Mosquito",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Araña",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Hormiga",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Caracol",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Rana",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Tortuga",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Camaleón",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Conejo",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Ardilla",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Hámster",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Cerdo",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Vaca",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Oveja",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Caballo",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Burro",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Camello",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Hipopótamo",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Rinoceronte",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Cebra",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Lobo",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Zorro",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Mofeta",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Perezoso",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Erizo",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Dinosaurio",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Lombriz",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Morsa",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Bombero",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Policía",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Médico",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Dentista",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Enfermero",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Veterinario",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Profesor",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Cocinero",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Camarero",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Peluquero",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Fontanero",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Electricista",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Carpintero",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Albañil",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Mecánico",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Taxista",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Piloto de avión",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Astronauta",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Socorrista",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Jardinero",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Agricultor",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Pescador",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Carnicero",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Panadero",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Cajero",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Repartidor",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Cartero",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Soldado",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Juez",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Abogado",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Periodista",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Fotógrafo",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Presentador de televisión",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Actor",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Cantante",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Payaso",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Mago",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Futbolista",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Árbitro",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Informático",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Youtuber",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Detective",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Espía",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "DJ",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Masajista",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Tatuador",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Modelo",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Arquitecto",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Científico",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Buzo",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Leñador",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Cura",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Barbero",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Farmacéutico",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Psicólogo",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Bibliotecario",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Pirata",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Vigilante de seguridad",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Monitor de esquí",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Domador de leones",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Paraguas",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Tijeras",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Martillo",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Cepillo de dientes",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Secador de pelo",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Plancha",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Aspiradora",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Lavadora",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Microondas",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Nevera",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Tostadora",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Sartén",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Tenedor",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Sacacorchos",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Botella",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Reloj",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Despertador",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Gafas de sol",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Sombrero",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Bufanda",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Mochila",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Maleta",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Llaves",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Móvil",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Mando a distancia",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Ordenador",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Cámara de fotos",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Guitarra",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Piano",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Trompeta",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Balón",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Raqueta",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Bicicleta",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Patinete",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Coche",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Avión",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Barco",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Helicóptero",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Tren",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Cohete",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Escoba",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Vela",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Linterna",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Tienda de campaña",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Almohada",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Espejo",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Peine",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Pintalabios",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Perfume",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Lupa",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Brújula",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Globo",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Cometa",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Cubo de Rubik",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Ancla",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Ventilador",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Calcetín",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Chancla",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Corona",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Varita mágica",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Torre Eiffel",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Sagrada Familia",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Pirámides de Egipto",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Estatua de la Libertad",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Gran Muralla China",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Coliseo de Roma",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Alhambra",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Machu Picchu",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Big Ben",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Taj Mahal",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Playa",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Montaña",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Desierto",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Selva",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Polo Norte",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Hospital",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Colegio",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Aeropuerto",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Estación de tren",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Supermercado",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Discoteca",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Gimnasio",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Cine",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Teatro",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Museo",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Biblioteca",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Iglesia",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Cementerio",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Cárcel",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Zoo",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Circo",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Parque de atracciones",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Piscina",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Estadio de fútbol",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Restaurante",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Peluquería",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Farmacia",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Banco",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Ayuntamiento",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Comisaría",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Castillo",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Isla desierta",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Barco pirata",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Nave espacial",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Luna",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Marte",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Volcán",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Cueva",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Granja",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Faro",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Puerto",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Gasolinera",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Ascensor",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Cocina",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Baño",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Bar",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Hotel",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Camping",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Mercadona",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Puerta del Sol",
+    "categoria": "sitios"
+  },
+  {
+    "texto": "Pizza",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Hamburguesa",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Paella",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Tortilla de patatas",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Gazpacho",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Croquetas",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Jamón",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Churros con chocolate",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Patatas bravas",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Cocido",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Lentejas",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Sushi",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Tacos",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Kebab",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Espaguetis",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Helado",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Tarta",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Donut",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Palomitas",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Chocolate",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Plátano",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Manzana",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Fresa",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Sandía",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Piña",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Naranja",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Limón",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Aguacate",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Tomate",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Cebolla",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Ajo",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Zanahoria",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Brócoli",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Huevo frito",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Pan",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Queso",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Yogur",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Leche",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Café",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Calimocho",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Sangría",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Cerveza",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Coca-Cola",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Agua",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Mejillones",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Gambas",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Pulpo a la gallega",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Pimientos de Padrón",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Salchicha",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Perrito caliente",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Nachos",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Galleta",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Magdalena",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Turrón",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Roscón de Reyes",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Uvas de Nochevieja",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Palmera de chocolate",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Sopa",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Ensalada",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Bocadillo de calamares",
+    "categoria": "comida"
+  },
+  {
+    "texto": "Un vibrador",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un preservativo",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un tanga",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Unas esposas",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un látigo",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Lencería roja",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un actor porno",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Una actriz porno",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Una despedida de soltero",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un stripper",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un club de striptease",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un sex shop",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "El Kamasutra",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un chupetón",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Una resaca",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un follamigo",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Tinder",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un trío",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un gatillazo",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un orgasmo",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un desnudo",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Una playa nudista",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "El punto G",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un consolador",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un disfraz de enfermera sexy",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un cuarto oscuro",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un nude",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un ligue de una noche",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un motel",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un masaje con final feliz",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "La postura del perrito",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "El misionero",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un sesenta y nueve",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Una muñeca hinchable",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Viagra",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un cinturón de castidad",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Una barra de striptease",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Una cama redonda",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un jacuzzi para dos",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un calentón",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Unas bragas",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Unos calzoncillos",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un sujetador",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un piercing en el pezón",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Pillar a tus padres",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un azote",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "La cobra",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un pico",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un morreo",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un sugar daddy",
+    "categoria": "cachondeo"
+  }
+]

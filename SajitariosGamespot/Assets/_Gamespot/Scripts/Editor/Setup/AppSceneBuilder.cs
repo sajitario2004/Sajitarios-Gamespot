@@ -25,6 +25,13 @@ namespace Gamespot.Editor.Setup
         private const float BloomThreshold = 0.9f;
         private const float BloomIntensity = 0.6f;
         private const float BloomScatter = 0.65f;
+        // Ligero en móvil (V063): a un cuarto de resolución y 5 pasadas (antes, a la mitad y 6).
+        private const BloomDownscaleMode BloomDownscale = BloomDownscaleMode.Quarter;
+        private const int BloomMaxIterations = 5;
+
+        /// <summary>Vuelve a aplicar los valores del Bloom al perfil de volumen (sin reconstruir la escena).</summary>
+        [MenuItem("Gamespot/Configuración/Bloom", priority = 40)]
+        public static void ApplyBloom() => GetOrCreateVolumeProfile();
 
         [MenuItem("Gamespot/Construir/Escena App", priority = 0)]
         public static void Build()
@@ -101,6 +108,8 @@ namespace Gamespot.Editor.Setup
             bloom.intensity.Override(BloomIntensity);
             bloom.scatter.Override(BloomScatter);
             bloom.highQualityFiltering.Override(false);
+            bloom.downscale.Override(BloomDownscale);
+            bloom.maxIterations.Override(BloomMaxIterations);
 
             EditorUtility.SetDirty(bloom);
             EditorUtility.SetDirty(profile);

@@ -33,8 +33,11 @@ namespace Gamespot.Core.Runtime.UI
             if (_layer == null) return;
             Hide();
 
+            // Dentro de la zona segura (V061): si no, en un móvil con barra de gestos quedaba debajo de ella.
+            var area = UiLayout.CreateStretched("SnackbarArea", _layer);
+            area.gameObject.AddComponent<SafeArea>();
             var go = new GameObject("Snackbar", typeof(RectTransform));
-            go.transform.SetParent(_layer, false);
+            go.transform.SetParent(area, false);
             var rect = (RectTransform)go.transform;
             rect.anchorMin = new Vector2(0f, 0f);
             rect.anchorMax = new Vector2(1f, 0f);
@@ -59,8 +62,10 @@ namespace Gamespot.Core.Runtime.UI
         public static void Hide()
         {
             if (_current == null) return;
-            _current.gameObject.SetActive(false);
-            Destroy(_current.gameObject);
+            // Se va con su contenedor de zona segura.
+            var root = _current.transform.parent != null ? _current.transform.parent.gameObject : _current.gameObject;
+            root.SetActive(false);
+            Destroy(root);
             _current = null;
         }
 

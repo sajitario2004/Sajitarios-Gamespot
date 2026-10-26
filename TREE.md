@@ -1,6 +1,6 @@
 # TREE
 
-Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-25 20:30.
+Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-26 01:37.
 
 No se listan: Library, Temp, Logs, obj, UserSettings, .git, .vs, .idea, .vscode, .utmp, Build, Builds, MemoryCaptures, Recordings, node_modules, __pycache__, .venv, .dart_tool, build, coverage, *.meta, *.csproj, *.sln, *.slnx, *.user, *.pidb, *.unityproj, .DS_Store, Thumbs.db, *.apk, *.aab.
 Plegadas: skills, TextMesh Pro, Flutter, Capturas (Flutter = la app original en Legacy/Flutter, solo lectura).
@@ -11,7 +11,7 @@ Sajitarios-Gamespot/
 ├── .claude/
 │   └── settings.json
 ├── Docs/
-│   ├── Capturas/  (46 elementos, plegado)
+│   ├── Capturas/  (96 elementos, plegado)
 │   └── PLAN_MEJORAS.md
 ├── Legacy/
 │   └── Flutter/  (20 elementos, plegado)
@@ -23,6 +23,12 @@ Sajitarios-Gamespot/
 │   │   │   │       ├── app_icon.png
 │   │   │   │       ├── app_icon_background.png
 │   │   │   │       └── app_icon_foreground.png
+│   │   │   ├── Fonts/
+│   │   │   │   ├── LICENSE-MaterialIcons.txt
+│   │   │   │   ├── LICENSE-Roboto.txt
+│   │   │   │   ├── MaterialIcons-Regular.ttf
+│   │   │   │   ├── Roboto-Bold.ttf
+│   │   │   │   └── Roboto-Regular.ttf
 │   │   │   ├── Resources/
 │   │   │   │   ├── Audio/
 │   │   │   │   │   ├── beep.wav
@@ -37,6 +43,10 @@ Sajitarios-Gamespot/
 │   │   │   │   │   ├── tick.wav
 │   │   │   │   │   ├── tock.wav
 │   │   │   │   │   └── wrong.wav
+│   │   │   │   ├── Fonts/
+│   │   │   │   │   ├── MaterialIcons SDF.asset
+│   │   │   │   │   ├── Roboto Bold SDF.asset
+│   │   │   │   │   └── Roboto SDF.asset
 │   │   │   │   ├── Images/
 │   │   │   │   │   ├── card_back.png
 │   │   │   │   │   └── menu_header.png
@@ -47,8 +57,13 @@ Sajitarios-Gamespot/
 │   │   │   │       ├── bomba_categorias.json
 │   │   │   │       ├── bomba_silabas.json
 │   │   │   │       ├── impostor_words.json
+│   │   │   │       ├── mas_probable_cards.json
+│   │   │   │       ├── mimica_cards.json
+│   │   │   │       ├── que_prefieres_cards.json
+│   │   │   │       ├── quien_soy_cards.json
 │   │   │   │       ├── tabu_words.json
 │   │   │   │       ├── trivia_questions.json
+│   │   │   │       ├── verdad_reto_cards.json
 │   │   │   │       ├── wavelength_spectra.json
 │   │   │   │       └── yo_nunca_statements.json
 │   │   │   ├── Scenes/
@@ -60,10 +75,14 @@ Sajitarios-Gamespot/
 │   │   │   │   │   └── Gamespot.App.asmdef
 │   │   │   │   ├── Core/
 │   │   │   │   │   ├── Content/
+│   │   │   │   │   │   ├── PromptCard.cs
 │   │   │   │   │   │   └── WordCategories.cs
 │   │   │   │   │   ├── Json/
 │   │   │   │   │   │   ├── Json.cs
 │   │   │   │   │   │   └── JsonWriter.cs
+│   │   │   │   │   ├── Party/
+│   │   │   │   │   │   ├── GuessGame.cs
+│   │   │   │   │   │   └── TeamMatch.cs
 │   │   │   │   │   ├── Random/
 │   │   │   │   │   │   ├── IRandomProvider.cs
 │   │   │   │   │   │   ├── RandomExtensions.cs
@@ -72,6 +91,8 @@ Sajitarios-Gamespot/
 │   │   │   │   │   ├── Text/
 │   │   │   │   │   │   ├── IcuMessageFormatter.cs
 │   │   │   │   │   │   └── NameNormalizer.cs
+│   │   │   │   │   ├── Time/
+│   │   │   │   │   │   └── Countdown.cs
 │   │   │   │   │   └── Gamespot.Core.asmdef
 │   │   │   │   ├── Core.Runtime/
 │   │   │   │   │   ├── Audio/
@@ -90,6 +111,8 @@ Sajitarios-Gamespot/
 │   │   │   │   │   ├── Navigation/
 │   │   │   │   │   │   ├── AppScreen.cs
 │   │   │   │   │   │   └── Router.cs
+│   │   │   │   │   ├── Sensors/
+│   │   │   │   │   │   └── MotionSensor.cs
 │   │   │   │   │   ├── Settings/
 │   │   │   │   │   │   └── AppSettings.cs
 │   │   │   │   │   ├── Theme/
@@ -102,6 +125,8 @@ Sajitarios-Gamespot/
 │   │   │   │   │   │   ├── IconId.cs
 │   │   │   │   │   │   ├── Icons.cs
 │   │   │   │   │   │   ├── IconView.cs
+│   │   │   │   │   │   ├── IdleRendering.cs
+│   │   │   │   │   │   ├── LandscapeFrame.cs
 │   │   │   │   │   │   ├── NeonBackground.cs
 │   │   │   │   │   │   ├── NeonButton.cs
 │   │   │   │   │   │   ├── NeonChip.cs
@@ -134,23 +159,32 @@ Sajitarios-Gamespot/
 │   │   │   │   │   ├── Localization/
 │   │   │   │   │   │   └── ArbImporter.cs
 │   │   │   │   │   ├── Setup/
+│   │   │   │   │   │   ├── AndroidPermissions.cs
 │   │   │   │   │   │   ├── AppSceneBuilder.cs
+│   │   │   │   │   │   ├── FontSetup.cs
 │   │   │   │   │   │   └── ProjectSetup.cs
 │   │   │   │   │   └── Gamespot.Editor.asmdef
 │   │   │   │   ├── Games/
 │   │   │   │   │   ├── _Shared/
 │   │   │   │   │   │   ├── Data/
-│   │   │   │   │   │   │   └── CustomCategoryRepository.cs
+│   │   │   │   │   │   │   ├── CustomCategoryRepository.cs
+│   │   │   │   │   │   │   └── PromptCardRepository.cs
 │   │   │   │   │   │   ├── Presentation/
+│   │   │   │   │   │   │   ├── AdultGate.cs
 │   │   │   │   │   │   │   ├── CategoryNameDialog.cs
 │   │   │   │   │   │   │   ├── CategoryOption.cs
 │   │   │   │   │   │   │   ├── CategoryPicker.cs
 │   │   │   │   │   │   │   ├── CategorySelectDialog.cs
 │   │   │   │   │   │   │   ├── CustomCategoriesScreen.cs
 │   │   │   │   │   │   │   ├── GameUi.cs
+│   │   │   │   │   │   │   ├── GuessScreens.cs
 │   │   │   │   │   │   │   ├── NotFoundScreen.cs
 │   │   │   │   │   │   │   ├── PlayerListEditor.cs
-│   │   │   │   │   │   │   └── RulesScreen.cs
+│   │   │   │   │   │   │   ├── PromptCardsConfig.cs
+│   │   │   │   │   │   │   ├── PromptCardsScreen.cs
+│   │   │   │   │   │   │   ├── RulesScreen.cs
+│   │   │   │   │   │   │   ├── ScoreList.cs
+│   │   │   │   │   │   │   └── SetupWidgets.cs
 │   │   │   │   │   │   ├── Gamespot.Games.Shared.asmdef
 │   │   │   │   │   │   └── IGameDescriptor.cs
 │   │   │   │   │   ├── Bomba/
@@ -175,6 +209,22 @@ Sajitarios-Gamespot/
 │   │   │   │   │   │   │   └── EsUn10PeroScreen.cs
 │   │   │   │   │   │   ├── EsUn10PeroGame.cs
 │   │   │   │   │   │   └── Gamespot.Games.EsUn10Pero.asmdef
+│   │   │   │   │   ├── HombresLobo/
+│   │   │   │   │   │   ├── Domain/
+│   │   │   │   │   │   │   ├── Gamespot.Games.HombresLobo.Domain.asmdef
+│   │   │   │   │   │   │   ├── LoboConfig.cs
+│   │   │   │   │   │   │   ├── LoboGame.cs
+│   │   │   │   │   │   │   ├── LoboLuna.cs
+│   │   │   │   │   │   │   ├── LoboRoles.cs
+│   │   │   │   │   │   │   └── LoboState.cs
+│   │   │   │   │   │   ├── Gamespot.Games.HombresLobo.asmdef
+│   │   │   │   │   │   ├── HombresLoboGame.cs
+│   │   │   │   │   │   ├── LoboDayScreens.cs
+│   │   │   │   │   │   ├── LoboGuideScreen.cs
+│   │   │   │   │   │   ├── LoboMasterScreens.cs
+│   │   │   │   │   │   ├── LoboRevealScreen.cs
+│   │   │   │   │   │   ├── LoboSetupScreens.cs
+│   │   │   │   │   │   └── LoboTexts.cs
 │   │   │   │   │   ├── Impostor/
 │   │   │   │   │   │   ├── Data/
 │   │   │   │   │   │   │   ├── CategoryWordSource.cs
@@ -204,6 +254,34 @@ Sajitarios-Gamespot/
 │   │   │   │   │   │   │   └── WordsScreen.cs
 │   │   │   │   │   │   ├── Gamespot.Games.Impostor.asmdef
 │   │   │   │   │   │   └── ImpostorGame.cs
+│   │   │   │   │   ├── MasProbable/
+│   │   │   │   │   │   ├── Domain/
+│   │   │   │   │   │   │   ├── Gamespot.Games.MasProbable.Domain.asmdef
+│   │   │   │   │   │   │   └── MasProbableDomain.cs
+│   │   │   │   │   │   ├── Gamespot.Games.MasProbable.asmdef
+│   │   │   │   │   │   ├── MasProbableGame.cs
+│   │   │   │   │   │   └── MasProbableScreens.cs
+│   │   │   │   │   ├── Mimica/
+│   │   │   │   │   │   ├── Domain/
+│   │   │   │   │   │   │   ├── Gamespot.Games.Mimica.Domain.asmdef
+│   │   │   │   │   │   │   └── MimicaDomain.cs
+│   │   │   │   │   │   ├── Gamespot.Games.Mimica.asmdef
+│   │   │   │   │   │   ├── MimicaGame.cs
+│   │   │   │   │   │   └── MimicaScreens.cs
+│   │   │   │   │   ├── QuePrefieres/
+│   │   │   │   │   │   ├── Domain/
+│   │   │   │   │   │   │   ├── Gamespot.Games.QuePrefieres.Domain.asmdef
+│   │   │   │   │   │   │   └── QuePrefieresDomain.cs
+│   │   │   │   │   │   ├── Gamespot.Games.QuePrefieres.asmdef
+│   │   │   │   │   │   ├── QuePrefieresGame.cs
+│   │   │   │   │   │   └── QuePrefieresScreens.cs
+│   │   │   │   │   ├── QuienSoy/
+│   │   │   │   │   │   ├── Domain/
+│   │   │   │   │   │   │   ├── Gamespot.Games.QuienSoy.Domain.asmdef
+│   │   │   │   │   │   │   └── QuienSoyDomain.cs
+│   │   │   │   │   │   ├── Gamespot.Games.QuienSoy.asmdef
+│   │   │   │   │   │   ├── QuienSoyGame.cs
+│   │   │   │   │   │   └── QuienSoyScreens.cs
 │   │   │   │   │   ├── Tabu/
 │   │   │   │   │   │   ├── Data/
 │   │   │   │   │   │   │   └── TabuWordRepository.cs
@@ -232,6 +310,14 @@ Sajitarios-Gamespot/
 │   │   │   │   │   │   │   └── TriviaScreens.cs
 │   │   │   │   │   │   ├── Gamespot.Games.Trivia.asmdef
 │   │   │   │   │   │   └── TriviaGame.cs
+│   │   │   │   │   ├── VerdadReto/
+│   │   │   │   │   │   ├── Domain/
+│   │   │   │   │   │   │   ├── Gamespot.Games.VerdadReto.Domain.asmdef
+│   │   │   │   │   │   │   ├── VerdadRetoConfig.cs
+│   │   │   │   │   │   │   └── VerdadRetoFlowController.cs
+│   │   │   │   │   │   ├── Gamespot.Games.VerdadReto.asmdef
+│   │   │   │   │   │   ├── VerdadRetoGame.cs
+│   │   │   │   │   │   └── VerdadRetoScreens.cs
 │   │   │   │   │   ├── Wavelength/
 │   │   │   │   │   │   ├── Data/
 │   │   │   │   │   │   │   └── SpectrumRepository.cs
@@ -248,12 +334,16 @@ Sajitarios-Gamespot/
 │   │   │   │   │   └── YoNunca/
 │   │   │   │   │       ├── Domain/
 │   │   │   │   │       │   ├── Gamespot.Games.YoNunca.Domain.asmdef
+│   │   │   │   │       │   ├── NeverStatementText.cs
 │   │   │   │   │       │   └── YoNuncaDomain.cs
 │   │   │   │   │       ├── Gamespot.Games.YoNunca.asmdef
-│   │   │   │   │       └── YoNuncaGame.cs
+│   │   │   │   │       ├── YoNuncaGame.cs
+│   │   │   │   │       └── YoNuncaPhrasesScreen.cs
 │   │   │   │   └── Menu/
 │   │   │   │       ├── Gamespot.Menu.asmdef
-│   │   │   │       └── MenuScreen.cs
+│   │   │   │       ├── LegalScreen.cs
+│   │   │   │       ├── MenuScreen.cs
+│   │   │   │       └── SettingsScreen.cs
 │   │   │   ├── Settings/
 │   │   │   │   └── GamespotVolume.asset
 │   │   │   └── Tests/
@@ -261,9 +351,11 @@ Sajitarios-Gamespot/
 │   │   │       │   ├── Audio/
 │   │   │       │   │   └── AudioClipsTests.cs
 │   │   │       │   ├── Core/
+│   │   │       │   │   ├── GuessGameTests.cs
 │   │   │       │   │   ├── IcuMessageFormatterTests.cs
 │   │   │       │   │   ├── JsonTests.cs
 │   │   │       │   │   ├── NameNormalizerTests.cs
+│   │   │       │   │   ├── PromptCardTests.cs
 │   │   │       │   │   ├── RandomTests.cs
 │   │   │       │   │   └── WordCategoriesTests.cs
 │   │   │       │   ├── Db/
@@ -277,6 +369,12 @@ Sajitarios-Gamespot/
 │   │   │       │   │   ├── EsUn10Pero/
 │   │   │       │   │   │   └── Domain/
 │   │   │       │   │   │       └── DrawCardUseCaseTests.cs
+│   │   │       │   │   ├── HombresLobo/
+│   │   │       │   │   │   └── Domain/
+│   │   │       │   │   │       ├── LoboConfigTests.cs
+│   │   │       │   │   │       ├── LoboDayTests.cs
+│   │   │       │   │   │       ├── LoboNightTests.cs
+│   │   │       │   │   │       └── LoboTestKit.cs
 │   │   │       │   │   ├── Impostor/
 │   │   │       │   │   │   ├── Data/
 │   │   │       │   │   │   │   ├── ImpostorDataTests.cs
@@ -288,8 +386,17 @@ Sajitarios-Gamespot/
 │   │   │       │   │   │       ├── ImpostorFlowControllerTests.cs
 │   │   │       │   │   │       ├── ImpostorStatsTests.cs
 │   │   │       │   │   │       └── ImpostorTestData.cs
+│   │   │       │   │   ├── MasProbable/
+│   │   │       │   │   │   └── MasProbableFlowTests.cs
+│   │   │       │   │   ├── Mimica/
+│   │   │       │   │   │   └── MimicaConfigTests.cs
+│   │   │       │   │   ├── QuePrefieres/
+│   │   │       │   │   │   └── QuePrefieresFlowTests.cs
+│   │   │       │   │   ├── QuienSoy/
+│   │   │       │   │   │   └── QuienSoyTests.cs
 │   │   │       │   │   ├── Shared/
-│   │   │       │   │   │   └── CustomCategoryRepositoryTests.cs
+│   │   │       │   │   │   ├── CustomCategoryRepositoryTests.cs
+│   │   │       │   │   │   └── PromptCardRepositoryTests.cs
 │   │   │       │   │   ├── Tabu/
 │   │   │       │   │   │   ├── Domain/
 │   │   │       │   │   │   │   ├── TabuCardRulesTests.cs
@@ -301,17 +408,24 @@ Sajitarios-Gamespot/
 │   │   │       │   │   │   │   └── TriviaDataTests.cs
 │   │   │       │   │   │   └── Domain/
 │   │   │       │   │   │       └── TriviaDomainTests.cs
+│   │   │       │   │   ├── VerdadReto/
+│   │   │       │   │   │   └── VerdadRetoFlowTests.cs
 │   │   │       │   │   ├── Wavelength/
 │   │   │       │   │   │   ├── Domain/
 │   │   │       │   │   │   │   └── WavelengthDomainTests.cs
 │   │   │       │   │   │   └── WavelengthDialAndDataTests.cs
 │   │   │       │   │   ├── YoNunca/
-│   │   │       │   │   │   └── Domain/
-│   │   │       │   │   │       └── YoNuncaDomainTests.cs
+│   │   │       │   │   │   ├── Domain/
+│   │   │       │   │   │   │   ├── NeverStatementTextTests.cs
+│   │   │       │   │   │   │   └── YoNuncaDomainTests.cs
+│   │   │       │   │   │   └── YoNuncaPhrasesTests.cs
+│   │   │       │   │   ├── PromptSeedFilesTests.cs
 │   │   │       │   │   └── SeedFilesTests.cs
 │   │   │       │   ├── Localization/
 │   │   │       │   │   ├── GlyphCoverageTests.cs
 │   │   │       │   │   └── LocTests.cs
+│   │   │       │   ├── Theme/
+│   │   │       │   │   └── ContrastTests.cs
 │   │   │       │   ├── ArchitectureTests.cs
 │   │   │       │   └── Gamespot.Tests.EditMode.asmdef
 │   │   │       └── PlayMode/
@@ -320,17 +434,31 @@ Sajitarios-Gamespot/
 │   │   │           │   ├── CategoryTests.cs
 │   │   │           │   ├── EsUn10PeroScreenTests.cs
 │   │   │           │   ├── ImpostorFlowTests.cs
+│   │   │           │   ├── LoboDayTests.cs
+│   │   │           │   ├── LoboMoonTests.cs
+│   │   │           │   ├── LoboNightTests.cs
+│   │   │           │   ├── LoboRevealTests.cs
+│   │   │           │   ├── LoboSetupTests.cs
+│   │   │           │   ├── MasProbableFlowTests.cs
+│   │   │           │   ├── MimicaFlowTests.cs
 │   │   │           │   ├── OwnCategoriesTests.cs
 │   │   │           │   ├── PlayAgainTests.cs
 │   │   │           │   ├── PlayerRosterTests.cs
+│   │   │           │   ├── PromptCardsTests.cs
+│   │   │           │   ├── QuePrefieresFlowTests.cs
+│   │   │           │   ├── QuienSoyFlowTests.cs
 │   │   │           │   ├── SoundTests.cs
 │   │   │           │   ├── TabuFlowTests.cs
 │   │   │           │   ├── TriviaFlowTests.cs
+│   │   │           │   ├── VerdadRetoFlowTests.cs
 │   │   │           │   ├── WavelengthFlowTests.cs
 │   │   │           │   └── YoNuncaFlowTests.cs
+│   │   │           ├── AccessibilityTests.cs
 │   │   │           ├── AppTestHarness.cs
 │   │   │           ├── BootstrapTests.cs
-│   │   │           └── Gamespot.Tests.PlayMode.asmdef
+│   │   │           ├── Gamespot.Tests.PlayMode.asmdef
+│   │   │           ├── PerformanceTests.cs
+│   │   │           └── SafeAreaTests.cs
 │   │   ├── Scenes/
 │   │   │   └── SampleScene.unity
 │   │   ├── Settings/

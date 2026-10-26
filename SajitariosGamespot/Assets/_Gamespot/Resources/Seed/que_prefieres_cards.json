@@ -1,0 +1,1532 @@
+[
+  {
+    "texto": "Poder volar",
+    "texto_b": "Ser invisible",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Leer mentes",
+    "texto_b": "Ver el futuro",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Vivir en la playa",
+    "texto_b": "Vivir en la montaña",
+    "nivel": "suave"
+  },
+  {
+    "texto": "No volver a usar el móvil",
+    "texto_b": "No volver a ver series",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ser rico y aburrirte",
+    "texto_b": "Ser pobre y feliz",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Tener siempre frío",
+    "texto_b": "Tener siempre calor",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Hablar todos los idiomas",
+    "texto_b": "Tocar todos los instrumentos",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Viajar al pasado",
+    "texto_b": "Viajar al futuro",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Comer solo pizza toda la vida",
+    "texto_b": "No volver a comer pizza",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Saber cuándo vas a morir",
+    "texto_b": "Saber cómo vas a morir",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ser famoso",
+    "texto_b": "Ser el mejor amigo de un famoso",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Tener un dragón",
+    "texto_b": "Ser un dragón",
+    "nivel": "suave"
+  },
+  {
+    "texto": "No poder mentir nunca",
+    "texto_b": "Que nadie te crea nunca",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ducharte siempre con agua fría",
+    "texto_b": "No ducharte en una semana",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ser el más listo del grupo",
+    "texto_b": "Ser el más guapo del grupo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Vivir sin música",
+    "texto_b": "Vivir sin películas",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Llegar siempre diez minutos tarde",
+    "texto_b": "Llegar siempre veinte minutos pronto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Tener un botón de pausa",
+    "texto_b": "Tener un botón de rebobinar",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ser un genio de las mates",
+    "texto_b": "Ser un genio del arte",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Quedarte calvo",
+    "texto_b": "Quedarte sin cejas",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Perder el olfato",
+    "texto_b": "Perder el gusto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Un trabajo que te encanta mal pagado",
+    "texto_b": "Un trabajo que odias muy bien pagado",
+    "nivel": "suave"
+  },
+  {
+    "texto": "No volver a viajar",
+    "texto_b": "No volver a salir de fiesta",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Conocer a tu yo de hace diez años",
+    "texto_b": "Conocer a tu yo de dentro de diez años",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Tener superfuerza",
+    "texto_b": "Tener supervelocidad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Vivir en una gran ciudad",
+    "texto_b": "Vivir en un pueblo pequeño",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Que tu vida sea una película",
+    "texto_b": "Que tu vida sea una serie",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Hablar con los animales",
+    "texto_b": "Hablar con las plantas",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ganar la lotería",
+    "texto_b": "Vivir el doble de años",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Comer siempre lo mismo y que esté buenísimo",
+    "texto_b": "Comer siempre algo distinto y que esté normal",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Un mes sin internet",
+    "texto_b": "Un mes sin agua caliente",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ser un vampiro",
+    "texto_b": "Ser un hombre lobo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Que te pillen cantando en la ducha",
+    "texto_b": "Que te pillen hablando solo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ser el protagonista de un videojuego",
+    "texto_b": "Ser el protagonista de un musical",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Tener un mayordomo",
+    "texto_b": "Tener un chófer",
+    "nivel": "suave"
+  },
+  {
+    "texto": "No dormir nunca",
+    "texto_b": "No comer nunca y no tener hambre",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Enterarte de todos los cotilleos",
+    "texto_b": "Que nadie sepa nada de ti",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Volver a tener 15 años",
+    "texto_b": "Tener ya 60",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Tener un hermano gemelo",
+    "texto_b": "Ser hijo único",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Pasar un día en la cárcel",
+    "texto_b": "Pasar un día en un hospital",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Vivir en el espacio",
+    "texto_b": "Vivir bajo el mar",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Hablar solo en verso",
+    "texto_b": "Hablar solo cantando",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Que siempre suene música de fondo",
+    "texto_b": "Que siempre haya silencio",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ser el más rápido",
+    "texto_b": "Ser el más fuerte",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Que te regalen dinero",
+    "texto_b": "Que te regalen tiempo libre",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Cenar con tu ídolo",
+    "texto_b": "Cenar con un antepasado",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Tener mala suerte en el amor",
+    "texto_b": "Tener mala suerte con el dinero",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Nadar perfectamente",
+    "texto_b": "Conducir perfectamente",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Una casa enorme lejos de todo",
+    "texto_b": "Un piso pequeño en el centro",
+    "nivel": "suave"
+  },
+  {
+    "texto": "No usar redes sociales",
+    "texto_b": "No ver la tele",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Dormir siempre en el sofá",
+    "texto_b": "Dormir siempre en el suelo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Teletransportarte",
+    "texto_b": "Detener el tiempo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ser el jefe",
+    "texto_b": "Ser el empleado del mes siempre",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Perder todas tus fotos",
+    "texto_b": "Perder todos tus mensajes",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Tener un loro que lo repite todo",
+    "texto_b": "Tener un gato que te juzga",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ir al concierto de tu grupo favorito",
+    "texto_b": "Ir a la final de un Mundial",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Vivir sin queso",
+    "texto_b": "Vivir sin chocolate",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Vivir sin café",
+    "texto_b": "Vivir sin cerveza",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Conocer los secretos del universo",
+    "texto_b": "Conocer los secretos de tus amigos",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ser el primero en pisar Marte",
+    "texto_b": "Ser el primero en llegar al fondo del océano",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Recorrer Europa en tren",
+    "texto_b": "Recorrer Estados Unidos en coche",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Tener una cicatriz molona",
+    "texto_b": "Tener un tatuaje horrible",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Reírte cada vez que estornudas",
+    "texto_b": "Estornudar cada vez que te ríes",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Olvidar tu nombre",
+    "texto_b": "Olvidar el de todos los demás",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Pelear contra un caballo del tamaño de un pato",
+    "texto_b": "Pelear contra cien patos del tamaño de un caballo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ser un personaje de dibujos",
+    "texto_b": "Ser un personaje de videojuego",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Respirar bajo el agua",
+    "texto_b": "Ver en la oscuridad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ser muy alto",
+    "texto_b": "Ser muy bajito",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Cocinar como un chef",
+    "texto_b": "Bailar como un profesional",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Comer insectos una vez",
+    "texto_b": "Pasar un día entero sin comer",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Vivir gratis en una casa encantada",
+    "texto_b": "Pagar el doble por una casa normal",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ser el mejor en un deporte",
+    "texto_b": "Ser el mejor en un videojuego",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Que te recuerden para siempre",
+    "texto_b": "Ser muy feliz y que nadie se acuerde de ti",
+    "nivel": "suave"
+  },
+  {
+    "texto": "No poder decir que no",
+    "texto_b": "No poder decir que sí",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Tener siempre la razón",
+    "texto_b": "Tener siempre la última palabra",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Veranear siempre en el mismo sitio",
+    "texto_b": "No repetir nunca destino",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Llevar siempre chándal",
+    "texto_b": "Llevar siempre traje",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Un robot que limpie",
+    "texto_b": "Un robot que cocine",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ver diez veces la peor película del mundo",
+    "texto_b": "Leer una vez el peor libro del mundo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Que te despierte un gallo cada día",
+    "texto_b": "Que te despierte una alarma de coche",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Poder cambiar de cara",
+    "texto_b": "Poder cambiar de voz",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Encontrar al amor de tu vida",
+    "texto_b": "Encontrar un tesoro",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Tocar la guitarra",
+    "texto_b": "Tocar el piano",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Hacer puenting",
+    "texto_b": "Bucear con tiburones",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Vivir en el Polo Norte",
+    "texto_b": "Vivir en el desierto",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Un año sin vacaciones",
+    "texto_b": "Trabajar también los fines de semana",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Trabajar siempre desde casa",
+    "texto_b": "Trabajar siempre en una oficina con tus amigos",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Comer siempre sin sal",
+    "texto_b": "Comer siempre demasiado salado",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ser el más gracioso",
+    "texto_b": "Ser el más inteligente",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Que tus padres lean tus mensajes",
+    "texto_b": "Que tu jefe lea tus mensajes",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Bailar delante de mil personas",
+    "texto_b": "Cantar delante de mil personas",
+    "nivel": "suave"
+  },
+  {
+    "texto": "La nevera siempre llena",
+    "texto_b": "El depósito del coche siempre lleno",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Un jardín enorme",
+    "texto_b": "Una piscina",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Que solo llueva de noche",
+    "texto_b": "Que nunca haga viento",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Viajar gratis toda la vida",
+    "texto_b": "Comer gratis toda la vida",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ser un mago de verdad",
+    "texto_b": "Ser un superhéroe",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Hablar con tu yo de niño",
+    "texto_b": "Hablar con tu yo de anciano",
+    "nivel": "suave"
+  },
+  {
+    "texto": "No tener sentido del ridículo",
+    "texto_b": "No tener miedo a nada",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Encontrar siempre aparcamiento",
+    "texto_b": "No hacer nunca cola",
+    "nivel": "suave"
+  },
+  {
+    "texto": "No volver a coger un avión",
+    "texto_b": "No volver a coger un coche",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Días de 30 horas",
+    "texto_b": "Semanas de cuatro días",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ser camarero en una discoteca",
+    "texto_b": "Ser socorrista en una playa llena",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Vivir en una película de terror",
+    "texto_b": "Vivir en una comedia romántica",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Quedarte encerrado en un ascensor con tu ex",
+    "texto_b": "Quedarte encerrado en un ascensor con tu jefe",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ganar un Óscar",
+    "texto_b": "Ganar un Grammy",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ser youtuber",
+    "texto_b": "Ser futbolista",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Saberte todas las capitales",
+    "texto_b": "Saberte todas las canciones del verano",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Tener siempre batería",
+    "texto_b": "Tener siempre cobertura",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Olvidarlo todo al dormir",
+    "texto_b": "No poder dormir nunca más de cinco horas",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Vivir en un barco",
+    "texto_b": "Vivir en una caravana",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Una mascota que habla",
+    "texto_b": "Una mascota que vuela",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Que todos oigan tus pensamientos una hora",
+    "texto_b": "Oír tú los de todos una hora",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Hacer el Camino de Santiago",
+    "texto_b": "Recorrer el sudeste asiático con mochila",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Comerte un limón entero",
+    "texto_b": "Comerte una guindilla entera",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Bañarte en una piscina de gelatina",
+    "texto_b": "Bañarte en una piscina de bolas",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Perder una apuesta y raparte",
+    "texto_b": "Perder una apuesta y teñirte de verde",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Llevar todo el día unos zapatos que aprietan",
+    "texto_b": "Ir descalzo por la ciudad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Que no te vean las cámaras",
+    "texto_b": "Que no te piquen los mosquitos",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Una voz preciosa",
+    "texto_b": "Una sonrisa perfecta",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Un mes sin quejarte",
+    "texto_b": "Un mes sin mirar el móvil por la noche",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Que te paguen por dormir",
+    "texto_b": "Que te paguen por comer",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Organizar todas las fiestas",
+    "texto_b": "No organizar nunca nada",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Vivir con los dinosaurios",
+    "texto_b": "Vivir en la Edad Media",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Salir de extra en una película",
+    "texto_b": "Salir de concursante en la tele",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ganar siempre a las cartas",
+    "texto_b": "Ganar siempre a los videojuegos",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ser un gato",
+    "texto_b": "Ser un perro",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Un elefante en miniatura",
+    "texto_b": "Un gato gigante",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ir a la Luna",
+    "texto_b": "Ir al fondo del mar",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Que te toque un viaje sorpresa",
+    "texto_b": "Que te toque un coche",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Que te destripen todas las series",
+    "texto_b": "No poder ver nunca el último capítulo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "No volver a reírte",
+    "texto_b": "No volver a llorar",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Un narrador que comenta tu vida",
+    "texto_b": "Una banda sonora que va con tu estado de ánimo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Tener hipo un día entero",
+    "texto_b": "Estornudar sin parar un día entero",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Vivir en tu videojuego favorito",
+    "texto_b": "Vivir en tu película favorita",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ser el mejor cocinero del mundo",
+    "texto_b": "Ser el que mejor cuenta chistes",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Volver a hacer la selectividad",
+    "texto_b": "Volver a hacer el examen de conducir",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Cantar todo lo que dices",
+    "texto_b": "Bailar cada vez que suena música",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Bordar todas las entrevistas de trabajo",
+    "texto_b": "Bordar todas las primeras citas",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Repetir un día de tu vida",
+    "texto_b": "Saltarte un día de tu vida",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Comerte una tarta entera",
+    "texto_b": "Correr diez kilómetros",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Que te llamen siempre por tu apodo",
+    "texto_b": "Que te llamen siempre por tu apellido",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ser el último en enterarte de todo",
+    "texto_b": "Enterarte el primero y no poder contarlo",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Un cocinero personal",
+    "texto_b": "Un entrenador personal",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Saber qué piensa tu mascota",
+    "texto_b": "Que tu mascota sepa qué piensas tú",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Vivir en un rascacielos",
+    "texto_b": "Vivir en una casa en un árbol",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Tener un parque de atracciones en casa",
+    "texto_b": "Tener un cine en casa",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Ser un pirata",
+    "texto_b": "Ser un astronauta",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Que siempre sea verano",
+    "texto_b": "Que siempre sea Navidad",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Tener una memoria perfecta",
+    "texto_b": "Poder olvidar lo que quieras",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Hacer un viaje en el tiempo de ida",
+    "texto_b": "Quedarte para siempre en el presente",
+    "nivel": "suave"
+  },
+  {
+    "texto": "Sexo increíble una vez al año",
+    "texto_b": "Sexo normal todos los días",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hacerlo en la playa",
+    "texto_b": "Hacerlo en un ascensor",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Que tu pareja lea tu historial",
+    "texto_b": "Que tus padres lean tus mensajes guarros",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Un trío",
+    "texto_b": "Un intercambio de parejas",
+    "nivel": "picante"
+  },
+  {
+    "texto": "No volver a tener sexo",
+    "texto_b": "No volver a comer tu comida favorita",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Dominar",
+    "texto_b": "Que te dominen",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Sexo con la luz encendida",
+    "texto_b": "Sexo a oscuras",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Que te pillen tus padres en plena faena",
+    "texto_b": "Pillar tú a tus padres",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Acostarte con tu ex",
+    "texto_b": "Acostarte con el ex de tu mejor amigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hacerlo en el coche",
+    "texto_b": "Hacerlo en el sofá de un amigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Mandar sin querer un desnudo a tu jefe",
+    "texto_b": "Mandarlo al grupo de la familia",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Un follamigo",
+    "texto_b": "Una relación seria",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hacerlo por la mañana",
+    "texto_b": "Hacerlo por la noche",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Sexo rápido en un sitio arriesgado",
+    "texto_b": "Sexo lento en una cama enorme",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Que te aten",
+    "texto_b": "Atar tú",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Ver porno con tu pareja",
+    "texto_b": "Leer relatos eróticos con tu pareja",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Gemir siempre muy alto",
+    "texto_b": "No poder hacer ningún ruido",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Acostarte con un famoso y que nadie te crea",
+    "texto_b": "Que todos crean que lo has hecho sin ser verdad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Lencería",
+    "texto_b": "Nada de ropa",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hacerlo en la ducha",
+    "texto_b": "Hacerlo en la cocina",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Una pareja con mucha experiencia",
+    "texto_b": "Una pareja sin experiencia",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Que tu pareja tenga un fetiche muy raro",
+    "texto_b": "No tener ningún fetiche",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Ligar en una discoteca",
+    "texto_b": "Ligar en una aplicación",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Besar fatal y ser genial en la cama",
+    "texto_b": "Besar genial y ser malo en la cama",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hacerles un striptease a tus amigos",
+    "texto_b": "Que tus amigos te lo hagan a ti",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Sexo con disfraces",
+    "texto_b": "Sexo con juguetes",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Dormir siempre desnudo",
+    "texto_b": "No poder dormir desnudo nunca",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Que te graben",
+    "texto_b": "Grabar tú",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Una noche con alguien de este grupo",
+    "texto_b": "Una noche con un desconocido",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Sexo en la primera cita",
+    "texto_b": "Esperar un mes",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Que te hablen sucio",
+    "texto_b": "Hablar sucio tú",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Una relación abierta",
+    "texto_b": "Una relación con celos",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hacerlo en un avión",
+    "texto_b": "Hacerlo en un tren",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Una pareja muy celosa",
+    "texto_b": "Una pareja que pasa de todo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hacerlo en casa de tus suegros",
+    "texto_b": "Hacerlo en casa de tus padres",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hacer sexting con tu jefe",
+    "texto_b": "Hacer sexting con tu ex",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Un masaje erótico",
+    "texto_b": "Ir al grano sin preliminares",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Ser malísimo en la cama y saberlo",
+    "texto_b": "Creerte buenísimo y ser malo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Que tu pareja grite el nombre de su ex",
+    "texto_b": "Gritar tú el nombre de tu ex",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Pillar a tu pareja con un juguete",
+    "texto_b": "Que tu pareja te pille a ti",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Sexo con mucho amor",
+    "texto_b": "Sexo con mucho morbo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Sexo en una tienda de campaña",
+    "texto_b": "Sexo en una piscina",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Morder",
+    "texto_b": "Que te muerdan",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Dar azotes",
+    "texto_b": "Recibirlos",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Liarte con tu mejor amigo",
+    "texto_b": "Liarte con tu peor enemigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Un chupetón en el cuello antes de una boda",
+    "texto_b": "Un chupetón antes de una entrevista de trabajo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hacerlo con calcetines",
+    "texto_b": "Hacerlo con zapatos",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Probar el sexo tántrico",
+    "texto_b": "Probar el sexo anal",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Una noche de pasión sin repetir",
+    "texto_b": "Repetir siempre con la misma persona",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Un club de intercambio",
+    "texto_b": "Una playa nudista",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Decir en voz alta todo lo que haces en la cama",
+    "texto_b": "No poder decir ni una palabra",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Que te vean los vecinos por la ventana",
+    "texto_b": "Que te oigan por la pared",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hacerlo en una fiesta",
+    "texto_b": "Hacerlo en un probador",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Que tu pareja te despierte con sexo",
+    "texto_b": "Despertarla tú así",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Que tu pareja te haga un striptease",
+    "texto_b": "Hacérselo tú",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Un rollo de verano",
+    "texto_b": "Un amor de verano",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Una pareja muy dominante",
+    "texto_b": "Una pareja muy sumisa",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Un vibrador",
+    "texto_b": "Unas esposas",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hacerlo en el baño de una discoteca",
+    "texto_b": "Hacerlo en el baño de un avión",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Contarle tu fantasía a tu pareja",
+    "texto_b": "Que tu pareja te cuente la suya",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Un trío con dos desconocidos",
+    "texto_b": "Un trío con dos amigos",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Sexo de reconciliación",
+    "texto_b": "Sexo de despedida",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Que tus amigos te oigan",
+    "texto_b": "Oír tú a tus amigos",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Una cita a ciegas",
+    "texto_b": "Una cita con tu ex",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Besar a todos los de esta habitación",
+    "texto_b": "No besar a nadie en un año",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Que tu pareja tenga más experiencia",
+    "texto_b": "Tener tú más experiencia",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Un polvo rápido",
+    "texto_b": "Una noche entera",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Sexo en un hotel de lujo",
+    "texto_b": "Sexo en una cabaña en el bosque",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Mandar fotos subidas de tono",
+    "texto_b": "Mandar audios subidos de tono",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Pillar a tu pareja viendo porno",
+    "texto_b": "Que tu pareja te pille a ti",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hacerlo con música",
+    "texto_b": "Hacerlo en silencio",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Que tu pareja tenga los pies helados en la cama",
+    "texto_b": "Que tu pareja ronque",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hacerlo en el mar",
+    "texto_b": "Hacerlo en la nieve",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Que tu pareja se disfrace de enfermera o de bombero",
+    "texto_b": "Disfrazarte tú",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Una noche en Ibiza",
+    "texto_b": "Una noche en Las Vegas",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Alguien que besa mal",
+    "texto_b": "Alguien que no te deja dormir después",
+    "nivel": "picante"
+  },
+  {
+    "texto": "No poder tocar",
+    "texto_b": "No poder ver",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Que te venden los ojos",
+    "texto_b": "Que te aten las manos",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hacerlo en el sofá",
+    "texto_b": "Hacerlo encima de la mesa",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Despertarte al lado de alguien de este grupo",
+    "texto_b": "Despertarte al lado de tu ex",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Que tu ligue te deje en visto",
+    "texto_b": "Que tu ligue te mande cien mensajes",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Tener una aventura secreta",
+    "texto_b": "Que tu pareja la tenga",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Ser infiel y que no te pillen",
+    "texto_b": "Que te sean infiel y no enterarte nunca",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Una pareja guapísima y sosa en la cama",
+    "texto_b": "Una pareja normal y salvaje en la cama",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hacerlo en el trabajo",
+    "texto_b": "Hacerlo en casa de tus padres",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Contar con detalle tu último polvo",
+    "texto_b": "Enseñar tu historial de búsqueda",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hacer un trío con tu pareja",
+    "texto_b": "Ver a tu pareja con otra persona",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Un fin de semana sin salir de la cama",
+    "texto_b": "Un fin de semana de fiesta",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hacerlo con la ropa puesta",
+    "texto_b": "Hacerlo desnudos del todo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Que te susurren guarradas",
+    "texto_b": "Que te las escriban",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Ligar con el camarero",
+    "texto_b": "Ligar con el DJ",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hacerlo delante de un espejo",
+    "texto_b": "Hacerlo grabándoos",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Un orgasmo en público sin que nadie se entere",
+    "texto_b": "Un orgasmo en casa que oiga todo el edificio",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Perder la ropa en la playa",
+    "texto_b": "Perder la ropa en una fiesta",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Sexo con chocolate",
+    "texto_b": "Sexo con nata",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Masturbarte delante de tu pareja",
+    "texto_b": "Que tu pareja lo haga delante de ti",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hacer sexting en una reunión",
+    "texto_b": "Hacer sexting en una comida familiar",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Una relación sin sexo",
+    "texto_b": "Sexo sin relación",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Que te laman los pies",
+    "texto_b": "Lamerlos tú",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Sexo salvaje con un desconocido",
+    "texto_b": "Sexo tierno con tu ex",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Que tu pareja elija toda tu ropa interior",
+    "texto_b": "Elegir tú la suya",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Juguetes",
+    "texto_b": "Disfraces",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hacerlo en un probador",
+    "texto_b": "Hacerlo en un ascensor de cristal",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Una noche con tu famoso favorito",
+    "texto_b": "Un año de buen sexo con tu pareja",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Sexo sin poder besar",
+    "texto_b": "Besos sin poder tener sexo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Un beso a tres",
+    "texto_b": "Un beso con los ojos vendados sin saber de quién",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Que tus amigos vean tus fotos íntimas",
+    "texto_b": "Que tus compañeros lean tus mensajes guarros",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Alguien que habla mucho en la cama",
+    "texto_b": "Alguien que no dice nada",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Que tu pareja te pida un trío",
+    "texto_b": "Pedírselo tú",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hacerlo en el balcón",
+    "texto_b": "Hacerlo en el jardín",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Ver a tu pareja ligar con otro",
+    "texto_b": "Que tu pareja te vea ligar a ti",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Un rollo con tu jefe",
+    "texto_b": "Un rollo con tu compañero de mesa",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Oscuridad total",
+    "texto_b": "Espejos en el techo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Un masaje con final feliz",
+    "texto_b": "Un baño de espuma juntos",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Grabar un porno casero",
+    "texto_b": "Salir en una película erótica",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Mandarle a tu pareja un audio gimiendo",
+    "texto_b": "Recibirlo tú",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Que te desnuden despacio",
+    "texto_b": "Que te arranquen la ropa",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Una noche loca que no recuerdes",
+    "texto_b": "Una noche normal que recuerdes entera",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hacerlo rodeado de espejos",
+    "texto_b": "Hacerlo con vistas al mar",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Ser el que más aguanta",
+    "texto_b": "Ser el que más veces repite",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hacer un calendario sexy",
+    "texto_b": "Posar desnudo para un cuadro",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Quedarte encerrado desnudo en el rellano",
+    "texto_b": "Que te abra la puerta el repartidor estando desnudo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Una pareja con mucho vello",
+    "texto_b": "Una pareja sin un pelo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Ducharte con tu pareja",
+    "texto_b": "Bañaros juntos en la bañera",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hacerlo en una boda",
+    "texto_b": "Hacerlo en una despedida de soltero",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Un rollo con alguien del gimnasio",
+    "texto_b": "Un rollo con alguien del trabajo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hacerlo en la cama de tus padres",
+    "texto_b": "Hacerlo en la cama de tu mejor amigo",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Que tu pareja vea tu lista de fantasías",
+    "texto_b": "Ver tú la suya",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Una noche de pasión con alguien de aquí",
+    "texto_b": "Contar tu última noche de pasión con detalle",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Dar tú el primer paso",
+    "texto_b": "Que te lo den",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Desnudarte en una playa llena",
+    "texto_b": "Hacer topless en la piscina de tu urbanización",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Un striptease sorpresa de tu pareja",
+    "texto_b": "Una cena romántica sorpresa",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Sexo solo los lunes",
+    "texto_b": "Sexo una vez al mes, cuando quieras",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Una pareja con una voz muy sexy",
+    "texto_b": "Una pareja con unas manos muy sexis",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Un sex shop con tu pareja",
+    "texto_b": "Un sex shop con tus amigos",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hacerlo en un jacuzzi",
+    "texto_b": "Hacerlo en una sauna",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Un rollo con un famoso que nadie te cree",
+    "texto_b": "Un rollo con tu crush que todos saben",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Que te pillen en la cama con alguien de aquí",
+    "texto_b": "Pillar tú a dos de aquí",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Probar el sado",
+    "texto_b": "Probar el sexo en público",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Que tu pareja te haga un baile en barra",
+    "texto_b": "Hacérselo tú",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hacer un trío con tu ex",
+    "texto_b": "Hacer un trío con el ex de tu pareja",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Una noche con dos personas",
+    "texto_b": "Dos noches con la misma",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Sexo con comida",
+    "texto_b": "Sexo con aceite de masaje",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Que tu primera cita acabe en la cama",
+    "texto_b": "Que tu primera cita sea perfecta y sin nada más",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hacerlo en un coche en marcha (sin conducir tú)",
+    "texto_b": "Hacerlo en un coche aparcado en la calle",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Ligar con alguien mucho mayor que tú",
+    "texto_b": "Ligar con alguien de tu misma edad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Que tu pareja tenga mucha imaginación en la cama",
+    "texto_b": "Que tenga mucho aguante",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Probar un consolador",
+    "texto_b": "Probar un anillo vibrador",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Un rollo en la oficina",
+    "texto_b": "Un rollo en la universidad",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hacerlo en una piscina pública de noche",
+    "texto_b": "Hacerlo en un parque de noche",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Que tus vecinos te oigan cada noche",
+    "texto_b": "Oír tú a tus vecinos cada noche",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Una noche de sexo sin móviles",
+    "texto_b": "Un día entero de sexting",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Vestirte con cuero",
+    "texto_b": "Vestirte con encaje",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Liarte con alguien de esta fiesta",
+    "texto_b": "Irte a casa y escribir a tu ex",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Que te besen el cuello",
+    "texto_b": "Que te muerdan la oreja",
+    "nivel": "picante"
+  },
+  {
+    "texto": "Hacerlo con la persona que tienes enfrente",
+    "texto_b": "Hacerlo con la de tu derecha",
+    "nivel": "picante"
+  }
+]

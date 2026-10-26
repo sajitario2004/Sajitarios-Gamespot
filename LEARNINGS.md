@@ -33,7 +33,15 @@ Archivo vivo. Añade una línea cada vez que el autor exprese un gusto, una corr
 
 - (2026-10-25) Quiere la app **lo más personalizable posible**, empezando por el Impostor y el Tabú: crear sus propias categorías, elegir la categoría antes de empezar y crear sus propias palabras y tarjetas.
 
-- (2026-10-25) Los sonidos le parecían **demasiado fuertes**: prefiere efectos a un volumen moderado y parejo. Oye el Editor mientras Claude trabaja (los tests ya no suenan).
+- (2026-10-25) Los sonidos le parecían **demasiado fuertes**: prefiere efectos a un volumen moderado y parejo. Oye el Editor mientras Claude trabaja (los tests ya no suenan). Tras nivelarlos aún los quería **a la mitad**: mejor quedarse corto de volumen que pasarse.
+
+- (2026-10-25) Dio permiso para descargar las fuentes y eligió **las mismas de la app Flutter** (Roboto y Material Icons) frente a otras nuevas. Quiere que se termine todo lo que se pueda hacer sin él, fase a fase, y un APK al final para probar.
+
+- (2026-10-25) Quiere un **apartado de Ajustes** como el de cualquier app: quitar el sonido y la vibración y ver términos y condiciones, privacidad y cookies.
+
+- (2026-10-25) El resto de juegos y los ajustes le funcionan «perfecto». Quiere **poder añadir sus propias frases** en Yo Nunca y un **picante mucho más fuerte, +18**: humor de fiesta bruto entre adultos (se mantiene sin menores ni nada sin consentimiento).
+
+- (2026-10-25) De los 10 juegos propuestos eligió **seis**: Verdad o Reto, ¿Quién es más probable que…?, ¿Qué prefieres?, Mímica por equipos, ¿Quién soy? y Hombres Lobo. Hombres Lobo lo ha jugado y lo quiere **como se juega de verdad**: el reparto pasando el móvil como en el Impostor y después **un game master** (que no juega) con el móvil en la mano para llevar la partida; **muy configurable y con todas las expansiones**.
 
 ## Diseño
 - (heredado) Estética **neón cyberpunk**: fondo casi negro, cian y magenta con brillo, rejilla de fondo.

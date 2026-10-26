@@ -1,0 +1,2230 @@
+[
+  {
+    "texto": "Titanic",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "El Rey León",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Harry Potter",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Star Wars",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Jurassic Park",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Shrek",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Frozen",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Toy Story",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Buscando a Nemo",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Spiderman",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Batman",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Superman",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Piratas del Caribe",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "El Señor de los Anillos",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Juego de Tronos",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "La Casa de Papel",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Los Simpson",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Friends",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Breaking Bad",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Stranger Things",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "El juego del calamar",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Pesadilla antes de Navidad",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "E.T.",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Rocky",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Karate Kid",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Matrix",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Avatar",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Gladiator",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "El Padrino",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Mamma Mia",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Grease",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Dirty Dancing",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Pretty Woman",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Mary Poppins",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Pinocho",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Blancanieves",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "La Cenicienta",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "La Bella y la Bestia",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Aladdín",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "La Sirenita",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Ratatouille",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Up",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Coco",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Cars",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Los Increíbles",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Mulán",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Tarzán",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "King Kong",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Indiana Jones",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Regreso al futuro",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Cazafantasmas",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Misión imposible",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "James Bond",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Rambo",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Terminator",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Alien",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "El exorcista",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "It",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Scream",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Top Gun",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "A todo gas",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Ocho apellidos vascos",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Torrente",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Aquí no hay quien viva",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "La que se avecina",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Los Serrano",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Élite",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Supervivientes",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Gran Hermano",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Operación Triunfo",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "MasterChef",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Peppa Pig",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Bob Esponja",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Pokémon",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Dragon Ball",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Los Pitufos",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Barbie",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Los Vengadores",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Iron Man",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Hulk",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Thor",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Forrest Gump",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Náufrago",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Solo en casa",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Crepúsculo",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Los juegos del hambre",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "El Grinch",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Mr. Bean",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Pasapalabra",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "La guerra de los mundos",
+    "categoria": "peliculas"
+  },
+  {
+    "texto": "Lavarse los dientes",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Ducharse",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Afeitarse",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Maquillarse",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Ponerse lentillas",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Hacer la cama",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Planchar",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Fregar los platos",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Tender la ropa",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Pasar la aspiradora",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Hacer una tortilla",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Hacer palomitas",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Abrir una botella de champán",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Pelar una naranja",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Comer espaguetis",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Comer un helado que se derrite",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Beber un café muy caliente",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Hacerse un selfie",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Mandar un audio",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Hacer una videollamada",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Buscar las llaves",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Perder el autobús",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Conducir en un atasco",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Aparcar en paralelo",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Montar en bici",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Patinar sobre hielo",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Esquiar",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Surfear",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Nadar a mariposa",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Bucear",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Tirarse en paracaídas",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Escalar una montaña",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Hacer yoga",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Levantar pesas",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Correr una maratón",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Saltar a la comba",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Jugar a los bolos",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Jugar al ping-pong",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Pescar",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Ordeñar una vaca",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Montar a caballo",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Pasear al perro",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Bañar a un gato",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Cambiar un pañal",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Mecer a un bebé",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Leer un libro aburrido",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Estudiar para un examen",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Copiar en un examen",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Dormirse en clase",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Estornudar",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Tener hipo",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Despertarse con resaca",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Bailar reguetón",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Bailar sevillanas",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Bailar ballet",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Tocar la guitarra",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Tocar la batería",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Dirigir una orquesta",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Cantar ópera",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Hacer malabares",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Hacer un truco de magia",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Ponerse un pantalón muy apretado",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Atarse los cordones",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Inflar un globo",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Envolver un regalo",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Abrir un regalo que no te gusta",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Ver una película de miedo",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Llorar viendo una película",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Ligar en una discoteca",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Pedir matrimonio",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Cortar la tarta de boda",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Lanzar el ramo de novia",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Jugar a la consola",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Hacer una barbacoa",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Montar un mueble",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Cambiar una bombilla",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Desatascar el váter",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Pintar una pared",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Cortar el césped",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Hacer la compra",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Pagar con el móvil sin cobertura",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Ponerse crema en la espalda",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Caerse por las escaleras",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Cruzar un río saltando piedras",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Hacer la croqueta en la playa",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Echar gasolina",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Hacer un muñeco de nieve",
+    "categoria": "acciones"
+  },
+  {
+    "texto": "Rosalía",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Shakira",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Messi",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Cristiano Ronaldo",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Rafa Nadal",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Fernando Alonso",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Michael Jackson",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Elvis Presley",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Freddie Mercury",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Lady Gaga",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Beyoncé",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Taylor Swift",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Bad Bunny",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Madonna",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Charles Chaplin",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Marilyn Monroe",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Albert Einstein",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Picasso",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Salvador Dalí",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Frida Kahlo",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Cristóbal Colón",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Napoleón",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Cleopatra",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Julio César",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Ibai",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Belén Esteban",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Isabel Pantoja",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Julio Iglesias",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Raphael",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Lola Flores",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Antonio Banderas",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Penélope Cruz",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Javier Bardem",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Santiago Segura",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Pablo Motos",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Karlos Arguiñano",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Alberto Chicote",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "David Bisbal",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Alejandro Sanz",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Ana Obregón",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Aitana",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Usain Bolt",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Michael Jordan",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Mike Tyson",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Muhammad Ali",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Elon Musk",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Steve Jobs",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Arnold Schwarzenegger",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Bruce Lee",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Jackie Chan",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Rowan Atkinson",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Jim Carrey",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Leonardo DiCaprio",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Brad Pitt",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Johnny Depp",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Tom Cruise",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Will Smith",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Dwayne Johnson",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Sylvester Stallone",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Justin Bieber",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Britney Spears",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Rihanna",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Mozart",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Beethoven",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Shakespeare",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Cervantes",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Darth Vader",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Mario Bros",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Sherlock Holmes",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Drácula",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Papá Noel",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Los Reyes Magos",
+    "categoria": "famosos"
+  },
+  {
+    "texto": "Perro",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Gato",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Elefante",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Jirafa",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Mono",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Gorila",
+    "categoria": "animales"
+  },
+  {
+    "texto": "León",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Tigre",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Canguro",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Koala",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Pingüino",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Oso",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Oso panda",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Serpiente",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Cocodrilo",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Tiburón",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Delfín",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Ballena",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Pulpo",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Cangrejo",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Medusa",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Caballito de mar",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Foca",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Flamenco",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Avestruz",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Pavo real",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Gallina",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Gallo",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Pato",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Cisne",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Búho",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Águila",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Loro",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Murciélago",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Mariposa",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Abeja",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Mosquito",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Araña",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Hormiga",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Caracol",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Rana",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Tortuga",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Camaleón",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Conejo",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Ardilla",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Hámster",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Ratón",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Cerdo",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Vaca",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Toro",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Oveja",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Cabra",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Caballo",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Burro",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Camello",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Hipopótamo",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Rinoceronte",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Cebra",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Lobo",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Zorro",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Mofeta",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Perezoso",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Castor",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Erizo",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Gusano",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Dinosaurio",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Pez payaso",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Morsa",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Lagartija",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Libélula",
+    "categoria": "animales"
+  },
+  {
+    "texto": "Bombero",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Policía",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Médico",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Dentista",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Enfermero",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Cirujano",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Veterinario",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Profesor",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Cocinero",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Camarero",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Peluquero",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Fontanero",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Electricista",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Carpintero",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Albañil",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Pintor",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Mecánico",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Taxista",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Conductor de autobús",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Piloto de avión",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Azafato",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Astronauta",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Socorrista",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Jardinero",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Agricultor",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Pescador",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Pastor",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Carnicero",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Panadero",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Cajero de supermercado",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Repartidor",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Cartero",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Barrendero",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Soldado",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Juez",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Abogado",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Periodista",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Fotógrafo",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Presentador de televisión",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Actor",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Cantante",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Bailarín",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Payaso",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Mago",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Domador de leones",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Futbolista",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Árbitro",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Monitor de gimnasio",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Informático",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Youtuber",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Recepcionista de hotel",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Guía turístico",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Detective",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Espía",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "DJ",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Coctelero",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Masajista",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Tatuador",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Modelo",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Arquitecto",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Científico",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Buzo",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Leñador",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Minero",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Cura",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Mimo",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Director de orquesta",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Barbero",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Joyero",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Sastre",
+    "categoria": "oficios"
+  },
+  {
+    "texto": "Paraguas",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Tijeras",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Martillo",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Destornillador",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Cepillo de dientes",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Secador de pelo",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Plancha",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Aspiradora",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Lavadora",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Microondas",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Nevera",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Tostadora",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Batidora",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Sartén",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Cuchillo",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Tenedor",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Sacacorchos",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Abrelatas",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Botella",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Taza",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Reloj",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Despertador",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Gafas",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Sombrero",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Bufanda",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Guantes",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Mochila",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Maleta",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Llaves",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Móvil",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Mando a distancia",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Ordenador",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Teclado",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Cámara de fotos",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Guitarra",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Piano",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Trompeta",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Violín",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Tambor",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Balón",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Raqueta",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Bicicleta",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Patinete",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Monopatín",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Coche",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Avión",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Barco",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Helicóptero",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Tren",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Cohete",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Escoba",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Fregona",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Vela",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Linterna",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Tienda de campaña",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Almohada",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Espejo",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Peine",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Pintalabios",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Perfume",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Lupa",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Brújula",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Prismáticos",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Globo",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Cometa",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Yoyó",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Cubo de Rubik",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Ancla",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Grapadora",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Ventilador",
+    "categoria": "objetos"
+  },
+  {
+    "texto": "Fútbol",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Baloncesto",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Tenis",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Pádel",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Golf",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Natación",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Waterpolo",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Voleibol",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Balonmano",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Rugby",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Béisbol",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Boxeo",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Kárate",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Judo",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Esgrima",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Tiro con arco",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Salto de altura",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Salto con pértiga",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Lanzamiento de jabalina",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Gimnasia rítmica",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Patinaje artístico",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Esquí",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Snowboard",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Surf",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Piragüismo",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Remo",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Windsurf",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Ciclismo",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Fórmula 1",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Escalada",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Equitación",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Hockey sobre hielo",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Curling",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Bolos",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Billar",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Dardos",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Ping-pong",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Bádminton",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Sumo",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Lucha libre",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Halterofilia",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Triatlón",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Parkour",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Zumba",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Petanca",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Motociclismo",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Salto de trampolín",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Paracaidismo",
+    "categoria": "deportes"
+  },
+  {
+    "texto": "Hacer un striptease",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Fingir un orgasmo",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Ponerse un preservativo",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Una despedida de soltero",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un baile en barra",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un trío",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "La postura del misionero",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Hacer un chupetón",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Dar un azote",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Unas esposas",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un vibrador",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un beso con lengua",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Perrear",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Hacer twerking",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Una resaca después de una fiesta",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Ligar con descaro en la barra de un bar",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un sex shop",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un masaje erótico",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Hacerlo en el coche",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "El Kamasutra",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Pillar a tus padres en la cama",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Quitar un sujetador con una mano",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un gatillazo",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Una cita de Tinder",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Mandar un desnudo",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un follamigo",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Volver a casa por la mañana con la ropa de ayer",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Lencería sexy",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un tanga",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "La postura del perrito",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "La cucharita",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un club de striptease",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Hacer sexting",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Ducharse en pareja",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Una cama que chirría",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un látigo",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un disfraz de enfermera",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un despertar con resaca y sin recordar nada",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Desnudarse con prisa",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un baile en el regazo",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Hacer topless",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Una playa nudista",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un preservativo que no se abre",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Dar un beso de tornillo",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Lamer nata",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Una noche loca en Ibiza",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Hacer la cobra",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un ligue que no se acuerda de tu nombre",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Un juguete sexual que no se apaga",
+    "categoria": "cachondeo"
+  },
+  {
+    "texto": "Gemir en un hotel con las paredes de papel",
+    "categoria": "cachondeo"
+  }
+]

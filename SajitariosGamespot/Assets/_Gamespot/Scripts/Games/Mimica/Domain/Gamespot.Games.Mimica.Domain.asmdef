@@ -1,0 +1,16 @@
+{
+    "name": "Gamespot.Games.Mimica.Domain",
+    "rootNamespace": "Gamespot.Games.Mimica.Domain",
+    "references": [
+        "Gamespot.Core"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

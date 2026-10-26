@@ -45,7 +45,8 @@ Cierre técnico de cada versión con código Unity: recompilación sin errores, 
   - Notas: `Loc.T(clave, (nombre, valor)…)` estático (se reinicia en `SubsystemRegistration`), español por defecto, inglés cae al español si falta una clave. `Gamespot → i18n → Importar ARB del Flutter` añade solo las claves que faltan (305 por idioma). 26 claves nuevas de Unity (títulos del menú de 5 juegos, temáticas, palos, media de Wavelength, cargando, reducir animaciones) y la regla 4 del Tabú corregida: 331 claves por idioma. El selector de idioma va en V017.
 - [x] **V013 · Paleta y kit neón.** `Palette`, `NeonText`, `NeonPanel`, `NeonButton`, `NeonBackground`, `PulseGlow`, layouts (columna, fila, scroll), campos de texto, diálogos y snackbar.
   - Notas: Kit en `Core.Runtime/UI`: `NeonSprites` (rectángulos redondeados, bordes, círculos y halos generados por código, 9-slice a 2x), `Ui` (Column, Row, Space, Flex, Scroll, Text con halo por *underlay* de TMP, FittedText, Panel, Button, IconButton, Image, Divider, NumberBadge), `NeonPanel`, `NeonButton` (Filled/Outlined/Text, mín. 48), `NeonTextField`, `NeonSwitch`, `NeonChip`, `NeonStepper`, `AppBar`, `ScreenScaffold`, `PulseGlow` (respeta `AppSettings.ReduceMotion`), `CoverImage`, `ResponsiveGrid`, `Dialogs`, `Snackbar`. Recursos esenciales de TMP importados por código (LiberationSans SDF). En negrita no hay «…» hasta tener una fuente con variante bold real (V014): se corta sin puntos.
-- [ ] **V014 · Tipografía e iconos.** Fuente TMP con glifos del español e iconos (Material Symbols, Apache-2.0). **Pedir permiso antes de descargar.** Palos de la carta como sprites propios.
+- [x] **V014 · Tipografía e iconos.** Fuente TMP con glifos del español e iconos (Material Symbols, Apache-2.0). **Pedir permiso antes de descargar.** Palos de la carta como sprites propios.
+  - Notas (2026-10-25, con permiso del autor: «las de Flutter»): Roboto normal y negrita (`google/fonts` en `ff11ed915971`, Roboto 3.005, Apache-2.0) y Material Icons (`google/material-design-icons`, Apache-2.0), las mismas que usaba la app Flutter, en `Assets/_Gamespot/Fonts` con sus licencias (≈ 650 KB). Menú *Gamespot → Configuración → Fuentes* (`FontSetup`, también en *Aplicar todo*): assets SDF en `Resources/Fonts` con los 204 caracteres de los textos y los seeds y los 44 iconos, estáticos; Roboto es la fuente por defecto, con su negrita real y LiberationSans de respaldo. Los iconos ya son glifos de verdad. Los textos de una línea encogen siempre antes de cortarse (con la negrita real ya sale «…»). Barrido de textos limpio en los dos idiomas. Palos: sprites propios desde V020.
 - [x] **V015 · Router.** Rutas por texto, pila, botón atrás de Android, ruta desconocida, `BackToMenuButton`.
   - Notas: `AppScreen` + `Router` (Go/Push/Pop/Back, ruta padre, Escape = atrás de Android, salir en el menú, `NotFoundScreen`, reconstruye al cambiar de idioma). Atrás cierra antes el diálogo abierto.
 - [x] **V016 · Audio.** `AudioService` con los 3 WAV, mute en `PlayerPrefs`, `MuteButton`.
@@ -209,19 +210,164 @@ Cierre técnico de cada versión con código Unity: recompilación sin errores, 
   - Acepta: los 12 efectos suenan más bajos y parejos (ninguno destaca), con el pico lejos del máximo; los tests no se oyen.
   - Notas: los sintetizados se normalizaban a 0,85 de pico (−1,4 dB) y los pitidos y ondas cuadradas llegaban a −6/−9 dB de RMS; los tres del Flutter, a −9. Ahora todos a −20 dB de sonoridad (RMS de la parte que suena, sin los graves que no da el altavoz del móvil) y como mucho −6 dB de pico (`Editor/Audio/SoundLevel`); el menú *Generar y nivelar los sonidos* genera los 9 y nivela en su sitio los 3 heredados. Bajan entre 2 y 13 dB (el pitido del Tabú, 13). Los tests de PlayMode ponen `AudioListener.volume` a 0 y lo restauran. Test nuevo de niveles. 251 EditMode + 53 PlayMode.
 
+- [x] **V059o · Sonidos a la mitad.** Petición: «los sonidos siguen demasiado altos, bájalos a la mitad».
+  - Acepta: todos los efectos a la mitad de amplitud (−6 dB) que en V059n, igual de parejos.
+  - Notas: `SoundLevel` a −26 dB de sonoridad y −12 dB de pico (antes −20 y −6); los 12 bajan 6 dB (la explosión, 7: estaba casi 1 dB por encima porque al bajarla su cola salía de la medida; ahora la nivelación repite la medida hasta acertar). Regenerados con *Generar y nivelar los sonidos*.
+
+- [x] **V059p · Ajustes y textos legales.** Petición: «falta un apartado de ajustes en la app, para quitar el sonido, para quitar la vibración y para ver los términos y condiciones de uso, política de privacidad, política de cookies…».
+  - Acepta: pantalla de Ajustes desde el menú con sonido, vibración, reducir animaciones e idioma, y los textos legales (términos y condiciones de uso, privacidad, cookies y licencias), en español y en inglés, que digan la verdad de la app.
+  - Notas: `Menu/SettingsScreen` (ruta `/ajustes`, engranaje del menú; sustituye al diálogo de V062) y `Menu/LegalScreen` (texto con apartados en negrita y scroll). Textos ajustados a la app: sin conexión, sin cuentas, sin publicidad ni analítica, datos solo en el móvil, aviso +18 y de alcohol. Para que la privacidad sea cierta, el release ya no pide `INTERNET` (`Editor/Setup/AndroidPermissions`: `tools:node="remove"` en el manifiesto; el de desarrollo lo conserva para el profiler); comprobado con `aapt` en el APK. Los textos legales son orientativos: conviene que los revise un profesional y añadir un contacto antes de publicar. Tests: Ajustes (sonido, vibración, animaciones), los 4 documentos, el limpiador del manifiesto. Capturas `V059p_*`.
+
+## Fase 10f — Más Yo Nunca y juegos nuevos (el autor, 2026-10-25)
+- [x] **V059q · Yo Nunca: frases propias y picante +18 mucho más fuerte.** Petición: «modificar el juego de yo nunca para que permita añadir frases, y quiero que el picante sea mucho peor y +18».
+  - Acepta: se pueden crear, editar y borrar frases propias (suaves o picantes) y jugar con las de serie, las propias o las dos; el picante es mucho más fuerte, va marcado +18 y pide confirmar la edad; la BD lleva el seed nuevo a las instalaciones que ya existen sin perder las frases propias.
+  - Notas: pantalla «Frases» (`/yo-nunca/frases`, desde la barra del setup) con búsqueda, filtro (todas, suaves, picantes, mías), las propias arriba y las de serie con candado; al escribir no hace falta poner «Yo nunca» (`NeverStatementText`, dominio). Setup: chip «Picante +18» que la primera vez en la sesión pide confirmar que todos son mayores de edad, aviso fijo más claro y, con frases propias, elegir de serie y/o mías. En la partida, las picantes van en magenta. Picante: 93 → 260 frases (167 nuevas, mucho más brutas, siempre entre adultos que consienten: nada de menores ni sin consentimiento; se quitó la de espiar a alguien cambiándose). BD v7 (`YoNuncaSchema.Upgrade`; el seed se carga si no hay filas de seed). Tests: texto de las frases (también en el arnés .NET, 181), repositorio, origen, migración, contenido del seed, confirmación de edad y flujo de frases propias. 263 EditMode + 62 PlayMode. Capturas `V059q_*`.
+- [x] **V059r · Propuesta de 10 juegos nuevos para elegir 5.** Petición: «propónme 5 juegos nuevos de este mismo estilo o variantes de los que ya hay, para fiestas; dame una lista de unos 10 y yo seleccionaré 5».
+  - Notas: `Docs/PLAN_MEJORAS.md` §4: Verdad o Reto, ¿Quién es más probable que…?, ¿Qué prefieres?, Mímica por equipos, ¿Quién soy?, El Espía, Dibuja y adivina, Duelo de reflejos, Código secreto y Hombres Lobo, con jugadores, reglas, +18, qué reutiliza y esfuerzo; 5 recomendados. Pendiente de que el autor elija.
+
 ## Fase 11 — Pulido y paridad
 - [x] **V060 · Icono y arranque** (placeholders con la paleta neón, mismos nombres).
   - Notas: el autor prefirió el icono de la app Flutter (carta con pica sobre morado `#7C3AED`): `Art/Icon/` + `ProjectSetup.ApplyIcons` (por defecto y adaptativo de Android; Legacy y Round, obsoletos, vacíos). Arranque sin el splash de Unity desde V007. Comprobado dentro del APK.
-- [ ] **V061 · Barrido responsive** (pantallas pequeñas, notch, textos largos).
-  - Notas: casi todo hecho en V059l (barrido automático de los textos en 88 pantallas, 4 tamaños y 2 idiomas). Falta comprobar el notch en un móvil real.
-- [ ] **V062 · Accesibilidad básica** (objetivos táctiles ≥ 48 dp, contraste, "reducir animaciones").
-- [ ] **V063 · Rendimiento en reposo** (sin `Update` vacíos, Bloom ligero en móvil).
-- [ ] **V064 · Lista de paridad** pantalla a pantalla contra el Flutter.
+- [x] **V061 · Barrido responsive** (pantallas pequeñas, notch, textos largos).
+  - Notas: textos en V059l (barrido automático de 88 pantallas, 4 tamaños y 2 idiomas, repetido con las fuentes de V014). Notch: la capa de pantallas ya respetaba la zona segura, pero los diálogos y los avisos no (el comentario de `UiRoot` decía que sí): ahora el panel del diálogo y el aviso van dentro de la zona segura y el velo sigue cubriendo toda la pantalla. `SafeArea.Simulated` permite probar un notch en el Editor y en los tests (`SafeAreaTests`). El APK se dibuja también bajo el notch (`renderOutsideSafeArea`) a pantalla completa. Captura `V061_notch_simulado.png`. Queda verlo en un móvil con notch (V066).
+- [x] **V062 · Accesibilidad básica** (objetivos táctiles ≥ 48 dp, contraste, "reducir animaciones").
+  - Notas: barrido de pulsables en las 88 pantallas: solo los chips medían menos (44 en rejilla, 40 en fila); ahora 48. Contraste WCAG de la paleta: todo el texto ≥ 4,5:1 sobre los cuatro fondos y las etiquetas de botón (texto grande) ≥ 3:1. «Reducir animaciones» ya existía pero no se podía activar: diálogo **Ajustes** en el menú (icono de engranaje) con sonido, vibración (C5) y reducir animaciones; sin elegir, sigue a «Quitar animaciones» de Android. Tests `ContrastTests`, `AccessibilityTests` (pulsables de los setups, ajustes). Lector de pantalla (TalkBack/VoiceOver): fuera de esta versión, queda como deuda. Captura `V062_ajustes.png`.
+- [x] **V063 · Rendimiento en reposo** (sin `Update` vacíos, Bloom ligero en móvil).
+  - Notas: ningún `Update` vacío (todos salen enseguida si no hay nada que hacer). En reposo, ni el menú ni los setups ni una partida en marcha generan basura por fotograma (`PerformanceTests` con `AllocatingGCMemoryConstraint`); el turno del Tabú sí la generaba (rehacía el contador y su nombre en cada fotograma) y ya no. Los brillos que laten se aplican por escalones de 0,02 (unas 15 veces por segundo en vez de 60, cada una rehace el Canvas). `AppSettings.ReduceMotion` en memoria (lo miran los brillos cada fotograma). Bloom a un cuarto de resolución y 5 pasadas (igual a la vista). En reposo (3 s sin tocar) se dibuja a 30 fps con `OnDemandRendering`; la lógica sigue a 60. Medir en el Editor no sirve (el contador del Profiler recoge al propio Editor): la prueba en el móvil queda para V066. Captura `V063_menu_bloom_ligero.png`.
+- [x] **V064 · Lista de paridad** pantalla a pantalla contra el Flutter.
+  - Notas: tabla en `CONTEXT.md` §8.3: 29 pantallas + ruta desconocida, todas con equivalente (iguales, con mejoras o arregladas, como Wavelength) y el test que las cubre; 4 pantallas nuevas solo en Unity. Textos comprobados por script: no falta ninguno (sobran los «Iniciando…» y tres etiquetas de lector de pantalla).
 
 ## Fase 12 — Builds y cierre
-- [ ] **V065 · Build Android** (`.apk` release y desarrollo).
-  - Notas (en curso, 2026-10-25): APK de prueba `SajitariosGamespot-prueba.apk` en la raíz del repo (ignorado por git): release, firma de depuración de Unity, IL2CPP ARM64, 38,4 MB, Android 7.1+ (API 25, objetivo 36), permisos INTERNET y VIBRATE; 3 min 18 s sin errores ni avisos. Falta la de desarrollo.
+- [x] **V065 · Build Android** (`.apk` release y desarrollo).
+  - Notas (2026-10-25): release `SajitariosGamespot-prueba.apk` en la raíz del repo (lo pidió el autor; ignorado por git): firma de depuración de Unity, IL2CPP ARM64, Android 7.1+ (API 25, objetivo 36). Desarrollo `SajitariosGamespot/Builds/Android/SajitariosGamespot-dev.apk` (`build run --options ["Development","DetailedBuildReport"]`, 49 MB, 2 min 10 s): con profiler. Los dos sin errores ni avisos. Desde V059p el release ya no pide el permiso de internet (solo vibración). Para publicar en Google Play hará falta una firma propia (keystore) y un AAB.
 - [ ] **V066 · Prueba en emulador o dispositivo:** una partida de cada juego; palabras propias e historial persisten tras cerrar.
-- [ ] **V067 · Proyecto de Xcode** para iOS (compilar y firmar en un Mac).
+- [x] **V067 · Proyecto de Xcode** para iOS (compilar y firmar en un Mac).
+  - Notas (2026-10-25): generado en Windows en `SajitariosGamespot/Builds/iOS/Unity-iPhone.xcodeproj` (ignorado por git): cambio a iOS, build de 57 s sin errores ni avisos y vuelta a Android. Versión 0.76.0, bundle `com.sajitarios.sajitariosGamespot`, iOS 15+. Compilarlo y firmarlo necesita un Mac con Xcode y una cuenta de desarrollador de Apple (equipo de firma): queda para cuando el autor tenga Mac.
 - [ ] **V068 · Validación del autor.**
 - [ ] **V069 · Cierre** (con permiso): borrar `Legacy/Flutter/`, `TREE.md`, PR de `feature/unity-port` a `main`.
+  - Notas (2026-10-25): el autor fusionó el PR #1 en `main`. `Legacy/Flutter/` se queda hasta que valide la app en el móvil (lo decidió el autor).
+
+## Fase 13 — Juegos nuevos que eligió el autor (2026-10-25)
+Elección del autor de la lista de `Docs/PLAN_MEJORAS.md` §4: «el 1, 2, 3, 4, 5 y el 10». Hombres Lobo, como lo
+pidió: «que los usuarios se pasen el móvil como en el Impostor y luego lo tenga un game master en la mano para
+gestionar la partida; muy configurable y con todas las expansiones». Se hacen de menor a mayor.
+- [x] **V070 · Base común de cartas.** Cartas de serie y propias con nivel (suave / +18), tipo y categoría, en una
+  tabla por juego; gestión de cartas propias común; confirmación de edad común.
+  - Acepta: tests de repositorio, de la gestión y de la confirmación; Yo Nunca sigue igual.
+  - Notas: `Core/Content/PromptCard.cs` (puro: `PromptCard` con texto, segunda opción, nivel, tipo y categoría;
+    `PromptQuery`, `IPromptSource` y `NoRepeatDeck`, que no repite hasta agotar el montón ni repite la última al
+    volver a empezar, con una sola llamada al random por carta). `_Shared/Data/PromptCardRepository` (una tabla por
+    juego con `CreateTable`, seed `[{texto, texto_b?, tipo?, nivel?, categoria?}]`, búsqueda, alta, edición y borrado
+    de las propias sin repetir otra carta del mismo tipo). `_Shared/Presentation/PromptCardsScreen` + `PromptCardsConfig`
+    (la gestión de cartas de los cinco juegos de cartas, con los campos que tenga cada uno) y `AdultGate` (confirmar
+    una vez por sesión que todos son mayores de 18; Yo Nunca ya la usa). 278 EditMode; PlayMode de cartas y Yo Nunca
+    en verde.
+- [x] **V071 · Verdad o Reto.** Por turnos, verdad o reto; «me rajo» con prenda; suave y +18; cartas propias.
+  - Acepta: partida completa en PlayMode, sin repetir cartas hasta agotarlas, bancos grandes en los dos niveles.
+  - Notas: `Games/VerdadReto/` (dominio puro con `VerdadRetoConfig` y `VerdadRetoFlowController`). Setup: 2–20
+    jugadores, nivel (picante con la confirmación de edad común), origen de las cartas si hay propias, orden de turnos
+    (en orden / al azar, todos una vez por ronda), quién elige (el jugador / el móvil), rondas (sin límite, 3, 5, 10),
+    puntos (verdad 1, reto 2), rajarse con prenda, cambios de carta (0–2), máximo de verdades seguidas y tiempo para
+    los retos. Las cartas pueden nombrar a otro jugador con `{otro}`. Seed de 562 cartas (≈125 verdades y ≈125 retos
+    por nivel y 30 prendas por nivel), gestión de cartas propias con la pantalla común. Piezas comunes nuevas:
+    `Core/Time/Countdown`, `SetupWidgets` (secciones, `ChoiceChips`, `PromptLevelPicker`, `PromptOriginPicker`),
+    `ScoreList`, `GameUi.FinishButton`, y 45 iconos nuevos para la fase (atlas de iconos de 1024). 293 EditMode;
+    PlayMode del juego 3/3; barrido de textos y pulsables limpio en es y en. Capturas `V071_verdadreto_*`.
+- [x] **V072 · ¿Quién es más probable que…?** Frase, cuenta atrás de 3 s y todos señalan; suave y +18; propias.
+  - Notas: `Games/MasProbable/`. Dos modos: «Solo señalar» (sin nombres) y «Llevar la cuenta» (3–20 nombres: tras
+    señalar se marca al más señalado, o a los empatados, y al final sale «el más probable de todo» con la última frase
+    que «ganó» cada uno). Cuenta atrás sin, 3 o 5 s con pitidos, bocina y vibración; frases por partida (sin límite,
+    10, 20, 30); «Otra frase» salta sin contar. Las frases guardan solo lo que va detrás de «¿Quién es más probable
+    que…» (`MasProbableText.Normalize` lo quita si se escribe entero). Seed de 302 frases (151 por nivel). 302
+    EditMode; PlayMode del juego 3/3; barrido (45 pantallas, es y en) limpio. Capturas `V072_masprobable_*`.
+- [x] **V073 · ¿Qué prefieres?** Dos opciones, se vota con la mano y se puede apuntar el resultado; suave y +18; propias.
+  - Notas: `Games/QuePrefieres/`. Modos «Solo preguntas» y «Contar votos» (un contador por opción, «Ver resultado»
+    con porcentajes y barras, y «Paga la minoría» o empate). Tiempo para pensar (sin, 5 o 10 s, con «¡Votad!»),
+    preguntas por partida, «Otra pregunta». Final: la que más os dividió, la más unánime y todas con sus porcentajes.
+    Preguntas propias con las dos opciones obligatorias. Seed de 306 preguntas (150 suaves y 156 picantes). 309
+    EditMode; PlayMode del juego 3/3; barrido (73 pantallas, es y en) limpio. Capturas `V073_queprefieres_*`.
+- [x] **V074 · Mímica por equipos.** Como el Tabú sin hablar: equipos, tiempo, objetivo, categorías (también +18 y
+  propias), tarjetas propias.
+  - Notas: `Games/Mimica/`. 2–4 equipos, 8 categorías de serie (películas y series, acciones, famosos, animales,
+    oficios, objetos, deportes y Cachondeo +18, que pide la confirmación de edad) más «Mis palabras» y las propias;
+    turno de 30–120 s, puntos para ganar (5–30), pases por turno (sin límite, 0, 1, 3) y si restan, y modo mezcla
+    (cada tarjeta dice si es mímica, solo sonidos, dibujar en el aire o una sola palabra). Resumen del turno que se
+    puede corregir y desempate si hay empate arriba. Base común para ¿Quién soy?: `Core/Party/TeamMatch` y
+    `GuessGameController` (puros) y `_Shared/Presentation/GuessScreens` (preparados, resumen y final). El editor de
+    jugadores sirve para equipos (textos propios y sin los de la última partida). Seed de 557 tarjetas. 318 EditMode;
+    PlayMode del juego 3/3 (y las categorías propias del Impostor y el Tabú, 4/4); barrido (113 pantallas, es y en)
+    limpio. Capturas `V074_mimica_*`.
+- [x] **V075 · ¿Quién soy?** Móvil en la frente, inclinar para acertar o pasar (acelerómetro y botones), por
+  equipos, categorías y tarjetas propias.
+  - Notas: `Games/QuienSoy/`. Por equipos (2–4) o cada uno a lo suyo (2–12), por rondas (1, 2, 3, 5; empate →
+    desempate), 8 categorías (famosos, personajes, animales, oficios, objetos, sitios, comida y bebida, Cachondeo +18)
+    y las propias. El turno se pinta en horizontal (`Core.Runtime/UI/LandscapeFrame`, que gira hacia el lado que
+    quede abajo) con 3 s para colocarse el móvil; inclinar hacia abajo es acierto y hacia arriba pasar
+    (`TiltDetector` en el dominio, respecto a la postura del principio y con rearme), con opción «al revés» y botones
+    a los lados. Acelerómetro del Input System en `Core.Runtime/Sensors/MotionSensor` (con lectura fija para los
+    tests; se apaga al salir del turno). Seed de 504 tarjetas. 323 EditMode; PlayMode del juego 2/2 con el sensor
+    simulado; barrido (146 pantallas, es y en) limpio. Capturas `V075_quiensoy_*`. Falta probar en el móvil
+    el sentido de la inclinación y del giro.
+- [x] **V076 · Hombres Lobo: dominio.** Catálogo de roles por paquetes (básico y todas las expansiones), reparto,
+  noche guiada, resolución de muertes y condiciones de victoria, todo puro y probado.
+  - Notas: `Games/HombresLobo/Domain/` (puro). 28 roles en 4 paquetes (básico, aldea, lobos, solitarios), reglas
+    (`LoboRules`), configuración con validación, 4 presets que siempre cuadran (iniciación, clásica, pueblo con poderes y
+    caos), reparto (Fisher-Yates del mazo, a mano para cartas de verdad), los 19 pasos de la noche en orden y solo si
+    el rol está vivo y con poder, amanecer (protector, infección, poción, anciano, enamorados, cazador, caballero, niño
+    salvaje, oso, lobo blanco), día (capitán y sucesor, linchamiento, tonto, chivo, segunda votación, sirvienta, juez),
+    victoria de cada bando (pueblo, lobos —también al igualar—, enamorados, lobo blanco, ángel, flautista, sectario),
+    eventos de luna, registro de la partida y deshacer. 52 tests nuevos (también en el arnés .NET, 233); 362
+    EditMode.
+- [x] **V077 · Hombres Lobo: setup.** Jugadores, roles y cantidades por paquete, ajustes de reglas (capitán,
+  revelar el rol al morir, tiempos, eventos) y presets.
+  - Notas: `HombresLoboGame.cs` (descriptor, módulo con el borrador y `LoboUi`: icono, color y textos de cada rol) y
+    `LoboSetupScreens.cs`: jugadores (5–30, en el orden de la mesa), presets que se rehacen al cambiar de jugadores,
+    «Elegir roles» (cada paquete con sus roles, lo que hacen y un contador; hermanas de 2 en 2 y hermanos de 3 en
+    3), «Cuadrar con aldeanos», el recuento de cartas (en verde si cuadra) y las 11 reglas con su explicación más el
+    tiempo de debate. `ChoiceChips` gana columnas y marcar sin avisar. 28 roles con nombre y descripción en es y en.
+    PlayMode 3/3; barrido (152 pantallas) limpio. Capturas `V077_lobo_*`. El juego ya sale en el menú; el reparto
+    llega en V078.
+- [x] **V078 · Hombres Lobo: reparto.** Pasando el móvil, como el Impostor; al acabar, el móvil va al game master.
+  - Notas: `LoboRevealScreen`: «Pásale el móvil a…», «Soy yo: ver mi carta» (icono, nombre y lo que hace el rol; los
+    lobos ven a sus compañeros si la regla lo dice; hermanas, hermanos y sectario ven a los suyos; avisos del ladrón y
+    del ángel), «Ocultar y pasar» y, tras el último, «Dale el móvil al game master». PlayMode 2/2; barrido (167
+    pantallas) limpio tras acortar tres botones. Capturas `V078_lobo_*`.
+- [x] **V079 · Hombres Lobo: consola del game master, noche.** Paso a paso en el orden de los roles vivos, tocando
+  jugadores; lo que ve la vidente, las pociones, los enamorados…
+  - Notas: `LoboMasterScreens.cs` (base de la consola con deshacer, jugadores y registro en la barra; la noche; la
+    lista de jugadores con su carta, su estado y matar o revivir a mano; el registro) y `LoboTexts.cs`. Cada paso: el
+    rol que se despierta y quién lo tiene, lo que hay que leer en voz alta, avisos (la niña, la luna llena, la víctima
+    para la bruja y el padre, las cartas del ladrón), chips con nombre y carta para señalar u opciones, «Hecho» / «A
+    nadie» y una ayuda. La vidente y el zorro enseñan su resultado en grande. 19 pasos con título, narración y ayuda
+    en es y en; causas, registro, ganadores y lunas. PlayMode 2/2; barrido (182 pantallas) limpio. Capturas
+    `V079_lobo_*`.
+- [x] **V080 · Hombres Lobo: día y final.** Muertes de la noche, cadenas (enamorados, cazador…), debate con
+  tiempo, votación, capitán y victoria; registro de la partida.
+  - Notas: `LoboDayScreens.cs`. Amanecer: qué leer en voz alta (quién ha muerto, el oso, los poderes perdidos), cada
+    muerto con su carta si la regla lo dice (y, solo para el game master, cómo murió), la luna, lo que pasó en secreto
+    (protegido, salvado, infectado, anciano, niño salvaje) y lo pendiente (disparo del cazador, sucesor del capitán).
+    Día: elegir capitán, debate con reloj (empezar, pausar, +30 s, aviso al acabar), votación con + y − por jugador
+    (capitán doble, +2 del cuervo, quién no vota), linchar al más votado, empate (segunda votación entre los
+    empatados, chivo o luna de sangre) o nadie; la sirvienta antes de enseñar la carta; el juez; «Empezar la noche».
+    Final: quién gana, las últimas muertes, todas las cartas con los ganadores, jugar otra, ajustes, registro, menú.
+    «Terminar la partida aquí» en la lista de jugadores. Motor: con algo pendiente no se decide quién gana (el disparo
+    puede cambiarlo) y, si no queda nadie vivo, lo pendiente se descarta. Chips de una columna si el nombre y la carta
+    no caben. Textos en español sin concordancia de género con el jugador. EditMode 364, PlayMode 4/4 nuevos;
+    barrido limpio. Capturas `V080_lobo_*`.
+- [x] **V081 · Hombres Lobo: eventos de luna y pulido.**
+  - Notas: la luna de cada mañana (regla «Eventos de luna» del setup) sale en el amanecer, en el día y en la primera
+    pantalla de la noche siguiente, con lo que cambia; las ocho con su descripción en es y en. `LoboGuideScreen`: guía
+    de las cartas de la partida (y de las lunas) desde la lista de jugadores. Regla 9 sobre las lunas.
+    `Bootstrap.RandomOverride` (y el arnés de PlayMode) para fijar el azar en los tests. PlayMode `LoboMoonTests` 3/3
+    (tormenta, eclipse, guía) y todos los de Hombres Lobo (14) en verde; barrido con las ocho lunas forzadas en el
+    amanecer y el día, limpio en es y en. Capturas `V081_lobo_*`.
+- [x] **V082 · APK con los seis juegos.**
+  - Notas (2026-10-26): `SajitariosGamespot-prueba.apk` en la raíz (ignorado por git), release con la firma de
+    depuración de Unity, 0.76.0 (76), IL2CPP ARM64, Android 7.1+ (API 25, objetivo 36), 37,7 MB, 1 min 47 s sin
+    errores ni avisos; con `aapt`: solo pide `VIBRATE` (más el permiso interno de receptores de Android). Textos
+    legales al día: el contenido +18 de los juegos nuevos (Cachondeo de Mímica y ¿Quién soy?, picante de Verdad o
+    Reto, ¿Quién es más probable…? y ¿Qué prefieres?), los juegos que se pueden jugar bebiendo y, en privacidad, el
+    sensor de movimiento de ¿Quién soy? (no guarda nada) y la vibración en más avisos. Fuentes regeneradas: ya estaban
+    todos los caracteres (204) y los 90 iconos. Tests: EditMode 364/364; PlayMode 93/93 (en la primera tanda falló una
+    vez `PerformanceTests.UnFotogramaEnReposoNoGeneraBasura` en el menú; pasó solo dos veces y en la tanda repetida:
+    intermitente, anotado como deuda).

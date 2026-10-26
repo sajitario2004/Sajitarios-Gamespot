@@ -1,0 +1,21 @@
+{
+    "name": "Gamespot.Games.QuePrefieres",
+    "rootNamespace": "Gamespot.Games.QuePrefieres",
+    "references": [
+        "Gamespot.Core",
+        "Gamespot.Core.Runtime",
+        "Gamespot.Games.Shared",
+        "Gamespot.Games.QuePrefieres.Domain",
+        "Unity.TextMeshPro",
+        "UnityEngine.UI"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

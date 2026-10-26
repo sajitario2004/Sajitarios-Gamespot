@@ -1,12 +1,18 @@
 using System.Collections.Generic;
 using Gamespot.Games.Bomba;
 using Gamespot.Games.EsUn10Pero;
+using Gamespot.Games.HombresLobo;
 using Gamespot.Games.Impostor;
+using Gamespot.Games.MasProbable;
+using Gamespot.Games.Mimica;
+using Gamespot.Games.QuePrefieres;
+using Gamespot.Games.QuienSoy;
 using Gamespot.Games.Trivia;
 using Gamespot.Games.Wavelength;
 using Gamespot.Games.YoNunca;
 using Gamespot.Games.Shared;
 using Gamespot.Games.Tabu;
+using Gamespot.Games.VerdadReto;
 
 namespace Gamespot.App
 {
@@ -26,6 +32,12 @@ namespace Gamespot.App
             new TabuGame(),
             new YoNuncaGame(),
             new BombaGame(),
+            new VerdadRetoGame(),
+            new MasProbableGame(),
+            new QuePrefieresGame(),
+            new MimicaGame(),
+            new QuienSoyGame(),
+            new HombresLoboGame(),
         };
     }
 }
