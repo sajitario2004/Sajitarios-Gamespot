@@ -1,6 +1,6 @@
 # CONTEXT.md — Sajitarios Gamespot
 
-> **Estado (2026-10-26):** migración de Flutter a Unity, rama `feature/unity-port` (el PR #1 ya se fusionó en `main`).
+> **Estado (2026-10-26):** migración de Flutter a Unity, rama `feature/unity-port` (los PR #1 y #2 ya se fusionaron en `main`; el #2, con la fase 13, el 2026-10-26).
 > Hechas las fases 0–11 y de la 12, el APK (V065) y el proyecto de Xcode (V067): los 7 juegos portados (Wavelength
 > reescrito y arreglado), mejoras del plan, categorías y tarjetas propias, fuentes, accesibilidad, rendimiento y
 > Ajustes con textos legales. **Queda del autor:** probar en el móvil (V066), validar (V068) y, después, decidir si
@@ -392,6 +392,9 @@ el móvil (V066, V068).
 | LiberationSans (recursos esenciales de TextMeshPro) | OFL 1.1 | Respaldo de los caracteres que Roboto no tenga |
 
 ## 10. Registro de trabajo (lo más reciente arriba)
+
+### 2026-10-26 · Fusión en main
+- Con permiso del autor: push de `feature/unity-port` y fusión del PR #2 en `main` (merge commit `00b4902`), con todo hasta V082. El APK de V082 ya corresponde a ese código.
 
 ### 2026-10-26 · V082 · APK con los seis juegos nuevos
 - `SajitariosGamespot-prueba.apk` (release, 37,7 MB, solo vibración) con los 13 juegos. Textos legales al día con el contenido +18 y la bebida de los juegos nuevos y con el sensor de movimiento de ¿Quién soy?.
