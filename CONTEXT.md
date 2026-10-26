@@ -11,7 +11,7 @@
 > ¿Quién es más probable que…?, ¿Qué prefieres?, Mímica por equipos, ¿Quién soy? y Hombres Lobo (con reparto pasando el
 > móvil y un game master que lleva la partida; muy configurable y con todas las expansiones). Hecho: V070 (base común de cartas)
 > y V071 (Verdad o Reto), V072 (¿Quién es más probable que…?), V073 (¿Qué prefieres?), V074 (Mímica), V075 (¿Quién soy?) y el
-> dominio, el setup, el reparto, la noche, el día y el final de Hombres Lobo (V076–V080); faltan los eventos de luna y el pulido (V081).
+> Hombres Lobo entero (V076–V081): setup, reparto, noche, amanecer, día, final, eventos de luna y guía de cartas. Falta el APK (V082).
 > **Probar en el móvil (¿Quién soy?):** que el texto salga derecho con el móvil en la frente (gira solo según el lado que quede
 > abajo) y que inclinar abajo sea acierto y arriba pasar; si va al revés, la opción «Al revés» del setup lo cambia. **Probar en el móvil:** una partida de Verdad o Reto con picante y con
 > cartas propias que usen `{otro}`; ¿Quién es más probable…? llevando la cuenta (que la cuenta atrás y la vibración se noten).
@@ -387,6 +387,12 @@ el móvil (V066, V068).
 | LiberationSans (recursos esenciales de TextMeshPro) | OFL 1.1 | Respaldo de los caracteres que Roboto no tenga |
 
 ## 10. Registro de trabajo (lo más reciente arriba)
+
+### 2026-10-26 · V081 · Hombres Lobo: eventos de luna y pulido
+- La luna de la mañana se ve en el amanecer, en el día y al empezar la noche siguiente (luna llena, noche en calma y luna roja cuentan esa noche), con lo que cambia. El motor ya la aplicaba desde V076 (sin debate con eclipse, sin cartas con niebla, dos votaciones con tormenta, capitán sin voto doble con rebelión, todos los empatados con luna de sangre).
+- Guía de cartas para el game master (las de la partida y, con la regla, las lunas), desde la lista de jugadores; regla 9 sobre las lunas.
+- `Bootstrap.RandomOverride` para fijar el azar de la app en los tests PlayMode (se limpia al salir y en `SubsystemRegistration`).
+- PlayMode `LoboMoonTests` 3/3; barrido con las ocho lunas limpio. Capturas `V081_lobo_*`.
 
 ### 2026-10-26 · V080 · Hombres Lobo: amanecer, día y final
 - Amanecer con lo que hay que leer en voz alta, cada muerto con su carta (según la regla) y su causa solo para el game master, el oso, la luna, lo que pasó en secreto y lo pendiente (disparo del cazador, sucesor del capitán) antes de «Empezar el día».

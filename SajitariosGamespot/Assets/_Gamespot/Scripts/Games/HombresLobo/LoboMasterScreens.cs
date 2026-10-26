@@ -301,7 +301,12 @@ namespace Gamespot.Games.HombresLobo
             var step = Game.Paso;
             var content = Ui.Scroll(scaffold.Body, 12f, new RectOffset(16, 16, 12, 24));
             if (step == null) return;
-            if (IsFirstStep(step)) InfoPanel(content, Loc.T("loboTodosDuermen"), Palette.NeonViolet, IconId.Bedtime);
+            if (IsFirstStep(step))
+            {
+                InfoPanel(content, Loc.T("loboTodosDuermen"), Palette.NeonViolet, IconId.Bedtime);
+                // La luna de esta mañana sigue valiendo esta noche (luna llena, noche en calma, luna roja).
+                MoonPanel(content);
+            }
 
             var color = LoboUi.Color(step.Rol);
             var head = Ui.Row(content, 12f, alignment: TextAnchor.MiddleLeft);
@@ -456,6 +461,7 @@ namespace Gamespot.Games.HombresLobo
         {
             var scaffold = ScreenScaffold.Create(root, Loc.T("loboJugadoresMaster"), Loc.T("loboVivosDeN", ("n", Game.Vivos.Count()), ("total", Game.Jugadores.Count)));
             scaffold.AppBar.SetLeading(IconId.Check, Close).name = Loc.T("volver");
+            scaffold.AppBar.AddAction(IconId.MenuBook, () => Router.Push(new LoboGuideScreen(_module))).name = Loc.T("loboGuia");
             var content = Ui.Scroll(scaffold.Body, 10f, new RectOffset(16, 16, 12, 24));
             foreach (var player in Game.Jugadores) Row(content, player);
             if (Game.CartasLadron.Count > 0)

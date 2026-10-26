@@ -125,6 +125,9 @@ namespace Gamespot.Games.HombresLobo
 
         public string ResultText => _result != null ? _result.text : null;
 
+        /// <summary>Si hoy se enseña el debate (con eclipse, no).</summary>
+        public bool ShowsDebate => _timer != null;
+
         protected override void BuildPhase(ScreenScaffold scaffold)
         {
             _timer = null;

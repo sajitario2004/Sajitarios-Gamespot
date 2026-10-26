@@ -27,6 +27,9 @@ namespace Gamespot.App
         /// <summary>Juegos alternativos para los tests (nulo = <see cref="GameRegistry"/>).</summary>
         public static Func<IReadOnlyList<IGameDescriptor>> GamesOverride { get; set; }
 
+        /// <summary>Azar alternativo para los tests PlayMode (nulo = <see cref="SeededRandom"/>).</summary>
+        public static IRandomProvider RandomOverride { get; set; }
+
         public UiRoot Ui { get; private set; }
         public Router Router { get; private set; }
         public SqliteDb Database { get; private set; }
@@ -55,7 +58,7 @@ namespace Gamespot.App
             Router.Navigated += _ => Idle.Wake();
             Router.Register(Router.Home, () => new MenuScreen(Games, Audio));
             Router.Register(SettingsScreen.Route, () => new SettingsScreen(Audio));
-            var context = new GameContext(Router, Database, new SeededRandom(), Audio);
+            var context = new GameContext(Router, Database, RandomOverride ?? new SeededRandom(), Audio);
             foreach (var game in Games) game.Register(context);
 
             Router.Go(Router.Home);
@@ -73,6 +76,7 @@ namespace Gamespot.App
         {
             DatabasePathOverride = null;
             GamesOverride = null;
+            RandomOverride = null;
         }
     }
 }

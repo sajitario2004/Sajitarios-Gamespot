@@ -34,7 +34,7 @@ namespace Gamespot.Games.HombresLobo
         {
             var scaffold = ScreenScaffold.Create(root, Loc.T("loboTitulo"));
             GameUi.HomeButton(scaffold.AppBar, Router);
-            GameUi.RulesButton(scaffold.AppBar, Router, "loboTitulo", GameUi.RuleKeys("reglasLobo", 8));
+            GameUi.RulesButton(scaffold.AppBar, Router, "loboTitulo", GameUi.RuleKeys("reglasLobo", 9));
             scaffold.AppBar.AddAction(IconId.MenuBook, OpenRoles).name = Loc.T("loboElegirRoles");
             var content = Ui.Scroll(scaffold.Body, 16f, new RectOffset(16, 16, 8, 32));
             var rules = _module.DraftRules;

@@ -354,5 +354,11 @@ gestionar la partida; muy configurable y con todas las expansiones». Se hacen d
     puede cambiarlo) y, si no queda nadie vivo, lo pendiente se descarta. Chips de una columna si el nombre y la carta
     no caben. Textos en español sin concordancia de género con el jugador. EditMode 364, PlayMode 4/4 nuevos;
     barrido limpio. Capturas `V080_lobo_*`.
-- [ ] **V081 · Hombres Lobo: eventos de luna y pulido.**
+- [x] **V081 · Hombres Lobo: eventos de luna y pulido.**
+  - Notas: la luna de cada mañana (regla «Eventos de luna» del setup) sale en el amanecer, en el día y en la primera
+    pantalla de la noche siguiente, con lo que cambia; las ocho con su descripción en es y en. `LoboGuideScreen`: guía
+    de las cartas de la partida (y de las lunas) desde la lista de jugadores. Regla 9 sobre las lunas.
+    `Bootstrap.RandomOverride` (y el arnés de PlayMode) para fijar el azar en los tests. PlayMode `LoboMoonTests` 3/3
+    (tormenta, eclipse, guía) y todos los de Hombres Lobo (14) en verde; barrido con las ocho lunas forzadas en el
+    amanecer y el día, limpio en es y en. Capturas `V081_lobo_*`.
 - [ ] **V082 · APK con los seis juegos.**

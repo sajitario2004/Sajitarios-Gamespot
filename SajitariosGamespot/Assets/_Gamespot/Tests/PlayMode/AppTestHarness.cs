@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using Gamespot.App;
+using Gamespot.Core;
 using Gamespot.Core.Runtime.Db;
 using Gamespot.Core.Runtime.Navigation;
 using Gamespot.Core.Runtime.Settings;
@@ -25,7 +26,7 @@ namespace Gamespot.Tests.PlayMode
         private readonly float _savedVolume;
         private GameObject _root;
 
-        public AppTestHarness(Func<IReadOnlyList<IGameDescriptor>> games = null)
+        public AppTestHarness(Func<IReadOnlyList<IGameDescriptor>> games = null, IRandomProvider random = null)
         {
             // Los jugadores guardados se comparten entre juegos: cada test empieza sin ninguno y deja los de antes.
             _savedLastPlayers = AppSettings.LastPlayers;
@@ -37,6 +38,7 @@ namespace Gamespot.Tests.PlayMode
             _dbPath = Path.Combine(Path.GetTempPath(), $"gamespot_play_{Guid.NewGuid():N}.db");
             Bootstrap.DatabasePathOverride = _dbPath;
             Bootstrap.GamesOverride = games;
+            Bootstrap.RandomOverride = random;
             _root = new GameObject("AppRoot (test)");
             Bootstrap = _root.AddComponent<Bootstrap>();
             Bootstrap.Router.QuitAction = () => QuitRequested = true;
@@ -59,6 +61,7 @@ namespace Gamespot.Tests.PlayMode
             _root = null;
             Bootstrap.DatabasePathOverride = null;
             Bootstrap.GamesOverride = null;
+            Bootstrap.RandomOverride = null;
             AppSettings.LastPlayers = _savedLastPlayers;
             AudioListener.volume = _savedVolume;
             try

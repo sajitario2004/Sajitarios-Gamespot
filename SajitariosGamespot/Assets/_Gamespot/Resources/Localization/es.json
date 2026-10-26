@@ -1149,5 +1149,9 @@
   "loboUltimasMuertes": "Las últimas muertes",
   "loboTodasLasCartas": "Todas las cartas",
   "loboVerRegistro": "Ver el registro",
-  "loboSigueVivo": "Sigue en juego"
+  "loboSigueVivo": "Sigue en juego",
+  "loboGuia": "Guía de cartas",
+  "loboGuiaCartas": "Las cartas de esta partida",
+  "loboGuiaLunas": "Los eventos de luna",
+  "reglasLobo9": "Con los eventos de luna, algunas mañanas pasa algo que cambia las reglas de ese día o de la noche siguiente (luna llena, eclipse, tormenta…). La app se lo dice al game master."
 }
