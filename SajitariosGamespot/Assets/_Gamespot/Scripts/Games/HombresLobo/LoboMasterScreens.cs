@@ -19,6 +19,9 @@ namespace Gamespot.Games.HombresLobo
     /// </summary>
     public abstract class LoboMasterScreen : AppScreen
     {
+        /// <summary>Letras que caben en un chip de media fila sin encoger demasiado.</summary>
+        private const int MaxChipLabel = 26;
+
         protected LoboMasterScreen(HombresLoboModule module) => Module = module;
 
         protected HombresLoboModule Module { get; }
@@ -91,13 +94,17 @@ namespace Gamespot.Games.HombresLobo
         protected Dictionary<int, NeonChip> PlayerChips(Transform parent, IEnumerable<int> candidates, ICollection<int> picked, int max, Color accent,
             Action changed, bool showRoles = true)
         {
-            var grid = ResponsiveChipGrid.Create(parent);
+            var labels = candidates.ToDictionary(i => i, i => showRoles
+                ? Loc.T("loboJugadorConRol", ("nombre", Game.Jugadores[i].Name), ("rol", LoboUi.Name(Game.Jugadores[i].Rol)))
+                : Game.Jugadores[i].Name);
+            // Con nombres y cartas largos («María José Rodríguez · Lobo blanco») no caben dos por fila sin encoger.
+            var grid = ResponsiveChipGrid.Create(parent, labels.Values.Any(l => l.Length > MaxChipLabel) ? 1 : 2);
             var chips = new Dictionary<int, NeonChip>();
-            foreach (var index in candidates)
+            foreach (var pair in labels)
             {
-                var i = index;
+                var i = pair.Key;
                 var player = Game.Jugadores[i];
-                var label = showRoles ? Loc.T("loboJugadorConRol", ("nombre", player.Name), ("rol", LoboUi.Name(player.Rol))) : player.Name;
+                var label = pair.Value;
                 var chip = NeonChip.Create(grid, label, picked.Contains(i), accent);
                 chip.ToggleOnClick = false;
                 chip.name = player.Name;
@@ -125,6 +132,145 @@ namespace Gamespot.Games.HombresLobo
             Ui.Icon(row, icon, 24f, color, 0.6f);
             Ui.Text(row, text, TextRole.BodyMedium, Palette.TextPrimary).Sized(width: 0f, flexWidth: 1f);
             return panel;
+        }
+
+        /// <summary>Panel de «lee en voz alta» con su primera línea; se le añaden más con <see cref="ReadLine"/>.</summary>
+        protected static NeonPanel ReadAloud(Transform parent, string text)
+        {
+            var read = Ui.Panel(parent, Palette.NeonCyan, glow: 0.5f, padding: new RectOffset(16, 16, 14, 14), spacing: 6f);
+            Ui.Text(read.Content, Loc.T("loboLeeEnVozAlta"), TextRole.LabelMedium, Palette.NeonCyan, bold: true);
+            ReadLine(read, text);
+            return read;
+        }
+
+        protected static void ReadLine(NeonPanel read, string text, Color? color = null) =>
+            Ui.Text(read.Content, text, TextRole.BodyLarge, color ?? Palette.TextPrimary);
+
+        /// <summary>
+        /// Un muerto para anunciar: su nombre, su carta (si hoy se revela o si <paramref name="reveal"/>) y, solo para
+        /// el game master, cómo murió.
+        /// </summary>
+        protected void DeathRow(Transform parent, int index, bool? reveal = null)
+        {
+            var player = Game.Jugadores[index];
+            if (player.Vivo) return;
+            var show = reveal ?? Game.RevelarRoles;
+            var color = show ? LoboUi.Color(player.Rol) : Palette.NeonRed;
+            var panel = Ui.Panel(parent, Palette.NeonRed, glow: 0.4f, padding: new RectOffset(12, 12, 10, 10));
+            panel.name = Loc.T("loboHaMuerto", ("nombre", player.Name));
+            var row = Ui.Row(panel.Content, 10f, alignment: TextAnchor.MiddleLeft);
+            Ui.Icon(row, show ? LoboUi.Icon(player.Rol) : IconId.PersonOff, 32f, color, 0.6f);
+            var texts = Ui.Column(row, 2f, alignment: TextAnchor.MiddleLeft);
+            texts.Sized(width: 0f, flexWidth: 1f);
+            Ui.Text(texts, player.Name, TextRole.TitleSmall, Palette.TextPrimary, bold: true, maxLines: 2);
+            Ui.Text(texts, show ? Loc.T("loboSuCartaEra", ("rol", LoboUi.Name(player.Rol))) : Loc.T("loboCartaOculta"), TextRole.BodyMedium, color);
+            if (player.Causa.HasValue)
+            {
+                Ui.Text(texts, Loc.T("loboSoloParaTi", ("texto", LoboUi.Cause(player.Causa.Value))), TextRole.BodySmall, Palette.TextMuted);
+            }
+        }
+
+        /// <summary>El evento de luna de hoy, con lo que cambia.</summary>
+        protected void MoonPanel(Transform parent)
+        {
+            if (!Game.Luna.HasValue) return;
+            var luna = Game.Luna.Value;
+            var title = Loc.T("loboLunaHoy", ("luna", Loc.T("loboLuna" + luna)));
+            var panel = Ui.Panel(parent, Palette.NeonViolet, glow: 0.7f, padding: new RectOffset(14, 14, 12, 12), spacing: 4f);
+            panel.name = title;
+            var row = Ui.Row(panel.Content, 10f, alignment: TextAnchor.MiddleLeft);
+            Ui.Icon(row, IconId.NightsStay, 28f, Palette.NeonVioletText, 0.8f);
+            Ui.Text(row, title, TextRole.TitleSmall, Palette.NeonVioletText, bold: true, maxLines: 2).Sized(width: 0f, flexWidth: 1f);
+            Ui.Text(panel.Content, Loc.T("loboLunaDesc" + luna), TextRole.BodyMedium, Palette.TextPrimary);
+        }
+
+        // ------------------------------------------------------------------ Pendientes
+
+        private readonly List<int> _pendingPick = new List<int>();
+        private NeonButton _pendingConfirm;
+
+        /// <summary>
+        /// Lo que hay que resolver antes de seguir (el disparo del cazador, el sucesor del capitán o la decisión de la
+        /// sirvienta). Devuelve si hay algo pendiente.
+        /// </summary>
+        protected bool PendingSection(Transform parent)
+        {
+            _pendingPick.Clear();
+            _pendingConfirm = null;
+            var pending = Game.PendienteActual;
+            if (pending == null) return false;
+            var name = Game.Jugadores[pending.Jugador].Name;
+            var alive = Game.Vivos.Select(p => p.Index).ToList();
+            switch (pending.Tipo)
+            {
+                case LoboPendienteTipo.Cazador:
+                {
+                    var panel = PendingPanel(parent, LoboUi.Icon(LoboRol.Cazador), Palette.NeonRed, Loc.T("loboPendienteCazador", ("nombre", name)));
+                    PlayerChips(panel.Content, alive, _pendingPick, 1, Palette.NeonRed, RefreshPending, false);
+                    _pendingConfirm = Ui.Button(panel.Content, Loc.T("loboDisparar"), () => Shoot(_pendingPick.FirstOrDefault()), ButtonStyle.Filled,
+                        IconId.GpsFixed, Palette.NeonRed, 0.8f);
+                    Ui.Button(panel.Content, Loc.T("loboNoDispara"), SkipShot, ButtonStyle.Text, null, Palette.TextMuted);
+                    break;
+                }
+                case LoboPendienteTipo.Sucesor:
+                {
+                    var panel = PendingPanel(parent, IconId.MilitaryTech, Palette.NeonYellow, Loc.T("loboPendienteSucesor", ("nombre", name)));
+                    PlayerChips(panel.Content, alive, _pendingPick, 1, Palette.NeonYellow, RefreshPending, false);
+                    _pendingConfirm = Ui.Button(panel.Content, Loc.T("loboNombrarSucesor"), () => Successor(_pendingPick.FirstOrDefault()),
+                        ButtonStyle.Filled, IconId.MilitaryTech, Palette.NeonYellow, 0.8f);
+                    break;
+                }
+                default:
+                {
+                    var servant = Game.Vivos.FirstOrDefault(p => p.Rol == LoboRol.Sirvienta);
+                    var panel = PendingPanel(parent, LoboUi.Icon(LoboRol.Sirvienta), Palette.NeonCyan,
+                        Loc.T("loboPendienteSirvienta", ("nombre", name), ("sirvienta", servant != null ? servant.Name : "-")));
+                    Ui.Button(panel.Content, Loc.T("loboSirvientaSi"), () => Servant(true), ButtonStyle.Filled, IconId.CompareArrows, Palette.NeonCyan, 0.8f);
+                    Ui.Button(panel.Content, Loc.T("loboSirvientaNo"), () => Servant(false), ButtonStyle.Outlined, null, Palette.NeonCyan);
+                    break;
+                }
+            }
+            RefreshPending();
+            return true;
+        }
+
+        private static NeonPanel PendingPanel(Transform parent, IconId icon, Color color, string text)
+        {
+            var panel = Ui.Panel(parent, color, glow: 0.8f, padding: new RectOffset(14, 14, 14, 14), spacing: 10f);
+            PulseGlow.On(panel, 0.6f, 1f);
+            var row = Ui.Row(panel.Content, 10f, alignment: TextAnchor.MiddleLeft);
+            Ui.Icon(row, icon, 32f, color, 0.8f);
+            Ui.Text(row, Loc.T("loboAntesDeSeguir"), TextRole.TitleSmall, color, bold: true).Sized(width: 0f, flexWidth: 1f);
+            Ui.Text(panel.Content, text, TextRole.BodyLarge, Palette.TextPrimary);
+            return panel;
+        }
+
+        private void RefreshPending()
+        {
+            if (_pendingConfirm != null) _pendingConfirm.Interactable = _pendingPick.Count == 1;
+        }
+
+        /// <summary>El cazador dispara (también lo usan los tests).</summary>
+        public void Shoot(int target)
+        {
+            if (!Game.Disparar(target)) return;
+            Module.Audio?.Play(AppSound.Explosion, 0.5f);
+            Refresh();
+        }
+
+        public void SkipShot()
+        {
+            if (Game.NoDisparar()) Refresh();
+        }
+
+        public void Successor(int index)
+        {
+            if (Game.NombrarSucesor(index)) Refresh();
+        }
+
+        public void Servant(bool takes)
+        {
+            if (Game.SirvientaDecide(takes)) Refresh();
         }
     }
 
@@ -169,9 +315,7 @@ namespace Gamespot.Games.HombresLobo
                 Ui.Text(title, Loc.T("loboLoTiene", ("nombres", LoboTexts.Names(Game, holders))), TextRole.BodySmall, Palette.TextMuted);
             }
 
-            var read = Ui.Panel(content, Palette.NeonCyan, glow: 0.5f, padding: new RectOffset(16, 16, 14, 14), spacing: 6f);
-            Ui.Text(read.Content, Loc.T("loboLeeEnVozAlta"), TextRole.LabelMedium, Palette.NeonCyan, bold: true);
-            Ui.Text(read.Content, LoboTexts.Narration(step.Paso), TextRole.BodyLarge, Palette.TextPrimary);
+            ReadAloud(content, LoboTexts.Narration(step.Paso));
             foreach (var line in Extras(step)) InfoPanel(content, line, Palette.NeonYellow, IconId.Lightbulb);
 
             if (step.Max > 0)
@@ -319,6 +463,25 @@ namespace Gamespot.Games.HombresLobo
                 Ui.Text(content, Loc.T("loboCartasSobrantes", ("cartas", string.Join(", ", Game.CartasLadron.Select(LoboUi.Name)))), TextRole.BodySmall,
                     Palette.TextMuted);
             }
+            if (Game.Fase != LoboFase.Final)
+            {
+                Ui.Button(content, Loc.T("loboTerminarAqui"), ConfirmEnd, ButtonStyle.Text, IconId.Flag, Palette.NeonRed);
+            }
+        }
+
+        private void ConfirmEnd()
+        {
+            Dialogs.Confirm(Loc.T("loboTerminarTitulo"), Loc.T("loboTerminarMensaje"), Loc.T("cancelar"), Loc.T("terminar"), ok =>
+            {
+                if (ok) End();
+            }, Palette.NeonRed);
+        }
+
+        /// <summary>Da la partida por terminada y vuelve (también lo usan los tests).</summary>
+        public void End()
+        {
+            Game.Terminar();
+            Close();
         }
 
         private void Row(Transform parent, LoboPlayer player)

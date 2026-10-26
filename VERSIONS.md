@@ -341,7 +341,18 @@ gestionar la partida; muy configurable y con todas las expansiones». Se hacen d
     nadie» y una ayuda. La vidente y el zorro enseñan su resultado en grande. 19 pasos con título, narración y ayuda
     en es y en; causas, registro, ganadores y lunas. PlayMode 2/2; barrido (182 pantallas) limpio. Capturas
     `V079_lobo_*`.
-- [ ] **V080 · Hombres Lobo: día y final.** Muertes de la noche, cadenas (enamorados, cazador…), debate con
+- [x] **V080 · Hombres Lobo: día y final.** Muertes de la noche, cadenas (enamorados, cazador…), debate con
   tiempo, votación, capitán y victoria; registro de la partida.
+  - Notas: `LoboDayScreens.cs`. Amanecer: qué leer en voz alta (quién ha muerto, el oso, los poderes perdidos), cada
+    muerto con su carta si la regla lo dice (y, solo para el game master, cómo murió), la luna, lo que pasó en secreto
+    (protegido, salvado, infectado, anciano, niño salvaje) y lo pendiente (disparo del cazador, sucesor del capitán).
+    Día: elegir capitán, debate con reloj (empezar, pausar, +30 s, aviso al acabar), votación con + y − por jugador
+    (capitán doble, +2 del cuervo, quién no vota), linchar al más votado, empate (segunda votación entre los
+    empatados, chivo o luna de sangre) o nadie; la sirvienta antes de enseñar la carta; el juez; «Empezar la noche».
+    Final: quién gana, las últimas muertes, todas las cartas con los ganadores, jugar otra, ajustes, registro, menú.
+    «Terminar la partida aquí» en la lista de jugadores. Motor: con algo pendiente no se decide quién gana (el disparo
+    puede cambiarlo) y, si no queda nadie vivo, lo pendiente se descarta. Chips de una columna si el nombre y la carta
+    no caben. Textos en español sin concordancia de género con el jugador. EditMode 364, PlayMode 4/4 nuevos;
+    barrido limpio. Capturas `V080_lobo_*`.
 - [ ] **V081 · Hombres Lobo: eventos de luna y pulido.**
 - [ ] **V082 · APK con los seis juegos.**

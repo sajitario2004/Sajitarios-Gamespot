@@ -1,6 +1,6 @@
 # TREE
 
-Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-26 01:02.
+Estructura del repo. Generado con `tools/Update-Tree.ps1` el 2026-10-26 01:25.
 
 No se listan: Library, Temp, Logs, obj, UserSettings, .git, .vs, .idea, .vscode, .utmp, Build, Builds, MemoryCaptures, Recordings, node_modules, __pycache__, .venv, .dart_tool, build, coverage, *.meta, *.csproj, *.sln, *.slnx, *.user, *.pidb, *.unityproj, .DS_Store, Thumbs.db, *.apk, *.aab.
 Plegadas: skills, TextMesh Pro, Flutter, Capturas (Flutter = la app original en Legacy/Flutter, solo lectura).
@@ -11,7 +11,7 @@ Sajitarios-Gamespot/
 ├── .claude/
 │   └── settings.json
 ├── Docs/
-│   ├── Capturas/  (91 elementos, plegado)
+│   ├── Capturas/  (94 elementos, plegado)
 │   └── PLAN_MEJORAS.md
 ├── Legacy/
 │   └── Flutter/  (20 elementos, plegado)
@@ -219,6 +219,7 @@ Sajitarios-Gamespot/
 │   │   │   │   │   │   │   └── LoboState.cs
 │   │   │   │   │   │   ├── Gamespot.Games.HombresLobo.asmdef
 │   │   │   │   │   │   ├── HombresLoboGame.cs
+│   │   │   │   │   │   ├── LoboDayScreens.cs
 │   │   │   │   │   │   ├── LoboMasterScreens.cs
 │   │   │   │   │   │   ├── LoboRevealScreen.cs
 │   │   │   │   │   │   ├── LoboSetupScreens.cs
@@ -432,6 +433,7 @@ Sajitarios-Gamespot/
 │   │   │           │   ├── CategoryTests.cs
 │   │   │           │   ├── EsUn10PeroScreenTests.cs
 │   │   │           │   ├── ImpostorFlowTests.cs
+│   │   │           │   ├── LoboDayTests.cs
 │   │   │           │   ├── LoboNightTests.cs
 │   │   │           │   ├── LoboRevealTests.cs
 │   │   │           │   ├── LoboSetupTests.cs

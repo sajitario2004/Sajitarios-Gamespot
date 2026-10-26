@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Gamespot.Core.Runtime.Localization;
+using Gamespot.Core.Runtime.Theme;
 using Gamespot.Games.HombresLobo.Domain;
 
 namespace Gamespot.Games.HombresLobo
@@ -59,9 +60,12 @@ namespace Gamespot.Games.HombresLobo
         }
 
         /// <summary>Una línea del registro: «Noche 2 · Los lobos eligen a Ana».</summary>
-        public static string Event(LoboGame game, LoboEvento e)
+        public static string Event(LoboGame game, LoboEvento e) =>
+            Loc.T("loboEventoLinea", ("cuando", Loc.T(e.Noche ? "loboNocheN" : "loboDiaN", ("n", e.Ronda))), ("texto", EventText(game, e)));
+
+        /// <summary>Lo que dice el evento, sin cuándo pasó.</summary>
+        public static string EventText(LoboGame game, LoboEvento e)
         {
-            var when = Loc.T(e.Noche ? "loboNocheN" : "loboDiaN", ("n", e.Ronda));
             var text = Loc.T("loboEvento" + e.Tipo,
                 ("jugador", PlayerName(game, e.Jugador)),
                 ("otro", e.Tipo == LoboEventoTipo.Luna ? string.Empty : PlayerName(game, e.Otro)),
@@ -82,7 +86,21 @@ namespace Gamespot.Games.HombresLobo
                 text = Loc.T("loboEventoLobosEligenDos", ("jugador", PlayerName(game, e.Jugador)), ("otro", PlayerName(game, e.Otro)));
             }
             if (e.Tipo == LoboEventoTipo.Encanta && !e.Otro.HasValue) text = Loc.T("loboEventoEncantaUno", ("jugador", PlayerName(game, e.Jugador)));
-            return Loc.T("loboEventoLinea", ("cuando", when), ("texto", text));
+            return text;
+        }
+
+        /// <summary>Color de cada final.</summary>
+        public static UnityEngine.Color WinnerColor(LoboGanador ganador)
+        {
+            switch (ganador)
+            {
+                case LoboGanador.Pueblo: return Palette.NeonCyan;
+                case LoboGanador.Lobos: return Palette.NeonRed;
+                case LoboGanador.LoboBlanco: return Palette.NeonVioletText;
+                case LoboGanador.Enamorados: return Palette.NeonMagenta;
+                case LoboGanador.Nadie: return Palette.TextMuted;
+                default: return Palette.NeonYellow;
+            }
         }
     }
 }

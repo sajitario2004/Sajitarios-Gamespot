@@ -89,6 +89,32 @@ namespace Gamespot.Tests.EditMode.Games.HombresLobo.Domain
         }
 
         [Test]
+        public void Cazador_ConElDisparoPendienteAunNoGanaNadie()
+        {
+            // Dos lobos y dos del pueblo ganarían con la regla, pero el cazador aún dispara a un lobo.
+            var game = Game(new LoboRules { LobosGananAlIgualar = true }, L, L, LoboRol.Cazador, A, A);
+            Step(game, LoboPaso.Lobos, 2);
+            Assert.IsNull(game.Victoria, "Con el disparo pendiente no se decide");
+            Assert.AreEqual(LoboFase.Amanecer, game.Fase);
+            Assert.IsTrue(game.Disparar(0));
+            Assert.IsNull(game.Victoria, "Un lobo y dos del pueblo: sigue la partida");
+            Assert.AreEqual(LoboFase.Amanecer, game.Fase);
+            Assert.IsTrue(game.EmpezarDia());
+        }
+
+        [Test]
+        public void Cazador_SiMuerenTodosSeDescartaElDisparoYNoGanaNadie()
+        {
+            var game = Game(L, LoboRol.Cazador, A, A, A);
+            Step(game, LoboPaso.Lobos, 1);
+            Assert.IsNotNull(game.PendienteActual);
+            foreach (var i in new[] { 0, 2, 3, 4 }) Assert.IsTrue(game.MatarManual(i));
+            Assert.IsNull(game.PendienteActual, "No queda nadie a quien disparar");
+            Assert.AreEqual(LoboFase.Final, game.Fase);
+            Assert.AreEqual(LoboGanador.Nadie, game.Victoria.Ganador);
+        }
+
+        [Test]
         public void Anciano_AguantaUnAtaqueYSiLoMataElPuebloSePierdenLosPoderes()
         {
             var game = Game(L, LoboRol.Anciano, LoboRol.Vidente, A, A);

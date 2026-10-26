@@ -66,6 +66,12 @@ namespace Gamespot.Games.HombresLobo.Domain
         public int? CuervoMarcado => _s.CuervoMarcado;
         public bool LinchamientoHecho => _s.LinchamientoHecho;
 
+        /// <summary>Votaciones que quedan hoy (con tormenta, dos).</summary>
+        public int LinchamientosRestantes => Math.Max(0, _s.LinchamientosPermitidos - _s.LinchamientosHoy);
+
+        /// <summary>Votaciones que hay hoy en total.</summary>
+        public int LinchamientosPermitidos => _s.LinchamientosPermitidos;
+
         /// <summary>Con empate, los que van a la segunda votación (vacío si no la hay).</summary>
         public IReadOnlyList<int> Empatados => _s.Empatados;
 
@@ -660,10 +666,7 @@ namespace Gamespot.Games.HombresLobo.Domain
             return true;
         }
 
-        private void AfterPending()
-        {
-            if (_s.Pendientes.Count == 0) CheckVictory();
-        }
+        private void AfterPending() => CheckVictory();
 
         private bool IsAlive(int index) => index >= 0 && index < _s.Jugadores.Count && _s.Jugadores[index].Vivo;
 
@@ -897,12 +900,16 @@ namespace Gamespot.Games.HombresLobo.Domain
 
         private void CheckVictory()
         {
+            // Sin nadie vivo no hay a quién disparar ni a quién nombrar sucesor.
+            if (!Vivos.Any()) _s.Pendientes.Clear();
+            // Con algo pendiente (el disparo del cazador…) aún puede cambiar quién gana: se mira al resolverlo.
+            if (_s.Pendientes.Count > 0) return;
             if (_s.Victoria == null)
             {
                 var victory = CalcularVictoria();
                 if (victory != null) SetVictory(victory.Ganador, victory.Jugadores);
             }
-            if (_s.Victoria != null && _s.Pendientes.Count == 0) _s.Fase = LoboFase.Final;
+            if (_s.Victoria != null) _s.Fase = LoboFase.Final;
         }
 
         private void SetVictory(LoboGanador ganador, IReadOnlyList<int> jugadores)

@@ -11,7 +11,7 @@
 > ¿Quién es más probable que…?, ¿Qué prefieres?, Mímica por equipos, ¿Quién soy? y Hombres Lobo (con reparto pasando el
 > móvil y un game master que lleva la partida; muy configurable y con todas las expansiones). Hecho: V070 (base común de cartas)
 > y V071 (Verdad o Reto), V072 (¿Quién es más probable que…?), V073 (¿Qué prefieres?), V074 (Mímica), V075 (¿Quién soy?) y el
-> dominio, el setup, el reparto y la noche de Hombres Lobo (V076–V079); faltan el amanecer, el día y el final (V080–V081).
+> dominio, el setup, el reparto, la noche, el día y el final de Hombres Lobo (V076–V080); faltan los eventos de luna y el pulido (V081).
 > **Probar en el móvil (¿Quién soy?):** que el texto salga derecho con el móvil en la frente (gira solo según el lado que quede
 > abajo) y que inclinar abajo sea acierto y arriba pasar; si va al revés, la opción «Al revés» del setup lo cambia. **Probar en el móvil:** una partida de Verdad o Reto con picante y con
 > cartas propias que usen `{otro}`; ¿Quién es más probable…? llevando la cuenta (que la cuenta atrás y la vibración se noten).
@@ -387,6 +387,13 @@ el móvil (V066, V068).
 | LiberationSans (recursos esenciales de TextMeshPro) | OFL 1.1 | Respaldo de los caracteres que Roboto no tenga |
 
 ## 10. Registro de trabajo (lo más reciente arriba)
+
+### 2026-10-26 · V080 · Hombres Lobo: amanecer, día y final
+- Amanecer con lo que hay que leer en voz alta, cada muerto con su carta (según la regla) y su causa solo para el game master, el oso, la luna, lo que pasó en secreto y lo pendiente (disparo del cazador, sucesor del capitán) antes de «Empezar el día».
+- Día: capitán, debate con reloj, votación con contadores (capitán doble, +2 del cuervo, quién no vota), linchar, empate (segunda votación, chivo, luna de sangre) o nadie, la sirvienta, el juez. Final con el ganador, las últimas muertes, todas las cartas y jugar otra. El game master puede terminar la partida desde la lista de jugadores.
+- Motor: la victoria espera a que se resuelva lo pendiente (el disparo del cazador puede cambiar quién gana) y, si no queda nadie vivo, lo pendiente se descarta (antes la partida se quedaba atascada). Lo encontró el barrido.
+- Decisiones (elegidas por Claude, revisables): en el día los chips solo llevan el nombre (el móvil se ve más), y en la noche las cartas; los textos de Hombres Lobo en español evitan la concordancia de género con el jugador («tenía la carta de cazador», «recibe la capitanía», «Sigue en juego»).
+- EditMode 364, PlayMode 4/4 nuevos, barrido limpio en es y en. Capturas `V080_lobo_*`.
 
 ### 2026-10-26 · V079 · Hombres Lobo: la noche del game master
 - Consola nocturna: cada paso dice qué rol despertar, quién lo tiene y qué leer en voz alta; se toca a quien señale (los chips llevan el nombre y la carta) o se elige la opción. Lo que ve la vidente y lo que huele el zorro salen en grande para enseñárselo. En la barra: deshacer, los jugadores (con matar y revivir a mano) y el registro de la partida.
